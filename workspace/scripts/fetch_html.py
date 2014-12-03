@@ -20,6 +20,8 @@ already_pinged_domains = set()
 urls = open(url_filename)
 for url_string in urls:
     url_string = url_string.split('\n')[0]
+    if url_string == '':
+        continue
     url = urlparse(url_string)
     print 'fetching url:', url.geturl()
     domain = url.hostname
@@ -28,7 +30,7 @@ for url_string in urls:
         continue
     try:
         driver.get(url_string)
-        time.sleep(5)
+        time.sleep(3)
         html_file = open(url_dir + '/' + domain + '.html',"w")
         html = driver.page_source
         html = html.encode('utf-8')
