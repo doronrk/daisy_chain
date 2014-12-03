@@ -1,0 +1,88 @@
+<html webdriver="true"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script src="ads_iframe_data_004/beacon.js" async=""></script><script type="text/javascript">
+//<![CDATA[
+    function getCookieVal (offset) {
+    	var endstr = document.cookie.indexOf (";", offset);
+    	if (endstr == -1)
+    		endstr = document.cookie.length;
+    		return unescape(document.cookie.substring(offset, endstr));
+	}
+
+    function GetCookie (name) {
+    	var arg = name + "=";
+    	var alen = arg.length;
+    	var clen = document.cookie.length;
+    	var i = 0;
+    	while (i < clen) {
+    		var j = i + alen;
+    	    if (document.cookie.substring(i, j) == arg)
+    	    	return getCookieVal (j);
+    	    	i = document.cookie.indexOf(" ", i) + 1;
+    		    if (i == 0) break; 
+    		}
+    		if (name == "basket") {
+    	  		return "Basket Empty";
+    		} else {
+    			return "null";
+    		}
+    }
+ //]]>
+</script>
+</head>
+<body>
+<script type="text/javascript" src="ads_iframe_data/swfobject.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+	
+	    document.domain = "rakuten.com";
+	    if(parent.dtmc_product_price > '274') {
+	       var ads_product_price = '275ormore';
+	    } else if(parent.dtmc_product_price < '76') {
+	        var ads_product_price = '75orless';
+	    } else {
+	        var ads_product_price = '';
+	    }
+	    document.write('<SCR' + 'IPT LANGUAGE=JavaScript1.1 type="text/javascript" SRC="http://oascentral.rakuten.com/RealMedia/ads/adstream_jx.ads/rakuten.com\/HomeOutdoor\/Product/' + parent.OAS_rns + '@Top2,Bottom2,Middle,x70!Middle?' + GetCookie("Household") + '&' + ads_product_price +'&amp;qu=boning+fillet+knives&amp;qu=cutlery&amp;qu=tableware&amp;qu=kitchen+cooking&amp;qu=home+outdoor&amp;qu=rakuten+com+shopping"></SCR'+'IPT>');
+	
+ //]]>
+</script><script language="JavaScript1.1" type="text/javascript" src="ads_iframe_data_004/undefinedTop2Bottom2Middlex70Middle.js"></script><script language="JavaScript" type="text/javascript">
+rp_account   = '12208';
+rp_site      = '45052';
+rp_zonesize  = '197150-2';
+rp_adtype    = 'js';
+rp_smartfile = '[SMART FILE URL]';
+rp_inventory  =   { page: 'rakuten.com/HomeOutdoor/Product/undefined/L31', path: '', pos:'Middle', query:'null&75orless&qu=boning+fillet+knives&qu=cutlery&qu=tableware&qu=kitchen+cooking&qu=home+outdoor&qu=rakuten+com+shopping', segments:''};
+</script>
+<script type="text/javascript" src="ads_iframe_data_004/12208.js"></script><script type="text/javascript" src="ads_iframe_data_004/197150-2.js"></script><script src="ads_iframe_data_004/dt_with_modernizr_min.js"></script><script type="text/javascript">var rfiPub={ver:7,publisher:64};var rfiAdReq={placement:"34483",width:728,height:90,isSecureBidRequest:false,dl:"201",clickRedirect:"false",deviceId:"",isApp:"0",landInNewWindow:false,bidData:"creativeOptimization=sej:false,diSrc:0,scoreMicroClicks:0,uV:147539,url:ewr-25.ewr-rtb1.rfihub.net,isSkip:false,mt:1,serverId:ewr-25,optimize:false,did:tid_347985|med_regular,uG:0,isAI:true,bB:true,bt:1417579685225,newUser:false,exId:0f3433c6cc884b91d8a883fd81eb5ad358898d30,uuid:969188715031255915,scoreMicroConversions:2620;price=793E3134F2D23E53;requestId=c3e7ac869238392cd7662c63367a8d22;site=;adId=1163793;tacticId=347985;"};rfiAdReq.externalSiteID="45052";rfiAdReq.clickPrefix="http://beacon-us-east.rubiconproject.com/beacon/rs/6d2de9d4-763b-415a-8ba3-334bea50b07e/MTQxNzU3OTY4NTIzOQ/sXtF3Y4zXtYYPIcd_332ZdSLLZE/";</script><script type="text/javascript" src="ads_iframe_data_004/bcS.js"></script><iframe src="ads_iframe_data_004/sed.html" border="0" vspace="0" hspace="0" scrolling="no" marginheight="0" marginwidth="0" style="padding:0;margin:0" frameborder="0" height="90" width="728"></iframe>
+<noscript><img style='display:none' border=0 width=0 height=0 src='http://a.rfihub.com/ns.gif?ri=c3e7ac869238392cd7662c63367a8d22&ra=5796852250.8949781544200965'></noscript><script>
+var _comscore = _comscore || [];
+(function() {
+ var rp_cats = "IAB22";
+ var rp_cat = 24*1000;
+ if (rp_cats) {
+	rp_cats = rp_cats.replace(/IAB/g,"").split(",");
+	if (rp_cats.length > 0 && rp_cats[0] && rp_cats[0].length > 0) {
+		rp_cat = rp_cats[0].split("-")[0];
+		rp_cat = rp_cat * 1000;
+	}
+ }
+ var _comscore_switch = "us";
+ _comscore.push({ c1: "8", c2: "6135404", c3: rp_cat, c4: "45052", c10: "3469502" }); 
+ if ( _comscore_switch == "us" )  {
+   (function() { var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true; s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js"; 
+   el.parentNode.insertBefore(s, el); 
+   })(); 
+ }
+   
+})();
+</script><div style="height: 0px; width: 0px; overflow: hidden">
+<script>
+(function() {var proto = document.location.protocol; var server="http://tap2-cdn.rubiconproject.com"; if (proto == "https:") server="https://tap-secure.rubiconproject.com"; document.write('<IFRAME SRC="'+server+'/partner/scripts/rubicon/emily.html?rtb_ext=1&pc=12208/45052&geo=na&co=us" FRAMEBORDER="0" MARGINWIDTH="0" MARGINHEIGHT="0" SCROLLING="NO" WIDTH="0" HEIGHT="0" style="height: 0px; width: 0px"></IFRAME>'); })();
+</script><iframe src="ads_iframe_data_004/emily.html" marginwidth="0" marginheight="0" scrolling="NO" style="height: 0px; width: 0px" frameborder="0" height="0" width="0"></iframe>
+
+</div>
+
+
+
+</body></html>

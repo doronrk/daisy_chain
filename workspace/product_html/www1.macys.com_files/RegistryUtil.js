@@ -1,1 +1,0 @@
-define(function(){return{isRegistry:function(){return this.getWindowLocation().indexOf("wedding-registry")!==-1||this.getWindowLocation().indexOf("/registry/wedding")!==-1},getWindowLocation:function(){return window.location.href}}});

@@ -1,0 +1,221 @@
+define([], function() {
+	
+	function ProxyImage(type, path, image, dispatcher) {
+		// private variables
+		this._image = image;
+		var _mediaPath = path;
+		var _type = type;
+		this._dispatcher = dispatcher;
+		this._state = null;
+
+		this._zoomSpeed = 750;
+		
+		this.move = function() {
+
+			RICHFX.jQuery(this._image).css('left', this._state.getX() + 'px');
+			RICHFX.jQuery(this._image).css('top', this._state.getY() + 'px');
+		}
+		
+		this.getMediaPath = function(){
+			return _mediaPath;
+		};
+		
+		this.setMediaPath = function(newPath){
+			if(_mediaPath != newPath) {
+				_mediaPath = newPath;
+				
+				if(_image instanceof Image) {
+					_image.src = _mediaPath;
+				}
+			}
+		};
+		
+		this.show = function() {
+			RICHFX.jQuery(this._image).show();
+		};
+		
+		this.hide = function() {
+			RICHFX.jQuery(this._image).hide();
+		};
+		
+		this.getImage = function(){
+			return _image;
+		};
+		
+		this.getType = function() {
+			return _type;
+		};
+		
+		this.getWidth = function() {
+			return RICHFX.jQuery(this._image).width();
+		};
+		
+		this.setWidth = function(width) {
+			RICHFX.jQuery(this._image).width(width);
+		};
+		
+		this.getHeight = function() {
+			return RICHFX.jQuery(this._image).height();
+		};
+		
+		this.setHeight = function(height) {
+			RICHFX.jQuery(this._image).height(height);
+		};
+		 
+		this.changeScale = function(width, height) {
+		
+			RICHFX.jQuery(this._image).css('width', width + 'px');
+			RICHFX.jQuery(this._image).css('height', height + 'px');
+		};
+
+		this.changeZoom = function() {
+			
+			RICHFX.jQuery(this._image).animate({
+				width: this._state.getAssetWidth() + 'px', 
+				height: this._state.getAssetHeight() + 'px', 
+				left: this._state.getX() + 'px', 
+				top: this._state.getY() + 'px'}, this._zoomSpeed, RICHFX.jQuery.proxy(function() {
+
+					if ( this._state.getZoomLevel() == 0 )
+					{
+						// hide the 'zoom' image after the animation is complete
+						RICHFX.jQuery('#'+this._dispatcher.id+'_initialImage').show();
+						this.hide();
+					}
+				}, this)); 
+
+		};
+		
+		this.zoomChangeHandler = function() {
+		
+			var currZoomLevel = this._state.getZoomLevel();
+
+			this._zoomSpeed = 750;
+		
+			if ( currZoomLevel == 0 ) {
+			
+				this._state.setAssetWidth(this._state.getWidth());
+				this._state.setAssetHeight(this._state.getHeight());
+			
+				this._state.setX(0);
+				this._state.setY(0);
+			
+				this.changeZoom();
+
+				// animation does the image hiding
+				
+			} else {
+				// Generate new Values;
+				var zoomWidth = this._state.getWidth() + ( this._state.getStepSizeLeft() * currZoomLevel );
+				var zoomHeight = this._state.getHeight() + ( this._state.getStepSizeTop() * currZoomLevel );
+			
+				// save control values
+				this._state.setAssetWidth(zoomWidth);
+				this._state.setAssetHeight(zoomHeight);
+
+				this._state.updateX();
+				this._state.updateY();
+
+				// make sure that the zoom image is visible
+				this.show();
+
+				this.changeZoom();
+			}
+		};
+		
+		this.positionChangeHandler = function() {
+			this.move();
+		};
+
+		this.pinchChangeHandler = function() {
+
+			this._zoomSpeed = 10;
+		
+			var zoomWidth = this._state.getPinchStartWidth() + ( this._state.getPinchChange() * 3);
+			var zoomHeight = this._state.getPinchStartHeight() + ( this._state.getPinchChange() * 3);
+
+			this_state.checkZoomLevels(zoomWidth);
+		
+			// save control values
+			this._state.setAssetWidth(zoomWidth);
+			this._state.setAssetHeight(zoomHeight);
+			
+			this._state.updateX();
+			this._state.updateY();
+			
+			// make sure that the zoom image is visible
+			this.show();
+
+			this.changeZoom();
+		};
+
+		this.pinchScaleChangeHandler = function() {
+
+			//RICHFX.jQuery(this._image).css('webkitTransform', 'scale(' + (this._state.getPinchScale() + 100) + ') rotate(0deg)');
+			this._image.style.webkitTransform = 'scale(' + this._state.getPinchScale() + 100 + ') rotate(0deg)';
+			
+			// make sure that the zoom image is visible
+			this.show();
+		};
+	};
+
+	ProxyImage.prototype = {
+		proxyImageInit:function(){
+		},
+		
+		proxyImageReady:function(){
+			
+			RICHFX.jQuery(this._dispatcher).bind('assetstate.zoomproxy.changed', RICHFX.jQuery.proxy(function(event){
+				this.zoomChangeHandler();
+			}, this));
+			
+			RICHFX.jQuery(this._dispatcher).bind('assetstate.position.changed', RICHFX.jQuery.proxy(function(event){
+				this.positionChangeHandler();
+			}, this));
+
+			RICHFX.jQuery(this._dispatcher).bind('assetstate.pinch.changed', RICHFX.jQuery.proxy(function(event){
+				this.pinchChangeHandler();
+			}, this));
+
+			RICHFX.jQuery(this._dispatcher).bind('assetstate.pinch.scalechanged', RICHFX.jQuery.proxy(function(event){
+				this.pinchScaleChangeHandler();
+			}, this));
+		},
+		
+		setState: function(assetState) {
+			this._state = assetState;
+		},
+		
+		pushMediaData: function(sizeData) {
+
+			var zoomWidth = sizeData.width;
+			var zoomHeight = sizeData.height;
+
+			if ( zoomWidth == 0 )
+			{
+				zoomWidth = (this._state.getWidth() * (zoomHeight/this._state.getHeight()))
+			}
+
+			if ( zoomHeight == 0 )
+			{
+				zoomHeight = (this._state.getHeight() * (zoomWidth/this._state.getWidth()))
+			}
+
+			// register full size		
+			this._state.setZoomWidth(zoomWidth);
+			this._state.setZoomHeight(zoomHeight);
+
+			// Adjust before first click
+
+			// set initial position
+			RICHFX.jQuery(this._image).css('left', '0px');
+			RICHFX.jQuery(this._image).css('top', '0px');
+
+			// set initial size
+			RICHFX.jQuery(this._image).css('width', this._state.getWidth() + 'px');
+			RICHFX.jQuery(this._image).css('height', this._state.getHeight() + 'px');
+		}
+	};
+
+	return ProxyImage;
+});

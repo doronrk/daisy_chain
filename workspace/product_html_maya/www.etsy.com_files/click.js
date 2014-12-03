@@ -1,0 +1,1 @@
+require(["jquery"],function(a){if(Etsy&&Etsy.Context){var b=Etsy.Context.getData("plkey",null);b&&(a.post("/api/v3/ajax/member/prolist/click-log",{_nnc:Etsy.csrf_nonce,logging_key:b}),Etsy&&Etsy.EventLogger&&Etsy.EventLogger.logEvent({php_event_name:"prolist_click_key",logging_keys:b}))}});

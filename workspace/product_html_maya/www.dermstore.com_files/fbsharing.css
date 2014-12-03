@@ -1,0 +1,290 @@
+@charset "utf-8";
+/* CSS Document */
+
+.topSub {
+	background:url('//media.dermstore.com/images/header/subArrow.png') no-repeat right center;
+	padding:0 10px 0 0;
+	height:17px;
+	line-height:17px;
+}
+
+.topFB .topFBimg{
+	float:left;
+	margin-right:4px;
+}
+
+#topSLbox {
+  position:absolute;
+  display:block;
+  margin:0 0 0 10px;
+  padding:0;
+  list-style:none;
+  width:265px;
+  border:1px solid #000;
+  background:#FFF;
+  font-size:11px;
+  color:#000;
+  margin-top:-1000px;
+  z-index:20;
+}
+
+#topSLbox #sNote {
+	float:right;
+	display:inline-block;
+	margin:4px 4px 0 0;
+}
+
+#sNoteBox {
+  position:absolute;
+  display:none;
+  margin:0 0 0 -470px;
+  padding:0;
+  list-style:none;
+  width:270px;
+  border:1px solid #000;
+  background:#FFF;
+  font-size:11px;
+  color:#000;
+  padding:6px 12px;
+  z-index:20;
+  line-height:16px;
+}
+
+#sNoteBox a {
+	color:#3f5996;
+}
+
+#topSLbox a.sNoteA {
+	text-decoration:underline;
+	color:#000;
+	display:inline-block;
+	font-size:12px;
+	float:right;
+	margin:6px 5px 0 0;
+}
+
+#topFBBox {
+	float:left;
+}
+
+#activityFB span.actHeader {
+	color:#FFF;
+	text-align:center;
+	background:#000;
+	line-height:22px;
+	height:225px;
+	display:block;
+	font-weight:bold;
+}
+
+#activityFB {
+	width:265px;
+	overflow:hidden;
+}
+
+.actBox {
+	margin:6px;
+}
+
+.actBox img {
+	display:inline-block;
+	max-width:40px;
+	float:left;
+}
+
+.actBox .actTxt {
+	width:130px;
+	float:left;
+	font-size:10px;
+	line-height:12px;
+	margin-left:6px;
+}
+
+.actBox .actTxt a {
+	color:#000;
+}
+
+#activityFB a.showMore {
+	text-align:center;
+	color:#000;
+	display:block;
+	margin:6px 0 0 0;
+}
+
+.sCopyBox {
+	float:left;
+	width:140px;
+	margin:5px 0 10px 10px;
+}
+
+.sCopy {
+	font-size:18px;
+}
+
+a.sSwitch {
+	color:#3f5996;
+	font-size:11px;
+	font-weight:bold;
+}
+
+span#sNoteClose {
+	float:right;
+	display:inline-block;
+	cursor:pointer;
+	font-size:12px;
+	font-weight:bold;
+	margin:2px 0 0 0;
+}
+
+#shareCopyBox {
+	width:214px;
+	background-color:#f3ebe3;
+	padding:14px;
+	font-size:12px;
+	margin:0 auto 10px auto;
+}
+
+a#shareCopyBtn {
+	background:#000;
+	display:inline-block;
+	color:#fff;
+	font-weight:bold;
+	height:26px;
+	line-height:26px;
+	padding:0 10px;
+	margin:8px 0 0 0;
+}
+
+a#shareCopyBtn:hover {
+	text-decoration:none;
+}
+
+.shadow {
+-moz-box-shadow: 0px 2px 6px #ccc;
+-webkit-box-shadow: 0px 2px 6px #ccc;
+box-shadow: 0px 2px 6px #ccc;
+}
+
+.fbNotifyBox {
+	width:220px;
+	position:fixed;
+	top:66px;
+	right:20px;
+	background:#f3ebe3;
+	font-size:11px;
+	color:#363636;
+	z-index:99;
+	display:none;
+}
+
+.innerNotify {
+	margin:0 10px;
+}
+
+a#fbnClose {
+	display:inline-block;
+	clear:both;
+	background:#000;
+	color:#fff;
+	padding:0 3px;
+	height:12px;
+	line-height:12px;
+	float:right;
+	margin:4px 4px 0 0;
+	font-size:10px;
+	font-weight:bold;
+	cursor:pointer;
+	text-decoration:none;
+}
+
+/*	--------------------------------------------------
+	Reveal Modals
+	-------------------------------------------------- */
+		
+	.reveal-modal-bg { 
+		position: fixed; 
+		height: 100%;
+		width: 100%;
+		background: #000;
+		background: rgba(0,0,0,.8);
+		z-index: 100;
+		display: none;
+		top: 0;
+		left: 0; 
+		}
+	
+	.fb-reveal-modal {
+		overflow:hidden;
+		visibility: hidden;
+		color:#000;
+		font-size:14px;
+		line-height:18px;
+		top: 300px; 
+		left: 50%;
+		margin-left: -300px;
+		width: 570px;
+		background: #ededed;
+		position: absolute;
+		z-index: 101;
+		padding: 20px;
+		-moz-box-shadow: 0 0 10px rgba(0,0,0,.4);
+		-webkit-box-shadow: 0 0 10px rgba(0,0,0,.4);
+		-box-shadow: 0 0 10px rgba(0,0,0,.4);
+		border:1px solid #000;
+		}
+		
+	.fb-reveal-modal.small 		{ width: 200px; margin-left: -140px;}
+	.fb-reveal-modal.medium 		{ width: 400px; margin-left: -240px;}
+	.fb-reveal-modal.large 		{ width: 600px; margin-left: -340px;}
+	.fb-reveal-modal.xlarge 		{ width: 800px; margin-left: -440px;}
+	
+	/**
+	
+	.fb-reveal-modal .close-reveal-modal {
+		font-size: 18px;
+		line-height: 18px;
+		position: absolute;
+		top: 1px;
+		right: 1px;
+		color: #fff;
+		text-shadow: 0 -1px 1px rbga(0,0,0,.6);
+		font-weight: bold;
+		cursor: pointer;
+		background:#000;
+		padding:0 4px;
+		} 
+	**/
+		
+	.fb-reveal-modal .close-reveal-modal:hover {
+		text-decoration:none;
+	}
+	
+	.fb-reveal-modal .btn-ok {
+		cursor:pointer;
+	}
+	
+	.fb-reveal-modal .fbScreen {
+		float:left;
+		display:block;
+		width:233px;
+		margin-right:20px;
+	}
+	
+	.fb-reveal-modal .fbScreenTxt {
+		text-align:left;
+		width:360px;
+		display:block;
+		float:left;
+	}
+	
+	.fb-reveal-modal p {
+		margin:8px 0;
+	}
+	
+	.grantCopy {
+		width:315px;
+		float:left;
+		margin:10px 0 0 10px;
+		font-size:14px;
+		text-align:left;
+	}

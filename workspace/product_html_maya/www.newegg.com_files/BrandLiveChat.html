@@ -1,0 +1,1 @@
+var obj=document.getElementById('BrandLiveChat');if(obj!=null){obj.innerHTML="";}

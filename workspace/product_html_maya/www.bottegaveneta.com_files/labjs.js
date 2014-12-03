@@ -1,0 +1,1 @@
+$LAB.script('/resources/bottegaveneta/desktop/js/dist/frameworkLib.min.js?856FED286355421782D4EB0935ACCCFBB857EA6D').wait().script('/resources/bottegaveneta/desktop/js/dist/commonLib.min.js?7AB8C807472B387F549D319F8BABEF1EBBCE8D76').wait().script('/resources/bottegaveneta/desktop/js/dist/itemLib.min.js?727A444341E659405985D1494F237FD80FE71188').wait()

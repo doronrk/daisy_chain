@@ -1,4 +1,0 @@
-//tealium universal tag - utag.191 ut4.0.201407222235, Copyright 2014 Tealium.com Inc. All Rights Reserved.
-try{(function(id,loader,u){u=utag.o[loader].sender[id]={};u.ev={'view':1};u.data={};u.data.sellpoints_id="112";u.map={};u.extend=[];u.send=function(a,b){if(u.ev[a]||typeof u.ev.all!="undefined"){var c,d,e,f;c=[];for(d in utag.loader.GV(u.map)){if(typeof b[d]!="undefined"&&b[d]!=""){e=u.map[d].split(",");for(f=0;f<e.length;f++){u.data[e[f]]=b[d];}}}
-u.data.base_url=u.data.base_url||"//t.sellpoints.com/c/"+u.data.sellpoints_id+"/sp.js";u.s=document.getElementsByTagName("script")[0];u.scr=document.createElement("script");u.scr.type="text/javascript";u.scr.src=u.data.base_url;u.s.parentNode.insertBefore(u.scr,u.s);}}
-utag.o[loader].loader.LOAD(id);})('191','newegg.newegg.com');}catch(e){}

@@ -1,1 +1,0 @@
-function dw_anonc() {return {"id": "XZ3LQ1R+jKWBl0MUt8k", "isNew": true}}

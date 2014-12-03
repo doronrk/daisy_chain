@@ -1,4 +1,0 @@
-/* Script imported from http://www.kay.com/js/ibm/CatalogArea/ProductDisplay.js */
-//* Licensed Materials - Property of IBM
-//* (c) Copyright IBM Corp. 2009 All Rights Reserved
-var currentAngleImgId="productAngleImg0";var currentTabId="Description";function changeThumbNail(angleImgId,imgsrc){if(currentAngleImgId!=""){document.getElementById(currentAngleImgId).className="off";}currentAngleImgId=angleImgId;document.getElementById(angleImgId).className="on";document.getElementById("productMainImage").src=imgsrc;}function setOff(id){document.getElementById(id+"_On").style.display="none";document.getElementById(id+"_Off").style.display="inline";}function setOn(id){document.getElementById(id+"_On").style.display="inline";document.getElementById(id+"_Off").style.display="none";}function selectTab(tabId){setOff(currentTabId);setOn(tabId);currentTabId=tabId;dijit.byId("mainTabContainer").selectChild(dijit.byId(tabId));}

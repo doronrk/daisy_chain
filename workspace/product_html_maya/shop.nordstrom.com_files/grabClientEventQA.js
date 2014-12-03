@@ -1,0 +1,1 @@
+$BV.Internal.define("qa/4094p/grabClientEventQA",[],["exports","jquery.core"],function(a){a.onPageLoad=function(b){if(b==="loaded"){if(($bv("#BVQALiveChatCustom a").length>0)&&($bv(".liveChatCcl a").length>0)){$bv("#BVQALiveChatCustom a").removeAttr("target");$bv("#BVQALiveChatCustom a").attr("href",$bv(".liveChatCcl a").attr("href"))}}}});

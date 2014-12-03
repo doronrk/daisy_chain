@@ -1,0 +1,489 @@
+/*
+  $Id: style.css for base_001 20101215 multimixer $
+  
+  Styleshhet for the base_001 theme of minitemplatesystem.com
+
+  MiniTemplateSystem
+  http://minitemplatesystem.com
+
+  Copyright (c) 2010 minitemplatesystem.com
+
+  Released under the terms and conditions of your purchase agreement from minitemplatesystem.com
+*/
+
+/*
+Please do not modify anything in this fiile. Use the file style_custom.css of the same folder instead
+*/
+
+/* general set up */
+* {outline-width: 0pt; outline-style: none;}
+.bodyWrapper {}
+.bodyWrapper:first-child{display:none;}
+.clear {clear:both}
+a img{ border:none !important; text-decoration:none !important;}
+a:hover {
+	-o-transition-duration: .50s;
+	-o-transition-property: color, background-color;
+	-webkit-transition-duration: .50s;
+	-webkit-transition-property: color, background-color;
+	-moz-transition-duration: .50s;
+	-moz-transition-property: color, background-color; 
+}
+.contentContainer{padding:0;}
+.static_page .contentContainer, #conditions .contentContainer, #privacy .contentContainer, #shipping .contentContainer{padding:0 5px}
+
+.contentText{overflow:hidden;}
+#product_info .contentText, #product_reviews_write .contentText{overflow:visible;}
+
+.contentText table{padding:0}
+
+h1 {padding: 5px 0;margin:5px 0;border-bottom:1px solid;}
+
+#shopping_cart .contentContainer>h2:first-child, #address_book_process .contentContainer>h2:first-child, #account_password .contentContainer>h2:first-child, #account_newsletters h2, #advanced_search .contentContainer>h2:first-child {display:none;}
+
+/* reset */
+span.productSpecialPrice{font-family:inherit}
+td.smallText, span.smallText, p.smallText{font-family:inherit}
+
+/* header */
+#header {height: 100%;}
+#header .ui-widget-header {border-left:0px;border-right:0px;}
+
+#headerShortcuts .ui-widget-header{border-top:none;}
+#headerShortcuts .langFlags {padding-right:5px;}
+#headerShortcuts .langFlags img {vertical-align:middle;}
+
+#headerMenu {line-height:50px;position:relative;z-index:1000;}
+#headerMenu .S-shadowwrap {height:50px;}
+#headerMenu div.ui-widget-header div.ui-widget-header, #headerShortcuts div.ui-widget-header div.ui-widget-header{border:none;}
+#headerMenu .sf-menu li:hover ul,
+#headerMenu .sf-menu li.sfHover ul {top: 52px; /* match menu bar height */}
+#headerMenu ul:first-child .sf-sub-indicator{visibility:hidden;}
+#headerMenu ul:first-child {padding:0px;margin:0px;}
+#headerMenu .search {text-align:center;}
+#headerMenu ul:first-child>li {
+  float:left;
+  min-width:20%;
+  text-align:center;
+  margin:0 0 0 -1px;
+  border-right:1px solid;
+  list-style-type: none;
+  background:none;
+}
+#headerMenu ul:first-child>li>a{padding:0 10px}
+#headerMenu .menu {display:block;}
+#headerMenu ul:first-child>li:first-child {margin:0 -1px 0 -1px;border-left:1px solid;}
+#headerMenu ul:first-child>li:hover {}
+#headerMenu li a {text-decoration:none;}
+
+#headerShortcuts {float: none;margin-top: 0px;line-height:35px;font-weight:normal;}
+#headerShortcuts ul {margin:0px;padding:0 0 0 10px}
+#headerShortcuts li {float:left;list-style-type: none;}
+#headerShortcuts .headcart {text-align:right;}
+
+#headerBanner .grid_24 {position:relative;}
+#headerBanner .banner {float:right;vertical-align:middle;}
+
+#storeLogo {margin: 30px 0;position:absolute;z-index:1100;}
+
+/* footer */
+#footer .S-shadowwrap {position:relative;z-index:999;}
+#footer .ui-widget-header {background-position:top;border-left:0;border-right:0;}
+#footer .outer {margin:10px -1px 0;border:1px solid;}
+#footer ul {margin: 2px 1px;padding:10px 4px;font-weight:normal;height:80px;overflow:hidden;}
+#footer li {margin:0px;padding: 0 0 0 30px;list-style-type: none;}
+#footer ul.last li {text-align:center;padding: 0px;}
+#footer li a, #credits a {text-decoration:none;}
+#credits{padding:10px 0 0 0;font-size:10px;font-weight:normal;text-align:right;}
+
+/* columns*/
+#columnLeft, #columnRight {padding: 5px 0;}
+#columnLeft .infoBoxContainer, #columnRight .infoBoxContainer {margin:0 0 5px 0;}
+#columnLeft .infoBoxHeading, #columnRight .infoBoxHeading, #product_info .infoBoxHeading {padding: 10px 0 10px 5px;}
+#columnLeft .ui-widget-content, #columnRight .ui-widget-content, #index .ui-widget-content, #product_info .ui-widget-content{background-position:center -100px;margin-top:-1px;}
+
+/**************************************************************************************************/
+#index h2, #reviews h2 {margin:0;padding: 5px;text-decoration: none;border-bottom:1px solid;}
+#reviews h2{margin-top: 10px;}
+#index .contentText table, #specials table {border-spacing:5px;}
+#index .contentText table td, #specials td {padding:10px;border:1px solid;
+  -moz-border-radius:3px;
+  -webkit-border-radius:3px;
+  border-radius:3px 3px 3px 3px;
+}
+#index .contentText table td img, #specials .contentText img {padding:10px;}
+#index .contentText table td, #specials td{font-size:12px;}
+#index .contentText table td a, #specials td a{text-decoration:none;}
+#index .contentText table td a:hover, #specials td a:hover{text-decoration:underline;}
+#index .contentText table.productListingHeader, #index .contentText table.productListingData {border-collapse:collapse;}
+#index .contentText table.productListingHeader td {border:0px;background:none;}
+#index .productListTable tr td, #advanced_search_result .productListTable tr td{border:0px;padding:5px;}
+#index .productListTable tr td img, #advanced_search_result .productListTable tr td img{padding:0;}
+#index .productListTable tr td:hover{border:0px;}
+#index .productListTable tr td a{font-size:11px;}
+/**************************************************************************************************/
+/**************************************************************************************************/
+#products_new table {border-collapse: collapse;}
+#products_new td, #shopping_cart .contentText table tr td {border-bottom:1px solid;}
+#products_new tr:first-child, #shopping_cart .contentText table  {border-top:1px solid;}
+#products_new td {padding:10px 0;}
+#products_new .smallText{text-align:center;}
+#shopping_cart .contentText table tr td  {vertical-align:middle;padding: 0 20px 0 0;}
+#shopping_cart .contentText table table tr:hover {background:rgba(0, 0, 0, 0.0); /* don't change this */}
+#shopping_cart .contentText table table tr td, #shopping_cart .contentText table table  {border-bottom:0px;border-top:0px;}
+/**************************************************************************************************/
+/**************************************************************************************************/
+.buttonSet, .stockWarning, #create_account p, #address_book .contentContainer>p{overflow:hidden;padding:15px 10px;margin:10px 0 0 0;border:1px solid;
+  -moz-border-radius:3px;
+  -webkit-border-radius:3px;
+  border-radius:3px 3px 3px 3px;
+}
+#product_info .buttonSet, #product_reviews .buttonSet, #product_reviews_info .buttonSet, #product_reviews_write .buttonSet{margin:20px 0 0 0;}
+#account_edit .buttonSet{margin-bottom:-5px;border-left:none;border-right:none;border-bottom:none;}
+/**************************************************************************************************/
+#product_info h1:first-child, #product_reviews h1:first-child, #product_reviews_info h1:first-child, #product_reviews_write h1:first-child {
+  margin:0;
+  border:none;
+}
+
+#product_info .description, #product_reviews_info .contentText, #product_reviews_write .contentText{
+  padding:0 10px;
+  text-align:justify;
+  overflow:auto;
+}
+
+#product_info .description p:first-child{margin-top:0px;}
+
+#piGal .outer{margin:0; padding:0;} /* possible to add a padding */
+#piGal ul, piGal li {margin:0;padding:0;}
+#piGal ul.thumbs{margin-top:5px;}
+
+#piGal img {
+  -webkit-box-shadow: 0px 0px 0px #000;
+  -moz-box-shadow: 0px 0px 0px #000;
+  border:1px solid;
+}
+
+#product_info .options{
+  margin:15px 10px 10px 10px;
+  border:1px solid;
+  -moz-border-radius:3px;
+  -webkit-border-radius:3px;
+  border-radius:3px 3px 3px 3px;
+  overflow:hidden;
+}
+
+#product_info .options p{padding: 0 10px;}
+
+#product_info .options p:first-child{
+  margin:0;
+  padding: 10px;
+  text-decoration: none;
+  border-bottom: 1px solid;
+  font-size:14px;
+  font-weight:bold;
+}
+
+#product_info .ui-widget-content{padding: 10px 0;}
+/**************************************************************************************************/
+/**************************************************************************************************/
+/* boxes style 1*/
+#login .contentContainer, #checkout_shipping .contentContainer, #checkout_payment .contentContainer, #checkout_shipping_address .contentContainer, #checkout_payment_address .contentContainer{
+  margin:10px 5px 0 5px;
+  border:1px solid;
+  -moz-border-radius:3px;
+  -webkit-border-radius:3px;
+  border-radius:3px 3px 3px 3px;
+}
+
+#login .contentContainer h2, #checkout_shipping .contentContainer h2, #checkout_payment .contentContainer h2, #checkout_shipping_address .contentContainer h2, #checkout_payment_address .contentContainer h2{
+  margin:0px;
+  padding:10px;
+  border-bottom: 1px solid;
+  border-top: 1px solid;
+  text-decoration:none;
+}
+
+#login .contentContainer h2, #checkout_shipping .contentContainer h2:first-child, #checkout_payment .contentContainer h2:first-child, #checkout_shipping_address .contentContainer h2:first-child, #checkout_payment_address .contentContainer h2:first-child{
+  border-top:0px;
+}
+/* boxes style 1*/
+/**************************************************************************************************/
+
+#checkout_shipping .infoBoxContainer, #checkout_payment .infoBoxContainer, #checkout_shipping_address .infoBoxContainer, #checkout_payment_address .infoBoxContainer, #address_book .infoBoxContainer{
+  margin-bottom:10px;
+}
+
+#address_book .infoBoxContainer{
+  margin-top:5px;
+}
+
+#checkout_shipping .contentText, #checkout_payment .contentText, #checkout_shipping_address .contentText, #checkout_payment_address .contentText, #address_book .contentText, #address_book_process .contentText, #account_password .contentText, #account_newsletters .contentText, #account_notifications .contentText, #account_history .contentText table, #account_history_info .contentText, #advanced_search .contentText, #password_forgotten .contentText, #create_account_success .contentText{
+  padding: 5px 10px;
+}
+
+#advanced_search .contentText{
+  padding: 5px 15px 5px 10px;
+}
+
+ #address_book_process .contentText, #account_password .contentText, #account_newsletters .contentText, #advanced_search .contentText, #password_forgotten .contentText, #create_account_success .contentText{
+  margin-top:10px;
+}
+
+#login .contentText{padding: 0px 10px;}
+
+/**************************************************************************************************/
+/* boxes style 2*/
+#create_account .contentText, #checkout_confirmation .contentText, #account .contentText, #account_edit .contentText, #address_book .contentText, #address_book_process .contentText, #account_password .contentText, #account_newsletters .contentText, #account_notifications .contentText, #account_history_info .contentText, #advanced_search .contentText, #password_forgotten .contentText, #create_account_success .contentText, #account_history .contentText table{
+  border:1px solid;
+  -moz-border-radius:3px;
+  -webkit-border-radius:3px;
+  border-radius:3px 3px 3px 3px;
+}
+
+
+#create_account .contentContainer h2, #checkout_confirmation .contentContainer h2, #account .contentContainer h2, #account_edit .contentContainer h2, #address_book .contentContainer h2, #account_notifications .contentContainer h2, #account_history .contentContainer h2, #account_history_info .contentContainer h2{
+  padding: 10px;
+  text-decoration: none;
+  border:1px solid;
+  -moz-border-radius:3px;
+  -webkit-border-radius:3px;
+  border-radius:3px 3px 3px 3px;
+}
+
+#create_account .contentContainer h2, #checkout_confirmation .contentContainer h2, #account .contentContainer h2, #account_edit .contentContainer h2, #address_book .contentContainer h2, #account_notifications .contentContainer h2, #account_history .contentContainer h2, #account_history_info .contentContainer h2{
+  border-bottom:none;
+  margin-bottom:-3px;
+}
+
+#create_account .fieldKey{padding-left:10px}
+#account .accountLinkList li{overflow:hidden}
+
+#advanced_search .contentText table{padding:10px;margin:10px 0;border:1px solid;
+  -moz-border-radius:3px;
+  -webkit-border-radius:3px;
+  border-radius:3px 3px 3px 3px;
+}
+#advanced_search .contentText table td{padding:5px 0;}
+
+#account_history_info span.contentText{border:0px;}
+
+#create_account .contentText, #checkout_confirmation .contentText, #account .contentText, #account_edit .contentText, #address_book .contentText, #account_notifications .contentText, #account_history .contentText table, #account_history_info .contentText{border-top:none;}
+
+#checkout_confirmation div.contentText:last-child{border:none;margin-top:20px;}
+
+#account_history .contentContainer h2{border-bottom:none;margin-bottom:-8px;}
+
+#create_account span.inputRequirement, #address_book_process span.inputRequirement, #account_edit div.inputRequirement, #account_password span.inputRequirement{padding:10px;}
+
+#checkout_success .productsNotifications{padding:10px 20px;border:1px solid;
+  -moz-border-radius:3px;
+  -webkit-border-radius:3px;
+  border-radius:3px 3px 3px 3px;
+}
+
+/*reviews*/
+#reviews td:first-child {padding-left:40px;}
+#reviews td:last-child {padding:10px 10px 10px 30px;}
+#product_reviews_info h2{padding:0 5px 10px 5px;}
+#product_reviews_write .contentText{margin-left:5px;border:1px solid;
+  -moz-border-radius:3px;
+  -webkit-border-radius:3px;
+  border-radius:3px 3px 3px 3px;
+}
+#product_reviews_write .contentText td:last-child{padding:0 20px 0 10px;
+  -moz-border-radius:3px;
+  -webkit-border-radius:3px;
+  border-radius:3px 3px 3px 3px;
+}
+#product_reviews_write .contentText tr:first-child td, #product_reviews_write .contentText tr:last-child td{padding-top:5px;padding-bottom:5px;}
+#product_reviews_write .contentText tr:first-child td:last-child{font-size:12px;font-weight:bold;}
+
+/* inputs */
+input, textarea{
+  border:1px solid;
+  padding: 5px;
+  margin:0px;
+  font-size:14px;
+}  
+input{
+  height:25px;
+  line-height:25px;
+  width:200px;
+  -moz-border-radius:3px;
+  -webkit-border-radius:3px;
+  border-radius:3px 3px 3px 3px;
+} 
+input[type=radio], input[type=checkbox] {
+  width:25px; vertical-align:middle; height:auto; border:none; padding-top:0; padding-bottom:0;
+} 
+#shopping_cart input[type=text], #product_info input[type=text] {
+  text-align:center; 
+  margin:0 5px 0 0;
+  width:20px;
+  height:15px;
+  line-height:15px;
+  font-size:11px;
+}
+#header .search input {
+  line-height:25px;
+  height:25px;
+  font-weight:bold;
+  font-size:11px;
+  color:rgba(0, 0, 0, 0.7);
+  border:1px solid;
+  padding:0 0 0 5px;
+  width:190px;
+}
+#contact_us textarea{width:auto;}
+#checkout_shipping textarea, #checkout_payment textarea, #advanced_search input{margin-left:-6px;} 
+#product_reviews_write textarea{font-size:12px;}  
+
+/* advanced search box in left column */
+#columnLeft form[name="quick_find"] input[type="text"], #columnRight form[name="quick_find"] input[type="text"]{height:20px;line-height:20px;width:75% !important; }
+#columnLeft input[type="image"], #columnRight input[type="image"]{height:auto; width:auto; vertical-align:middle; border:none;}
+
+/* mini emplate system - product and image slider */
+.productSlider ul, .imageSlider ul{overflow:hidden}
+.productSlider, .imageSlider{margin: 5px 0 0 0;}
+.productSlider ul, .productSlider li, .imageSlider ul, .imageSlider li{margin:0; padding:0;}
+
+/* mini emplate system - product slider */
+.productSlider h2{border-bottom:none !important; background: none !important; padding:0 !important; padding-top:5px !important; padding-bottom:5px !important; margin:0; font-weight:normal; font-size:16px;}
+.productSlider p{margin:0px;}
+.productSlider img{margin: 10px 0;}
+.productSlider div.inner{margin:0; text-align:center;}
+.productSlider div.content{color:inherit;}
+.productSlider div.inner{
+  -moz-border-radius:3px;
+  -webkit-border-radius:3px;
+  border-radius:3px 3px 3px 3px;
+}
+.productSlider div.inner:hover{
+	-o-transition-duration: .50s;
+	-o-transition-property: border-color;
+	-webkit-transition-duration: .50s;
+	-webkit-transition-property: border-color;
+	-moz-transition-duration: .50s;
+	-moz-transition-property: border-color; 
+}
+
+.productSlider div.boxHeading{
+  text-align:right;
+  padding:5px;
+}
+.productSlider div.boxHeading h3.name{margin:0px; padding:0px; font-size:12px;}
+.productSlider p.description{padding: 10px 10px 10px 15px;text-align:left;}
+.productSlider div.boxFooter{padding:5px 2px;border-top:1px solid;border-top-color:inherit;}
+.productSlider div.boxFooter span.space{margin:2px;}
+
+/* correction of double adding class ui-button-text in left set sliders)*/
+.productSlider .ui-button-text .ui-button-text{padding:0;}
+.productSlider .ui-button-text .ui-icon{display:none;}
+
+/* mini emplate system - image slider */
+.imageSlider img{margin:0;}
+.imageSlider div.inner{margin:0; text-align:center; color:inherit;}
+.imageSlider div.inner:hover{
+	-o-transition-duration: .50s;
+	-o-transition-property: border-color;
+	-webkit-transition-duration: .50s;
+	-webkit-transition-property: border-color;
+	-moz-transition-duration: .50s;
+	-moz-transition-property: border-color; 
+}
+.imageSlider div.sliderText{padding:10px 20px 0; font-family:Arial, Helvetica, saLucida Grande, Lucida Sans, Verdana, Arial, sans-serif;}
+.imageSlider .sliderText a:hover{text-decoration:none}
+.imageSlider .sliderText h2{border:none !important; padding:3px 0 !important; margin:0 0 10px 0 !important; font-size:18px; font-weight:normal}
+#index .imageSlider .sliderText h2{ background:none !important;}
+.imageSlider .sliderText p{ text-align:justify; font-size:12px; line-height:1.4; margin:0px; padding:0px; }
+
+/* mini emplate system - pager and auto control */
+.sliderPagerS, .sliderAutoS { 
+  padding:15px 0;
+  text-align:right;
+  color:inherit;
+}
+.productSlider .sliderPagerS.mtsCss-content, .productSlider .sliderAutoS.mtsCss-content{background:none}
+.imageSlider .sliderPagerS.mtsCss-content, .imageSlider .sliderAutoS.mtsCss-content{background:none}
+
+.sliderPagerS .pager-link, .sliderAutoS .bx-start{
+  padding:10px;
+  margin-right:2px;
+  font-size:14px;
+  text-decoration:none;
+  color:inherit;
+}
+.sliderPagerS .pager-link:hover, .sliderAutoS .bx-start:hover{font-weight:normal;}
+.sliderPagerS .pager-active{font-weight:bold; font-size:18px;}
+
+/* sliding captions addapted from css example by Chris Coyier http://css-tricks.com/slide-in-image-captions */
+.imageSlider .figure { 
+  display: block; 
+  position: relative; 
+  /*float: left;*/
+  overflow: hidden; 
+  /*margin: 0 20px 20px 0;*/
+  margin: 0px;
+}
+.imageSlider .figcaption.sliderText {
+  /*padding:0;*/
+}
+.imageSlider div.figcaption { 
+  position: absolute; 
+  padding: 10px; 
+  opacity: 0;
+  filter:Alpha(Opacity=0);
+  -webkit-transition: all 0.6s ease;
+  -moz-transition:    all 0.6s ease;
+  -o-transition:      all 0.6s ease;
+}
+.imageSlider .figure:hover .figcaption {opacity: 1;filter:Alpha(Opacity=100);}
+
+.imageSlider .figcaption h2, .imageSlider .figcaption h2 a{color: #ddd; }
+.imageSlider .figcaption h2 a:hover{color: #fff; }
+.imageSlider .figcaption p {color: #fff;}
+
+.imageSlider .figure:before { 
+  /*content: ""; */
+  position: absolute; 
+  font-weight: 800; 
+  text-shadow: 0 0 5px white;
+  text-align: center;
+  font-size: 14px;
+  -moz-transition: all 0.6s ease;
+  opacity: 0.75;
+  filter:Alpha(Opacity=75);
+  padding:10px;	
+}
+
+.imageSlider .figure:hover:before {opacity: 0;filter:Alpha(Opacity=0);}
+
+.imageSlider .cap-left:before {  bottom: 10px; left: 10px; }
+.imageSlider .cap-left .figcaption { bottom: 0; left: -30%; }
+.imageSlider .cap-left:hover .figcaption { left: 0; }
+
+.imageSlider .cap-right:before { bottom: 10px; right: 10px; }
+.imageSlider .cap-right .figcaption { bottom: 0; right: -30%; }
+.imageSlider .cap-right:hover .figcaption { right: 0; }
+
+.imageSlider .cap-top:before { top: 10px; left: 10px; }
+.imageSlider .cap-top .figcaption { left: 0; top: -30%; }
+.imageSlider .cap-top:hover .figcaption { top: 0; }
+
+.imageSlider .cap-bottom:before { bottom: 10px; left: 10px; }
+.imageSlider .cap-bottom .figcaption { left: 0; bottom: -30%;}
+.imageSlider .cap-bottom:hover .figcaption { bottom: 0; }
+
+/* breadcrumb */
+#bread_mts{margin:5px 0 0 0}
+#bread_mts .inner{padding:5px;}
+#bread_mts ul, #bread_mts li{padding:0; margin:0;}
+#bread_mts li{list-style-type:none; float:left;}
+#bread_mts li a{text-decoration:none;}
+#bread_mts li a, #bread_mts li span{display:block; float:left;}
+#bread_mts span{padding:0 2px;}
+
+/* fullwidth settings */
+.fullWidth{margin:0 -10px; padding:0 10px; overflow:hidden}
+.fullWidth .productSlider, .fullWidth .imageSlider{margin: 5px 0 0 0;}

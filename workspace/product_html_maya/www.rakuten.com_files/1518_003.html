@@ -1,0 +1,79 @@
+_mf_tag_1518 = {
+  "init": function() {
+    var id = 'mf_div';
+    var div = this.create_element(document, ['div', 'id', id]);
+    if (div) {
+      div.style.display = "none";
+      var body = document.getElementsByTagName('body')[0].firstChild;
+      if(body) body.parentNode.insertBefore(div, body);
+      var mf_query_string = this.find_our_tag();
+      var mf_piggy_string = "";
+      var referrer = "&referrer=" + encodeURIComponent(location.href);
+      if (mf_query_string.length > 0) mf_piggy_string = "?" + mf_query_string;
+      if (mf_query_string.length > 0) mf_query_string = "&" + mf_query_string;
+      var iframe = '<' + 'iframe src="//tags.mediaforge.com/pix/1518?type=pos' + mf_query_string + referrer + '" width="0" height="0"></iframe>';
+      var fb_script = document.createElement('script');
+      if (fb_script) {
+        fb_script.setAttribute('type', 'text/javascript');
+        fb_script.src = "//tags.mediaforge.com/js/1453" + mf_piggy_string;
+        if (body) body.parentNode.insertBefore(fb_script, body);
+      }
+      this.inner_html(id, iframe);
+      //var guid = this.guid();
+      //this.outer_guid = guid;
+      //var statStart = this.create_element(document, ['img', 'id', 'statStart', 'src', '//stats.mediaforge.com/stat/js_timing?mid=1518&guid=' + guid + '&mode=start']);
+
+      //if (body) body.parentNode.insertBefore(statStart, body);
+      this.set_timeout(3000);
+    }
+  },
+  "create_element": function(doc, def, parent) {
+    var el = null;
+    if(typeof doc.createElementNS != "undefined")
+    el = doc.createElementNS('http://www.w3.org/1999/xhtml', def[0]);
+    else if(typeof doc.createElement != "undefined")
+    el = doc.createElement(def[0]);
+    if (!el) return false;
+    for(var i = 1; i < def.length; i++)
+    el.setAttribute(def[i++], def[i]);
+    if(parent) parent.appendChild(el);
+    return el;
+  },
+  "set_timeout": function(t) {
+    this.timeout = setTimeout('timeout_mf_1518()', t ? t : 3000);
+  },
+  "inner_html": function(id, html) {
+    document.getElementById(id).innerHTML = html;
+  },
+  "find_our_tag": function() {
+    var query_string = "";
+    var scripts = document.getElementsByTagName('script');
+    for (var script_index = 0; script_index < scripts.length; script_index++) {
+      script_name = scripts[script_index].src;
+      if (script_name.indexOf("tags.mediaforge.com") != -1) {
+        var index = script_name.indexOf("?");
+        if (index > -1) {
+          query_string = script_name.substr(index + 1);
+          break;
+        }
+      }
+    }
+    return query_string;
+  },
+  "S4": function() {
+    return (((1+Math.random())*0x10000)|0).toString(16).substring(1);
+  },
+  "guid": function() {
+    return (this.S4()+this.S4()+"-"+this.S4()+"-"+this.S4()+"-"+this.S4()+"-"+this.S4()+this.S4()+this.S4());
+  }
+};
+
+function timeout_mf_1518() {
+  var t = _mf_tag_1518.timeout;
+  if(t) _mf_tag_1518.inner_html('mf_div', '');
+  //var statEnd = _mf_tag_1518.create_element(document, ['img', 'id', 'statEnd', 'src', '//stats.mediaforge.com/stat/js_timing?mid=1518&guid=' + _mf_tag_1518.outer_guid + '&mode=end']);
+  //var body = document.getElementsByTagName('body')[0].firstChild;
+  //if (body) body.parentNode.insertBefore(statEnd, body);
+}
+
+_mf_tag_1518.init();

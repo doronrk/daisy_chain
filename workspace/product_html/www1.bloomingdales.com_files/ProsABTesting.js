@@ -1,1 +1,0 @@
-define([],function(){var c=[["E","cqcmio1|cmio50|prodrec_pdpza|cmio"],["M","cqcmio1|cq50|prodrec_pdpza|cquotient"],["6","cqcmio1|cmio50|prodrec_bagza|cmio"],["N","cqcmio1|cq50|prodrec_bagza|cquotient"]];return c});

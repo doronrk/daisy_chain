@@ -1,0 +1,44 @@
+window.onerror = function( ) { return true; }
+var sirefurl = top.document.referrer;
+var sipageurl = new String( top.document.URL );
+if(sirefurl != '' ||sipageurl.search(/sisearchengine=/i)>=0  )
+{ if((sipageurl.split('/')[2] != sirefurl.split('/')[2])){ 
+var url = '//dms.netmng.com/si/CM/Tracking/ClickTracking.aspx?siclientid=3207&jscript=0';
+var proto = window.location.protocol.toLowerCase();
+if(proto=='https:') url = proto + url;
+else url = 'http:' + url;
+var now = new Date();
+url += '&timecode=' + now.getTime();
+if(sirefurl!=null) url += '&sirefurl=' + escape(sirefurl);
+if(sipageurl!=null) url += '&sipageurl=' + escape(sipageurl);
+var siimage = new Image( );
+siimage.src = url;
+}}
+
+//Begin 3rd party tracking scripts
+
+ function DeliverThirdPartyPixels(){
+ var si_pageurl = new String( top.document.URL ).toLowerCase();
+if (si_pageurl.indexOf('sitrackingid') > 0){
+ }else{
+if( si_pageurl.indexOf('sisearchengine') > 0){ 
+}else{
+};
+};
+}
+DeliverThirdPartyPixels();
+(function() { 
+  var h = 'com-anntaylor.netmng.com'; 
+  var a = '1528'; 
+  var t = document.createElement('script'); 
+  t.type = 'text/javascript'; t.async = true; 
+  var p = 'https:'==document.location.protocol?'https://':'http://';
+  var m = document.referrer.match(/https?:\/\/([a-z]+\.[a-z\.]+)/i); 
+  var r = (m && m[1] != document.location.hostname) ? ('&ref=' + escape(document.referrer)) : ''; 
+  t.src = p + h + '/?async=1&aid=' + a + r; 
+  var s = document.getElementsByTagName('script')[0]; 
+  s.parentNode.insertBefore(t, s); 
+})();
+
+//End 3rd party tracking scripts
+

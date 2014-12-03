@@ -1,0 +1,1 @@
+window._vsq = window._vsq || []; window._vsq.push(['vsOpts', {site: 'gestore', vip: 'ssbcvipmw02.rightnowtech.com', poolId: '4297:3', vsEnabled: true, cacheDomain: 'geappliances.widget.custhelp.com'}]);

@@ -1,1 +1,0 @@
-GarmentSpecs=false;

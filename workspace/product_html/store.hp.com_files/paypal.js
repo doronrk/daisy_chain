@@ -1,3 +1,0 @@
-
-(function(d,s){var resources={checkout:{name:"checkout-js",src:"https://www.paypalobjects.com/js/external/checkout.min.js"}};function load(name,src,callback){var js,ref=d.getElementsByTagName('script')[0];if(!d.getElementById(name)){js=d.createElement(s);js.id=name;js.async=true;js.src=src;js.onload=callback;ref.parentNode.insertBefore(js,ref);}}
-load(resources.checkout.name,resources.checkout.src);}(document,"script"));

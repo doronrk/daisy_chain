@@ -1,0 +1,1355 @@
+/********************************************************************
+This is the main stylesheet for GEAppliances.com, as of the early 2012
+redesign.  This sheet handles basic page layout, baseline font 
+sizing, left nav elements, ul's, colors, and other widely-used items.
+
+********************************************************************/
+
+html, body { height:100%; }
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: arial,helvetica,sans-serif;
+	font-size: 11px;
+	color: #555555;
+	text-align: center;
+	background-color: white;
+}
+
+@media print {
+	body { color:#000; }
+}
+
+
+#document {
+	width: 965px; /* sets overall content width */
+	background:#fff;
+	margin: 3px auto 0 auto;
+	text-align: left;
+	table-layout:auto;
+}
+
+.newContainer {
+	width: 965px;
+	margin: 0 auto 0 auto;
+	text-align: left;
+	table-layout: auto;
+}
+
+body#popBody {
+	background:#fff;
+	text-align:left;
+}
+
+.mainContain {
+	width: 965px; 
+	background: transparent; 
+	margin: 0 auto 0 auto; 
+	text-align: left; 
+	table-layout: auto;
+}
+
+/* Specify the position and layering for the content that needs to appear in front of the background image. Must have a higher z-index value than the background image. Also add some padding to compensate for removing the margin from the 'html' and 'body' tags. */
+
+#content {position:relative; z-index:2; padding:10px;}
+
+
+/****************** IMPORTANT DEFAULTS *******************/
+
+/* Zeroing element margins/padding */
+p, h1, h2, h3, h4, h5, h6, form, ul, ol, li {
+	margin: 0;
+	padding: 0;
+}
+
+p { margin-bottom:1em; }
+
+/* Image defaults */
+img {	
+	border:0;
+	display:inline;
+}
+
+/* Input adjustments */
+input, select, textarea  {
+	font-size: 100%;
+	color:#333333;
+	font-family:arial,helvetica,sans-serif;
+	vertical-align:middle;
+}
+input[type="text"], select, textarea { border:1px solid #a5acb2; }
+input[type="text"] { width:120px; }
+
+div.button a,
+button,
+input.button {
+	color:#fff !important;
+	text-decoration:none;
+	font-weight:bold;
+	font-size:11px;
+	border:0;
+	cursor:pointer;
+	padding:2px 8px 2px;
+	background-color: #76b900;
+	color: white;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	text-align: center;
+}
+div.button a:hover,
+input.button:hover {
+	background-color: #67a002;
+}
+div.button { margin-top:4px; }
+div.button a { position: relative; }
+
+input.short,
+select.short,
+textarea.short { width: 75px; }
+
+input.medium,
+select.medium,
+textarea.medium { width: 150px; }
+
+input.medium2,
+select.medium2,
+textarea.medium2 { width: 200px; }
+
+input.long,
+select.long,
+textarea.long { width: 300px; }
+
+
+/* table defaults */
+table {
+	width:100%;
+	table-layout:fixed;
+}
+tr { vertical-align:top; }
+
+/* heading defaults */
+h1 { font-size:22px; color: #000; }
+h2 { font-size:18px; color: #000; }
+h2 span.lighterPreheading { color:#939393; }
+h3 { font-size:14px; color: #000; }
+h4, h5, h6 { font-size: 100%; color: #000; }
+
+/* list default and variations */
+ul  {
+	list-style-type: none;
+}
+ul li  {   /* default is orange checkered diamond image */
+	list-style-type: none;
+	background: url('http://www.geappliances.com/images/common/bulletOrangeCheckered.gif') 0 4px no-repeat;
+	padding: 0 0 1px 9px;
+}
+ul.dot {} /* grey dot list bullet */
+ul.dot li {
+	background: url('http://www.geappliances.com/images/dotBul.gif') 0 4px no-repeat;
+	padding: 0 0 1px 8px;
+}
+
+ol { margin-left:30px; }
+ol li { padding-bottom:2px; }
+
+ul.spaced li, ol.spaced li { padding-bottom:6px; }
+
+/****************** END IMPORTANT DEFAULTS *******************/
+
+
+
+
+/******************* LINK COLORS *******************/
+
+a, 
+a:link, 
+a:active,
+a:visited { 
+	color:#459fd3; 
+	text-decoration: none;
+}
+a:hover { 
+	color:#126798;
+	text-decoration: underline;
+}
+
+img.seethru {
+	background-color: #459fd3;
+	vertical-align: middle;
+}
+a:visited img.seethru,
+a:hover img.seethru { background-color:#3888b6; }
+
+/******************* END LINK COLORS *******************/
+
+/****************** UTILITY *******************/
+
+/* Fix for the Pinterest AddThis button...reducing iframe width */
+a.addthis_button_pinterest_pinit iframe {
+	width: 50px!important;
+	overflow: hidden;
+}
+
+@media print {
+	.hideFromPrinting { 
+		display: none; 
+	}
+}
+
+.floatLeft {
+	float: left;
+}
+
+.floatRight {
+	float: right;
+}
+.bold { font-weight:bold; }
+
+.italic { font-style:italic; }
+
+.highlight { color:#459fd3; }
+.highlightRed { color:#459fd3; }
+
+.strokeBox { border: 1px solid #c0bab3; }
+
+.strokeT { border-top: 1px solid #c0bab3; }
+tr.strokeT td { border-top: 1px solid #c0bab3; }
+.strokeB { border-bottom: 1px solid #c0bab3; }
+tr.strokeB td { border-bottom: 1px solid #c0bab3; }
+.strokeR { border-right: 1px solid #c0bab3; }
+.strokeL { border-left: 1px solid #c0bab3; }
+
+tr.odd td,
+tr.faqOdd td { background:#ebe9e7; }
+tr.even td,
+tr.faqEven td { background:#fff; }
+
+.formTable { table-layout:auto; }
+.formTable input { width:auto; }
+.fieldName { padding: .3em 2px 0 8px; }
+.required  { background: url("http://www.geappliances.com/images/common/reqBul.gif") 0px .8em no-repeat; }
+input.short,
+select.short,
+textarea.short { width: 75px; }
+input.medium,
+select.medium,
+textarea.medium { width: 150px; }
+input.medium2,
+select.medium2,
+textarea.medium2 { width: 200px; }
+input.long,
+select.long,
+textarea.long { width: 300px; }
+
+
+.clearFloat { clear:both; } /* ex. <div class="clearFloat"><!-- do not remove --></div> */
+
+.doubleBorder {
+	background:#fff !important;
+	padding:1px;
+	border: 0;
+}
+a:visited .doubleBorder,
+a:hover .doubleBorder { border: 0;}
+
+.imageBlock, .imageBlockReversed { table-layout:auto; }
+.imageBlock .imageCell,
+.imageBlock .textCell,
+.imageBlockReversed .imageCell,
+.imageBlockReversed .textCell { padding-bottom:15px; }
+.imageBlock .imageCell,
+.imageBlockReversed .imageCell { width:1%; /* will expand appropriately */ }
+.imageBlock .textCell { padding-left:10px; }
+.imageBlockReversed .textCell { padding-right:10px; }
+
+.gradientBox {
+	margin-top:20px;
+	padding:11px 14px;
+}
+.gradientBoxGreen {
+	background: bottom left repeat-x;
+	margin-top:20px;
+	padding:11px 14px;
+}
+.gradientBox h3 {
+	color:#000;
+	padding-bottom:7px;
+}
+.gradientBox .contentBox,
+.gradientBoxGreen .contentBox {
+	padding:8px;
+	background:#fff;
+}
+.gradientBox .contentBox h3,
+.gradientBoxGreen .contentBox h3 {
+	color:#827668;
+	padding-bottom:0;
+}
+.gradientBox .contentBox li,
+.gradientBoxGreen .contentBox li { _position:relative; /* fixes background rendering bug. "_" only affects IE6 and below */ }
+.gradientBox {
+	background-image: url('http://www.geappliances.com/images/common/gradient_bottom_gray.gif');
+}
+.gradientBox .contentBox { border-color:#a7a19a; }
+.gradientBoxGreen {
+	background-image: url('http://www.geappliances.com/images/common/gradient_bottom_green.gif');
+	background-repeat: repeat;
+}
+.gradientBoxGreen .contentBox { border-color:#a9ce90; }
+
+.contentBox ul {
+	position: relative;
+	margin: 10px 0 5px 0;
+}
+
+.contentBox ul li {
+	margin: 5px 0 0 10px;
+}
+
+.checkboxContainer { text-indent:-23px; }
+.checkboxContainer.parent {
+	font-weight:bold;
+	padding-top:8px;
+	padding-left:23px;
+}
+.checkboxContainer.child {
+	padding-top:1px;
+	padding-left:46px;
+}
+
+.capsuleBox {
+	table-layout:auto;
+	display:inline-table;
+	_display:inline; /* only affects IE6 and below */
+	width:150px;
+	height:40px;
+}
+.capsuleBox td {
+	vertical-align:middle;
+	background:url("http://www.geappliances.com/images/common/capsule_bg.gif") no-repeat;
+}
+.capsuleBox .leftCell {
+	background-position: top left;
+	width:1%; /* will expand appropriately */
+}
+.capsuleBox .leftCell img { margin:0 9px 0 11px; }
+.capsuleBox .rightCell {
+	background-position: top right;
+	padding-right:10px;
+}
+.capsuleBox.wide { width:205px; }
+
+.emailPrintLinks {
+	float:right;
+	padding-top:5px;
+}
+span.topLink {
+	float:right;
+	font-size:10px;
+}
+
+.captionBox,
+.kitchenGalleryTopBar {
+	border-top:1px solid #fff;
+	border-bottom:1px solid #fff;
+	background:#666666;
+	color:#fff;
+}
+.captionBox a, 
+.captionBox a:link, 
+.captionBox a:active, 
+.captionBox a:visited,
+.kitchenGalleryTopBar a, 
+.kitchenGalleryTopBar a:link, 
+.kitchenGalleryTopBar a:active, 
+.kitchenGalleryTopBar a:visited { color:#FFC47F; }
+.captionBox a:hover,
+.kitchenGalleryTopBar a:hover { color:#FCE1C1; }
+.captionBox { padding:7px; }
+.kitchenGalleryTopBar {
+	font-weight:bold;
+	text-align:right;
+}
+.kitchenGalleryTopBar img { vertical-align:middle; }
+
+.fineprint { font-size:10px; }
+
+
+h3.subHeading {
+	background:top left url('http://www.geappliances.com/images/common/sub_heading_top.gif') no-repeat;
+	margin:20px 0 15px;
+	
+}
+h3.subHeading span.subHeadingWrapper {
+	display:block;
+	background:bottom left url('http://www.geappliances.com/images/common/sub_heading_bottom.gif') no-repeat;
+	padding:4px 4px 4px 0;
+	border-bottom: 1px dotted #A8A8A8;
+}
+h3.subHeading img { vertical-align:middle; }
+
+.availableModel {
+	line-height:140%;
+	text-indent:-22px;
+	margin:2px 0 2px 22px;
+}
+
+.availableModel img {
+	border:0;
+	padding:2px 3px 2px 0;
+	margin-right:1px;
+	vertical-align:middle;
+}
+
+.clear {
+	clear: both;
+}
+
+.green {
+	color: #76b900;
+}
+
+/******************* END UTILITY *******************/
+
+
+
+
+/****************** TOOLTIP *******************/
+
+/**** Required For Tooltip Funcitonality ****/
+.tooltipDiv	{	
+	visibility: hidden;
+	position: absolute;
+	top:0;
+	left:0;
+	z-index:1000;
+}
+
+/**** Presentation ****/
+.tooltipDiv	{
+	border:1px solid #fff;
+	background:#fff;
+	padding:0;
+}
+.tooltipDiv .wrapper {
+	border:solid #459fd3;
+	border-width:3px 4px 6px;
+	padding:12px 10px;
+}
+.tooltipDiv .tooltipTitle {
+	font-weight:bold;
+	text-transform:uppercase;
+	padding-bottom:10px;
+	table-layout:auto;
+}
+.tooltipDiv .tooltipTitle .button {
+	text-align:right;
+	margin-top:0;
+	padding-left:10px;
+}
+.tooltipDiv.arrowTooltip {
+	border:1px solid #fff;
+	padding:0;
+}
+
+/****************** END TOOLTIP *******************/
+
+
+
+/******************* jQuery CLASSES *******************/
+/*
+  Classes in this section are defined (entirely or in part) in '/scripts/jquery.init.js'
+  */
+
+.roundedCorners {/* NOTE - can only be used on elements with solid background colors */
+	padding:10px;
+/* jQuery - rounded corners with a 10px radius */
+}
+
+/******************* END jQuery CLASSES *******************/
+
+
+
+
+
+/******************* PAGINATION *******************/
+.pagination {
+	line-height: 1.5em; /* hack so IE doesn't hide the
+	                       bottom border on the .box items */
+}
+.pagination a.box:link,
+.pagination a.box:visited {
+	text-decoration: none;
+	color: #827668;
+}
+.pagination .box {
+	border: solid 1px #8b8782;
+	padding: 0 0.25em;
+}
+.pagination a.box:hover {
+	border-color: #aba7a2;
+	color: #a29688;
+}
+.pagination .current,
+.pagination a.current:link,
+.pagination a.current:visited {
+	font-weight: bold;
+	background-color: #8b8782;
+	color: white;
+}
+
+.paginationFloatingRight {
+	padding-top: 25px;
+	float: right;
+	text-align: right;
+	width: 60%;
+}
+.tooltipDiv .pagination {
+	line-height: 2.0em;
+}
+
+/******************* END PAGINATION *******************/
+
+
+
+
+
+/******************* POPUPS *******************/
+#popTop,
+#popBottom {
+	text-align:right;
+	padding:4px 9px;
+}
+#popTop {
+	border-bottom:1px solid #A7A19A;
+	clear:both;
+}
+#popBottom {
+	border-top:1px solid #A7A19A;
+	clear:both;
+}
+
+#popContent { padding:5px 12px 12px; }
+
+/******************* END POPUPS *******************/
+
+
+
+
+/******************* MASTHEAD *******************/
+#masthead {
+	height: 93px!important;
+}
+#masthead .colA {
+	vertical-align: middle;
+	padding: 0;
+}
+#masthead .colB {
+	vertical-align: middle;
+}
+#masthead .colB .searchContain {
+	font-size: 12px;
+	color: #999;
+	position: relative;
+	background: url("http://www.geappliances.com/images/masthead_search_bg.gif") no-repeat white;
+	width: 169px;
+	height: 36px;
+	top: 6px;
+}
+#masthead .colB .searchContain #inputContain {
+	position: relative;
+	top: 10px;
+	left: 14px;
+}
+#masthead .colB .searchContain .searchInput {
+	width: 114px;
+	background-color: transparent;
+	border: 0!important;
+	margin: 0 6px 0 0;
+}
+#masthead .colB .mastheadSearchHelp {
+	padding-right: 32px;	/* (A) see (B) below */
+	margin-bottom: 0.5em;
+}
+#masthead .colB .mastheadSearchButton {
+	padding-left: 4px; /* (B) 4px padding + 28px image width = 32px as in (A) above */
+}
+#masthead .colB .addthis_toolbox {
+	display: inline-block;
+	vertical-align: top;
+}
+
+#masthead #logoImg {
+	float: left;
+	margin: 20px 0 0 0;
+}
+
+#headerWide {
+	height: 93px!important;
+	position: relative;
+	width: 100%; 
+	background-color: white;
+	margin: 0 0 10px 0;
+	z-index: 200;
+}
+
+/******************* END MASTHEAD *******************/
+
+
+/******************* PRE-FOOTER *******************/
+
+#preFooter { 
+	position: relative; 
+	z-index: 2; 
+	background: white; 
+	color: #010101;
+	border: 0; 
+	padding: 35px 0 25px 0;
+	font-size: 12px;
+}
+#preFooter a:link, #preFooter a:visited { color: #4c4c4c; text-decoration: none; }
+#preFooter a:hover { color: #404040; text-decoration: underline; }
+#preFooter .footerColumn1 { float: left; width: 360px; margin: 0;}
+#preFooter .footerColumn1 .dropdown {
+	background: #DDD url("http://www.geappliances.com/images/select_dropdown_bg.gif") no-repeat 100% 0;
+	border: 0;
+	cursor: pointer;
+	float: left;
+	width: 314px;
+	height: 39px;
+}
+#preFooter .footerColumn1 h4.dropdown_title {
+	line-height: 13px;
+	margin: 0;
+	overflow: hidden;
+	padding: 14px 0 2px 17px;
+	white-space: nowrap;
+	margin: 0;
+	font-size: 14px;
+	font-weight: normal;
+}
+#preFooter .footerColumn1 ul.dropdown_list {
+	background-color: white;
+	border: 1px solid #D6D6D6;
+	display: none;
+	font-size: 13px;
+	list-style: none;
+	width: 290px;
+	overflow-x: hidden;
+	padding: 7px 0;
+	position: absolute;
+	white-space: normal;
+	z-index: 10;
+	margin: 5px 0 0 10px;
+}
+#preFooter .footerColumn1 div.dropdown ul li {
+	width: 100%;
+	text-transform: none;
+	font-size: 11px;
+	white-space: nowrap;
+	margin: 0!important;
+}
+#preFooter .footerColumn1 div.dropdown ul li a {
+	padding: 5px 8px;
+	display: block;
+	white-space: nowrap;
+	color: #666;
+	text-decoration: none;
+	text-transform: none;
+}
+#preFooter .footerColumn1 div.dropdown ul li a:hover {
+	background: #e8ebef;
+	text-decoration: none;
+	color: #3b73b9;
+}
+#preFooter .footerColumn1 .footerColumnWrapper { width: 88%; }
+#preFooter .footerColumn2 { float: left; width: 220px; }
+#preFooter .footerColumn2 .footerColumnWrapper { width: 88%; }
+#preFooter .footerColumn3 { float: left; width: 155px; }
+#preFooter .footerColumn3 .footerColumnWrapper { width: 88%; }
+#preFooter .footerColumn4 { float: right; }
+#preFooter .footerColumn4 a {
+	text-decoration: none;
+}
+#preFooter .footerColumn4 img a:hover {
+	text-decoration: none;
+}
+#preFooter .footerColumn4 #socialLinks {
+	float: right;
+	margin-bottom: 20px;
+}
+#preFooter .footerColumn4 p#espanolFooterLink {
+	margin-top: 0;
+}
+#preFooter .footerColumn4 p#espanolFooterLink a {
+	color:#459fd3;
+}
+#preFooter .footerColumn4 p#espanolFooterLink a:hover { 
+	color:#3888b6; 
+	text-decoration: underline;
+}
+#preFooter h4 { font-weight: normal; color: black; font-family: GE Inspira Pitch, Arial, Helvetica, sans-serif; font-size: 16px; padding-bottom: 3px; margin-bottom: 3px; border-bottom: 0; }
+#preFooter .copyright { margin: 15px 0 0 0; }
+#preFooter .socialNetworks { margin-top: 0.75em; word-spacing: 1em; }
+#preFooter ul { margin: 0; padding: 0; list-style-type: none; }
+#preFooter ul li { margin: 0.5em 0; padding: 0; background-image: none; }
+
+/******************* END FOOTER *******************/
+
+/******************* FOOTER Part 2*******************/
+
+#footer { position: relative; z-index: 2; background: #e5e5e5; color: #6b6b6b;
+	  border-top: 2px solid #dadada; padding: 8px 0 8px 0; }
+#footer a:link, #footer a:visited { color: #6b6b6b; text-decoration: none; }
+#footer a:hover { color: #6b6b6b; text-decoration: underline; }
+#footer .footerColumn1 { float: left; width: 259px; }
+#footer .footerColumn1 .footerColumnWrapper { width: 88%; }
+#footer .footerColumn2 { float: left; width: 24%; }
+#footer .footerColumn2 .footerColumnWrapper { width: 88%; }
+#footer .footerColumn3 { float: left; width: 24%; }
+#footer .footerColumn3 .footerColumnWrapper { width: 88%; }
+#footer .footerColumn4 { float: left; width: 27%; }
+#footer h4 { font-weight: normal; padding-bottom: 3px; margin-bottom: 3px;
+	     border-bottom: 1px solid white; }
+#footer .copyright { margin: 15px 0 0 0; }
+#footer .socialNetworks { margin-top: 0.75em; word-spacing: 1em; }
+#footer ul {margin: 0; padding: 0; list-style-type: none; position: relative; float: left; top: 12px; left: 10px;}
+#footer ul li { margin: 0.5em 5px; padding: 0; background-image: none; float: left; }
+#footer ul li a { font-weight: bold; text-decoration: none; font-size: 12px;}
+#footer #copyright {
+	position: relative; top: 17px; font-size: 12px;
+}
+
+/******************* END FOOTER *******************/
+
+
+
+
+
+/******************* UPPER BODY *******************/
+#upperBody {
+	position:relative;
+	min-height:30px;
+	_height:30px; /* only affects IE6 and below */
+}
+.breadcrumb {
+	position:absolute;
+	top:0;
+	width:100%;
+	color:#000;
+	background: left top url('http://www.geappliances.com/images/common/translucent_bg_white.png') repeat-x transparent;
+	border: 0;
+}
+.breadcrumb .wrapper { padding: 7px 35px; }
+
+.breadcrumb a, 
+.breadcrumb a:link, 
+.breadcrumb a:active, 
+.breadcrumb a:visited { color:#555555; }
+.breadcrumb a:hover { color:#333333; }
+
+#upperBody h1 {
+	position:absolute;
+	bottom:13px;
+	width:100%;
+	color:#333333;
+	background:left top url('http://www.geappliances.com/images/common/translucent_bg_white.png') repeat-x transparent;
+}
+#upperBody h1 .wrapper {
+	display:block;
+	padding: 10px 35px 8px 35px;
+}
+
+
+#upperBody .mainImage {
+	border-bottom: 2px solid #A8A8A8;
+}
+
+/******************* END UPPER BODY *******************/
+
+
+
+
+
+/******************* LOWER BODY *******************/
+
+/****** lower body with columns ******/
+table#lowerBody {}
+table#lowerBody .leftColumn {
+	padding:14px 0 27px;
+	width: 201px;
+}
+table#lowerBody .leftColumn .wrapper {
+	width:180px;
+	margin-left: 21px;
+}
+.leftNavHeading {
+	background:top left url('http://www.geappliances.com/images/common/left_nav_heading_top.gif') no-repeat;
+	font-weight:bold;
+}
+.leftNavHeading div {
+	background:bottom left url('http://www.geappliances.com/images/common/left_nav_heading_bottom.gif') no-repeat;
+	padding:4px 10px 4px 0;
+}
+.leftNavContent ul {
+	padding:6px 12px 0 15px;
+}
+.leftNavContent ul li {
+	padding: 5px 0 6px 12px;
+	background-position: 0 9px;
+}
+.leftNavContent ul li ul {
+	padding: 0 0 0 0;
+}
+.leftNavContent ul li ul li {
+	padding: 11px 0 0 12px;
+	background-position: 0 15px;
+}
+.leftNavBottom {
+	height:11px;
+	margin-bottom:25px;
+	background:top left url('http://www.geappliances.com/images/common/left_nav_bottom.gif') no-repeat #fff;
+}
+
+
+.leftNavHeading_green { background-image: url("http://www.geappliances.com/images/common/left_nav_green_heading_top.gif"); }
+.leftNavHeading_green div { background-image: url("http://www.geappliances.com/images/common/left_nav_green_heading_bottom.gif"); }
+.leftNavBottom_green { background-image: url("http://www.geappliances.com/images/common/left_nav_green_bottom.gif"); }
+
+.FollowUs { }
+
+table#lowerBody .leftColumn .FollowUs {
+	padding:0 8px 0 0; 
+	text-align:right;
+}	
+
+
+table#lowerBody .mainColumn {
+	padding:14px 25px 25px 19px;
+}
+
+table#lowerBody .mainColumn h2 { padding-bottom:10px; }
+
+table#lowerBody .mainColumn .serviceSupportBox {
+	background:#d9e9ce;
+	color:#536745;
+}
+
+/* additional lowerBody subdivision */
+table#lowerBody .mainColumn .subLayoutTableA {} /* two columns */
+table#lowerBody .mainColumn .subLayoutTableA .centerColumn { width:483px; }
+
+table#lowerBody .mainColumn .subLayoutTableA .centerColumn .infoBlock {
+	margin-bottom:15px;
+	border-bottom:1px dotted #a8a8a8;
+}
+
+table#lowerBody .mainColumn .centerColumn .serviceSupportBox { margin-right:15px; }
+table#lowerBody .mainColumn .centerColumn .serviceSupportBox h3 { padding-bottom:10px; }
+
+table#lowerBody .mainColumn .centerColumn .serviceSupportBox table {
+	table-layout:auto;
+	margin-top:10px;
+}
+table#lowerBody .mainColumn .centerColumn .serviceSupportBox .colA {
+	width:26px;
+	vertical-align:middle;
+}
+table#lowerBody .mainColumn .centerColumn .serviceSupportBox .colB {}
+table#lowerBody .mainColumn .centerColumn .serviceSupportBox .colC {}
+
+table#lowerBody .mainColumn .subLayoutTableA .rightColumn { padding-left:22px; } /* content width: 215px */
+table#lowerBody .mainColumn .subLayoutTableA .rightColumn .compareBox {
+	background:#F1F8E5;
+	margin-top:20px;
+	padding-bottom:15px;
+}
+table#lowerBody .mainColumn .subLayoutTableA .rightColumn .compareBox h3 { padding-bottom:15px; }
+table#lowerBody .mainColumn .subLayoutTableA .rightColumn .compareBox input[type="image"] { margin-top:14px; }
+
+table#lowerBody .mainColumn .rightColumn .serviceSupportBox { margin-top:45px; }
+table#lowerBody .mainColumn .rightColumn .serviceSupportBox .colA {
+	width:41px;
+	vertical-align:middle;
+}
+
+table#lowerBody .mainColumn .rightColumn .serviceSupportBox .colB {}
+
+table#lowerBody .mainColumn .rightColumn .serviceSupportBox a, 
+table#lowerBody .mainColumn .rightColumn .serviceSupportBox a:link, 
+table#lowerBody .mainColumn .rightColumn .serviceSupportBox a:active, 
+table#lowerBody .mainColumn .rightColumn .serviceSupportBox a:visited { color:#536745; }
+table#lowerBody .mainColumn .rightColumn .serviceSupportBox a:hover { color:#738069; }
+
+
+
+/****** full width lower body ******/
+div#lowerBody.fullWidth { padding: 0; }
+div#lowerBody.fullWidth h2 { padding:25px 0 5px; }
+
+
+/******************* END LOWER BODY *******************/
+
+
+
+
+/******************* GENERIC FAQs *******************/
+#faqTable {}
+#faqTable td {
+	padding:8px 4px;
+	font-weight:bold;
+}
+#faqTable .col1 {
+	width:5%;
+	text-align:right;
+	color:#459fd3;
+}
+#faqTable .col2 {}
+.faqItem { margin-bottom: 2em; }
+
+/******************* END GENERIC FAQs *******************/
+
+
+
+
+/******************* GENERIC SEARCH RESULTS *******************/
+#searchResults {
+	border-top: 1px solid #c0bab3;
+	border-bottom: 1px solid #c0bab3;
+	padding-top:1em;
+	margin-bottom:-10px;
+}
+
+.resultsBar {
+	background-color: #7b7979;
+	color: white;
+	width: 100%;
+}
+.resultsBar a:link,
+.resultsBar a:visited { color: #ffffff; }
+.resultsBar a:hover { color: #ffffff; }
+.resultsBar td { padding: 5px; }
+.resultsBar tr { vertical-align: middle; }
+.resultsBar .strokeL { border-left: solid 1px white; }
+.resultsBar .strokeR { border-right: solid 1px white; }
+/******************* GENERIC SEARCH RESULTS *******************/
+
+
+
+
+/******************* KITCHEN GALLERY *******************/
+.galleryCaptionTable {}
+.galleryCaptionTable .colA { width:303px; }
+.galleryCaptionTable .colA .button {
+	float:left;
+	margin:10px 10px 0 0;
+}
+.galleryCaptionTable .colB {}
+
+.subLayoutTableKitchenGallery { margin-top:10px; }
+.subLayoutTableKitchenGallery .centerColumn { width:310px; }
+.subLayoutTableKitchenGallery .rightColumn { padding-top:5px; }
+.subLayoutTableKitchenGallery .rightColumn .infoBlock {
+	margin-bottom:15px;
+	border-bottom:1px dotted #a8a8a8;
+}
+
+.kitchenGalleryThumbsTable {
+	width:auto;
+	table-layout:auto;
+}
+.kitchenGalleryThumbsTable td { padding:0 5px 12px 0; }
+.kitchenGalleryThumbsTable img {
+	padding:1px;
+	background:#B6B1AE;
+	border:1px solid #fff;
+}
+.kitchenGalleryThumbsTable .selected img,
+.kitchenGalleryThumbsTable a:hover img {
+	background:#fff;
+	border-color:#126798;
+}
+
+/******************* END KITCHEN GALLERY *******************/
+
+
+
+/******************** FLYOUTS ********************/
+
+/* based on http://www.seoadsensethemes.com/wordpress-multi-level-drop-down-menu-using-jquery/
+   and modified.
+   Tested in FF2, FF3, IE6, IE7, IE8, Safari, Opera, and Chrome. */
+#topNav {
+	position: relative;
+	z-index: 900;		/* must be less than 1000 */
+}
+#topNav ul.flyout {
+	display: none;
+	position: absolute;
+	z-index: 900;		/* must be less than 1000 */
+	border-style: solid;
+	border-color: #ccc4bc;
+	border-width: .3em .4em; /* BTB, BLR */
+	background-color: #e6e6e5;
+}
+#topNav ul.flyout li {
+	background-image: none;
+	padding: 0;
+	float: left;
+	position: relative;
+}
+#topNav ul.flyout li a,
+#topNav ul.flyout li a:link,
+#topNav ul.flyout li a:active,
+#topNav ul.flyout li a:visited,
+#topNav ul.flyout li a:hover {
+ 	display: block;
+ 	height: auto;
+ 	float: left;
+ 	text-align: left;
+	padding-top: 0.25em;
+	padding-bottom: 0.25em;
+	border-style: solid;
+	border-color: #ccc4bc;
+	border-width: 1px 0;
+	background: left top url('http://www.geappliances.com/images/common/top_nav_dropdown_item_bg.gif') repeat-x #e6e6e5;
+}
+#topNav ul.flyout li a:hover {
+	background: left top url('http://www.geappliances.com/images/common/top_nav_dropdown_item_selected_bg.gif') repeat-x #afaeac;
+}
+#topNav ul.flyout li ul.flyout {
+	top: auto;
+}
+
+/* Manage the dimensions related to menu width separately in order to
+   minimize any chance of error incase they need to be resized. */
+
+#topNav ul.flyout { 
+	width: 22em;	   /* set to A + PL + PR */
+}
+#topNav ul.flyout li a,
+#topNav ul.flyout li a:link,
+#topNav ul.flyout li a:active,
+#topNav ul.flyout li a:visited,
+#topNav ul.flyout li a:hover { 
+	width: 21em;		/* this is A */
+	padding-left: 0.5em;	/* this is PL */
+	padding-right: 0.5em;	/* this is PR */
+}
+#topNav ul.flyout li ul.flyout {
+	left: 22.2em;		/* set to A + PL + PR + BLR/2 */
+}
+
+#topNav li.new {
+	font-style: italic;
+}
+#topNav li.energy {
+	font-style: italic;
+}
+#topNav ul.nonFlyout li a,
+#topNav ul.nonFlyout li a:link,
+#topNav ul.nonFlyout li a:visited,
+#topNav ul.nonFlyout li a:active,
+#topNav ul.nonFlyout li a:hover {
+	font-weight: normal;
+	padding-left: 2.5em;	/* this is PL2 */
+	width: 19em;		/* set to A + PL - PL2 */
+}
+
+/* overrides for the Explore GE Brands flyout */
+#topNav ul.flyout#topExploreGEBrandsFlyout {
+	width: 12em;
+}
+#topNav ul.flyout#topExploreGEBrandsFlyout li a,
+#topNav ul.flyout#topExploreGEBrandsFlyout li a:link,
+#topNav ul.flyout#topExploreGEBrandsFlyout li a:active,
+#topNav ul.flyout#topExploreGEBrandsFlyout li a:visited,
+#topNav ul.flyout#topExploreGEBrandsFlyout li a:hover {
+	width: 11em;
+}
+
+#topNav ul.flyout#topRefrigeratorsFlyout {
+	width: 28em;
+}
+#topNav ul.flyout#topRefrigeratorsFlyout li a,
+#topNav ul.flyout#topRefrigeratorsFlyout li a:link,
+#topNav ul.flyout#topRefrigeratorsFlyout li a:active,
+#topNav ul.flyout#topRefrigeratorsFlyout li a:visited,
+#topNav ul.flyout#topRefrigeratorsFlyout li a:hover {
+	width: 27em;
+}
+#topNav ul.flyout#topRefrigeratorsFlyout ul.nonFlyout li a,
+#topNav ul.flyout#topRefrigeratorsFlyout ul.nonFlyout li a:link,
+#topNav ul.flyout#topRefrigeratorsFlyout ul.nonFlyout li a:visited,
+#topNav ul.flyout#topRefrigeratorsFlyout ul.nonFlyout li a:active,
+#topNav ul.flyout#topRefrigeratorsFlyout ul.nonFlyout li a:hover {
+	width: 25em;
+}
+
+/******************** END FLYOUTS ********************/
+
+
+
+/****************** special for proactive chat fix ***************/
+.yui-skin-sam .yui-button button, .yui-skin-sam .yui-button a {
+    color: #000000 !important;
+}
+.yui-skin-sam .yui-button-focus button, .yui-skin-sam .yui-button-focus a {
+    color: #000000 !important;
+}
+.yui-skin-sam .yui-button-hover button, .yui-skin-sam .yui-button-hover a {
+    color: #000000 !important;
+}
+/****************** end special for proactive chat fix ***************/
+
+
+/******************** SEARCH STYLES FOR 2011 ********************/
+.roundedSearchBox { width: 470px; }
+.roundedSearchBox                  .bottomCap { height: 11px; background: url("http://www.geappliances.com/images/bottom_cap_search.png") no-repeat top left; }
+.roundedSearchBox.forProductSearch    .topCap { height: 11px; background: url("http://www.geappliances.com/images/top_cap_search_product.png") no-repeat top left; }
+.roundedSearchBox.forSupportSearch    .topCap { height: 11px; background: url("http://www.geappliances.com/images/top_cap_search_support.png") no-repeat top left; }
+.roundedSearchBox.forLiteratureSearch .topCap { height: 11px; background: url("http://www.geappliances.com/images/top_cap_search_literature.png") no-repeat top left; }
+.roundedSearchBox .content {
+	border-left: 1px solid #666;
+	border-right: 1px solid #666;
+	padding: 10px 10px 0 10px;
+}
+.roundedSearchBox .content h3 { margin-bottom: 1em; }
+.roundedSearchBox .content h4 { font-size: 100%; margin: 1em 0 0.5em 0; }
+.roundedSearchBox .content ul { margin-left: 1em; }
+.roundedSearchBox p.upperRightLink { text-align: right; margin: 0; font-size: 10px; }
+
+table.moreServiceSupportHelp  { table-layout: auto; margin-top: 1em; }
+table.moreServiceSupportHelp .colA { width: 26px; vertical-align: top; }
+table.moreServiceSupportHelp h4 { font-size: 100%; margin: 0; }
+table.moreServiceSupportHelp .colB,
+table.moreServiceSupportHelp .colC { line-height: 1.6em; }
+
+/* etc. */
+img.searchIcon { vertical-align: middle; padding-right: 0.5em; }
+/******************** END SEARCH STYLES FOR 2011 ********************/
+
+
+/******************** OPINION LAB ********************/
+/*
+OnlineOpinion v5.6.4
+Released: 10/4/2012. Compiled 10/04/2012 11:28:22 AM -0500
+Branch: master 4f693587716b7e98e287fda65b83b28cde6a3d5b
+Components: Full
+The following code is Copyright 1998-2012 Opinionlab, Inc.  All rights reserved. Unauthorized use is prohibited. This product and other products of OpinionLab, Inc. are protected by U.S. Patent No. 6606581, 6421724, 6785717 B1 and other patents pending. http://www.opinionlab
+*/
+#oo_feedback_fl_spacer { display: block; height: 1px; position: absolute; top: 0; width: 100px; }
+
+.oo_feedback_float { width: 100px; height: 50px; overflow: hidden; font: 12px Tahoma, Arial, Helvetica, sans-serif; text-align: center; color: #252525; cursor: pointer; z-index: 999997; position: fixed; bottom: 5px; border: 1px solid #cccccc; border-radius: 9px; -moz-border-radius: 9px; -webkit-border-radius: 9px; right: 10px; -webkit-transition: -webkit-transform 0.3s ease; }
+.oo_feedback_float .screen_reader { color: transparent; display: block; position: relative; height: 0; width: 0; line-height: 0; font-size: 0; }
+.oo_feedback_float .olUp { width: 100%; height: 100%; background: url(http://www.geappliances.com/images/oo_float_icon.gif) center 10px no-repeat; text-align: center; padding: 31px 0 5px 0; position: relative; z-index: 2; filter: alpha(opacity=100); opacity: 1; transition: opacity .5s; -moz-transition: opacity .5s; -webkit-transition: opacity .5s; -o-transition: opacity .5s; }
+.oo_feedback_float .olUp img { margin-bottom: 5px; }
+.oo_feedback_float .oo_transparent { display: block; background: white; position: absolute; top: 0; left: 0; height: 100%; width: 100%; z-index: 1; opacity: 0.8; filter: alpha(opacity=80); border-radius: 8px; -moz-border-radius: 8px; -webkit-border-radius: 8px; }
+.oo_feedback_float:hover .oo_transparent { opacity: 1.0; filter: alpha(opacity=100); }
+.oo_feedback_float:hover .olUp { display: block; opacity: 0; filter: alpha(opacity=0); }
+.oo_feedback_float .fbText { display: block; }
+.oo_feedback_float .olOver { display: block; height: 100%; width: 100%; position: absolute; top: 0; left: 0; min-height: 50px; z-index: 2; opacity: 0; filter: alpha(opacity=0); transition: opacity .5s; -moz-transition: opacity .5s; -webkit-transition: opacity .5s; -o-transition: opacity .5s; }
+.oo_feedback_float .olOver span { display: block; padding: 10px 5px; }
+.oo_feedback_float:hover .olOver { opacity: 1.0; filter: alpha(opacity=100); top: 0; }
+
+.oo_cc_wrapper { left: 0; padding: 0; position: fixed; text-align: center; top: 25px; width: 100%; z-index: 999999; }
+.oo_cc_wrapper .screen_reader { color: transparent; display: block; position: relative; height: 0; width: 0; line-height: 0; font-size: 0; }
+.oo_cc_wrapper span { width: 100%; height: 100%; position: absolute; left: 0; top: 0; z-index: 1; }
+.oo_cc_wrapper .iwrapper { background-color: white; margin: 0 auto; position: relative; width: 535px; z-index: 2; box-shadow: rgba(0, 0, 0, 0.6) 0 0 15px; -webkit-box-shadow: rgba(0, 0, 0, 0.6) 0 0 15px; -moz-box-shadow: rgba(0, 0, 0, 0.6) 0 0 15px; border-radius: 9px; -moz-border-radius: 9px; -webkit-border-radius: 9px; }
+.oo_cc_wrapper iframe { position: relative; border: none; width: 100%; z-index: 4; }
+.oo_cc_wrapper .oo_cc_close { position: absolute; display: block; background: white; height: 20px; width: 20px; border: 1px solid #cccccc; cursor: pointer; right: 5px; top: 5px; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; transition: background .5s; -moz-transition: background .5s; -webkit-transition: background .5s; -o-transition: background .5s; font: 14px/20px Tahoma, Arial, Helvetica, sans-serif; text-align: center; z-index: 5; color: #252525; text-decoration: none; }
+.oo_cc_wrapper .oo_cc_close:hover { background: #eeeeee; }
+
+.oo_bar { padding-bottom: 22px; }
+
+#oo_bar { cursor: pointer; color: #252525; border-top: 1px solid #cccccc; background: #ffffff; bottom: 0; display: block; font: 12px Tahoma, Arial, Helvetica, sans-serif; height: 22px; left: 0; line-height: 22px; position: fixed; text-align: left; width: 100%; z-index: 999997; -webkit-transition: -webkit-transform .3s ease; transition: background 0.5s; -moz-transition: background 0.5s; -webkit-transition: background 0.5s; -o-transition: background 0.5s; }
+#oo_bar:hover { background: #eeeeee; }
+#oo_bar .screen_reader { color: transparent; display: block; position: relative; height: 0; width: 0; line-height: 0; font-size: 0; }
+#oo_bar span { background: url(http://www.geappliances.com/images/oo_bar_icon.gif) left no-repeat; display: block; margin: 0 15px; height: 100%; padding-left: 17px; }
+
+#oo_tab { background-color: #ffffff; border: 1px solid #cccccc; display: block; position: fixed; top: 45%; height: 110px; width: 35px; z-index: 999995; cursor: pointer; }
+#oo_tab span { bottom: 15px; _bottom: 5px; display: block; background: url(http://www.geappliances.com/images/oo_tab_icon.gif) no-repeat; height: 9px; position: absolute; width: 9px; }
+#oo_tab div { background-image: url(http://www.geappliances.com/images/oo_tab.png); _background-image: url(http://www.geappliances.com/images/oo_tabie6.png); background-repeat: no-repeat; position: absolute; display: block; height: 100%; left: 0; top: 0; width: 100%; }
+
+.oo_tab_left { left: -13px; border-radius: 0px 9px 9px 0px; -moz-border-radius: 0px 9px 9px 0px; -webkit-border-radius: 0px 9px 9px 0px; transition: left .5s; -moz-transition: left .5s; -webkit-transition: left .5s; -o-transition: left .5s; background-image: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#eeeeee), to(white)); background-image: -webkit-linear-gradient(left, #eeeeee, white); background-image: -moz-linear-gradient(left, #eeeeee, white); background-image: -ms-linear-gradient(left, #eeeeee, white); background-image: -o-linear-gradient(left, #eeeeee, white); background-image: linear-gradient(left, #eeeeee, white); }
+.oo_tab_left span { right: 6px; }
+.oo_tab_left div { background-position: 6px -10px; }
+.oo_tab_left:hover { left: -5px; }
+
+.oo_tab_right { right: -13px; border-radius: 9px 0px 0px 9px; -moz-border-radius: 9px 0px 0px 9px; -webkit-border-radius: 9px 0px 0px 9px; transition: right .5s; -moz-transition: right .5s; -webkit-transition: right .5s; -o-transition: right .5s; background-image: -webkit-gradient(linear, 0% 100%, 0% 0%, from(white), to(#eeeeee)); background-image: -webkit-linear-gradient(left, white, #eeeeee); background-image: -moz-linear-gradient(left, white, #eeeeee); background-image: -ms-linear-gradient(left, white, #eeeeee); background-image: -o-linear-gradient(left, white, #eeeeee); background-image: linear-gradient(left, white, #eeeeee); }
+.oo_tab_right span { left: 7px; }
+.oo_tab_right div { background-position: -6px -10px; }
+.oo_tab_right:hover { right: -5px; }
+
+.oo_tab_ie_right { border-right: none !important; right: 1px; width: 25px !important; }
+.oo_tab_ie_right:hover { right: 6px; width: 30px !important; }
+
+#oo_container { position: fixed; height: 100%; width: 100%; top: 0; left: 0; z-index: 999999; }
+
+html body #oo_invitation_prompt { background: white; box-shadow: rgba(0, 0, 0, 0.6) 0 0 15px; -webkit-box-shadow: rgba(0, 0, 0, 0.6) 0 0 15px; -moz-box-shadow: rgba(0, 0, 0, 0.6) 0 0 15px; -webkit-box-shadow: rgba(0, 0, 0, 0.6) 0 0 8px; -moz-box-shadow: rgba(0, 0, 0, 0.6) 0 0 8px; border-radius: 9px; -moz-border-radius: 9px; -webkit-border-radius: 9px; color: #252525; font: 14px/20px Tahoma, Arial, san-serif; line-height: 20px; margin: 50px auto; text-align: left; padding: 20px 10px; position: relative; width: 350px; z-index: 999999; }
+html body #oo_invitation_prompt h1 { font-size: 24px; font-weight: 100; margin-bottom: .6em; }
+html body #oo_invitation_prompt p { margin-bottom: 1.5em; }
+html body #oo_invitation_prompt #prompt_buttons { padding-bottom: 15px; position: relative; z-index: 5; }
+html body #oo_invitation_prompt #oo_launch_prompt { text-decoration: none; color: white; border: 1px solid #006633; padding: 5px 11px; margin-right: 17px; }
+html body #oo_invitation_prompt #oo_no_thanks { text-decoration: none; color: #252525; border: 1px solid #cccccc; padding: 5px 11px; margin-right: 18px; }
+html body #oo_ol_brand { display: block; height: 22px; }
+
+#oo_ol_brand { background: url(http://www.geappliances.com/images/oo_inv_opinionlab.png) bottom right no-repeat; border-top: 1px solid #cccccc; }
+
+#oo_invitation_prompt a { background: white; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; transition: background .5s; -moz-transition: background .5s; -webkit-transition: background .5s; -o-transition: background .5s; }
+#oo_invitation_prompt a:hover { background: #eeeeee; }
+
+a#oo_launch_prompt { background: #006633; }
+a#oo_launch_prompt:hover { background: #009966; }
+
+#oo_close_prompt { position: absolute; display: block; background: white; height: 20px; width: 20px; border: 1px solid #cccccc; cursor: pointer; right: 5px; top: 5px; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; transition: background .5s; -moz-transition: background .5s; -webkit-transition: background .5s; -o-transition: background .5s; font: 14px/20px Tahoma, Arial, Helvetica, sans-serif; text-align: center; }
+#oo_close_prompt:hover { background: #eeeeee; }
+#oo_close_prompt .screen_reader { color: transparent; display: block; position: relative; height: 0; width: 0; line-height: 0; font-size: 0; }
+
+/* Smartphones (portrait) ----------- */
+@media only screen 
+and (max-device-width : 480px) { /* Styles */
+  html body #oo_invitation_prompt { -webkit-text-size-adjust: none; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; width: 90%; padding: 3%; } }
+@media all and (-webkit-min-device-pixel-ratio: 2) { #oo_ol_brand { background: url(http://www.geappliances.com/images/oo_inv_opinionlab@2x.png) bottom right no-repeat; -webkit-background-size: 85px 13px; } }
+#oo_overlay, #oo_invitation_overlay { background: black url(http://www.geappliances.com/images/oo_loading.gif) 50% 80px no-repeat; display: block; height: 1000%; left: 0; position: fixed; top: 0; width: 100%; z-index: 999998; opacity: 0.5; filter: alpha(opacity=50); }
+#oo_overlay.no_loading, #oo_invitation_overlay.no_loading { background: black; opacity: 0.5; filter: alpha(opacity=50); }
+
+@media print { #oo_bar, .oo_feedback_float, #oo_tab { display: none; } }
+
+/******************** END OPINION LAB ********************/
+
+
+/**************** SUPPLEMENTAL STYLES FOR COMMUNITY ****************/
+/* The "HTeaML" CSS class is used for certain sections inserted by the HTML team. */
+
+body#lia-body .HTeaML .indented {
+	padding: 0 10px;
+}
+body#lia-body .HTeaML .grayBorder {
+	border: 1px solid #e5e5e5;
+	border-radius:         5px;
+	-moz-border-radius:    5px;
+	-webkit-border-radius: 5px;
+	padding: 9px;
+	margin-bottom: 10px;
+}
+body#lia-body .HTeaML h2 {
+	font-family: Arial;
+	font-weight: normal;
+	color: #a6c3d3;
+	font-size: 27px;
+	line-height: 27px;
+	margin: 0 0 10px 0;
+}
+body#lia-body .HTeaML .highlight {
+	color: black;
+}
+
+body#lia-body .HTeaML.availableDiscussionsBlock .communityLink {
+	float: left;
+	width: 24.9%;
+	text-align: center;
+	margin: 1em 0;
+}
+body#lia-body .HTeaML.availableDiscussionsBlock .communityLink a {
+	display: block;
+	width: 131px;
+	margin: 0 auto;
+	border: 1px solid #333;
+	background: white;
+	box-shadow:         5px 5px 5px #aaa;
+	-moz-box-shadow:    5px 5px 5px #aaa;
+	-webkit-box-shadow: 5px 5px 5px #aaa;
+	color: white;
+}
+body#lia-body .HTeaML.availableDiscussionsBlock .communityLink a:hover {
+	color: #white;
+}
+body#lia-body .HTeaML.availableDiscussionsBlock .communityLink a img {
+	display: block;
+}
+body#lia-body .HTeaML.availableDiscussionsBlock .communityLink a:hover img {
+	opacity: 0.25;
+	-moz-opacity: 0.25;
+	-webkit-opacity: 0.25;
+	filter: alpha(opacity=25); /* MSIE */
+}
+body#lia-body .HTeaML.availableDiscussionsBlock .communityLink a span {
+	display: block;
+	line-height: 2em;
+	text-align: center;
+	text-transform: uppercase;
+	text-align: center;
+	background-color: #333;
+	font-weight: bold;
+}
+
+body#lia-body .HTeaML.forumBannerBlock {
+	background: url("http://www.geappliances.com/images/community/laptop_lady.jpg") no-repeat top right;
+	min-height: 111px;
+	padding: 25px 200px 0 180px;
+	position: relative;
+	margin-bottom: 10px;
+}
+body#lia-body .HTeaML.forumBannerBlock img.thumbnail {
+	position: absolute;
+	top: 25px;
+	left: 25px;
+	border: 1px solid #333;
+}
+body#lia-body .HTeaML.forumBannerBlock h2 {
+	color: #aa6412;
+	margin: 0 0 5px 0;
+	padding: 0 0 5px 0;
+	border-bottom: 1px solid #333;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+body#lia-body .lia-content .AskAnExpertTaplet2 .lia-form textarea {
+	width: 97%;
+}
+body#lia-body .lia-content .AskAnExpertTaplet2 .lia-form-footer {
+	text-align: right;
+}
+body#lia-body .lia-content .AskAnExpertTaplet2 .lia-form-footer input.lia-button {
+	display: inline;
+	height: auto;
+	line-height: auto;
+}
+
+/**************** END: SUPPLEMENTAL STYLES FOR COMMUNITY ****************/
+
+/**************** BEGIN: COMMON STYLES FOR RESULTS/SPEC/COMPARE ****************/
+
+div.buyButtonsDiv div.button a {
+	display: inline-block;	/* primarily to make sure top/bottom margins on div.button work */
+	text-align: center;
+	font-size: 14px;
+	font-weight: normal;
+	font-family: "GE Inspira Pitch", "Arial", "Helvetica", sans-serif;
+	line-height: 16px;	/* 14px is absolute minimum to make sure the background shopping cart image for "Buy Now" shows up */
+}
+div.buyButtonsDiv div.button.whereToBuyButton a { background-color: #459fd3; }
+div.buyButtonsDiv div.button.whereToBuyButton a:hover { background-color: #126798; }
+div.buyButtonsDiv div.button.buyNowButton a {
+	background-image: url('http://www.geappliances.com/images/common/shopping_cart.png');
+	background-position: 8px 50%;
+	background-repeat: no-repeat;
+	padding-left: 37px;
+}
+
+/**************** END: COMMON STYLES FOR RESULTS/SPEC/COMPARE ****************/
+
+/******************* For RightNow chat *******************/
+.yui-skin-sam {
+	position:absolute !important;
+	top:200px !important;
+	margin-left:-150px !important;
+	left:50% !important;
+}
+/******************* END For RightNow chat *******************/
+
+

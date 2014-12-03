@@ -1,0 +1,1 @@
+lpConnLib.Process({"ResultSet": {"lpCallId":"420623794115-917472647829","lpCallConfirm":"","lpJS_Execute":[{"code_id": "INPAGE-DELAY-10", "js_code": "lpMTag.lpInPageRequestDelay=10;"}]}});

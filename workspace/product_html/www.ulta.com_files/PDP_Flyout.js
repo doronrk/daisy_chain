@@ -1,1 +1,0 @@
-/*jsonp*/s7sdkJSONResponse({"i18n.FlyoutZoomView.TIP_BUBBLE_OVER":"Mouse over image for a closer look.","i18n.FlyoutZoomView.TIP_BUBBLE_TAP":"Drag image to explore.","iscommand":"op_sharpen=1&resMode=bilin","type":"FlyoutViewerHTML5Mobile","vg":"2","vt":"ZoomFlyoutVirtual"},"94771650");

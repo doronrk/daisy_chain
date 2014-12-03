@@ -1,2 +1,0 @@
-
-Bootstrapper._serverTime = '2014-12-03 04:16:08'; Bootstrapper._clientIP = '165.123.35.81'; var psj0 = 'http://nexus.ensighten.com/brooksbrothers/prod/code/c2ea6a0b1b6c261789ac83675673d897.js?conditionId0=215731';Bootstrapper.insertScript(psj0);var psj1 = 'http://nexus.ensighten.com/brooksbrothers/prod/code/80cb621d43dbdf4636cb84354bee1578.js?conditionId0=215735';Bootstrapper.loadScriptCallback(psj1, Bootstrapper.callOnPageSpecificCompletion);Bootstrapper.setPageSpecificDataDefinitionIds([])

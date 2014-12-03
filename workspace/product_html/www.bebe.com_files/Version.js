@@ -1,1 +1,0 @@
-if(!s7sdk.Version){s7sdk.Version={version:"2.2.2",build:"173224"}};

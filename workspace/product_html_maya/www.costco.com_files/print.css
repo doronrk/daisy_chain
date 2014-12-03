@@ -1,0 +1,15 @@
+#top-navigation-wrap, #header, #sub-header, #compare, #footer, #left_nav {display:none;}
+#body.show-compare #header-wrap, #header-wrap{height:auto !important;}
+
+/* CIS100074478 - Display all of the product details tabs in print preview by displaying the following class hierarchy. *Adjusted jquery-ui-1.8.10.custom.css ui-tabs */
+.product-detail-tabs .tab.ui-tabs-panel.ui-widget-content {display: block !important;}	
+.product-detail-tabs .tab.ui-tabs-panel.ui-widget-content.ui-tabs-hide {display: block !important;}
+
+#order-panel { display: inline !important; }
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	/* Safari and Google Chrome only - default printing of order summary rolling off the edge of the page */
+	table.price-table {
+		margin-right: 100px;
+	}
+}

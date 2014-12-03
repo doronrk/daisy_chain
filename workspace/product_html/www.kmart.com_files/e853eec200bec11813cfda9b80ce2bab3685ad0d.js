@@ -1,9 +1,0 @@
-document.cookie="btpdb.IctsMUI.YnJpZ2h0dGFnIHVzZXIgaWQ=;domain=www.kmart.com;path=/;expires=Sun, 19 Aug 00 08:45:55 UTC";
-document.cookie="btpdb.IctsMUI.d2NzIGNhcHBlZA=;domain=www.kmart.com;path=/;expires=Sun, 19 Aug 00 08:45:55 UTC";
-document.cookie="btpdb.IctsMUI.Y2FwcGVk=;domain=www.kmart.com;path=/;expires=Sun, 19 Aug 00 08:45:55 UTC";
-document.cookie="btpdb.IctsMUI.Y3JpdGVvIHByb2R1Y3QgcGFnZXMgY291bnRlcg=;domain=www.kmart.com;path=/;expires=Sun, 19 Aug 00 08:45:55 UTC";
-document.cookie="btpdb.IctsMUI.c2lkIGNvZGU=;domain=www.kmart.com;path=/;expires=Sun, 19 Aug 00 08:45:55 UTC";
-document.cookie="btpdb.IctsMUI.Y3JpdGVvIHNpbmdsZSBzaG90=;domain=www.kmart.com;path=/;expires=Sun, 19 Aug 00 08:45:55 UTC";
-document.cookie="btpdb.IctsMUI.Y3JpdGVvIGNhcnQgcGFnZXMgY291bnRlcg=;domain=www.kmart.com;path=/;expires=Sun, 19 Aug 00 08:45:55 UTC";
-document.cookie="btpdb.IctsMUI.Y2FwcGVkLWF1dGhlbnRpY2F0ZWQ=;domain=www.kmart.com;path=/;expires=Sun, 19 Aug 00 08:45:55 UTC";
-document.cookie="btpdb.IctsMUI.Y3JpdGVvIGFsbCBwYWdlcyBjb3VudGVy=;domain=www.kmart.com;path=/;expires=Sun, 19 Aug 00 08:45:55 UTC";

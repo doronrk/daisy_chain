@@ -1,1 +1,0 @@
-ATGSvcs.setXD({"donotcall": 1 });

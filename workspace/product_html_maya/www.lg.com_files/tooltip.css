@@ -1,0 +1,992 @@
+.no-js .tooltip {
+    display: none!important
+}
+.tooltip {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9900;
+    width: 390px
+}
+
+.tooltip.open {
+    visibility: visible
+}
+
+.no-csstransitions .tooltip {
+    display: none
+}
+
+.no-csstransitions .tooltip.open {
+    display: block
+}
+
+.csstransitions .tooltip {
+    visibility: hidden
+}
+
+.csstransitions .tooltip.fade {
+    opacity: 0;
+    -webkit-transition: opacity .3s linear;
+    -moz-transition: opacity .3s linear;
+    visibility: visible
+}
+
+.csstransitions .tooltip.fade.open {
+    opacity: 1
+}
+
+.tooltip .payload {
+    position:relative;
+    padding: 16px;
+    background: #ececec;
+    background: -moz-linear-gradient(bottom,#dedede,white 60%);
+    background: -webkit-gradient(linear,0 0,0 60%,from(#fff),to(#ececec));
+    box-shadow: 0 0 4px #333;
+    -webkit-box-shadow: 0 0 4px #333;
+    -moz-box-shadow: 0 0 4px #333
+}
+
+.tooltip .pointer {
+    margin: 0 auto;
+    height: 10px;
+    width: 20px;
+    margin: 1px auto;
+    background: url("/lg3-common-v4/images/global/lg-global-sprite-v2.png") 0 -441px no-repeat
+}
+
+.tooltip .pointer.align-left {
+    margin: 1px auto 1px 10px
+}
+
+.tooltip .pointer.align-right {
+    margin: 1px 10px 1px auto
+}
+
+.modal {
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.25);
+    text-align: center;
+    z-index: 10000
+}
+
+.lt-ie9 .modal {
+    background: 0
+}
+
+
+
+.modal .payload {
+    position: relative;
+    margin: 0 auto;
+    background: #fff;
+    padding: 25px;
+    width: 770px;
+    height: 528px;
+    text-align: left;
+    -webkit-box-shadow: 0 0 147px #333;
+    -moz-box-shadow: 0 0 147px #333;
+    box-shadow: 0 0 147px #333
+}
+
+.modal .youtube-layer-01 {padding-bottom:40px}
+.modal .caption-btn {float:right; position:relative; margin-right:25px; z-index:10; margin-bottom: 12px; display:inline-block; clear:both; }
+.modal .caption-wrapper {width:700px; position:relative; left:-25px; background:#fff; margin-top:5px}
+.lt-ie9 .modal .caption-wrapper { margin:0 -1px; border:1px solid #ccc; border-top:0; }
+.modal .caption-wrapper span {color:#333}
+.lt-ie9 .modal .caption-btn {margin-top:10px; padding:2px 10px 0; }
+
+.modal .payload2 {
+    width: 556px;
+    height: 466px;
+    text-align: center
+}
+
+.modal .payload object {
+	display:block; 
+	margin:18px auto 0
+}
+
+.modal .payload3 {
+    width: 600px;
+    height: 575px
+}
+
+.modal .payload4 {
+    width: 455px;
+    height: 348px;
+    padding: 24px
+}
+
+.modal .payload5 {
+    width: 455px;
+    height: 425px;
+    padding: 24px
+}
+
+.modal .payload-news {
+    height: 290px;
+    padding: 25px 24px;
+    width: 455px;
+}
+.scrollPrivacy{
+    height: 210px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    white-space: normal
+}
+
+
+.modal .payload5 h4 {
+    float: left;
+    margin-bottom: .5em;
+    font: normal 14px "LGFontRegular";
+    text-transform: uppercase
+}
+
+.modal .payload6 {
+    width: 700px;
+    height: 640px
+}
+
+.modal .payload7 {
+    width: 440px;
+    height: 100px
+}
+
+.modal .payload7 div {
+    text-align: center;
+    font-size: 14px;
+    line-height: 16px
+}
+
+.parts-accessories {
+    padding-top: 30px;
+    padding-bottom: 20px
+}
+
+.parts-accessories.top {
+    border-bottom: 1px solid #ccc
+}
+
+.parts-accessories h3 {
+    margin-bottom: 20px
+}
+
+.no-rgba .modal .payload {
+    border: 1px solid #ccc
+}
+
+.productImage {
+    float: left;
+    width: 465px;
+    height: 414px;
+    text-align: center;
+    padding-right: 0
+}
+
+.title-wrapper {
+    width: 400px;
+    overflow: hidden;
+    margin-bottom: 10px
+}
+
+.title-wrapper a,.title-wrapper a:visited,.title-wrapper a:active {
+    text-decoration: none;
+    color: #333
+}
+
+.tooltip.standard h3 {
+    color: #333;
+    font-size: 16px;
+    text-transform: uppercase
+}
+
+.tooltip h3 {
+    margin-top: 15px
+}
+
+.copy-wrapper {
+    height: auto;
+    width: 358px;
+    overflow: hidden;
+    clear: left;
+    margin-top: 40px
+}
+
+.copy {
+    margin-top: -100px
+}
+
+.copy a {
+    font-size: 11px;
+    display: block;
+    color: #d80546;
+    max-width: 100px
+}
+
+.copy button {
+    float: left;
+    clear: none
+}
+
+.tooltip .copy {
+    margin-top: 4px
+}
+
+.tooltip h4 {
+    color: #666;
+    font: bold 12px Arial;
+    margin-bottom: 10px;
+    width: 295px
+}
+
+.tooltip ul.features {
+    float: left;
+    width: 230px;
+    min-height: 65px
+}
+
+.tooltip li {
+    color: #666;
+    font-size: 10px;
+    margin-bottom: 0
+}
+
+.tooltip a.close {
+    position:absolute;
+    right:6px;
+    top:6px;
+    background: url("/lg3-common-v4/images/global/lg-global-sprite.png") 0 -174px no-repeat transparent;
+    height: 16px;
+    width: 16px;
+    text-indent: -9999px;
+    overflow:hidden;
+    /* cursor: pointer;
+    margin-right: -4px;
+    margin-top: -4px */
+}
+
+.modal .tooltip a.close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    margin-right: 0;
+    margin-top: 0
+}
+
+.endorsement-wrapper {
+    width: 340px;
+    padding-top: 20px;
+    margin-top: 10px;
+    height: auto;
+    overflow: hidden;
+    border-top: 1px dotted #ccc;
+    font-family: "LGFontRegular"
+}
+
+.endorsement-wrapper img {
+    display: block;
+    float: left;
+    padding: 0
+}
+
+.endorsement-wrapper em {
+    clear: left;
+    float: right;
+    margin-right: 110px;
+    font-size: 10px;
+    font-style: italic;
+    color: #000
+}
+
+.endorsement-wrapper q {
+    color: #d80546;
+    font-size: 17px;
+    width: 263px;
+    float: left
+}
+
+.ratings-large {
+    margin-top: 10px;
+    height: 41px;
+    width: 100%
+}
+
+.bubble.tooltip {
+    width: 180px;
+    margin-top: -2px;
+    margin-left: -24px;
+    z-index: 99999!important
+}
+
+.bubble.tooltip.wide {
+    width: 386px
+}
+
+/* LGEIN-556 : 20130716 add */
+.bubble.tooltip.extra-wide {
+    width: 745px
+}
+
+.bubble.tooltip .scroll {
+overflow-y: auto; height: 252px; margin-top:19px;
+}
+
+.bubble.tooltip .scroll::-webkit-scrollbar{
+    width: 10px;
+    height: 10px;
+}
+
+.bubble.tooltip .scroll::-webkit-scrollbar-track {
+    background: #e5e5e5;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.bubble.tooltip .scroll::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    background: #d80546;
+}
+/* //LGEIN-556 : 20130716 add */
+
+.bubble.tooltip.left {
+    margin-left: 24px
+}
+
+.bubble.tooltip.left.w400 {
+    width: 400px
+}
+
+.bubble.tooltip.find {
+    margin-left: -60px
+}
+
+.tooltip.bubble .payload {
+    padding: 10px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    background: #5d5c5c;
+    color: #fff;
+    font: bold 10px Arial,sans-serif;
+    white-space: normal;
+    box-shadow: 0 0 5px #000;
+    -webkit-box-shadow: 0 0 5px #000;
+    -moz-box-shadow: 0 0 5px #000
+}
+
+.bubble p {
+    font-size: 9px
+}
+
+.tooltip.bubble .pointer {
+    background: url("/lg3-common-v4/images/global/lg-global-sprite.png") 18px -754px no-repeat;
+    height: 17px;
+    width: 42px;
+    margin-top: -1px;
+    position: relative;
+}
+
+.ie .tooltip.bubble .pointer.flip-horizontal {
+    filter: none;
+    background-position: -33px -754px
+}
+
+.filter .tooltip,.head-tooltips .tooltip {
+    font-size: 9px
+}
+
+.share {
+    position: relative;
+    float: right;
+    margin: 5px 20px 0 0
+}
+
+.share.hotspot {
+    margin-bottom: 9px
+}
+
+.share h4 {
+    float: left;
+    font-size: 10px;
+    color: #666;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-family:'Arial';
+}
+
+.social-share .share h4 {
+    margin-top: 0
+}
+
+.share span.ir, .share a.ir {
+    float: left;
+    background: url("/lg3-common-v4/images/global/lg-global-sprite.png") 0 -588px no-repeat;
+    height: 29px;
+    width: 20px;
+    overflow: hidden;
+    display: block;
+    margin-left: 12px;
+	cursor:pointer
+}
+
+.share span.twitter, .share a.twitter {
+    background-position: -30px -588px
+}
+
+.share span.g-plus, .share a.g-plus {
+    background-position: -60px -588px
+}
+
+.share span.delicous, .share a.delicous {
+    background-position: -90px -588px
+}
+
+.share span.pinterest, .share a.pinterest {
+    background-position: -345px -587px
+}
+
+#share {
+    width: 200px;
+    margin-left: -14px;
+    display: none;
+	z-index:7;
+}
+
+#share .payload {
+    height: 140px
+}
+
+.share-send-top #share {
+    top: 50px
+}
+
+#share h5 {
+    padding: 0 0 6px;
+    color: #d80546;
+    font-size: 15px
+}
+
+#share li {
+    list-style-type: none;
+    margin-top: 4px;
+    overflow:hidden
+}
+
+.social-share.share-send-top {
+    float: right
+}
+
+.share-send-top .share {
+    float: left
+}
+
+.share-send-top h4 {
+    float: none;
+    margin-bottom: 2px
+}
+
+.share-send-top {
+    float: left
+}
+
+.share-send-top a {
+    margin-left: 0
+}
+
+.share-send-top .last {
+    margin-right: 0
+}
+
+.share-send-top .send-icons {
+    float: left
+}
+
+.share-send-top .share.send {
+    border-right: dotted 1px #ccc;
+    margin-right: 0;
+    padding-right: 16px
+}
+
+iframe.twitter-share-button {
+    overflow: hidden!important
+}
+
+div.send {
+    float: left
+}
+
+#send_mobile,#send_email {
+    top: 55px;
+    width: 255px;
+    margin-left: 30px
+}
+
+#send_mobile label.tel {
+    display: inline
+}
+
+#send_email label {
+    margin-bottom: 0
+}
+
+.preview-off {
+    margin-top: 15px
+}
+
+.preview-on {
+    display: none;
+    margin-top: 15px;
+    margin-bottom: 8px
+}
+
+.preview-details {
+    height: 35px;
+    width: 175px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 7px;
+    background: #fff
+}
+
+.preview-details span {
+    display: block;
+    clear: both
+}
+
+.preview-details a {
+    float: right;
+    margin-top: -12px
+}
+
+span.preview {
+    font-size: 8px;
+    color: #333;
+    text-transform: uppercase;
+    cursor: pointer;
+    vertical-align: middle;
+    padding-right: 10px
+}
+
+.tooltip h5 {
+    font-size: 16px;
+    color: #d80546
+}
+
+.tooltip p,.tooltip {
+    font-size: 10px
+}
+
+.tooltip button {
+    display: inline
+}
+
+.tooltip. button.small {
+    padding: 3px
+}
+
+#send_mobile button,#send_email button {
+    margin-top: 0;
+    margin-left: 4px;
+    vertical-align: middle
+}
+
+.tooltip label {
+    margin: 0;
+    vertical-align:middle;
+    display: inline-block;
+    font-size: 9px
+}
+
+.tooltip label.last {
+    padding-bottom:0;
+    margin-bottom: 0
+}
+
+.tooltip label.left {
+    margin-left: -5px;
+    margin-top: 10px;
+    width: 120px
+}
+
+.tooltip label span.btn {
+    text-transform: uppercase;
+    font-size: 9px
+}
+
+.tooltip form {
+    display: block;
+    margin-top: 20px;
+    padding-bottom: 12px
+}
+
+.tooltip form a {
+    color: #c70752
+}
+
+.tooltip form span.req {
+    font-style: italic;
+    margin-bottom: 10px;
+    display: block
+}
+
+.tooltip .compare-check {height:26px}
+.tooltip .compare-check label {margin-bottom:0}
+.tooltip .compare-check label span {color:#222 !important}
+/*.tooltip .compare-check label input[type="checkbox"]+span::before {display:none}*/
+.tooltip .compare-check button.btn.small.white.button {height:22px; padding:1px 6px;}
+
+input.three {
+    width: 30px
+}
+
+input.four {
+    width: 45px
+}
+
+#send_email input,#send_email textarea {
+    display: block;
+    clear: both;
+    width: 210px;
+    margin-top: 5px;
+    margin-bottom: 5px
+}
+
+#send_email input {
+    width: 205px
+}
+
+#send_email textarea {
+    margin-bottom: 0;
+    resize: none
+}
+
+.send a.ir {
+    float: left;
+    background: url("/lg3-common-v4/images/global/lg-global-sprite.png") 0 -629px no-repeat;
+    height: 29px;
+    width: 21px;
+    overflow: hidden;
+    display: block;
+    margin-left:12px;
+}
+
+.send a.email {
+    background-position: -29px -629px
+}
+
+.send a.print {
+    background-position: -61px -629px;
+    width: 24px
+}
+
+button.support {
+    font-size: 11px;
+    margin-left: 20px;
+    margin-right: 15px
+}
+
+#tooltip-support.right {
+    margin-left: -80px;
+	z-index:10
+}
+
+#tooltip-support.right .pointer {
+    margin-left: 192px
+}
+
+#tooltip-support a,#tooltip-tools a {
+    color: #333
+}
+
+#tooltip-support ul,#tooltip-tools ul {
+    list-style: none outside none;
+    margin: 0 auto
+}
+
+#tooltip-support li,#tooltip-tools li {
+    line-height: 14px;
+    margin: 4px;
+    padding-left: 12px
+}
+
+#tooltip-support,#tooltip-tools {
+    width: 278px
+}
+
+#tooltip-support .tooltip a.close,#tooltip-tools .tooltip a.close {
+    position: relative;
+    top: -10px;
+    right: -10px
+}
+
+.tooltip.glance {
+    margin-left: -30px;
+    width: 318px
+}
+
+.glance.tooltip .payload {
+    padding-bottom: 25px
+}
+
+.glance.tooltip .payload:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.glance .payload .product-classes {
+    width: 250px
+}
+
+.glance .payload .product-classes.full-name {
+    float: left
+}
+
+.glance .payload .model-num {
+    float: left;
+    margin-top: 5px;
+    margin-right: 15px;
+    margin-bottom: 5px;
+    font: normal 16px "LGFontRegular"
+}
+
+.glance .payload ul.ratings {
+    margin-top: 5px;
+    width: 100px;
+    float: left
+}
+
+.glance .payload div.ratings-wrapper  {
+    margin-top: 5px;
+    width: 100px;
+    float: left
+}
+
+.glance .ratings li {
+    margin: 0
+}
+
+.glance .payload p {
+    clear: both;
+    font-size: 11px;
+    margin-bottom: 0
+}
+
+.glance .payload ul.features {
+    list-style: none outside none;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding: 0
+}
+
+.glance .payload ul.features li {
+    background: url("/lg3-common-v4/images/global/lg-global-sprite.png") no-repeat scroll -276px -436px transparent;
+    padding-left: 10px;
+    margin-bottom: 0
+}
+
+.glance .payload label {
+    /* float: left;
+    text-transform: uppercase;
+    margin: 0;
+    position: relative;
+    height: 12px;
+    top: -10px */
+}
+
+.glance .payload a.button {
+    padding: 5px!important;
+    float: right!important;
+    line-height: 12px
+}
+
+.glance .payload label input.compare {
+    margin: 0!important
+}
+
+.glance span.btn.selected {
+    margin-right: 75px
+}
+
+.glance .payload .ratings-wrapper {margin:3px 0}
+
+.payload .model-name {
+    margin-top: 0
+}
+
+.num-error {
+    display: none;
+    color: #d80546;
+    font-weight: bold;
+    position: absolute;
+    margin-top: -5px
+}
+
+#awards {
+    top: 0!important;
+    left: 60px!important;
+    margin: 0
+}
+
+#awards ul {
+    border-top: 1px solid #ccc;
+    overflow: hidden
+}
+
+#awards li {
+    float: right;
+    list-style-type: none;
+    margin-top: 4px;
+    margin-left: 4px;
+    width: 125px;
+    margin-top: 20px
+}
+
+#awards .payload {
+    float: left;
+    margin-left: 20px;
+    *margin-left: 0
+}
+
+.pointer-arrow-left {
+    float: left;
+    width: 10px!important;
+    height: 20px!important;
+    background-position: 0 -452px!important;
+    position: absolute;
+    top: 74px;
+    *position: relative
+}
+
+.ie7 .productDetails {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #ececec
+}
+
+#microsites {
+    margin: -70px 0 0 240px
+}
+
+#microsites .payload {
+    width: 375px
+}
+
+#microsites .pointer {
+    left: -20px;
+    top: 60px
+}
+
+#microsites ul {
+    width: 100%;
+    overflow: hidden;
+    border-top: 1px solid #ccc;
+    padding: 10px 0
+}
+
+#microsites ul li {
+    width: 100%;
+    overflow: hidden;
+    padding: 5px 0
+}
+
+#microsites ul li .thumbs {
+    float: left;
+    width: 110px;
+    height: 50px
+}
+
+#microsites ul li a {
+    display: inline-block;
+    line-height: 130%
+}
+/* LGENL-486 Remove Underline from 'hover' text. : 20130311 kosangin add  */
+.mozilla  #microsites ul li a {text-decoration: none;outline:none}
+/* //LGENL-486 Remove Underline from 'hover' text. : 20130311 kosangin add  */
+#microsites ul li a.img {
+    line-height: 50px;
+    vertical-align: middle
+}
+
+#microsites ul li a .linkTxt {
+    display: inline-block;
+    width: 100%;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-family: "LGFontMedium";
+    line-height: 130%;
+    vertical-align: middle
+}
+
+#microsites ul li a.img .linkTxt {
+    width: 260px;
+    line-height: 130%;
+    vertical-align: middle
+}
+
+#microsites ul li a .linkArrow {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    padding-left: 10px;
+    background: url("/lg3-common-v4/images/global/lg-global-sprite-v2.png") -300px 1px;
+    vertical-align: top
+}
+
+/*add google-plus bug , change class name : 2012-08-23*/
+.share a.g-plus,.share a.google-plus {
+    background-position: -60px -588px;
+}
+
+/* tooltip features info : 20121023 */
+.features-info-icon {
+    background: url("/lg3-common-v4/images/global/lg-global-sprite.png") no-repeat 0 -564px;
+    width: 13px;
+    height: 13px;
+    display: inline-block;
+    vertical-align: text-top
+}
+
+.tooltip.modal.features-info {}
+.tooltip.modal.features-info .payload {width:600px;height:auto;}
+.tooltip.modal.features-info .payload ul.clear {overflow:hidden;margin:0 auto;}
+.tooltip.modal.features-info .payload ul li.img {float:left;width:215px;margin-right:15px;}
+.tooltip.modal.features-info .payload ul li.text {float:left;width:350px;}
+.tooltip.modal.features-info .payload ul li.text h5 {}
+.tooltip.modal.features-info .payload ul li.text p {margin-top:10px;}
+/* //tooltip features info : 20121023 */
+
+.tooltip .payload .productDetails .copy-wrapper div.copy a.eco-wheretobuy {display: block; float: left; margin: 8px 0 0 0; text-align: right;}
+.ie7 .tooltip .payload .productDetails .copy-wrapper div.copy a.eco-wheretobuy {margin:5px 0 0 8px}
+
+#message-modal{z-index:9999}
+
+/* LGEDE-973 : 20131115 modify
+.lt-ie8 .gplusBtn iframe{margin-top:-8px !important;height:29px !important}
+.lt-ie8 .lazyShare li[title="google+-sns-share"] iframe{margin-left:-8px !important;margin-top:-7px !important;height:29px !important}*/
+/* // LGEDE-973 : 20131115 modify */
+
+/* 140326 Send Email : add */
+#send_email .send-inner {margin-bottom:15px}
+#send_email .send-inner-last {margin-bottom:10px}
+#send_email .send-inner label {display:block}
+
+/* LGEGMO-141 : 20140402 add */
+div#send_email .picture{display:block}
+div#send_email input#pictureText{*margin:-28px 0 0 -5px ; width:100px; margin-left:5px;}
+div#send_email p.icon-refresh {background:url('/lg3-common-v2/images/support/icon-list.png') no-repeat -11px -33px; color:#333333; display:inline-block; padding:0 0 0 15px; margin-bottom:0px;}
+/* //LGEGMO-141 : 20140402 add */
+
+/* 140403 Share : add */
+#shareClick {*zoom:1;}
+#shareClick:after {display:block; clear:both; content:"";}
+#shareClick > a {float:left; *zoom:1}
+#shareClick > a:after {display:block; clear:both; content:""}
+
+/* LG-WCAG : 140619 add */
+.tooltip label + .btn.small.white.button {margin:0 0 0 3px; vertical-align:middle}

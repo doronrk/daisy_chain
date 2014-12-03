@@ -1,1 +1,0 @@
-document.writeln("<img src=\"http:\/\/www.wtp101.com\/push_sync?f=0\" alt=\" \" style=\"display:none\"\/><script type=\"text\/javascript\" src=\"http:\/\/www.wtp101.com\/pcon\"><\/script>");

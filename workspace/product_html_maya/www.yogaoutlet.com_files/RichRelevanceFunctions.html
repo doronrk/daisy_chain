@@ -1,0 +1,793 @@
+var isAddToCart_JS = 1;
+var isTest = true;
+//if(window.location.href.toLowerCase().indexOf('test=y') != -1) isTest = true;
+if (isTest) {
+    var css = '#tb-recommendation-oos, #tb-recommendation-rr2, #sectionAlsoPurchaseDB { display:none!important; }';
+    var head = document.getElementsByTagName('head')[0], style = document.createElement('style');
+    style.type = 'text/css';
+    if (style.styleSheet) {
+        style.styleSheet.cssText = css;
+    } else {
+        style.appendChild(document.createTextNode(css));
+    }
+    head.appendChild(style);
+}
+
+function readCookieRR(cookieName) {
+    var nameEQ = cookieName + "=";
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+    }
+    return "";
+}
+
+function setCookieRR(c_name, value, exdays) {
+    var exdate = new Date();
+    exdate.setDate(exdate.getDate() + exdays);
+    var c_value = escape(value) + ((exdays == null) ? "" : "; expires=" + exdate.toUTCString()) + "; path=/";
+    document.cookie = c_name + "=" + c_value;
+}
+
+function S4() {
+    return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
+}
+var RRSessionID = '',
+        RRUserID = '';
+var guid = (S4() + S4() + '-' + S4() + '-4' + S4().substr(0, 3) + '-' + S4() + '-' + S4() + S4() + S4()).toLowerCase();
+if (readCookieRR('RICHRELEVABCESESSIONID') == '') {
+    RRSessionID = guid;
+    setCookieRR('RICHRELEVABCESESSIONID', guid, 1);
+} else {
+    RRSessionID = readCookieRR('RICHRELEVABCESESSIONID');
+} if (readCookieRR('www%2Eswi%2FCustomerID') == '') {
+    RRUserID = RRSessionID;
+} else {
+    RRUserID = readCookieRR('www%2Eswi%2FCustomerID');
+}
+
+function renderOneProductForHomePage(link_url, image_url, product_id, name, sale_new_flag, listPrice, ourPrice, salePrice, priceRange, rating, index) {
+    var results = '';
+    if (image_url.indexOf('no-photo') >= 0 || image_url.indexOf('nophoto') >= 0) {
+        image_url = '/images/no-photo-168x196.png';
+    }
+    else {
+        image_url = 'https://www.cdn-outlet.com/photos/SOResource/' + product_id + '-2T-134x151-AUTO.jpg';
+    }
+    if ((index + 1) % 5 != 0) {
+        results += '<div class="pd-item-info">';
+    }
+    else {
+        results += '<div class="pd-item-info noMarginR">';
+    }
+    results += '<div class="pd-attr">\
+                                    <a class="pd-photo" href="' + link_url + '">\
+                                        <img width="134" height="151" alt="' + name + '" title="' + name + '" src="' + image_url + '">\
+                                    </a>';
+    results += renderSaleNewFlagForHomePage(sale_new_flag);
+    results += '</div>\
+                        <div class="pd-details">\
+                            <a href="' + link_url + '" class="pd-name">' + name + '</a>\
+                            <br>';
+    results += renderPriceForHomePage(listPrice, ourPrice, salePrice, priceRange);
+    results += renderRatingForHomePage(rating, link_url);
+    results += '</div>\
+                    </div>';
+    return results;
+}
+
+function renderOneProductForCartAnd404Page(link_url, image_url, product_id, name, sale_new_flag, listPrice, ourPrice, salePrice, priceRange, rating, index) {
+    var results = '';
+    if (image_url.indexOf('no-photo') >= 0 || image_url.indexOf('nophoto') >= 0) {
+        image_url = '/images/no-photo-168x196.png';
+    }
+    else {
+        image_url = 'https://www.cdn-outlet.com/photos/SOResource/' + product_id + '-2T-134x151-AUTO.jpg';
+    }
+    if ((index + 1) % 4 != 0) {
+        results += '<div class="pd-item-info">';
+    }
+    else {
+        results += '<div class="pd-item-info noMarginR">';
+    }
+    results += '<div class="pd-attr">\
+                                    <a class="pd-photo" href="' + link_url + '">\
+                                        <img width="134" height="151" alt="' + name + '" title="' + name + '" src="' + image_url + '">\
+                                    </a>';
+    results += renderSaleNewFlagForHomePage(sale_new_flag);
+    results += '</div>\
+                        <div class="pd-details">\
+                            <a href="' + link_url + '" class="pd-name">' + name + '</a>\
+                            <br>';
+    results += renderPriceForHomePage(listPrice, ourPrice, salePrice, priceRange);
+    results += renderRatingForHomePage(rating, link_url);
+    results += '</div>\
+                    </div>';
+    return results;
+}
+
+function renderPriceForHomePage(listPrice, ourPrice, salePrice, priceRange) {
+    var results = '';
+    if (listPrice != undefined && listPrice != "" && parseFloat(listPrice) != 0) {
+        if (ourPrice != undefined && ourPrice != "" && parseFloat(ourPrice) != 0) {
+            if (parseFloat(ourPrice) != parseFloat(listPrice)) {
+                results += '<span class="pd-list-price-number">$' + parseFloat(listPrice).toFixed(2) + '</span>';
+            }
+        }
+        else {
+            results += '<span class="pd-list-price-number">$' + parseFloat(listPrice).toFixed(2) + '</span>';
+        }
+    }
+    if (priceRange != undefined && priceRange != "") {
+        if (results != "") {
+            results += "<br />"
+        }
+        results += '<span class="pd-sale-price-number">' + priceRange + '</span>';
+    }
+    else if (salePrice != undefined && salePrice != "" && parseFloat(salePrice) != 0) {
+        results += '<span class="pd-sale-price-number">$' + parseFloat(salePrice).toFixed(2) + '</span>';
+    }
+    else if (ourPrice != undefined && ourPrice != "" && parseFloat(ourPrice) != 0) {
+        results += '<span class="pd-product-price-item">$' + parseFloat(ourPrice).toFixed(2) + '</span>';
+    }
+    return results;
+}
+
+function renderRatingForHomePage(rating, link_url) {
+    var results = '';
+    if (rating != '' && rating != 0) {
+        rating = Math.round(rating * 2) / 2;
+        results = '<br /><a href="' + link_url + '">\
+                                <img src="/templates/1/images/stars/star_s' + rating.toString() + '_5.png" width="60" height="11" alt="' + rating + '" />\
+                            </a>';
+    }
+    return results;
+}
+
+function renderSaleNewFlagForHomePage(sale_new_flag) {
+    var results = '';
+    if (sale_new_flag != undefined) {
+        if (sale_new_flag.toLowerCase() == "sale") {
+            results += '<div class="ico-sale" style="top: 4px"></div>';
+        }
+        else if (sale_new_flag.toLowerCase() == "new") {
+            results += '<div class="ico-new" style="top: 4px"></div>';
+        }
+    }
+    return results;
+}
+
+function renderSaleNewFlagForSearchPage(sale_new_flag) {
+    var results = '';
+    if (sale_new_flag != undefined) {
+        if (sale_new_flag.toLowerCase() == "sale") {
+            results += '<div class="ico-sale" style="top:4px; left:31px;"></div>';
+        }
+        else if (sale_new_flag.toLowerCase() == "new") {
+            results += '<div class="ico-new" style="top:4px; left:31px;"></div>';
+        }
+    }
+    return results;
+}
+
+function renderOneProductForProductPage_AlsoPurchased(product_id, name, link_url, image_url, sale_new_flag, listPrice, ourPrice, salePrice, priceRange, rating, index) {
+    if (image_url.indexOf('no-photo') >= 0 || image_url.indexOf('nophoto') >= 0) {
+        image_url = '/images/no-photo-168x196.png';
+    }
+    else {
+        image_url = 'https://www.cdn-outlet.com/photos/SOResource/' + product_id + '-2T-134x151-AUTO.jpg';
+    }
+
+    var results = '';
+    if ((index + 1) % 4 == 0) {
+        results += '<div class="pd-item-info noMarginR">';
+    }
+    else {
+        results += '<div class="pd-item-info">';
+    }
+    results += '<div class="pd-attr">';
+    results += '<a class="pd-photo" onclick="_gaq.push([\'_trackEvent\', \'Also Bought\', \'Clicks\', \'' + product_id + '\']);" href="' + link_url + '">';
+    results += renderSaleNewFlagForHomePage(sale_new_flag);
+    results += '<img width="134" height="151" alt="' + name + '" title="' + name + '" src="' + image_url + '">\
+                        </a>\
+                    </div>\
+                    <div class="pd-details">\
+                        <a class="pd-name" href="' + link_url + '" onclick="_gaq.push([\'_trackEvent\', \'Also Bought\', \'Clicks\',\'' + product_id + '\']);">' + name + '</a>\
+						<br />';
+    results += renderPriceForHomePage(listPrice, ourPrice, salePrice, priceRange);
+    results += renderRatingForHomePage(rating, link_url);
+    results += '</div>\
+                    </div>';
+    return results;
+}
+
+function renderOneProductForAlsoLike(link_url, image_url, product_id, name, sale_new_flag, listPrice, ourPrice, salePrice, priceRange, rating, index) {
+    var results = '';
+    if (image_url.indexOf('no-photo') >= 0 || image_url.indexOf('nophoto') >= 0) {
+        image_url = '/images/no-photo-168x196.png';
+    }
+    else {
+        image_url = 'https://www.cdn-outlet.com/photos/SOResource/' + product_id + '-2T-134x151-AUTO.jpg';
+    }
+    results += '<div class="pd-item-info">\
+                            <div class="pd-attr">\
+                                <a class="pd-photo" href="' + link_url + '">\
+                                    <img width="134" height="151" alt="' + name + '" title="' + name + '" src="' + image_url + '">\
+                                </a>';
+    results += renderSaleNewFlagForHomePage(sale_new_flag);
+    results += '</div>\
+                        <div class="pd-details">\
+                            <a href="' + link_url + '" class="pd-name">' + name + '</a>\
+                            <br>';
+    results += renderPriceForHomePage(listPrice, ourPrice, salePrice, priceRange);
+    results += renderRatingForHomePage(rating, link_url);
+    results += '</div>\
+                    </div>';
+    return results;
+}
+
+function renderOneProductForSearchPage(link_url, image_url, product_id, name, sale_new_flag, listPrice, ourPrice, salePrice, priceRange, rating, index) {
+    var results = '';
+    if (image_url.indexOf('no-photo') >= 0 || image_url.indexOf('nophoto') >= 0) {
+        image_url = '/templates/1/images/nophoto-TN80x98.gif';
+    }
+    else {
+        image_url = 'https://www.cdn-outlet.com/photos/' + product_id + '-1.jpg';
+    }
+    if ((index + 1) % 5 != 0) {
+        results += '<div class="pd-item-info">';
+    }
+    else {
+        results += '<div class="pd-item-info noMarginR">';
+    }
+    results += '<div class="pd-attr">\
+                                <a class="pd-photo" href="' + link_url + '">\
+                                    <img height="83" alt="' + name + '" title="' + name + '" src="' + image_url + '">\
+                                </a>';
+    results += renderSaleNewFlagForSearchPage(sale_new_flag);
+    results += '</div>\
+                        <div class="pd-details">\
+                            <a href="' + link_url + '" class="pd-name">' + name + '</a>\
+                            <br>';
+    results += renderPriceForHomePage(listPrice, ourPrice, salePrice, priceRange);
+    results += renderRatingForHomePage(rating, link_url);
+    results += '</div>\
+                    </div>';
+    return results;
+}
+
+function renderMessage(message) {
+    message = message.replace(/\$STRATEGY HINT\$/gi,'');
+    message = $.trim(message).toUpperCase();
+    if (message == "") {
+        return message;
+    }
+    if (message == "people with similar interests also viewed".toUpperCase()) {
+        return message;
+    }
+    if (message == "previously viewed items".toUpperCase()) {
+        return message;
+    }
+    if (message == "People Who Bought Example Also Bought".toUpperCase()) {
+        return message;
+    }
+    if (message == "People Who Viewed Example Also Viewed".toUpperCase()) {
+        return message;
+    }
+    if (message == "PEOPLE WHO BOUGHT THESE ITEMS ALSO BOUGHT") {
+        return message;
+    }
+    if (message == "PEOPLE WHO VIEWED THESE ITEMS ALSO VIEWED") {
+        return message;
+    }
+    if (message == "PEOPLE WHO BOUGHT THESE PRODUCTS ALSO BOUGHT") {
+        return message;
+    }
+    if (message == "PEOPLE WHO VIEWED THESE PRODUCTS ALSO VIEWED") {
+        return message;
+    }
+    if (message == "People Who Bought Items In Your Cart Also Bought".toUpperCase()) {
+        return message;
+    }
+
+    var proname = "", catname = "", brandname = "", keyword = "";
+    var strPattern = "";
+
+    //"People Who Viewed <Product Name> Also Viewed"
+    strPattern = "^People Who Viewed.*Also Viewed$";
+    patt = new RegExp(strPattern, "gi");
+    if (patt.test(message)) {
+        proname = $.trim(message.replace(/People Who Viewed/gi, "").replace(/Also Viewed/gi, ""));
+        message = "People Who Viewed <i>" + proname + "</i> Also Viewed";
+        return message.toUpperCase();
+    }
+
+    //"People Who Searched <keyword> Also Viewed"
+    strPattern = "^People Who Searched.*Also Viewed$";
+    patt = new RegExp(strPattern, "gi");
+    if (patt.test(message)) {
+        keyword = $.trim(message.replace(/People Who Searched/gi, "").replace(/Also Viewed/gi, ""));
+        message = "People Who Searched \"" + keyword + "\" Also Viewed";
+        return message.toUpperCase();
+    }
+
+    //"People Who Searched <keyword> Viewed these Categories"
+    strPattern = "^People Who Searched.*Viewed these Categories$";
+    patt = new RegExp(strPattern, "gi");
+    if (patt.test(message)) {
+        keyword = $.trim(message.replace(/People Who Searched/gi, "").replace(/Viewed these Categories/gi, ""));
+        message = "People Who Searched \"" + keyword + "\" Viewed these Categories";
+        return message.toUpperCase();
+    }
+
+    //"People Who Bought <Product Name> Also Purchased"
+    strPattern = "^People Who Bought.*Also Purchased$";
+    patt = new RegExp(strPattern, "gi");
+    if (patt.test(message)) {
+        proname = $.trim(message.replace(/People Who Bought/gi, "").replace(/Also Purchased.*/gi, ""));
+        message = "People Who Bought <i>" + proname + "</i> Also Purchased";
+        return message.toUpperCase();
+    }
+
+    //"People Who Bought <This Product> Also Purchased Products From <These Categories>"
+    strPattern = "^People Who Bought.*Also Purchased Products From.*";
+    patt = new RegExp(strPattern, "gi");
+    if (patt.test(message)) {
+        proname = $.trim(message.replace(/People Who Bought/gi, "").replace(/Also Purchased Products From.*/gi, ""));
+        catname = $.trim(message.replace(/.*Also Purchased Products From/gi, ""));
+        message = "People Who Bought <i>" + proname + "</i> Also Purchased Products From " + catname + "";
+        return message.toUpperCase();
+    }
+
+    //"People Who Bought <This Product> From <This Category> Also Bought"
+    strPattern = "^People Who Bought.*From.*Also Bought$";
+    patt = new RegExp(strPattern, "gi");
+    if (patt.test(message)) {
+        proname = $.trim(message.replace(/People Who Bought/gi, "").replace(/From(?!.*From).*/gi, ""));
+        catname = $.trim(message.replace(/People Who Bought.*From/gi, "").replace(/Also Bought.*/gi, ""));
+        message = "People Who Bought <i>" + proname + "</i> From " + catname + " Also Bought";
+        return message.toUpperCase();
+    }
+
+    //"People Who Bought <Product Name> Also Bought"
+    strPattern = "^People Who Bought.*Also Bought$";
+    patt = new RegExp(strPattern, "gi");
+    if (patt.test(message)) {
+        proname = $.trim(message.replace(/People Who Bought/gi, "").replace(/Also Bought/gi, ""));
+        message = "People Who Bought <i>" + proname + "</i> Also Bought";
+        return message.toUpperCase();
+    }
+
+    //"People Who Liked <This Product> Also Viewed Products In <This Category>"
+    strPattern = "^People Who Liked.*Also Viewed Products In.*";
+    patt = new RegExp(strPattern, "gi");
+    if (patt.test(message)) {
+        proname = $.trim(message.replace(/People Who Liked/gi, "").replace(/Also Viewed Products In.*/gi, ""));
+        catname = $.trim(message.replace(/.*Also Viewed Products In/gi, ""));
+        message = "People Who Liked <i>" + proname + "</i> Also Viewed Products In " + catname + "";
+        return message.toUpperCase();
+    }
+
+    //“Products Related To Your Recent Search: ‘<Keyword/Phrase>’”
+    strPattern = "^Products Related To Your Recent Search:.*";
+    patt = new RegExp(strPattern, "gi");
+    if (patt.test(message)) {
+        keyword = $.trim(message.replace(/Products Related To Your Recent Search:/gi, ""));
+        if (keyword.charAt(0) == "'") { keyword = keyword.substring(1); }
+        if (keyword.charAt(keyword.length - 1) == "'") { keyword = keyword.substring(0, keyword.length - 1); }
+        message = "Products Related To Your Recent Search: '" + keyword + "'";
+        return message.toUpperCase();
+    }
+
+    //"People Who Searched '<Keyword/Phrase>' Ultimately Bought"
+    strPattern = "^People Who Searched.*Ultimately Bought$";
+    patt = new RegExp(strPattern, "gi");
+    if (patt.test(message)) {
+        keyword = $.trim(message.replace(/People Who Searched/gi, "").replace(/Ultimately Bought/gi, ""));
+        if (keyword.charAt(0) == "'") { keyword = keyword.substring(1); }
+        if (keyword.charAt(keyword.length - 1) == "'") { keyword = keyword.substring(0, keyword.length - 1); }
+        message = "People Who Searched '" + keyword + "' Ultimately Bought";
+        return message.toUpperCase();
+    }
+
+    //“What Was Ultimately Purchased By People Who Searched for ‘<Keyword/Phrase>’?”
+    strPattern = "^What Was Ultimately Purchased By People Who Searched for.*\?$";
+    patt = new RegExp(strPattern, "gi");
+    if (patt.test(message)) {
+        keyword = $.trim(message.replace(/What Was Ultimately Purchased By People Who Searched for/gi, ""));
+        if (keyword.charAt(keyword.length - 1) == "?") {
+            keyword = keyword.substring(0, keyword.length - 1);
+        }
+        keyword = $.trim(keyword);
+        if (keyword.charAt(0) == "'") { keyword = keyword.substring(1); }
+        if (keyword.charAt(keyword.length - 1) == "'") { keyword = keyword.substring(0, keyword.length - 1); }
+        message = "What Was Ultimately Purchased By People Who Searched for '" + keyword + "'?";
+        return message.toUpperCase();
+    }
+
+    //“People Who Searched For ‘<Keyword/Phrase>’ Also Browsed"
+    strPattern = "^People Who Searched For.*Also Browsed$";
+    patt = new RegExp(strPattern, "gi");
+    if (patt.test(message)) {
+        keyword = $.trim(message.replace(/People Who Searched For/gi, "").replace(/Also Browsed/gi, ""));
+        if (keyword.charAt(0) == "'") { keyword = keyword.substring(1); }
+        if (keyword.charAt(keyword.length - 1) == "'") { keyword = keyword.substring(0, keyword.length - 1); }
+        message = "People Who Searched For '" + keyword + "' Also Browsed";
+        return message.toUpperCase();
+    }
+
+    //“People Who Searched For ‘<Keyword/Phrase>’ Also Browsed These Categories”
+    strPattern = "^People Who Searched For.*Also Browsed These Categories$";
+    patt = new RegExp(strPattern, "gi");
+    if (patt.test(message)) {
+        keyword = $.trim(message.replace(/People Who Searched For/gi, "").replace(/Also Browsed These Categories/gi, ""));
+        if (keyword.charAt(0) == "'") { keyword = keyword.substring(1); }
+        if (keyword.charAt(keyword.length - 1) == "'") { keyword = keyword.substring(0, keyword.length - 1); }
+        message = "People Who Searched For '" + keyword + "' Also Browsed These Categories";
+        return message.toUpperCase();
+    }
+
+    //“People Who Viewed <These Products> Also Bought”
+    strPattern = "^People Who Viewed.*Also Bought$";
+    patt = new RegExp(strPattern, "gi");
+    if (patt.test(message)) {
+        proname = $.trim(message.replace(/People Who Viewed/gi, "").replace(/Also Bought/gi, ""));
+        message = "People Who Viewed <i>" + proname + "</i> Also Bought";
+        return message.toUpperCase();
+    }
+
+    //“People Who Viewed <Product Name> Ultimately Bought"
+    strPattern = "^People Who Viewed.*Ultimately Bought$";
+    patt = new RegExp(strPattern, "gi");
+    if (patt.test(message)) {
+        proname = $.trim(message.replace(/People Who Viewed/gi, "").replace(/Ultimately Bought/gi, ""));
+        message = "People Who Viewed <i>" + proname + "</i> Ultimately Bought";
+        return message.toUpperCase();
+    }
+
+    //“What Did People Who Viewed <Product Name> Ultimately Buy?”
+    strPattern = "^What Did People Who Viewed.*Ultimately Buy.*";
+    patt = new RegExp(strPattern, "gi");
+    if (patt.test(message)) {
+        proname = $.trim(message.replace(/What Did People Who Viewed/gi, "").replace(/Ultimately Buy.*/gi, ""));
+        message = "What Did People Who Viewed <i>" + proname + "</i> Ultimately Buy?";
+        return message.toUpperCase();
+    }
+
+    //“People Who Viewed <This Product> Also Viewed...”
+    strPattern = "^People Who Viewed.*Also Viewed\.\.\.$";
+    patt = new RegExp(strPattern, "gi");
+    if (patt.test(message)) {
+        proname = $.trim(message.replace(/People Who Viewed/gi, "").replace(/Also Viewed\.\.\./gi, ""));
+        message = "People Who Viewed <i>" + proname + "</i> Also Viewed\.\.\.";
+        return message.toUpperCase();
+    }
+
+    //“People Who Viewed <This Product> Ultimately Bought <These Products> From <This Category>” (category is variable)
+    strPattern = "^People Who Viewed.*Ultimately Bought.*From.*";
+    patt = new RegExp(strPattern, "gi");
+    if (patt.test(message)) {
+        var thisproduct = $.trim(message.replace(/Ultimately Bought.*/gi, "").replace(/People Who Viewed/gi, ""));
+        var theseproduct = $.trim(message.replace(/.*Ultimately Bought/gi, "").replace(/From(?!.*From).*/gi, ""));
+        var catname = $.trim(message.replace(/.*From/gi, ""));
+        message = "People Who Viewed <i>" + thisproduct + "</i> Ultimately Bought <i>" + theseproduct + "</i> From " + catname + "";
+        return message.toUpperCase();
+    }
+
+    //"People In <Segment> Who Viewed <This Product> Also Viewed"
+    strPattern = "^People In.*Who Viewed.*Also Viewed$";
+    patt = new RegExp(strPattern, "gi");
+    if (patt.test(message)) {
+        var segment = $.trim(message.replace(/Who Viewed.*/gi, "").replace(/People In/gi, ""));
+        proname = $.trim(message.replace(/.*Who Viewed/gi, "").replace(/Also Viewed/gi, ""));
+        message = "People In " + segment + " Who Viewed <i>" + proname + "</i> Also Viewed";
+        return message.toUpperCase();
+    }
+
+    //"People In <Segment> Who Viewed <This Product> Ultimately Purchased
+    strPattern = "^People In.*Who Viewed.*Ultimately Purchased$";
+    patt = new RegExp(strPattern, "gi");
+    if (patt.test(message)) {
+        var segment = $.trim(message.replace(/Who Viewed.*/gi, "").replace(/People In/gi, ""));
+        proname = $.trim(message.replace(/.*Who Viewed/gi, "").replace(/Ultimately Purchased/gi, ""));
+        message = "People In " + segment + " Who Viewed <i>" + proname + "</i> Ultimately Purchased";
+        return message.toUpperCase();
+    }
+
+    //"People Who Viewed <This Product> in <This Category> Ultimately Bought <This Product>"
+
+    return message.toUpperCase();
+}
+
+if (isTest) {
+    var is404 = false;
+    if (currentUrl.indexOf('404.asp') <= 0) {
+        currentUrl = document.URL.toLowerCase();
+    }
+    else {
+        is404 = true;
+    }
+
+    var pattHomePage = "(.*\.com$|.*\.com/$|.*\.com/default.*\.asp.*)";
+    var pattProductDetailsPage = ".*\.com/(product_p/[0-9]+\.htm|p/.*-[0-9]+|productdetails.*\.asp\?.*productcode=[0-9]+).*";
+    var pattSearchPage = ".*\.com/searchresults.*\.asp\?.*(search=.*|.*=.*&search=.*)";
+    var pattCategoryPage = ".*\.com/(.*-c[0-9]+|searchresults.*\.asp\?.*cat=[0-9]+).*";
+    var pattCartPage = ".*\.com/shoppingcart.*";
+    var pattErrorPage = ".*\.com/404.*\.asp.*";
+    var pageType = "";
+    var patt = new RegExp(pattHomePage, "gi");
+    var res = patt.test(currentUrl);
+    if (res == true) {
+        pageType = "HomePage";
+    }
+    else {
+        patt = new RegExp(pattProductDetailsPage, "gi");
+        res = patt.test(currentUrl);
+        if (res == true) {
+            pageType = "ProductPage";
+            var isHasOOSHtml = false;
+            var isHasRR1Html = false;
+            var isHasRR2Html = false;
+            var isRenderOOSHtml = false;
+            var isRenderRR1Html = false;
+            var isRenderRR2Html = false;
+        }
+        else {
+            patt = new RegExp(pattCategoryPage, "gi");
+            res = patt.test(currentUrl);
+            if (res == true) {
+                pageType = "CategoryPage";
+            }
+            else {
+                patt = new RegExp(pattSearchPage, "gi");
+                res = patt.test(currentUrl);
+                if (res == true && currentUrl.indexOf("cat=") < 0) {
+                    pageType = "SearchPage";
+                }
+                else {
+                    patt = new RegExp(pattCartPage, "gi");
+                    res = patt.test(currentUrl);
+                    if (res == true) {
+                        pageType = "CartPage";
+                    }
+                    else {
+                        patt = new RegExp(pattErrorPage, "gi");
+                        res = patt.test(currentUrl);
+                        if (res == true || is404 == true) {
+                            pageType = "ErrorPage";
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    var intervalRR;
+    intervalRR = setInterval('RR.jsonCallback()', 500);
+
+    RR.jsonCallback = function (placement_array) {
+        //if (console) console.log('RR jsonCallback fired, ' + placement_array.length + ' placement(s) returned');
+        if (pageType == "") {
+            clearInterval(intervalRR);
+        }
+        else {
+            if (pageType == "HomePage") {
+                if (document.getElementById("s-recommendation") != null) {
+                    if (RR.data != undefined) {
+                        clearInterval(intervalRR);
+                        if (RR.data.JSON.placements.length > 0) {
+                            var contentRichRelevance = '';
+                            for (var j = 0; j < RR.data.JSON.placements.length; j++) {
+                                contentRichRelevance += ' <section><h2 class="tit-home tit-home-line">' + renderMessage(RR.data.JSON.placements[j].message) + '</h2><div class="list-pd-items list-pd-items-home">';
+                                for (var i = 0; i < RR.data.JSON.placements[j].items.length; i++) {
+                                    contentRichRelevance += renderOneProductForHomePage(RR.data.JSON.placements[j].items[i].link_url, RR.data.JSON.placements[j].items[i].image_url, RR.data.JSON.placements[j].items[i].product_id, RR.data.JSON.placements[j].items[i].name, RR.data.JSON.placements[j].items[i].sale_new_flag, RR.data.JSON.placements[j].items[i].list_price, RR.data.JSON.placements[j].items[i].product_price, RR.data.JSON.placements[j].items[i].sale_price, RR.data.JSON.placements[j].items[i].price_range, RR.data.JSON.placements[j].items[i].rating, i);
+                                }
+                                contentRichRelevance += '</div></section>';
+                            }
+                            $("#s-recommendation").show().html(contentRichRelevance);
+                        }
+                    }
+                }
+            }
+            else if (pageType == "ProductPage") {
+                if (isHasOOSHtml == false && document.getElementById("s-recommendation-oos") != null) { //item_page.oos: 5, (Out of Stock Page)
+                    isHasOOSHtml = true;
+                }
+                if (isHasRR1Html == false && document.getElementById("s-recommendation-rr1") != null) { //item_page.rr1: 5
+                    isHasRR1Html = true;
+                }
+                if (isHasRR2Html == false && document.getElementById("s-recommendation-rr2") != null) { //item_page.rr2: 5
+                    isHasRR2Html = true;
+                }
+                if (isHasOOSHtml == true && isHasRR1Html == true && isHasRR2Html == true) {
+                    clearInterval(intervalRR);
+                }
+
+                var indexOfPlacement;
+                if (isHasOOSHtml == true && isRenderOOSHtml == false) { //item_page.oos: 5, (Out of Stock Page)
+                    if (document.getElementById("s-recommendation-oos").className == "show-recommendation") {
+                        if (RR.data != undefined) {
+                            isRenderOOSHtml = true;
+                            indexOfPlacement = 2;
+                            if (RR.data.JSON.placements[indexOfPlacement] != undefined) {
+                                if (RR.data.JSON.placements[indexOfPlacement].items.length > 0) {
+                                    var count = RR.data.JSON.placements[indexOfPlacement].items.length;
+                                    if (count > 5) {
+                                        count = 5;
+                                    }
+                                    var contentRichRelevance = '';
+                                    contentRichRelevance += '<section class="block-content block-item-right">\
+                                                                        <h2 class="tit-content">' + renderMessage(RR.data.JSON.placements[indexOfPlacement].message) + '<span class="bg-arrow-down"></span></h2>\
+                                                                        <div class="list-items-recommendation">';
+                                    for (var i = 0; i < count; i++) {
+                                        contentRichRelevance += renderOneProductForHomePage(RR.data.JSON.placements[indexOfPlacement].items[i].link_url, RR.data.JSON.placements[indexOfPlacement].items[i].image_url, RR.data.JSON.placements[indexOfPlacement].items[i].product_id, RR.data.JSON.placements[indexOfPlacement].items[i].name, RR.data.JSON.placements[indexOfPlacement].items[i].sale_new_flag, RR.data.JSON.placements[indexOfPlacement].items[i].list_price, RR.data.JSON.placements[indexOfPlacement].items[i].product_price, RR.data.JSON.placements[indexOfPlacement].items[i].sale_price, RR.data.JSON.placements[indexOfPlacement].items[i].price_range, RR.data.JSON.placements[indexOfPlacement].items[i].rating, i);
+                                    }
+                                    contentRichRelevance += '</div></section>';
+                                    $("#s-recommendation-oos").append(contentRichRelevance);
+                                    $("#s-recommendation-oos").show();
+                                }
+                            }
+                        }
+                    }
+                }
+
+                if (isHasRR1Html == true && isRenderRR1Html == false) { //item_page.rr2: 5, you might also like
+                    if (document.getElementById("s-recommendation-rr1").className == "show-recommendation") {
+                        if (RR.data != undefined) {
+                            isRenderRR1Html = true;
+                            indexOfPlacement = 0;
+                            if (RR.data.JSON.placements[indexOfPlacement] != undefined) {
+                                if (RR.data.JSON.placements[indexOfPlacement].items.length > 0) {
+                                    var contentRichRelevance = '';
+                                    contentRichRelevance += '<h2 class="tit-content-striped">CUSTOMERS ALSO VIEWED<span class="bg-arrow-down"></span></h2>\
+                                                                    <div class="list-pd-items pro-list-like">';
+                                    for (var i = 0; i < RR.data.JSON.placements[indexOfPlacement].items.length; i++) {
+                                        contentRichRelevance += renderOneProductForAlsoLike(RR.data.JSON.placements[indexOfPlacement].items[i].link_url, RR.data.JSON.placements[indexOfPlacement].items[i].image_url, RR.data.JSON.placements[indexOfPlacement].items[i].product_id, RR.data.JSON.placements[indexOfPlacement].items[i].name, RR.data.JSON.placements[indexOfPlacement].items[i].sale_new_flag, RR.data.JSON.placements[indexOfPlacement].items[i].list_price, RR.data.JSON.placements[indexOfPlacement].items[i].product_price, RR.data.JSON.placements[indexOfPlacement].items[i].sale_price, RR.data.JSON.placements[indexOfPlacement].items[i].price_range, RR.data.JSON.placements[indexOfPlacement].items[i].rating, i);
+                                    }
+                                    contentRichRelevance += '</div>\
+                                                                <div class="clear"></div>';
+                                    if ($('#tb-recommendation-rr1').length == 0) {
+                                        document.getElementById("s-recommendation-rr1").innerHTML = contentRichRelevance;
+                                        $("#section-recommendation-rr1").show();
+                                        $("#s-recommendation-rr1").show();
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                if (isHasRR2Html == true && isRenderRR2Html == false) { //item_page.rr2: 9, also purchased
+                    if (RR.data != undefined) {
+                        isRenderRR2Html = true;
+                        indexOfPlacement = 1;
+                        if (RR.data.JSON.placements[indexOfPlacement] != undefined) {
+                            if (RR.data.JSON.placements[indexOfPlacement].items.length > 0) {
+                                var contentRichRelevance = '';
+                                var pwi_items, cellwidth_pwi, colspan_pwi, pwi_rows, pwi_c, pwi_r, pwi_celldisplay;
+                                contentRichRelevance += '<h2 class="tit-content">' + renderMessage(RR.data.JSON.placements[indexOfPlacement].message) + '<span class="bg-arrow-down"></span></h2>\
+                                                                    <div class="list-pd-items">\
+									                                <!--Main Content of the Box-->';
+                                pwi_rows = 0;
+                                colspan_pwi = 4;
+                                if (RR.data.JSON.placements[indexOfPlacement].items.length > 8) {
+                                    pwi_items = 8;
+                                }
+                                else {
+                                    pwi_items = RR.data.JSON.placements[indexOfPlacement].items.length;
+                                }
+                                if ((pwi_items % colspan_pwi) == 0) {
+                                    pwi_rows = pwi_items / colspan_pwi;
+                                }
+                                else {
+                                    pwi_rows = parseInt(pwi_items / colspan_pwi) + 1;
+                                }
+                                pwi_celldisplay = 0;
+                                for (var i = 0; i < pwi_rows; i++) {
+                                    for (var j = 0; j < colspan_pwi && pwi_celldisplay < pwi_items; j++) {
+                                        contentRichRelevance += renderOneProductForProductPage_AlsoPurchased(RR.data.JSON.placements[indexOfPlacement].items[pwi_celldisplay].product_id, RR.data.JSON.placements[indexOfPlacement].items[pwi_celldisplay].name, RR.data.JSON.placements[indexOfPlacement].items[pwi_celldisplay].link_url, RR.data.JSON.placements[indexOfPlacement].items[pwi_celldisplay].image_url, RR.data.JSON.placements[indexOfPlacement].items[pwi_celldisplay].sale_new_flag, RR.data.JSON.placements[indexOfPlacement].items[pwi_celldisplay].list_price, RR.data.JSON.placements[indexOfPlacement].items[pwi_celldisplay].product_price, RR.data.JSON.placements[indexOfPlacement].items[pwi_celldisplay].sale_price, RR.data.JSON.placements[indexOfPlacement].items[pwi_celldisplay].price_range, RR.data.JSON.placements[indexOfPlacement].items[pwi_celldisplay].rating, j);
+                                        pwi_celldisplay = pwi_celldisplay + 1;
+                                        if (pwi_celldisplay == 4) {
+                                            contentRichRelevance += '<div class="clear"></div>';
+                                        }
+                                    }
+                                }
+                                contentRichRelevance += '</table><!--End Main Content of the Box--></td><td align="right" valign="top" width="1" background="/templates/1/images/DBox_Border.gif"><img src="/templates/1/images/DBox_Border.gif"></td></tr><tr><td align="left" valign="top" width="1"><img src="/templates/1/images/DBox_Border.gif"></td><td align="center" valign="top" width="100%" background="/templates/1/images/DBox_Border.gif"><img src="/templates/1/images/clear1x1.gif" width="378px" height="1px"></td><td align="right" valign="top" width="1"><img src="/templates/1/images/DBox_Border.gif"></td></tr></table>';
+                                contentRichRelevance += '<div class="clear"></div>';
+                                document.getElementById("s-recommendation-rr2").innerHTML = contentRichRelevance;
+                            }
+                        }
+                    }
+                }
+            }
+            else if (pageType == "CategoryPage") {
+                if (document.getElementById("s-recommendation-cat") != null) {
+                    if (RR.data != undefined) {
+                        clearInterval(intervalRR);
+                        if (RR.data.JSON.placements.length > 0) {
+                            if (RR.data.JSON.placements[0].items.length > 0) {
+                                var contentRichRelevance = '';
+                                contentRichRelevance += '<!--Search result--><h3 class="tit-cat-type"><span>' + renderMessage(RR.data.JSON.placements[0].message).toLowerCase() + '</span></h3><div class="list-pd-items">';
+                                for (var i = 0; i < RR.data.JSON.placements[0].items.length && i < 4; i++) {
+                                    contentRichRelevance += renderOneProductForCartAnd404Page(RR.data.JSON.placements[0].items[i].link_url, RR.data.JSON.placements[0].items[i].image_url, RR.data.JSON.placements[0].items[i].product_id, RR.data.JSON.placements[0].items[i].name, RR.data.JSON.placements[0].items[i].sale_new_flag, RR.data.JSON.placements[0].items[i].list_price, RR.data.JSON.placements[0].items[i].product_price, RR.data.JSON.placements[0].items[i].sale_price, RR.data.JSON.placements[0].items[i].price_range, RR.data.JSON.placements[0].items[i].rating, i);
+                                }
+                                contentRichRelevance += '<div class="clear re-border"></div></div><!--Search result-->';
+                                document.getElementById("s-recommendation-cat").innerHTML = contentRichRelevance;
+                            }
+                        }
+                    }
+                }
+                else if (document.getElementById("s-recommendation-search") != null){
+                    if ($(".cat-list").length == 0) { // remove for parent category
+                        clearInterval(intervalRR);
+                        return;
+                    }
+                }
+            }
+            else if (pageType == "SearchPage") {
+                if (document.getElementById("s-recommendation-search") != null) {
+                    if (RR.data != undefined) {
+                        clearInterval(intervalRR);
+                        if (RR.data.JSON.placements.length > 0) {
+                            if (RR.data.JSON.placements[0].items.length > 0) {
+                                var contentRichRelevance = '';
+                                contentRichRelevance += '<!--Search result--><h2 class="tit-content"><span>' + renderMessage(RR.data.JSON.placements[0].message) + '</span></h2><div class="list-pd-items">';
+                                for (var i = 0; i < RR.data.JSON.placements[0].items.length && i < 4; i++) {
+                                    contentRichRelevance += renderOneProductForCartAnd404Page(RR.data.JSON.placements[0].items[i].link_url, RR.data.JSON.placements[0].items[i].image_url, RR.data.JSON.placements[0].items[i].product_id, RR.data.JSON.placements[0].items[i].name, RR.data.JSON.placements[0].items[i].sale_new_flag, RR.data.JSON.placements[0].items[i].list_price, RR.data.JSON.placements[0].items[i].product_price, RR.data.JSON.placements[0].items[i].sale_price, RR.data.JSON.placements[0].items[i].price_range, RR.data.JSON.placements[0].items[i].rating, i);
+                                }
+                                contentRichRelevance += '</div><!--Search result-->';
+                                document.getElementById("s-recommendation-search").innerHTML = contentRichRelevance;
+                            }
+                        }
+                    }
+                }
+            }
+            else if (pageType == "CartPage") {
+                var indexOfPlacement;
+                if (document.getElementById("s-recommendation-rr1") != null) {
+                    if (RR.data != undefined) {
+                        clearInterval(intervalRR);
+                        if (RR.data.JSON.placements.length > 0) {
+                            indexOfPlacement = 0;
+                            if (RR.data.JSON.placements[indexOfPlacement].items.length > 0) {
+                                var contentRichRelevance = '';
+                                contentRichRelevance += '<h2 class="tit-content-striped">YOU MIGHT ALSO LIKE<span class="bg-arrow-down"></span></h2>\
+                                                                <div class="list-pd-items pro-list-like">';
+                                for (var i = 0; i < RR.data.JSON.placements[indexOfPlacement].items.length; i++) {
+                                    contentRichRelevance += renderOneProductForAlsoLike(RR.data.JSON.placements[indexOfPlacement].items[i].link_url, RR.data.JSON.placements[indexOfPlacement].items[i].image_url, RR.data.JSON.placements[indexOfPlacement].items[i].product_id, RR.data.JSON.placements[indexOfPlacement].items[i].name, RR.data.JSON.placements[indexOfPlacement].items[i].sale_new_flag, RR.data.JSON.placements[indexOfPlacement].items[i].list_price, RR.data.JSON.placements[indexOfPlacement].items[i].product_price, RR.data.JSON.placements[indexOfPlacement].items[i].sale_price, RR.data.JSON.placements[indexOfPlacement].items[i].price_range, RR.data.JSON.placements[indexOfPlacement].items[i].rating, i);
+                                }
+                                contentRichRelevance += '</div>\
+                                                            <div class="clear"></div>';
+
+                                $("#s-recommendation-rr1").html(contentRichRelevance);
+                                $("#s-recommendation-rr1").parent().show();
+                            }
+                        }
+                    }
+                }
+            }
+            else if (pageType == "ErrorPage") {
+                if ($("#s-recommendation").length == 1) {
+                    if (RR.data != undefined) {
+                        clearInterval(intervalRR);
+                        if (RR.data.JSON.placements.length > 0) {
+                            if (RR.data.JSON.placements[0].items.length > 0) {
+                                var contentRichRelevance = '';
+                                contentRichRelevance += '<h2 class="error-recommendation">' + renderMessage(RR.data.JSON.placements[0].message) + '</h2>';
+                                for (var j = 0; j < RR.data.JSON.placements.length; j++) {
+                                    for (var i = 0; i < RR.data.JSON.placements[j].items.length - 1; i++) {
+                                        contentRichRelevance += renderOneProductForCartAnd404Page(RR.data.JSON.placements[j].items[i].link_url, RR.data.JSON.placements[j].items[i].image_url, RR.data.JSON.placements[j].items[i].product_id, RR.data.JSON.placements[j].items[i].name, RR.data.JSON.placements[j].items[i].sale_new_flag, RR.data.JSON.placements[j].items[i].list_price, RR.data.JSON.placements[j].items[i].product_price, RR.data.JSON.placements[j].items[i].sale_price, RR.data.JSON.placements[j].items[i].price_range, RR.data.JSON.placements[j].items[i].rating, i);
+                                    }
+                                    contentRichRelevance += '<div class="clear"></div>';
+                                }
+                                $("#s-recommendation").html(contentRichRelevance);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    };
+}

@@ -1,1 +1,0 @@
-/**/monetate.c.jp({"data": {"fallback_feed_type": "dynamic", "fallback_feed_id": 2039, "api_version": "2", "products_data": [], "no_items_action": "use-fallback-feed", "not_enough_items_action": "use-fallback-feed"}, "ref": "6efb170c"});

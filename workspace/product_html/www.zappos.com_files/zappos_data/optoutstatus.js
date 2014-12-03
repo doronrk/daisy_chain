@@ -1,1 +1,0 @@
-var zapposCriteoOptOut = 0;

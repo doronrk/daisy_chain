@@ -1,0 +1,135 @@
+define([], function() {
+
+	function ControlBar(dispatcher, visibility, rotation) { // constructor
+		// private variables
+		this._dispatcher = dispatcher;
+		this._visibility = visibility;
+		this._rotation = rotation;
+		this._state = null;
+		
+		this.handleControlBarZoomIn = function () {
+			RICHFX.jQuery(this._dispatcher).trigger("zoomin.zoombehavior");
+			
+			return false;
+		};
+		
+		this.handleControlBarZoomOut = function () {
+			RICHFX.jQuery(this._dispatcher).trigger("zoomout.zoombehavior");
+			
+			return false;
+		};
+		
+		this.handleControlBarRotate = function () {
+			RICHFX.jQuery(this._dispatcher).trigger("auto.rotatebehavior");
+			
+			return false;
+		};
+
+		this.handleZoomModeChange = function () {
+			if ( this._state != null )
+			{
+				if ( this._state.getZoomOnly() )
+				{
+					RICHFX.jQuery('#cbRotate').hide();
+				}
+				else
+				{
+					RICHFX.jQuery('#cbRotate').show();	
+				}	
+			}
+		};
+	};
+
+	ControlBar.prototype = {
+		// variables
+		
+		//functions
+		controlBarInit:function(){
+			
+			var display = 'none';
+			
+			if ( this._visibility == 'showOnLoad' ) 
+			{
+				display = 'block';
+			}
+
+			this._cbWidth = 50;
+			this._cbHeight = 25;
+			this._cbTop = 0;
+			this.rotationImg = "";
+
+			if (this._rotation) 
+			{
+				this._cbWidth = 75;
+				this.rotationImg = '<img id="cbRotate" src="'+ RICHFX.settings.sBaseURL +'ViewerDelivery/staticService?profileId=12056150&file=/assets/auto_rotate.png"/>';
+			}
+
+			this._cbLeft = Math.ceil(RICHFX.jQuery(this._dispatcher).width() - this._cbWidth);
+
+			this._vf = RICHFX.jQuery(this._dispatcher).append('<div id="' + this._dispatcher.id + '_cb" style="cursor: pointer; width: ' + this._cbWidth + '; height: ' + this._cbHeight + '; display:block; position: absolute; top: ' + this._cbTop + 'px; left: ' + this._cbLeft + 'px; z-index: 25000;" >'+this.rotationImg+'<img id="cbZoomIn" src="'+ RICHFX.settings.sBaseURL +'ViewerDelivery/staticService?profileId=12056150&file=/assets/zoomin.gif"/><img id="cbZoomOut" src="'+ RICHFX.settings.sBaseURL +'ViewerDelivery/staticService?profileId=12056150&file=/assets/zoomout.gif"/></div>');
+		},
+		
+		controlBarReady:function(){
+			
+			// Add bind's to buttons
+			if ( Modernizr.touch ) {
+				RICHFX.jQuery('#cbZoomIn').bind("touchstart", RICHFX.jQuery.proxy(function(event) {
+					this.handleControlBarZoomIn(event);
+					return false;
+				}, this));
+				RICHFX.jQuery('#cbZoomOut').bind("touchstart", RICHFX.jQuery.proxy(function(event) {
+					this.handleControlBarZoomOut(event);
+					return false;
+				}, this));
+				RICHFX.jQuery('#cbRotate').bind("touchstart", RICHFX.jQuery.proxy(function(event) {
+					this.handleControlBarRotate(event);
+					return false;
+				}, this));
+			}
+			else
+			{
+				RICHFX.jQuery('#cbZoomIn').bind("click", RICHFX.jQuery.proxy(function(event) {
+					this.handleControlBarZoomIn(event);
+					return false;
+				}, this));
+				RICHFX.jQuery('#cbZoomOut').bind("click", RICHFX.jQuery.proxy(function(event) {
+					this.handleControlBarZoomOut(event);
+					return false;
+				}, this));
+				RICHFX.jQuery('#cbRotate').bind("click", RICHFX.jQuery.proxy(function(event) {
+					this.handleControlBarRotate(event);
+					return false;
+				}, this));
+			}
+			
+		},
+
+		setVisibility: function(setting) {
+			this._visibility = setting;
+
+			if ( this._visibility )
+			{
+				RICHFX.jQuery('#'+this._dispatcher.id+'_cb').show();
+			}
+			else
+			{
+				RICHFX.jQuery('#'+this._dispatcher.id+'_cb').hide();
+			}
+		},
+
+		setState: function(assetState) {
+			this._state = assetState;
+
+			// set original state
+			this.handleZoomModeChange();
+
+			if ( this._rotation ) {
+				RICHFX.jQuery(this._dispatcher).bind("state.zoomModeChange", RICHFX.jQuery.proxy(function(event) {
+					this.handleZoomModeChange();
+				}, this));	
+			}
+		}
+	};
+
+	return ControlBar;
+});

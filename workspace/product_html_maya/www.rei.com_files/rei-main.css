@@ -1,0 +1,76 @@
+/* $Id$ */
+
+/* Begin classes for the Style plugin of the "richtext" widget */
+.style1 {
+	color: #cc0000;
+} /*red*/
+
+.style2 {
+	color: #ff6600;
+} /*orange*/
+
+.inverted1,
+a .inverted1,
+a.inverted1,
+.inverted1 a {
+	color: #fff;
+	font-weight: bold;
+} /* white */
+
+.invertedNormalState,
+a .invertedNormalState,
+a.invertedNormalState,
+.invertedNormalState a {
+	color: #fff;
+	font-weight: normal;
+} /* white */
+.p2 {
+	font-weight: bold;
+	color: #333333;
+	padding-right: 0px;
+	/* right padding is 0 for when p2 is used as a span within a p tag */
+}
+
+.pullQuote{
+	font-size:16px;
+	padding-top:10px;
+	color: #5d5145;
+}
+
+.pullQuote p{
+	color: #5d5145;
+}
+
+/*TDOD: The below two classes .reiFont1 and .reiFont2 are left for backward compatibility purposes and should be removed once all pages are updated to use interstate font*/
+.reiFont1 {
+	font-family:'interstateBlack',Georgia,serif;
+	color:#fff;
+	font-size:30px;
+}
+
+.reiFont2 {
+	font-family:'interstateBlack',Georgia,serif;
+	color:#333;
+	font-size:30px;
+}
+
+/* END classes for the Style plugin of the "richtext" widget */
+
+/* For the classes above, place an entry below for displaying the font selection options black in color. The entry is must for WHITE FONTS.*/
+   
+#CQ .style1, 
+#CQ .style2, 
+#CQ .inverted1, 
+#CQ .invertedNormalState,
+#CQ .p2, 
+#CQ .pullQuote, 
+#CQ .reiFont1, 
+#CQ .reiFont2,
+#CQ .outlet-font-gray,
+#CQ .outlet-font-red {
+	font: inherit;
+	color:#333;
+	padding: 0;
+	margin: 0;
+}
+@font-face{font-family:'interstate';src:url("../../static/rei-wcm/font/interstate.eot?#iefix") format('eot'),url("../../static/rei-wcm/font/interstate.woff") format('woff'),url("../../static/rei-wcm/font/interstate.ttf") format('truetype'),url("../../static/rei-wcm/font/interstate.svg") format('svg');font-weight:normal;font-style:normal;font-variant:normal}@font-face{font-family:'interstateBlack';src:url("../../static/rei-wcm/font/interstateBlack.eot?#iefix") format('eot'),url("../../static/rei-wcm/font/interstateBlack.woff") format('woff'),url("../../static/rei-wcm/font/interstateBlack.ttf") format('truetype'),url("../../static/rei-wcm/font/interstateBlack.svg") format('svg');font-weight:normal;font-style:normal;font-variant:normal}@font-face{font-family:'interstateBold';src:url("../../static/rei-wcm/font/interstateBold.eot?#iefix") format('eot'),url("../../static/rei-wcm/font/interstateBold.woff") format('woff'),url("../../static/rei-wcm/font/interstateBold.ttf") format('truetype'),url("../../static/rei-wcm/font/interstateBold.svg") format('svg');font-weight:normal;font-style:normal;font-variant:normal}@font-face{font-family:'lobster';src:url("../../static/rei-wcm/font/lobster.eot?#iefix") format('eot'),url("../../static/rei-wcm/font/lobster.woff") format('woff'),url("../../static/rei-wcm/font/lobster.ttf") format('truetype'),url("../../static/rei-wcm/font/lobster.svg") format('svg');font-weight:normal;font-style:normal;font-variant:normal}.primary-head-line-font{font-family:"interstateBlack",Georgia,serif}.primary-architectural-brand-font,.primary-sub-head-font{font-family:"interstateBold",Arial,serif}.primary-body-font{font-family:"interstate",Georgia,serif}.outlet-font{font-family:"lobster",Georgia,serif}.outlet-font-gray{font-family:"lobster",Georgia,serif;color:#373737}.outlet-font-red{font-family:"lobster",Georgia,serif;color:#ea133a}@-moz-document url-prefix(){.primary-head-line-font,.primary-sub-head-font,.primary-architectural-brand-font{font-weight:normal}}

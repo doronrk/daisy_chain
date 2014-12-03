@@ -1,1 +1,0 @@
-(function(e){var t=$(".PinterestButtonContainer a");var n=$('meta[property="pinterest:richpins"]').attr("content");var r=$('meta[property="og:url"]').attr("content");if(t.length>0){t.on("click",function(){e.bcanalytics.track("Pinterest.UserPinnedItem",{item:r,richpin_status:n})})}})(window)

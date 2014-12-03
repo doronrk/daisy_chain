@@ -1,1 +1,0 @@
-var oo_feedback=new OOo.Ocode({referrerRewrite:{searchPattern:/:\/\//g,replacePattern:"://consumer."}});

@@ -1,0 +1,2475 @@
+
+
+// *********************************************
+// Class declaration
+// *********************************************
+
+// initialize RICHFX object only once!
+if (typeof(RICHFX)=='undefined')
+/**
+ * RICHFX Interface class
+ **/
+var RICHFX = new function() {
+  var mousePos = [0,0];
+  var watchedObjects = new Array();
+  var visibleWatcher = new Array();
+  var mouseNearWatcher = new Array();
+  var watcherTimer;
+  var numWatchers = 0;
+  var customEventNames = {};
+  var initialized;
+  var self = this;
+  var viewerList = new Array();
+  var registeredViewers = new Array();
+  // *********************************************
+  // Public constructor
+  // *********************************************
+
+  function RICHFX () {
+    // set supported browsers
+    if ( this.isIE && ( this.browserVersion < 5.5 ) ) return;
+    if ( this.isFirefox && this.browserVersion < 1.5 ) return;
+    if ( this.isSafari && this.browserVersion < 3.0 ) return;
+    if ( this.isOpera && this.browserVersion < 9.0 ) return;
+    if ( this.isChrome && this.browserVersion < 1.0 ) return;
+    if ( !( this.isIE || this.isFirefox || this.isSafari || this.isOpera || this.isChrome ) ) return;
+
+    // add class events
+    if (typeof(RICHFX_INTERFACE_LOADER) == 'undefined')
+      this.addEvent( window, 'load', initialize, this );
+    else {
+      	if (this.isIE){
+      	    // IE Hack: To give browser the chance to update the DOM
+      		this.setTimeout(initialize, 1, this);
+      	} else{
+      		initialize.apply(this);
+      	}
+    }
+    this.addEvent( window, 'unload', cleanup, this );
+    this.addEvent( window, 'resize', resize_handler, this );
+    this.prototype = this;
+  }
+
+  var createLocalEvent = function(evType) {
+    if( document.createEvent ) {
+      var eventObj = document.createEvent('Events');
+      eventObj.initEvent( evType, true, true );
+    } else if ( document.createEventObject ) {
+      var eventObj = document.createEventObject();
+    }
+    return eventObj;
+  }
+
+  var watcherRound = 0;
+  var WATCHER_INTERVAL = 500;
+  function watcher_handler(){
+    if (!watchedObjects) return; //HACK: discovered in iframes on wiki
+    //var start = (new Date().getTime()) //-- profiling
+
+    for (var i=0; i < watchedObjects.length; i++) {
+      var obj = watchedObjects[i];
+      var elemData = this.getElementData(obj);
+      for (var property in elemData.watcher) {
+        var data = elemData.watcher[property];
+        var changed = data.value != obj[property];
+        if (changed || data.tainted) {
+          data.tainted = false;
+          for (var j=0; j < data.handlers.length; j++) {
+            var handler = data.handlers[j];
+            data.value = obj[property]; // update
+            // notify current and pending
+            if ((changed || handler.tainted) && (watcherRound % handler.frequency) == 0) {
+              handler.tainted = false;
+              var e = createLocalEvent('offsetchange');
+              handler.func.apply(handler.context, [e].concat(handler.args));
+            } else if (changed)
+              data.tainted = handler.tainted = true;
+          }
+        }
+      }
+    }
+    watcherRound = (watcherRound+1) % 1000000; // to limit range
+    if (numWatchers>0)
+      watcherTimer = this.setTimeout( watcher_handler, WATCHER_INTERVAL, this );
+
+    //console.log("time: "+(new Date().getTime()-start)); // profiling
+  }
+
+  // *********************************************
+  // Public Methods
+  // *********************************************
+
+  /**
+   * register a viewer to get notified, when it is becoming visible in viewport
+   * @param obj element of the viewer
+   * @param fn callback
+   * @param context callback context
+   * @param score Threshold value for viewer loading
+   * @return void
+   **/
+  this.addVisibleWatcher = function (obj, fn, context, score) {
+  	if (visibleWatcher.length == 0) {
+  		// no other watcher is there and we need to register for scroll event
+  		this.addEventListener(window, 'scroll', handler_visibleWatcher, this);
+  	}
+  	// check if we are already registered. Update only score value and return in that case
+	for(var i=0; i < visibleWatcher.length; i++){
+		if ((visibleWatcher[i].obj == obj) && (visibleWatcher[i].fn == fn) &&(visibleWatcher[i].context == context)) {
+			visibleWatcher[i].score = score;
+			return;
+		}
+	}
+    visibleWatcher[ visibleWatcher.length ] = { "obj": obj, "fn": fn, "context": context, "score": score };
+
+    // call handler once to avoid init problems for the viewers, that are in the viewport right from the start
+    handler_visibleWatcher.apply(this, [null]);
+  }
+
+  /**
+   * unregister a viewer
+   * @param obj element of the viewer
+   * @param fn callback
+   * @param context callback context
+   * @return void
+   **/
+  this.removeVisibleWatcher = function (obj, fn, context) {
+  	// look through all visibleWatcher and find the right one to "splice" out of the array
+  	for(var i=0; i < visibleWatcher.length; i++){
+		if ((visibleWatcher[i].obj == obj) && (visibleWatcher[i].fn == fn) &&(visibleWatcher[i].context == context)){
+			visibleWatcher.splice(i, 1);
+			// if no one is left, remove scroll event registration
+			if ( visibleWatcher.length == 0 ){
+				this.removeEventListener(window, 'scroll', handler_visibleWatcher, this);
+			}
+			return;
+		}
+	}
+  }
+
+  /**
+   * handler for scrolling of document. Checks if viewer is visible in viewport now
+   **/
+  var handler_visibleWatcher =  function(event){
+  	// using a copy,because some callback could call removeVisibleWatcher and modify the org array
+  	var tmpVisibleWatcher = visibleWatcher.slice();
+  	for(var i=0; i < tmpVisibleWatcher.length; i++){
+  		if (this.getElementInViewportScore(tmpVisibleWatcher[i].obj) >= tmpVisibleWatcher[i].score){
+  			tmpVisibleWatcher[i].fn.apply(tmpVisibleWatcher[i].context);
+  		}
+  	}
+  }
+
+
+  /**
+   * register a viewer to get notified, when the mouse get near it
+   * @param obj element of the viewer
+   * @param fn callback
+   * @param context callback context
+   * @param score Threshold value for viewer loading
+   * @return void
+   **/
+  this.addMouseNearWatcher = function (obj, fn, context, score) {
+  	if (mouseNearWatcher.length == 0) {
+  		// no other watcher is there and we need to register for scroll event
+  		this.addEventListener(document.body, 'mousemove', handler_mouseNearWatcher, this);
+  	}
+  	// check if we are already registered. Update only score value and return in that case
+	for(var i=0; i < mouseNearWatcher.length; i++){
+		if ((mouseNearWatcher[i].obj == obj) && (mouseNearWatcher[i].fn == fn) &&(mouseNearWatcher[i].context == context)) {
+			mouseNearWatcher[i].score = score;
+			return;
+		}
+	}
+    mouseNearWatcher[ mouseNearWatcher.length ] = { "obj": obj, "fn": fn, "context": context, "score": score };
+  }
+
+  /**
+   * unregister a viewer
+   * @param obj element of the viewer
+   * @param fn callback
+   * @param context callback context
+   * @return void
+   **/
+  this.removeMouseNearWatcher = function (obj, fn, context) {
+  	// look through all mouseNearWatcher and find the right one to "splice" out of the array
+  	for(var i=0; i < mouseNearWatcher.length; i++){
+		if ((mouseNearWatcher[i].obj == obj) && (mouseNearWatcher[i].fn == fn) &&(mouseNearWatcher[i].context == context)){
+			mouseNearWatcher.splice(i, 1);
+			// if no one is left, remove scroll event registration
+			if ( mouseNearWatcher.length == 0 ){
+				this.removeEventListener(document.body, 'mousemove', handler_mouseNearWatcher, this);
+			}
+			return;
+		}
+	}
+  }
+
+  /**
+   * handler for mouse movement. Checks if mouse is near viewer
+   **/
+  var handler_mouseNearWatcher =  function(event){
+  	// using a copy,because some callback could call removeVisibleWatcher and modify the org array
+  	var tmpMouseNearWatcher = mouseNearWatcher.slice();
+  	var windowMetrics = this.getWindowMetrics();
+  	for(var i=0; i < tmpMouseNearWatcher.length; i++){
+  		if (this.getMouseDistanceScore(event.clientY + windowMetrics.offset[1], event.clientX + windowMetrics.offset[0], tmpMouseNearWatcher[i].obj) <= tmpMouseNearWatcher[i].score){
+  			tmpMouseNearWatcher[i].fn.apply(tmpMouseNearWatcher[i].context);
+  		}
+  	}
+  }
+
+  /**
+   * calculates distance between a point and an other point
+   * @param pointTop Top value of first point
+   * @param pointLeft Left value of first point
+   * @param targetTop Top value of second point
+   * @param targetLeft Top value of second point
+   * @return integer
+   **/
+  var calcDistPointToPoint = function(pointTop, pointLeft, targetTop, targetLeft){
+  	var a = pointTop - targetTop;
+  	var b = pointLeft - targetLeft;
+  	// using Pythagoras
+  	return Math.ceil(Math.sqrt(a*a + b*b));
+ }
+
+   /**
+    * Calcluate the distance between a point (top, left) and an element
+    * @param pointTop Top value of the point
+    * @param pointLeft Left value of the point
+    * @param elem
+    * @return integer
+    **/
+  this.getMouseDistanceScore = function(pointTop, pointLeft, elem){
+   	// elem in the middle, pointTop/pointLeft can be in on of the 8 areas
+  	// a1| a2 |a3
+  	// --+----+--
+  	// b1|elem|b3
+  	// --+----+--
+  	// c1| c2 |c3
+
+	//elementSize[0] => width, elementSize[1] => height
+	var elementSize  = this.getElementSize(elem);
+
+	// left, top
+    var elementOffset = this.getAbsoluteOffset(elem);
+
+    var elemTop = elementOffset.top;
+    var elemLeft = elementOffset.left;
+    var elemRight =  elemLeft + elementSize[0];
+    var elemBottom =  elemTop + elementSize[1];
+    var distance = 0;
+
+    if (pointTop < elemTop) {
+    	if (pointLeft < elemLeft){
+    		// a1
+    		distance = calcDistPointToPoint(pointTop, pointLeft, elemTop, elemLeft);
+    	} else if ((pointLeft <= elemRight ) && (pointLeft >= elemLeft )) {
+    		// a2
+    		distance = calcDistPointToPoint(pointTop, pointLeft, elemTop, pointLeft);
+    	} else {
+    		// a3
+    		distance = calcDistPointToPoint(pointTop, pointLeft, elemTop, elemRight);
+    	}
+   } else if ((pointTop >= elemTop) && (pointTop <= elemBottom)){
+    	if (pointLeft < elemLeft){
+    	  // b1
+    	  distance = calcDistPointToPoint(pointTop, pointLeft, pointTop, elemLeft);
+    	} else if ((pointLeft <= elemRight ) && (pointLeft >= elemLeft )) {
+    	  // b2, over the elem
+    	  distance = 0;
+    	} else {
+    	  // b3
+		  distance = calcDistPointToPoint(pointTop, pointLeft, pointTop, elemRight);
+    	}
+
+    } else {
+    	if (pointLeft < elemLeft){
+    	 // c1
+    	 distance = calcDistPointToPoint(pointTop, pointLeft, elemBottom, elemLeft);
+    	} else if ((pointLeft <= elemRight ) && (pointLeft >= elemLeft )) {
+    	 // c2
+    	 distance = calcDistPointToPoint(pointTop, pointLeft, elemBottom, pointLeft);
+    	} else {
+    	  // c3
+    	  distance = calcDistPointToPoint(pointTop, pointLeft, elemBottom, elemRight);
+    	}
+    }
+	return distance;
+  }
+
+  /**
+   * checks for valid preLoadEventTypes
+   * @param preLoadEventType Type to check
+   * @return boolean
+   **/
+  this.isValidPreLoadEventType = function(preLoadEventType){
+  	if ((preLoadEventType == 'mousenear') ||(preLoadEventType == 'visible')) {
+  		return true;
+  	} else {
+  		return false;
+  	}
+  }
+
+  /**
+   * Listen to a property change on an object
+   * @param object listen for events
+   * @param name of property to listen for a change
+   * @param frequency - minimum 1, integer that tells on which round to fire (1=always)
+   * @param listener function to attach to event
+   * @param context of the listener function ( default: this )
+   * @param Array arguments passed to listener function
+   * @return Returns the success of attaching event
+   **/
+  this.addChangeWatcher = function (obj, property, frequency, fn, context) {
+    if (frequency<1) frequency = 1;
+    var elemData = this.getElementData(obj);
+    if (!elemData.watcher) elemData.watcher = new Object();
+    if (!elemData.watcher[property]) elemData.watcher[property] = new Object();
+    var data = elemData.watcher[property];
+    if (!data.handlers) data.handlers = new Array();
+
+    var args = [];
+    for ( var i = 5; i < arguments.length; i++ ) args[args.length] = arguments[i];
+
+    data.value = obj[property];
+    data.handlers[ data.handlers.length ] = {frequency: frequency, func: fn,
+       context: context || this, callerRef: context, args: args };
+    numWatchers++;
+
+    watchedObjects[watchedObjects.length] = obj;
+
+    if (!watcherTimer)
+      watcherTimer = this.setTimeout( watcher_handler, WATCHER_INTERVAL, this );
+  }
+
+   /**
+   * Remove change watcher previously registered with addChangeWatcher
+   * the args are same as passed to addChangeWatcher
+   * @param object  being watched
+   * @param property being watched
+   * @param listener function
+   * @param context (optional)
+   *
+   **/
+  this.removeChangeWatcher = function (obj, property, fn, context) {
+    var elemData = this.getElementData(obj);
+    if (!elemData.watcher) return;
+    if (!(elemData.watcher[property])) return;
+    var data = elemData.watcher[property];
+    if (!data.handlers) return;
+    for (var i=0; i < data.handlers.length; i++) {
+      var listener = data.handlers[i];
+      if ( listener.func === fn && listener.context === ( context || listener.callerRef )){
+        data.handlers.splice(i, 1);
+        numWatchers--;
+        for (var k in listener) listener[k] = null;
+        break;
+      }
+    }
+
+    if (numWatchers==0) {
+      clearTimeout(watcherTimer);
+      watcherTimer = null;
+    }
+  }
+
+  /**
+   * Attach change wathers and events to detect offset change
+   * @param object listen for events
+   * @param listener function to attach to event
+   * @param frequency positive integer, how often do you want to check (use 1 for always)
+   * @param context of the listener function ( default: this )
+   * @paramArray arguments passed to listener function
+   * @return Returns the success of attaching event
+   **/
+  var offsetHandler = function (e, fn, args) {
+      resize_handler();
+      fn.apply(this, [e].concat(args)); // this is caller's context
+  }
+  this.addOffsetWatcher = function (obj, fn, frequency, context) {
+  	  if ( typeof obj == "string" ) {
+  	  	obj = document.getElementById(obj);
+  	  }
+      var args = [];
+      for ( var i = 4; i < arguments.length; i++ ) args[args.length] = arguments[i];
+      var parent = obj.offsetParent;
+      while(parent) {
+        if (parent.style.position)
+          break;
+        parent = parent.offsetParent;
+      }
+      if (parent) { // false when obj = body
+        this.addChangeWatcher(parent, 'offsetTop', frequency, offsetHandler, context, fn, args);
+        this.addChangeWatcher(parent, 'offsetLeft', frequency, offsetHandler, context, fn, args);
+      }
+      this.addChangeWatcher(obj, 'offsetTop', frequency, offsetHandler, context, fn, args);
+      this.addChangeWatcher(obj, 'offsetLeft', frequency, offsetHandler, context, fn, args);
+      this.addEvent( window, 'resize', offsetHandler, context, fn, args );
+  }
+
+  /**
+   * Get API implementation for an object
+   * @param object user image object
+   * @param componentName that was applied to the image object
+   * @return Returns api object previously set with setApi()
+   **/
+  this.api = function (obj, componentName) {
+  	  if ( typeof obj == "string" ) {
+  	  	obj = document.getElementById(obj);
+  	  }
+      var elemData = this.getElementData(obj);
+      if (!elemData.api) elemData.api = {};
+      if (!elemData.api[componentName]) elemData.api[componentName] = {};
+      return elemData.api[componentName];
+  }
+  
+	/**
+	 * Kick off a full reload of data
+	 * @return nothing
+	 */
+	this.mediaReload = function () {
+		
+		// local variables
+		var i;	
+		
+		for ( var viewerName in registeredViewers ) {
+			var objArr = getElementsByClass('img', registeredViewers[viewerName]);
+		
+			for ( i = 0; i < objArr.length; i++) { 
+				document.body.removeChild(objArr[i]);
+			}
+		}
+		
+		initialize.apply(this);
+		
+		// ensure correct positioning
+		resize_handler();
+	}
+	
+	var getElementsByClass = function (tagName, theClass) { 
+	
+		var classArr = new Array();
+	
+		// Populate the array with all the page tags 
+		var allPageTags = document.getElementsByTagName(tagName); 
+		var i, j = 0;
+		
+		// Cycle through the tags using a for loop 
+		for ( i=0; i<allPageTags.length; i++) { 
+		
+			// Pick out the tags with our class name 
+			if (allPageTags[i].className == theClass) { 
+				// collect all correct tags
+				classArr[j] = allPageTags[i];
+				j++;
+			} 	
+		} 
+		
+		return classArr;
+	} 
+  
+	/**
+	 * Handle redraw of full set of images.
+	 * @param componentName component type to redraw
+	 * @return nothing
+	 */
+	this.fullRedraw = function ( componentName ) {
+	
+		var registeredElements = this.getRegisteredElements();
+
+		for ( var k in registeredElements ) {
+		
+			var elem = registeredElements[k];
+			var elemData = this.getElementData(elem);
+			var component = elemData.api[componentName];
+			
+			if ( component != undefined ) {
+				component.redraw();
+			}
+		}
+	}
+  
+	/**
+	 * Handle redraw of full set of images.
+	 * @param componentName component type to redraw
+	 * @return nothing
+	 */
+	this.fullRedraw_handler = function ( e, componentName ) {
+	
+		this.consoleDebug('Entered fullRedraw: ' + componentName);
+   	
+		var registeredElements = this.getRegisteredElements();
+
+		for ( var k in registeredElements ) {
+		
+			var elem = registeredElements[k];
+			
+			this.consoleDebug('regElements: ' + elem.src);
+		
+			var elemData = this.getElementData(elem);
+			var component = elemData.api[componentName];
+			
+			if ( component != undefined ) {
+				component.redraw();
+			}
+		}
+	}
+
+  /**
+   * Get Properties
+   * @param object user image object
+   * @return Returns aapi properties hash global for all components
+   **/
+  this.properties = function (obj) {
+     if ( typeof obj == "string" ) {
+		obj = document.getElementById(obj);
+  	}
+    var elemData = this.getElementData(obj);
+    if (!elemData.api) elemData.api = {};
+    if (!elemData.api._properties) elemData.api._properties = {
+      depth: (RICHFX_CONFIG.zindex || 20000), element: obj
+    };
+    return elemData.api._properties;
+  }
+
+
+  /**
+   * Set Api method -- convenience function
+   * @param componentName that was applied to the image object
+   * @param name of method
+   * @param the function
+   * @param the context (optional, defaults to 'this')
+   * @return Register a function within object api
+   **/
+  var self = this;
+  this.registerMethod = function (obj, componentName, funcName, func, context) {
+      var elemData = this.getElementData(obj);
+      if (!elemData.api) elemData.api = {};
+      if (!elemData.api[componentName]) elemData.api[componentName] = {};
+      if (!context)
+        context = self;
+      elemData.api[componentName][funcName] = function() { return func.apply(context, arguments) }
+  }
+
+  /**
+   * Attach change wathers and events to detect offset change
+   * @param object listen for events
+   * @param listener function to attach to event
+   * @param frequency positive integer, how often do you want to check (use 1 for always)
+   * @param context of the listener function ( default: this )
+   * @paramArray arguments passed to listener function
+   * @return Returns the success of attaching event
+   **/
+  this.removeOffsetWatcher = function (obj, fn, context) {
+      if ( typeof obj == "string" ) {
+   	  	obj = document.getElementById(obj);
+  	  }
+      var parent = obj.offsetParent;
+      while(parent) {
+        if (parent.style.position)
+          break;
+        parent = parent.offsetParent;
+      }
+      if (parent) { // false when obj = body
+        this.removeChangeWatcher(parent, 'offsetTop', offsetHandler, context);
+        this.removeChangeWatcher(parent, 'offsetLeft', offsetHandler, context);
+      }
+      this.removeChangeWatcher(obj, 'offsetTop', offsetHandler, context);
+      this.removeChangeWatcher(obj, 'offsetLeft', offsetHandler, context);
+      this.removeEvent( window, 'resize', offsetHandler, context );
+  }
+
+  /**
+   * Attach an event listener to an event
+   * @param object listen for events
+   * @param name of event to listen for
+   * @param listener function to attach to event
+   * @param context of the listener function ( default: this )
+   * @paramArray arguments passed to listener function
+   * @return Returns the success of attaching event
+   **/
+  this.changeWatcherFrequency = 1;
+  this.addEvent = this.addEventListener = function (obj, evType, fn, context) { //FIXME: keep only addEventListener
+    // do nothing if function called incorrectly
+    if ( !obj || typeof(evType) != 'string' || typeof(fn) != 'function' ) return;
+
+    // fix opera bug when target is window!
+    if ( obj == window && navigator.userAgent.indexOf('Opera') != -1 ) obj = document;
+
+    // handle arguments of event listener
+    var args = [];
+    for ( var i = 4; i < arguments.length; i++ ) args[args.length] = arguments[i];
+
+    if (evType=="offsetchange")
+      return this.addOffsetWatcher.apply(this, [obj, fn, this.changeWatcherFrequency, context].concat(args));
+
+    if (evType=="visible")
+      return this.addVisibleWatcher.apply(this, [obj, fn, context].concat(args));
+
+	if (evType=="mousenear")
+      return this.addMouseNearWatcher.apply(this, [obj, fn, context].concat(args));
+
+    // create a unique identifier for the element
+    if ( !( '__richfx_id' in obj ) ) obj['__richfx_id'] = 'id_' + registeredObjectsIndex++;
+    registeredObjects[ obj['__richfx_id'] ] = obj;
+
+    // create event interface object
+    var elemData = this.getElementData(obj);
+    if (!elemData.events) elemData.events = new Object();
+    var gsEvent = elemData.events;
+
+    // create listener array for the event if not found
+    if ( !gsEvent[evType] ) gsEvent[evType] = new Object();
+    var evObj = gsEvent[evType];
+    if ( !evObj.listeners ) evObj.listeners = new Array();
+    var listeners = evObj.listeners;
+
+    // add event listener to listener array
+    listeners[ listeners.length ] = {
+      event: evType,
+      func: fn,
+      context: context || this,
+      callerRef: this,
+      args: args
+    };
+
+    // add event handler if none added
+    if ( !evObj.wrapper ) {
+      var self = this;
+      // use event wrapper for all objects except for script tag elements in IE 5.5 and IE 6.0
+      // IE 5.5 and IE 6.0 has memory leak when trying to remove the load event on the script tag element
+      if ( this.isIE && this.browserVersion <= 6.0 && obj.nodeName == 'SCRIPT' )
+        evObj.wrapper = eventHandler;
+      else
+        evObj.wrapper = function( e ) { eventHandler.apply( self, [ e, obj, evType ] ); };
+
+      if (!customEventNames[evType]){
+        if (obj.addEventListener) {
+          obj.addEventListener(evType, evObj.wrapper, false);
+        } else if (obj.attachEvent) {
+          var callerRef = this;
+          obj.attachEvent("on"+evType, evObj.wrapper );
+        }
+        else return false;
+      }
+    }
+
+    return true;
+  }
+
+  this.registerCustomEvent = function ( name ) {
+    customEventNames[ name ] = 1;
+  }
+
+  /**
+   * Dispatch an event from the specfied object
+   * @param object event to dispatch from
+   * @param name of event to dispatch
+   **/
+  this.dispatchEvent = function ( obj, evType, e ) {
+    if (e) { // backup mouse position info
+      mousePos[0] = e.clientX; mousePos[1] = e.clientY;
+    }
+    var nativeEvents = { abort:0, blur:0, change:0, error:0, focus:0, load:0, reset:0, resize:0, scroll:0, select:0, submit:0, unload:0, keydown:1, keypress:1, keyup:1, click:2, dbclick:2, mousedown:2, mousemove:2, mouseout:2, mouseover:2, mouseup:2, mousewheel:2, DOMAttrModified:3, DOMNodeInserted:3, DOMNodeRemoved:3, DOMCharacterDataModified:3, DOMNodeInsertedIntoDocument:3, DOMNodeRemovedFromDocument:3, DOMSubtreeModified:3 };
+    if ( evType in nativeEvents ) {
+      var eventClasses = [ 'HTMLEvents', 'UIEevents', 'MouseEvents', 'MutationEvents' ];
+      if( document.createEvent ) {
+        var eventObj = document.createEvent( eventClasses[ nativeEvents[ evType ] ] );
+        eventObj.initEvent( evType, true, true );
+        obj.dispatchEvent( eventObj );
+      } else if ( document.createEventObject ) {
+        obj.fireEvent( 'on' + evType );
+      }
+    } else {
+      var eventObj = createLocalEvent(evType);
+      eventHandler( eventObj, obj, evType );
+    }
+  }
+
+  /**
+   * Remove attached event listener
+   * @param object event was attached to
+   * @param name of event to remove listener from
+   * @param listener function to remove from event
+   * @param context of listener function to remove from event ( default: this )
+   **/
+  this.removeEvent = this.removeEventListener = function (obj, evType, fn, context) {
+    // fix opera bug when target is window!
+    if ( obj == window && navigator.userAgent.indexOf('Opera') != -1 ) obj = document;
+
+    if (evType=="offsetchange")
+      return this.removeOffsetWatcher(obj, fn, context);
+
+    if (evType=="visible")
+      return this.removeVisibleWatcher(obj, fn, context);
+
+    if (evType=="mousenear")
+      return this.removeMouseNearWatcher(obj, fn, context);
+
+
+    // do nothing if function called incorrectly
+    if ( !obj || typeof(evType) != 'string' || typeof(fn) != 'function' ) throw('Syntax error');
+
+    // do nothing if no events were registered on this object
+    var elemData = this.getElementData(obj);
+    if ( !elemData.events ) return;
+    var gsEvent = elemData.events;
+    if ( !gsEvent[evType] ) return;
+    var evObj = gsEvent[evType];
+    if ( !evObj.listeners ) return;
+    var listeners = evObj.listeners;
+    //alert("removeEvent: "+evType);
+
+    // look for the matching listener and remove it
+    for ( var i = 0; i < listeners.length; i++ ) {
+      var listener = listeners[i];
+      // listener must match the function and the context reference
+      if ( listener.func === fn && listener.context === ( context || listener.callerRef ) ) {
+        listeners.splice(i, 1);
+        break;
+      }
+    }
+
+    // remove the event if no more listeners
+    if ( listeners.length == 0 && evObj.wrapper) {
+      if (obj.removeEventListener) {
+        obj.removeEventListener(evType, evObj.wrapper, false);
+      } else if (obj.detachEvent) {
+        var r = obj.detachEvent("on" + evType, evObj.wrapper);
+      } else {
+        return false;
+      }
+      evObj.wrapper = undefined;
+    }
+  }
+
+  /**
+   * Remove all events registered to the element
+   * @param object to remove events from
+   **/
+  this.removeAllEvents = function ( obj ) {
+    var elemData = this.getElementData(obj);
+    if ( !elemData.events ) return;
+    var events = elemData.events;
+
+    for ( var eventType in events ) {
+      var eventObj = events[ eventType ];
+      var listeners = [];
+      for ( var i = 0; i < eventObj.listeners.length; i++ ) listeners[i] = eventObj.listeners[i];
+
+      for ( var i = 0; i < listeners.length; i++ ) {
+        var listenerObj = listeners[i];
+        this.removeEvent.apply( this, [ obj, eventType, listenerObj.func, listenerObj.context ] );
+      }
+      listeners = events[ eventType ] = events[ eventType ].wrapper = eventObj = null;
+    }
+    events = elemData.events = null;
+  }
+
+  /**
+   * Remove all watchers registered to the element
+   * @param object to remove watchers from
+   **/
+  this.removeAllChangeWatchers = function ( obj ) {
+    var elemData = this.getElementData(obj);
+    if (!elemData.watcher) return;
+    for (var property in elemData.watcher) {
+      var data = elemData.watcher[property];
+      if (data.handlers)
+        for (var i=0; i < data.handlers.length; i++) {
+          var listener = data.handlers[i];
+          data.handlers.splice(i, 1);
+          numWatchers--;
+          for (var k in listener) listener[k] = null;
+        }
+      data.handlers = null;
+      elemData.watcher[property] = null;
+    }
+    elemData.watcher = null;
+  }
+
+  /**
+   * Convert a style metric to a numerical value
+   * @param value to convert ( may be string or an array of strings )
+   * @return converted value ( number if input was string, array of numbers if input was array of strings )
+   **/
+  this.convertStyleNumeric = function ( value ) {
+    if ( typeof( value ) == 'string' ) {
+      return parseFloat(value) || 0;
+    } else {
+      for ( var k = 0; k < value.length; k++ )
+        value[k] = parseFloat(value[k]) || 0;
+    }
+    return value;
+  }
+
+  var getBasicMetrics = function ( elem ) {
+    return {
+      border: this.convertStyleNumeric( [ this.getElementStyle( elem, "borderLeftWidth" ), this.getElementStyle( elem, "borderTopWidth" ), this.getElementStyle( elem, "borderRightWidth" ), this.getElementStyle( elem, "borderBottomWidth" ) ] ),
+      padding: this.convertStyleNumeric( [ this.getElementStyle( elem, "paddingLeft" ), this.getElementStyle( elem, "paddingTop" ), this.getElementStyle( elem, "paddingRight" ), this.getElementStyle( elem, "paddingBottom" ) ] ),
+      margin: this.convertStyleNumeric( [ this.getElementStyle( elem, "marginLeft" ), this.getElementStyle( elem, "marginTop" ), this.getElementStyle( elem, "marginRight" ), this.getElementStyle( elem, "marginBottom" ) ] )
+    }
+  }
+
+  var trackmouse_handler = function(e) {
+    mousePos[0] = e.clientX;
+    mousePos[1] = e.clientY;
+  }
+  var trackmouse_counter = 0;
+  var TRACKMOUSE_TIMEOUT = 5000;
+
+  /**
+   * release mouse tracking
+   * @param element passed to trackMouse
+   **/
+  var releaseMouse = this.releaseMouse = function ( elem ) {
+    var elemData = this.getElementData(elem);
+    if (!elemData.trackmouse) return;
+    elemData.trackmouse = false;
+    if (elemData.trackmouse_autorelease) {
+      clearTimeout(elemData.trackmouse_autorelease);
+      elemData.trackmouse_autorelease = undefined;
+    }
+    if (trackmouse_counter==1)
+      this.removeEvent( document.body, 'mousemove', trackmouse_handler);
+    trackmouse_counter--;
+  }
+
+  /**
+   * request mouse tracking (must call releaseMouse when done)
+   * @param element to track mouse for
+   * @param autorelease flag
+   * @param element auto release timeout (default TRACKMOUSE_TIMEOUT)
+   * By default tracking is not auto-released. You may still call releaseMouse
+   * to release earlier than scheduled auto-release
+   **/
+  this.trackMouse = function ( elem, autorelease, timeout ) {
+    var elemData = this.getElementData(elem);
+    if (elemData.trackmouse) return;
+    elemData.trackmouse = true;
+    trackmouse_counter++;
+    if (trackmouse_counter==1)
+      this.addEvent( document.body, 'mousemove', trackmouse_handler, this, elem);
+    if (autorelease)
+      elemData.trackmouse_autorelease =
+        this.setTimeout( releaseMouse, timeout||TRACKMOUSE_TIMEOUT, this, elem );
+  }
+
+  /**
+   * Get last known mouse position.  The mouse position is updated on every
+   * mouse event (including mouse tracking)
+   * @return array with two cells, denoting x and y coordinate respectively
+   **/
+  this.lastMousePos = function() {
+    return [ mousePos[0], mousePos[1] ];
+  }
+
+  /**
+   * Get the metrics of an element
+   * @param element to inspect
+   * @return object containing element metrics
+   **/
+  this.getElementMetrics = function ( elem ) {
+    var elemData = this.getElementData(elem);
+    var offset = this.getElementPos( elem );
+    var dim = this.getElementSize( elem );
+    var basic_metrics = getBasicMetrics.apply(this, [elem]);
+    var border = basic_metrics.border;
+    var padding = basic_metrics.padding;
+    var margin = basic_metrics.margin;
+    var realDim = [
+      dim[0] - border[0] - border[2] - padding[0] - padding[2],
+      dim[1] - border[1] - border[3] - padding[1] - padding[3]
+    ];
+
+    var metrics = {
+      offset: offset,
+      dim: dim,
+      realDim: realDim,
+      border: border,
+      padding: padding,
+      margin: margin
+    }
+
+    return metrics;
+  }
+
+  /**
+   * Get the bounding box coordinates relative to the window
+   * @param element to inspect
+   * @return box array: top-x, top-y, bottom-x, bottom-y
+   **/
+  this.getAbsoluteBoundingBox = function ( elem ) {
+     var elemMetrics = this.getElementMetrics( elem );
+     return [ elemMetrics.offset[2], elemMetrics.offset[3],
+       elemMetrics.offset[2] + elemMetrics.dim[0],
+       elemMetrics.offset[3] + elemMetrics.dim[1] ];
+  }
+
+  /**
+   * Allocate zindex range
+   * @param object display element
+   * @param range  integer reserving range [ zindex ... zindex+range-1 ] (default: 1)
+   * @return zindex starting value in the range
+   **/
+  this.allocateZIndex = function( elem, range, isColorChanger ) {
+    var properties = this.properties(elem);
+    var zindex = properties.depth;
+    if (!range) range = 1;
+    if (!isColorChanger) zindex += 1000;  // fix: make all viewer be on top of colorchanger no matter of apply order
+    properties.depth += range > 1 ? range : 1;
+    return zindex;
+  }
+
+  /**
+   * Check if element is attached to DOM display list
+   * @param object
+   * @return boolean
+   **/
+  this.isAttached = function( elem ) {
+    // IE sometimes automatically adds non-attached elements to a DocumentFragment object
+    return !this.isIE ? elem.parentNode : elem.parentNode ? elem.parentNode.nodeName != '#document-fragment' : false;
+  }
+
+  /**
+   * Check if mouse is inside an element
+   * @param event object (with clientX,clientY properties), element to inspect
+   * @return boolean
+   **/
+  this.mouseIsInside = function( e, elem ) {
+    var elemMetrics = this.getElementMetrics( elem );
+    var frameBoundingBox = this.getAbsoluteBoundingBox( elem );
+    var windowMetrics = this.getWindowMetrics();
+    var mousePos = [ e.clientX + windowMetrics.offset[0],
+      e.clientY + windowMetrics.offset[1] ];
+    if (mousePos[0] >= frameBoundingBox[0] && mousePos[0] <= frameBoundingBox[2]
+        && mousePos[1] >= frameBoundingBox[1] && mousePos[1] <= frameBoundingBox[3])
+       return true;
+    else
+       return false;
+  }
+
+  /**
+   * Get the metrics of the browser window
+   * @return object containing window metrics
+   **/
+  this.getWindowMetrics = function () {
+    if ( this.isIE ) {
+      var dim = [
+        document.documentElement.clientWidth || document.body.clientWidth,
+        document.documentElement.clientHeight || document.body.clientHeight
+      ];
+    } else {
+      var dim = [
+          window.innerWidth,  // Fixed by cm. Was: this.isQuirksMode || this.isOpera ? document.body.clientWidth : document.documentElement.clientWidth,
+          window.innerHeight  // Fixed by cm. Was: this.isQuirksMode || this.isOpera ? document.body.clientHeight : document.documentElement.clientHeight
+      ];
+    }
+
+    var offset = [
+      window.pageXOffset || document.body.scrollLeft || document.documentElement.scrollLeft,
+      window.pageYOffset || document.body.scrollTop || document.documentElement.scrollTop
+    ];
+
+    var screenDim = [ screen.width, screen.height, screen.availWidth, screen.availHeight ];
+
+    return {
+      dim: dim,
+      offset: offset,
+      screen: screenDim
+    }
+  }
+
+  /**
+   * Returns the style value for the property specfied
+   * @param element to inspect
+   * @param style name ( can be CSS name or JS name )
+   * @return style value
+   **/
+  this.getElementStyle = function ( elem, propertyName ) {
+    // convert style name to JS and CSS names space
+    var JSName = propertyName.replace( /-([a-z])/g, function ( a, b ) { return b.toUpperCase() } );
+    var CSSName = propertyName.replace( /([A-Z])/g, function ( a, b ) { return '-' + b.toLowerCase() } );
+    try {
+      if ( elem.currentStyle ) {
+        var returnVal = elem.currentStyle[ JSName ];
+      } else {
+        // Safari does not expose any information for the object if display is
+        // set to none is set so we temporally enable it.
+        if( this.isSafari && elem.style.display == "none" ) {
+          obj.style.display = "";
+          var wasHidden = true;
+        }
+
+        var returnVal = document.defaultView.getComputedStyle( elem, '' ).getPropertyValue( CSSName );
+
+        // Rehide the object
+        if( this.isSafari && wasHidden) {
+          elem.style.display = "none";
+        }
+      }
+    } catch(e) {
+      // Do nothing
+    }
+
+    return returnVal;
+  }
+
+  /**
+   * Add a new CSS rule to the first style sheet of the document
+   * @param CSS selector ( ex: div.class#elemID ) or as array of selectors ( '.class1, .class2, etc.' or [ '.class1', '.class2', etc. ] )
+   * @param CSS rule ( ex: border: 1px solid black; )
+   * @param (optional) index in style sheet to insert rule. 0 for beginning, -1 for end. ( default: 0 )
+   **/
+  this.addCSSRule = function ( selector, rule, index ) {
+    if ( !rule || rule == "" ) return;
+    if ( !document.styleSheets ) return;
+    if ( this.isIE && selector.indexOf(',') )
+      selector = selector.split(',');
+
+    var headNode = document.getElementsByTagName('head')[0];
+    if ( document.styleSheets.length == 0 ) {
+      headNode.appendChild( document.createElement('style') );
+    }
+    if ( !index ) index = 0;
+
+    var styleSheet = document.styleSheets[0];
+    try {
+      if ( styleSheet.addRule ) {
+        if ( typeof(selector) == 'string' )
+          styleSheet.addRule( selector, rule, 0 );
+        else
+          for ( var i = 0; i < selector.length; i++ )
+            styleSheet.addRule( selector[i], rule, 0 );
+      } else if ( styleSheet.insertRule ) {
+        if ( typeof(selector) == 'string' )
+          styleSheet.insertRule( selector + '{' + rule + '}', 0 );
+        else
+          for ( var i = 0; i < selector.length; i++ )
+            styleSheet.insertRule( selector[i] + '{' + rule + '}', 0 );
+      }
+    } catch (err) {
+      // create a new style sheet we can play with if the first one is not editable
+      headNode.insertBefore( document.createElement('style'), headNode.firstChild );
+      this.addCSSRule.apply( this, arguments );
+    }
+  }
+
+  // copied from jquery and slightly modified
+  var getAbsoluteOffset = this.getAbsoluteOffset = function(elem) {
+    var left = 0, top = 0, results;
+
+    var css          = this.getElementStyle;
+    if ( elem ) {
+      var parent       = elem.parentNode,
+          offsetChild  = elem,
+          offsetParent = elem.offsetParent,
+          doc          = elem.ownerDocument,
+          safari2      = safari && parseInt(version) < 522 && !/adobeair/i.test(userAgent),
+          mozilla      = this.isFirefox, // FIXME: boris
+          safari       = this.isSafari,
+          fixed        = css(elem, "position") == "fixed";
+
+      // Use getBoundingClientRect if available
+      if ( elem.getBoundingClientRect ) {
+        var box = elem.getBoundingClientRect();
+
+        // Add the document scroll offsets
+        add(box.left + Math.max(doc.documentElement.scrollLeft, doc.body.scrollLeft),
+          box.top  + Math.max(doc.documentElement.scrollTop,  doc.body.scrollTop));
+
+        // IE adds the HTML element's border, by default it is medium which is 2px
+        // IE 6 and 7 quirks mode the border width is overwritable by the following css html { border: 0; }
+        // IE 7 standards mode, the border is always 2px
+        // This border/offset is typically represented by the clientLeft and clientTop properties
+        // However, in IE6 and 7 quirks mode the clientLeft and clientTop properties are not updated when overwriting it via CSS
+        // Therefore this method will be off by 2px in IE while in quirksmode
+        add( -doc.documentElement.clientLeft, -doc.documentElement.clientTop );
+
+      // Otherwise loop through the offsetParents and parentNodes
+      } else {
+
+        // Initial element offsets
+        add( elem.offsetLeft, elem.offsetTop );
+
+        // Get parent offsets
+        while ( offsetParent ) {
+          // Add offsetParent offsets
+          add( offsetParent.offsetLeft, offsetParent.offsetTop );
+
+          // Mozilla and Safari > 2 does not include the border on offset parents
+          // However Mozilla adds the border for table or table cells
+          if ( mozilla && !/^t(able|d|h)$/i.test(offsetParent.tagName) || safari && !safari2 )
+            border( offsetParent );
+
+          // Add the document scroll offsets if position is fixed on any offsetParent
+          if ( !fixed && css(offsetParent, "position") == "fixed" )
+            fixed = true;
+
+          // Set offsetChild to previous offsetParent unless it is the body element
+          offsetChild  = /^body$/i.test(offsetParent.tagName) ? offsetChild : offsetParent;
+          // Get next offsetParent
+          offsetParent = offsetParent.offsetParent;
+        }
+
+        // Get parent scroll offsets
+        while ( parent && parent.tagName && !/^body|html$/i.test(parent.tagName) ) {
+          // Remove parent scroll UNLESS that parent is inline or a table to work around Opera inline/table scrollLeft/Top bug
+          if ( !/^inline|table.*$/i.test(css(parent, "display")) )
+            // Subtract parent scroll offsets
+            add( -parent.scrollLeft, -parent.scrollTop );
+
+          // Mozilla does not add the border for a parent that has overflow != visible
+          if ( mozilla && css(parent, "overflow") != "visible" )
+            border( parent );
+
+          // Get next parent
+          parent = parent.parentNode;
+        }
+
+        // Safari <= 2 doubles body offsets with a fixed position element/offsetParent or absolutely positioned offsetChild
+        // Mozilla doubles body offsets with a non-absolutely positioned offsetChild
+        if ( (safari2 && (fixed || css(offsetChild, "position") == "absolute")) ||
+          (mozilla && css(offsetChild, "position") != "absolute") )
+            add( -doc.body.offsetLeft, -doc.body.offsetTop );
+
+        // Add the document scroll offsets if position is fixed
+        if ( fixed )
+          add(Math.max(doc.documentElement.scrollLeft, doc.body.scrollLeft),
+            Math.max(doc.documentElement.scrollTop,  doc.body.scrollTop));
+      }
+
+      if (this.isIE && this.isQuirksMode) { // BORIS: Need to tune it here, weird
+        top-=2; left-=2;
+      }
+
+      // Return an object with top and left properties
+      results = { top: top, left: left };
+    }
+
+    function border(elem) {
+      add( css(elem, "borderLeftWidth"), css(elem, "borderTopWidth") );
+    }
+
+    function add(l, t) {
+      left += parseInt(l, 10) || 0;
+      top += parseInt(t, 10) || 0;
+    }
+
+    return results;
+  };
+
+  /**
+  * Checks how much of a given element is within viewport at the moment
+  * @param element to checked
+  * @return int with percent of pixel within viewport (0 => image not within, 1 => image fully within)
+  **/
+  this.getElementInViewportScore = function(elem){
+     //elementSize[0] => width, elementSize[1] => height
+     var elementSize  = this.getElementSize(elem);
+
+     // left, top
+     var elementOffset = this.getAbsoluteOffset(elem);
+
+     // windowMetrics.offset[0] => left, windowMetrics.offset[1] => top
+     // windowMetrics.dim[0] => width, windowMetrics.dim[1] => height
+     var windowMetrics = this.getWindowMetrics();
+
+     // how many pixels has the image?
+     var numberOfImagePixels = elementSize[0] * elementSize[1];
+
+     // how many lines of the images are within viewport?
+     var numberOfImageLinesWithinViewport = elementSize[1];
+
+     // clipped at top ? -> reduce lines that get clipped
+     if (windowMetrics.offset[1] > elementOffset.top) {
+        numberOfImageLinesWithinViewport = numberOfImageLinesWithinViewport - (windowMetrics.offset[1] - elementOffset.top);
+     }
+
+     // clipped at bottom ? -> reduce lines that get clipped
+     if ((windowMetrics.offset[1] + windowMetrics.dim[1]) < (elementOffset.top + elementSize[1])){
+        numberOfImageLinesWithinViewport = numberOfImageLinesWithinViewport - ((elementOffset.top + elementSize[1]) - (windowMetrics.offset[1] + windowMetrics.dim[1]));
+     }
+
+     // how many rows of the images are within viewport?
+     var numberOfImageRowsWithinViewport = elementSize[0];
+
+     // clipped at left ? -> reduce rows that get clipped
+     if (windowMetrics.offset[0] > elementOffset.left) {
+        numberOfImageRowsWithinViewport = numberOfImageRowsWithinViewport - (windowMetrics.offset[0] - elementOffset.left);
+     }
+
+     // clipped at right ? -> reduce rows that get clipped
+     if ((windowMetrics.offset[0] + windowMetrics.dim[0]) < (elementOffset.left + elementSize[0])){
+         numberOfImageRowsWithinViewport = numberOfImageRowsWithinViewport - ((elementOffset.left + elementSize[0]) - (windowMetrics.offset[0] + windowMetrics.dim[0]));
+     }
+
+     return Math.round(((numberOfImageLinesWithinViewport * numberOfImageRowsWithinViewport) / numberOfImagePixels) * 100);
+  }
+
+  /**
+   * Get absolute pixel position of an element on the document
+   * @param element to inspect
+   * @return array of x and y pixel position
+   **/
+  this.getElementPos = function ( elem ) {
+    var elemData = this.getElementData(elem);
+    if (elemData.resize_state && elemData.resize_state == resize_state)
+      return elemData.position;
+    var absolute = getAbsoluteOffset.apply(this,[elem]);
+    elemData.resize_state = resize_state;
+    elemData.position = [ elem.offsetLeft, elem.offsetTop, absolute.left, absolute.top ];
+    return elemData.position;
+  }
+
+  /**
+   * Get element size
+   * @param element to inspect
+   * @return array of width and height pixel dimensions
+   **/
+  this.getElementSize = function ( elem ) {
+    var elWidth = 0, elHeight = 0;
+    elWidth = elem.offsetWidth;
+    elHeight = elem.offsetHeight;
+    return [ elWidth, elHeight ];
+  }
+
+  /**
+   * Set element opacity
+   * @param element to set
+   * @param opacity ( from 0 to 100 )
+   **/
+  this.setElementOpacity = function ( elem, opacity ) {
+    elem.style['opacity'] = opacity / 100;
+    elem.style['-moz-opacity'] = opacity / 100;
+    if(elem.style.filter != undefined) elem.style.filter = 'alpha(opacity='+ opacity + ')';
+  }
+
+  /**
+   * Get element opacity
+   * @param element to inspect
+   * @return opacity ( from 0 to 100 )
+   **/
+  this.getElementOpacity = function ( elem ) {
+    var opacity = this.getElementStyle( elem, 'opacity' ) || this.getElementStyle( elem, '-moz-opacity' );
+    if( typeof( opacity ) == 'undefined' && elem.style.filter != undefined) {
+      opacity = this.getElementStyle( elem, 'filter' );
+      if ( opacity == '' ) {
+        opacity = 1;
+      } else {
+        opacity = parseFloat(opacity.substr(opacity.indexOf('opacity=') + 8)) / 100;
+      }
+    }
+
+    return 100 * opacity || 0;
+  }
+
+  /**
+   * Get all elements that matches the class pattern
+   * @param class pattern to match against
+   * @param node reference to search for elements (default: document)
+   * @param tag name to filter search with (default: *)
+   * @return array of matching elements
+   **/
+  this.getElementsByClass = function getElementsByClass(classPattern, node, tag) {
+    var classElements = new Array();
+    if ( node == null ) node = document;
+    if ( tag == null ) tag = '*';
+
+    var els = node.getElementsByTagName(tag);
+    var elsLen = els.length;
+    var pattern = new RegExp("(^|\\s)" + classPattern + "(\\s|$)");
+    for (var i = 0, j = 0; i < elsLen; i++) {
+      if ( pattern.test(els[i].className) ) {
+        classElements[j] = els[i];
+        j++;
+      }
+    }
+    return classElements;
+  }
+
+  /**
+   * Include JS file
+   * @param URL of include file
+   **/
+  this.includeJS = function ( file, loadOnce, func, context ) {
+    var args = [];
+    for ( var i = 4; i < arguments.length; i++ ) args[args.length] = arguments[i];
+    var file_cache_key = file.replace(/[^a-z0-9_-]/ig, '___');
+
+    // do nothing if file already loaded
+    if ( loadOnce && file_cache_key in loadedScripts ) {
+      if ( loadedScripts[ file_cache_key ] === true ) {
+        includeJS_load_handler.apply( this, [ {type:''}, {}, file_cache_key, func, context, args ] );
+      } else {
+        var js = loadedScripts[ file_cache_key ];
+        this.addEvent( js, 'load', includeJS_load_handler, this, js, file_cache_key, func, context, args );
+        // IE only script load checking
+        this.addEvent( js, 'readystatechange', includeJS_load_handler, this, js, file_cache_key, func, context, args );
+      }
+      return true;
+    }
+
+    // Use DOM method if post window load, use document.write pre document load
+    if ( windowLoaded ) {
+      var html_doc = document.getElementsByTagName('head').item(0);
+      var js = document.createElement('script');
+      js.setAttribute('language', 'javascript');
+      js.setAttribute('type', 'text/javascript');
+
+      // add load handlers
+      if ( typeof(func) == 'function' ) {
+        this.addEvent( js, 'load', includeJS_load_handler, this, js, file_cache_key, func, context, args );
+        // IE only script load checking
+        this.addEvent( js, 'readystatechange', includeJS_load_handler, this, js, file_cache_key, func, context, args );
+      }
+
+      js.setAttribute('src', file);
+      html_doc.appendChild(js);
+      loadedScripts[ file_cache_key ] = js;
+    } else {
+      document.write('<' + 'script language="javascript" type="text/javascript" src="' + file + '"></' + 'script' + '>');
+      loadedScripts[ file_cache_key ] = true;
+    }
+
+    return false;
+  }
+  
+	/**
+	 * Check if a file is fully loaded
+	 */
+	this.isJSLoaded = function ( file ) {
+		
+		var file_cache_key = file.replace(/[^a-z0-9_-]/ig, '___');
+	  
+		if ( file_cache_key in loadedScripts ) {
+			return loadedScripts[ file_cache_key ];
+		}
+		
+		return false;
+	}
+
+  /**
+   * Load a JS library
+   * @param JS library to load
+   * @param call back function on load success
+   * @param context of callback function ( default: this )
+   * @paramArray arguments to pass to callback function
+   **/
+  this.loadLibrary = function ( libraryName, callBack, context ) {
+    var args = [];
+    for ( var i = 3; i < arguments.length; i++ ) args[args.length] = arguments[i];
+
+    function getLibraryPath(name) {
+      if (/component_(test|custom)/.test(name) && RICHFX_CONFIG.customPath)
+         path = RICHFX_CONFIG.customPath;
+      else if (/embed/.test(name))
+         path = this.embedsBaseURL;
+      else
+         path = this.viewerBaseURL + 'libs/script/';
+      return path + name+'.js';
+    }
+
+    if ( checkAllRequiredLoaded.apply( this, [ libraryName ] ) ) {
+      callBack.apply( context || this, args );
+    } else if (checkLibraryLoaded.apply(this, [libraryName])) {
+      loadLibrary_handler.apply(this, [libraryName, callBack, context || this, args] );
+    } else if ( typeof( libraryName ) == 'string' ) {
+      var path = getLibraryPath.apply(this,[libraryName]);
+      this.includeJS( path, true, loadLibrary_handler, this, libraryName, callBack, context || this, args );
+    } else {
+      for ( var lib = 0; lib < libraryName.length; lib++ ) {
+        var path = getLibraryPath.apply(this,[libraryName[lib]]);
+        this.includeJS( path, true, loadLibrary_handler, this, libraryName, callBack, context || this, args );
+      }
+    }
+  }
+  
+  /**
+   * Execute call back function after specified interval
+   * @param function referece
+   * @param interval in milliseconds
+   * @param context of function (default: this)
+   * @paramArray arguments passed to function
+   **/
+  this.setTimeout = function ( fn, interval, context ) {
+    var args = [];
+    for ( var i = 3; i < arguments.length; i++ ) args[args.length] = arguments[i];
+	
+    var timerObj = {
+      func: fn,
+      context: context || this,
+      callerRef: this,
+      args: args,
+      interval: interval
+    };
+	
+    var timerId = parseInt(Math.random() * 100000);
+    gsTimer['timer_' + timerId] = timerObj;
+
+    gsTimer['timer_caller_' + timerId] = function( timerId ) {
+      var gsTimer = window.RICHFX.timer;
+      var timerObj = gsTimer['timer_' + timerId];
+
+      if ( typeof(timerObj.func) == 'string' ) {
+        eval(timerObj.func, context);
+      } else {
+        timerObj.func.apply(timerObj.context, timerObj.args);
+      }
+	  
+      delete(gsTimer['timer_' + timerId]);
+      delete(gsTimer['timer_caller_' + timerId]);
+    };
+	
+    return setTimeout( 'RICHFX.timer.timer_caller_' + timerId + '(' + timerId + ')', interval );
+  }
+
+  /**
+   * Parse XML text
+   * @param XML text to parse
+   * @return DOM of parsed XML
+   **/
+  this.parseXML = function ( xml ) {
+    // get a XML parser object
+    try {
+      // Internet Explorer
+      var xmlDoc = new ActiveXObject("Microsoft.XMLDOM");
+      xmlDoc.async = "false";
+      xmlDoc.loadXML( xml );
+    } catch( err ) {
+      try {
+        //Firefox, Mozilla, Opera, etc.
+        var parser = new DOMParser();
+        var xmlDoc = parser.parseFromString( xml, "text/xml" );
+      } catch( err ) {
+        return undefined;
+      }
+    }
+    return xmlDoc;
+  }
+
+  /**
+   * Parse XML text
+   * @param XML text to parse
+   * @return DOM of parsed XML
+   **/
+  this.loadXML = function ( xmlURL, xmlID, func, context ) {
+    var args = [];
+    for ( var i = 4; i < arguments.length; i++ ) args[args.length] = arguments[i];
+
+    this.includeJS( xmlURL, true, loadXML_callback_handler, this, xmlID, func, context, args );
+  }
+  
+  /**
+   * Store the viewers associated with the current image
+   * @param
+   * @return nothing
+   **/
+  this.registerViewer = function (viewerName, viewerArgs, imageName, CSSClass) {
+  
+	// update viewer list
+	registeredViewers[viewerName] = CSSClass;
+  
+	// Add Parameter list to viewerName
+	var parameterList = '';
+  
+	// 3 is used as the first 3 parameters are objects
+	for ( var i = 3; i < viewerArgs.length; i++ ) {
+		if ( i == 3 ) {
+			parameterList = viewerArgs[i];
+		} else {
+			parameterList += ',' + viewerArgs[i];
+		}
+	}
+	
+	viewerName += '(' + parameterList + ')';
+  
+	// Store details
+    if ( viewerList[imageName] != undefined ) {
+		viewerList[imageName] += ':' + viewerName;
+	} else {
+		viewerList[imageName] = viewerName;
+	}
+  }
+  
+  /**
+   * Retrieve the viewers associated with the current image
+   * @param
+   * @return array of viewers
+   **/
+  this.retrieveViewers = function (viewerName) {
+	return viewerList;
+  }
+  
+  /**
+   * Retrieve the viewers on the current page
+   * @param
+   * @return array of viewers
+   **/
+  this.getRegisteredViewers = function () {
+	return registeredViewers;
+  }
+  
+  // get browser / platform properties
+  var ua = navigator.userAgent.toLowerCase();
+  var platform = navigator.platform.toLowerCase();
+  if ( this.isIE  = ( ua.indexOf("msie") != -1 ) ? true : false )
+    this.browserVersion = parseFloat( ua.substr( ua.indexOf("msie") + 4 ) );
+  if ( this.isOpera = ( ua.indexOf("opera") != -1) ? true : false )
+    this.browserVersion = parseFloat( ua.substr( ua.indexOf("opera") + 6 ) );
+  if ( this.isFirefox = ( ua.indexOf("firefox") != -1) ? true : false )
+    this.browserVersion = parseFloat( ua.substr( ua.indexOf("firefox") + 8 ) );
+  if ( this.isSafari = ( ua.indexOf("safari") != -1) ? true : false )
+    this.browserVersion = parseFloat( ua.substr( ua.indexOf("version/") + 8 ) );
+  if ( this.isChrome = ( ua.indexOf("chrome") != -1) ? true : false )
+    this.browserVersion = parseFloat( ua.substr( ua.indexOf("chrome") + 6 ) );
+  this.isWin = ( platform.toLowerCase().indexOf("win") != -1 ) ? true : false;
+  this.isMac = ( platform.toLowerCase().indexOf("mac") != -1 ) ? true : false;
+  this.isLinux = ( platform.toLowerCase().indexOf("linux") != -1 ) ? true : false;
+
+  var browserMode = document.compatMode;
+  this.isQuirksMode = ( !browserMode || browserMode == 'BackCompat' );
+  this.isStandardsMode = ( browserMode == 'CSS1Compat' );
+  this.isTransitionalMode = !this.isQuirksMode && !this.isStandardsMode;
+
+  // *********************************************
+  // Special Prototypes
+  // *********************************************
+
+  // Override the default random number generator to defeat Safari 3 + Windows 2K bug.
+  if ( this.isSafari & this.isWin ) {
+    Math.random = function() {
+      if ( typeof(Math.randomSeed) == "undefined" ) Math.randomSeed = (new Date()).getTime();
+      // using Linear congruential generator algorithm
+      return (Math.randomSeed = (Math.randomSeed * 1664525 + 1013904223) % 4294967296) / 4294967296;
+    }
+  }
+
+  // *********************************************
+  // Private Properties
+  // *********************************************
+
+  var gsTimer = this.timer = new Object();
+
+  var registeredObjects = new Object();
+  var registeredObjectsIndex = 0;
+  var registeredElements = new Object();
+
+  var windowLoaded = false;
+  var loadedScripts = {};
+  var loadedComponents = {};
+
+ // adding pubic access to all elements that have an viewer on it.
+ this.getRegisteredElements = function(){
+ 	return registeredElements;
+ }
+  // *********************************************
+  // Private Methods
+  // *********************************************
+
+  var buildEventObject = this.buildEventObject = function(e) {
+    if ( !e ) e = window.event;
+    var event = {_event:e};
+    for (var k in e)
+      event[k] = e[k];
+    if (!event.clientX) {
+      event.clientX = mousePos[0]; event.clientY = mousePos[1];
+    }
+    return event;
+  }
+
+  // Event handler method
+  var eventHandler = function ( e, obj, evType ) {
+    if ( !obj || !evType ) {
+      // resolve event
+      if ( !e ) e = window.event;
+
+      // resolve event target
+      var targ;
+
+      if ( navigator.userAgent.indexOf("Safari") != -1 ) {
+        targ = this;
+      } else if (e.currentTarget) {
+        targ = e.currentTarget;
+      } else if (e.target) {
+        targ = e.target;
+      } else if (e.srcElement) {
+        targ = e.srcElement;
+      }
+      if ( !targ ) targ = window;
+      if (targ.nodeType == 3) targ = targ.parentNode;
+      var obj = targ || window;
+    }
+
+    // get event type
+    if ( !evType ) evType = e.type;
+
+    // do nothing if the event was not a richfx registered event
+    var elemData = self.getElementData(obj);
+    if ( !elemData.events ) return;
+    var gsEvent = elemData.events;
+    if ( !gsEvent[evType] ) return;
+    var evObj = gsEvent[evType];
+    if ( !evObj.listeners ) return;
+    var listeners = evObj.listeners;
+
+    var tmpListenerArray = [];
+    for ( var i = 0; i < listeners.length; i++ ) {
+      tmpListenerArray[tmpListenerArray.length] = listeners[i];
+    }
+
+    // set clientX and clientY if they are undefined, from last known
+    var event = buildEventObject(e);
+
+    // execute all listeners registered to the event in the order they were registered
+    for ( var i = 0; i < tmpListenerArray.length; i++ ) {
+      var listener = tmpListenerArray[i];
+      listener.func.apply( listener.context, [event].concat(listener.args) );
+    }
+  }
+
+  // handle on load events for JS include
+  var includeJS_load_handler = function ( e, js, file_cache_key, func, context, args ) {
+    // IE special script load check
+    if ( e.type == 'readystatechange' && js.readyState != 'complete' && js.readyState != 'loaded' ) return;
+    loadedScripts[ file_cache_key ] = true;
+
+    // remove the handlers
+    this.removeEvent( js, 'load', includeJS_load_handler, this );
+    this.removeEvent( js, 'readystatechange', includeJS_load_handler, this );
+
+    // call function
+    if ( typeof( func ) == 'function' ) func.apply( context, args );
+  }
+
+  // handle library load checking
+  var loadLibrary_handler = function ( libraryName, callBack, context, args ) {
+    // check library loaded
+    if ( !checkLibraryLoaded.apply( this, [ libraryName ] ) ) return;
+
+    // get required libraries that are not loaded
+    var requiredLibs = getRequiredLibs.apply( this, [ libraryName ] );
+
+    // check to load any libraries not loaded already
+    if ( requiredLibs.length > 0 ) {
+        // load required libraries
+        this.loadLibrary.apply( this, [requiredLibs, callBack, context].concat( args ) );
+    } else if ( checkAllRequiredLoaded.apply( this, [ libraryName ] ) ) {
+        // load call back
+        if ( typeof( callBack ) == 'function' )
+          callBack.apply( context, args );
+    }
+    return;
+  }
+
+  // check if all required libraries for the specified library has been loaded ( library name or array of library names )
+  var checkAllRequiredLoaded = function ( libName ) {
+    var requiredLibs = getRequiredLibs.apply( this, [ libName ] );
+    return checkLibraryLoaded.apply( this, [ requiredLibs ] );
+  }
+
+  // check that all libraries specifed has been loaded ( library name or array of library names )
+  var checkLibraryLoaded = function ( libName ) {
+    if ( typeof( libName ) == 'string' ) {
+      return ( libName in this );
+    } else {
+      for ( var i = 0; i < libName.length; i++ ) {
+        if ( !checkLibraryLoaded.apply( this, [ libName[i] ] ) ) return false;
+      }
+    }
+    return true;
+  }
+
+  // get the list of non-loaded required libs ( library name or array of library names )
+  var getRequiredLibs = this.getRequiredLibs = function ( libName, nofilter ) {
+    var requiredLibs = [];
+
+    if ( typeof( libName ) == 'string' ) {
+      if ( libName in this ) {
+        var lib = this[libName];
+        if (nofilter)
+          requiredLibs[ requiredLibs.length ] = libName;
+        if ( 'require' in lib ) {
+          var require = lib.require;
+          for ( var reqLib = 0; reqLib < require.length; reqLib++ ) {
+            var requiredSubLib = require[reqLib];
+            if ( !( requiredSubLib in this ) ) {
+              requiredLibs[ requiredLibs.length ] = requiredSubLib;
+            } else {
+              if (nofilter)
+                requiredLibs[ requiredLibs.length ] = requiredSubLib;
+              var moreRequiredLibs = getRequiredLibs.apply(this, [ requiredSubLib, nofilter ] );
+              if ( moreRequiredLibs != true )
+                requiredLibs = requiredLibs.concat( moreRequiredLibs );
+            }
+          }
+        }
+      } else {
+        requiredLibs[ requiredLibs.length ] = libName;
+      }
+    } else {
+      for ( var libIndex = 0; libIndex < libName.length; libIndex++ ) {
+        requiredLibs = requiredLibs.concat( getRequiredLibs.apply( this, [ libName[ libIndex ], nofilter ] ) );
+      }
+    }
+
+    var seen = {}
+    var libs = [];
+    for ( var i = requiredLibs.length - 1; i >= 0; i-- ) {
+        if ( !seen[requiredLibs[i]] ) libs = [ requiredLibs[i] ].concat( libs );
+        seen[requiredLibs[i]]=true;
+    }
+    return libs;
+  }
+
+  // handle XML load checking
+  var loadXML_callback_handler = function ( xmlID, func, context, args ) {
+    var xmlSrc = this['xml_' + xmlID];
+    var xmlDOM = this.parseXML( xmlSrc );
+
+    if ( typeof(func) == 'function' )
+      func.apply( context, [ xmlDOM ].concat( args ) );
+  }
+
+  // Load a RICHFX component
+  var loadComponent = this.loadComponent = function ( componentName, elem ) {
+    var args = [];
+    for ( var i = 0; i < arguments.length; i++ ) args[args.length] = arguments[i];
+    this.loadLibrary.apply( this, [ 'component_' + componentName, applyComponent, this ].concat( args ) );
+  }
+
+  // Apply loaded component to element
+  var applyComponent = this.applyComponent = function ( componentName, elem ) {
+    var elemData = this.getElementData( elem );
+
+    // check if component already loaded on element
+    var loadedComponents = elemData.loaded_components;
+    if ( 'component_' + componentName in loadedComponents ) return;
+    loadedComponents['component_' + componentName] = true;
+
+    // get element configuration
+    var componentConfig = RICHFX_CONFIG[componentName] || {};
+
+    // get default arguments
+    var params = [];
+    var defaults = componentConfig.defaults;
+    if (defaults) {
+      // get the key for default configuration ( use 'default' if none specified )
+      if (!(defaults instanceof Array)) {
+        var key = elemData.defaults[ componentName ] ? elemData.defaults[ componentName ].key : null;
+        defaults = defaults[ key || "default" ];
+      }
+
+      // get default params
+      if (defaults instanceof Array)
+        params = defaults;
+    }
+
+    // apply default arguments with provided arguments overriding defaults
+    var args = new Array(3).concat( params );
+    for ( var i = 0; i < arguments.length; i++ )
+      args[i] = arguments[i];
+
+    // execute the preInit callback if available
+    try {
+      if ( componentConfig.preInit )
+        componentConfig.preInit.apply( this, args );
+    } catch(err) {}
+
+    // instantiate the component
+    this['component_' + componentName].apply( this, args );
+
+    // execute the postInit callbacks if available
+    try {
+      if ( componentConfig.postInit )
+        componentConfig.postInit.apply( this, args );
+    } catch(err) {}
+
+  }
+
+  // Parse the script source and return object similar to the Location object
+  var Parse_Src = this.Parse_Src = function( scriptName, scriptSrc, queryExtra ) {
+    if ( scriptSrc.indexOf('://') == -1 ) { //relative path
+      if ( scriptSrc.substr(0,1) == '/' ) {
+        scriptSrc = document.location.protocol + '//' + document.location.host + scriptSrc;
+      } else {
+        var URLPath = document.location.pathname.split('/');
+        URLPath.pop();
+        scriptSrc = document.location.protocol + '//' + document.location.host + URLPath.join('/') + '/' + scriptSrc;
+      }
+    }
+
+    // Separate the document domain and URL path from the query parameters
+    var scriptVars = scriptSrc.split( scriptName );
+
+    // Add the host name and url path of parent document if none found in script path
+    if ( !scriptVars[0] ) {
+      var URLPath = document.location.pathname.split('/');
+      URLPath.pop();
+      scriptVars[0] = document.location.protocol + '//' + document.location.host + URLPath.join('/') + '/';
+    }
+    var hostVars = scriptVars.shift().split('://');
+    var queryVars = scriptVars.join(scriptName);
+    var host = undefined, urlPath = undefined, protocol = 'http:';
+
+    // Add the host name script path did not contain it
+    if ( !hostVars[1] ) {
+      protocol = document.location.protocol;
+      host = document.location.host;
+      urlPath = hostVars[0];
+    } else {
+      protocol = hostVars[0] + ':';
+      var hostVarTmp = hostVars[1].split('/');
+      host = hostVarTmp.shift();
+      urlPath = '/' + hostVarTmp.join('/');
+    }
+
+    // Parse the query parameters
+    var queryVarObj = new Object();
+    if (queryExtra)
+      queryVars = queryVars ? queryVars + '&' + queryExtra : '';
+    if (queryVars.substring(0,1)=='/')
+      queryVars = queryVars.substring(1);
+    var queryVarArray = queryVars.substring(1).split('&');
+    for ( var i = 0; i < queryVarArray.length; i++ ) {
+      var queryVariable = queryVarArray[i].split('=');
+      queryVarObj[ queryVariable[0].toLowerCase() ] = unescape( queryVariable[1] );
+    }
+
+    // Add the parent document's query parameters to list
+    queryVarArray = document.location.search.substring(1).split('&');
+    for ( var i = 0; i < queryVarArray.length; i++ ) {
+      var queryVariable = queryVarArray[i].split('=');
+      queryVarObj[ queryVariable[0].toLowerCase() ] = unescape( queryVariable[1] );
+    }
+
+    // Parse for the account name from the host
+    var accountVars = host.split('.');
+    var account = '';
+    if ( accountVars.length > 2 && accountVars[ accountVars.length - 2 ].toLowerCase() == 'richfx' )
+      account = accountVars[ accountVars.length - 3 ].toLowerCase();
+
+    // Determine link method
+    var linkMethod = 'injected';
+    var urlPathParts = urlPath.split('/');
+
+    // rfxEmbed method
+    if ( scriptName == 'rfxembed' || urlPathParts[1] + '/' + urlPathParts[2] == 'project/configuration' ) {
+        // Set default values
+        with ( queryVarObj ) {
+          if ( typeof(rfx_client) == 'undefined' || !rfx_client ) queryVarObj.rfx_client = account;
+          if ( typeof(rfx_viewerBaseURL) == 'undefined' || !rfx_viewerBaseURL ) queryVarObj.rfx_viewerBaseURL = protocol + '//' + host + '/project/viewers/base/';
+          if ( typeof(rfx_settingsBaseURL) == 'undefined' || !rfx_settingsBaseURL ) queryVarObj.rfx_settingsBaseURL = rfx_viewerBaseURL + '../../settings/';
+          if ( typeof(rfx_baseURL) == 'undefined' || !rfx_baseURL ) queryVarObj.rfx_baseURL = protocol + '//' + host + '/';
+        }
+        linkMethod = queryVarObj.inline ? 'inline' : 'rfxembed';
+    } else {
+        // Set default values
+        with ( queryVarObj ) {
+          if ( typeof(rfx_client) == 'undefined' || !rfx_client ) queryVarObj.rfx_client = account;
+          if ( typeof(rfx_viewerBaseURL) == 'undefined' || !rfx_viewerBaseURL ) queryVarObj.rfx_viewerBaseURL = protocol + '//' + host + urlPath;
+          if ( typeof(rfx_settingsBaseURL) == 'undefined' || !rfx_settingsBaseURL ) queryVarObj.rfx_settingsBaseURL = rfx_viewerBaseURL + '../../settings/';
+          if ( typeof(rfx_baseURL) == 'undefined' || !rfx_baseURL ) queryVarObj.rfx_baseURL = protocol + '//' + host + '/';
+        }
+        linkMethod = 'injected';
+    }
+
+    // Populate the parsed script object
+    var scriptParsedObject = new Object();
+    scriptParsedObject.search = queryVars;
+    scriptParsedObject.host = scriptParsedObject.hostname = host;
+    scriptParsedObject.protocol = protocol;
+    scriptParsedObject.pathname = urlPath;
+    scriptParsedObject.href = scriptVars.join(scriptName);
+    scriptParsedObject.query = queryVarObj;
+    scriptParsedObject.account = account;
+    scriptParsedObject.referer = String(document.location);
+    scriptParsedObject.linkMethod = linkMethod;
+
+    return scriptParsedObject;
+  }
+
+  // Search for and decode the script tag for load time parameters
+  var DecodeScript = function( scriptName ) {
+    // Search for the script element match specified script file name
+    var tags = document.getElementsByTagName("script");
+    var scriptSrc = undefined;
+    var scripTagsObjects = new Array();
+    for ( var i = 0; i < tags.length; i++ ) {
+      var script = tags[i].src;
+      var offset = script.lastIndexOf('?');
+      if (offset != -1)
+        script = script.substr(0,offset);
+      if ( typeof(scriptName) == 'string' ) scriptName = [ scriptName ];
+      for ( var j = 0; j < scriptName.length; j++ ) {
+        offset = script.toLowerCase().lastIndexOf( scriptName[j].toLowerCase() );
+        if ( offset != -1 && script.length == offset+scriptName[j].length ) {
+          var obj = Parse_Src( scriptName[j], tags[i].src );
+          obj.refid = i + 1;
+          obj.tag = tags[i];
+          scripTagsObjects.push( obj );
+
+          if ( obj.linkMethod == 'inline' ) {
+              tags[i].className = 'RICHFX:appEmbed';
+          }
+          break;
+        }
+      }
+    }
+    if ( !scripTagsObjects.length ) return;
+    var returnObject = scripTagsObjects[0];
+    returnObject.items = scripTagsObjects;
+
+    return returnObject;
+  }
+
+  var _addComponents = function(elem, more_integrations) {
+    var elemData = this.getElementData(elem);
+    // add element in queue for processing
+    registeredElements[ this.getElementId(elem) ] = elem;
+
+    if (more_integrations)
+      elemData.integrations = elemData.integrations.concat(more_integrations);
+    if (!initialized) return;
+    initIntegrations.apply(this,[elem]);
+  }
+
+  this.addComponents = function(selector, components) {
+    var elements;
+    if (typeof(selector) == 'string') {
+      elements = this.query(selector);
+      for (var i=0; i<elements.length; i++)
+        _addComponents.apply(this,[elements[i], components]);
+    } else {
+      elements = [selector];
+      _addComponents.apply(this, [selector,components]);
+    }
+    return elements;
+  }
+
+  this.query = function (all_selectors, context) {
+    if ( !context ) context = document;
+    if (this.queryFunction)
+      return this.queryFunction(all_selectors, context);
+
+    all_selectors = all_selectors.replace(/ *$/,"");
+
+    //Get DOM elements based on the given CSS Selector - V 1.00.A Beta
+    //http://www.openjs.com/scripts/dom/css_selector/
+
+    var selected = new Array();
+    if(!document.getElementsByTagName) return selected;
+    all_selectors = all_selectors.replace(/\s*([^\w])\s*/g,"$1");//Remove the 'beutification' spaces
+    var selectors = all_selectors.split(",");
+    // Grab all of the tagName elements within current context
+    var getElements = function(context,tag) {
+      if (!tag) tag = '*';
+      // Get elements matching tag, filter them for class selector
+      var found = new Array;
+      for (var a=0,len=context.length, con; con=context[a],a<len; a++) {
+        var eles;
+        if (tag == '*') eles = con.all ? con.all : con.getElementsByTagName("*");
+        else eles = con.getElementsByTagName(tag);
+
+        for(var b=0,leng=eles.length;b<leng; b++) found.push(eles[b]);
+      }
+      return found;
+    }
+
+    COMMA:
+    for(var i=0,len1=selectors.length,selector; selector=selectors[i],i<len1; i++) {
+      var context = new Array(context);
+      var inheriters = selector.split(" ");
+
+      SPACE:
+      for(var j=0,len2=inheriters.length,element; element=inheriters[j],j<len2;j++) {
+        //This part is to make sure that it is not part of a CSS3 Selector
+        var left_bracket = element.indexOf("[");
+        var right_bracket = element.indexOf("]");
+        var pos = element.indexOf("#");//ID
+        if(pos+1 && !(pos>left_bracket&&pos<right_bracket)) {
+          var parts = element.split("#");
+          var tag = parts[0];
+          var id = parts[1];
+          var ele = document.getElementById(id);
+          if(!ele || (tag && ele.nodeName.toLowerCase() != tag)) { //Specified element not found
+            continue COMMA;
+          }
+          context = new Array(ele);
+          continue SPACE;
+        }
+
+        pos = element.indexOf(".");//Class
+        if(pos+1 && !(pos>left_bracket&&pos<right_bracket)) {
+          var parts = element.split('.');
+          var tag = parts[0];
+          var class_name = parts[1];
+
+          var found = getElements(context,tag);
+          context = new Array;
+          for (var l=0,len=found.length,fnd; fnd=found[l],l<len; l++) {
+            if(fnd.className && fnd.className.match(new RegExp('(^|\s)'+class_name+'(\s|$)'))) context.push(fnd);
+          }
+          continue SPACE;
+        }
+
+        if(element.indexOf('[')+1) {//If the char '[' appears, that means it needs CSS 3 parsing
+          // Code to deal with attribute selectors
+          if (element.match(/^(\w*)\[(\w+)([=~\|\^\$\*]?)=?['"]?([^\]'"]*)['"]?\]$/)) {
+            var tag = RegExp.$1;
+            var attr = RegExp.$2;
+            var operator = RegExp.$3;
+            var value = RegExp.$4;
+          }
+          var found = getElements(context,tag);
+          context = new Array;
+          for (var l=0,len=found.length; fnd=found[l],l<len; l++) {
+            if(operator=='=' && fnd.getAttribute(attr) != value) continue;
+            if(operator=='~' && !fnd.getAttribute(attr).match(new RegExp('(^|\\s)'+value+'(\\s|$)'))) continue;
+            if(operator=='|' && !fnd.getAttribute(attr).match(new RegExp('^'+value+'-?'))) continue;
+            if(operator=='^' && fnd.getAttribute(attr).indexOf(value)!=0) continue;
+            if(operator=='$' && fnd.getAttribute(attr).lastIndexOf(value)!=(fnd.getAttribute(attr).length-value.length)) continue;
+            if(operator=='*' && !(fnd.getAttribute(attr).indexOf(value)+1)) continue;
+            else if(!fnd.getAttribute(attr)) continue;
+            context.push(fnd);
+          }
+
+          continue SPACE;
+        }
+
+        //Tag selectors - no class or id specified.
+        var found = getElements(context,element);
+        context = found;
+      }
+      for (var o=0,len=context.length;o<len; o++) selected.push(context[o]);
+    }
+    return selected;
+  }
+
+
+  var parseRfxCssRule = function(spec) {
+    //spec is: richfx.integrationName#key or richfx#key.integrationName
+    //          or richfx.integrationName
+    var hash;
+    var hash_index = spec.indexOf('#');
+    var dot_index = spec.indexOf('.');
+    if (hash_index!=-1) {
+      if (dot_index < hash_index) { // IE case
+        hash = spec.substr( hash_index );
+        spec = spec.substr(0,hash_index);
+        spec = spec.substr( dot_index+1 );
+      } else { // firefox case
+        spec = spec.substr( hash_index );
+        hash = spec.substring( 1, dot_index-hash_index );
+        spec = spec.substr( dot_index-hash_index+1 );
+      }
+    } else
+      spec = spec.substr( dot_index+1 );
+
+    return { integration: spec, default_key: hash }
+  }
+
+  var registerCssElements = function() {
+    var elements = [];
+    for (var i=0; i<document.styleSheets.length; i++) {
+      var sheet = document.styleSheets[i];
+      // hack to workaround security limitations that apear in Firefox when using <base> tag override
+	  if (rules != null) 
+	  { 
+      try {
+		if ( this.isIE ) {
+			var rules = sheet.rules;
+		} else if ( this.isChrome ) {
+			//var rules = sheet.sheet;
+			var rules = sheet.rules;
+		} else {
+			var rules = sheet.cssRules;
+		}
+        //var rules = this.isIE ? sheet.rules : sheet.cssRules;
+		
+      for (var j=0; j<rules.length; j++) {
+        var selector = rules[j].selectorText;
+        if (/RICHFX[\.#]/i.test(selector)) {
+          var rules2 = selector.split(',');
+          for (var m=0; m < rules2.length; m++) {
+            var compound_rule = rules2[m];
+            var pos = compound_rule.toLowerCase().indexOf("richfx");
+            var css_selector = compound_rule.substr(0, pos);
+            var elements_ = this.query( css_selector );
+            while(pos < compound_rule.length-1) {
+              pos2 = compound_rule.substr(pos+1).toLowerCase().indexOf("richfx")+pos+1;
+              if (pos2 == pos)
+                pos2 = compound_rule.length+1;
+              var rule = compound_rule.substring(pos,pos2-1);
+              var p_rule = parseRfxCssRule.apply(this,[ rule ] );
+              for (var k=0; k < elements_.length; k++) {
+                if (p_rule.defaults_key)
+                  this.setDefaultsKey.apply( this, [ elements_[k], p_rule.integration, p_rule.defaults_key ] );
+                _addComponents.apply( this,[ elements_[k], p_rule.integration ] );
+              }
+              pos = pos2;
+            }
+          }
+        }
+      }
+	  
+      } catch(e) {
+        continue;
+      }
+	  }
+	  
+    }
+  }
+
+  var registerTargetElements = function(target) {
+    for (var i=0; i < target.length; i++) {
+       var m=target[i];
+       var elems = this.query(m.media);
+       for (var j=0; j<elems.length; j++) {
+         for (var k=0; k < m.components.length; k++)
+           if (m.defaults_key)
+             this.setDefaultsKey.apply( this, [ elems[j], m.components[k], m.defaults_key[k] ] );
+         _addComponents.apply( this,[ elems[j], m.components ] );
+       }
+    }
+  }
+
+  var initIntegrations = function(elem, more_integrations) {
+    var elemData = this.getElementData(elem);
+    var integrations = elemData.integrations;
+    var ccFirstIntegrations = new Array();
+    var metrics = this.getElementMetrics( elem );
+
+    // get necessary component libraries to preload
+    var componentLibs = new Array();
+    for ( var j = 0; j < integrations.length; j++ ) {
+      var integration = integrations[j];
+      var pos = integration.indexOf('(');
+      var integration_name;
+      if ( pos == -1 ) {
+        componentLibs[ componentLibs.length ] = 'component_' + integration;
+      } else {
+        componentLibs[ componentLibs.length ] = 'component_' + integration.substr( 0, pos );
+      }
+      if ((componentLibs[ componentLibs.length - 1] == 'component_imageColorChange') || (componentLibs[ componentLibs.length - 1] == 'component_imageSwatchPanel')) {
+      	ccFirstIntegrations.unshift(integration); // add color change viewer at the beginning
+      } else {
+      	ccFirstIntegrations.push(integration); // all other at the end
+      }
+    }
+
+    integrations = ccFirstIntegrations;  // use new "sorted" list
+
+    // load preload the component libraries
+    this.loadLibrary(
+      componentLibs,
+      // apply components in order of declaration after preload is completed
+      function (elem, integrations, metrics) {
+        var elemData = this.getElementData(elem);
+        // apply the integrations to the element in the order declared
+        for ( var j = 0; j < integrations.length; j++ ) {
+          var integration = integrations[j];
+          var pos = integration.indexOf('(');
+          if ( pos == -1 ) {
+            loadComponent.apply( this, [ integration, elem, metrics ] );
+          } else {
+            // apply any parameters set in the declaration of the integration tag --> RICHFX:integration(param1,param2,...)
+            var integrationName = integration.substr( 0, pos );
+            var params = integration.substr( pos + 1, integration.length - pos - 2 ).split(',');
+            loadComponent.apply( this, [ integrationName, elem, metrics ].concat( params ) );
+          }
+        }
+      },
+      this,
+      elem, integrations, metrics
+    );
+  }
+
+  this.setDefaultsKey = function(elem, component, key) {
+    var elemData = this.getElementData(elem);
+    if (!elemData.defaults[component])
+       elemData.defaults[component] = {};
+    elemData.defaults[component].key = key;
+  }
+
+  // initialize RICHFX class components
+  var initClassEmbeds = this.initClassEmbeds = function (elems) {
+    registerCssElements.apply(this);
+    if (RICHFX_CONFIG.target)
+      registerTargetElements.apply(this, [RICHFX_CONFIG.target]);
+    if (!elems)
+      elems = this.getElementsByClass( 'RICHFX:[^ ]+' );
+    // Process each found element
+    var integrationPattern = /RICHFX:([^ ]+)/g;
+    for ( var i = 0; i < elems.length; i++ ) {
+      var elem = elems[i];
+      var elemData = this.getElementData(elem);
+      var integrations = elemData.integrations;
+      // get integration name from element --> RICHFX:{integration}
+      elem.className.replace( integrationPattern, function(a, b) { integrations[integrations.length] = b; } );
+      // add element in queue for processing
+      registeredElements[ this.getElementId(elem) ] = elem;
+    }
+    for ( var k in registeredElements ) {
+      var elem = registeredElements[k];
+      initIntegrations.apply(this,[elem]);
+    }
+  }
+
+  // initialize RICHFX components
+  var appendSlash = function(path) { // helper to ensure a slash in the end of path
+    var pos = path.lastIndexOf('/');
+    if (pos == -1 || pos != path.length-1)
+      path += "/";
+    return path;
+  }
+
+  var detectQuerySupport = function() {
+    if (this.queryFunction) return;
+    if (typeof(window.jQuery) != 'undefined') {
+      this.queryFunction = function(x, y) { return window.jQuery(x, y).get() };
+      jQuery.fn.RICHFX = this.plugin;
+    } else if (typeof(dojo) != 'undefined') {
+      if (typeof(dojo.query) != 'undefined')
+        this.queryFunction = dojo.query;
+    }
+    else if (typeof(Prototype) != 'undefined') {
+      if (typeof('$$') != 'undefined') {
+        if (Prototype.Version.indexOf("1.5.0")==-1) {
+          this.queryFunction = $$;
+        }
+      }
+    }
+    /* TODO: others frameworks ? moo tools ? */
+  }
+  var isXPath = function(value){
+    var regex = /[\(\[\=\@\/\^\$\*]/;
+    return regex.test(value);
+  }
+  var initQueryDependancy = function() {
+    detectQuerySupport.apply(this);
+    if (!this.queryFunction) {
+      var xpath = false;
+      if (RICHFX_CONFIG.target)
+        for (var i=0; i<RICHFX_CONFIG.target.length; i++)
+          if (isXPath(RICHFX_CONFIG.target[i].media)) {
+            xpath = true; break;
+          }
+      if (xpath)
+        this.loader.require[this.loader.require.length] = 'jQuery';
+    }
+  }
+
+  var initialize = function ( e ) {
+    this.removeEvent( window, "load", initialize, this );
+    windowLoaded = true;
+    this.RequestParams = DecodeScript( 'rfxloader', 'rfxembed' );
+    this.viewerBaseURL = this.RequestParams.query.rfx_viewerBaseURL;
+    this.settingsBaseURL = this.RequestParams.query.rfx_settingsBaseURL;
+    this.baseURL = this.RequestParams.query.rfx_baseURL;
+
+    if (typeof(RICHFX_CONFIG) == 'undefined')
+      RICHFX_CONFIG = {};
+
+    var embed = RICHFX_CONFIG.embed || this.RequestParams.query.rfx_embed || "embed";
+    this.embedsBaseURL = RICHFX_CONFIG.embedsBaseURL || this.RequestParams.query.rfx_embedsbase || this.settingsBaseURL + 'embeds/';
+    if (!/^embed/.test(embed)) embed = "embed_"+embed;
+
+    this.loadLibrary( embed, function () {
+      var requiredlibs = getRequiredLibs.apply(this,[embed, true]);
+      for (var i=requiredlibs.length-1; i>=0; i--)
+        if (/^embed/.test(requiredlibs[i]))
+          this[requiredlibs[i]].apply( this );
+      this.loader = function(){}
+      this.loader.require = [ "base" ];
+      initQueryDependancy.apply(this);
+      this.loadLibrary( "loader", function() {
+        detectQuerySupport.apply(this);
+
+        // media base priority: query params, config, baseURL (default)
+        var murl = this.RequestParams.query.rfx_imageMediaURL;
+        if (!murl && RICHFX_CONFIG.imageMediaURL)
+          murl = RICHFX_CONFIG.imageMediaURL;
+        if (!murl)
+          murl = this.RequestParams.query.rfx_baseURL+'image/media/';
+        this.imageMediaURL = appendSlash(murl);
+
+        // apply components in order of declaration after preload is completed
+        initClassEmbeds.apply(this);
+
+        initialized = true;
+
+        // load and init tracking module
+        if ((RICHFX_CONFIG.tracking != undefined) && (RICHFX_CONFIG.tracking.active != undefined) && (RICHFX_CONFIG.tracking.active == true)){
+            this.loadLibrary( 'Tracking', function(){ this.Tracking(); }, this );
+        }
+
+       },
+      this
+      );
+    },
+    this
+    );
+  }
+
+  // clean up class objects to prevent memory leaks
+  var cleanup = this.cleanup = function ( e ) {
+
+  	this.removeEventListener(window, 'scroll', handler_visibleWatcher, this);
+  	visibleWatcher = null;
+
+	this.removeEventListener(document.body, 'mousemove', handler_mouseNearWatcher, this);
+  	mouseNearWatcher = null;
+
+    this.queryFunction = undefined;
+
+    // remove registered events
+    for ( var k in registeredObjects ) {
+      var obj = registeredObjects[k];
+      var elemData = this.getElementData(obj);
+      this.removeAllEvents.apply ( this, [ obj ] );
+
+      // unregister api methods
+      if (elemData) {
+        elemData.components = undefined;
+        if(elemData.defaults){
+          for (var i in elemData.defaults) {
+            for (var j in elemData.defaults[i])
+              elemData.defaults[i][j] = undefined;
+            elemData.defaults[i] = undefined;
+          }
+          elemData.defaults = undefined;
+        }
+        if (elemData.api) {
+          for (var k in elemData.api._properties)
+            elemData.api._properties[k] = null;
+          elemData.api._properties = undefined;
+          for (var component in elemData.api)
+            for (var k in elemData.api[component])
+              elemData.api[component][k] = null;
+        }
+      }
+    }
+    registeredObjects = null;
+
+    for ( var i = 0; i < watchedObjects.length; i++ )
+      this.removeAllChangeWatchers.apply ( this, [ watchedObjects[i] ] );
+    watchedObjects = null;
+
+    // fix IE / flash bug that destroys the flash instance before flash gets a chance to clear flash callback hooks
+    if ( this.isIE ) document.body.innerHTML = '';
+    eventHandler = null;
+    customEvent = undefined;
+    self = undefined;
+  }
+
+  var resize_state = 0;
+  var resize_handler = this.resetElementPositions = function ( e ) {
+    resize_state = (resize_state+1) % 1000; // could that be just 2 ?
+  }
+
+  this.registerCustomEvent('elementchange');
+  this.registerCustomEvent('offsetchange');
+  this.registerCustomEvent('visible');
+  this.registerCustomEvent('mousenear');
+
+  var elementData = new Object();
+  this.getElementData = function ( obj ) {
+    var objId = this.getElementId(obj);
+    if ( !( objId in elementData ) ) {
+        elementData[ objId ] = new Object();
+        elementData[ objId ].integrations = [];
+        elementData[ objId ].defaults = {};
+        elementData[ objId ].loaded_components = {};
+        registeredObjects[ objId ] = obj;
+    }
+    return elementData[ objId ];
+  }
+
+  this.getElementId = function ( obj ) {
+    if ( !obj ) return '';
+    if ( !( '__richfx_id' in obj ) ) obj['__richfx_id'] = 'id_' + registeredObjectsIndex++;
+    return obj.__richfx_id;
+  }
+
+
+  this.plugin = function(m) {
+     if (typeof(m) == 'string') {
+       var args = [];
+       for ( var i = 0; i < arguments.length; i++ ) args[args.length] = arguments[i];
+       m = { components: args };
+     } else if ( m instanceof Array )
+       m = { components: m }
+     return this.each(function() {
+       if (!m.components) return this;
+       for (var j=0; j < m.components.length; j++)
+         if (m.defaults_key)
+           self.setDefaultsKey.apply( self, [this, m.components[j], m.defaults_key[j]] );
+       _addComponents.apply( self, [this, m.components] );
+       return this;
+     });
+  }
+  this.consoleDebug = function(message) {
+    if (typeof(console)!='undefined')
+      if (console.log)
+        console.log(message);
+  }
+
+  if (typeof(jQuery) != 'undefined')
+    jQuery.fn.RICHFX = this.plugin;
+
+  this.setImageSource = function(image, src) {
+    //DEBUG src = "http://boris.richfx.com/ConfigurationViewer/files/common/pngbehavior/webfx.png";
+    var blankSrc = this.settingsBaseURL+"images/png_transparency_placeholder.gif";
+    if (this.isIE && this.browserVersion < 7.0 && /\.png$/i.test(src)) { //TODO: verify that 7 is cutoff
+      image.src = blankSrc;
+      image.runtimeStyle.filter = "progid:DXImageTransform.Microsoft." +
+            "AlphaImageLoader(src='" + src + "',sizingMethod='scale')";
+    } else
+      image.src = src;
+  }
+
+  this.getConfig = function(componentName, prop, default_value) {
+    return (RICHFX_CONFIG[componentName] && RICHFX_CONFIG[componentName][prop]) || default_value;
+  }
+
+  /*  fixPngs -- fix pngs on IE for transparency
+  *   * node -- subtree to scan and convert all pngs to transparent ones
+  */
+  this.fixPngs = function(node) {
+    if (this.isIE && this.browserVersion < 7.0) { //TODO: verify that 7 is cutoff on IE for trasparency bug
+      var images = node.getElementsByTagName("IMG");
+      // we need to know image width and height for AlphaImageLoader to work
+      // so we need to wait for the image to be ready
+      function fix(e, image, visibility) {
+        this.removeEventListener(image, 'load', fix, this);
+        var metrics = this.getElementMetrics(image);
+        var src = image.src;
+        image.style.visibility=visibility;
+        image.src = this.settingsBaseURL+"images/png_transparency_placeholder.gif";
+        image.style.width = metrics.realDim[0]+'px';
+        image.style.height = metrics.realDim[1]+'px';
+        image.runtimeStyle.filter = "progid:DXImageTransform.Microsoft." +
+              "AlphaImageLoader(src='" + src + "',sizingMethod='scale')";
+      }
+      for (var i=0; i<images.length; i++) {
+        var image = images[i];
+        if (/.png(\?|$)/i.test(image.src)){
+          var metrics = this.getElementMetrics(image);
+          if (metrics.realDim[0]==0 && metrics.realDim[1]==0) {
+            // TODO: reset metrics cache
+            var visibility = image.style.visibility;
+            image.style.visibility = 'hidden';
+            this.addEventListener(image, 'load', fix, this, image, visibility);
+          }
+          else
+            fix(image);
+        }
+      }
+    }
+  }
+
+  // call constructor
+  return RICHFX.apply(this, arguments);
+}();

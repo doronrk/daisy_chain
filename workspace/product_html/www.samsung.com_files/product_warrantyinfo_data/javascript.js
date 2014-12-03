@@ -1,1 +1,0 @@
-document.domain="samsung.com";

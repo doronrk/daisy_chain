@@ -1,0 +1,927 @@
+/*
+ * Browser RESET code
+ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+/*
+ol, ul {
+	list-style: none;
+}
+*/
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a,a:visited {
+	text-decoration:underline;
+	color:#369;
+}
+a.active {
+	color:#C00;
+}
+
+/*
+ * Browser RESET code ENDs
+ */
+
+
+
+
+body {width:100%;height:100%;font-family: Helvetica, Arial, sans-serif;}
+
+#MainContainer {width:1000px; position:relative; margin-left:0px;}
+#CoHead {width:100%;position:relative;}
+
+.red {outline:dashed 1px red;}
+.orange {outline:dashed 1px orange;}
+.yellow {outline:dashed 1px yellow;}
+.lime {outline:dashed 1px lime;}
+.blue {outline:dashed 1px blue;}
+.bold {font-weight:700;}
+.floatL {float:left;}
+.floatR {float:right;}
+.smallfont {font-size:.75em;}
+.border_sides {border-left:solid 1px #555;border-right:solid 1px #555;}
+.border_all_med {border:solid 1px #C4C3C3;}
+.TextColorRed {color:#900;}
+.TextColorDGray {color:#333;}
+.DisclaimerText {font-size:.65em;}
+
+#product_main_start {width:100%;position:relative; height:470px;margin-top:10px;}
+#product_main_start div {float:left;}
+
+#product_bread_crums{width:98%;max-width: 780px;position:relative; height:24px;margin-top:4px;margin-left: 1%;font-size:1.0em; font-color: #1c0772; 
+ /* border-bottom: 1px solid #ccc; */
+}
+
+#ProductName { position:relative; top: 0px; width:80%; margin-left: 1%; max-width: 760px;
+	/* height:120px; */
+z-index:1; visibility: inherit; border-bottom: 1px solid #ccc; padding-bottom: 5px;
+}
+
+#Container {
+	position:relative;
+	width:800px;
+	height:400px;
+	z-index:1;
+	padding-top: 5px;
+}
+
+
+#ProductAttributes { position:absolute; top: 5px; left: 310px; width:460px; height:60px; z-index:1;
+	visibility: inherit;
+	/*border: 2px solid #F00; */
+}
+
+#ProductAttributes ui{padding:0; margin:0; width: 460px; list-style: none;}
+#ProductAttributes li{float: left; width: 230px; height: 18px;font-size: 0.8em; color:#999; font-family:Arial, Helvetica, sans-serif;}
+
+#WarranText { position:absolute; font-size: 10pt; font-family:Arial, Helvetica, sans-serif; width:460px; 
+  height:22px; z-index:2; top: 40px; left: 310px; margin-top: 0px;
+}
+
+#shortDescrDiv { position:absolute; top: 70px; left: 310px; width: 450px; height: 300px; text-align:justify;
+  text-justify:inter-word; font-size:.8em; line-height:1.2em; overflow-y:auto; border:solid 1px #ccc; 
+  white-space:normal; clear: both; padding: 5px; 
+}
+#shortDescrDiv ul {margin:5px;padding-left:10px; line-height:.4em; margin-top: 0px; margin-bottom: 0px;padding-top: 0px; padding-bottom: 0px;}
+#shortDescrDiv li {line-height:1.2em;  margin-bottom: 5px;padding-top: 0px; padding-bottom: 0px;}
+
+
+
+
+#product_text_main_container {width:475px;height:100%;}
+#product_text_main_container div {width:455px; position:relative;margin:0 auto;padding:10px;}
+#product_text_field_title {height:15%;/* color:#FF6600;font:700 1.2em/1.2em Helvetica, Arial, sans-serif; */overflow:hidden;}
+.product_title {color:#FF6600;font:700 1.2em/1.2em Helvetica, Arial, sans-serif; text-decoration:none;}
+#product_text_field_identifier {height:15%;border-top:solid 1px #9A9A9A; }
+#product_text_field_identifier ul {margin-left:10px;}
+#product_text_field_identifier ul li{width:50%;display:inline;margin:5px 0;}
+
+#product_text_field_descriptor {height:48%; font-size:.8em;line-height:1.2em;overflow-y:auto;border:solid 1px #eee; white-space:pre-wrap;}
+/*#product_text_field_descriptor p {height:100%;font-size:.8em;line-height:1.2em;overflow-y:auto;border:solid 1px #eee; white-space:pre-wrap;} */
+#product_text_field_links {height:1%;text-align:center;font-size:.8em;}
+
+
+
+/*
+ * Product Detail New design
+ */
+.desktopHeader{
+        position:relative;
+}
+
+.mobileHeader{
+        display: none;
+}
+
+
+ 
+#ProdDetTopContainer{
+        position:relative;
+        width:980px;
+        height:440px;
+        z-index:1;
+        /*border: 1px solid blue; */
+        margin: 10px;
+}
+
+#ImageHolder {
+	position:absolute;
+	top: 0px;
+	left: 0px;
+	width:300px;
+	height:300px;
+
+	z-index:1;
+	visibility: inherit;
+}
+
+#large_image {width:300px; height:300px; position:absolute; top:0; left:0; }
+#scrollable_container {   width:300px; margin:0 auto; position:relative; top:300px; height:75px; padding:0px; padding-bottom:5px; }
+/*
+  root element for the scrollable.
+  when scrolling occurs this element stays still.
+*/
+.scrollable {
+     /* required settings */
+     position:relative;
+     overflow:hidden;
+     width: 250px;
+     height:100%;
+     /* custom decorations */
+     padding:0px;
+     margin:0 auto;
+
+     /* this makes it possible to add next button beside scrollable */
+    float:left;
+}
+
+/*
+   root element for scrollable items. Must be absolutely positioned
+   and it should have a extremely large width to accomodate scrollable
+   items.  it's enough that you set the width and height for the root
+   element and not for this element.
+*/
+.scrollable .items {
+    /* this cannot be too large */
+    width:20000em; position:absolute; clear:both;}
+
+.items div { float:left; position:relative; width:300px;}
+
+/* single scrollable item */
+.scrollable img {
+    width: 50px; height: 50px;
+    float:left; left:8px; margin:12.5px 5px; padding:0px;
+    background-color:#fff; border:1px solid #ccc; 
+    cursor:pointer;
+}
+.scrollable img:hover {border-color:red;}
+
+/* active item */
+.scrollable .active {  border:2px solid #000; position:relative; cursor:default; }
+
+/* prev, next, prevPage and nextPage buttons */
+#scrollable a.browse {
+    background:url(http://images.frys.com/art/0900_site/advertisingTest/scrollable/media/images/image_thumbnail_arrows.gif) no-repeat;
+    display:block;
+    height:40px;
+    width:23px;
+    float:left;
+    margin:7px 0px;
+    cursor:pointer;
+    font-size:1px;
+    position:relative;
+    top:12.5px;
+}
+
+#scrollable.items a { text-decoration:none;}
+
+/* right */
+#scrollable a.right { background-position: -23px 0px; clear:right; margin-left:2px; }
+#scrollable a.right:hover,a.right:active { background-position:-23px -40px; }
+/* a.right:active { background-position:-60px 0px; } */
+
+/* left */
+#scrollable a.left { margin-right:2px; }
+#scrollable a.left:hover,a.left:active  { background-position:0px -40px; }
+/* a.left:active { background-position:-60px 0; } */
+
+/* disabled navigational button */
+#scrollable a.disabled { visibility:hidden !important;}
+
+
+
+
+.BottomDesText {
+	width: 480px;
+	height: 240px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:9pt;
+	font-weight:300;
+	line-height: 1.466em;
+	overflow-y:auto;
+	overflow-x:hidden;
+	padding: 5px;
+	text-align:justify;
+	text-justify:inter-word;
+}
+
+
+
+
+/* #product_price_main_container {width:220px;height:98%;background-color:#F1F0F0;border-radius:25px;margin:5px 0 0 5px;position:relative;} */
+
+#product_price_main_container {width:220px;height:98%;background-color:#F1F0F0;border-radius:0px;margin:0px 0 0 5px;position:absolute;right:0px; top:14px; border: 1px solid #ccc;}
+/*#product_price_main_container div {width:94%;padding:5px;margin:5px 5px 5px 0;position:relative;padding-bottom:10px;margin-bottom:0} */
+#product_price_main_container div {position:relative;width:94%;margin:4px 10px 4px 10px;} 
+
+#product_price_holder {text-align:right;}
+/* #addtocartbtn {margin:10px 0 5px;display:block;}
+   #addtocartbtn:active {position:relative;top:1px;}
+ .PriceText {color:#F00;font:500 1.4em/1em "Verdana Narrow","Geneva Narrow",Sans-Serif;} */
+.product_shipping_info_cover ,.product_storepickup_cover {position:absolute;top:-9px;left:10px;}
+.product_special_icons a {display:block;margin:5px 0;font-size:.8em;} 
+.product_special_icons img {float:left;bottom:0;margin-right:5px;}
+
+#addtowishlist {text-align:center;font-size:.75em;margin:0px 0 0 !important;padding:0 !important;}
+#product_share_info_wrapper {background-color:#E9E9E9;border-radius:0 0 0px 0px;position:absolute !important;bottom:0; left:0px; width:100% !important;margin:0 !important;padding:5px 0 0 !important;}
+#product_share_info {margin:0 0 0 15px !important;padding:5px 0 0 !important;}
+#product_share_info img {margin-left:10px;}
+
+#PriceArea {
+	position:absolute;
+	width:12.563em;
+	height:24.625em;
+	background-color: #f1f0f0;
+	z-index:5;
+	right: 0;
+	top: 0.000em;
+}
+.PriceText {
+ font-weight: bold;
+ font-family:Verdana, Geneva, sans-serif;
+ font-size:1.6em/1em;
+ color:#F00;
+}
+.store{
+ font-size: 8pt;
+ font-weight: bold;
+ font-family:Arial, Helvetica, sans-serif;
+}
+.store2{
+ font-size: 9pt;
+ color:#343030;
+ font-weight: bold;
+ font-family:Arial, Helvetica, sans-serif;
+ }
+.shareIcons{
+ font-size: 8pt;
+ padding-left:0.913em;
+ color:#343030;
+ font-weight: bold;
+ font-family:Arial, Helvetica, sans-serif;
+ }
+
+
+/*
+#WarranText {
+	position:absolute;
+	bottom: 0px;
+	left: 300px;
+	width: 480px;
+	height: 30px;
+	font-size: 10pt;
+	font-family:Arial, Helvetica, sans-serif;
+}
+*/
+
+
+#ViewText {
+	position:absolute;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:9pt;
+	width:18.750em;
+	text-indent:10%;
+	height:0.875em;
+	z-index:2;
+	top: 25.588em;
+	visibility: inherit;
+}
+#Thumbnails {
+	position:absolute;
+	width:18.550em;
+	height:5.063em;
+	z-index:3;
+	top: 20.313em;
+}
+table.tablegrid {
+	border: 0.133em solid #666666;
+	width: 100%;
+	font-family: verdana,arial,sans-serif;
+	font-size:0.688em;
+	color:#333333;
+	border-collapse: collapse;
+}
+
+table.tablegrid td {
+	border-width: 0.133em;
+	height: auto;
+	width: 3.125em;
+	padding: 0.500em;
+	border-style: solid;
+	border-color: #ccc;
+	background-color: none;
+}
+#shortDescription {
+	position:absolute;
+	width:29.625em;
+	height:22.438em;
+	z-index:4;
+	left: 19.375em;
+	top: 0.063em;
+}
+table.Descriptiongrid {
+	width: 100%;
+	font-family: verdana,arial,sans-serif;
+	font-size:0.563em;
+	color:#333333;
+	border-width: 0.000em;
+	border-color: none;
+
+}
+
+table.Descriptiongrid td {
+	border-width: 0.000em;
+    border-style: none;
+	border-color: none;
+	background-color: #fff;
+
+}
+.toprowTitle {
+width: 100%;
+Height: 5.000em;
+font-family:Arial, Helvetica, sans-serif;
+font-size:14pt;
+line-height: 1.368em;
+color:#F60;
+}
+.ItemSpecifications {
+font-family:Arial, Helvetica, sans-serif;
+font-size:10pt;
+font-weight: bold;
+color:#4f4c4c;
+
+
+}
+.uncertain-01{
+ font-size: 7pt;
+ color:#900;
+ font-weight: bold;
+ font-family:Arial, Helvetica, sans-serif;
+}
+.uncertain-01-2{
+ font-size: 7pt;
+ color:#000;
+ font-weight: bold;
+ font-family:Arial, Helvetica, sans-serif;
+}
+.uncertain-02{
+ font-size: 8pt;
+ word-wrap: break-word;
+ padding-left: 0.438em;
+ color:#000;
+ font-weight: normal;
+ font-family:Arial, Helvetica, sans-serif;
+}
+
+/*
+#ShippingBox {
+	position:relative;
+	border: 0.133em solid #c4c3c3;
+	width:95%;
+	height:auto;
+	line-height: 1.950em;
+	padding-left:5px;
+	z-index:3;
+	/  * left: 1.188em;
+	top: 7.688em;
+	*  /
+}
+*/
+
+#StorePickup-Box {
+	border: 0.133em solid #c4c3c3;
+	line-height: 1.950em;
+	width:95%;
+	height:auto;
+	padding-left:5px;
+	z-index:3;
+	left: 1.188em;
+	top: 7.688em;
+}
+#shipping-banner {
+	position:0.000em;
+	margin-top: -1.129em;
+	margin-left: 0.513em;
+	background:url(http://images.frys.com/art/a_new_home_page/images/shippingInfo-cover.gif);
+	background-repeat:no-repeat;
+	width:10.875em;
+	height:1.825em;
+	z-index:5;
+	left: 1.813em;
+	top: 8.375em;
+}
+
+#instore-banner {
+	position:0.000em;
+	margin-top: -1.129em;
+	margin-left: 0.513em;
+	background:url(http://images.frys.com/art/a_new_home_page/images/storepickup-cover.gif);
+	background-repeat:no-repeat;
+	width:10.875em;
+	height:1.825em;
+	z-index:4;
+	top: 14.125em;
+}
+ 
+
+
+/**
+ * Standard Configuration. It is advised that this section NOT be modified as the
+ * carousel.js expects the behavior outlined below.
+ **/
+.carousel-component { 
+	position:relative;
+	overflow:hidden;   /* causes the clipping */
+	display:none; /* component turns it on when first item is rendered */
+	
+}
+				
+.carousel-component ul.carousel-list { 
+	width:10000000px;
+	position:relative;
+	z-index:1; 
+}
+
+.carousel-component .carousel-list li { 
+	float:left;
+	list-style:none;
+	overflow:hidden;
+	
+    
+}
+
+/**
+ * VERTICAL CAROUSEL DEFAULTS
+ **/
+.carousel-component .carousel-vertical li { 
+	margin-bottom:0px;
+
+	/* Fix for extra spacing in IE */
+	float:left;
+    clear:left;  
+	
+	/* Force the LI to respect the HEIGHT specified */
+	overflow:hidden;
+	display:block;
+}
+
+/* For vertical carousel, not set, width defaults to auto */
+/* Note if you explicitly set width to auto, this might cause */
+/* problems with Safari... as in up/down button not working in some examples. */	 
+.carousel-component ul.carousel-vertical {
+/*	width:auto;*/
+}
+
+.carousel-component .carousel-clip-region { 
+	overflow:hidden; /* Secret to the clipping */
+	margin:0px auto;
+	position:relative; 
+}
+
+/**
+ * ==============================================================================
+ * Safe to override. It is safe to override background, padding, margin, color,
+ * text alignment, fonts, etc. Define a separate CSS file and override your style
+ * preferences.
+ **/
+
+.carousel-component { 
+	background:#ffffff;
+	padding:0px;
+	-moz-border-radius:6px;
+	color:#618cbe;
+}
+.carousel-component ul.carousel-list { 
+	margin:0px;
+	padding:0px;
+	line-height:0px;
+}
+.carousel-component .carousel-list li { 
+
+	margin:0px;
+	padding:0px;
+	font:10px verdana,arial,sans-serif;
+	color:#666;
+}
+.carousel-component .carousel-vertical li { 
+}
+.carousel-component ul.carousel-vertical { 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* START pasted in from file prod-det-yui.css*/
+
+
+
+
+table{border-collapse:collapse;border-spacing:0;}
+fieldset,img{border:0;}
+address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}
+sup{vertical-align:text-top;}
+sub{vertical-align:text-bottom;}
+
+
+
+caption,th {text-align:left;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+h1.first-content, h2.first-content, h3.first-content {margin-top:0; padding-top:0; border:none;} /*if an h is the first thing on the page or in a section, it should be flush with the top border of its content area; otherwise, its content area should be padded to create space.*/
+
+q:before,q:after{content:'';}
+abbr,acronym{border:0;font-variant:normal;}
+
+/*fonts.css*/
+table {font-size:inherit;font:100%;}
+
+
+
+
+
+/* Bob Added */
+.price {color:#ff0000;text-decoration:none;font-size:16px;font-weight:bold;} 
+
+
+
+
+
+
+
+/* END pasted in from file prod-det-yui.css*/
+
+
+
+
+
+
+
+/* START pasted in from file prod-det-skin.css*/
+
+
+ul, ol {
+    margin-left: 60px;
+}
+
+ul ul {
+    margin-bottom: 20px;
+}
+
+#alsorecom_hor {
+    color: #404040;
+    margin: 0px 0px;
+    font-size: 10px;
+}
+
+a {
+    color: #4088b8;
+}
+
+
+.jcarousel-skin .jcarousel-container {
+    -moz-border-radius: 10px;
+    background: #F0F6F9;
+    border: 1px solid #346F97;
+}
+
+.jcarousel-skin .jcarousel-container-horizontal {
+    width: 100%;
+    padding: 10px 20px;
+}
+
+.jcarousel-skin .jcarousel-container-vertical {
+    width: 148px;
+    height: 445px;
+    padding: 10px 10px;
+}
+
+.jcarousel-skin .jcarousel-clip-horizontal {
+    width:  100%;
+    height: 178px;
+}
+
+.jcarousel-skin .jcarousel-clip-vertical {
+    width:  148px;
+    height: 445px;
+}
+
+.jcarousel-skin .jcarousel-item {
+    width: 148px;
+    height: 178px;
+}
+
+.jcarousel-skin .jcarousel-item-horizontal {
+    margin-right: 10px;
+}
+
+.jcarousel-skin .jcarousel-item-vertical {
+    margin-bottom: 10px;
+}
+
+.jcarousel-skin .jcarousel-item-placeholder {
+    background: #fff;
+    color: #000;
+}
+
+.jcarousel-skin li {
+    height: 178px;
+}
+
+
+
+
+#alsorecom_hor a {
+    text-decoration: none;
+}
+
+#alsorecom_hor .item {
+    display: inline;
+    float: left;
+    margin: 0 5px 0 5px;
+    overflow: hidden;
+    padding-right: 90px;
+    width: 134px;
+    background: #fff;
+}
+
+#alsorecom_hor .item .authimg {
+    top: 2px;
+    margin-left: 30px;
+    position: absolute;
+    z-index: 1;
+}
+
+#alsorecom_hor .item h3 {
+    line-height: 85%;
+    padding-top: 92px;
+    width: 134px;
+}
+
+#alsorecom_hor .item h3 a {
+    font: 67% Arial, sans-serif;
+    position: relative;
+    z-index: 2;
+}
+
+#alsorecom_hor .item h3 a:link {
+    color:#6E6E6E;
+}
+
+#alsorecom_hor .item h4 {
+    margin-top:25px;
+    margin-left: 140px;
+}
+
+#alsorecom_hor .item h4 a {
+    font: 100% Georgia, Times, serif;
+    /* position: relative; */
+    z-index:2;
+}
+
+#alsorecom_hor .item h4 a:link {
+    color:#00639b;
+}
+
+#alsorecom_hor .item cite {
+    color: #888;
+    display: block;
+    font-size: 77%;
+    line-height: normal;
+    margin-top: 50px;
+}
+
+#alsorecom_hor .item p.priceLabel {
+    top: 135px;
+    left: 5px;
+    position: absolute;
+    z-index: 2;
+}
+
+#alsorecom_hor .item p.priceLabel a {
+    font-weight: bold;
+    font-size: 12px;
+}
+
+#alsorecom_hor .item p.price {
+    top: 140px;
+    left: 10px;
+    position: absolute;
+    z-index: 2;
+}
+
+#alsorecom_hor .item p.addAccessories {
+    top: 160px;
+    left: 10px;
+    width: 90px;
+    font-size: 12px;
+    position: absolute;
+    z-index: 2;
+}
+
+#alsorecom_hor .item p.price a {
+    font-weight: bold;
+    font-size: 18px;
+    color : #cc0000;
+}
+
+#alsorecom_hor .item p.promoLabel {
+    top: 135px;
+    left: 5px;
+    position: absolute;
+    z-index: 2;
+}
+
+#alsorecom_hor .item p.promoLabel a {
+    font-weight: bold;
+    font-size: 12px;
+}
+
+#alsorecom_hor .item p.promoPrice {
+    top: 135px;
+    left: 60px;
+    position: absolute;
+    z-index: 2;
+}
+
+#alsorecom_hor .item p.promoPrice a {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+
+
+/**
+ *  Horizontal Buttons
+ */
+.jcarousel-skin .jcarousel-next-horizontal {
+    position: absolute;
+    top: 65px;
+    right: 3px;
+    width: 27px;
+    height: 50px;
+    cursor: pointer;
+    background: transparent url(right-blue.gif) no-repeat 0 0;
+}
+
+.jcarousel-skin .jcarousel-next-horizontal:hover {
+    background-position: -32px 0;
+}
+
+.jcarousel-skin .jcarousel-next-horizontal:active {
+    background-position: -64px 0;
+}
+
+.jcarousel-skin .jcarousel-next-disabled-horizontal,
+.jcarousel-skin .jcarousel-next-disabled-horizontal:hover,
+.jcarousel-skin .jcarousel-next-disabled-horizontal:active {
+    cursor: default;
+    background-position: -96px 0;
+}
+
+.jcarousel-skin .jcarousel-prev-horizontal {
+    position: absolute;
+    top: 65px;
+    left: 3px;
+    width: 27px;
+    height: 50px;
+    cursor: pointer;
+    background: transparent url(left-blue.gif) no-repeat 0 0;
+}
+
+.jcarousel-skin .jcarousel-prev-horizontal:hover {
+    background-position: -32px 0;
+}
+
+.jcarousel-skin .jcarousel-prev-horizontal:active {
+    background-position: -64px 0;
+}
+
+.jcarousel-skin .jcarousel-prev-disabled-horizontal,
+.jcarousel-skin .jcarousel-prev-disabled-horizontal:hover,
+.jcarousel-skin .jcarousel-prev-disabled-horizontal:active {
+    cursor: default;
+    background-position: -96px 0;
+}
+
+/**
+ *  Vertical Buttons
+ */
+.jcarousel-skin .jcarousel-next-vertical {
+    position: absolute;
+    bottom: 5px;
+    left: 43px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    background: transparent url(next-vertical.png) no-repeat 0 0;
+}
+
+.jcarousel-skin .jcarousel-next-vertical:hover {
+    background-position: 0 -32px;
+}
+
+.jcarousel-skin .jcarousel-next-vertical:active {
+    background-position: 0 -64px;
+}
+
+.jcarousel-skin .jcarousel-next-disabled-vertical,
+.jcarousel-skin .jcarousel-next-disabled-vertical:hover,
+.jcarousel-skin .jcarousel-next-disabled-vertical:active {
+    cursor: default;
+    background-position: 0 -96px;
+}
+
+.jcarousel-skin .jcarousel-prev-vertical {
+    position: absolute;
+    top: 5px;
+    left: 43px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    background: transparent url(prev-vertical.png) no-repeat 0 0;
+}
+
+.jcarousel-skin .jcarousel-prev-vertical:hover {
+    background-position: 0 -32px;
+}
+
+.jcarousel-skin .jcarousel-prev-vertical:active {
+    background-position: 0 -64px;
+}
+
+.jcarousel-skin .jcarousel-prev-disabled-vertical,
+.jcarousel-skin .jcarousel-prev-disabled-vertical:hover,
+.jcarousel-skin .jcarousel-prev-disabled-vertical:active {
+    cursor: default;
+    background-position: 0 -96px;
+}
+
+
+/* END pasted in from file prod-det-skin.css*/
+
+
+
+

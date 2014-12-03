@@ -1,1 +1,0 @@
-bs_R.WriteKickersHTML("Kicker Custom Cart_1", "  <span id=\"Rollover_a_Kicker_Custom_Cart\"></span>  <img src=\"[VAR_bs_R.oSealRS.Custom]_Kicker_Cart.png\" [VAR_bs_R.sImgCTX] border=\"0\">  ");

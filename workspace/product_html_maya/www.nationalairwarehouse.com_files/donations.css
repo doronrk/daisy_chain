@@ -1,0 +1,423 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*   Globals
+* * * * * * * * * * * * * * * * * * * * * * * * * * ** * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+div.apay-widget-donations-container * {
+	animation : none;
+    background :transparent;
+    border: 0;
+    bottom : auto;
+    box-shadow : none;
+    box-sizing : content-box;
+    caption-side : top;
+    clear : none;
+    clip : auto;
+    color : inherit;
+    content : normal;
+    counter-increment : none;
+    counter-reset : none;
+    cursor : auto;
+    direction : ltr;
+    display : inline;
+    empty-cells : show;
+    float : none;
+    font : normal;
+    font-family : inherit;
+    font-size : medium;
+    font-style : normal;
+    font-variant : normal;
+    font-weight : normal;
+    height : auto;
+    left : auto;
+    letter-spacing : normal;
+    line-height : normal;
+    list-style : none;
+    margin : 0;
+    max-height : none;
+    max-width : none;
+    min-height : 0;
+    min-width : 0;
+    opacity : 1;
+    outline : 0;
+    outline-color : invert;
+    outline-style : none;
+    outline-width : medium;
+    overflow : visible;
+    padding : 0;
+    page-break-after : auto;
+    page-break-before : auto;
+    page-break-inside : auto;
+    perspective : none;
+    perspective-origin : 50% 50%;
+    position : static;
+    quotes : '\201C' '\201D' '\2018' '\2019';
+    right : auto;
+    table-layout : auto;
+    text-align : inherit;
+    text-align-last : auto;
+    text-decoration : none;
+    text-decoration-color : inherit;
+    text-decoration-line : none;
+    text-decoration-style : solid;
+    text-indent : 0;
+    text-shadow : none;
+    text-transform : none;
+    top : auto;
+    transform : none;
+    transition : none;
+    unicode-bidi : normal;
+    vertical-align : baseline;
+    visibility : visible;
+    white-space : normal;
+    widows : 0;
+    width : auto;
+    word-spacing : normal;
+    z-index : auto;
+}
+
+div.apay-widget-donations-container .apay-cf { height: 1%; }
+div.apay-widget-donations-container .apay-cf:after {visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0;}
+div.apay-widget-donations-container .apay-cf { display: inline-block;}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*   Donations
+* * * * * * * * * * * * * * * * * * * * * * * * * * ** * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+div.apay-widget-donations {
+	display:block;
+	background:#f7f7f7;
+	border:#ddd 1px solid;
+	border-radius:7px;
+	padding:20px 20px;
+	font-family: 'ArialMT', 'Arial', 'Helvetica', "san-serif";
+	font-size: 12px;
+	position: relative;
+}
+
+	div.apay-widget-donations.apay-dark {
+		background:#495058;
+		border:#3D4349 1px solid;
+	}
+
+	div.apay-widget-donations h3 {
+		padding:0 0 0 40px;
+		margin:5px 0;
+		position:relative;
+		font-size:22px;
+	}
+
+		div.apay-widget-donations.apay-dark h3 {
+			color:#fff;
+		}
+
+		div.apay-widget-donations > h3:before {
+			content:'';
+			display:block;
+			position:absolute;
+			top:50%;
+			left:0;
+			margin-top:-15px;
+			width:32px;
+			height:35px;
+			background:url(https://images-na.ssl-images-amazon.com/images/G/01/EP/offAmazonPayments/common/us/devo/css/images/donations/sprites._V323051505_.png);
+		}
+
+		div.apay-widget-donations.apay-dark > h3:before {
+			background-position:-34px 0px;
+		}
+
+	div.apay-widget-donations > div.apay-widget-content-container {
+		display:block;
+		width:100%;
+	}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*   Donations: Errors
+* * * * * * * * * * * * * * * * * * * * * * * * * * ** * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+div.apay-widget-donations > span.apay-donations-widget-error {
+	position:relative;
+	top:-5px;
+	font-size:12px;
+	background:#fff;
+	border-radius:4px;
+	display:none;
+	padding:5px 17px;
+	border:1px solid #df1800;
+}
+
+	div.apay-widget-donations > span.apay-donations-widget-error.apay-dark {
+		background:#B6B9BC;
+	}
+
+	div.apay-widget-donations > span.apay-donations-widget-error.apay-error-active {
+		position:relative;
+		display:block;
+		color:#df1800;
+	}
+
+		div.apay-widget-donations > span.apay-donations-widget-error.apay-error-active:before {
+			position:absolute;
+			top:50%;
+			left:8px;
+			margin-top:-7px;
+			content:'';
+			display:block;
+			width:7px;
+			height:13px;
+			background:url(https://images-na.ssl-images-amazon.com/images/G/01/EP/offAmazonPayments/common/us/devo/css/images/donations/sprites._V323051505_.png) -36px -37px no-repeat;
+		}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*   Donations: Errors on button
+* * * * * * * * * * * * * * * * * * * * * * * * * * ** * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+div.apay-widget-donations > div.apay-donations-widget-button.apay-error-active > img {
+	-moz-opacity: 0.50;
+	opacity:.50;
+	filter: alpha(opacity=50);
+	cursor:default !important;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*   Donations: List of pre-defined amounts
+* * * * * * * * * * * * * * * * * * * * * * * * * * ** * * * * * * * * * * * * * * * * * * * * * * * * * * */
+	
+div.apay-widget-donations .apay-widget-donations-list {
+	margin:10px 0;
+	list-style:none;
+	width:100%;
+}
+
+	div.apay-widget-donations .apay-widget-donations-list li {
+		float:left;
+		width:25%;
+	}
+
+		div.apay-widget-donations .apay-widget-donations-list a {
+			position:relative;
+			display:block;
+			cursor:pointer;
+			padding:15px 0;
+			font-size:15px;
+			text-align:center;
+			border-color:#e5e5e5;
+			border-style: solid;
+			border-width:2px;
+			border-right-width:1px;
+			border-left:none;
+			background:#fff;
+		}
+
+		div.apay-widget-donations .apay-widget-donations-list.apay-dark a {
+			border-color:#495058;
+			background:#B6B9BC;
+		}
+
+		div.apay-widget-donations .apay-widget-donations-list.apay-dark li:first-child a {
+			border-left:2px solid #495058;
+		}
+
+			div.apay-widget-donations .apay-widget-donations-list li:first-child a {
+				border-left:2px solid #e7e7e7;
+				border-top-left-radius:5px;
+				border-bottom-left-radius:5px;
+			}
+
+			div.apay-widget-donations .apay-widget-donations-list li:last-child a {
+				border-top-right-radius:5px;
+				border-right-width:2px;
+				border-bottom-right-radius:5px;
+			}
+
+			div.apay-widget-donations .apay-widget-donations-list li a.selected,
+			div.apay-widget-donations .apay-widget-donations-list.apay-dark li a.selected  {
+				border:3px solid #E67900;
+				background:#fff9e4;
+				padding:13px 0;
+			}
+
+				div.apay-widget-donations .apay-widget-donations-list a.selected:before,
+				div.apay-widget-donations .apay-widget-donations-list a.selected:after {
+					content:' ';
+					display:block;
+					position: absolute;
+					width:0px;
+					height:0px;
+					top:-2px;
+					left:50%;
+					margin-left:-8px;
+					border-width:9px;
+					border-style:solid;
+					border-color:transparent;
+					border-bottom:none;
+				}
+
+				div.apay-widget-donations .apay-widget-donations-list a.selected:before {
+					border-top-color:#E67900;
+				}
+
+				div.apay-widget-donations .apay-widget-donations-list a.selected:after {
+					border-top-color:#f7f7f7;
+					top:-6px;
+				}
+					
+				div.apay-widget-donations .apay-widget-donations-list.apay-dark a.selected:after {
+					border-top-color:#495058;
+				}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*   Donations: Optional amounts - container
+* * * * * * * * * * * * * * * * * * * * * * * * * * ** * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+	div.apay-widget-donations div.apay-widget-donations-optional {
+		display:block;
+		width:100%;
+		margin:0px 0 14px;
+	}
+
+		div.apay-widget-donations div.apay-widget-donations-optional > div {
+			float:left;
+			width:50%;
+		}
+
+			div.apay-widget-donations div.apay-widget-donations-optional h4 {
+				display:block;
+				font-size:15px;
+				color:#333;
+				margin:15px 0 0 2px;
+				padding:0;
+				text-align:center;
+			}
+
+			div.apay-widget-donations div.apay-widget-donations-optional.apay-dark h4 {
+				color:#fff;
+			}
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*   Donations: Optional amounts - input
+* * * * * * * * * * * * * * * * * * * * * * * * * * ** * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+div.apay-widget-donations div.apay-widget-donations-optional-input {
+	padding:10px 10px 10px 14px;
+	border:1px solid #e5e5e5;
+	border-radius:5px;
+	background:#fff;
+	position:relative;
+	margin:3px;
+	display:block;
+}
+
+div.apay-widget-donations div.apay-widget-donations-optional-input.apay-dark {
+	border-color:#495058;
+	background:#B6B9BC;
+}
+
+	div.apay-widget-donations div.apay-widget-donations-optional-input.selected {
+		border:3px solid #E67900;
+		margin:1px;
+	}
+
+	div.apay-widget-donations div.apay-widget-donations-optional-input.selected.apay-error-active {
+		border-color:#df1800;
+	}
+
+	div.apay-widget-donations div.apay-widget-donations-optional-input input {
+		margin:0;
+		color:#ccc;
+		width:100%;
+		height:20px;
+		font-size:16px;
+		border:none;
+		display:block;
+		position:relative;
+	}
+
+	div.apay-widget-donations div.apay-widget-donations-optional-input.apay-dark input {
+		background:#B6B9BC;
+		color:#333;
+	}
+
+		div.apay-widget-donations div.apay-widget-donations-optional-input input[type=text]:focus{
+			outline:none;
+		}
+
+		div.apay-widget-donations div.apay-widget-donations-optional-input.selected, 
+		div.apay-widget-donations div.apay-widget-donations-optional-input.selected input,
+		div.apay-widget-donations div.apay-widget-donations-optional-input.apay-dark.selected, 
+		div.apay-widget-donations div.apay-widget-donations-optional-input.apay-dark.selected input {
+			background:#fff9e4;
+			color:#000;
+		}
+
+		div.apay-widget-donations div.apay-widget-donations-optional-input.selected.apay-error-active, 
+		div.apay-widget-donations div.apay-widget-donations-optional-input.selected.apay-error-active input {
+			background:#fff;
+		}
+
+		div.apay-widget-donations div.apay-widget-donations-optional-input.apay-dark.selected.apay-error-active, 
+		div.apay-widget-donations div.apay-widget-donations-optional-input.apay-dark.selected.apay-error-active input {
+			background:#ccc;
+		}
+
+		div.apay-widget-donations div.apay-widget-donations-optional-input.selected.valueSet, 
+		div.apay-widget-donations div.apay-widget-donations-optional-input.selected.valueSet input {
+			background:#fff;
+		}
+
+		div.apay-widget-donations div.apay-widget-donations-optional-input.selected:before,
+		div.apay-widget-donations div.apay-widget-donations-optional-input.selected:after {
+			content:' ';
+			display:block;
+			position: absolute;
+			width:0px;
+			height:0px;
+			top:50%;
+			left:-3px;
+			margin-top:-10px;
+			border-width:10px;
+			border-style:solid;
+			border-color:transparent;
+			border-right:none;
+		}
+
+		div.apay-widget-donations div.apay-widget-donations-optional-input.selected:before {
+			border-left-color:#e29d54;
+		}
+
+		div.apay-widget-donations div.apay-widget-donations-optional-input.selected:after {
+			border-left-color:#f7f7f7;
+			left:-7px;
+		}
+
+		div.apay-widget-donations div.apay-widget-donations-optional-input.apay-dark.selected:after {
+			border-left-color:#495058;
+		}
+
+		div.apay-widget-donations div.apay-widget-donations-optional-input.apay-error-active.selected:before {
+			border-left-color:#df1800;
+		}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*   Responsive
+* * * * * * * * * * * * * * * * * * * * * * * * * * ** * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+@media screen and (min-width: 900px) {
+
+	div.apay-widget-donations > div.apay-widget-content-container {
+		margin:10px 0;
+	}
+
+	div.apay-widget-donations ul.apay-widget-donations-list,
+	div.apay-widget-donations div.apay-widget-donations-optional{
+		width:49.555%;
+		float:left;
+		margin:0;
+	}
+
+	div.apay-widget-donations div.apay-widget-donations-optional h4 {
+		text-align:center;
+		display:block;
+	} 
+}

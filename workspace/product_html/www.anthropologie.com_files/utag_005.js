@@ -1,9 +1,0 @@
-//tealium universal tag - utag.101 ut4.0.201411061559, Copyright 2014 Tealium.com Inc. All Rights Reserved.
-try{(function(id,loader,u){try{u=utag.o[loader].sender[id]={}}catch(e){u=utag.sender[id]};u.ev={'view':1};u.qsp_delim="&";u.kvp_delim="=";u.add="";u.ids="";u.t="2";u.map={"appnexus_add":"add","appnexus_seg":"seg","appnexus_id":"id"};u.extend=[function(a,b,c,d,e,f,g){d=b['page_type'];if(typeof d=='undefined')return;c=[{'product':'1753526'},{'receipt':'1753543'},{'confirmation':'1753543'}];var m=false;for(e=0;e<c.length;e++){for(f in c[e]){if(d==f){b['appnexus_add']=c[e][f];m=true};};if(m)break};if(!m)b['appnexus_add']='1753516';},function(a,b){if(b['page_type']=='receipt'||b['page_type']=='confirmation'){b['appnexus_id']='193858';b['appnexus_seg']='1753543'}}];u.send=function(a,b,c,d,e,f){if(u.ev[a]||typeof u.ev.all!="undefined"){for(c=0;c<u.extend.length;c++){try{d=u.extend[c](a,b);if(d==false)return}catch(e){if(typeof utag_err!='undefined'){utag_err.push({e:'extension error:'+e,s:utag.cfg.path+'utag.'+id+'.js',l:c,t:'ex'})}}};c=[];for(d in utag.loader.GV(u.map)){if(typeof b[d]!="undefined"&&b[d]!=""){e=u.map[d].split(",");for(f=0;f<e.length;f++){if(e[f]=="add"){u.add=b[d]}
-else if(e[f]=="id"){u.ids=b[d]}
-else{c.push(e[f]+u.kvp_delim+encodeURIComponent(b[d]));}}}}
-if(u.add!=''){c.push('add='+u.add);}
-if(u.ids!=''){u.ida=u.ids.split(',');for(f=0;f<u.ida.length;f++){c.push('id='+u.ida[f]);};}
-c.push('t='+((u.t)?u.t:"2"));if(b._corder&&b._corder.length>0){c.push("order_id="+b._corder);c.push("value="+b._csubtotal);}
-u.base_url="//"+(location.protocol=="https:"?"secure":"ib")+".adnxs.com/"+(u.ids==''?"seg?":"px?");u.img=new Image();u.img.src=u.base_url+c.join(u.qsp_delim);}}
-try{utag.o[loader].loader.LOAD(id)}catch(e){utag.loader.LOAD(id)}})('101','urbanoutfitters.anthro-us');}catch(e){}

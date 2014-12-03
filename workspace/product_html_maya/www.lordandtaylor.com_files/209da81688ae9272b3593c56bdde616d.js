@@ -1,0 +1,1 @@
+Bootstrapper.bindImmediate(function(){var Bootstrapper=window["Bootstrapper"];var ensightenOptions=Bootstrapper.ensightenOptions;(new Image).src="//r.turn.com/r/beacon?b2\x3dEpk-5XJTzD9uvEKWVxxKSq9BSFtC6Zbck44W_lwJfDJpiT2BmqDnK0QgZfnh5GhppbFa45pDu68SU4DCW8Cj6A"},169046,140637);

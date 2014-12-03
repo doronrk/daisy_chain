@@ -1,0 +1,119 @@
+#tabs {
+    background: transparent !important;
+    border: none !important;
+}
+
+#tabs > div {
+    background: #ffffff;
+    margin-top: 0px;
+    color: #333333;
+    border: solid 1px #dddddd;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    -moz-border-radius-topleft: 0px;
+    -webkit-border-top-left-radius: 0px;
+    border-top-left-radius: 0;
+    padding: 10px;
+    display: none;
+    overflow: hidden;
+}
+
+#tabs > div > span {
+    display: block;
+}
+
+#tabs > #tabs-1 {
+    display: block;
+}
+
+#tabs > ul {
+    display: block;
+    margin: 0 0 10px 0;
+    padding: 0;
+    margin: 0;
+    border: 0 !important;
+    border-bottom: solid 1px #ddd;
+    border-radius: 0;
+    height: 30px;
+    background: transparent;
+    color: #000;
+}
+
+#tabs > ul > li {
+    display: block;
+    width: auto;
+    height: 30px;
+    padding: 0;
+    float: left;
+    border: 0;
+    background: transparent;
+    margin: 0;
+}
+
+#tabs > ul > li a {
+    display: block;
+    text-decoration: none;
+    width: auto;
+    height: 28px;
+    padding: 0px 11px 0 11px !important;
+    line-height: 30px;
+    border-style: solid;
+    border-color: #dddddd;
+    border-width: 1px 0 0 1px;
+    background: #f1f1f1;
+    color: #8d8d8d;
+    font-size: 13px;
+    outline:none;
+    margin: 1px 0 0 0;
+    -webkit-box-sizing: initial !important;
+    -moz-box-sizing: initial !important;
+    box-sizing: initial !important;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+@media screen and (max-device-width: 480px) and (orientation: portrait){
+    #tabs ul li a {
+        font-size: 12px;
+        padding: 0px 10px !important;
+    }
+}
+
+#tabs > ul > li.ui-state-active a {
+    background-color: #ffffff;
+    height: 29px !important;
+    position: relative;
+    top: 1px;
+    border: 1px #dddddd solid;
+    border-bottom: 0;
+    border-right: 0;
+    margin: 0;
+    color: #333333;
+    line-height: 29px !important;
+    -webkit-box-sizing: initial !important;
+    -moz-box-sizing: initial !important;
+    box-sizing: initial !important;
+}
+
+#tabs > ul > li:last-child a {
+    border-width: 1px 1px 0 1px;
+    border-right: 1px #dddddd solid !important;
+    -moz-border-radius-topright: 4px;
+    -webkit-border-top-right-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+#tabs > ul > li:first-child a {
+    -moz-border-radius-topleft: 4px;
+    -webkit-border-top-left-radius: 4px;
+    border-top-left-radius: 4px;
+}
+
+#tabs > #last-tab {
+    display: block;
+    background: transparent;
+    border: none;
+    color: inherit;
+}
+

@@ -1,0 +1,74 @@
+@charset "UTF-8";
+/* CSS Document */
+.tabs {
+    padding: 0px; 
+    margin: 0px 0px 0px 0px;
+    position: relative;
+    z-index: 1;
+    top: 1px;
+}
+.tabs li {
+    float: left;
+	margin-right: 40px;
+    width: auto;
+    list-style: none outside none;
+	padding-bottom: 1px;		
+}
+.tabs li a {
+	background: none repeat scroll 0 0;
+    border: medium none;
+    color: #7B7B7B;
+    cursor: pointer;
+    display: block;
+    font-size: 1.125em;
+    font-weight: normal;
+    line-height: 2em;
+}
+.tabs li.active, .tabs li:hover {
+    border-bottom: 4px solid #0096d6;
+}        
+.tabs li.active a, .tabs li:hover a {
+    color: #000;
+    cursor: pointer;
+}
+.tab {
+    border: solid 1px #ccc;
+    
+}
+
+/* clearfix from jQueryUI */
+        .ui-helper-clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+        .ui-helper-clearfix { display: inline-block; }
+        /* required comment for clearfix to work in Opera \*/
+        * html .ui-helper-clearfix { height:1%; }
+        .ui-helper-clearfix { display:block; }
+		
+.out_of_the_scene {display:none;}
+		
+@media only screen and (max-width: 800px) {
+	.tab {
+    border: none;
+} 
+.tabs li {
+    float: left;
+    margin-right: 0;
+    width: 100px;
+}
+.tabs li a {
+    border-right: 1px solid #FFFFFF;
+    font-size: 1em;
+    font-weight: 100;
+    padding: 3px 0;
+    text-align: center;
+}
+.tabs {
+    background: none repeat scroll 0 0 #F3F3F3;
+}
+.tabs li.active, .tabs li:hover {
+    border-bottom: 3px solid #0096D6;
+}
+#tabs {display:none;}
+}
+@media only screen and (min-width: 801px) {
+#native_dropdownSelectBoxItContainer {display:none;}
+}

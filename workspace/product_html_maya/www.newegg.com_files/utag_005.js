@@ -1,0 +1,8 @@
+//tealium universal tag - utag.161 ut4.0.201407222235, Copyright 2014 Tealium.com Inc. All Rights Reserved.
+try{if(!utag.libloader){utag.libloader=function(src,handler,a,b){a=document;b=a.createElement('script');b.language='javascript';b.type='text/javascript';b.src=src;if(typeof handler=='function'){b.handlerFlag=0;b.onreadystatechange=function(){if((this.readyState=='complete'||this.readyState=='loaded')&&!b.handlerFlag){b.handlerFlag=1;handler()}};b.onload=function(){if(!b.handlerFlag){b.handlerFlag=1;handler()}};a.getElementsByTagName('head')[0].appendChild(b)}}};(function(id,loader,u){u=utag.o[loader].sender[id]={};u.ev={'view':1};u.map={};u.extend=[];u.send=function(a,b,c,d,e,f){if(u.ev[a]||typeof u.ev.all!="undefined"){var data={};for(d in utag.loader.GV(u.map)){if(typeof b[d]!='undefined'){e=u.map[d].split(',');for(f=0;f<e.length;f++){data[e[f]]=b[d]}}}
+}};try{utag.o[loader].loader.LOAD(id)}catch(e){utag.loader.LOAD(id)}})('161','newegg.newegg.com');}catch(e){}
+jQuery(window).load(function(){var p=document.location.protocol;if(p=="https:"){return;}
+setTimeout(function(){var t=performance.timing;var data='';for(var ele in t){data+='&'+ele+'='+t[ele];}
+if(data.length>0){data='?'+data.substr(1,data.length-1);}
+var url='//pf.newegg.com/tracking';var callScriptID='_pf_dataUploadScript';var callScript=document.getElementById(callScriptID);if(callScript){document.body.removeChild(callScript);}
+callScript=document.createElement('script');callScript.setAttribute('id',callScriptID);callScript.setAttribute('type','text/javascript');callScript.setAttribute('charset','UTF-8');callScript.setAttribute('src',url+data);document.body.appendChild(callScript);},0);});

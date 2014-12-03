@@ -1,1 +1,0 @@
-testFreaks.cb({"write_review_url":"http://reviews.testfreaks.com/reviews/new?client_id=techforless.com&url_key=BRACKET25SAT"})

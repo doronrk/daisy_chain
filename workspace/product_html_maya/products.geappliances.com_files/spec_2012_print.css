@@ -1,0 +1,597 @@
+/********************************************************************
+This is the stylesheet for spec page of GEAppliances.com,
+as of the late-2011 redesign. This sheet should be used as a supplement
+to 'http://www.geappliances.com/styles/gea_main.css'.
+
+********************************************************************/
+
+
+
+/*********** Basics ************/
+
+body {
+	font-family: arial,helvetica,sans-serif;
+	font-size: 11px;
+	color: #333333;
+	text-align: center;
+}
+
+img {
+	border: 0;
+}
+
+.floatLeft {
+	float: left;
+}
+
+.floatRight {
+	float: right;
+}
+
+.clear {
+	clear: both;
+}
+
+/*********** spec page ************/
+
+#availableColors {
+	margin: 5px 0 0 0;
+}
+
+#availableColors img {
+	margin: 0 11px 0 0;
+	border: 0;
+}
+
+#rebatesLink {
+	display: block;
+	margin: 5px 0 0 0;
+}
+
+#rebatesLink img { 
+	vertical-align:middle; 
+}
+
+h1#model {
+	font-size: 15px;
+}
+
+h1#SKUonspec {
+	font-size:12px;
+	font-weight: normal;
+	margin: 5px 0 0 0;
+}
+
+.brandLogo {
+	display: block;
+	float: left;
+}
+
+.takeActionBlock{
+	font-size:14px;
+	font-weight:bold;
+	color:#D77503;
+	padding-bottom:15px;
+}
+
+#specMainLayoutTable {
+	width: 650px;
+	border: 0;
+}
+	#specMainLayoutTable .infoBlock {
+		background:#fff;
+		margin-bottom:15px;
+	}
+		#specMainLayoutTable .infoBlock .heading {
+			font-weight:bold;
+			text-transform:uppercase;
+			padding-bottom:10px;
+			clear:both;
+		}
+
+
+	#specMainLayoutTable .leftCol {
+		width: 265px;
+		padding-top:15px;
+		background-color: white;
+	}
+		#specMainLayoutTable .leftCol #magnifyInstructions { padding:0 17px; }
+		#specMainLayoutTable .leftCol .wrapper { padding: 10px 17px 17px; }
+		
+		#specMainLayoutTable .leftCol .paintedFloat {
+			float:left;
+			width:231px;
+		}
+			#specMainLayoutTable .leftCol .imageBlock.paintedFloat .textCell { padding-right:15px; }
+		
+		
+	#specMainLayoutTable .rightCol {
+		padding:22px 0 0 22px; 
+	}
+		#specMainLayoutTable .rightCol .rightInfo {
+			float:right;
+			padding-left:15px;
+		}
+		#specMainLayoutTable .rightCol span#price {
+			font-weight:bold;
+			font-size:24px;
+		}
+		#specMainLayoutTable .rightCol span#priceDollarsign {
+			font-size: 14px;
+			position: relative;
+			top: -8px;
+			font-weight: bold;
+		}
+		#specMainLayoutTable .rightCol .infoBlock {
+			margin-top:15px;
+			border-top:1px solid #d7d7d7;
+			border-bottom: 1px solid #d7d7d7;
+			padding: 15px 0 8px 0;
+		}
+
+	
+#mainImage { display: none; }
+#mainImageViewer { display: none; }
+	#mainImageViewer .buttonCell { width:17px; }
+		#mainImageViewer .buttonCell a img, 
+		#mainImageViewer .buttonCell a:link img, 
+		#mainImageViewer .buttonCell a:active img, 
+		#mainImageViewer .buttonCell a:visited img,
+		#mainImageViewer .buttonCell img { background:#9E9E9E; }
+		#mainImageViewer .buttonCell a:hover img { background:#616161; }
+	#mainImageViewer #imagecell { width:482px; }
+	
+#thumbnailViewerWrapper {
+	display: none;
+	position: relative;
+	height: 80px;
+	padding: 0;
+	overflow: hidden;
+	margin: 0 0 0 22px;
+	top: 6px;
+}
+
+#thumbnailsViewer {
+	display: none;
+	position: relative;
+	padding: 0;
+	list-style: none;
+	display: block;
+	width: 1400px;
+}
+	#thumbnailsViewer a img, 
+	#thumbnailsViewer a:link img, 
+	#thumbnailsViewer a:visited img { 
+		border: 1px solid #D8D3D0;
+		padding: 1px;
+		margin-right: 8px;
+	}
+	#thumbnailsViewer a:hover img { background:#616161; }
+	
+	#thumbnailsViewer .selected  {
+		border: 1px solid #D77503 !important;
+	}
+	
+#thumbnailsViewer li { 
+	display: block;
+	list-style-type: none;
+	float: left;
+	background: none;
+}
+
+#productCalltoActionTable { table-layout:auto; }
+
+#productQuickInfoTable { 
+	table-layout: auto; 
+	margin: 0 0 15px 0;
+}
+
+#productQuickInfoTable span.head {
+	font-size: 11px;
+}
+
+#productQuickInfoTable p.data {
+	font-size: 16px; 
+	position: relative; 
+	top: 5px;
+}
+
+#productQuickInfoTable span.x {
+	font-size: 13px; 
+	font-weight: normal; 
+	position: relative; 
+	top: -3px;
+}
+
+.colorSwatchBlock {
+	width:125px;
+	float:left;
+	margin-bottom:20px;
+}
+	.colorSwatchBlock .swatchCell { width:30px; }
+	.colorSwatchBlock .textCell { padding-right:15px; }
+		.colorSwatchBlock .textCell a { font-weight:bold; }
+
+.productDetailsBlock { padding-bottom:25px; }
+	.productDetailsBlock .heading {
+		padding-bottom:2px;
+	}
+			.productDetailsBlock .heading a,
+			.productDetailsBlock .heading a:link,
+			.productDetailsBlock .heading a:active,
+			.productDetailsBlock .heading a:visited { text-decoration:none; }
+			.productDetailsBlock .heading .leftText {
+				font-weight:bold;
+				text-transform: uppercase;
+				color:#827668;
+			}
+			.productDetailsBlock .heading .rightText {
+				text-transform: lowercase;
+				text-decoration:underline;
+				cursor:pointer;
+				float:right;
+			}
+	.productDetailsBlock table {}
+		.productDetailsBlock table td { padding:3px 10px; }
+		.productDetailsBlock table .colA { width:40%; }
+		.productDetailsBlock table .colB { padding-left:0; }
+		
+/*********** Tabs CSS **************/
+
+ul.tabs {
+	margin: 0;
+	padding: 0;
+	float: left;
+	list-style: none;
+	height: 32px;
+	width: 700px;
+	position: relative; 
+	z-index: 5;
+}
+ul.tabs li {
+	float: left;
+	margin: 0;
+	padding: 0;
+	height: 31px;
+	line-height: 31px;
+	background: #EEEDEC;
+	overflow: hidden;
+	position: relative;
+	border-left: 1px solid #EEEDEC;
+	border-top: 1px solid #EEEDEC;
+	border-right: 1px solid white;
+}
+ul.tabs li a {
+	text-decoration: none;
+	color: #BC8340;
+	display: block;
+	font-size: 10px;
+	padding: 0 5px;
+	outline: none;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+ul.tabs li a:hover {
+	background: #e8e8e8;
+	color: #ab5f07;
+}	
+html ul.tabs li.active {
+	background: #fff;
+	border-bottom: 3px solid #fff;
+	-moz-box-shadow: 0 -3px 5px #B8B8B8;
+	-webkit-box-shadow: 0 -3px 4px #B8B8B8;
+	box-shadow: 0 -3px 6px #C9C9C9;
+	z-index: 1;
+	height: 35px;
+	line-height: 37px;
+	top: -3px;
+	border-left: 1px solid #CFCFCF;
+	border-top: 1px solid #CFCFCF;
+	border-right: 1px solid #CFCFCF;
+	color: black;
+}
+
+html ul.tabs li.active a {
+	color: black;
+}
+
+html ul.tabs li.active a:hover {
+	background: #fff;
+	text-decoration: none;
+	color: black;
+	display: block;
+	font-size: 11px;
+	padding: 0 20px;
+	outline: none;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.tab_container {
+	position: relative;
+	border-top: 1px solid #d9d4cd;
+	clear: both;
+	float: left;
+	width: 700px;
+	min-height: 400px;
+	background: white;
+	padding: 10px 0 0 0;
+}
+.tab_content {
+	padding: 20px 0 0 0;
+	position: relative;
+}
+
+.tab_content p {
+	font-size: 11px;
+}
+
+.tab_content h3 {
+	font-size: 14px;
+}
+
+.rightColumntabs {
+	width: 80%; 
+	border-left: 1px solid #C7C2BB; 
+	padding: 0 5px 0 30px;
+	min-height: 230px;
+}
+
+#moreInfo {
+	position: relative;
+	display: block;
+	height: 44px;
+	width: 193px;
+	background: url("/images/common/button_info.gif") no-repeat transparent;
+}
+
+a#moreInfo span {
+	position: absolute;
+	top: 13px;
+	left: 40px;
+	font-size: 14px;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+#printerFriendly {
+	position: relative;
+	display: block;
+	height: 36px;
+	width: 150px;
+	background: url("/images/common/icon_large_printer_sprite.gif") no-repeat transparent;
+	text-decoration: none;
+    color: #333333;
+}
+
+a#printerFriendly:hover {
+	position: relative;
+	background-position: 0 -36px;
+	color: #ab5f07;
+}
+
+a#printerFriendly span {
+    display: block;
+    font-size: 11px;
+    font-weight: bold;
+    position: absolute;
+    top: 9px;
+    left: 50px;
+    text-transform: uppercase;
+    width: 100px;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+a#printerFriendly span:hover {
+	color: #ab5f07;
+}
+
+#printerFriendly img {
+	vertical-align: middle;
+	margin: 0 5px 0 0;
+}
+
+#printFriendly a {
+	text-decoration: none;
+	color: #908c86;
+	font-size: 12px;
+}
+
+#printFriendly img {
+    margin: 0 5px 0 0;
+    position: relative;
+    top: 2px;
+}
+	
+
+.tabsList {
+	margin: 10px 0 0 15px; 
+	color: #AB5F07;
+}
+
+.tabsList li {
+	list-style-type: disc; 
+	background: none; 
+	padding: 0;
+	margin: 0 0 3px 0;
+}
+
+.sectionPush {
+	margin: 0 0 20px 0;
+}
+
+.sectionPushmore {
+	margin: 0 0 70px 0;
+}
+
+.tabsTop {
+	position: relative; 
+	margin: 0 0 15px 0; 
+	border-bottom: 1px solid #C7C2BB; 
+	padding: 0 15px 10px 0;
+}
+
+.tabsBottom {
+	position: relative; 
+	margin: 15px 0 0 0; 
+	border-top: 1px solid #C7C2BB; 
+	padding: 15px 15px 15px 0;
+}
+
+.smallColumn {
+	position: relative; 
+	float: left; 
+	width: 32%;
+	margin: 0 7px 15px 0;
+}
+
+.smallColumnfloat {
+	position: relative;
+	float: left;
+	margin: 0 0 5px 0;
+	min-height: 70px;
+}
+
+.graybarTable {
+	margin: 15px 0 0 0;
+	border-bottom: 1px solid #C7C2BB;
+}
+
+.graybarTable td {
+	padding: 3px 0 3px 5px;
+}
+
+.graybarTable td.colA {
+	padding-left: 25px;
+	width: 200px;
+}
+
+input#tabSearch {
+	height: 24px;
+	width: 28px;
+	background: url("/images/common/icon_search_button.gif") no-repeat white;
+	border: 0;
+	cursor: pointer;
+}
+
+span.numbersSmall {
+	font-weight: bold;
+	font-size: 13px;
+}
+
+#hideThis {
+	display: none;
+}
+
+.iconContainer {
+	display: block; 
+	height: 20px; 
+	position: relative; 
+	float: left; 
+	margin: 0 4px 0 0;
+}
+
+#thumbnailViewerMain {
+	display: none;
+	position: relative; 
+	background-color: #f1f0ef; 
+	width: 100%;
+}
+
+.anotherTD {
+	padding: 0 15px 0 0; 
+	width: 420px;
+}
+
+.tinyColumn {
+	float: left; 
+	width: 120px;
+}
+
+.searchInputSpec {
+	width: 160px !important;
+	margin-right: 5px;
+}
+
+/*---------------------------------------------------------------------------------*/
+/* New tooltip pop-up * /
+/*---------------------------------------------------------------------------------*/
+
+.newTooltip {
+	display: inline;
+	position: relative;
+	border: 0;
+	margin: 0;
+}
+
+.popup {
+	height: 135px;
+	width: 190px;
+    position: absolute;
+	padding: 10px;
+	display: none;
+    z-index: 9999;
+    border-collapse: collapse;
+	background: url("/images/common/tooltipBg.gif") no-repeat transparent;
+	border: 0;
+	margin: 0;
+}
+
+
+/*********** accordion ***********/
+
+h3.acc_trigger {
+	padding: 15px 0 15px 25px;
+	margin: 0;
+	background: url("/images/common/icon_arrow_right.gif") no-repeat transparent;
+	background-position: 0 50%;
+	height: 14px;	
+	line-height: 14px;
+	width: 590px;
+	float: left;
+	text-transform: uppercase;
+	border-bottom: 1px solid #C7C2BB;
+}
+h3.acc_trigger a {
+	color: #333333;
+	text-decoration: none;
+	display: block;
+	padding: 0;
+}
+h3.acc_trigger a:hover {
+	color: #434343;
+}
+h3.active {
+	border: 0;
+	background: url("/images/common/icon_arrow_down.gif") no-repeat transparent;
+	background-position: 0 50%;
+}
+.acc_container {
+	margin: 0; 
+	padding: 0;
+	overflow: hidden;
+	clear: both;
+}
+
+#shareSection {
+	display: none;
+	margin: 15px 0 15px 10px; 
+	position: relative; 
+	height: 25px;
+}
+
+#fauxBar {
+	display: none;
+	position: absolute; 
+	left: -25px; 
+	width: 965px; 
+	height: 33px; 
+	background-color: 
+	#EEEDEC; border-bottom: 
+	1px solid #d9d4cd; 
+	z-index: 1;
+}
+
+
+/*********** end spec page ************/

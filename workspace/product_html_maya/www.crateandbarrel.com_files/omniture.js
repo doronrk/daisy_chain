@@ -1,0 +1,1 @@
+var amc=amc||{};amc.on||(amc.on=amc.call=function(){});document.write('<script type="text/javascript" src="//www.adobetag.com/d1/v2/ZDEtY3JhdGViYXJyZWwtNjY3LTE1NTIt/amc.js"><\/script>')

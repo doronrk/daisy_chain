@@ -1,1 +1,0 @@
-Bootstrapper.bindDOMParsed(function(){var Bootstrapper=window["Bootstrapper"];var ensightenOptions=Bootstrapper.ensightenOptions;(new Image).src="//scripps.demdex.net/event?d_sid\x3d1341835"},600557,277646);

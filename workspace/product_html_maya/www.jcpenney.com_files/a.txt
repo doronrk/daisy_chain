@@ -1,0 +1,1 @@
+if(lpMTagDebug&&lpMTagDebug.Display){lpMTagDebug.Display('LPChat: disabled','WARN');}

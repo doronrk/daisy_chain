@@ -1,0 +1,1 @@
+lpConnLib.Process({"ResultSet": {"lpCallId":"839135392705-551027360352","lpCallConfirm":"","lpJS_Execute":[{"code_id": "INPAGE-DELAY-10", "js_code": "lpMTag.lpInPageRequestDelay=10;"},{"code_id": "FPCSetVal", "js_code": "lpMTagConfig.useFirstParty = true;"},{"code_id": "VIS-ONSTARTPAGE", "js_code": "lpMTagConfig.LPSID_VAR=15458475;"}]}});

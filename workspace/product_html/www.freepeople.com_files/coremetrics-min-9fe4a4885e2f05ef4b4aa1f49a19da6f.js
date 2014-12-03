@@ -1,2 +1,0 @@
-function cmCreateProductviewTag(productID,productName,categoryID,searchString,searchResults,attributes,cm_vc){if(attributes){var cm_exAttr=new Array();cm_exAttr=attributes.split("-_-");}
-cmMakeTag(["tid","5","pi",c1(cm_ClientID)?c1(cm_ClientID):"Product: "+productName+" ("+productID+")","pr",productID,"pm",productName,"cg",categoryID,"se",searchString,"sr",searchResults,"pc","Y","cm_vc",cm_vc?cm_vc:cmExtractParameter("cm_vc",document.location.href),"cmAttributes",attributes]);}

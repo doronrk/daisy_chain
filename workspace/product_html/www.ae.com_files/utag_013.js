@@ -1,5 +1,0 @@
-//tealium universal tag - utag.108 ut4.0.201409200123, Copyright 2014 Tealium.com Inc. All Rights Reserved.
-try{(function(id,loader,u){u=utag.o[loader].sender[id]={};u.ev={'view':1};u.data={};u.data.tagtype="retargeting";u.base_url="//dyau9xqp8gzji.cloudfront.net/autotag.js";u.map={"adextent_type":"tagtype","adextent_url":"adextent_dynads_url"};u.extend=[function(a,b){if(b['dom.pathname'].toString().toLowerCase().indexOf('thankyou.jsp'.toLowerCase())>-1){b['adextent_type']='conversion'}}];u.send=function(a,b){if(u.ev[a]||typeof u.ev.all!="undefined"){for(c=0;c<u.extend.length;c++){try{d=u.extend[c](a,b);if(d==false)return}catch(e){}};var c,d,e,f;c=[];for(d in utag.loader.GV(u.map)){if(typeof b[d]!="undefined"&&b[d]!=""){e=u.map[d].split(",");for(f=0;f<e.length;f++){u.data[e[f]]=b[d];}}}
-if(u.data.tagtype=="conversion"){}else if(u.data.tagtype=="cart"){window.adextent_dynads_url=u.data.adextent_dynads_url;}
-u.s=document.getElementsByTagName("script")[0];u.scr=document.createElement("script");u.scr.type="text/javascript";u.scr.src=u.base_url;u.s.parentNode.insertBefore(u.scr,u.s);}}
-utag.o[loader].loader.LOAD(id);})('108','americaneagle.main');}catch(e){}

@@ -1,0 +1,67 @@
+<html webdriver="true"><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252"></head><body>
+
+
+<script type="text/javascript">
+var str='',
+sgID=(str)?str.split('-')[1]:'';
+if(sgID&&sgID==='1478'){
+	var url='http://servedby.flashtalking.com/spot/6/1638;11970;1478/?u1=94017987&u3=1731210185&cachebuster=514672532',
+		spot=new Image();
+	if(typeof localStorage!=='undefined'&&localStorage.ftGUID){
+		url+='&ft_guid='+localStorage.ftGUID;
+	}
+	spot.src=url;
+}
+</script>
+
+<script type="text/javascript">
+//3.1
+(function() {
+	var proCatSeg = "bs2",
+		proCatVPair = "c1638_k",
+		addSegmentsArray = [],
+		valuePairArray = [],
+		insertSegment = function(seg, valuePair) {
+			var nextIndex = addSegmentsArray.length;
+			addSegmentsArray[nextIndex] = seg;
+			valuePairArray[nextIndex] = (valuePair) ? valuePair : "";
+		},
+		processId = function(s) {
+			return s.replace(/[^a-z0-9]/gi, '');
+		},
+		processU1 = function(s) {
+			var validate = function(s) {
+					var validSkuExp = /^[0-9c]{5,7}$/,
+						sku = "";						
+					if(validSkuExp.test(s)) {
+						sku = s;
+					} else {
+						nameMod = "_dis-" + s + "-";
+						sku = "";
+					}
+					return sku;
+				},
+				out = (s) ? s.split(",").pop() : "";				
+			out = processId(out);
+			return validate(out);
+		},
+		nameMod = "",
+		U1 = processU1(""),
+		U2 = processId(""),
+		U3 = processId(""),
+		behSeg = "bot",
+		proCatAct = "view";
+
+	if(U1.length > 0) {
+		insertSegment(proCatSeg + U1, proCatVPair);
+		insertSegment(proCatSeg);
+	}
+
+	insertSegment(behSeg);
+
+	if(addSegmentsArray.length > 0) {
+		new Image().src = "//servedby.flashtalking.com/segment/modify/" + addSegmentsArray.join("-") + ";;pixel/?valuePairs=" + valuePairArray.join(";") + "&name=kohls_pro_" + proCatAct + nameMod;
+	}
+})();
+</script></body></html>

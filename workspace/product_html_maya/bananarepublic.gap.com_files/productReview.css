@@ -1,0 +1,297 @@
+/*
+PLReviews-122
+This file applies the CSS styles for review summary, product reviews for a product page
+*/
+
+/* Product Reviews XML Feed */
+#productReviewFeed {display:none;}
+
+/* Review Summary section*/
+
+#noReviews {width: 258px;}
+
+#reviewSummary #commentCount {color: #999999;}
+
+#reviewSummary #reviewSummaryHeader {display:block;}
+#reviewSummary #reviewSummaryData {border-left: solid 1px #ddd;border-right: solid 1px #ddd;border-bottom: solid 1px #ddd;margin:0px;}
+#reviewSummarySmall #reviewSummaryDataSmall {border: solid 1px #ddd; margin-top:5px; margin-bottom: 5px; }
+
+#reviewSummary #reviewSummaryData #averageOverallRating {height:28px; padding: 6px;}
+#reviewSummarySmall #reviewSummaryDataSmall #averageOverallRatingSmall {padding: 2px;}
+#reviewSummary #reviewSummaryData #averageOverallRating #starRating {text-align: center;height:14px;}
+#reviewSummarySmall #reviewSummaryDataSmall #averageOverallRatingSmall #starRatingSmall {text-align: center;height:14px; float: left; }
+
+.sprite-reviews_star {background: url(/gid/assets/browse/productReviews/en/reviews-sprite.gif) no-repeat top left;}
+.sprite-reviews_star_empty { background-position: 0 -754px; height: 14px; width: 16px;}
+.sprite-reviews_star_half { background-position: 0 -842px; height: 14px; width: 16px;}
+.sprite-reviews_star_full { background-position: 0 -798px; height: 14px; width: 16px;}
+
+#reviewSummary #reviewSummaryData #averageOverallRating #averageRatingTitle {font-weight:bold;}
+#reviewSummary #reviewSummaryData #averageOverallRating #totalReviewCount {text-align:center;height:14px;}
+#reviewSummarySmall #reviewSummaryDataSmall #averageOverallRatingSmall #totalReviewCountSmall { margin-left: 10px; padding-top: 2px; text-align:center;height:14px; float: left; }
+#reviewSummary #reviewSummaryData #averageOverallRating #totalReviewCount #reviewCount,
+#reviewSummarySmall #reviewSummaryDataSmall #averageOverallRatingSmall #totalReviewCountSmall #reviewCount {font-weight:bold;}
+
+#reviewSummary #reviewSummaryData #reviewSummaryFit, #reviewSummary #reviewSummaryData #reviewTags {margin:5px;display:none;}
+#reviewSummary #reviewSummaryData #reviewFlatters {margin:5px;display:none;}
+#reviewSummary #reviewSummaryData .reviewSummaryFitTitle {float:left;width:62px; text-align:right; font-weight:bold;}
+#reviewSummary #reviewSummaryData .reviewSummaryFitBody {float:left;width:168px;margin-left:4px;}
+#reviewSummary #reviewSummaryData .reviewSummaryFitBody .reviewSummaryTagAttributeCount {color:#999}
+
+#reviewSummary #reviewSummaryData .fitFinish {margin-bottom:5px;}
+#reviewSummary #reviewSummaryData .reviewSummaryFitTitle .reviewFitSummaryLink {color:#680;}
+
+#reviewSummary #reviewSummaryData #reviewLinks {border-top: solid 1px #ddd; text-align:center; margin-bottom:4px;}
+#reviewSummary #reviewSummaryData #reviewLinks #reviewLinksText {font-weight:normal;color: #000;}
+
+
+#noReviews #noReviewsData {margin-top: 10px;margin-bottom: 10px;text-align: center;  font-size:10px;color: #442211;padding: 0px;}
+#noReviews #noReviewsData #reviewLinksText {color: #000;}
+
+/* Review Fit Hover */
+#reviewFitHover {background-color:#fff;position:absolute;z-index:99;top:0px;left:0px;border:solid 1px #ddd;font-size:9px;width:240px;border-bottom-color:#999;border-right-color:#999;padding:12px 0px 17px 12px;}
+#reviewFitHoverHeader {font-weight:bold;color:#333;margin-bottom:11px;}
+.reviewFitAttributeContainer {color:#333;width:232px;}
+.reviewFitAttributeName {float:left;width:106px;margin-right:8px;text-align:right;line-height:14px;}
+.reviewFitAttributeBarContent {float:left;height:14px;}
+.reviewFitAttributeBar {height:7px;background-color:#bebebe;overflow:hidden;}
+.reviewFitAttributeCount {font-size:7px;color:#666;position:relative;top:-8px;height:7px;overflow:hidden;line-height:7px;}
+*html .reviewFitAttributeCount {top:-7px;}
+*:first-child+html .reviewFitAttributeCount {top:-6px;}
+#reviewFitHover .highlighted {font-weight:bold;}
+
+/*Product Reviews Section*/
+#productReviewsSection {width: 585px; display:block;}
+.productReview .reviewEmphasis {color:#600;}
+* html #productReviews #productReviewsHeader {width:590px;}
+#productReviews {font-family:Arial,Sans-serif; font-size:10px; font-weight:normal; color: #999; display:block;border: solid 1px #ddd; border-bottom: 0px; display:none;}
+#productReviews #productReviewsHeaderTitle {float:left;padding-left:11px;}
+#productReviews #productReviewsHeader #productReviewsSort {float:right;display:none;padding-right:13px;}
+#productReviews #productReviewsHeader #productReviewsSort label {display:inline;margin-right:5px;line-height:25px;}
+#productReviews #productReviewsHeader #productReviewsSort select {display:inline;}
+*html #productReviews #productReviewsHeader #productReviewsSort label {display:block;float:left;line-height:25px;}
+*html #productReviews #productReviewsHeader #productReviewsSort select {display:block;float:left;margin-top:2px;}
+*:first-child+html #productReviews #productReviewsHeader #productReviewsSort label {display:block;float:left;line-height:25px;}
+*:first-child+html #productReviews #productReviewsHeader #productReviewsSort select {display:block;float:left;margin-top:2px;}
+
+#productReviews #productReviewsListDisplay {margin:0px;padding:0px;list-style:none;}
+#productReviews .productReview {border-bottom: solid 1px #ddd;float:left;}
+* html #productReviews .productReview {width:590px;}
+#productReviews .productReview .productReviewData {width:583px; background-image:url(/gid/assets/browse/productReviews/en/review_background.gif);background-repeat:repeat-y;}
+#productReviews .productReview .productReviewData .reviewerAvatar {border: solid 1px #ddd;padding: 1px 1px 1px 1px;width:44px;height:44px;float:left;}
+#productReviews .productReview .productReviewData .reviewerProfile {float:left;width:110px; overflow:hidden; padding:13px 0px 8px 10px; color:#333;}
+#productReviews .productReview .productReviewData .reviewerProfile .reviewerName {font-weight:bold; font-size:11px;}
+#productReviews .productReview .productReviewData .reviewerProfile .reviewerReviews {float:left;margin-top: 5px;}
+#productReviews .productReview .productReviewData .reviewerProfile .reviewerReviews a {color:#333;font-weight:bold;}
+
+.productReview .productReviewData .reviewerBadges {float:left;margin-top:6px; margin-bottom:6px;}
+.productReview .productReviewData .reviewerBadges .reviewerBadge {float:right;display:block;margin-top:6px;margin-right:9px; background: url(/gid/assets/browse/productReviews/en/reviews-sprite.gif);}
+.productReview .productReviewData .reviewerBadges .reviewerBadgeReviewer_we {background-position:0 -604px; height:20px; width:19px;}
+.productReview .productReviewData .reviewerBadges .reviewerBadgeCrowd_favorite {background-position:0 -554px; height:20px; width:19px;}
+.productReview .productReviewData .reviewerBadges .reviewerBadgeVIP {background-position:0 -704px; height:20px; width:28px;}
+.productReview .productReviewData .reviewerBadges .reviewerBadgeFit_expert {background-position:0 -661px; height:20px; width:33px;}
+.productReview .productReviewData .reviewerBadges .reviewerBadgeGuest_editor {background-position:0 -504px; height:20px; width:25px;}
+.productReview .productReviewData .reviewerBadges .reviewerBadgeGap_staff {background-position:0 -127px; height:20px; width:72px;}
+.productReview .productReviewData .reviewerBadges .reviewerBadgePiperlime_staff {background-position:0 -226px; height:20px; width:72px;}
+.productReview .productReviewData .reviewerBadges .reviewerBadgeAthleta_staff {background-position:0 -29px; height:20px; width:72px;}
+.productReview .productReviewData .reviewerBadges .reviewerBadgeOldNavy_staff {background-position:0 -174px; height:20px; width:72px;}
+.productReview .productReviewData .reviewerBadges .reviewerBadgeBananaRepublic_staff {background-position:0 -77px; height:20px; width:72px;}
+.productReview .productReviewData .reviewerBadges .reviewerBadgeDesigner {background-position:0 -1018px; height:20px; width:19px;}
+.productReview .productReviewData .reviewerBadges .reviewerBadge {float:left;}
+
+.productReview .productReviewData .productReviewBody {float:left;width:442px; margin:10px 7px 0px 11px; padding-bottom:8px;}
+* html .productReview .productReviewData .productReviewBody { width:445px;}
+.productReview .productReviewData .productReviewDetails {width:442px; float:left;}
+* html .productReview .productReviewData .productReviewDetails {width:445px;}
+.productReview .productReviewData .productReviewDetails .productReviewStarsContainer {float:left;}
+.productReview .productReviewData .productReviewDetails .productReviewHeadline {float:left; width:250px; margin:1px 20px 0px 20px; font-size:13px; line-height:15px; font-weight:bold;}
+* html .productReview .productReviewData .productReviewDetails .productReviewHeadline {width:254px;}
+.productReview .productReviewData .productReviewDetails .productReviewDate {width:70px; text-align:right; float:left;line-height:1em;padding-top:3px;}
+.productReview .productReviewData .productReviewComment {margin-top:12px; padding-bottom:10px; border-bottom:1px solid #EBEBEB; font-size:11px; line-height:13px;}
+.productReview .productReviewData .productReviewFitDetailsContainer {width:442px;margin-top: 8px; margin-left:0px; padding-bottom:10px; border-bottom:1px solid #EBEBEB;}
+.productReview .productReviewData .productReviewFitDetails {float:left; width:182px;}
+.productReview .productReviewData .productReviewFitDetails .productReviewFitTitle {padding:0px;}
+.productReview .productReviewData .productReviewTagDetails {float:left; width:130px;margin-bottom:10px;}
+.productReview .productReviewData .productReviewVote {margin-top: 10px;}
+
+.productReview .productReviewData .productReviewVote .productReviewHelpfulVotes {font-weight:bold;}
+.productReview .productReviewData .productReviewVote .productReviewTotalVotes {font-weight:bold;}
+
+.productReview .productReviewData .productReviewVote  .productReviewReportLink a {color: #999;}
+.productReview .productReviewData .productAndBrandNameDetails {font-weight:bold;margin-top:15px;}
+
+#popupLayeredContent .productReviewPanel .content {float:none; border:1px solid #ccc; border-bottom:2px solid #666; border-right:2px solid #666; font-family:Arial;}
+
+/*Product Review Profile Popup*/
+#popupLayeredContent .reviewerProfilePanel {background-color:#f0ebea;border-color:#DDDDDD #999999 #999999 #DDDDDD;border-style:solid;border-width:1px;padding:0px;}
+#popupLayeredContent .reviewerProfilePanel .titleBar {background-color:#7F7573;height:26px;}
+#popupLayeredContent .reviewerProfilePanel .title {color:#FFFFFF;float:left;font-weight:bold;font-size:12px;line-height:24px;padding-left:28px;}
+#popupLayeredContent .reviewerProfilePanel .closeButton {background-position:0 -275px; float:right; height:19px; margin:3px; padding:0px; width:19px; background-image: url(/gid/assets/browse/productReviews/en/reviews-sprite.gif);}
+#popupLayeredContent .reviewerProfilePanel .closeButton a img{height:19px;width:19px;}
+#popupLayeredContent .reviewerProfilePanel .content {border:0px;overflow:hidden;}
+body.popup .reviewsPaging {margin-right: 8px;}
+body.popup #reviewerReviews .productReview .productReviewData{width:476px;}
+* html body.popup #reviewerReviews .productReview .productReviewData{width:472px;}
+body.popup #reviewerReviews .productReview .productReviewData .productReviewDetails .productReviewHeadline{width:266px;}
+* html body.popup #reviewerReviews .productReview .productReviewData .productReviewDetails .productReviewHeadline{width:262px;}
+body.popup #reviewerReviews .productReview .productReviewBody{width:456px;}
+* html body.popup #reviewerReviews .productReview .productReviewBody{width:452px;}
+body.popup #reviewerReviews .productReview .productReviewData .productReviewFitDetailsContainer {width:456px;}
+* html body.popup #reviewerReviews .productReview .productReviewData .productReviewFitDetailsContainer {width:452px;}
+body.popup .productReview .productReviewData .productReviewDetails {width:456px;float:none;}
+* html body.popup .productReview .productReviewData .productReviewDetails {width:452px;}
+
+/*Product Review Vote Popup*/
+#reviewVoteAcknowledgementContent {float:left; margin-top:14px; margin-left:8px; font-size:11px; font-weight:normal; color:#000; background-color:#FFF;}
+#reviewVoteAcknowledgementTitle {font-weight:bold; color:#660000; padding-right:4px;}
+#reviewVoteAcknowledgementMessage {color:#666666;}
+
+#reviewVoteAcknowledgementOk {float:left;margin-right:8px; margin-top:10px; padding-left:14px;}
+
+/*Reporting Panel Section*/
+#productReviewReportingPanelContent {margin:10px 10px 10px;font-size:11px;line-height:13px;color:#666666;}
+#productReviewReportingPanelHeader {font-weight:bold; color:#660000;}
+#productReviewReportingPanelContent p {line-height:13px;}
+#productReviewReportingPanelButtons {margin-left:10px;}
+#productReviewReportingPanelButtons #reportThisReviewButton {margin-right:10px;}
+
+/*Badge Hover Section*/
+#badgeHoverMain {width: 234px;height:78px;font-size:10px;font-weight:normal;padding:0px;margin-top: 10px;margin-bottom: 10px;position:absolute;z-index:99;background:transparent none repeat scroll 0%;padding-left:6px}
+#badgeHoverMain #badgeHoverMainBorder {padding: 0px;border-right:2px solid #666;border-bottom:2px solid #666;}
+#badgeHoverMain #badgeSpacer {float:left;border-bottom:1px solid #DDD;}
+#badgeHoverMain #badgeNameSection {float:right;border-top:1px solid #DDD;border-left:1px solid #DDD;padding:0px;font-weight:bold;}
+#badgeHoverMain #badgeDescriptionSection {clear:both;border-left:1px solid #DDD;height: 47px;overflow: hidden;background-color:#FFF;color: #666;padding: 5px 7px 10px 7px;}
+
+/*Reviews Pagination */
+#reviewsPagingTop {margin-bottom:10px;}
+#reviewsPagingBottom {margin-top:10px;}
+.reviewsPaging {text-align:right;}
+.reviewsPaging a {margin:0px 2px;}
+.reviewsPaging .currentPage {font-weight:bold; margin:0px 2px;}
+.reviewsPaging .seeAll {margin-left: 18px; margin-right:10px; padding-right:0px; border-left:0px; text-transform:none;}
+.reviewsPaging .seeX {margin-right:12px; padding-right:0px; font-weight:bold;}
+
+body.popup {margin-top:18px; background-image:none;}
+body.popup, body.popup #bodyContainer { font-family:Arial,Sans-serif; background-color:#f0ebea; margin:0px; padding:0px; line-height:normal; color:#666; width:624px;}
+body.popup #bodyContainer #mainContent {background-color:#f0ebea; width:624px;}
+
+#reviewerProfileSummary {width:572px; margin:8px 15px 20px 27px; font-size:10px; display:none; }
+#reviewerProfileSummary #reviewerProfileName {font-size:13px; font-weight:bold;line-height:15px; color:#333;}
+#reviewerProfileSummary #reviewerProfileLocation {font-size:13px; line-height:15px; color:#333; font-weight:normal;}
+
+#reviewerProfileAvatar {
+  float:left;
+  width:71px;
+  height:71px;
+  border:1px solid #ddd;
+  margin-top:10px;
+  margin-right:27px;
+  margin-left:2px;
+  padding: 1px 1px 1px 1px;
+}
+
+#reviewerProfileSummaryDetails {
+  float: left;
+  width: 467px;
+}
+#reviewerMainInfoContainer{
+ margin-top:10px;
+}
+#reviewerProfileSummaryDetailsContent {
+  float: left;
+  width: 438px;
+  font-weight:bold;
+  padding:0px;
+  margin:0px;
+}
+
+#reviewerLocationContainer,#reviewerShoesContainer,#reviewerFavoriteBrandsContainer,#reviewerReviewsContainer {
+  display:none;
+}
+#reviewerShoesContainer,#reviewerFavoriteBrandsContainer {margin:10px 0px 0px 0px; color:#660000;}
+#reviewerReviewsContainer {display: block; float:right; width:176px; font-weight:bold; color:#660000; margin-top:10px;}
+
+.reviewerBadges {float:right;width:100px;}
+.reviewerBadges .reviewerBadge {float:right;display:block; background: url(/gid/assets/browse/productReviews/en/reviews-sprite.gif);}
+.reviewerBadges .reviewerBadgeReviewer_we {background-position:0 -604px; height:20px; width:19px;}
+.reviewerBadges .reviewerBadgeCrowd_favorite {background-position:0 -554px; height:20px; width:19px;}
+.reviewerBadges .reviewerBadgeVIP {background-position:0 -704px; height:20px; width:28px;}
+.reviewerBadges .reviewerBadgeFit_expert {background-position:0 -661px; height:20px; width:33px;}
+.reviewerBadges .reviewerBadgeGuest_editor {background-position:0 -504px; height:20px; width:25px;}
+.reviewerBadges .reviewerBadgeGap_staff {background-position:0 -127px; height:20px; width:72px;}
+.reviewerBadges .reviewerBadgePiperlime_staff {background-position:0 -226px; height:20px; width:72px;}
+.reviewerBadges .reviewerBadgeAthleta_staff {background-position:0 -29px; height:20px; width:72px;}
+.reviewerBadges .reviewerBadgeOldNavy_staff {background-position:0 -174px; height:20px; width:72px;}
+.reviewerBadges .reviewerBadgeBananaRepublic_staff {background-position:0 -77px; height:20px; width:72px;}
+.reviewerBadges .reviewerBadgeDesigner {background-position:0 -1018px; height:20px; width:19px;}
+
+.reviewerBadges .reviewerBadgeDivider {
+  float:right;
+  padding:0px 3px 0px 3px;
+  font-size:12px;
+  line-height:20px;
+  color:#000;
+}
+
+#reviewerProfileSummaryTitle {
+  margin:15px 0px 0px 0px;
+  padding:0px;
+  font-weight:bold;
+  color:#660000;
+  display:none;
+}
+#reviewerProfileSummaryDescription, #reviewerProfileCompletedReviews {font-weight:normal; font-size:10px; color:#666; line-height:12px;}
+#reviewerProfileSummaryDetailsContent .profileAttributeTitle {  margin:10px 0px 0px 0px;padding:0px;font-weight:bold;color:#660000;}
+#reviewerProfileSummaryDetailsContent .profileAttributeDescription {font-weight:normal; font-size:10px; color:#666; line-height:12px;}
+#reviewerProfileMarketingContainer {
+  padding:0px 5px 5px 5px;
+}
+
+#profileReviewFeed {
+  display:none;
+}
+
+#reviewerProfileErrorMessage {
+  padding:20px 10px;
+  display:none;
+}
+
+.clickDisabled {
+  cursor:default;
+  text-decoration:none;
+}
+
+.outOfStockMsg {
+  position:absolute;
+  top:44px;
+  left:0px;
+  height:14px;
+}
+
+#reviewerReviews {margin:0px 10px 5px 10px;display:none;border: solid 1px #ddd;width:604px; background-color:#FFFFFF;}
+#reviewerReviews #reviewerReviewsHeader {height:26px;line-height:26px;background-color:#D5D2CD;color:#7E7573;padding:0px;margin:0px;font-size:12px;font-weight:bold;}
+#reviewerReviews #reviewerReviewsHeader #reviewerReviewsHeaderText {margin-left:17px;}
+#reviewerReviews #reviewerReviewsList {line-height:12px;padding:0px;margin:0px;list-style:none;overflow: auto !important;max-height:300px;}
+* html #reviewerReviews #reviewerReviewsList {overflow: visible; overflow-x:auto; overflow-y:hidden;height: expression(this.scrollHeight > 300 ? "300px" : "auto");position:relative;}
+*:first-child+html #reviewerReviewsList {position:relative;}
+#reviewerReviews .productReview {border-bottom: solid 1px #ddd; padding:0px; margin:0px;overflow:hidden;}
+#reviewerReviews .productReview .productImageDisplay {float:left; width:111px; position:relative; margin-top:10px; padding-bottom: 10px; font-size:11px;}
+.productImageDisplay a, .productImageDisplay a:link, .productImageDisplay a:visited, .productImageDisplay a:hover, .productImageDisplay a:active {text-decoration:none;}
+#reviewerReviews .productReview .productImageDisplay .productImageBorder {text-align:center;border-right:#DDD 1px solid;}
+#reviewerReviews .productReview .productImageDisplay .productImageBorder .productImage {width:75px;height:100px;} /* Safari: need to set the height here for Safari to properly calculate offsetHeight */
+#reviewerReviews .productReview .productImageDisplay .productImageBorder .productVendorName {clear:both;display:block;font-weight:bold;}
+#reviewerReviews .productReview .productReviewData {float:left;width:440px;}
+#reviewerReviews .productReview .productReviewBody {padding-left:10px; margin-left:0px;}
+
+#reviewerReviews .productReview .productReviewData .productReviewHelpful{color:#600;}
+* html #reviewerReviews .productReview .productReviewData {width:410px;}
+
+#reviewerReviews .productReview .productReviewData .productReviewDetails .productReviewHeadline {float:left;color:#600;}
+#reviewerReviews .productReview .productReviewData .productReviewFitDetails .productReviewFitTitle {color:#600;}
+
+#reviewerReviews .reviewRatingName {color:#600;}
+#reviewerReviews .reviewRatingValue {color:#666;}
+
+.reviewsBrandBadge {display:inline; position:absolute; left:73px; top:0px; width:19px; height:19px;}
+
+

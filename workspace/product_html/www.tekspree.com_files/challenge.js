@@ -1,1 +1,0 @@
-document.write('Input error: k: Format of site key was invalid\n');

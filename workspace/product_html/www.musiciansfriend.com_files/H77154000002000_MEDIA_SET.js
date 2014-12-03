@@ -1,1 +1,0 @@
-/*jsonp*/s7sdkJSONResponse({"set":{"n":"MMGS7/H77154000002000_MEDIA_SET","pv":"1.0","type":"media_set","item":[{"i":{"n":"MMGS7/H77154000002000_IMAGE_00"},"s":{"n":"MMGS7/H77154000002000_IMAGE_00"},"dx":"1302","dy":"2000","iv":"s0eQN1"},{"i":{"n":"MMGS7/H77154000002000_IMAGE_02"},"s":{"n":"MMGS7/H77154000002000_IMAGE_02"},"dx":"706","dy":"2000","iv":"-1EQr3"}]}},"180370686");

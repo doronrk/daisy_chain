@@ -1,0 +1,34 @@
+<html webdriver="true"><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252"></head><body><!-- Start Dotomi Tag -->
+<script type="text/javascript">
+<!--
+var dtmSrc = window.location.protocol + "//login.dotomi.com/ucm/UCMController?"+
+	"dtm_com=28&dtm_fid=101&dtm_cid=2495&dtm_cmagic=33bb83&dtm_format=5";
+
+var dtmTag = new Array();
+/* custom fields SUBSTITUTE DYNAMIC VALUES ONLY IN THIS BLOCK */
+dtmTag.cli_promo_id = "4";
+dtmTag.dtm_user_id = "1417579422886-5RY7NVS8H1";
+dtmTag.dtmc_upd = "39346656037";
+dtmTag.dtmc_category = "Shop Online:Headphones:Noise Cancelling Headphones:Quietcomfort 20:Overview";
+dtmTag.dtmc_language= "";
+dtmTag.dtmc_sub_category = "qc20i";
+dtmTag.dtmc_prod_id = "";
+/* custom fields end */
+dtmTag.dtm_user_token = "";
+dtmTag.dtmc_ref = "";
+dtmTag.dtmc_loc = document.referrer;
+dtmTag.dtm_user_token = "";                                              
+for (var item in dtmTag){
+	if(typeof dtmTag[item] != "function" && typeof dtmTag[item] != "object")
+		dtmSrc += "&" + item + "=" + escape(dtmTag[item]);
+}   
+setTimeout('timeOutDotomi()',2000);
+document.write('<div id="dtmdiv" style="display:none;">' +
+'<iframe name="response_frame" src="' + dtmSrc + '"></iframe></div>');
+ 
+function timeOutDotomi() { document.getElementById("dtmdiv").innerHTML = "";}
+
+//-->
+</script><div id="dtmdiv" style="display:none;"></div>
+<!-- End Dotomi Tag --></body></html>

@@ -1,1 +1,0 @@
-window._vsq = window._vsq || []; window._vsq.push(['vsOpts', {site: 'mf', vip: 'bcvipwc02.rightnowtech.com', poolId: '4160:3', vsEnabled: false, cacheDomain: 'mf.widget.custhelp.com'}]);

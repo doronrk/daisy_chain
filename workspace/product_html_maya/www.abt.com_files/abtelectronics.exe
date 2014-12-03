@@ -1,0 +1,332 @@
+//Version 1.0- 20141102a
+//MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+//************** SmartSync Master JS
+//************** Company: sellpoints inc.  (http://www.sellpoints.com)
+//************** Author: Syed Mohtashim Ahmed
+//MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+
+// loading the Tracking library with no collateral footprint
+(function (d,s,l,t,p) {
+    t = d.createElement(s);
+    t.type = 'text/java'+s;
+    t.async = true;
+    t.src = l;
+    p = d.getElementsByTagName(s)[0];
+    p.parentNode.insertBefore(t,p);
+})(document,'script','//t.sellpoints.com/spt/35/35_sptobject.js');
+
+
+function show_vsr_button(sku)
+{
+    sp_sku = sp_sku || [];
+    sp_sku.push(vsr_sku);
+}
+
+var sp_sku = (function(initObj) {
+    spNoDocWrite = 1; _spMobileBrowserType = null;
+
+    if (window.location.protocol == 'https:') return []; //only serve http traffic
+
+    var spConfig = {
+        ttpid: 'TTPID-A4-73', //abt
+        retailerId: 35,
+        aptDivId: 'SP_ProductImage',
+        acpDivId: 'pane-content',
+        amtDivId: 'product-options',
+        aptEnabled: true,
+        acpEnabled: true,
+        amtEnabled: true,
+        i2Enabled: true, //i2code
+        synServer: "syndicate.sellpoint.net",
+        cdnServer: "assetsw.sellpoint.net"
+    }
+    //i2code
+    _spByClassName = function(classname){var re = new RegExp(classname, 'i');var els = document.getElementsByTagName('*');for(var i=0; i<els.length; i++){if(re.test(els[i].className)) return els[i];}  return null;}
+
+    ttpid = spConfig.ttpid;
+    sp_date = new Date();sp_date = sp_date.getFullYear()+''+(sp_date.getMonth()+1)+''+sp_date.getDate();
+    _spById = function (_spId){  if(document.getElementById != null){return document.getElementById(_spId);}  if(document.all != null){return document.all[_spId];}  if(document.layers != null){return document.layers[_spId];}  return null;  }
+    _spLoadJs = function (src, callback) { var script = document.createElement('script'), loaded; script.async = true; script.setAttribute('src', src); if (callback) { script.onreadystatechange = script.onload = function() { if (!loaded) { callback(); } loaded = true; }; } document.getElementsByTagName('head')[0].appendChild(script); }
+    _spHashtable = function (){ hash = new Array();}
+    _spHashtable.prototype.get = function (key){  var imgSrc = this.hash[key ? key.toLowerCase() : ''];  return imgSrc == 1;}
+    _spHashtable.prototype.getVal = function (key){  var imgSrc = this.hash[key ? key.toLowerCase() : ''];  return imgSrc;}
+    spTrimString = function (sString) {return sString.replace(/^\s*|\s*$/g,'');}
+    isNe = function(sValue){if(sValue == null || typeof(sValue) == 'undefined' || spTrimString(sValue).length == 0)return true;	return false;} //required for apt1.0
+    var _atu = function (sName, sValue){return (sValue == null || typeof(sValue) == 'undefined' || spTrimString(sValue).length == 0) ? '' : ('&'+ sName +'=' + escape(sValue));}
+
+    var spSmartSync = {
+        config: spConfig,
+        vars: {
+            iLookupLoadedApt: 0,
+            iLookupLoadedACP: 0,
+            iLookupLoadedi2: 0, //i2code
+            MAX_RETRY_COUNT_LOOKUP_FILES: 10,
+            iRetryCountLookup: 0,
+            iJqueryLoaded: 0,
+            iAcpLoaded: 0,
+            mobileBrowserType: null
+        },
+        initBrowserTypes: function(){
+            try {
+                var _spAppVersion = navigator.appVersion.toLowerCase();
+                if(/iphone os 1/.test(_spAppVersion)) spSmartSync.vars.mobileBrowserType = 'iPhone OS 1';
+                else if(/iphone os 2/.test(_spAppVersion)) spSmartSync.vars.mobileBrowserType = 'iPhone OS 2';
+                else if(/iphone/.test(_spAppVersion)) spSmartSync.vars.mobileBrowserType = 'iPhone';
+                else if(/android/.test(_spAppVersion)) spSmartSync.vars.mobileBrowserType = 'Android';
+                else if(/skyfire/.test(_spAppVersion)) spSmartSync.vars.mobileBrowserType = 'Skyfire';
+
+                _spMobileBrowserType = spSmartSync.vars.mobileBrowserType; //_spMobileBrowserType is used in AmtMaster.js
+            } catch(e) {
+            }
+        },
+        loadLookUps: function(){
+            try{
+                //on mobile browsers no need to load apt lookup file
+                if(spSmartSync.config.amtEnabled && spSmartSync.vars.mobileBrowserType){
+                    spSmartSync.vars.iLookupLoadedApt = 1;
+                }else{
+                    if(spSmartSync.config.aptEnabled){
+                        _spLoadJs("http://sb.sellpoint.net/smart_button/lookup/"+ spSmartSync.config.retailerId +".js?dt="+sp_date, function() {
+                            spSmartSync.vars.iLookupLoadedApt = 1;
+                        });
+                    }else{
+                        spSmartSync.vars.iLookupLoadedApt = 1;
+                    }
+                }
+
+                //i2code
+                if(spSmartSync.config.i2Enabled){
+                    _spLoadJs("http://sb.sellpoint.net/i2/lookup/"+ spSmartSync.config.retailerId +"_i2.js?dt="+sp_date, function() {
+                        spSmartSync.vars.iLookupLoadedi2 = 1;
+                    });
+                }else{
+                    spSmartSync.vars.iLookupLoadedi2 = 1;
+                }
+
+
+                if(spSmartSync.config.acpEnabled){
+                    _spLoadJs("http://sb.sellpoint.net/smart_button/lookup/acp/"+ spSmartSync.config.retailerId +"_acp.js?dt="+sp_date, function() {
+                        spSmartSync.vars.iLookupLoadedACP = 1;
+                        if(spSmartSync.vars.iRetryCountLookup >= spSmartSync.vars.MAX_RETRY_COUNT_LOOKUP_FILES)
+                            spSmartSync.show_vsr_button();
+                    });
+                }else{
+                    spSmartSync.vars.iLookupLoadedACP = 1;
+                }
+
+            }catch(eee){
+                console.log(eee);
+            }
+        },
+        show_vsr_button: function(){
+            try{
+
+                //wait for lookup files to load since the calls are asyncronous
+                if(spSmartSync.vars.iLookupLoadedApt == 0 || spSmartSync.vars.iLookupLoadedACP == 0 || spSmartSync.vars.iLookupLoadedi2 == 0){
+                    if(spSmartSync.vars.iRetryCountLookup++ < spSmartSync.vars.MAX_RETRY_COUNT_LOOKUP_FILES){
+                        window.setTimeout(spSmartSync.show_vsr_button, 500);
+                        return;
+                    }
+                }
+
+                if(! isNaN(vsr_sku))
+                    vsr_sku = '' + vsr_sku;
+                vsr_sku = spTrimString(vsr_sku);
+
+                var _vsrParams = spSmartSync.getSpParams(spSmartSync.config.ttpid, vsr_sku);
+
+                if(spSmartSync.config.amtEnabled && spSmartSync.vars.mobileBrowserType){
+                    var amtObj = document.getElementById(spSmartSync.config.amtDivId);
+                    if(amtObj != undefined && amtObj != null){
+                        amtObj.innerHTML = '<div id="_spmDivImage"></div><img style="display: none" id="_spmDuration">' + amtObj.innerHTML;
+                    }
+                    _spLoadJs('http://'+ spSmartSync.config.synServer +'/Syndicate/JSP/iPhoneSkuRequestJson.jsp?PartnerKey=' + spSmartSync.config.ttpid + '&SKU=' + vsr_sku);
+
+//                }else if(spSmartSync.config.aptEnabled && window.skus && skus.get(vsr_sku)){
+                }else if(spSmartSync.config.aptEnabled){
+
+                    //i2 code
+                    var i2 = (spSmartSync.config.i2Enabled && window.skusI2) ? skusI2.getVal(vsr_sku) : null;
+                    if(i2 != undefined && i2 != null){
+                        var i2Sku = vsr_sku;
+
+                        _spTakeoverHeroImage(0, 'abt_product', i2Sku, 285, 200);
+                        _spLoadJs("http://assetsw.sellpoint.net/i2/engine/v6/sellpointsi2.js");
+
+                        setTumbnailImageEvents();
+                        for(var i=1; i < 16; i++){
+                            window.setTimeout("setTumbnailImageEvents()", i*500);
+                        }
+
+                        var delay = 5000;
+                        window.setTimeout(function(){
+                            adjustRetailerSettings();
+                        }, delay);
+
+                    }else if (window.skus && skus.get(vsr_sku)){
+                        _spLoadJs("http://"+ spSmartSync.config.synServer +"/Syndicate/AptSmartSync?"+ _vsrParams +"&nodocwrite=1&dt="+sp_date);
+                    }
+                }
+
+                if(!spSmartSync.vars.mobileBrowserType && window.skusAcp){
+                    var spLookup = skusAcp.getVal(vsr_sku);
+                    if(spLookup != undefined && spLookup != null){
+                        sAcpDir =  (spSmartSync.config.synServer.indexOf('qasync') != -1 ? "qa/" : "" ) +"_acp_";
+                        var aSpLookupVals = spLookup.split("_");
+                        var spSupp = aSpLookupVals.length > 0 ? aSpLookupVals[0] : '';
+                        var spAcpId = aSpLookupVals.length > 1 ? aSpLookupVals[1] : '';
+                        var spAcpSynId = aSpLookupVals.length > 2 ? aSpLookupVals[2] : '';
+                        var spAcpUrl = spSmartSync.getAcpSmartSyncJsUrl(sAcpDir, spSupp, spAcpId, spAcpSynId) +"?dt="+sp_date;
+
+                        var cobj = document.getElementById(spSmartSync.config.acpDivId);
+                        var cobj = _spByClassName(spSmartSync.config.acpDivId);
+                        if(cobj != undefined && cobj != null){
+//                            cobj.innerHTML = cobj.innerHTML + "<div style='border-bottom:1px solid #B7B7B7;margin-bottom:5px;'></div>"
+//                                + "<div id='_spSellPointAcp'></div>";
+                            cobj.innerHTML =  "<div id='_spSellPointAcp'></div>" + "<div style='border-bottom:1px solid #B7B7B7;margin-bottom:5px;'></div>" + cobj.innerHTML;
+                        }
+
+                        if(spSmartSync.vars.iAcpLoaded == 0){
+                            spSmartSync.vars.iAcpLoaded = 1; //sometimes this function gets called twice
+                            _spLoadJs(spAcpUrl);
+                        }
+                    }
+                }
+            }catch(svee){
+                console.log(svee);
+            }
+        },
+        getAcpSmartSyncJsUrl: function(sAcpDir, sSupplierId, sAcpId, sSyndicateLinkId){
+            return "http://"+ spSmartSync.config.cdnServer +"/" + sAcpDir + "/" + sSupplierId + "/" + sAcpId + "/js/acp_" + sSyndicateLinkId + ".js";
+        },
+        getSpParams: function(ttpid, _sp_sku){
+            try{
+                var _sp_Params  = 'ttpid='+ ttpid + _atu('vsr_sku', _sp_sku) + _atu('vsr_button_url', vsr_button_url) + _atu('vsr_shopping_cart', vsr_shopping_cart)
+                    + _atu('vsr_price', vsr_price) + _atu('vsr_stock', vsr_stock) + _atu('vsr_call_back', vsr_call_back) + _atu('vsr_show_srp', vsr_show_srp)
+                    + _atu('vsr_launch_graphic', vsr_launch_graphic) + _atu('vsr_currency', vsr_currency)
+                    + _atu('vsr_html_id', vsr_html_id) ;
+                return _sp_Params;
+            }catch(ee){
+            }
+        }
+
+    }
+
+    vsr_html_id = spSmartSync.config.aptDivId;
+    spSmartSync.initBrowserTypes();
+    spSmartSync.loadLookUps();
+
+
+    var mypush = function (obj) {
+        if(typeof obj == 'string' || typeof obj == 'number'){
+            vsr_sku = obj;
+            vsr_shopping_cart= vsr_price= vsr_show_srp= vsr_stock= vsr_call_back='';
+        }
+        else {
+            vsr_sku = obj.sku ? obj.sku :'';
+            vsr_shopping_cart = obj.shopping_cart ? obj.shopping_cart :'';
+            vsr_price = obj.price ? obj.price :'';
+            vsr_show_srp = obj.show_srp ? obj.show_srp :'';
+            vsr_stock = obj.stock ? obj.stock :'';
+            vsr_call_back=obj.call_back ? obj.call_back :'';
+        }
+
+        vsr_button_url= vsr_button_text= vsr_launch_graphic= vsr_currency='';
+
+        if (spSmartSync) spSmartSync.show_vsr_button();
+
+        // set sku on tracking
+        if (window.sptobject) sptobject.setSKU(vsr_sku);
+    };
+
+    if (typeof initObj === "object" && ! initObj instanceof Array)
+        return initObj;
+
+    if (typeof initObj === "object" && initObj instanceof Array) {
+        var copyObj = initObj.slice(0);
+        while  (copyObj.length > 0) {
+            mypush(copyObj.pop());
+        }
+
+        return {
+            push: function(obj) {
+                mypush(obj);
+            }
+        }
+    }
+})(sp_sku || []);
+
+//i2code
+function _spTakeoverHeroImage(_spMech, _spHtmlId, sku, width, height)
+{
+    try
+    {
+        var _spPi;
+        if(_spMech == 0){ _spPi = _spById(_spHtmlId);}
+        else if(_spMech == 1){ var _spChild = _spById(_spHtmlId); if(_spChild != undefined && _spChild.parentNode != undefined){ var _spPi = _spChild.parentNode;}}
+        else if(_spMech == 2){ var _spPi = _spByClassName(_spHtmlId);}
+        else if(_spMech == 3){ var _spChild = _spById(_spHtmlId); if(_spChild != undefined && _spChild.parentNode != undefined && _spChild.parentNode.parentNode != undefined){ var _spPi = _spChild.parentNode.parentNode;}}
+
+        if(_spPi != undefined){
+            _spPi.innerHTML = "<div id='_spSup0_i2' style='position:relative; float:left;z-index:999998;'><div id='_spSup1_i2' style='position:absolute; top:15px !important; left:100px !important; width:"
+                + width +"px; height:"+ height +"px; z-index:1000;'><div id='spProductHighlighter' data-sku='"+ sku +"'></div></div></div>" + _spPi.innerHTML;
+        }
+
+        return;
+    }catch(errtk){
+        //console.log(errtk);
+        return;
+    }
+}
+
+
+
+function clearIframe (){
+    jQuery("#i2-frame").attr("src", "");
+    jQuery("#i2-iframe-block").html("");
+}
+
+function showi2Image(){
+    try{
+        jQuery("#_spSup0_i2").show();
+    }catch(eee){}
+}
+
+function hidei2Image(){
+    try{
+        jQuery("#_spSup0_i2").hide(); // hide callouts
+        jQuery(".sp-i2-content").hide(); // hide content
+        clearIframe();
+    }catch(eee){}
+}
+
+var idxI2 = 0;
+var spFirstImageUrl = "";
+function setTumbnailImageEvents(){
+    $(".cloud-zoom-gallery").each(function(){
+        //console.log(idxI2 +" : "+ $(this).attr("href"));
+        if(idxI2 == 0 || spFirstImageUrl == $(this).attr("href")){
+            $(this).click(function(){showi2Image();});
+            spFirstImageUrl = $(this).attr("href");
+        }else{
+            $(this).click(function(){hidei2Image();});
+        }
+
+        idxI2++;
+    });
+}
+
+function adjustRetailerSettings() {
+    $('.flyoutPosition').css('zIndex', '9999999');
+
+    // apply the following for ie8, ie9
+
+    $('#_spSup0_i2').css('zIndex', '5001');
+    $('.sp-i2-content').css('zIndex', '5002');
+
+    // FIXME: i2-iframe-block zIndex still appears above the sub navigation
+    //$('#i2-iframe-block').css('zIndex', '5002');
+}
+
+var spRetailerGAId = 'UA-41861406-5';
+var spRetailerGAName = 'ABT Electronics';

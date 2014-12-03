@@ -1,0 +1,72 @@
+/* B3/AmEagle_Container_Data - AmEagle_Container_Data */
+var migID = '4021';
+try {
+    var omniture_id = 'logged_in--false';
+    var logged_in_status = '';
+
+    var xaxis_omniture_id = '';
+    var xaxis_logged_in = '';
+
+    var xaxis_url = document.location.toString();
+
+    var isLBLoaded = ((typeof lbLoaded == 'undefined') || (typeof lbLoaded == undefined) || (lbLoaded != true)) ? false : true;
+
+    if (!isLBLoaded) {
+
+        if (omniture_id.indexOf("s_vi") != -1) {
+            xaxis_omniture_id = omniture_id.substring(6, omniture_id.length);
+            var ping_xaxis_dmp_one = new Image(1, 1);
+            ping_xaxis_dmp_one.src = '//t.mookie1.com/t/v1/event?migClientId=6325&migAction=synch&migSource=mig&migParam1=' + xaxis_omniture_id;
+        }
+
+        if (logged_in_status.indexOf("logged_in") != -1) {
+            xaxis_logged_in = logged_in_status.substring(11, logged_in_status.length);
+            var ping_xaxis_dmp_two = new Image(1, 1);
+            ping_xaxis_dmp_two.src = '//t.mookie1.com/t/v1/event?migClientId=4021&migAction=logged_in&migSource=mig&migParam1=' + xaxis_logged_in;
+
+            var ping_tdmp_logged_in = new Image(1, 1);
+            if (xaxis_url.indexOf("aerie") != -1) {
+                ping_tdmp_logged_in.src = '//gmtdmp.mookie1.com/tagr/v1/activity?acid=2&inst=NA&tagid=600&src.rand=1357730817&trb.clientID=68&trb.activityID=600&src.Logged-In=' + xaxis_logged_in;
+            } else {
+                ping_tdmp_logged_in.src = '//gmtdmp.mookie1.com/tagr/v1/activity?acid=2&inst=NA&tagid=541&src.rand=1357730817&trb.clientID=68&trb.activityID=541&src.Logged-In=' + xaxis_logged_in;
+            }
+        }
+
+        var xaxis_string = xaxis_url.substring(xaxis_url.indexOf('?') + 1, xaxis_url.length);
+        var xaxis_string_pairs = xaxis_string.split('&');
+        var xaxis_productId = '';
+        var xaxis_catId = '';
+
+        if (xaxis_url.indexOf('browse') != -1) {
+            try {
+                for (var i = 0; i < xaxis_string_pairs.length; i++) {
+                    var qs = xaxis_string_pairs[i].split('=');
+                    if (qs[0] == 'productId') {
+                        xaxis_productId = qs[1];
+                    }
+                    if (qs[0] == 'catId') {
+                        xaxis_catId = qs[1];
+                    }
+                }
+                if (xaxis_catId != '') {
+                    var ping_tdmp_browse_info = new Image(1, 1);
+                    if (xaxis_url.indexOf("aerie") != -1) {
+                        ping_tdmp_browse_info.src = '//gmtdmp.mookie1.com/tagr/v1/activity?acid=2&inst=NA&tagid=602&src.rand=1357730817&trb.clientID=68&trb.activityID=602&src.Category-ID=' + xaxis_catId + '&src.Product-ID=' + xaxis_productId;
+                    } else {
+                        ping_tdmp_browse_info.src = '//gmtdmp.mookie1.com/tagr/v1/activity?acid=2&inst=NA&tagid=601&src.rand=1357730817&trb.clientID=68&trb.activityID=601&src.Category-ID=' + xaxis_catId + '&src.Product-ID=' + xaxis_productId;
+                    }
+
+                    var ping_tdmp_gender = new Image(1, 1);
+                    if (xaxis_url.indexOf("womens") != -1) {
+                        ping_tdmp_gender.src = '//gmtdmp.mookie1.com/tagr/v1/activity?acid=2&inst=NA&tagid=635&src.rand=1357730817&trb.clientID=68&trb.activityID=635';
+                    } else if (xaxis_url.indexOf("mens") != -1) {
+                        ping_tdmp_gender.src = '//gmtdmp.mookie1.com/tagr/v1/activity?acid=2&inst=NA&tagid=634&src.rand=1357730817&trb.clientID=68&trb.activityID=634';
+                    }
+                }
+            } catch (e) { }
+        }
+        lbLoad(migID, 'r|g', '');
+        var lbLoaded = true;
+    }
+}
+catch (e) { if (isInDebug) { console.log(e); } }
