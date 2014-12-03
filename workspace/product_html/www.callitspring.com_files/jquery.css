@@ -1,0 +1,234 @@
+/*
+ * jquery.selectBoxIt.css 3.0.0
+ * Author: @gregfranko
+ */
+
+
+.selectboxit-container {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.selectboxit-container * {
+  font-size: 12px;
+  font-family: 'clearviewhwy-3-wregular', Helvetica, Arial, sans-serif;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: -moz-none;
+  ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  outline: none;
+  white-space: nowrap;
+}
+
+.selectboxit-container .selectboxit {
+  min-width: 120px; 
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: block;
+}
+
+.selectboxit-container span, .selectboxit-container .selectboxit-options a {
+  height: 22px; 
+  line-height: 22px; 
+  display: block;
+}
+
+.selectboxit-container .selectboxit:focus {
+  outline: 0;
+}
+
+.selectboxit-disabled {
+  cursor: default;
+}
+
+.selectboxit-text {
+  text-indent: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  float: left;
+  max-width: 85%;
+  color:#ffffff;
+  padding-right:5px;
+}
+
+.selectboxit-option-icon-container + .selectboxit-text {
+  max-width: 80%;
+}
+
+.selectboxit-option-icon-container {
+  margin-left: 5px;
+}
+
+.selectboxit-container .selectboxit-options {
+  min-width: 120px; 
+  max-height:350px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: absolute;
+  overflow-y: auto;
+  cursor: pointer;
+  display: none;
+  text-align: left;
+}
+
+ .selectboxit-option .selectboxit-option-anchor{
+  padding: 0px 2px;
+   text-decoration: none;
+}
+
+.selectboxit-option .selectboxit-option-anchor:hover {
+  text-decoration: none;
+}
+
+.selectboxit-option, .selectboxit-optgroup-header {
+  text-indent: 2px; 
+}
+
+
+.selectboxit-option-first {
+  border-top-right-radius: 1px;
+  border-top-left-radius: 1px;
+}
+
+
+.selectboxit-optgroup-header + .selectboxit-option-first {
+  border-top-right-radius: 1px;
+  border-top-left-radius: 1px;
+}
+
+
+.selectboxit-option-last {
+  border-bottom-right-radius: 1px;
+  border-bottom-left-radius: 1px;
+}
+
+
+.selectboxit-optgroup-header {
+  font-weight: bold;
+}
+
+
+.selectboxit-optgroup-header:hover {
+  cursor: default;
+}
+
+.selectboxit-arrow-container {
+  width: 13%;
+  position: absolute;
+  right: 0;
+    background-image: url("../_static/images/www/Shared/icon-arrow-dropdown.png");
+    background-position: -0 -25px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 30px;
+    line-height: 14px;
+    margin-top: 3px;
+    vertical-align: text-top;
+    width: 26px;
+}
+
+
+.selectboxit .selectboxit-arrow-container .selectboxit-arrow {
+  margin: 0 auto;
+  position: absolute;
+  top: 40%;
+  right: 10px;
+  left: 0;
+}
+
+
+.selectboxit .selectboxit-arrow-container .selectboxit-arrow.ui-icon {
+  top: 30%;
+}
+
+.selectboxit-option-icon-container {
+  float: left;
+}
+
+.selectboxit-container .selectboxit-option-icon {
+  margin: 0;
+  padding: 0;
+}
+
+
+.selectboxit-option-icon-url {
+  width: 18px;
+  background-size: 18px 18px;
+  background-repeat: no-repeat;
+  height: 100%;
+  background-position: center;
+  float: left;
+}
+
+.jqueryui .ui-icon {
+  background-color: inherit;
+}
+
+
+.jqueryui .ui-icon-triangle-1-s {
+  background-position: -64px -16px;
+}
+
+.selectboxit-btn {
+  background-color: #7dbbd5;
+  background-repeat: repeat-x;
+  /*border: 1px solid #5B9EB1;*/
+  border-color: #5B9EB1 #5B9EB1 #5B9EB1;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  border-bottom-color: #5B9EB1;
+}
+
+.selectboxit-btn:hover,
+.selectboxit-btn:focus,
+.selectboxit-btn:active {
+  color: #3D3C3D;
+  background-image: linear-gradient(to bottom, #ffffff, #7dbbd5);
+ 
+}
+
+.selectboxit-btn:hover,
+.selectboxit-btn:focus {
+  color: #7E7E7E;
+  text-decoration: none;
+  background-position: 0 -15px;
+}
+
+.selectboxit-list {
+  background-color: #e2e9ed;
+  border: 1px solid #5B9EB1;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  z-index:999;
+}
+
+.selectboxit-list > li > a {
+  color: #7E7E7E;
+ transition: all 1s ease 0s;
+}
+
+.selectboxit-list > .selectboxit-focus > a,
+.selectboxit-list > .selectboxit-focus > a:hover,
+.selectboxit-list > .selectboxit-focus > a:focus {
+  color: #5B9EB1;
+  background-color: #c4d6e0;
+   opacity: 1;
+ 
+}
+
+.selectboxit-list > .selectboxit-disabled > a {
+  color: #999999;
+}
+
+.selectboxit-list > .selectboxit-disabled > a:hover,
+.selectboxit-list > .selectboxit-disabled > a:focus {
+  background-color: transparent;
+  background-image: none;
+}

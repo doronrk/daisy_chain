@@ -1,0 +1,527 @@
+ div.lCol {
+	float: left;
+	width: 190px;
+}
+div.prodNav {
+	float: left;
+    padding: 20px;
+    width: 200px;
+}
+/* level 1 */
+div.prodNav ul {
+	margin: 0px;
+	padding: 0px;
+	width: 205px;
+	list-style: none;
+	overflow: hidden;
+	position: relative;
+	z-index: 2;
+}
+div.prodNav ul li {
+	float: left;
+	width: 205px;	
+	margin-bottom: 1px;
+	overflow: hidden;
+	display: inline-block;
+	clear: both;
+}
+div.prodNav ul li a {
+	font-size: 18px;
+	float: left;
+}
+
+#content div.prodNav ul li a:link, #content div.prodNav ul li a:visited {
+	color: #707070;
+	text-decoration: none;
+}
+#content div.prodNav ul li a:hover {
+	color: #000;
+	text-decoration: none;
+	background: #C3FF5B;
+}
+#content div.prodNav ul li a:active, #content div.prodNav ul li a:focus {
+	color: #000 !important;
+	text-decoration: none !important;
+	background: #78b709;
+}
+/* level 2 */
+div.prodNav ul li ul li {
+	overflow: hidden;
+	margin-bottom: 0;
+}
+div.prodNav ul li ul li a {
+	width: 175px;
+	font-size: 18px;
+	font-weight: normal;
+	letter-spacing: -1px;
+	border: none;
+}
+#content div.prodNav ul li ul li a:link, #content div.prodNav ul li ul li a:visited {
+	color: #78b709;
+	text-decoration: none;
+}
+#content div.prodNav ul li ul li a:hover {
+	color: #000;
+	text-decoration: none;
+	background: #c3ff5b;
+}
+#content div.prodNav ul li ul li a:active, #content div.prodNav ul li ul li a:focus {
+	color: #000;
+	text-decoration: none;
+	background: #78b709;
+}
+/* level 3 */
+div.prodNav ul li ul li ul {
+}
+div.prodNav ul li ul li ul li {
+	background-image: none;
+	border: none;
+}
+div.prodNav ul li ul li ul li a {
+	height: auto;
+	width: 175px;
+	font-size: 14px;
+	letter-spacing: normal;
+	border-bottom: none;
+	margin: 0px
+}
+#content div.prodNav ul li ul li ul li a:link, #content div.prodNav ul li ul li ul li a:visited {
+	color: #707070;
+	font-weight: normal;
+}
+#content div.prodNav ul li ul li ul li a:hover {
+	color: #000000;
+	text-decoration: none;
+}
+#content div.prodNav ul li ul li ul li a:active, #content div.prodNav ul li ul li ul li a:focus {
+	color: #000;
+	background: #78b709;
+	text-decoration: none;
+}
+#content div.prodNav a.selected {
+	color: #fff !important;
+	background: #78b709 !important;
+}
+/* secondary filters nav */
+div.filtersNav {
+	background-color: #F1F1F1;
+    float: left;
+    padding: 20px 0 0;
+    width: 230px;
+    margin:0px 0px 5px;
+}
+
+.filtersNav h3 {
+	margin-left: 20px;
+	width: 120px;
+	text-transform: lowercase;
+}
+
+.resetFilters {
+	text-transform: lowercase;
+}
+
+#content div.filtersNav a:link, #content div.filtersNav a:visited {
+	color: #000000;
+	text-decoration: underline;
+}
+#content div.filtersNav a:hover {
+	color: #000000;
+	text-decoration: none;
+}
+div.filtersNav p {
+	height: auto;
+	line-height: normal;
+}
+div.filtersNav p a {
+	float: right;
+}
+div.filtersNav ul {
+	list-style: none outside none;
+    margin: 0;
+    overflow: hidden;
+    width: 230px;
+}
+div.filtersNav ul li {
+	clear: both;
+    float: left;
+    height: auto;
+    margin: 0 0 1px 0;
+    overflow: hidden;
+    width: 230px;
+}
+
+div.filtersNav ul li:last-child {
+    margin: 0;
+}
+
+div.filtersNav ul li ul {
+   background-color: #F1F1F1;
+}
+
+div.filtersNav ul li p {
+	width: 190px;
+	margin: 0px;
+	padding:20px;
+	overflow: hidden;
+	line-height: normal;
+	position: relative;
+	height: auto;
+	text-transform:lowercase;
+}
+
+div.filtersNav ul li p span {
+	background-image: url("../images/plus.png");
+    background-position: 90% 50%;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    display: block;
+    height: 20px;
+    position: absolute;
+    width: 100%;
+    left:0;
+    top:20px;
+}
+div.filtersNav ul li p.alt span {
+	background-image: url("../images/minus.png");
+    background-position: 90% 50%;
+    background-repeat: no-repeat;
+}
+div.filtersNav div.refine_attributes {
+	overflow: hidden;
+	position: relative;
+	width: 200px;
+	padding-bottom: 20px;
+}
+div.filtersNav ul li ul {
+	background-image: none;
+	float: none;
+}
+div.filtersNav ul li ul.colors, div.filtersNav ul li ul.sizes {
+	margin: 0;
+    overflow: hidden;
+    padding: 0 0 0 20px;
+    position: relative;
+    width: 200px;
+}
+div.filtersNav ul li ul.colors {
+	margin-bottom: -10px;
+}
+div.filtersNav ul li ul li {
+	background-image: none;
+	overflow: hidden;
+	clear: none;
+}
+div.filtersNav ul li ul.colors li {
+    cursor: pointer;
+    height: 15px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    position: relative;
+    width: 30px;
+}
+
+div.filtersNav ul li ul.sizes li {
+	height: 16px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    position: relative;
+    width: 30px;	
+}
+	
+
+div.filtersNav ul li ul li a {
+	font-size: 11px;
+	line-height: normal;
+	display: block;
+	width: 180px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 10px;
+	height: 14px;
+	margin: 0px;
+}
+
+/*
+div.filtersNav ul li ul li span {
+	font-size: 11px;
+	line-height: normal;
+	display: block;
+	width: 180px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 10px;
+	height: 14px;
+	margin: 0px;
+}
+*/
+
+.checker span {
+	width: auto;
+	padding:0px;
+	height: auto;
+	margin: 0px;
+}
+
+div.filtersNav ul li ul li a:hover {
+	background-color: #67686a;
+}
+div.filtersNav ul li ul li a.active {
+	background-color: #67686a;
+	background-image: url(../images/filtersNavClear_img.gif);
+	background-repeat: no-repeat;
+	background-position: 171px 3px;
+}
+div.filtersNav ul li ul.colors li a, div.filtersNav ul li ul.sizes li a {
+	width: 30px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	height: 15px;
+	overflow: hidden;
+}
+div.filtersNav ul li ul.colors li img, div.filtersNav ul li ul.sizes li img {
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+div.filtersNav ul li ul.colors li.active img, div.filtersNav ul li ul.sizes li.active img {
+	left: 0px;
+	top: -15px;
+}
+
+div.lCol div.ca {
+	margin-top: 10px;
+}
+div.lCol div.ctaMargin {
+	margin: 22px 0px 0px 0px;
+}
+/* primary category */
+div.lineCards {
+	overflow: hidden;
+	position: relative;
+}
+div.lineCard {
+	float: left;
+	width: 230px;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+div.lineCard p {
+	font-size: 12px;
+	color: #2a2a2f;
+	margin-top: 5px;
+}
+div.pCatProds {
+	overflow: hidden;
+	width: 720px;
+	margin-top: 20px;
+	clear: both;
+	position: relative;
+}
+div.pCatProds ul.tabs {
+	background-image: url(../images/lightDivider_ptrn.gif);
+	background-repeat: repeat-x;
+	background-position: left bottom;
+	margin: 0px;
+	padding: 0px;
+	height: 22px;
+	width: 720px;
+	list-style: none;
+	overflow: hidden;
+}
+div.pCatProds ul.tabs li {
+	display: inline;
+	float: left;
+	height: 22px;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+div.pCatProds ul.tabs li.tabs-selected {
+	background-image: url(../images/ulTabsLiBg_norpt.png);
+	background-position: left -26px;
+	background-repeat: no-repeat;
+}
+div.pCatProds ul.tabs li a {
+	display: block;
+	float: left;
+	height: 18px;
+	padding-top: 4px;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+#content div.pCatProds ul.tabs li.tabs-selected a {
+	background-image: url(../images/ulTabsLiABg_norpt.gif);
+	background-repeat: no-repeat;
+	background-position: right -26px;
+	color: #707070;
+	text-decoration: none;
+}
+div.pCards {
+	overflow: hidden;
+	float: left;
+	width: 720px;
+}
+div.pCard {
+	border-bottom: 1px solid #CCCCCC;
+    border-left: 1px solid #CCCCCC;
+	cursor: pointer;
+    float: left;
+    height: 328px;
+    margin: 0;
+    position: relative;
+    width: 239px;	
+}
+div.pCard.active {
+	/*background-position: 0px -244px;*/
+}
+
+div.pCard a:first-child {
+	float: left;
+    height: 166px;
+    margin-top: 35px;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+div.pCard img.prod {
+	height: auto;
+	width: auto;
+	margin-left: 0px;
+}
+div.pCard ul {
+	margin: 0px;
+	height: 22px;
+	width: 158px;
+	list-style: none;
+	cursor: default;
+}
+div.pCard ul li {
+	float: left;
+	height: 17px;
+	width: 17px;
+	margin-right: 2px;
+	position: relative;
+	overflow: hidden;
+}
+div.pCard ul li img {
+	position: absolute;
+	height: 34px;
+	width: 34px;
+	left: 0px;
+	top: 0px;
+}
+div.pCard ul li.oos img {
+	top: -17px;
+}
+div.pCard ul li.sel img {
+	left: -17px;
+}
+div.pCard ul li.more {
+	width: 36px;
+}
+div.pCard ul li.more img {
+	position: relative;
+	height: 17px;
+	width: 36px;
+}
+div.pCard ul.dblHighSglWide {
+	background-image: url(../images/pCardUlBgTall_norpt.png);
+	height: 35px;
+}
+div.pCard ul.dblHighSglWide li {
+	height: 30px;
+}
+div.pCard ul.dblHighSglWide li img {
+	height: 60px;
+}
+div.pCard div.tip {
+	position: absolute;
+	top: 0px;
+	background-color: #000099;
+	height: 22px;
+	border: 1px solid #FF0000;
+	left: 50%;
+	display: none;
+}
+#content div.pCard a.cardLnk {
+	height: 75px;
+}
+#content div.pCard a.cardLnk:link, #content div.pCard a.cardLnk:visited, #content div.pCard a.cardLnk:hover, #content div.pCard a.cardLnk:focus, #content div.pCard a.cardLnk:active {
+	color: inherit;
+	text-decoration: none;
+}
+#content div.pCard h2 {
+	font-size: 15px;
+	line-height: 1;
+	padding-left: 8px;
+	padding-right: 8px;
+}
+#content div.pCard p {
+	line-height: normal;
+	padding-left: 8px;
+	font-size: 12px;
+	color: #707070;
+	padding-right: 8px;
+	letter-spacing: -1px;
+}
+div.pCard p del {
+	font-size: 9px;
+	display: block;
+}
+div.pCard p strong {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+}
+div.pCard span {
+    color: #707070;
+    display: block;
+    float: left;
+}
+div.pCard span.salePrice {
+	font-size: 14px;
+	padding-left: 0px;
+	margin-right: 3px;
+	margin-left: 3px;
+	padding-right: 5px;
+	display: inline;
+	letter-spacing: -1px;
+	margin-top: 2px;
+	padding-top: 3px;
+}
+div.pCard div.sb {
+	position: absolute;
+	top: -2px;
+	right: -2px;
+	zoom: 1;
+}
+/*
+div.pCard div.minirating span.reviewsTotal {
+	vertical-align: 3px;
+	font-size:13px;
+	padding:0px;
+	margin:0px;
+	width:auto;
+	display:inline-block;
+}
+div.pCard div.minirating a.starRating { 
+	width:80px;
+	height:16px;
+	overflow: hidden;
+	display: inline-block;
+}
+
+*/
+div.scaledprices {
+	overflow:visible;
+	margin-left:5px;
+}
+div.scaledprices td.quantities{
+	font-size: 10px;
+}
+div.scaledprices td.percentage{
+	font-size: 10px;
+}

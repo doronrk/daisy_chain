@@ -1,0 +1,3 @@
+//tealium universal tag - utag.106 ut4.0.201406262300, Copyright 2014 Tealium.com Inc. All Rights Reserved.
+var $CVO=window.$CVO||[];try{(function(id,loader,u){try{u=utag.o[loader].sender[id]={}}catch(e){u=utag.sender[id]};u.ev={'view':1};u.attr={};u.clientid='pacsun';u.event_type="";u.event_id="";u.event_value="";u.base_url='//d1ivexoxmp59q7.cloudfront.net/'+u.clientid+'/live.js';u.map={};u.extend=[];u.send=function(a,b,c,d,e,f){if(u.ev[a]||typeof u.ev.all!='undefined'){u.s=document.getElementsByTagName("script")[0];u.scr=document.createElement("script");u.scr.type="text/javascript";u.scr.src=u.base_url;u.s.parentNode.insertBefore(u.scr,u.s);}}
+try{utag.o[loader].loader.LOAD(id)}catch(e){utag.loader.LOAD(id)}})('106','pacsun.dw-desktop');}catch(e){}

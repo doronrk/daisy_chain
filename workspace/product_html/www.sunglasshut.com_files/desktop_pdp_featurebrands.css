@@ -1,0 +1,57 @@
+
+/* Site Fix
+=========================*/
+.productDisplayPage #featured-tout {padding:0px;}
+
+/* PDP Feature
+=========================*/
+
+#pdp #pdp-container .espot-container img {width:inherit;}
+
+#pdp-feature-espot {width:100%; background: #111; margin-top:5px; position:relative; }
+#pdp-feature-espot .pdp-feature-logo {margin-bottom: 10px; width:inherit;}
+#pdp-feature-espot aside {padding: 15% 23%; text-align:center;}
+#pdp-feature-espot aside.pdp-feature-background {position:absolute; left:0px; z-index:2; padding: 0% 23%; top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);}
+#pdp-feature-espot p,
+#pdp-feature-espot a.black-button { color:#fff; }
+
+#pdp #pdp-container .espot-container.brand p ,
+#pdp-feature-espot p { text-align:left; font-family: "brandon_medium",Helvetica,Arial,sans-serif; text-transform:none !important; font-size: 13px; line-height: 23px; width:auto; position: relative; left:inherit; top:inherit; margin:0; padding:0;}
+#pdp-feature-espot a.black-button {border:#fff 2px solid; margin-top: 10%; }
+#pdp-feature-espot .pdp-feature-img {width:100%; height:inherit;}
+
+
+/* = @media 1120
+--------------------------------------------------------------------------------*/	
+    
+@media (min-width:1375px) {
+	/*.exp-row { width: 1120px;}*/
+	.exp-tablet    { display: none; }
+	.exp-desktop   { }
+	#pdp-feature-espot aside {padding: 15% 30%; }
+}
+
+
+/* = @media < 680
+--------------------------------------------------------------------------------*/	
+    
+@media (max-width:934px) {
+	/*.exp-row { width: 680px;}*/
+	.exp-tablet    {  }
+	.exp-desktop   {  display: none;}
+	
+}
+
+
+/* = @media 681 - 1119
+--------------------------------------------------------------------------------*/	    
+
+@media (min-width:935px) and (max-width:1374px) {
+	.exp-row { width: 100%;}
+	.exp-tablet    {  }
+	.exp-desktop   { }
+	#pdp-feature-espot aside {padding: 15% 28%; }
+}

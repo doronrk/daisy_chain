@@ -1,0 +1,1908 @@
+#dhtmlContainer { position: relative; display:none; width:460px; height:460px; margin: 0 20px; overflow:hidden; }
+#enlargeDhtml { position: relative; display:none; width:480px; height:550px; }
+#flashContainer { display:block; overflow:hidden; width:459px; height:460px; position: relative; float:left; z-index: 11; padding-left: 20px; background-color: #ffffff; }
+
+
+#flyoutContainer {
+	height: 460px;
+	width: 440px;
+	margin-left: 20px;
+	position: relative;
+	z-index: 20;
+}
+
+#flyoutContainerLoader {
+	width: 445px;
+	height: 460px;
+	position: absolute;
+	z-index: 12;
+	background: #FFFFFF url(../images/loading.gif) no-repeat center center;
+}
+
+.opaqueswatch {
+	filter: alpha(opacity=50) !important;
+	opacity: 0.5 !important;
+}
+
+.s7flyoutStaticImage { width: 440px; height: 365px; }
+.s7flyoutCursorDesktop { width: 150px; height: 150px; background-image: url(../images/s7flyoutCursorDesktop_bkgd.png); cursor: pointer; }
+.s7flyoutCursorTouch  { }
+.s7flyoutFrame { }
+.s7flyoutFlyoutView { width: 481px; height: 460px; z-index: 10; }
+.s7flyoutFlyoutViewOffset { left: 19px; top: 0px; }
+.s7flyoutSwatches { width: 440px; height: 100px; } 
+.s7flyoutSwatch { height: 72px; width: 60px; cursor: pointer; }
+
+.s7flyoutSwatchBackground {
+	background-color: #FFFFFF;
+}
+.s7flyoutSwatchActiveBorder {
+	border-bottom: solid 2px #666666;
+}
+.s7flyoutSwatchOverBorder {
+	border-bottom: solid 2px #666666;
+}
+.s7flyoutSwatchInnerSpacer {
+	width: 15px;
+}
+.s7flyoutSwatchOuterSpacer {
+	width: 4px;
+}
+.s7flyoutSwatchScrollButton {
+	height: 72px;
+	width: 25px;
+}
+.s7flyoutSwatchScrollButtonOuterSpacer {
+	width: 4px;
+}
+.s7flyoutSwatchScrollButtonInnerSpacer {
+	width: 4px;
+}
+.s7flyoutSwatchScrollButtonLeft {
+	background-image: url(../images/left-arrow_v2.png) !important;
+	cursor: pointer;
+}
+.s7flyoutSwatchScrollButtonRight {
+	background-image: url(../images/right-arrow_v2.png) !important;
+	cursor: pointer;
+}
+
+.pdpLeft .snipe {
+	height: 25px;
+	left: 0;
+    position: absolute;
+	top: 5px;
+	vertical-align: middle;
+	z-index: 21;
+	background-color: #999999;
+}
+	
+.pdpLeft .snipeLeft {
+	float:left;
+	padding: 5px 16px 0 20px;
+	height: 20px;
+}
+	
+.pdpLeft .snipeRight {
+	background: url('../images/snipeTriangle.png');
+	background-repeat:no-repeat;
+	float:left;
+	width: 14px;
+	height: 25px;
+}
+
+/* prodDets start */
+
+div.prodDet {
+	float:left;
+	width: 960px;
+}
+
+div.prodDet {
+	float:left;
+	width: 960px;
+}
+
+
+
+ul.actColors {
+	padding: 0px;
+	list-style: none;
+}
+ul.actColors li {
+	overflow: hidden;
+	float: left;
+}
+
+ul.actColors h4 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #707070;
+	letter-spacing: -1px;
+	float: left;
+	margin-right: 5px;
+}
+#content ul.actColors p, ul.actColors span {
+	font-size: 10px;
+	color: #707070;
+	float: left;
+	margin: 0px;
+	padding: 2px 0px 0px;
+	line-height: 1;
+	display: block;
+	height: 12px;
+	overflow: hidden;
+}
+ul.actColors li ul {
+	margin: 0px;
+	padding: 0px;
+	width: 470px;
+	list-style: none;
+	overflow: hidden;
+	clear: both;
+}
+ul.actColors li ul li {
+	overflow: hidden;
+	width: 66px;
+	height: 36px;
+	margin-right: 0px;
+	float: left;
+	position: relative;
+	cursor:pointer;
+	margin-bottom: 4px;
+}
+ul.actColors li ul li.sel {
+	cursor:default;
+}
+ul.actColors li ul li img {
+	width: 60px;
+	height: 30px;
+	padding: 3px;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	cursor: pointer;
+	z-index: 1;
+}
+ul.actColors li ul li.sel img {
+	top: 0px;
+}
+ul.actColors li ul li.sel div.stockState {
+	width: 62px !important;
+	height: 32px !important;
+	background-image: none !important;
+	border: solid 2px #7ab800;
+	background-size: contain;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+    background-repeat: no-repeat;
+	z-index: 12;
+}
+ul.actColors li ul li.oos div.stockState {
+	background:#FFF;
+	opacity:.8;
+	width:100%;
+	height:100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	cursor: pointer;
+    background-repeat: no-repeat;
+	z-index: 12;
+}
+ul.actColors li ul li.oos img {
+	top: 0px;
+}
+ul.actColors li ul li.seloos img {
+	top: 0px;
+}
+ul.actColors li ul li.bisn img {
+	top: 0px;
+}
+ul.actColors li ul li span, ul.actColors li ul li em {
+	display: none;
+}
+ul.actColors li ul.dblHighSglWide li {
+	height: 30px;
+}
+ul.actColors li ul.dblHighSglWide li.oos img {
+	top: -30px;
+}
+
+div.notify {
+	clear: both;
+	background-color: #f6f6f6;
+	width: 386px;
+	height: auto;
+	padding:20px;
+	border: solid 1px #cccccc;
+	position: relative;
+	margin: 20px 20px 20px 20px;
+}
+
+div.notify .close {
+    background-image: url("../images/close.png");
+    background-repeat: no-repeat;
+    display: block;
+    height: 29px;
+    position: absolute;
+    right: -14px;
+    top: -14px;
+    width: 29px;
+    z-index: 10;
+}
+
+div.notify .close a {
+	display:block;
+	height: 29px;
+	width:29px;
+}
+
+div.notifywishlist {
+	display:none;
+	float:left;
+	position: relative;
+	margin-bottom:20px;
+	padding:15px 0 15px 40px;
+	width:386px;
+	background:#F6F6F6 url("../images/check.png") 15px 15px no-repeat;
+	border: solid 1px #cccccc;
+}
+
+
+#bisnform .bisnInputButtonBox {
+    float: left;
+    height: 26px;
+    width: 386px;
+}
+
+.bisnInputButtonBox {
+	float: none;
+	display: block;
+	width: 386px;
+}
+
+.bisnInputButtonBox td {
+	vertical-align: top;
+}
+
+.bisnInputButtonBox td.bisnInputFieldContainer {
+	width: 100%;
+}
+
+.bisnInputButtonBox .bisnInputField {
+	background-color: #FFFFFF;
+	border: 1px solid #999999;
+	color: #707070;
+	height: 24px;
+	margin-right: 0;
+	padding: 0 12px;
+	text-align: left;
+}
+
+.error .bisnInputButtonBox .bisnInputField {
+	background-color: #FFFF99;
+	border: 1px solid #FF0000;
+}
+
+.bisnInputButtonBox .bisnInputField input,
+.error .bisnInputButtonBox .bisnInputField input {
+	padding: 0;
+	margin: 0;
+	height: 24px;
+	font-size: 11px;
+	line-height: 23px;
+	border: 0;
+	width: 100%;
+	float: left;
+}
+
+.bisnInputButtonBox .bisnInputField input:focus {
+	outline: none;
+}
+
+.bisnInputButtonBox button {
+	height: 26px;
+	position: relative;
+	padding: 0;
+	margin: 0;
+	font-size: 0;
+	white-space: nowrap;
+	background: none;
+}
+
+.ie7 .bisnInputButtonBox button {
+	width: 0;
+	overflow: visible;
+}
+
+.bisnInputButtonBox button:focus {
+	outline: none;
+}
+
+
+.bisnInputButtonBox button .copy {
+	padding: 0 0 0 14px;
+	display: inline-block;
+	vertical-align: top;
+	float: none;
+	width: auto;
+}
+
+.bisnInputButtonBox button::-moz-focus-inner {
+	padding: 0;
+	border: 0
+}
+
+.bisnInputButtonBox button .btnRightBg {
+	display: inline-block;
+	vertical-align: top;
+	width: 22px;
+	height: 26px;
+	background: url('../images/btnEmptyRight.png') left top no-repeat;
+}
+
+.ie7 .bisnInputButtonBox button .whiteText,
+.ie7 .bisnInputButtonBox button .btnRightBg {
+	zoom:1;
+	display: inline;
+}
+
+.bisnCheckBox {
+    float: left;
+    margin-right: 6px;
+    margin-top: 4px;
+    display: none;
+}
+
+.bisnCheckBoxText {
+    float: left;
+    margin-top: 4px;
+    text-transform: lowercase;
+    width: 200px;
+}
+
+div.notify .cancel {
+    float: right;
+    margin-top: 19px;
+}
+
+.oneOptionSize {
+	float:left;
+	width: auto;
+	margin-right: 20px;
+	margin-top:5px;
+}
+
+div.notify div.notifytop {
+	padding: 0 0 6px;
+    text-transform: lowercase;
+}
+
+div.notify .msg {
+    float: left;
+}
+
+div.notify div.notifybtm {
+	height: 4px;
+}
+div.notify #bisnform, div.notify #bisnresponse {
+	display:block;	
+}
+div.notify #bisnform {
+	float:left;
+	overflow:hidden;
+	width: 386px;
+}
+div.notify label, div.notify p {
+	display: block;
+	float:left;
+	margin-bottom: 6px;
+    text-transform: lowercase;
+}
+
+/* prodDets end */
+
+
+.pdpRightTop .minirating {
+    position: relative;
+    width: 100%;
+    margin-top:-2px;
+}
+
+.pdpRightTop .pVideo {
+	display:none;
+} 
+
+.pdpRightTop .minirating img {
+	float:left;
+}
+
+.pdpRightTop .minirating .grayBackground {
+    width: 80px;
+    height: 16px;
+    background: url('../images/star_gray.png') repeat-x left center;
+}
+
+.pdpRightTop .minirating .goldForeground {
+    height: 16px;
+    background: url('../images/star_gold.png') repeat-x left center;
+}
+
+/* pdp start  */
+
+.pdp {
+    display: block;
+    float: left;
+    height: auto;
+    width: 960px;
+	}
+
+.pdpLeft {
+    float: left;
+    width: 478px;
+    position: relative;
+	}
+	
+.pdp h2 {
+	width: 346px;
+	float:left;
+	}
+	
+.productDetails .itemNum {
+	float:left;
+	width: 90px;
+	padding:0px;
+	margin:4px 0px 0px;
+	text-align:right;
+	}
+	
+.productDetailsCopy {
+	clear: both;
+	overflow: hidden;
+	padding: 10px 0 0;
+}
+
+
+.productDetailsCopy > p:first-child {
+	margin-bottom:7px;	/* separate details hedcopy from initial description copy */
+}
+
+.productDetailsCopy iframe {
+	display:none;
+		}
+
+
+.productDetails .social {
+	float:left;
+	*width: 438px!important;
+	margin-top:20px;
+	}
+
+.productDetails .social a {
+	outline: none;
+	}
+	
+.socialFacebook {
+	float: left;
+	width: 90px;
+}
+
+.socialTwitter {
+	float: left;
+	width: 70px;
+	margin-right: 20px;
+	overflow: visible;
+}
+
+.socialGoogle {
+	float: left;
+	width: 70px;
+	*width: 0px;
+	*display: none;
+}
+
+.socialPinterest {
+	float: left;
+	width: 50px;
+}
+
+.mailTo img {
+	padding-bottom:3px;
+}
+
+.productDetails .connect {
+	margin-top:0px;
+	}
+
+.video {
+	float:left;
+	width: 479px;
+	background-color: #cccccc;
+	height:475px;
+	}
+	
+
+.pdp .rightWrapper {
+	float: right;
+    height: auto;
+    padding: 0;
+    width: 480px;
+	}
+
+.pdpRight {
+    float: left;
+    padding: 20px 5px 5px 6px;
+    width: 467px;
+    height: auto;
+	}
+	
+.pdpRightTop h1 {
+	font-family: MuseoRounded700, Arial, Helvetica, sans-serif;
+	font-size: 23px;
+	float:left; 
+	margin-bottom: 4px;
+	width:440px;
+	}
+		
+.pdpRightTop h3 {
+	font-size: 16px;
+	float: left;
+	margin-right: 20px;
+	width: 308px;
+}
+
+.pdpRightTop h3 a {
+	color:#707070;
+}
+	
+.deal {
+   	width: auto;
+	font-size: 16px;
+	text-transform: capitalize;
+}
+		
+.pdpRightTop .price {
+	float: left;
+	clear: both;
+	margin: 5px 0px 5px 0px;
+	width: auto;
+	white-space: nowrap;
+	font-size: 18px;
+}
+		
+.pdpRightTop .rating {
+	float:left;
+	margin-right: 20px;
+	width:80px;
+	min-height:10px;
+	margin-top: 2px;
+}
+		
+.pdp .reviews {
+    float: left;
+    width: auto;
+    line-height:18px;
+}
+
+.productreviews .review {
+	float:left;
+	width: 920px;
+	padding: 20px;
+	*padding-bottom: 0px;
+	*margin-bottom: 0px;
+	}
+
+.pdp .reviews .left {
+	float:left;
+	position:relative;
+}
+	
+.pdp .reviews .right {
+	float:left;
+	position:relative;
+}
+
+.pdp .reviews span {
+	width:auto;
+}	
+
+.pdp .reviews form {
+	width:auto;
+	cursor:pointer;
+}
+
+.pdp .reviews .startWriteReview {
+	font-family: inherit;
+	font-size: 12px;
+	height:18px;  /* Match the line height of '## Reviews' */
+
+}
+
+.sortBy {
+	float:right;
+	margin: 15px 5px;
+}
+
+.pdpRefine {
+	border: 0 none;
+	float: left;
+	padding: 0 0 40px;
+	*padding: 0 0 20px;
+	width: 468px;
+	border-top: solid 1px #ebebeb;
+}
+
+.pdpStep {
+	background: #cccccc;
+	border: solid 2px #cccccc;
+	color: #FFF;
+	padding: 0;
+	margin: 0 5px 0 0;
+	width: 20px;
+	-webkit-border-top-right-radius: 9px;
+	-webkit-border-bottom-right-radius: 9px;
+	-moz-border-radius-topright: 9px;
+	-moz-border-radius-bottomright: 9px;
+	border-top-right-radius: 9px;
+	border-bottom-right-radius: 9px;
+	text-align: center;
+	font-size: 13px;
+	float:left;
+	position: relative;
+	top:-1px;
+}
+
+.sizeRefineCategory .pdpChat {
+	width: 200px;
+	height: 30px;
+	line-height: 30px;
+	position: absolute;
+	right: 16px;
+	margin: -6px 0px 0px 0px; 
+	text-align: right;
+	color: #098abb;
+}
+
+.sizeRefineCategory .pdpChat a:hover {
+	text-decoration: none;
+}
+
+.sizeRefineCategory .h6 {
+	font-size: 13px;
+	letter-spacing: -0.01em;
+	font-weight: normal;
+}
+
+.sizeRefineCategory {
+	width: 448px;
+	padding-top: 10px;
+	margin-bottom: -20px;
+	float:left;
+	border-top: solid 1px #ebebeb;
+}
+
+#cboxLoadedContent .refineCategory {
+	*padding-bottom: 20px;
+}
+
+.refineCategory {
+	width: 428px;
+	padding-top: 10px;
+	float:left;
+}
+		
+.refineLine {
+	float:left;
+	margin-bottom: 5px;
+}
+		
+#fgRecFit .refineLine {
+	margin-top: -10px;
+}
+
+#sChartfGuideCol {
+	width: 428px;
+	float: left;
+	margin-top: 10px;
+}
+
+#sChartfGuideCol img {
+	position: relative;
+	top: 3px;
+}
+
+#sChartfGuideCol .n5 {
+	font-size: 11px;
+	line-height: 14px;
+}
+
+#sChartfGuideCol .clearAll {
+	clear: both;
+}
+
+#sChartfGuideCol .refineLineMin {
+	margin-top: 2px;
+	float:left;
+	width: 408px;
+}
+
+#sChartfGuideCol #fgRecFit .refineLineMin {
+	margin-top: 2px;
+	float:left;
+}
+	
+div#fgRecFit {
+	float: left;
+}
+
+#cboxLoadedContent #fgRecFit a {
+	display:none;
+}
+
+.chooseColorCol, .chooseSizeCol {
+	float: left;
+	margin-right: 20px;
+	overflow: hidden;
+}
+
+.chooseSizeCol {
+	position: relative;
+	width: 435px;
+}
+
+.colorDiv {
+	float:left;
+}
+		
+.chooseColorCol .swatchDiv {
+	float:left;
+	margin:0px;
+}
+
+.chooseText {
+	float:left;
+	color: #5F5F5F;
+}
+
+.chooseColorColRight.refineLine {
+	width: 470px;
+}
+
+.colorRefineLine {
+	margin-left: 5px;
+	position: relative;
+	top: 2px;
+}
+
+#prodStatus {
+	margin-bottom:5px;
+	clear:both;
+}
+
+.promobox.redText {
+	margin-bottom:10px;
+}
+
+.sizeTypeName {
+	margin: 0px 0px 4px 4px;
+	font-size: 15px;
+}
+
+		
+ul.actSizes {
+	list-style: none outside none;
+	margin: 0;
+	position: relative;
+	width: auto;
+	padding-left: 3px;
+	border: 0px;
+	overflow: hidden;
+}
+	
+ul.actSizes li {
+	float: left;
+	height: 25px;
+	width: 25px;
+	margin-right: 7px;
+	padding: 0;
+	position: relative;
+	text-align: center;
+	color: #707070;
+	margin-bottom: 7px;
+	overflow: hidden;
+}
+
+div.sizes span.nfoTxt {
+	display: block;
+	width: 95%;
+	margin: 5px 0;
+	padding: 5px;
+	background-color: #D1F9F6;
+	border: 1px solid #ccc;
+	clear: both;
+}
+
+#noSizeAtAll + span.nfoTxt img {
+	display: inline-block;
+	margin-right: 5px;
+}
+
+ul.actSizes li.oos img {
+	cursor: default !important;	
+}
+
+ul.actSizes li:hover {
+	color: #000000;
+}
+
+ul.actSizes li.sel {
+	color: #000000;
+}
+
+/* START SIZE CHIPS */
+	/*----------------< single digit size chips (25x25) >----------------*/
+		/* single digit general */
+		ul.actSizes li div.stockState {
+			position: absolute;
+		    left: 0;
+		    top: 0;
+			width: 25px;
+			height: 25px;
+			z-index: 12;
+			cursor: pointer !important;
+		}
+		ul.actSizes li img {
+		    position: absolute;
+			top: 0px;
+			left: 0px;
+		    display: block;
+		    width: 50px;
+		    height: 50px;
+		   	z-index: 11;
+			cursor: pointer !important;
+		}
+		ul.actSizes li div.stockStateBkgd {
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 23px;
+			height: 23px;
+			background-color: #ffffff;
+			border: solid 1px #a3a3a3;
+			z-index: 10;
+		}
+		
+		/* single digit selected */
+		ul.actSizes li.sel div.stockState {
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 25px;
+			height: 25px;
+			cursor: default !important;
+		}
+		ul.actSizes li.sel img {
+			top: 0;
+			left: -25px;
+			cursor: default !important;
+		}
+		ul.actSizes li.sel div.stockStateBkgd {
+			position: absolute;
+			width: 21px;
+			height: 21px;
+			background-color: #ffffff;
+			border: solid 2px #81b719;
+		}
+		
+		/* single digit oos */
+		ul.actSizes li.oos div.stockState {
+			position: absolute;
+			width: 25px;
+			height: 25px;
+			background-image: url("../images/sizeChip_singleDigit_oos.png");
+		    background-repeat: no-repeat;
+		    cursor: default !important;
+		}
+		ul.actSizes li.oos img {
+			top: -25px;
+			left: 0;
+		    cursor: default !important;
+		}
+		ul.actSizes li.oos div.stockStateBkgd {
+			position: absolute;
+			width: 23px;
+			height: 23px;
+			background-color: #f1f1f1;
+		}
+		
+		/* single digit seloos */
+		ul.actSizes li.seloos img {
+			top: -25px;
+			left: -25px;
+		}
+		
+		/* single digit bisn */
+		ul.actSizes li.bisn div.stockState {
+			position: absolute;
+			width: 25px;
+			height: 25px;
+			background-image: none;
+			cursor: pointer !important;
+		}
+		ul.actSizes li.bisn img {
+			top: 0px;
+			left: 0px;
+			cursor: pointer !important;
+		}
+		ul.actSizes li.bisn div.stockStateBkgd {
+			position: absolute;
+			width: 23px;
+			height: 23px;
+			background-color: #ffffff;
+			border: solid 1px #a3a3a3;
+		}
+		
+	/*----------------< multi digit size chips (41x25) >----------------*/
+		/* mixed sizing general */
+		ul.mixed li {
+			width: 41px;
+			height: 25px;
+		}
+		ul.mixed li div.stockState {
+			position: absolute;
+			width: 41px;
+			height: 25px;
+		}
+		ul.mixed li img {
+			width: 82px;
+			height: 50px;
+		}
+		ul.mixed li div.stockStateBkgd {
+			width: 39px;
+			height: 23px;
+			background-color: #ffffff;
+			border: solid 1px #a3a3a3;
+		}
+
+		/* mixed sel */
+		ul.mixed li.sel img {
+			left: -41px;
+		}
+		ul.mixed li.sel div.stockStateBkgd {
+			position: absolute;
+			width: 37px;
+			height: 21px;
+			background-color: #ffffff;
+			border: solid 2px #81b719;
+		}
+
+		/* mixed oss */
+		ul.mixed li.oos div.stockState {
+			position: absolute;
+			width: 41px;
+			height: 25px;
+			background-image: url("../images/sizeChip_mixed_oos.png");
+		    background-repeat: no-repeat;
+		}
+		ul.mixed li.oos img {
+			top: -25px;
+		}
+		ul.mixed li.oos div.stockStateBkgd {
+			position: absolute;
+			width: 39px;
+			height: 23px;
+			background-color: #f1f1f1;
+		}
+		
+		/* mixed seloss */
+		ul.mixed li.seloos img {
+			top: -25px;
+			left: -41px;
+		}
+		
+		/* mixed bisn */
+		ul.mixed li.bisn div.stockState {
+			position: absolute;
+			width: 41px;
+			height: 25px;
+			background-image: none;
+		}
+		ul.mixed li.bisn img {
+			top: 0px;
+			left: 0px;
+		}
+	ul.mixed li.bisn div.stockStateBkgd {
+			position: absolute;
+			width: 39px;
+			height: 23px;
+			background-color: #ffffff;
+			border: solid 1px #a3a3a3;
+		}
+
+	/*----------------< wide size chips (89x25) >----------------*/
+		/* extended sizing general */
+		ul.extended li {
+			width: 89px;
+			height: 25px;
+		}
+		ul.extended li div.stockState {
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 89px;
+			height: 25px;
+			background-image: none;
+		}
+		ul.extended li img {
+			width: 178px;
+			height: 50px;
+		}
+		ul.extended li div.stockStateBkgd {
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 87px;
+			height: 23px;
+			background-color: #ffffff;
+			border: solid 1px #a3a3a3;
+		}
+		
+		/* extended sel */
+		ul.extended li.sel div.stockState {
+			position: absolute;
+			width: 89px;
+			height: 25px;
+			background-image: none;
+		}
+		ul.extended li.sel img {
+			left: -89px;
+		}
+		ul.extended li.sel div.stockStateBkgd {
+			position: absolute;
+			width: 85px;
+			height: 21px;
+			background-color: #ffffff;
+			border: solid 2px #81b719;
+		}
+
+		/* extended seloos */
+		ul.extended li.seloos img {
+			top: -25px;
+			left: -89px;
+		}
+		
+		/* extended oos */
+		ul.extended li.oos div.stockState {
+			position: absolute;
+			width: 89px;
+			height: 25px;
+			background-image: url("../images/sizeChip_extended_oos.png");
+		    background-repeat: no-repeat;
+		}
+		ul.extended li.oos img {
+			top: -25px;
+		}
+		ul.extended li.oos div.stockStateBkgd {
+			position: absolute;
+			width: 89px;
+			height: 25px;
+			background-color: #ffffff;
+			border: solid 1px #a3a3a3;
+		}
+		
+		/* extended bisn */
+		ul.extended li.bisn div.stockState {
+			position: absolute;
+			width: 89px;
+			height: 25px;
+			background-image: none;
+		}
+		ul.extended li.bisn img {
+			top: 0px;
+			left: 0px;
+		}
+		ul.extended li.bisn div.stockStateBkgd {
+			position: absolute;
+			width: 87px;
+			height: 23px;
+			background-color: #ffffff;
+			border: solid 1px #a3a3a3;
+		}
+	
+	/*----------------< double height size chips (89x45) >----------------*/
+		/* alpha sizing general */
+		ul.alpha li {
+			width: auto;
+			height: auto;
+		}
+		ul.alpha li img {
+			width: 178px;
+			height: 90px;
+		}
+		
+		/* alpha oos */
+		ul.alpha li.oos img {
+			top: -45px;
+		}
+		ul.alpha li.sel img {
+			left: -89px;
+		}
+		
+		/* alpha seloos */
+		ul.alpha li.seloos img {
+			top: -45px;
+			left: -89px;
+		}
+		
+		/* alpha bisn */
+		ul.alpha li.bisn img {
+			top: 0px;
+			left: 0px;
+		}
+/* sel */
+ul.actSizes li.sel div.stockState {
+	position: absolute;
+	width: 25px;
+	height: 25px;
+	background-image: none;
+	cursor: default !important;
+}
+ul.actSizes li.sel img {
+	top: 0px;
+	left: -25px;
+	cursor: default !important;
+}
+ul.actSizes li.sel div.stockStateBkgd {
+	position: absolute;
+	width: 21px;
+	height: 21px;
+	background-color: #ffffff;
+	border: solid 2px #81b719;
+}
+
+/* mixed sel */
+ul.mixed li.sel div.stockState {
+	position: absolute;
+	width: 41px;
+	height: 25px;
+}
+ul.mixed li.sel img {
+	top: 0px;
+	left: -41px;
+}
+ul.mixed li.sel div.stockStateBkgd {
+	position: absolute;
+	width: 37px;
+	height: 21px;
+	background-color: #ffffff;
+	border: solid 2px #81b719;
+}
+
+/* extended sel */
+ul.extended li.sel div.stockState {
+	position: absolute;
+	width: 89px;
+	height: 25px;
+	background-image: none;
+}
+ul.extended li.sel img {
+	top: 0px;
+	left: -89px;
+}
+ul.extended li.sel div.stockStateBkgd {
+	position: absolute;
+	width: 85px;
+	height: 21px;
+	background-color: #ffffff;
+	border: solid 2px #81b719;
+}
+
+/* alpha sel */
+ul.alpha li.sel img {
+	top: 0px;
+	left: -89px;
+}
+		
+/* END SIZE CHIPS */
+
+.unavailable {
+    float: right;
+    margin-bottom: 20px;
+}
+
+.qualityRow {
+	margin-bottom: 20px;
+	*margin-bottom: 0px!important;
+}
+
+.qualityCol1 {
+	float: left;
+	overflow: hidden;
+	width: 428px;
+	margin-top: 10px;
+}
+
+.qualityCol1 .refineLine1, .qualityCol1 .refineLine2 {
+	width: 80px;
+	float:left;
+	margin-bottom: 0px;
+}
+
+.qualityCol1 .refineLine3 {
+	width: auto;
+	float:left;
+	margin-bottom: 20px;
+	*margin-bottom: 0px;
+}
+
+.qualityCol1 .refineLine1 {
+		margin-top: 6px;
+}
+
+.qualityCol1 .qtySelect {
+	margin-right: 20px;
+}
+
+.qualityCol2 {
+	float: left;
+	overflow: hidden;
+	width: 65px;
+	margin-top: 5px;
+}
+
+.cartBtnCol1 {
+	float: left;
+	overflow: hidden;
+	width: 262px;
+}
+
+.cartBtnCol1 a {
+	clear: both;
+	*text-align: right;
+	*width: 100%;
+	margin-top: 14px;
+	color: #098abb;
+	text-decoration:none;
+	
+}
+
+.cartBtnCol1 a:hover {
+	text-decoration:underline;
+}
+
+.cartBtnCol1 .linksCont {
+	margin-top:10px;
+}
+
+.cartBtnCol1 .linksCont a.pdpLink {
+	margin-top: 3px;
+	float: left;
+	clear: none;
+}
+
+.cartBtnCol1 .linksCont .detailLink {
+	margin-top: 3px;
+	float: left;
+	clear: none;
+}
+
+#wishListLink {
+	float: left;
+	margin: 3px 6px 0px 0px;
+}
+
+#updateCart {
+	float: left;
+}
+
+.productDetailsCont {
+	float:left;
+	margin: 0 0 0 20px;
+	width: 380px;
+}
+
+.productDetailsCont .softBlackText {
+	font-size:23px;
+}
+
+.productDetailsCont .semanticName {
+	font-size:16px;
+}
+
+.productDetailsCont .itemNum {
+	float:right;
+	font-size: 11px;
+	width: auto;
+}
+
+.pdpImageGalleryCont {
+	float:right;
+	margin: 0 20px 0 0;
+}
+
+.productDetails {
+	float: left;
+	padding: 20px;
+	width: 438px;
+}
+	
+	
+.riskFree {
+	float:right;
+}
+		
+.relatedProducts {
+    float: right;
+    width: 480px;
+}
+		
+.relatedProducts .productThumb {
+	float:left;
+	width:100%;
+	position: relative;
+	text-align:center;
+	height: 120px;
+	}
+	
+.imageDiv {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	}
+	
+.relatedProducts .title {
+	float:left;
+	padding: 20px;
+	width: 120px;
+	}
+	
+.relatedProducts .price {
+	position:absolute;
+	left:20px;
+	bottom:20px;
+	width: 120px;
+	}
+	
+.relatedProducts .oneCol6G {
+	height: 230px;
+	position:relative;
+	}
+	
+.reviewTop {
+	float:left;
+	width: 950px;
+	border-right: solid 5px #ffffff;
+	border-left: solid 5px #ffffff;
+	display:block;
+	overflow:hidden;
+	background-color: #EEEEEE;
+	text-transform:lowercase;
+	}
+	
+.reviewTop .left {
+	float:left;
+	width: 274px;
+	padding: 20px 0 0 30px;
+	}
+	
+.reviewTop .center {
+	float:left;
+	width: 230px;
+	padding: 20px;
+	text-align: center;
+}
+
+.reviewTop .center .avgRating {
+	font-size: 15px;
+}
+
+.reviewTop .center .numOfReviews {
+	font-size: 15px;
+}
+
+.reviewTop .center .numOfReviews {
+	font-size: 15px;
+}
+
+.reviewTop .center .totalReviewCount {
+	margin-top: 10px;
+	font-size: 24px;
+}
+
+.reviewTop .center .reviewText {
+	font-size: 13px;
+}
+
+.reviewTop	.overallRatingText {
+	font-size: 15px;
+	text-align: center;
+	margin: 20px 0 0 0;
+	float: right;
+	width: 370px;
+}
+.reviewTop .right {
+	float: right;
+	width: 320px;
+	padding: 20px 0px 14px 0px;
+}
+	
+.reviewTop .title {
+	float:left;
+	margin-bottom: 14px;
+	font-size: 20px;
+}
+	
+.reviewTop h2 {
+	float:left;
+	margin-bottom: 14px;
+	width: auto;
+	cursor:pointer;
+}
+
+.reviewTopDivider {
+	float:left;
+	width:1px;
+	height: 143px;
+	margin-top:20px;
+	background: #cccccc;
+}
+.sizeTypeDiv {
+	margin: 5px 0 0 0;
+	float:left;
+	width:16px;
+	height:16px;
+	padding:0;
+	background:url(../images/radio.png);
+}
+
+.sizeTypeRadio {
+	opacity:0;
+	width:16px;
+	height:16px;
+	margin:0;
+	padding:0;
+	float:left;
+}
+
+.sizeTypeSpan {
+	float:left;
+	margin: 5px 10px 0 5px;
+	text-transform: capitalize;
+	font-size: 13px;
+}
+
+.sizes {
+	left: -3px;
+	position: relative;
+	margin-top: 5px;
+}
+
+.startWriteReview {
+	padding: 0px;
+	border: 0px;
+	background:none;
+	float:left;
+}
+
+#statsreviewcontainer .startWriteReview {
+	width: 100%;
+}
+
+#statsreviewcontainer .select65 div.selector {
+    font-size: 12px;
+    width: 140px;
+}
+
+#statsreviewcontainer .select65 div.selector, #statsreviewcontainer .select65 div.selector span {
+    background-image: url("../images/sortSelectBg140.png");
+    background-repeat: no-repeat;
+}
+
+#statsreviewcontainer #sortReviewsTop label {
+    display: none;
+}
+
+#statsreviewcontainer .select65 div.selector select {
+    min-width: 130px;
+}
+
+#statsreviewcontainer .select65 div.selector select {
+    width: 140px;
+}
+
+#sortReviewsTop label {
+	display:none;
+}
+
+.reviewTop .sortByText {
+	padding: 5px 16.5px 5px 0px;
+	}
+	
+.reviewTop .rating {
+	margin: 5px 0 15px 75px;
+}
+
+
+.checkoutForm .review {
+    float: left;
+    margin-left: -20px;
+    padding: 0;
+    width: 640px;
+}
+	
+.review .left {
+	float:left;
+	width:300px;
+	margin-right:20px;
+	}
+	
+.review .center {
+	float:left;
+	width: 470px;
+	}	
+	
+
+.review .right {
+	float:right;
+	width: 300px;
+	padding: 0px
+	}
+
+.review .n1 {
+	margin-bottom: 14px;
+	float:left;
+	width: 100%;
+	}
+	
+.review .author {
+	float:left;
+	margin-bottom: 14px;
+	width: 100%;
+	}	
+
+.review .rating {
+	float:left;
+	width:100%;
+	}
+	
+.review .helpful {
+	float:left;
+	margin-top: 15px;
+	}
+	
+.reviewLine {
+	float:left;
+	border-bottom: solid 1px #cccccc;
+	display:block;
+	width: 920px;
+	margin: 0px 20px;
+	*margin: 0px 20px 0px 20px;
+	*height: 1px;
+	}
+
+.moreReviews {
+	float:left;
+	width:920px;
+	padding: 20px;
+	}
+
+
+.pdpRefine a  {
+	color: #098abb;
+	text-decoration:none;
+}
+
+.pdpRefine a:hover {
+	text-decoration:underline;
+}
+
+.productDetailsCopy ul {
+    line-height: 1.5;
+    margin-bottom: 5px;
+    padding-left: 15px;
+    position: relative;
+    list-style-type:disc!important;
+    margin-top: 6px;
+}
+
+object, .enlargeBtnsContainer a {
+	outline:none;
+}
+
+/* temporary certona replacement CSS */
+.upsCard {
+    display: block;
+    float: left;
+    padding: 0 0 0 10px;
+    position: relative;
+    width: 146px;
+}
+
+.upsCardProd {
+	height: 125px;
+	width: 146px;
+	overflow: hidden;
+}
+.upsCardProdImg a {
+	display: block;
+	width: 146px;
+	height: 125px;
+	overflow: hidden;
+	text-align: center;	
+}
+
+.upsCardInfo {
+	overflow: hidden;
+	width: 146px;
+	height: 75px;
+	position: relative;
+}
+
+.upsCardInfo p {
+	position: absolute;
+	bottom: 0;
+	left: 6px;
+}
+
+.upsCardInfo h2 {
+	width: auto;
+	padding-left: 6px;
+	padding-right: 6px;
+}
+
+h6.alsoLike {
+	padding-bottom: 16px;
+}
+/* temporary certona replacement CSS end */
+
+
+#product2_rr, #product_rr, #search_rr {
+		clear: both;
+		overflow: hidden;
+}
+
+.refineCategory .videoHide {
+	width: 468px;
+}
+
+.reviewfeedbackContainer {
+	margin: 25px;
+}
+
+/* START: Fit Guide PDP - Colorbox */
+
+#fitGuidePDP {
+	margin: 60px 20px 120px 20px;
+	font-size: 12px;
+	line-height: 15px;
+	letter-spacing: -0.01em;
+	font-family: Arial, Helvetica, sans-serif;
+	line-spacing: normal;
+	color: #707070;
+}
+
+#fitGuidePDP .sectionBreak {
+	float: left;
+	width: 100%;
+	height: 1px;
+	background-color: #bcbfc1;
+	margin: 20px 0px 20px 0px;
+}
+
+#fitGuidePDP .normText {
+	font-weight: normal;
+}
+
+#fitGuidePDP .midBeam {
+	border-right: solid 5px #fff;
+}
+
+#fitGuidePDP .borderBottom {
+	border-bottom: solid 2px #727272;
+	height: 30px;
+}
+
+#fitGuidePDP h1 {
+	font-family: MuseoRounded300, Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	line-height: 17px;
+}
+
+#fitGuidePDP h2 {	
+	font-family: MuseoRounded700, Arial, Helvetica, sans-serif;
+}
+
+#fitGuidePDP h3 {	
+	font-family: MuseoRounded700, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #727272;
+}
+
+#fitGuidePDP table {
+	table-layout: fixed;
+	width: 580px;
+	margin: 20px 0px 20px 0px;
+	border-bottom: solid 1px #bdc2c2;
+	border-collapse: collapse;
+}
+
+#fitGuidePDP table tr:first-child {
+	text-align: left;
+	background-color: none;
+}
+
+#fitGuidePDP table tr {
+	text-align: center;
+	height: 26px;
+	margin: 0px 0px 0px 0px;
+}
+
+#fitGuidePDP table tr td {
+	border-left: solid 1px #bdc2c2;
+}
+
+#fitGuidePDP table tr td:first-child {
+	border-left: none;
+}
+
+#fitGuidePDP table tr:nth-child(even) {
+	background: #e5e7e7;
+	border-bottom: solid 1px #bdc2c2;
+}
+
+#fitGuidePDP table tr:nth-child(odd) {
+	background: #fff;
+	border-bottom: solid 1px #bdc2c2;
+}
+
+#fgSizeChartL {
+	float: left;
+	width: 600px;
+	margin-right: 40px;
+}
+
+#fgSizeChartR {
+	float: left;
+	width: 280px;
+}
+
+#fitContain {
+	float: left;
+	width: 920px;
+}
+
+#fitContain h2:first-child {
+	margin-bottom: 18px;
+	padding-right: 70px;
+}
+
+#fitContain table {
+	width: 920px;
+	border-bottom: none;
+	border-collapse: separate;
+}
+
+#fitContain table tr {
+	vertical-align: top;
+	text-align: left;
+	margin: 0;
+	padding: 0;
+}
+
+#fitContain table tr:nth-child(even) {
+	background: none;
+}
+
+#fitContain table tr:nth-child(odd) {
+	background: none;
+}
+
+#fitContain table tr td {
+	border-left: none;
+	vertical-align: top;
+}
+
+#fitContain table tr td p {
+	text-align: left;
+	margin: 10px 20px 20px 0px;
+}
+
+#fitContain table tr td ul {
+	padding-left: 20px;
+	padding-right: 50px;
+}
+
+#fitContain table tr td ul li {
+	list-style-type: none;
+	margin-bottom: 4px;
+}
+
+#fitContain table tr td ul li:before {
+	content: " - ";
+}
+
+.fitContainEndCap {
+	height: 40px;
+}
+
+.fcSectionStart {
+	border-bottom: none!important;
+}
+
+tr.fcSectionStart td {
+	border-left: none!important;
+}
+
+.fcHeaderStart {
+	border-bottom: solid 2px #bdc2c2!important;
+}
+
+/* END: Fit Guide PDP - Colorbox */
+
+.oos {
+	cursor: default !important;
+}
+
+.pdp .mailTo {
+	padding-left: 0px;
+}
+
+/* START: PDP Product Description Carousel (in lower product detail section) */
+
+.semanticName a {
+	color: #222222;
+	text-decoration: none;
+}
+
+.productDescriptionCarousel {
+	position: relative;
+	overflow: hidden;
+	width: 430px;
+	height: 258px;
+	float: left;
+}
+.productDescriptionCarousel ul {
+	width: 20000em;
+	position: relative;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.productDescriptionCarousel li {
+	float: left;
+	width: 430px;
+	height: 258px;
+}
+.productDescriptionCarousel li img {
+	border: none;
+}
+.productDescriptionCarousel-control-prev, .productDescriptionCarousel-control-next {
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	color: #7ab800;
+	text-decoration: none;
+	font-family: monospace;
+	font-size: 50px;
+	margin-top: 100px;
+	cursor:pointer;
+}
+.productDescriptionCarousel-control-prev {
+	float:left;
+}
+.productDescriptionCarousel-control-next {
+	float:right;
+}
+.productDescriptionCarousel-wrapper {
+	position: relative;
+	padding: 0 15px 0px 15px;
+	border: solid 1px #eeeeee;
+	padding: 10px;
+	height: 258px;
+	float: left;
+}
+
+/* pdp end */

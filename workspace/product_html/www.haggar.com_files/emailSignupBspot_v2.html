@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html webdriver="true" xmlns="http://www.w3.org/1999/xhtml"><head>
+		<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+		<title>Email Signup v2</title>
+		<style type="text/css" media="screen">
+			body {
+				font-size: 1em;
+				font-family: Helvetica, Arial, sans-serif;
+				line-height: normal;
+				background: transparent;
+				color: #181818;
+			}
+			.email-signup-container h2 {
+				font-size: 20px;
+				margin: 0 0 5px;
+			}
+			.email-signup-container p {
+				font-size: 12px;
+				font-weight: bold;
+				margin: 0;
+			}
+			.email-signup-form {
+				margin: 20px 0;
+				padding: 0;
+			}
+			.email-signup-form fieldset {
+				border: none;
+				padding: 0;
+				margin: 0;
+			}
+			.email-signup-text {
+				width: 204px;
+				border: 2px solid #181818;
+				font-family: Helvetica, Arial, sans-serif;
+				font-size: 14px;
+				padding: 0 10px;
+				height: 30px;
+				line-height: 30px;
+				display: block;
+				float: left;
+				margin: 0 -2px 0 0;
+			}
+			.email-signup-submit {
+				height: 34px;
+				width: 84px;
+				background: #181818;
+				font-size: 14px;
+				font-weight: bold;
+				color: white;
+				text-transform: uppercase;
+				font-family: Helvetica, Arial, sans-serif;
+				border: 2px solid #181818;
+				display: block;
+				float: left;
+				margin: 0;
+				padding: 0;
+				cursor: pointer;
+			}
+			.email-signup-submit:hover {
+				background: #333;
+				border-color: #333;
+			}
+		</style>
+		<!--[if lte IE 8]>
+			<style type="text/css" media="screen">
+				.email-signup-text {
+					padding-top: 0px;
+					height: 30px;
+				}
+			</style>
+		<![endif]-->
+		<script type="text/javascript" src="emailSignupBspot_v2_data/ess_emailSignup.js"></script>
+	</head>
+	<body class="oneColFix email">
+		<div id="container" class="email-signup-container">
+			<h2>Email Sign Up</h2>
+			<p>Sign up &amp; save 20% off your next purchase.</p>
+			<form class="email-signup-form" name="frm" action="../emailHandler/index.jsp" method="post" onsubmit="return valForm(this)">
+				<fieldset>
+					<input name="header" value=" HAGGAR_InstantWelcome" type="hidden">
+					<input name="contest" value="HAGGAR_InstantWelcome" type="hidden"> 
+					<input name="targetPage" value="/include/emailSignupBspotThanks_v2.jsp?src=HAGGAR_InstantWelcome" type="hidden">
+					<input name="datetime" value="1232014" id="datetime" type="hidden">
+					<input name="emailPref" value="Y" type="hidden">
+					<input id="email" class="email-signup-text" name="emailAddress" onclick="emailInputClicked(this)" onblur="emailInputBlur(this)" value="Enter Your Email" type="text">
+					<input id="eSubmit" class="email-signup-submit" name="submit" value="Submit" type="submit">
+				</fieldset>
+			</form>
+		</div>
+        
+		<script type="text/javascript">
+			var now = new Date();
+			document.getElementById("datetime").value = (now.getMonth() + 1).toString() + now.getDate().toString() + now.getFullYear().toString();
+
+			function emailInputClicked(el){
+				if(el.value == 'Enter Your Email'){
+					el.value = '';
+				}
+			}
+			function emailInputBlur(el){
+				if(el.value == ''){
+					el.value = 'Enter Your Email';
+				}
+			}
+		</script>
+	
+</body></html>

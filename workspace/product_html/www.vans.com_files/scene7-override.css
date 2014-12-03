@@ -1,0 +1,97 @@
+
+/*!************************************************************************
+*
+* ADOBE SYSTEMS INCORPORATED
+*  Copyright 2011 Adobe Systems Incorporated
+*  All Rights Reserved.
+*
+* NOTICE:  Adobe permits you to use, modify, and distribute this file in 
+* accordance with the terms of the Adobe license agreement accompanying it. 
+* If you have received this file from a source other than Adobe, then your 
+* use, modification, or distribution of it requires the prior written 
+* permission of Adobe.
+**************************************************************************/
+
+/* Scene7 HTML5 Viewer SDK */
+/* Need a class with filename without '.' for CSS loading notificaiton scheme to work */
+.html5_flyoutcss{
+	display: none;
+}
+
+.s7flyoutzoomview {
+	width: 428px;
+	height: 450px;
+	border: 0px solid;
+}
+
+.s7flyoutzoomview .s7highlight {
+	opacity: 0.5;
+	filter: alpha(opacity = 50);
+	background-color: #FFF;
+}
+
+#product_views_container img, .suggestion_item img, .size_btn{
+	border: none;
+}
+
+/* absolute positioning is required for top and left to be applied */
+.s7flyoutzoomview .s7flyoutzoom {
+	width: 500px;
+	height: 500px;
+	border : 0px solid;
+	left: 430px;
+}
+
+.s7swatches {
+	height: 160px;
+    width: 360px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	background-color: transparent;
+}
+
+/**
+ * Swatches component  
+ */
+.s7swatches .s7thumb { 
+	width: 54px;
+	height: 72px;
+	background-color : #ffffff;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	border-radius: 0px;
+	border-bottom: solid  1px #a9a9a9;
+	border-right: solid  1px #a9a9a9;
+	background-color : #ffffff;
+
+}
+.s7swatches .s7thumb[state="default"] { }
+.s7swatches .s7thumb[state="selected"] {
+	border-radius: 0px;
+	border: solid  1px #0097C1;
+	/*box-shadow: inset 0px 0px 0px 1px #3388CC;*/
+}
+
+
+
+.s7flyoutzoom{
+	z-index: 999;
+}
+.s7swatches{
+	top: 20px;
+	left: 5px;
+	z-index: 100;
+}
+#flyout{
+	position:relative;
+	height: 460px;
+	z-index:2;
+}
+
+#pdp #product_views_container #product_imgs{
+	clear: both;
+}
+#product_views_container #product_imgs .product-imgFull img {
+  width: auto;
+  height: auto;
+}

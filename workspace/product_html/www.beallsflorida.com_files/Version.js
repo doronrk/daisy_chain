@@ -1,0 +1,1 @@
+if(!s7sdk.Version){s7sdk.Version={version:"2.1.3",build:"168742"}};

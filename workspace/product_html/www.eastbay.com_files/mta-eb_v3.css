@@ -1,0 +1,242 @@
+#mta-wrapper {
+    text-transform:uppercase;
+    font:normal 15px/15px 'UnitedItalicRgBk', Arial, Helvetica, sans-serif;
+    background:#fff;
+    height:515px;
+    position:absolute;
+    top:179px;
+    z-index:999;
+}
+#mta-wrapper.left-direct {
+    left:291px;
+}
+#mta-wrapper.right-direct {
+    right:288px;
+}
+#mta-typeahead, #mta-flyout {
+    height:100%;
+}
+#mta-typeahead ul li {
+    color:#999999;
+    padding:8px 5px;
+}
+#mta-typeahead ul li strong {
+    color:#000;
+}
+#mta-typeahead ul li.mta-selected {
+    background:#F6D046;
+}
+#mta-flyout.ltr {
+    border-left:4px solid #F6D046;
+}
+#mta-flyout.rtl {
+    border-right:4px solid #F6D046;
+}
+#mta-flyout a {
+    text-decoration:none;
+}
+#mta-flyout .short-desc {
+    text-transform:capitalize;
+    font-size:12px;
+}
+#mta-flyout .free-shipping {
+    color:#0251a0;
+    font-size:12px;
+    text-transform:capitalize;
+	padding-top: 3px;
+}
+#mta-flyout .free-shipping img{
+    width: 40%;
+}
+#flyout-prod-cartridge {
+    margin:20px;
+    overflow:hidden;
+}
+
+/** DEFAULT VERTICAL STYLES **/
+.prod-vertical {
+    margin:10px 0;
+}
+.prod-vertical, .prod-vertical a {
+    display:block;
+    overflow:hidden;
+}
+.prod-vertical a:hover div.prod-image {
+    border:#000 solid 1px;
+}
+.prod-vertical .prod-info, .prod-image {
+    float:left;
+}
+.prod-vertical .prod-image {
+    width:83px;
+    height:83px;
+    border:#666666 solid 1px;
+}
+.prod-vertical .prod-image img {
+    border:none;
+}
+.prod-vertical .prod-info-wrapper {
+    width:236px;
+    height:auto;
+    padding:0 5px;
+    float:left;
+}
+.prod-vertical .prod-info {
+    width:100%;
+    padding:0 5px;
+}
+.prod-vertical .prod-info del {
+    width:auto;
+    display:inline-block;
+}
+.prod-vertical span.red {
+    width:auto;
+	display:inline-block;
+}/**/
+/** END VERTICAL STYLES **/
+
+/** DEFAULT HORIZONTAL STYLES **/
+.prod-horizontal {
+    margin:0 0 20px 0;
+    float:left;
+    width:165px;
+    min-height:200px;
+    text-align:center;
+}
+.prod-horizontal, .prod-horizontal a {
+    display:block;
+    overflow:hidden;
+}
+.prod-horizontal .prod-image {
+    width:100%;
+}
+.prod-horizontal .prod-image img {
+    border:none;
+}
+.prod-horizontal .prod-info-wrapper {
+    width:100%;
+    height:auto;
+    overflow:hidden;
+}
+.prod-horizontal .prod-info {
+    width:100%;
+    padding:0 5px;
+    display:block;
+}
+.prod-horizontal .prod-info del {
+    display:inline-block;
+    margin:0 2px;
+}
+.prod-horizontal span.red {
+    display:inline-block;
+    margin:0 2px;
+}
+.prod-horizontal .ft_stars {
+    display:inline-block;
+    width:80%;
+    margin:auto;
+}
+.prod-horizontal .ft_badge {
+    display:inline-block;
+    width:20%;
+}
+/** END HORIZONTAL STYLES **/
+
+.record-listing-full-vertical, .record-listing-full-horizontal {
+    bottom:15px;
+    right:20px;
+}
+.shop-all-link {
+    color:#666666;
+    text-align:center;
+    position:absolute;
+    padding-right:13px;
+    background:#fff;
+}
+.shop-all-link:after {
+    position:absolute;
+    right:0;
+    top:0;
+    content:"";
+    border-left:8px solid #000;
+    border-top:8px solid transparent;
+    border-bottom:8px solid transparent;
+}
+.shop-all-link:hover {
+    color:#000;
+}
+.mta-result-title {
+    border-bottom:#F6D046 solid 1px;
+    display:block;
+    color:#666666;
+    height:auto;
+    padding:0 0 5px 0;
+    margin-bottom:20px;
+}
+.emphasis {
+    color:#000;
+}
+
+/** DEFAULT CATEOGRY CARTRIDGES **/
+.prod_slot {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    vertical-align: top;
+    width: 158px;
+    padding: 0;
+    margin: 0 10px 10px 0;
+}
+.prod_slot.end_slot {
+    margin-right:0;
+}
+.prod_slot a {
+    display: block;
+    border: 1px solid #999;
+    text-decoration: none;
+}
+.prod_slot a:hover {
+    border-color: #000;
+}
+.prod_slot a:hover .prod_slot_title {
+    background-color: #ffcc33;
+    background-image: url('/ns/common/field-tested/images/arrow_right_black.png');
+    color: #000;
+}
+.prod_slot a img {
+    display: block;
+    padding: 0;
+    margin: 0 auto;
+}
+.prod_slot a .prod_slot_title {
+    padding: 5px 0;
+    background-color: #000;
+    background-image: url('/ns/common/field-tested/images/arrow_right_yellow.png');
+    background-position: 95% center;
+    background-repeat: no-repeat;
+    color: #ffcc33;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* FT RATING STYLES */
+#mta-wrapper .ft_badge {
+    display: inline-block;
+    width: 26px;
+    height: 32px;
+    margin-right: 4px;
+    background: url(//www.eastbay.com/ns/common/field-tested/images/shield.png) center no-repeat;
+}
+#mta-wrapper .rating_stars .blank_rating {
+    width: 20px;
+    height: 32px;
+    background: url(//www.eastbay.com/ns/common/field-tested/images/empty.png) center no-repeat;
+}
+#mta-wrapper .rating_stars .blank_rating .selected {
+    width: 20px;
+    height: 32px;
+    background: url(//www.eastbay.com/ns/common/field-tested/images/full.png) left center no-repeat;
+}
+
+

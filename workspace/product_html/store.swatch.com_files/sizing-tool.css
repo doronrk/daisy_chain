@@ -1,0 +1,59 @@
+/**
+ * Magento Enterprise Edition
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Magento Enterprise Edition License
+ * that is bundled with this package in the file LICENSE_EE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://www.magentocommerce.com/license/enterprise-edition
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     enterprise_swatch
+ * @copyright   Copyright (c) 2009 Irubin Consulting Inc. DBA Varien (http://www.varien.com)
+ * @license     http://www.magentocommerce.com/license/enterprise-edition
+ */
+ 
+ /* custom lightbox */
+.lightbox { display:none; position:fixed; top:0; right:0; bottom:0; left:0 /*position:fixed;rgba(0,0,0,.5);  z-index:9997;*/}
+.lightbox_overlay {position:fixed; top:0; right:0; bottom:0; left:0; z-index:9997; background: #000;  background-color:#000;
+  filter:alpha(opacity=75);
+  -moz-opacity: 0.75;
+  opacity: 0.75}
+.lightbox-inner { position:absolute; left:50%; top:50%; z-index: 9998}
+.lightbox-inner .btn-close { position:absolute; top:5px; right:5px; cursor:pointer; }
+
+/* tissot actual size */
+#box-actual-size { border:2px solid #000; background:white; }
+#box-actual-size a { color:#fff; }
+#box-actual-size .actual-size-img { margin-top:47px; margin-left:60px; }
+ 
+ /* ruler */
+.ruler { position:absolute; top:20px; left:20px; z-index:11; }
+.ruler .unit { position:absolute; top:0; left:0; }
+.ruler-horiz-box { position:absolute; top:0; left:18px; overflow:hidden; height:40px; }
+.ruler-horiz { width:1000px; }
+.ruler-horiz > div { float:left; width:0; margin-right:0.17in; border-left:1px solid #000; }
+.ruler-horiz .r_1 { height:6px; }
+.ruler-horiz .r_2 { height:9px; }
+.ruler-horiz .r_4 { height:12px; }
+.ruler-horiz .r_8 { height:15px; }
+.ruler-horiz .r_16 { height:18px; }
+.ruler-horiz .number { position:relative; top:13px; }
+.ruler-vert { position:absolute; top:18px; left:0; overflow:hidden; width: 20px }
+.ruler-vert > div { height:0; margin-bottom:0.17in; border-top:1px solid #000; }
+.ruler-vert .r_1 { width:6px; }
+.ruler-vert .r_2 { width:9px; }
+.ruler-vert .r_4 { width:12px; }
+.ruler-vert .r_8 { width:15px; }
+.ruler-vert .r_16 { width:18px; }
+.ruler-vert .number { position:relative; left:12px; }

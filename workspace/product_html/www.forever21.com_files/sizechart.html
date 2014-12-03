@@ -1,0 +1,2626 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html webdriver="true"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Sizechart</title>
+    <link rel="stylesheet" type="text/css" href="sizechart_data/forever21.css">
+    <link rel="stylesheet" type="text/css" href="sizechart_data/submodal.css">
+    <script type="text/javascript" src="sizechart_data/common.js"></script>
+    <script type="text/javascript" src="sizechart_data/jquery-1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('ul.tabs').each(function () {
+                //monitor active tabs and their content
+                var $active, $content, $links = $(this).find('a');
+                //if location.hash matches a link make it active
+                //if none found default to inital active tab
+                $active = $($links.filter('[href="' + location.hash + '"]')[0] || $links[0]).css({ 'background-color': '#a3a5a8', 'font-weight': 'bold' });
+                $active.addClass('active');
+                $content = $($active.attr('href'));
+                //hide remaining content
+                $links.not($active).each(function () {
+                    $($(this).attr('href')).hide();
+                });
+                //bind click event handler
+                $(this).on('click', 'a', function (e) {
+                    //make prev inactive
+                    $active.removeClass('active').css({ 'background-color': '#c6c8cb', 'font-weight': 'normal' });
+                    $content.hide();
+                    //update vars with new link and content
+                    $active = $(this).css({ 'background-color': '#a3a5a8', 'font-weight': 'bold' });
+                    $content = $($(this).attr('href'));
+                    //make tab active
+                    $active.addClass('active');
+                    $content.show();
+                    //prevent a default
+                    e.preventDefault();
+                }); //end click
+            }); //end tabs
+        }); //end ready
+    </script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+        $('html, body').animate({
+            scrollTop: ($('#wrapper').offset().top - 10)
+        }, 500);
+
+    });
+    </script>
+    <style type="text/css">
+        body
+        {
+            font-family: 'Arial' , helvetica, sans-serif;
+        }
+        ul
+        {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        a
+        {
+            text-decoration: none;
+            color: #000;
+        }
+        #wrapper
+        {
+            margin: 0 auto;
+            /*width: 930px;*/
+            padding-top:10px;
+        }
+        .tabs a
+        {
+            float: left;
+            display: block;
+            background-color: #c6c8cb;
+            font-size: 10px;
+            color: #fff;
+            padding: 3px 3px;
+            margin-right: 10px;
+            border-radius: 3px;
+        }
+        .sub a
+        {
+            background: none !important;
+            font-size: 11px;
+            text-decoration: underline;
+            color: #696969;
+        }
+        :root .sub a { font-size: 10px \0/IE9; } 
+        .sub
+        {
+            clear: left;
+            padding-top: 10px;
+        }
+        .describeType
+        {
+            font-size: 11px;
+            color: #848484;
+            width: 350px;
+            padding-bottom: 5px;
+            padding-top: 0;
+            margin-top: 0;
+        }
+        .describeTypeAcc
+        {
+            font-size: 11px;
+            color: #848484;
+            width: 275px;
+            padding-bottom: 5px;
+            padding-top: 0;
+            margin-top: 0;
+            margin-left: 20px;
+            float:left;
+        }
+        .describeTypeSwim
+        {
+            font-size: 12px;
+            color: #848484;
+            width: 150px;
+            padding-bottom: 48px;
+            margin-top: 0;
+            padding-top: 0;
+        }
+        .sizingHead
+        {
+            font-family: Helvetica, sans-serif;
+            font-size: 13px;
+            font-style: normal;
+            color: #696969;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .fitGuideHead
+        {
+            font-family: Helvetica, sans-serif;
+            font-size: 15px;
+            font-style: normal;
+            color: #696969;
+            margin-bottom: 0;
+            margin-top: 0;
+            padding-top: 0;
+            padding-bottom: 5px;
+        }
+        h4
+        {
+            font-family: Helvetica, sans-serif;
+            font-size: 12px;
+            font-style: normal;
+            color: #696969;
+        }
+        table
+        {
+            border-collapse: separate;
+            border-color: gray;
+        }
+        #tab1
+        {
+            clear: left;
+        }
+        #tab2
+        {
+            clear: left;
+        }
+        #tab3
+        {
+            clear: left;
+        }
+        #tab4
+        {
+            clear: left;
+        }
+        #tab5
+        {
+            clear: left;
+        }
+        #subtab1
+        {
+            clear: left;
+        }
+        #subtab2
+        {
+            clear: left;
+        }
+        #subtab3
+        {
+            clear: left;
+        }
+        #subtab4
+        {
+            clear: left;
+        }
+        /*END MY CODE*/
+        
+        
+        .tableborders_botright
+        {
+            border-right-width: 1pt;
+            border-bottom-width: 1pt;
+            border-right-style: solid;
+            border-bottom-style: solid;
+            border-right-color: #dbdcdd;
+            border-bottom-color: #dbdcdd;
+        }
+        
+        .tableborders_bot
+        {
+            border-bottom-width: 1pt;
+            border-bottom-style: solid;
+            border-bottom-color: #dbdcdd;
+        }
+        
+        .tableborders_right
+        {
+            border-right-width: 1pt;
+            border-right-style: solid;
+            border-right-color: #dbdcdd;
+        }
+        
+        .question
+        {
+            /*header of 2nd demo*/
+            cursor: hand;
+            cursor: pointer;
+        }
+        
+        .answer
+        {
+            /*header of 2nd demo*/
+        }
+        
+        .openlanguage
+        {
+            /*class added to contents of 2nd demo when they are open*/
+        }
+        
+        .closedlanguage
+        {
+            /*class added to contents of 2nd demo when they are closed*/
+        }
+        
+        .h
+        {
+            font-family: Helvetica;
+        }
+        
+        TD, TH
+        {
+            font-family: Helvetica, sans-serif;
+            font-size: 11px;
+            font-style: normal;
+            color: #696969;
+            display: table-cell;
+            vertical-align: inherit;
+            text-align: -webkit-center;
+        }
+        
+        tr
+        {
+            display: table-row;
+            vertical-align: inherit;
+            border-color: inherit;
+        }
+        
+        tr[Attributes Style]
+        {
+            background-color: rgb(226, 226, 226);
+        }
+    </style>
+</head>
+<body leftmargin="0" topmargin="0" bgcolor="#ffffff" marginheight="0" marginwidth="0">
+    <div id="wrapper" style="margin-left:10px;">
+        <ul class="tabs">
+            <li><a href="#tab1">FOREVER 21</a></li>
+            <li><a href="#tab2">FOREVER 21+</a></li>
+            <li><a class="active" style="background-color: rgb(163, 165, 168); font-weight: bold;" href="#tab3">LOVE 21</a></li>
+            <li><a href="#tab4">SHOES</a></li>
+            <li><a href="#tab5">ACCESSORIES</a></li>
+        </ul>
+        <div id="tabContent">
+            <div style="display: none;" id="tab1">
+                <ul class="tabs sub">
+                    <li><a class="active" style="background-color: rgb(163, 165, 168); font-weight: bold;" href="#subtab1">TOPS &amp; DRESSES</a></li>
+                    <li><a href="#subtab2">BOTTOMS &amp; SKIRTS</a></li>
+                    <li><a href="#subtab3">BRA &amp; CORSET</a></li>
+                    <li><a href="#subtab4">SWIMWEAR</a></li>
+                </ul>
+                <br>
+                <div id="subtab1">
+                    <h3 class="sizingHead">
+                        Tops, Tees, Blouses, Hoodies, Outerwear, &amp; Dresses</h3>
+                    <table style="border-width: 1pt;
+                        border-style: solid; border-color: #dbdcdd;" border="0" cellpadding="0" cellspacing="0" width="400">
+                        <tbody><tr>
+                            <td>
+                                <table border="0" cellpadding="5" cellspacing="0" width="100%">
+                                    <tbody><tr>
+                                        <td rowspan="2" class="tableborders_botright" align="center">US/Canada</td>
+                                        <td class="tableborders_botright" align="center">XS</td>
+                                        <td colspan="2" class="tableborders_botright" align="center">S</td>
+                                        <td colspan="2" class="tableborders_botright" align="center">M</td>
+                                        <td class="tableborders_bot" align="center">L</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tableborders_botright" align="center">2</td>
+                                        <td class="tableborders_botright" align="center">4</td>
+                                        <td class="tableborders_botright" align="center">6</td>
+                                        <td class="tableborders_botright" align="center">8</td>
+                                        <td class="tableborders_botright" align="center">10</td>
+                                        <td class="tableborders_bot" align="center">12</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tableborders_botright" align="center">UK</td>
+                                        <td class="tableborders_botright" align="center">6</td>
+                                        <td class="tableborders_botright" align="center">8</td>
+                                        <td class="tableborders_botright" align="center">10</td>
+                                        <td class="tableborders_botright" align="center">12</td>
+                                        <td class="tableborders_botright" align="center">14</td>
+                                        <td class="tableborders_bot" align="center">16</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tableborders_botright" align="center">EU</td>
+                                        <td class="tableborders_botright" align="center">32</td>
+                                        <td class="tableborders_botright" align="center">34</td>
+                                        <td class="tableborders_botright" align="center">36</td>
+                                        <td class="tableborders_botright" align="center">38</td>
+                                        <td class="tableborders_botright" align="center">40</td>
+                                        <td class="tableborders_bot" align="center">42</td>
+                                    </tr>
+	                                <tr bgcolor="#F0F0F0">
+                                        <td class="tableborders_botright" align="center">Bust (in)</td>
+                                        <td class="tableborders_botright" align="center">32.5</td>
+                                        <td class="tableborders_botright" align="center">33.5</td>
+                                        <td class="tableborders_botright" align="center">34.5</td>
+                                        <td class="tableborders_botright" align="center">35.5</td>
+                                        <td class="tableborders_botright" align="center">36.5</td>
+                                        <td class="tableborders_bot" align="center">38</td>
+                                    </tr>
+                                    <tr bgcolor="#E2E2E2">
+                                        <td class="tableborders_right" align="center">Bust (cm)</td>
+                                        <td class="tableborders_right" align="center">82.5</td>
+                                        <td class="tableborders_right" align="center">85</td>
+                                        <td class="tableborders_right" align="center">87.5</td>
+                                        <td class="tableborders_right" align="center">90</td>
+                                        <td class="tableborders_right" align="center">92.5</td>
+                                        <td align="center">96.5</td>
+                                    </tr>
+                                </tbody></table>
+                            </td>
+                        </tr>
+                    </tbody></table>
+                        <h3 class="sizingHead">
+                            How To Measure Your Bust</h3>
+                        <p class="describeType">
+                            With your arms relaxed at your sides, measure around the fullest part of your chest.</p>
+                </div>
+                <div style="display: none;" id="subtab2">
+                    <h3 class="sizingHead">
+                        Bottoms, Pants, Jeans, Shorts &amp; Skirts</h3>
+                    <table style="border-width: 1pt;
+                        border-style: solid; border-color: #dbdcdd;" border="0" cellpadding="0" cellspacing="0" width="375">
+                        <tbody><tr>
+                            <td>
+                                <table border="0" cellpadding="5" cellspacing="0" width="100%">
+	                              <tbody><tr bgcolor="#C0C0C0">
+		                            <td class="tableborders_bot" width="3"></td>
+		                            <td class="tableborders_bot" width="100"></td>
+		                            <td class="tableborders_bot" colspan="4" align="center" width="480"><b>Sizes</b></td>
+	                              </tr>
+	                              <tr bgcolor="#FFFFFF">
+		                            <td class="tableborders_bot" align="left"></td>
+		                            <td class="tableborders_botright" align="left"></td>
+		                            <td class="tableborders_botright" align="left"><b>XS</b></td>
+		                            <td class="tableborders_botright" align="left"><b>S</b></td>
+                                    <td class="tableborders_botright" align="left"><b>M</b></td>
+                                    <td class="tableborders_bot" align="left"><b>L</b></td>
+	                              </tr>
+	                              <tr bgcolor="#F0F0F0">
+		                            <td class="tableborders_bot" align="left"></td>
+		                            <td class="tableborders_botright" align="left">US/Canada</td>
+		                            <td class="tableborders_botright" align="left">2</td>
+		                            <td class="tableborders_botright" align="left">4/6</td>
+                                    <td class="tableborders_botright" align="left">8/10</td>
+                                    <td class="tableborders_bot" align="left">12</td>
+	                              </tr>
+	                              <tr bgcolor="#F0F0F0">
+		                            <td class="tableborders_bot" align="left"></td>
+		                            <td class="tableborders_botright" align="left">Waist (in)</td>
+		                            <td class="tableborders_botright" align="left">24 - 25</td>
+		                            <td class="tableborders_botright" align="left">26 - 27</td>
+                                    <td class="tableborders_botright" align="left">28 - 29</td>
+                                    <td class="tableborders_bot" align="left">30 - 31</td>
+	                              </tr>
+	                              <tr bgcolor="#F0F0F0">
+		                            <td class="tableborders_bot" align="left"></td>
+		                            <td class="tableborders_botright" align="left">Hips (in)</td>
+		                            <td class="tableborders_botright" align="left">33 - 34</td>
+		                            <td class="tableborders_botright" align="left">35 - 36</td>
+                                    <td class="tableborders_botright" align="left">37 - 38</td>
+                                    <td class="tableborders_bot" align="left">39 - 40</td>
+	                              </tr>
+	                              <tr bgcolor="#F0F0F0">
+		                            <td class="tableborders_bot" align="left"></td>
+		                            <td class="tableborders_botright" align="left">Inseam (in)</td>
+		                            <td class="tableborders_botright" align="left">32</td>
+		                            <td class="tableborders_botright" align="left">32</td>
+                                    <td class="tableborders_botright" align="left">32</td>
+                                    <td class="tableborders_bot" align="left">32</td>
+	                              </tr>
+	                              <tr bgcolor="#E6E6E7">
+		                            <td class="tableborders_bot" align="left"></td>
+		                            <td class="tableborders_botright" align="left">UK</td>
+		                            <td class="tableborders_botright" align="left">6</td>
+		                            <td class="tableborders_botright" align="left">8/10</td>
+                                    <td class="tableborders_botright" align="left">12/14</td>
+                                    <td class="tableborders_bot" align="left">16</td>
+	                              </tr>
+	                              <tr bgcolor="#E6E6E7">
+		                            <td class="tableborders_bot" align="left"></td>
+		                            <td class="tableborders_botright" align="left">Europe</td>
+		                            <td class="tableborders_botright" align="left">32</td>
+		                            <td class="tableborders_botright" align="left">34/36</td>
+                                    <td class="tableborders_botright" align="left">38/40</td>
+                                    <td class="tableborders_bot" align="left">42</td>
+	                              </tr>
+	                              <tr bgcolor="#E6E6E7">
+		                            <td class="tableborders_bot" align="left"></td>
+		                            <td class="tableborders_botright" align="left">Waist (cm)</td>
+		                            <td class="tableborders_botright" align="left">60 - 65</td>
+		                            <td class="tableborders_botright" align="left">65 - 70</td>
+                                    <td class="tableborders_botright" align="left">70 - 75</td>
+                                    <td class="tableborders_bot" align="left">75 - 80</td>
+	                              </tr>
+	                              <tr bgcolor="#E6E6E7">
+		                            <td class="tableborders_bot" align="left"></td>
+		                            <td class="tableborders_botright" align="left">Hips (cm)</td>
+		                            <td class="tableborders_botright" align="left">83 - 88</td>
+		                            <td class="tableborders_botright" align="left">88 - 93</td>
+                                    <td class="tableborders_botright" align="left">93 - 98</td>
+                                    <td class="tableborders_bot" align="left">98 - 103</td>
+	                              </tr>
+	                              <tr bgcolor="#E6E6E7">
+		                            <td align="left"></td>
+		                            <td class="tableborders_right" align="left">Inseam (cm)</td>
+		                            <td class="tableborders_right" align="left">82</td>
+		                            <td class="tableborders_right" align="left">82</td>
+                                    <td class="tableborders_right" align="left">82</td>
+                                    <td align="left">82</td>
+	                              </tr>
+	                            </tbody></table>
+                            </td>
+                        </tr>
+                    </tbody></table>
+                    <br>
+                    <table style="border-width: 1pt;
+                        border-style: solid; border-color: #dbdcdd;" border="0" cellpadding="0" cellspacing="0" width="375">
+                        <tbody><tr>
+                            <td>
+                                <table border="0" cellpadding="5" cellspacing="0" width="100%">
+                                    <tbody><tr bgcolor="#FFFFFF">
+                                        <td class="tableborders_botright" align="center">
+                                            US
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            24
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            25
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            26
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            27
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            28
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            29
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            30
+                                        </td>
+                                        <td class="tableborders_bot" align="center">
+                                            31
+                                        </td>
+                                    </tr>
+                                    <tr bgcolor="#FFFFFF">
+                                        <td class="tableborders_botright" align="center">
+                                            EU
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            32
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            34
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            36
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            38
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            40
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            42
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            44
+                                        </td>
+                                        <td class="tableborders_bot" align="center">
+                                            46
+                                        </td>
+                                    </tr>
+                                    <tr bgcolor="#FFFFFF">
+                                        <td class="tableborders_right" align="center">
+                                            UK
+                                        </td>
+                                        <td class="tableborders_right" align="center">
+                                            24
+                                        </td>
+                                        <td class="tableborders_right" align="center">
+                                            25
+                                        </td>
+                                        <td class="tableborders_right" align="center">
+                                            26
+                                        </td>
+                                        <td class="tableborders_right" align="center">
+                                            27
+                                        </td>
+                                        <td class="tableborders_right" align="center">
+                                            28
+                                        </td>
+                                        <td class="tableborders_right" align="center">
+                                            29
+                                        </td>
+                                        <td class="tableborders_right" align="center">
+                                            30
+                                        </td>
+                                        <td align="center">
+                                            31
+                                        </td>
+                                    </tr>
+                                </tbody></table>
+                            </td>
+                        </tr>
+                    </tbody></table>
+                    <h3 class="sizingHead">
+                        How To Measure Your Waist</h3>
+                    <p class="describeType">
+                        Measure around the narrowest part of your natural waist, generally around the belly
+                        button. To ensure a comfortable fit, do not measure tape too lightly.</p>
+                    <h3 class="sizingHead">
+                        How To Measure Your Hips</h3>
+                    <p class="describeType">
+                        With your feet approximately 6" apart, measure around the fullest part of your hips.
+                        This area usually corresponds to the top of your legs.</p>
+                    <h3 class="sizingHead">
+                        How To Measure Your Inseam</h3>
+                    <p class="describeType">
+                        Measure from the top of your inner thigh down to the bottom of your ankle.</p>
+                </div>
+                <div style="display: none;" id="subtab3">
+                    <h3 class="sizingHead">
+                        How To Determine Your Bra Size</h3>
+                    <p class="describeType">
+                        Band Size<br>
+                        -Measure around your ribcage, directly under the bust.<br>
+                        -Add 5 to this measurement to obtain your band size (i.e.: If your ribcage measurement
+                        is 29" + (5) = 34 band size.)<br>
+                        <br>
+                        Cup Size<br>
+                        -Measure completely around the bust at the fullest point.<br>
+                        -Each inch of difference between this measurement and your band size is your cupsize.
+                        (i.e.: If your band size is 34" and your bust measurement is 35", you wear an 'A'
+                        cup.)<br>
+                        <br>
+                        If the difference is:<br>
+                        1 inch = A cup &nbsp;&nbsp; 2 inches = B cup &nbsp;&nbsp; 3 inches = C cup &nbsp;
+                        4 inches = D cup</p>
+                    <img src="sizechart_data/bras.jpg">
+                    <h3 class="sizingHead">
+                        Bra Sizing</h3>
+                    <table style="border-width: 1pt;
+                        border-style: solid; border-color: #dbdcdd;" border="0" cellpadding="0" cellspacing="0" width="375">
+                        <tbody><tr>
+                            <td>
+                                <table border="0" cellpadding="5" cellspacing="0" width="100%">
+                                    <tbody><tr bgcolor="#F0F0F0">
+                                        <td class="tableborders_bot" colspan="8" align="center">
+                                            <b>US &amp; CANADA</b>
+                                        </td>
+                                    </tr>
+                                    <tr bgcolor="#FFFFFF">
+                                        <td class="tableborders_botright" align="center">
+                                            32A
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            32B
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            32C
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            34A
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            34B
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            34C
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            36B
+                                        </td>
+                                        <td class="tableborders_bot" align="center">
+                                            36C
+                                        </td>
+                                    </tr>
+                                    <tr bgcolor="#F0F0F0">
+                                        <td class="tableborders_bot" colspan="8" align="center">
+                                            <b>UNDERBUST (in)</b>
+                                        </td>
+                                    </tr>
+                                    <tr bgcolor="#FFFFFF">
+                                        <td class="tableborders_botright" align="center">
+                                            26 - 28
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            26 - 28
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            26 - 28
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            28 - 30
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            28 - 30
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            28 - 30
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            30 - 32
+                                        </td>
+                                        <td class="tableborders_bot" align="center">
+                                            30 - 32
+                                        </td>
+                                    </tr>
+                                    <tr bgcolor="#F0F0F0">
+                                        <td class="tableborders_bot" colspan="8" align="center">
+                                            <b>TOP BUST (in)</b>
+                                        </td>
+                                    </tr>
+                                    <tr bgcolor="#FFFFFF">
+                                        <td class="tableborders_botright" align="center">
+                                            32 - 34
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            33 - 35
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            34 - 36
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            34 - 36
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            35 - 37
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            36 - 38
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            37 - 39
+                                        </td>
+                                        <td class="tableborders_bot" align="center">
+                                            38 - 40
+                                        </td>
+                                    </tr>
+                                    <tr bgcolor="#F0F0F0">
+                                        <td class="tableborders_bot" colspan="8" align="center">
+                                            <b>UK &amp; IRELAND</b>
+                                        </td>
+                                    </tr>
+                                    <tr bgcolor="#FFFFFF">
+                                        <td class="tableborders_botright" align="center">
+                                            32A
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            32B
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            32C
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            34A
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            34B
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            34C
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            36B
+                                        </td>
+                                        <td class="tableborders_bot" align="center">
+                                            36C
+                                        </td>
+                                    </tr>
+                                    <tr bgcolor="#F0F0F0">
+                                        <td class="tableborders_bot" colspan="8" align="center">
+                                            <b>EUROPE</b>
+                                        </td>
+                                    </tr>
+                                    <tr bgcolor="#FFFFFF">
+                                        <td class="tableborders_botright" align="center">
+                                            70A
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            70B
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            70C
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            75A
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            75B
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            75C
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            80B
+                                        </td>
+                                        <td class="tableborders_bot" align="center">
+                                            80C
+                                        </td>
+                                    </tr>
+                                    <tr bgcolor="#F0F0F0">
+                                        <td class="tableborders_bot" colspan="8" align="center">
+                                            <b>SPAIN &amp; FRANCE</b>
+                                        </td>
+                                    </tr>
+                                    <tr bgcolor="#FFFFFF">
+                                        <td class="tableborders_botright" align="center">
+                                            85A
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            85B
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            85C
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            90A
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            90B
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            90C
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            95B
+                                        </td>
+                                        <td class="tableborders_bot" align="center">
+                                            95C
+                                        </td>
+                                    </tr>
+                                    <tr bgcolor="#F0F0F0">
+                                        <td class="tableborders_bot" colspan="8" align="center">
+                                            <b>UNDERBUST (cm)</b>
+                                        </td>
+                                    </tr>
+                                    <tr bgcolor="#FFFFFF">
+                                        <td class="tableborders_botright" align="center">
+                                            66 - 70
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            66 - 70
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            66 - 70
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            71 - 75
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            71 - 75
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            71 - 75
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            76 - 80
+                                        </td>
+                                        <td class="tableborders_bot" align="center">
+                                            76 - 80
+                                        </td>
+                                    </tr>
+                                    <tr bgcolor="#F0F0F0">
+                                        <td class="tableborders_bot" colspan="8" align="center">
+                                            <b>TOP BUST (cm)</b>
+                                        </td>
+                                    </tr>
+                                    <tr bgcolor="#FFFFFF">
+                                        <td class="tableborders_right" align="center">
+                                            83 - 85
+                                        </td>
+                                        <td class="tableborders_right" align="center">
+                                            85 - 87
+                                        </td>
+                                        <td class="tableborders_right" align="center">
+                                            87 - 89
+                                        </td>
+                                        <td class="tableborders_right" align="center">
+                                            87 - 89
+                                        </td>
+                                        <td class="tableborders_right" align="center">
+                                            90 - 92
+                                        </td>
+                                        <td class="tableborders_right" align="center">
+                                            93 - 95
+                                        </td>
+                                        <td class="tableborders_right" align="center">
+                                            95 - 97
+                                        </td>
+                                        <td align="center">
+                                            98 - 100
+                                        </td>
+                                    </tr>
+                                </tbody></table>
+                            </td>
+                        </tr>
+                    </tbody></table>
+                    <br>
+                    <p class="describeType">
+                        Bralettes without underwire follow Tops Sizing, not Bra Sizing.</p>
+                    <h3 class="sizingHead">
+                        Corset Sizing</h3>
+                    <table style="border-width: 1pt;
+                        border-style: solid; border-color: #dbdcdd;" border="0" cellpadding="0" cellspacing="0" width="375">
+                        <tbody><tr>
+                            <td>
+                                <table border="0" cellpadding="5" cellspacing="0" width="100%">
+	                              <tbody><tr bgcolor="#FFFFFF">
+                                    <td class="tableborders_bot"></td>
+		                            <td class="tableborders_botright" align="left">US/CANADA</td>
+		                            <td class="tableborders_botright" align="left"><b>S</b></td>
+                                    <td class="tableborders_botright" align="left"><b>M</b></td>
+                                    <td class="tableborders_bot" align="left"><b>L</b></td>
+	                              </tr>
+	                              <tr bgcolor="#FFFFFF">
+                                    <td class="tableborders_bot"></td>
+		                            <td class="tableborders_botright" align="left">UNDERBUST (in)</td>
+		                            <td class="tableborders_botright" align="left">26 - 28</td>
+                                    <td class="tableborders_botright" align="left">28 - 30</td>
+                                    <td class="tableborders_bot" align="left">30 - 32</td>
+	                              </tr>
+	                              <tr bgcolor="#FFFFFF">
+                                    <td class="tableborders_bot"></td>
+		                            <td class="tableborders_botright" align="left">TOP BUST (in)</td>
+		                            <td class="tableborders_botright" align="left">33 - 36</td>
+                                    <td class="tableborders_botright" align="left">35 - 38</td>
+                                    <td class="tableborders_bot" align="left">37 - 40</td>
+	                              </tr>
+	                              <tr bgcolor="#FFFFFF">
+                                    <td class="tableborders_bot"></td>
+		                            <td class="tableborders_botright" align="left">WAIST (in)</td>
+		                            <td class="tableborders_botright" align="left">26 - 27</td>
+                                    <td class="tableborders_botright" align="left">28 - 29</td>
+                                    <td class="tableborders_bot" align="left">30 - 31</td>
+	                              </tr>
+	                              <tr bgcolor="#F0F0F0">
+                                    <td class="tableborders_bot"></td>
+		                            <td class="tableborders_botright" align="left">UK</td>
+		                            <td class="tableborders_botright" align="left">32</td>
+                                    <td class="tableborders_botright" align="left">34</td>
+                                    <td class="tableborders_bot" align="left">36</td>
+	                              </tr>
+	                              <tr bgcolor="#F0F0F0">
+                                    <td class="tableborders_bot"></td>
+		                            <td class="tableborders_botright" align="left">EUROPE</td>
+		                            <td class="tableborders_botright" align="left">70</td>
+                                    <td class="tableborders_botright" align="left">75</td>
+                                    <td class="tableborders_bot" align="left">80</td>
+	                              </tr>
+	                              <tr bgcolor="#F0F0F0">
+                                    <td class="tableborders_bot"></td>
+		                            <td class="tableborders_botright" align="left">SPAIN/FRANCE</td>
+		                            <td class="tableborders_botright" align="left">85</td>
+                                    <td class="tableborders_botright" align="left">90</td>
+                                    <td class="tableborders_bot" align="left">95</td>
+	                              </tr>
+	                              <tr bgcolor="#F0F0F0">
+                                    <td class="tableborders_bot"></td>
+		                            <td class="tableborders_botright" align="left">UNDERBUST (cm)</td>
+		                            <td class="tableborders_botright" align="left">65 - 71</td>
+                                    <td class="tableborders_botright" align="left">70 - 76</td>
+                                    <td class="tableborders_bot" align="left">75 - 81</td>
+	                              </tr>
+	                              <tr bgcolor="#F0F0F0">
+                                    <td class="tableborders_bot"></td>
+		                            <td class="tableborders_botright" align="left">TOP BUST (cm)</td>
+		                            <td class="tableborders_botright" align="left">85 - 89</td>
+                                    <td class="tableborders_botright" align="left">90 - 95</td>
+                                    <td class="tableborders_bot" align="left">95 - 100</td>
+	                              </tr>
+	                              <tr bgcolor="#F0F0F0">
+                                    <td></td>
+		                            <td class="tableborders_right" align="left">WAIST (cm)</td>
+		                            <td class="tableborders_right" align="left">65 - 70</td>
+                                    <td class="tableborders_right" align="left">70 - 75</td>
+                                    <td align="left">75 - 80</td>
+	                              </tr>
+	                            </tbody></table>
+                            </td>
+                        </tr>
+                    </tbody></table>
+                    <br>
+                    <h3 class="sizingHead">
+                        PJs &amp; Sleepwear</h3>
+                    <table style="border-width: 1pt;
+                        border-style: solid; border-color: #dbdcdd;" border="0" cellpadding="0" cellspacing="0" width="375">
+                        <tbody><tr>
+                            <td>
+                                <table border="0" cellpadding="5" cellspacing="0" width="100%">
+                                    <tbody><tr bgcolor="#FFFFFF">
+                                        <td class="tableborders_botright" align="center">
+                                            US
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            XS
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            S
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            M
+                                        </td>
+                                        <td class="tableborders_bot" align="center">
+                                            L
+                                        </td>
+                                    </tr>
+                                    <tr bgcolor="#FFFFFF">
+                                        <td class="tableborders_botright" align="center">
+                                            EU
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            32 - 34
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            36 - 38
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            40 - 42
+                                        </td>
+                                        <td class="tableborders_bot" align="center">
+                                            44 - 46
+                                        </td>
+                                    </tr>
+                                    <tr bgcolor="#FFFFFF">
+                                        <td class="tableborders_right" align="center">
+                                            UK
+                                        </td>
+                                        <td class="tableborders_right" align="center">
+                                            4
+                                        </td>
+                                        <td class="tableborders_right" align="center">
+                                            6 - 8
+                                        </td>
+                                        <td class="tableborders_right" align="center">
+                                            10 - 12
+                                        </td>
+                                        <td align="center">
+                                            14 - 16
+                                        </td>
+                                    </tr>
+                                </tbody></table>
+                            </td>
+                        </tr>
+                    </tbody></table>
+                    <br>
+                </div>
+                <div style="display: none;" id="subtab4">
+                    <h3 class="sizingHead">
+                        Bikinis and One-Piece Swimsuits</h3>
+                    <table style="border-width: 1pt;
+                        border-style: solid; border-color: #dbdcdd;" border="0" cellpadding="0" cellspacing="0" width="370">
+                        <tbody><tr>
+                            <td>
+                                <table border="0" cellpadding="5" cellspacing="0" width="100%">
+                                    <tbody><tr bgcolor="#C0C0C0">
+                                        <td class="tableborders_bot" width="3">&nbsp;
+                                        </td>
+                                        <td class="tableborders_bot" width="100">&nbsp;
+                                        </td>
+                                        <td class="tableborders_bot" colspan="4" align="center" width="480">
+                                            <b>Sizes</b>
+                                        </td>
+                                    </tr>
+                                    <tr bgcolor="#FFFFFF">
+                                        <td class="tableborders_bot" align="left">&nbsp;
+                                        </td>
+                                        <td class="tableborders_botright" align="left">&nbsp;
+                                        </td>
+                                        <td class="tableborders_botright" align="left">
+                                            <b>XS</b>
+                                        </td>
+                                        <td class="tableborders_botright" align="left">
+                                            <b>S</b>
+                                        </td>
+                                        <td class="tableborders_botright" align="left">
+                                            <b>M</b>
+                                        </td>
+                                        <td class="tableborders_bot" align="left">
+                                            <b>L</b>
+                                        </td>
+                                    </tr>
+                                    <tr bgcolor="#F0F0F0">
+                                        <td class="tableborders_bot" align="left">&nbsp;
+                                        </td>
+                                        <td class="tableborders_botright" align="left">
+                                            US/Canada
+                                        </td>
+                                        <td class="tableborders_botright" align="left">
+                                            0
+                                        </td>
+                                        <td class="tableborders_botright" align="left">
+                                            2/4
+                                        </td>
+                                        <td class="tableborders_botright" align="left">
+                                            6/8
+                                        </td>
+                                        <td class="tableborders_bot" align="left">
+                                            10/12
+                                        </td>
+                                    </tr>
+                                    <tr bgcolor="#F0F0F0">
+                                        <td class="tableborders_bot" align="left">&nbsp;
+                                        </td>
+                                        <td class="tableborders_botright" align="left">
+                                            Bust (in)
+                                        </td>
+                                        <td class="tableborders_botright" align="left">
+                                            32 - 33
+                                        </td>
+                                        <td class="tableborders_botright" align="left">
+                                            34 - 35
+                                        </td>
+                                        <td class="tableborders_botright" align="left">
+                                            36 - 37
+                                        </td>
+                                        <td class="tableborders_bot" align="left">
+                                            38 - 39
+                                        </td>
+                                    </tr>
+                                    <tr bgcolor="#F0F0F0">
+                                        <td class="tableborders_bot" align="left">&nbsp;
+                                        </td>
+                                        <td class="tableborders_botright" align="left">
+                                            Waist (in)
+                                        </td>
+                                        <td class="tableborders_botright" align="left">
+                                            24 - 25
+                                        </td>
+                                        <td class="tableborders_botright" align="left">
+                                            26 - 27
+                                        </td>
+                                        <td class="tableborders_botright" align="left">
+                                            28 - 29
+                                        </td>
+                                        <td class="tableborders_bot" align="left">
+                                            30 - 31
+                                        </td>
+                                    </tr>
+                                    <tr bgcolor="#E6E6E7">
+                                        <td class="tableborders_bot" align="left">&nbsp;
+                                        </td>
+                                        <td class="tableborders_botright" align="left">
+                                            UK
+                                        </td>
+                                        <td class="tableborders_botright" align="left">
+                                            4
+                                        </td>
+                                        <td class="tableborders_botright" align="left">
+                                            6/8
+                                        </td>
+                                        <td class="tableborders_botright" align="left">
+                                            10/12
+                                        </td>
+                                        <td class="tableborders_bot" align="left">
+                                            14/16
+                                        </td>
+                                    </tr>
+                                    <tr bgcolor="#E6E6E7">
+                                        <td class="tableborders_bot" align="left">&nbsp;
+                                        </td>
+                                        <td class="tableborders_botright" align="left">
+                                            Europe
+                                        </td>
+                                        <td class="tableborders_botright" align="left">
+                                            32/34
+                                        </td>
+                                        <td class="tableborders_botright" align="left">
+                                            36/38
+                                        </td>
+                                        <td class="tableborders_botright" align="left">
+                                            40/42
+                                        </td>
+                                        <td class="tableborders_bot" align="left">
+                                            44/46
+                                        </td>
+                                    </tr>
+                                    <tr bgcolor="#E6E6E7">
+                                        <td class="tableborders_bot" align="left">&nbsp;
+                                        </td>
+                                        <td class="tableborders_botright" align="left">
+                                            Bust (cm)
+                                        </td>
+                                        <td class="tableborders_botright" align="left">
+                                            80 - 85
+                                        </td>
+                                        <td class="tableborders_botright" align="left">
+                                            85 - 90
+                                        </td>
+                                        <td class="tableborders_botright" align="left">
+                                            90 - 95
+                                        </td>
+                                        <td class="tableborders_bot" align="left">
+                                            95 - 100
+                                        </td>
+                                    </tr>
+                                    <tr bgcolor="#E6E6E7">
+                                        <td align="left">&nbsp;
+                                        </td>
+                                        <td class="tableborders_right" align="left">
+                                            Waist (cm)
+                                        </td>
+                                        <td class="tableborders_right" align="left">
+                                            60 - 65
+                                        </td>
+                                        <td class="tableborders_right" align="left">
+                                            65 - 70
+                                        </td>
+                                        <td class="tableborders_right" align="left">
+                                            70 - 75
+                                        </td>
+                                        <td align="left">
+                                            75 - 80
+                                        </td>
+                                    </tr>
+                                </tbody></table>
+                            </td>
+                        </tr>
+                    </tbody></table>
+                    <h3 class="sizingHead">
+                        How To Measure Your Bust</h3>
+                    <p class="describeType">
+                        With your arms relaxed at your sides, measure around the fullest part of your chest.</p>
+                    <h3 class="sizingHead">
+                        How To Measure Your Waist</h3>
+                    <p class="describeType">
+                        Measure around the narrowest part of your natural waist, generally around the belly
+                        button. To ensure a comfortable fit, do not measure tape too tightly.</p>
+
+                </div>
+            </div>
+            <div style="display: none;" id="tab2">
+                <br>
+                <h3 class="sizingHead">
+                    Forever 21+ Plus Sizes</h3>
+                <table style="border-width: 1pt;
+                    border-style: solid; border-color: #dbdcdd;" border="0" cellpadding="0" cellspacing="0" width="375">
+                    <tbody><tr>
+                        <td>
+                            <table border="0" cellpadding="5" cellspacing="0" width="100%">
+	                          <tbody><tr bgcolor="#C0C0C0">
+		                        <td class="tableborders_bot"></td>
+                                <td class="tableborders_bot"></td>
+		                        <td class="tableborders_bot" colspan="4" align="center"><b>Sizes</b></td>
+	                          </tr>
+	                          <tr bgcolor="#FFFFFF">
+                                <td class="tableborders_bot"></td>
+		                        <td class="tableborders_botright" align="left">US/Canada</td>
+		                        <td class="tableborders_botright" align="left"><b>XL</b></td>
+		                        <td class="tableborders_botright" align="left"><b>1X</b></td>
+		                        <td class="tableborders_botright" align="left"><b>2X</b></td>
+                                <td class="tableborders_bot" align="left"><b>3X</b></td>
+	                          </tr>
+	                          <tr bgcolor="#FFFFFF">
+                                <td class="tableborders_bot"></td>
+		                        <td class="tableborders_botright" align="left">Bust (in)</td>
+		                        <td class="tableborders_botright" align="left">42</td>
+		                        <td class="tableborders_botright" align="left">44</td>
+		                        <td class="tableborders_botright" align="left">46</td>
+                                <td class="tableborders_bot" align="left">49</td>
+	                          </tr>
+	                          <tr bgcolor="#FFFFFF">
+                                <td class="tableborders_bot"></td>
+		                        <td class="tableborders_botright" align="left">Waist (in)</td>
+		                        <td class="tableborders_botright" align="left">35</td>
+		                        <td class="tableborders_botright" align="left">37</td>
+		                        <td class="tableborders_botright" align="left">39</td>
+                                <td class="tableborders_bot" align="left">42</td>
+	                          </tr>
+	                          <tr bgcolor="#FFFFFF">
+                                <td class="tableborders_bot"></td>
+		                        <td class="tableborders_botright" align="left">Hip (in)</td>
+		                        <td class="tableborders_botright" align="left">45</td>
+		                        <td class="tableborders_botright" align="left">47</td>
+		                        <td class="tableborders_botright" align="left">49</td>
+                                <td class="tableborders_bot" align="left">52</td>
+	                          </tr>
+	                          <tr bgcolor="#FFFFFF">
+                                <td class="tableborders_bot"></td>
+		                        <td class="tableborders_botright" align="left">Shoulder (in)</td>
+		                        <td class="tableborders_botright" align="left">16</td>
+		                        <td class="tableborders_botright" align="left">16.5</td>
+		                        <td class="tableborders_botright" align="left">17</td>
+                                <td class="tableborders_bot" align="left">17.5</td>
+	                          </tr>
+	                          <tr bgcolor="#FFFFFF">
+                                <td class="tableborders_bot"></td>
+		                        <td class="tableborders_botright" align="left">Sleeve (in)</td>
+		                        <td class="tableborders_botright" align="left">25.5</td>
+		                        <td class="tableborders_botright" align="left">26</td>
+		                        <td class="tableborders_botright" align="left">26.5</td>
+                                <td class="tableborders_bot" align="left">27</td>
+	                          </tr>
+	                          <tr bgcolor="#FFFFFF">
+                                <td class="tableborders_bot"></td>
+		                        <td class="tableborders_botright" align="left">Inseam (in)</td>
+		                        <td class="tableborders_botright" align="left">32</td>
+		                        <td class="tableborders_botright" align="left">32</td>
+		                        <td class="tableborders_botright" align="left">32</td>
+                                <td class="tableborders_bot" align="left">32</td>
+	                          </tr>
+	                          <tr bgcolor="#FFFFFF">
+                                <td class="tableborders_bot"></td>
+		                        <td class="tableborders_botright" align="left">Thigh (in)</td>
+		                        <td class="tableborders_botright" align="left">26</td>
+		                        <td class="tableborders_botright" align="left">27</td>
+		                        <td class="tableborders_botright" align="left">28</td>
+                                <td class="tableborders_bot" align="left">29.5</td>
+	                          </tr>
+	                          <tr bgcolor="#E6E6E7">
+                                <td class="tableborders_bot"></td>
+		                        <td class="tableborders_botright" align="left">UK/Europe</td>
+		                        <td class="tableborders_botright" align="left">18/XL</td>
+		                        <td class="tableborders_botright" align="left">20/1X</td>
+                                <td class="tableborders_botright" align="left">22/2X</td>
+                                <td class="tableborders_bot" align="left">24/3X</td>
+	                          </tr>
+	                          <tr bgcolor="#E6E6E7">
+                                <td class="tableborders_bot"></td>
+		                        <td class="tableborders_botright" align="left">Bust (cm)</td>
+		                        <td class="tableborders_botright" align="left">107</td>
+		                        <td class="tableborders_botright" align="left">112</td>
+                                <td class="tableborders_botright" align="left">117</td>
+                                <td class="tableborders_bot" align="left">124</td>
+	                          </tr>
+	                          <tr bgcolor="#E6E6E7">
+                                <td class="tableborders_bot"></td>
+		                        <td class="tableborders_botright" align="left">Waist (cm)</td>
+		                        <td class="tableborders_botright" align="left">89</td>
+		                        <td class="tableborders_botright" align="left">94</td>
+                                <td class="tableborders_botright" align="left">99</td>
+                                <td class="tableborders_bot" align="left">107</td>
+	                          </tr>
+	                          <tr bgcolor="#E6E6E7">
+                                <td class="tableborders_bot"></td>
+		                        <td class="tableborders_botright" align="left">Hip (cm)</td>
+		                        <td class="tableborders_botright" align="left">114</td>
+		                        <td class="tableborders_botright" align="left">119</td>
+                                <td class="tableborders_botright" align="left">124</td>
+                                <td class="tableborders_bot" align="left">132</td>
+	                          </tr>
+	                          <tr bgcolor="#E6E6E7">
+                                <td class="tableborders_bot"></td>
+		                        <td class="tableborders_botright" align="left">Shoulder (cm)</td>
+		                        <td class="tableborders_botright" align="left">41</td>
+		                        <td class="tableborders_botright" align="left">42</td>
+                                <td class="tableborders_botright" align="left">43</td>
+                                <td class="tableborders_bot" align="left">44</td>
+	                          </tr>
+	                          <tr bgcolor="#E6E6E7">
+                                <td class="tableborders_bot"></td>
+		                        <td class="tableborders_botright" align="left">Sleeve (cm)</td>
+		                        <td class="tableborders_botright" align="left">65</td>
+		                        <td class="tableborders_botright" align="left">66</td>
+                                <td class="tableborders_botright" align="left">67</td>
+                                <td class="tableborders_bot" align="left">69</td>
+	                          </tr>
+	                          <tr bgcolor="#E6E6E7">
+                                <td class="tableborders_bot"></td>
+		                        <td class="tableborders_botright" align="left">Inseam (cm)</td>
+		                        <td class="tableborders_botright" align="left">81</td>
+		                        <td class="tableborders_botright" align="left">81</td>
+                                <td class="tableborders_botright" align="left">81</td>
+                                <td class="tableborders_bot" align="left">81</td>
+	                          </tr>
+	                          <tr bgcolor="#E6E6E7">
+                                <td></td>
+		                        <td class="tableborders_right" align="left">Thigh (cm)</td>
+		                        <td class="tableborders_right" align="left">65</td>
+		                        <td class="tableborders_right" align="left">69</td>
+                                <td class="tableborders_right" align="left">72</td>
+                                <td align="left">75</td>
+	                          </tr>
+	                        </tbody></table>
+                        </td>
+                    </tr>
+                </tbody></table>
+                <br>
+                <h3 class="sizingHead">
+                    Forever 21+ Plus Sizes Denim</h3>
+                <table style="border-width: 1pt;
+                    border-style: solid; border-color: #dbdcdd;" border="0" cellpadding="0" cellspacing="0" width="375">
+                    <tbody><tr>
+                        <td>
+                            <table border="0" cellpadding="5" cellspacing="0" width="100%">
+	                          <tbody><tr bgcolor="#C0C0C0">
+		                        <td class="tableborders_bot"></td>
+                                <td class="tableborders_bot"></td>
+		                        <td class="tableborders_bot" colspan="5" align="center"><b>Sizes</b></td>
+	                          </tr>
+	                          <tr bgcolor="#FFFFFF">
+                                <td class="tableborders_bot"></td>
+		                        <td class="tableborders_botright" align="left">US</td>
+		                        <td class="tableborders_botright" align="left">12</td>
+		                        <td class="tableborders_botright" align="left">14</td>
+		                        <td class="tableborders_botright" align="left">16</td>
+                                <td class="tableborders_botright" align="left">18</td>
+                                <td class="tableborders_bot" align="left">20</td>
+	                          </tr>
+	                          <tr bgcolor="#FFFFFF">
+                                <td class="tableborders_bot"></td>
+		                        <td class="tableborders_botright" align="left">Waist (in)</td>
+		                        <td class="tableborders_botright" align="left">35</td>
+		                        <td class="tableborders_botright" align="left">37</td>
+		                        <td class="tableborders_botright" align="left">39</td>
+                                <td class="tableborders_botright" align="left">41</td>
+                                <td class="tableborders_bot" align="left">43</td>
+	                          </tr>
+	                          <tr bgcolor="#FFFFFF">
+                                <td class="tableborders_bot"></td>
+		                        <td class="tableborders_botright" align="left">Hip (in)</td>
+		                        <td class="tableborders_botright" align="left">45</td>
+		                        <td class="tableborders_botright" align="left">47</td>
+		                        <td class="tableborders_botright" align="left">49</td>
+                                <td class="tableborders_botright" align="left">51</td>
+                                <td class="tableborders_bot" align="left">53</td>
+	                          </tr>
+	                          <tr bgcolor="#FFFFFF">
+                                <td class="tableborders_bot"></td>
+		                        <td class="tableborders_botright" align="left">Inseam (in)</td>
+		                        <td class="tableborders_botright" align="left">32</td>
+		                        <td class="tableborders_botright" align="left">32</td>
+		                        <td class="tableborders_botright" align="left">32</td>
+                                <td class="tableborders_botright" align="left">32</td>
+                                <td class="tableborders_bot" align="left">32</td>
+	                          </tr>
+	                          <tr bgcolor="#FFFFFF">
+                                <td class="tableborders_bot"></td>
+		                        <td class="tableborders_botright" align="left">Thigh (in)</td>
+		                        <td class="tableborders_botright" align="left">25.75</td>
+		                        <td class="tableborders_botright" align="left">27</td>
+		                        <td class="tableborders_botright" align="left">28.25</td>
+                                <td class="tableborders_botright" align="left">29.5</td>
+                                <td class="tableborders_bot" align="left">30.75</td>
+	                          </tr>
+	                          <tr bgcolor="#E6E6E7">
+                                <td class="tableborders_bot"></td>
+		                        <td class="tableborders_botright" align="left">UK</td>
+		                        <td class="tableborders_botright" align="left">18</td>
+		                        <td class="tableborders_botright" align="left">18 - 20</td>
+		                        <td class="tableborders_botright" align="left">20</td>
+                                <td class="tableborders_botright" align="left">22</td>
+                                <td class="tableborders_bot" align="left">24</td>
+	                          </tr>
+	                          <tr bgcolor="#E6E6E7">
+                                <td class="tableborders_bot"></td>
+		                        <td class="tableborders_botright" align="left">Europe</td>
+		                        <td class="tableborders_botright" align="left">46</td>
+		                        <td class="tableborders_botright" align="left">46 - 48</td>
+		                        <td class="tableborders_botright" align="left">48</td>
+                                <td class="tableborders_botright" align="left">50</td>
+                                <td class="tableborders_bot" align="left">50 - 52</td>
+	                          </tr>
+	                          <tr bgcolor="#E6E6E7">
+                                <td class="tableborders_bot"></td>
+		                        <td class="tableborders_botright" align="left">Waist (cm)</td>
+		                        <td class="tableborders_botright" align="left">89</td>
+		                        <td class="tableborders_botright" align="left">94</td>
+		                        <td class="tableborders_botright" align="left">99</td>
+                                <td class="tableborders_botright" align="left">104</td>
+                                <td class="tableborders_bot" align="left">109</td>
+	                          </tr>
+	                          <tr bgcolor="#E6E6E7">
+                                <td class="tableborders_bot"></td>
+		                        <td class="tableborders_botright" align="left">Hip (cm)</td>
+		                        <td class="tableborders_botright" align="left">114</td>
+		                        <td class="tableborders_botright" align="left">119</td>
+		                        <td class="tableborders_botright" align="left">124</td>
+                                <td class="tableborders_botright" align="left">130</td>
+                                <td class="tableborders_bot" align="left">135</td>
+	                          </tr>
+	                          <tr bgcolor="#E6E6E7">
+                                <td class="tableborders_bot"></td>
+		                        <td class="tableborders_botright" align="left">Inseam (cm)</td>
+		                        <td class="tableborders_botright" align="left">81</td>
+		                        <td class="tableborders_botright" align="left">81</td>
+		                        <td class="tableborders_botright" align="left">81</td>
+                                <td class="tableborders_botright" align="left">81</td>
+                                <td class="tableborders_bot" align="left">81</td>
+	                          </tr>
+	                          <tr bgcolor="#E6E6E7">
+                                <td></td>
+		                        <td class="tableborders_right" align="left">Thigh (cm)</td>
+		                        <td class="tableborders_right" align="left">65</td>
+		                        <td class="tableborders_right" align="left">69</td>
+		                        <td class="tableborders_right" align="left">72</td>
+                                <td class="tableborders_right" align="left">75</td>
+                                <td align="left">78</td>
+	                          </tr>
+	                        </tbody></table>
+                        </td>
+                    </tr>
+                </tbody></table>
+                <h3 class="sizingHead">
+                    How To Measure Your Waist</h3>
+                <p class="describeType">
+                    Measure around the narrowest part of your natural waist, generally around the belly
+                    button. Too ensure a comfortable fit, do not measure tape too lightly.</p>
+                <h3 class="sizingHead">
+                    How To Measure Your Hips</h3>
+                <p class="describeType">
+                    With your feet approximately 6" apart, measure around the fullest part of your hips.
+                    This area usually corresponds to the top of your legs.</p>
+                <h3 class="sizingHead">
+                    How To Measure Your Inseam</h3>
+                <p class="describeType">
+                    Measure from the top of your inner thigh down to the bottom of your ankle</p>
+                <br>
+                <h3 class="sizingHead">
+                    Forever 21+ Boot Sizes</h3>
+                <h3 class="sizingHead">
+                    Over the Knee High Boots</h3>
+                <table style="border-width: 1pt;
+                    border-style: solid; border-color: #dbdcdd;" border="0" cellpadding="0" cellspacing="0" width="225">
+                    <tbody><tr>
+                        <td>
+                            <table border="0" cellpadding="5" cellspacing="0" width="100%">
+                                <tbody><tr bgcolor="#FFFFFF">
+                                    <td class="tableborders_botright" align="center">
+                                        Size
+                                    </td>
+                                    <td class="tableborders_botright" align="center">
+                                        Shaft Width (in)
+                                    </td>
+                                    <td class="tableborders_bot" align="center">
+                                        Shaft Width (cm)
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#E2E2E2">
+                                    <td class="tableborders_botright" align="center">
+                                        7
+                                    </td>
+                                    <td class="tableborders_botright" align="center">
+                                        17.6
+                                    </td>
+                                    <td class="tableborders_bot" align="center">
+                                        44.7
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#E2E2E2">
+                                    <td class="tableborders_botright" align="center">
+                                        8
+                                    </td>
+                                    <td class="tableborders_botright" align="center">
+                                        18
+                                    </td>
+                                    <td class="tableborders_bot" align="center">
+                                        45.7
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#E2E2E2">
+                                    <td class="tableborders_botright" align="center">
+                                        9
+                                    </td>
+                                    <td class="tableborders_botright" align="center">
+                                        18.4
+                                    </td>
+                                    <td class="tableborders_bot" align="center">
+                                        46.7
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#E2E2E2">
+                                    <td class="tableborders_botright" align="center">
+                                        10
+                                    </td>
+                                    <td class="tableborders_botright" align="center">
+                                        18.8
+                                    </td>
+                                    <td class="tableborders_bot" align="center">
+                                        47.7
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#E2E2E2">
+                                    <td class="tableborders_botright" align="center">
+                                        11
+                                    </td>
+                                    <td class="tableborders_botright" align="center">
+                                        19.2
+                                    </td>
+                                    <td class="tableborders_bot" align="center">
+                                        48.7
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#E2E2E2">
+                                    <td class="tableborders_right" align="center">
+                                        12
+                                    </td>
+                                    <td class="tableborders_right" align="center">
+                                        19.6
+                                    </td>
+                                    <td align="center">
+                                        49.7
+                                    </td>
+                                </tr>
+                            </tbody></table>
+                        </td>
+                    </tr>
+                </tbody></table>
+                <h3 class="sizingHead">
+                    Knee Boots</h3>
+                <table style="border-width: 1pt;
+                    border-style: solid; border-color: #dbdcdd;" border="0" cellpadding="0" cellspacing="0" width="225">
+                    <tbody><tr>
+                        <td>
+                            <table border="0" cellpadding="5" cellspacing="0" width="100%">
+                                <tbody><tr bgcolor="#FFFFFF">
+                                    <td class="tableborders_botright" align="center">
+                                        Size
+                                    </td>
+                                    <td class="tableborders_botright" align="center">
+                                        Shaft Width (in)
+                                    </td>
+                                    <td class="tableborders_bot" align="center">
+                                        Shaft Width (cm)
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#E2E2E2">
+                                    <td class="tableborders_botright" align="center">
+                                        7
+                                    </td>
+                                    <td class="tableborders_botright" align="center">
+                                        16.6
+                                    </td>
+                                    <td class="tableborders_bot" align="center">
+                                        42.1
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#E2E2E2">
+                                    <td class="tableborders_botright" align="center">
+                                        8
+                                    </td>
+                                    <td class="tableborders_botright" align="center">
+                                        17
+                                    </td>
+                                    <td class="tableborders_bot" align="center">
+                                        43.1
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#E2E2E2">
+                                    <td class="tableborders_botright" align="center">
+                                        9
+                                    </td>
+                                    <td class="tableborders_botright" align="center">
+                                        17.5
+                                    </td>
+                                    <td class="tableborders_bot" align="center">
+                                        44.4
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#E2E2E2">
+                                    <td class="tableborders_botright" align="center">
+                                        10
+                                    </td>
+                                    <td class="tableborders_botright" align="center">
+                                        18
+                                    </td>
+                                    <td class="tableborders_bot" align="center">
+                                        45.7
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#E2E2E2">
+                                    <td class="tableborders_botright" align="center">
+                                        11
+                                    </td>
+                                    <td class="tableborders_botright" align="center">
+                                        18.5
+                                    </td>
+                                    <td class="tableborders_bot" align="center">
+                                        46.9
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#E2E2E2">
+                                    <td class="tableborders_right" align="center">
+                                        12
+                                    </td>
+                                    <td class="tableborders_right" align="center">
+                                        19
+                                    </td>
+                                    <td align="center">
+                                        48.2
+                                    </td>
+                                </tr>
+                            </tbody></table>
+                        </td>
+                    </tr>
+                </tbody></table>
+                <h3 class="sizingHead">
+                    Wide Calf Boots</h3>
+                <table style="border-width: 1pt;
+                    border-style: solid; border-color: #dbdcdd;" border="0" cellpadding="0" cellspacing="0" width="225">
+                    <tbody><tr>
+                        <td>
+                            <table border="0" cellpadding="5" cellspacing="0" width="100%">
+                                <tbody><tr bgcolor="#FFFFFF">
+                                    <td class="tableborders_botright" align="center">
+                                        Size
+                                    </td>
+                                    <td class="tableborders_botright" align="center">
+                                        Shaft Width (in)
+                                    </td>
+                                    <td class="tableborders_bot" align="center">
+                                        Shaft Width (cm)
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#E2E2E2">
+                                    <td class="tableborders_botright" align="center">
+                                        7
+                                    </td>
+                                    <td class="tableborders_botright" align="center">
+                                        15.3
+                                    </td>
+                                    <td class="tableborders_bot" align="center">
+                                        38.8
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#E2E2E2">
+                                    <td class="tableborders_botright" align="center">
+                                        8
+                                    </td>
+                                    <td class="tableborders_botright" align="center">
+                                        15.7
+                                    </td>
+                                    <td class="tableborders_bot" align="center">
+                                        39.8
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#E2E2E2">
+                                    <td class="tableborders_botright" align="center">
+                                        9
+                                    </td>
+                                    <td class="tableborders_botright" align="center">
+                                        16.2
+                                    </td>
+                                    <td class="tableborders_bot" align="center">
+                                        41.1
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#E2E2E2">
+                                    <td class="tableborders_botright" align="center">
+                                        10
+                                    </td>
+                                    <td class="tableborders_botright" align="center">
+                                        16.7
+                                    </td>
+                                    <td class="tableborders_bot" align="center">
+                                        42.4
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#E2E2E2">
+                                    <td class="tableborders_botright" align="center">
+                                        11
+                                    </td>
+                                    <td class="tableborders_botright" align="center">
+                                        17.1
+                                    </td>
+                                    <td class="tableborders_bot" align="center">
+                                        43.4
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#E2E2E2">
+                                    <td class="tableborders_right" align="center">
+                                        12
+                                    </td>
+                                    <td class="tableborders_right" align="center">
+                                        17.6
+                                    </td>
+                                    <td align="center">
+                                        44.7
+                                    </td>
+                                </tr>
+                            </tbody></table>
+                        </td>
+                    </tr>
+                </tbody></table>
+                <br>
+            </div>
+            <div id="tab3">
+                <br>
+                <h3 class="sizingHead">
+                    LOVE 21 Contemporary Sizes</h3>
+                <table style="border-width: 1pt;
+                    border-style: solid; border-color: #dbdcdd;" border="0" cellpadding="0" cellspacing="0" width="380">
+                    <tbody><tr>
+                        <td>
+                            <table border="0" cellpadding="5" cellspacing="0" width="100%">
+                                <tbody><tr bgcolor="#C0C0C0">
+                                    <td class="tableborders_bot">&nbsp;
+                                    </td>
+                                    <td class="tableborders_bot">&nbsp;
+                                    </td>
+                                    <td class="tableborders_bot" colspan="4" align="center">
+                                        <b>Sizes</b>
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#FFFFFF">
+                                    <td class="tableborders_bot" align="left">&nbsp;
+                                    </td>
+                                    <td class="tableborders_botright" align="left">
+                                        US/Canada
+                                    </td>
+                                    <td class="tableborders_botright" align="left">
+                                        <b>XS</b>
+                                    </td>
+                                    <td class="tableborders_botright" align="left">
+                                        <b>S</b>
+                                    </td>
+                                    <td class="tableborders_botright" align="left">
+                                        <b>M</b>
+                                    </td>
+                                    <td class="tableborders_bot" align="left">
+                                        <b>L</b>
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#FFFFFF">
+                                    <td class="tableborders_bot" align="left">&nbsp;
+                                    </td>
+                                    <td class="tableborders_botright" align="left">
+                                        Bust (in)
+                                    </td>
+                                    <td class="tableborders_botright" align="left">
+                                        33 - 34
+                                    </td>
+                                    <td class="tableborders_botright" align="left">
+                                        35 - 36
+                                    </td>
+                                    <td class="tableborders_botright" align="left">
+                                        37 - 38
+                                    </td>
+                                    <td class="tableborders_bot" align="left">
+                                        39 - 40
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#FFFFFF">
+                                    <td class="tableborders_bot" align="left">&nbsp;
+                                    </td>
+                                    <td class="tableborders_botright" align="left">
+                                        Waist (in)
+                                    </td>
+                                    <td class="tableborders_botright" align="left">
+                                        25 - 26
+                                    </td>
+                                    <td class="tableborders_botright" align="left">
+                                        27 - 28
+                                    </td>
+                                    <td class="tableborders_botright" align="left">
+                                        29 - 30
+                                    </td>
+                                    <td class="tableborders_bot" align="left">
+                                        31 - 32
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#FFFFFF">
+                                    <td class="tableborders_bot" align="left">&nbsp;
+                                    </td>
+                                    <td class="tableborders_botright" align="left">
+                                        Hip (in)
+                                    </td>
+                                    <td class="tableborders_botright" align="left">
+                                        34 - 35
+                                    </td>
+                                    <td class="tableborders_botright" align="left">
+                                        36 - 37
+                                    </td>
+                                    <td class="tableborders_botright" align="left">
+                                        38 - 39
+                                    </td>
+                                    <td class="tableborders_bot" align="left">
+                                        40 - 41
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#E6E6E7">
+                                    <td class="tableborders_bot" align="left">&nbsp;
+                                    </td>
+                                    <td class="tableborders_botright" align="left">
+                                        UK
+                                    </td>
+                                    <td class="tableborders_botright" align="left">
+                                        4/6
+                                    </td>
+                                    <td class="tableborders_botright" align="left">
+                                        8/10
+                                    </td>
+                                    <td class="tableborders_botright" align="left">
+                                        12/14
+                                    </td>
+                                    <td class="tableborders_bot" align="left">
+                                        16/18
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#E6E6E7">
+                                    <td class="tableborders_bot" align="left">&nbsp;
+                                    </td>
+                                    <td class="tableborders_botright" align="left">
+                                        Europe
+                                    </td>
+                                    <td class="tableborders_botright" align="left">
+                                        32/34
+                                    </td>
+                                    <td class="tableborders_botright" align="left">
+                                        36/38
+                                    </td>
+                                    <td class="tableborders_botright" align="left">
+                                        40/42
+                                    </td>
+                                    <td class="tableborders_bot" align="left">
+                                        44/46
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#E6E6E7">
+                                    <td class="tableborders_bot" align="left">&nbsp;
+                                    </td>
+                                    <td class="tableborders_botright" align="left">
+                                        Bust (cm)
+                                    </td>
+                                    <td class="tableborders_botright" align="left">
+                                        84 - 86
+                                    </td>
+                                    <td class="tableborders_botright" align="left">
+                                        89 - 91.5
+                                    </td>
+                                    <td class="tableborders_botright" align="left">
+                                        94 - 96.5
+                                    </td>
+                                    <td class="tableborders_bot" align="left">
+                                        99 - 101.5
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#E6E6E7">
+                                    <td class="tableborders_bot" align="left">&nbsp;
+                                    </td>
+                                    <td class="tableborders_botright" align="left">
+                                        Waist (cm)
+                                    </td>
+                                    <td class="tableborders_botright" align="left">
+                                        63.5 - 66
+                                    </td>
+                                    <td class="tableborders_botright" align="left">
+                                        68.5 - 71
+                                    </td>
+                                    <td class="tableborders_botright" align="left">
+                                        73.5 - 77.5
+                                    </td>
+                                    <td class="tableborders_bot" align="left">
+                                        81
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#E6E6E7">
+                                    <td align="left">&nbsp;
+                                    </td>
+                                    <td class="tableborders_right" align="left">
+                                        Hip (cm)
+                                    </td>
+                                    <td class="tableborders_right" align="left">
+                                        86.5 - 89
+                                    </td>
+                                    <td class="tableborders_right" align="left">
+                                        91.5 - 94
+                                    </td>
+                                    <td class="tableborders_right" align="left">
+                                        96.5 - 99
+                                    </td>
+                                    <td align="left">
+                                        101.5 - 104.5
+                                    </td>
+                                </tr>
+                            </tbody></table>
+                        </td>
+                    </tr>
+                </tbody></table>
+                <h3 class="sizingHead">
+                    LOVE 21 Contemporary Denim Sizes</h3>
+                <table style="border-width: 1pt;
+                    border-style: solid; border-color: #dbdcdd;" border="0" cellpadding="0" cellspacing="0" width="380">
+                    <tbody><tr>
+                        <td>
+                            <table border="0" cellpadding="5" cellspacing="0" width="100%">
+	                          <tbody><tr bgcolor="#C0C0C0">
+		                        <td class="tableborders_bot"></td>
+		                        <td class="tableborders_bot"></td>
+		                        <td class="tableborders_bot" colspan="8" align="center"><b>Sizes</b></td>
+	                          </tr>
+	                          <tr bgcolor="#FFFFFF">
+		                        <td class="tableborders_bot"></td>
+		                        <td class="tableborders_botright" align="left">US</td>
+		                        <td class="tableborders_botright" align="left">24</td>
+		                        <td class="tableborders_botright" align="left">25</td>
+                                <td class="tableborders_botright" align="left">26</td>
+		                        <td class="tableborders_botright" align="left">27</td>
+		                        <td class="tableborders_botright" align="left">28</td>
+                                <td class="tableborders_botright" align="left">29</td>
+                                <td class="tableborders_botright" align="left">30</td>
+                                <td class="tableborders_bot" align="left">31</td>
+	                          </tr>
+	                          <tr bgcolor="#E6E6E7">
+		                        <td class="tableborders_bot"></td>
+		                        <td class="tableborders_botright" align="left">EU</td>
+		                        <td class="tableborders_botright" align="left">32</td>
+		                        <td class="tableborders_botright" align="left">34</td>
+                                <td class="tableborders_botright" align="left">36</td>
+		                        <td class="tableborders_botright" align="left">38</td>
+		                        <td class="tableborders_botright" align="left">40</td>
+                                <td class="tableborders_botright" align="left">42</td>
+                                <td class="tableborders_botright" align="left">44</td>
+                                <td class="tableborders_bot" align="left">46</td>
+	                          </tr>
+	                          <tr bgcolor="#E6E6E7">
+		                        <td class="tableborders_bot"></td>
+		                        <td class="tableborders_botright" align="left">Waist (in)</td>
+		                        <td class="tableborders_botright" align="left">24</td>
+		                        <td class="tableborders_botright" align="left">25</td>
+                                <td class="tableborders_botright" align="left">26</td>
+		                        <td class="tableborders_botright" align="left">27</td>
+		                        <td class="tableborders_botright" align="left">28</td>
+                                <td class="tableborders_botright" align="left">29</td>
+                                <td class="tableborders_botright" align="left">30</td>
+                                <td class="tableborders_bot" align="left">31</td>
+	                          </tr>
+	                          <tr bgcolor="#E6E6E7">
+		                        <td class="tableborders_bot"></td>
+		                        <td class="tableborders_botright" align="left">Hips (in)</td>
+		                        <td class="tableborders_botright" align="left">33</td>
+		                        <td class="tableborders_botright" align="left">34</td>
+                                <td class="tableborders_botright" align="left">35</td>
+		                        <td class="tableborders_botright" align="left">36</td>
+		                        <td class="tableborders_botright" align="left">37</td>
+                                <td class="tableborders_botright" align="left">38</td>
+                                <td class="tableborders_botright" align="left">39</td>
+                                <td class="tableborders_bot" align="left">40</td>
+	                          </tr>
+	                          <tr bgcolor="#E6E6E7">
+		                        <td class="tableborders_bot"></td>
+		                        <td class="tableborders_botright" align="left">Inseam (in)</td>
+		                        <td class="tableborders_botright" align="left">32</td>
+		                        <td class="tableborders_botright" align="left">32</td>
+                                <td class="tableborders_botright" align="left">32</td>
+		                        <td class="tableborders_botright" align="left">32</td>
+		                        <td class="tableborders_botright" align="left">32</td>
+                                <td class="tableborders_botright" align="left">32</td>
+                                <td class="tableborders_botright" align="left">32</td>
+                                <td class="tableborders_bot" align="left">32</td>
+	                          </tr>
+	                          <tr bgcolor="#E6E6E7">
+		                        <td class="tableborders_bot"></td>
+		                        <td class="tableborders_botright" align="left">Waist (cm)</td>
+		                        <td class="tableborders_botright" align="left">60.96</td>
+		                        <td class="tableborders_botright" align="left">63.5</td>
+                                <td class="tableborders_botright" align="left">66.04</td>
+		                        <td class="tableborders_botright" align="left">68.58</td>
+		                        <td class="tableborders_botright" align="left">71.12</td>
+                                <td class="tableborders_botright" align="left">73.66</td>
+                                <td class="tableborders_botright" align="left">76.2</td>
+                                <td class="tableborders_bot" align="left">78.74</td>
+	                          </tr>
+	                          <tr bgcolor="#E6E6E7">
+		                        <td class="tableborders_bot"></td>
+		                        <td class="tableborders_botright" align="left">Hips (cm)</td>
+		                        <td class="tableborders_botright" align="left">83.82</td>
+		                        <td class="tableborders_botright" align="left">86.36</td>
+                                <td class="tableborders_botright" align="left">88.9</td>
+		                        <td class="tableborders_botright" align="left">91.44</td>
+		                        <td class="tableborders_botright" align="left">93.98</td>
+                                <td class="tableborders_botright" align="left">96.52</td>
+                                <td class="tableborders_botright" align="left">99.06</td>
+                                <td class="tableborders_bot" align="left">102</td>
+	                          </tr>
+	                          <tr bgcolor="#E6E6E7">
+		                        <td></td>
+		                        <td class="tableborders_right" align="left">Inseam (cm)</td>
+		                        <td class="tableborders_right" align="left">82</td>
+		                        <td class="tableborders_right" align="left">82</td>
+                                <td class="tableborders_right" align="left">82</td>
+		                        <td class="tableborders_right" align="left">82</td>
+		                        <td class="tableborders_right" align="left">82</td>
+                                <td class="tableborders_right" align="left">82</td>
+                                <td class="tableborders_right" align="left">82</td>
+                                <td align="left">82</td>
+	                          </tr>
+	                        </tbody></table>
+                        </td>
+                    </tr>
+                </tbody></table>
+                <h3 class="sizingHead">
+                    How To Measure Your Waist</h3>
+                <p class="describeType">
+                    Measure around the narrowest part of your natural waist, generally around the belly
+                    button. To ensure a comfortable fit, do not measure tape too lightly.</p>
+                <h3 class="sizingHead">
+                    How To Measure Your Hips</h3>
+                <p class="describeType">
+                    With your feet approximately 6" apart, measure around the fullest part of your hips.
+                    This area usually corresponds to the top of your legs.</p>
+                <h3 class="sizingHead">
+                    How To Measure Your Inseam</h3>
+                <p class="describeType">
+                    Measure from the top of your inner thigh down to the bottom of your ankle.</p>
+            </div>
+            <div style="display: none;" id="tab4">
+                <br>
+                <h3 class="sizingHead">
+                    Forever 21 Shoes</h3>
+                <table style="border-width: 1pt;
+                    border-style: solid; border-color: #dbdcdd;" border="0" cellpadding="0" cellspacing="0" width="150">
+                    <tbody><tr>
+                        <td>
+                            <table border="0" cellpadding="5" cellspacing="0" width="100%">
+                                <tbody><tr bgcolor="#C0C0C0">
+                                    <td class="tableborders_botright" align="center">
+                                        <b>US/CAN</b>
+                                    </td>
+                                    <td class="tableborders_botright" align="center">
+                                        <b>UK</b>
+                                    </td>
+                                    <td class="tableborders_bot" align="center">
+                                        <b>EU</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tableborders_botright" align="center" bgcolor="#F0F0F0">
+                                        5
+                                    </td>
+                                    <td class="tableborders_botright" align="center" bgcolor="#F0F0F0">
+                                        3
+                                    </td>
+                                    <td class="tableborders_bot" align="center" bgcolor="#F0F0F0">
+                                        35
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tableborders_botright" align="center" bgcolor="#F0F0F0">
+                                        5.5
+                                    </td>
+                                    <td class="tableborders_botright" align="center" bgcolor="#F0F0F0">
+                                        3.5
+                                    </td>
+                                    <td class="tableborders_bot" align="center" bgcolor="#F0F0F0">
+                                        35.5
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tableborders_botright" align="center" bgcolor="#F0F0F0">
+                                        6
+                                    </td>
+                                    <td class="tableborders_botright" align="center" bgcolor="#F0F0F0">
+                                        4
+                                    </td>
+                                    <td class="tableborders_bot" align="center" bgcolor="#F0F0F0">
+                                        36
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tableborders_botright" align="center" bgcolor="#F0F0F0">
+                                        6.5
+                                    </td>
+                                    <td class="tableborders_botright" align="center" bgcolor="#F0F0F0">
+                                        4.5
+                                    </td>
+                                    <td class="tableborders_bot" align="center" bgcolor="#F0F0F0">
+                                        36.5
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tableborders_botright" align="center" bgcolor="#F0F0F0">
+                                        7
+                                    </td>
+                                    <td class="tableborders_botright" align="center" bgcolor="#F0F0F0">
+                                        5
+                                    </td>
+                                    <td class="tableborders_bot" align="center" bgcolor="#F0F0F0">
+                                        37
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tableborders_botright" align="center" bgcolor="#F0F0F0">
+                                        7.5
+                                    </td>
+                                    <td class="tableborders_botright" align="center" bgcolor="#F0F0F0">
+                                        5.5
+                                    </td>
+                                    <td class="tableborders_bot" align="center" bgcolor="#F0F0F0">
+                                        37.5
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tableborders_botright" align="center" bgcolor="#F0F0F0">
+                                        8
+                                    </td>
+                                    <td class="tableborders_botright" align="center" bgcolor="#F0F0F0">
+                                        6
+                                    </td>
+                                    <td class="tableborders_bot" align="center" bgcolor="#F0F0F0">
+                                        38
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tableborders_botright" align="center" bgcolor="#F0F0F0">
+                                        8.5
+                                    </td>
+                                    <td class="tableborders_botright" align="center" bgcolor="#F0F0F0">
+                                        6.5
+                                    </td>
+                                    <td class="tableborders_bot" align="center" bgcolor="#F0F0F0">
+                                        38.5
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tableborders_botright" align="center" bgcolor="#F0F0F0">
+                                        9
+                                    </td>
+                                    <td class="tableborders_botright" align="center" bgcolor="#F0F0F0">
+                                        7
+                                    </td>
+                                    <td class="tableborders_bot" align="center" bgcolor="#F0F0F0">
+                                        39
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tableborders_botright" align="center" bgcolor="#F0F0F0">
+                                        9.5
+                                    </td>
+                                    <td class="tableborders_botright" align="center" bgcolor="#F0F0F0">
+                                        7.5
+                                    </td>
+                                    <td class="tableborders_bot" align="center" bgcolor="#F0F0F0">
+                                        39.5
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tableborders_right" align="center" bgcolor="#F0F0F0">
+                                        10
+                                    </td>
+                                    <td class="tableborders_right" align="center" bgcolor="#F0F0F0">
+                                        8
+                                    </td>
+                                    <td align="center" bgcolor="#F0F0F0">
+                                        40
+                                    </td>
+                                </tr>
+                            </tbody></table>
+                        </td>
+                    </tr>
+                </tbody></table>
+                <br>
+                <p class="describeType">
+                    Not all shoes selections may carry all sizes.</p>
+                <p class="describeType">
+                    Shoes tend to run larger; recommend sizing down a half size.</p>
+                <h3 class="sizingHead">
+                    Forever 21 Slippers</h3>
+                <table style="border-width: 1pt;
+                    border-style: solid; border-color: #dbdcdd;" border="0" cellpadding="0" cellspacing="0" width="225">
+                    <tbody><tr>
+                        <td>
+                            <table border="0" cellpadding="5" cellspacing="0" width="100%">
+                                <tbody><tr>
+                                    <td class="tableborders_botright" rowspan="2" align="center">
+                                        US/CAN
+                                    </td>
+                                    <td class="tableborders_botright" align="center">
+                                        S
+                                    </td>
+                                    <td class="tableborders_botright" align="center">
+                                        M
+                                    </td>
+                                    <td class="tableborders_bot" align="center">
+                                        L
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tableborders_botright" align="center">
+                                        5/6
+                                    </td>
+                                    <td class="tableborders_botright" align="center">
+                                        7/8
+                                    </td>
+                                    <td class="tableborders_bot" align="center">
+                                        9/10
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#F0F0F0">
+                                    <td class="tableborders_botright" align="center">
+                                        EU
+                                    </td>
+                                    <td class="tableborders_botright" align="center">
+                                        35/36
+                                    </td>
+                                    <td class="tableborders_botright" align="center">
+                                        37/38
+                                    </td>
+                                    <td class="tableborders_bot" align="center">
+                                        39/40
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#E2E2E2">
+                                    <td class="tableborders_right" align="center">
+                                        UK
+                                    </td>
+                                    <td class="tableborders_right" align="center">
+                                        3/4
+                                    </td>
+                                    <td class="tableborders_right" align="center">
+                                        5/6
+                                    </td>
+                                    <td align="center">
+                                        7/8
+                                    </td>
+                                </tr>
+                            </tbody></table>
+                        </td>
+                    </tr>
+                </tbody></table>
+                <br>
+                <table style="border-width: 1pt;
+                    border-style: solid; border-color: #dbdcdd;" border="0" cellpadding="0" cellspacing="0" width="225">
+                    <tbody><tr>
+                        <td>
+                            <table border="0" cellpadding="5" cellspacing="0" width="100%">
+                                <tbody><tr>
+                                    <td rowspan="2" class="tableborders_botright" align="center">
+                                    US/CAN
+                                    </td>
+                                    <td class="tableborders_botright" align="center">
+                                        S/M
+                                    </td>
+                                    <td class="tableborders_bot" align="center">
+                                        M/L
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tableborders_botright" align="center">
+                                        5-7
+                                    </td>
+                                    <td class="tableborders_bot" align="center">
+                                        7.5-10
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#F0F0F0">
+                                    <td class="tableborders_botright" align="center">
+                                        EU
+                                    </td>
+                                    <td class="tableborders_botright" align="center">
+                                        35-37
+                                    </td>
+                                    <td class="tableborders_bot" align="center">
+                                        37.5-40
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#E2E2E2">
+                                    <td class="tableborders_right" align="center">
+                                        UK
+                                    </td>
+                                    <td class="tableborders_right" align="center">
+                                        3-5
+                                    </td>
+                                    <td align="center">
+                                        5.5-8
+                                    </td>
+                                </tr>
+                            </tbody></table>
+                        </td>
+                    </tr>
+                </tbody></table>
+                <br>
+            </div>
+            <div style="display: none;" id="tab5">
+                <br>
+                <h3 class="sizingHead">
+                    Hat Sizes</h3>
+                <br>
+                <table style="border-width: 1pt;
+                    border-style: solid; border-color: #dbdcdd;" border="0" cellpadding="0" cellspacing="0" width="225">
+                    <tbody><tr>
+                        <td>
+                            <table border="0" cellpadding="5" cellspacing="0" width="100%">
+                                <tbody><tr bgcolor="#FFFFFF">
+                                    <td class="tableborders_botright" align="center">
+                                        Size
+                                    </td>
+                                    <td class="tableborders_botright" align="center">
+                                        SM/MED
+                                    </td>
+                                    <td class="tableborders_bot" align="center">
+                                        MED/LG
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#FFFFFF">
+                                    <td class="tableborders_botright" align="center">
+                                        Circumference (in)
+                                    </td>
+                                    <td class="tableborders_botright" align="center">
+                                        21 ⅚
+                                    </td>
+                                    <td class="tableborders_bot" align="center">
+                                        21 ¼
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#FFFFFF">
+                                    <td class="tableborders_right" align="center">
+                                        Circumference (cm)
+                                    </td>
+                                    <td class="tableborders_right" align="center">
+                                        55.5
+                                    </td>
+                                    <td align="center">
+                                        56.5
+                                    </td>
+                                </tr>
+                            </tbody></table>
+                        </td>
+                    </tr>
+                </tbody></table>
+                <br>
+                <h3 class="sizingHead">
+                    Ring Sizes</h3>
+                <br>
+                <img src="sizechart_data/jewelry1.jpg"><br>
+                <br>
+                <table style="border-width: 1pt;
+                    border-style: solid; border-color: #dbdcdd;" border="0" cellpadding="0" cellspacing="0" width="225">
+                    <tbody><tr>
+                        <td>
+                            <table border="0" cellpadding="5" cellspacing="0" width="100%">
+                                <tbody><tr bgcolor="#FFFFFF">
+                                    <td class="tableborders_botright" align="center">
+                                        Size
+                                    </td>
+                                    <td class="tableborders_botright" align="center">
+                                        2
+                                    </td>
+                                    <td class="tableborders_botright" align="center">
+                                        3
+                                    </td>
+                                    <td class="tableborders_botright" align="center">
+                                        6
+                                    </td>
+                                    <td class="tableborders_botright" align="center">
+                                        7
+                                    </td>
+                                    <td class="tableborders_bot" align="center">
+                                        8
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#FFFFFF">
+                                    <td class="tableborders_right" align="center">
+                                        INNER DIAMETER
+                                    </td>
+                                    <td class="tableborders_right" align="center">
+                                        12mm
+                                    </td>
+                                    <td class="tableborders_right" align="center">
+                                        13mm
+                                    </td>
+                                    <td class="tableborders_right" align="center">
+                                        16mm
+                                    </td>
+                                    <td class="tableborders_right" align="center">
+                                        17mm
+                                    </td>
+                                    <td align="center">
+                                        18mm
+                                    </td>
+                                </tr>
+                            </tbody></table>
+                        </td>
+                    </tr>
+                </tbody></table>
+                <br>
+                <table style="border-width: 1pt;
+                    border-style: solid; border-color: #dbdcdd;" border="0" cellpadding="0" cellspacing="0" width="225">
+                    <tbody><tr>
+                        <td>
+                            <table border="0" cellpadding="5" cellspacing="0" width="100%">
+                                <tbody><tr bgcolor="#FFFFFF">
+                                    <td class="tableborders_botright" align="center">
+                                        US
+                                    </td>
+                                    <td class="tableborders_botright" align="center">
+                                        S/M
+                                    </td>
+                                    <td class="tableborders_bot" align="center">
+                                        M/L
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#FFFFFF">
+                                    <td class="tableborders_right" align="center">
+                                        CN
+                                    </td>
+                                    <td class="tableborders_right" align="center">
+                                        62mm
+                                    </td>
+                                    <td align="center">
+                                        67mm
+                                    </td>
+                                </tr>
+                            </tbody></table>
+                        </td>
+                    </tr>
+                </tbody></table>
+                <br>
+                <div>
+                    <img src="sizechart_data/jewelry2.jpg" style="float:left;">
+                    <p class="describeTypeAcc">
+                    <strong>DISCLAIMER:</strong> Rings are measured across by the diameter. All measurements are aproximate
+                    and are rounded up to the nearest hundredth of a millimeter. Our sizing is generous
+                    so if you are typically a size 6.5, we suggest you go with a size 6.</p>
+                </div>
+                <br><br>
+                <div style="margin-top:80px;">
+                    <h3 class="sizingHead">
+                        Bracelet &amp; Bangle</h3>
+                    <br>
+                    <table style="border-width: 1pt;
+                        border-style: solid; border-color: #dbdcdd;" border="0" cellpadding="0" cellspacing="0" width="225">
+                        <tbody><tr>
+                            <td>
+                                <table border="0" cellpadding="5" cellspacing="0" width="100%">
+                                    <tbody><tr bgcolor="#FFFFFF">
+                                        <td class="tableborders_botright" align="center">
+                                            US
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            S/M
+                                        </td>
+                                        <td class="tableborders_bot" align="center">
+                                            M/L
+                                        </td>
+                                    </tr>
+                                    <tr bgcolor="#FFFFFF">
+                                        <td class="tableborders_right" align="center">
+                                            CN
+                                        </td>
+                                        <td class="tableborders_right" align="center">
+                                            62mm
+                                        </td>
+                                        <td align="center">
+                                            67mm
+                                        </td>
+                                    </tr>
+                                </tbody></table>
+                            </td>
+                        </tr>
+                    </tbody></table>
+                    <br>
+                    <h3 class="sizingHead">
+                        Belts</h3>
+                    <br>
+                    <table style="border-width: 1pt;
+                        border-style: solid; border-color: #dbdcdd;" border="0" cellpadding="0" cellspacing="0" width="300">
+                        <tbody><tr>
+                            <td>
+                                <table border="0" cellpadding="5" cellspacing="0" width="100%">
+                                    <tbody><tr>
+                                        <td class="tableborders_bot" colspan="5" style="text-align: center;" bgcolor="#F0F0F0">WAIST BELTS</td>
+                                    </tr>
+                                    <tr bgcolor="#FFFFFF">
+                                        <td class="tableborders_botright" align="center">
+                                            Size
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            XS/S
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            S/M
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            M/L
+                                        </td>
+                                        <td class="tableborders_bot" align="center">
+                                            ONE SIZE
+                                        </td>
+                                    </tr>
+                                    <tr bgcolor="#FFFFFF">
+                                        <td class="tableborders_right" align="center">
+                                            CN
+                                        </td>
+                                        <td class="tableborders_right" align="center">
+                                            60CM
+                                        </td>
+                                        <td class="tableborders_right" align="center">
+                                            65CM
+                                        </td>
+                                        <td class="tableborders_right" align="center">
+                                            70CM
+                                        </td>
+                                        <td align="center">
+                                            60-70CM
+                                        </td>
+                                    </tr>
+                                </tbody></table>
+                            </td>
+                        </tr>
+                    </tbody></table>
+                    <br>
+                    <table style="border-width: 1pt;
+                        border-style: solid; border-color: #dbdcdd;" border="0" cellpadding="0" cellspacing="0" width="300">
+                        <tbody><tr>
+                            <td>
+                                <table border="0" cellpadding="5" cellspacing="0" width="100%">
+                                    <tbody><tr>
+                                        <td class="tableborders_bot" colspan="5" style="text-align: center;" bgcolor="#F0F0F0">HIP BELTS (NO HOLES)</td>
+                                    </tr>
+                                    <tr bgcolor="#FFFFFF">
+                                        <td class="tableborders_botright" align="center">
+                                            Size
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            XS/S
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            S/M
+                                        </td>
+                                        <td class="tableborders_bot" align="center">
+                                            M/L
+                                        </td>
+                                    </tr>
+                                    <tr bgcolor="#FFFFFF">
+                                        <td class="tableborders_right" align="center">
+                                            CN
+                                        </td>
+                                        <td class="tableborders_right" align="center">
+                                            96.5cm
+                                        </td>
+                                        <td class="tableborders_right" align="center">
+                                            101cm
+                                        </td>
+                                        <td align="center">
+                                            107cm
+                                        </td>
+                                    </tr>
+                                </tbody></table>
+                            </td>
+                        </tr>
+                    </tbody></table>
+                    <br>
+                    <table style="border-width: 1pt;
+                        border-style: solid; border-color: #dbdcdd;" border="0" cellpadding="0" cellspacing="0" width="300">
+                        <tbody><tr>
+                            <td>
+                                <table border="0" cellpadding="5" cellspacing="0" width="100%">
+                                    <tbody><tr>
+                                        <td class="tableborders_bot" colspan="5" style="text-align: center;" bgcolor="#F0F0F0">HIP BELTS (HOLES)</td>
+                                    </tr>
+                                    <tr bgcolor="#FFFFFF">
+                                        <td class="tableborders_botright" align="center">
+                                            Size
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            XS/S
+                                        </td>
+                                        <td class="tableborders_botright" align="center">
+                                            S/M
+                                        </td>
+                                        <td class="tableborders_bot" align="center">
+                                            M/L
+                                        </td>
+                                    </tr>
+                                    <tr bgcolor="#FFFFFF">
+                                        <td class="tableborders_right" align="center">
+                                            CN
+                                        </td>
+                                        <td class="tableborders_right" align="center">
+                                            84cm
+                                        </td>
+                                        <td class="tableborders_right" align="center">
+                                            89cm
+                                        </td>
+                                        <td align="center">
+                                            94cm
+                                        </td>
+                                    </tr>
+                                </tbody></table>
+                            </td>
+                        </tr>
+                    </tbody></table>
+                </div>
+                <br>
+            </div>
+        </div>
+        <!--tabContent-->
+    </div>
+    <!--wrapper-->
+
+
+</body></html>

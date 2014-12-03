@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<!--
+*
+* ADOBE SYSTEMS INCORPORATED
+*  Copyright 2012 Adobe Systems Incorporated
+*  All Rights Reserved.
+*
+* NOTICE:  Adobe permits you to use, modify, and distribute this file in 
+* accordance with the terms of the Adobe license agreement accompanying it. 
+* If you have received this file from a source other than Adobe, then your 
+* use, modification, or distribution of it requires the prior written 
+* permission of Adobe.
+-->
+<html webdriver="true"><head><style data-component="ZoomView" data-description="Scene7DefaultCSS" media="screen" type="text/css">.s7zoomview {
+	position:absolute;
+	background-color:#FFFFFF;
+	user-select:none;
+	-moz-user-select:-moz-none;
+	-webkit-user-select:none;
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+ }
+.s7zoomview .s7iconeffect {
+	width:120px;
+	height:120px;
+	background-repeat:no-repeat;
+	background-position:center;
+ }
+.s7zoomview .s7iconeffect[media-type='standard'] {
+	background-image:url(http://media.tiffany.com/s7sdk/2.3/images/sdk/doubletapicon.png);
+ }
+.s7zoomview .s7iconeffect[media-type='multitouch'] {
+	background-image:url(http://media.tiffany.com/s7sdk/2.3/images/sdk/zoomicon.png);
+ }
+</style><style data-component="Container" data-description="Scene7DefaultCSS" media="screen" type="text/css">.s7container {
+	overflow:hidden;
+ }
+</style>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">		
+		<meta name="viewport" content="user-scalable=no, height=device-height, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+		<!-- Hiding the Safari on iPhone OS UI components -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+	    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-touch-fullscreen" content="YES">
+		<!-- Specifying a per-page Home screen icon -->
+		<link rel="apple-touch-icon" href="www.tiffany.com_files/ZoomViewer.html">
+	    <link rel="apple-touch-startup-image" href="www.tiffany.com_files/ZoomViewer.html">
+		
+		<title>Adobe Scene7 Zoom Viewer with Dynamic Resizing</title>
+
+        <script type="text/javascript" src="ZoomViewer_data/jquery-1.js"></script>
+		<script type="text/javascript">
+			var baseServerUrl = null, baseImageUrl = null, asset = null, query, splitQuery, splitProperty, zoomLimit = "", sharpeningAmount = "1", dragInProgress = false, lastZoomState = "out", params = null, origin = "ecomItem";
+			var zoomStepIncrement = 2;
+			var zoomStepMax = 0.6;
+			var lastFullZoomState = "";
+
+			query = window.location.search.split("?").join("");
+			splitQuery = query.split("&");
+
+			for (var i = 0; i < splitQuery.length; i++) {
+				splitProperty = splitQuery[i].split("=");
+				if (splitProperty.length == 2) {
+					switch (splitProperty[0]) {
+						case "baseServerUrl":
+							baseServerUrl = splitProperty[1];
+							baseServer = baseServerUrl.split("http://").join("").split("https://").join("").split("//").join("").split("/")[0];
+							break;
+						case "baseImageUrl":
+							baseImageUrl = splitProperty[1];
+							break;
+						case "asset":
+							asset = splitProperty[1];
+							break;
+						case "zoomLimit":
+							zoomLimit = splitProperty[1];
+							break;
+						case "sharpeningAmount":
+							sharpeningAmount = splitProperty[1];
+							break;
+						case "origin":
+							origin = splitProperty[1];
+							break;
+					}
+				}
+			}
+
+			function setCursor(type) {
+				var imageName = "";
+				var cursorLeft = 8;
+				var cursorTop = 8;
+				switch (type.toLowerCase()) {
+					case "zoomin":
+						imageName = "zoomIconIn";
+						lastZoomState = "zoomIn";
+						break;
+					case "zoomout":
+						imageName = "zoomIconOut";
+						lastZoomState = "zoomOut";
+						break;
+					case "hand":
+						imageName = "zoomIconHand";
+						cursorLeft = 14;
+						cursorTop = 14;
+						break;
+					default:
+						imageName = "zoomIconGeneric";
+				}
+
+				if (navigator.appName == 'Microsoft Internet Explorer' && navigator.userAgent.indexOf("MSIE") > -1) {
+					$(".s7zoomview").attr("style", "cursor: url(/shared/images/icons/" + imageName + ".cur), pointer;");
+				}
+				else {
+					$(".s7zoomview").attr("style", "cursor: url(" + baseImageUrl + imageName + "?fmt=png-alpha&wid=32&hei=32) " + cursorLeft + " " + cursorTop + ", pointer;");
+				}
+			}
+
+			// set up a function that will initialize the viewer
+			function initViewer() {
+
+				if (baseServerUrl != null && asset != null) {
+					// hardcoded modifiers, alternatevely you could have set this up in the URL as
+					// name value pairs
+					// zoomviewer.html?serverurl=http://s7d1.scene7.com/is/image&asset=Scene7SharedAssets/ImageSet-Views-Sample
+					//
+					params.push("serverurl", baseServerUrl);
+					params.push("asset", asset);
+					//					params.push("enableHD", "always");
+					params.push("iscommand", "op_usm=" + sharpeningAmount + ",1,6,0");
+					params.push("zoomstep", zoomStepIncrement + "," + zoomStepMax);
+					//					if (zoomLimit != "") {
+					//						params.push("zoomstep", "0," + zoomLimit);
+					//					}
+					params.push("singleclick", "zoomReset");
+
+					// Create a viwer container
+					container = new s7sdk.Container(null, params, "s7container");
+					container.addEventListener(s7sdk.ResizeEvent.COMPONENT_RESIZE, resizeViewer, false);
+
+					//Create ZoomView componenent -  for version 2.0.1 library, this component has to be created before other components.
+					zoomView = new s7sdk.ZoomView("s7container", params, "myZoomView");
+
+					zoomView.addEventListener(s7sdk.event.CapabilityStateEvent.NOTF_ZOOM_CAPABILITY_STATE, onZoomStateChange);
+					zoomView.addEventListener(s7sdk.event.ZoomPanEvent.NOTF_ZOOM_PAN, onZoomPan);
+
+					//Change the image displayed in the main view every time the swatch selection changes
+					function swatchSelected(event) {
+						zoomView.setItem(event.s7event.asset);
+					}
+				}
+
+				$(".s7zoomview").mouseup(function () {
+					if (dragInProgress == true) {
+						dragInProgress = false;
+						setCursor(lastZoomState);
+					}
+				});
+			}
+
+			//set up a function to be used to resize viewer for orientation change or window resize
+			function resizeViewer(e) {
+				zoomView.resize(e.s7event.w, e.s7event.h);
+			}
+
+			// Callback function used for jsonp cross domain image data service
+			function handleImageDetails(responseData) {
+				var imageSize = Number(responseData["image.width"]);
+				var minSize = 3000;
+				var twoStepLimiter = 0.42;
+				var threeStepLimiter = 0.53;
+				var maxImageThreshold = 3000;
+
+				if (origin.toLowerCase() == "itemdesignnothumbs") {
+					twoStepLimiter = 0.37;
+					threeStepLimiter = 0.53;
+				}
+
+				zoomStepIncrement = 2;
+				if (imageSize >= maxImageThreshold) {
+					// 3 zoom steps
+					zoomStepMax = threeStepLimiter * (minSize / imageSize);
+				}
+				else {
+					// 2 zoom steps
+					zoomStepMax = twoStepLimiter * (minSize / imageSize);
+				}
+
+				triggerZoomSDK();
+			}
+
+			function onZoomStateChange(e) {
+				if (dragInProgress == false) {
+					var canZoomIn = e.s7event.state.hasCapability(s7sdk.ZoomCapabilityState.ZOOM_IN);
+					var canZoomOut = e.s7event.state.hasCapability(s7sdk.ZoomCapabilityState.ZOOM_OUT);
+					var pageName = "";
+					var itemDesc = "";
+					if (canZoomIn == true) {
+						// Show + cursor
+						setCursor("zoomIn");
+					}
+					else {
+						// Show - cursor
+						setCursor("zoomOut");
+					}
+					if (window.parent) {
+						itemDesc = $("h1", window.parent.document).text().trim().replace(/[\n\r]/g, '').replace(/ +(?= )/g,'');
+						pageName = $("body", window.parent.document).attr("id");
+						if (canZoomIn == true && canZoomOut == false) {
+							window.parent.TrackProductZoom(pageName, "Initial Zoom", itemDesc);
+							lastFullZoomState = "Initial Zoom";
+						}
+						if (canZoomIn == false && canZoomOut == true) {
+							window.parent.TrackProductZoom(pageName, "Full Zoom", itemDesc);
+							lastFullZoomState = "Full Zoom";
+						}
+						if (canZoomIn == true && canZoomOut == true && lastFullZoomState != "Full Zoom") {
+							window.parent.TrackProductZoom(pageName, "Intermediate Zoom", itemDesc);
+						}
+					}
+				}
+			}
+
+			function onZoomPan(e) {
+				if (dragInProgress == false) {
+					setCursor("hand");
+					dragInProgress = true;
+				}
+			}
+
+			document.write('<scr' + 'ipt language="javascript" type="text/javascript" src="http://' + baseServer + '/s7sdk/2.3/js/s7sdk/utils/Utils.js"></scr' + 'ipt>');
+
+			function triggerZoomSDK() {
+				/*
+				For this example, we set up a zoom viewer with swatches.
+				We need 
+				s7sdk.image.ZoomView for zoom viewer area, 
+				s7sdk.common.Container as a container of all components, 
+				s7sdk.set.Swatches for alternate views		
+				*/
+				s7sdk.Util.lib.include('s7sdk.image.ZoomView');
+				s7sdk.Util.lib.include('s7sdk.common.Container');
+
+				// initialize the SDK
+				s7sdk.Util.init();
+
+				//Create ParameterManager instance that will handle modifiers
+				params = new s7sdk.ParameterManager();
+				var zoomView, container;
+
+				// the ParameterManager will dispatch SDK_READY when all modifiers have been processed
+				// and it is safe to initalize the viewer
+				params.addEventListener(s7sdk.Event.SDK_READY, initViewer, false);
+
+				// now it is safe to process the modifiers, the callbacks have been defined
+				// this will trigger the SDK_READY event
+				params.init();
+
+				setCursor("generic");
+			}
+
+			$(document).ready(function () {
+				var imageName = (asset.indexOf("/") > -1) ? asset.split("/")[1] : asset;
+
+				$.ajax({
+					url: baseImageUrl + imageName + "?req=imageprops,json&handler=handleImageDetails",
+					type: "GET",
+					data: '',
+					dataType: "jsonp",
+					contentType: "application/json; charset=utf-8",
+					success: function (data) {
+					},
+					error: function (jqXHR, status, error) {
+						triggerZoomSDK();
+					}
+				});
+
+				$("body").mousemove(function () {
+					if (window.parent && typeof (window.parent.fadeThumbs) != "undefined") {
+						window.parent.fadeThumbs();
+					}
+				});
+
+				//triggerZoomSDK();
+			});
+		
+		</script><script language="javascript" type="text/javascript" src="ZoomViewer_data/Utils.js"></script>
+
+		<script language="javascript" type="text/javascript">
+        
+		</script>
+        
+        <style type="text/css" media="screen">
+			
+			.s7swatches {
+				top: 10px;
+				left: 10px;
+				height: 150px;
+				width: 400px;
+				border: 1px;
+				border-color:#cccccc;
+				background-color: rgba(200, 200, 200, 0.5);
+			}
+			
+			.s7zoomview .s7iconeffect[media-type="standard"] {
+				background-image: none;
+			}
+			.s7zoomview .s7iconeffect[media-type="multitouch"] {
+				background-image: none;
+			}
+			
+		    .s7zoomInCursor { cursor:default;}
+		    .s7zoomOutCursor { cursor:default;}
+			
+		</style>
+
+	<script id="s7sdk.image.ZoomView" src="ZoomViewer_data/ZoomView.js" type="text/javascript" language="javascript"></script><script id="s7sdk.common.Container" src="ZoomViewer_data/Container.js" type="text/javascript" language="javascript"></script><script id="s7sdk.event.Event" src="ZoomViewer_data/Event.js" type="text/javascript" language="javascript"></script><script id="s7sdk.image.View" src="ZoomViewer_data/View.js" type="text/javascript" language="javascript"></script><script id="s7sdk.common.IS" src="ZoomViewer_data/IS.js" type="text/javascript" language="javascript"></script><script id="s7sdk.common.IconEffect" src="ZoomViewer_data/IconEffect.js" type="text/javascript" language="javascript"></script><script id="s7sdk.common.ItemDesc" src="ZoomViewer_data/ItemDesc.js" type="text/javascript" language="javascript"></script><script id="s7sdk.event.InputController" src="ZoomViewer_data/InputController.js" type="text/javascript" language="javascript"></script><script id="s7sdk.utils.Version" src="ZoomViewer_data/Version.js" type="text/javascript" language="javascript"></script><script id="s7sdk.common.Enumeration" src="ZoomViewer_data/Enumeration.js" type="text/javascript" language="javascript"></script><script id="s7sdk.image.Resolution" src="ZoomViewer_data/Resolution.js" type="text/javascript" language="javascript"></script><script id="s7sdk.image.Tile" src="ZoomViewer_data/Tile.js" type="text/javascript" language="javascript"></script><script id="s7sdk.utils.SwatchesParser" src="ZoomViewer_data/SwatchesParser.js" type="text/javascript" language="javascript"></script><script id="s7sdk.common.Data" src="ZoomViewer_data/Data.js" type="text/javascript" language="javascript"></script><script id="s7sdk.common.Geometry" src="ZoomViewer_data/Geometry.js" type="text/javascript" language="javascript"></script></head>
+	<body class="modal-frame" style="margin: 0 0;overflow:hidden;">	
+
+		<script language="JavaScript" type="text/javascript">
+        
+
+        </script>
+    
+
+
+<span style="display: none;" class="" id="0"></span><span style="display: none;" class="" id="1"></span></body></html>

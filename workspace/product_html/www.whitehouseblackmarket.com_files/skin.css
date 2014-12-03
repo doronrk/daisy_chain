@@ -1,0 +1,360 @@
+@charset "utf-8";
+/* CSS Document */
+
+#canvas{ padding:0;} /* the bg color was taken out for the white bg */
+
+#home #content {border: 2px solid #7e7e7e; width:772px;}
+
+/* 7-15 crossover styles*/
+#shelf-header {
+    height: 23px;
+    color: #333;
+    vertical-align: middle;
+    padding: 10px 0px 0px;
+    background: #818181;
+    font: 10px Arial, Helvetica, sans-serif;
+    text-transform: uppercase;  /*display: none;*/
+} 
+#shelf-control {
+    clear:both;
+    height: 43px;
+    color: #666;
+    background: #FFFFFF;
+    font: 10px Arial, Helvetica, sans-serif;    /*text-transform: uppercase;*/
+} 
+#shelf-control A {
+    color: #666;
+    font-size: 11px;
+    text-decoration: none;
+} 
+#shelf-control A:hover {color: #000000; font-size: 11px; text-decoration: underline;} 
+#shelf-control #filter-control {float: left; font-size: 11px; vertical-align: middle; padding: 11px 0px 0px 10px;} 
+#shelf-control #filter-control .filter-menu {font-size: 12px; width: 125px; vertical-align: middle;} 
+#shelf-control #page-control {float: right; font-size: 11px; vertical-align: middle; padding: 15px 10px 0px 0px;} 
+
+#search-content{
+    background: #FFFFFF url(/web_assets/search/search_bg.jpg) no-repeat;
+}
+
+#black-book-content{
+    padding: 25px 300px 20px 35px;
+    background: #FFFFFF url(/web_assets/black_book/loyalty_bg.jpg) no-repeat right top;
+    height: auto;
+}
+
+/*Catalog*/
+#catalog{display:none; background:#000000;}
+
+/*simple colors*/
+#blueText {color: #00F;}
+#redText{color:#FF0000;}
+
+/*  This CSS block is for store locator pages  */
+
+#lpage-content-container { /*this selector and its stylea are currently in the skin.css file */
+    background-color: #FFFFFF;
+    height: 339px;
+    width: 834px;
+    padding:50px 81px;
+margin:0 auto;
+}
+
+@font-face {
+    font-family: 'bauerbodni_btroman';
+    src: url('/fonts/bauerb-webfont.eot');
+    src: url('/fonts/bauerb-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/bauerb-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+#locate_parent{
+    width:803px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+
+#locate_leftcol, #locate_rightcol{
+    float:left;
+}
+
+#locate_leftcol{
+    width:440px;
+    border-right:solid #CCC 1px;
+}
+
+#locate_rightcol{
+    padding-left:83px;  
+}
+
+#locate_parent h1{
+    font-family: 'bauerbodni_btroman';
+    font-size: 33px;
+    margin-left: 0;
+    margin-top: 0;
+    padding:0px;
+    font-weight: lighter;
+    text-transform: capitalize;
+        
+}
+
+#locate_parent h3 {
+    color: #999999;
+    font-size: 13px;
+    font-weight: lighter;
+    margin-top: 0;
+    margin-bottom:10px;
+    text-transform: uppercase;
+}
+
+.locate_secs{
+    float:left;
+    margin-top:4px;
+}
+
+.locate_lable div{
+    float:left;
+    margin-top:10px;
+}
+
+#locate_cityLable{
+    margin-right:172px;
+}
+
+
+.locate_secs div{
+    float:left; 
+}
+
+
+.locate_btn{
+    
+    float:left; 
+}
+
+.locate_secs .inputStyle, .locate_secs select{
+    background-color:#f0f0f0;
+    outline:solid 1px #c9c9c9;
+    border:0px;
+    height:19px;
+    width:179px;
+        
+    
+}
+
+#cityTxtField{
+    margin-right:13px;  
+}
+
+
+.locate_radios{
+    width:400px;
+    float:left;
+    padding: 0 !important;
+}
+
+.locate_radios div{
+    text-transform:uppercase;
+    float: left;
+    height: 23px;
+    line-height: 26px;
+    margin-right: 20px;
+    padding-left: 6px;
+}
+
+
+.locate_radios .activeRadiobtn{
+background-color:#e8e8e8;
+}
+
+.locate_radios label{
+
+margin-left:14px;
+margin-right:30px;
+        
+}
+
+
+.locate_searchBtn{
+    margin-top:13px;
+    cursor:pointer; 
+}
+
+
+#srchZip{
+
+    display:block;  
+    background-color:#f0f0f0;
+    outline:solid 1px #c9c9c9;
+    border:0px;
+    margin-top: 3px;
+    width:179px;
+}
+
+/* results */
+
+#results_parent{
+    width:803px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:11px;
+    color:#fff;
+    
+}
+
+#results_parent > div{
+    float:left;
+    margin-bottom:10px;
+}
+
+#results_leftcol, #results_rightcol{
+    clear:both;
+    float:left;
+}
+
+
+#results_leftcol{
+    color: #000;
+    margin-left: 0px;
+    width: 170px;
+
+}
+
+#results_rightcol{
+    padding-top:10px        
+}
+
+#locate-tittle {
+    font-size:14px;
+    padding-left:0px;
+    color:#000;
+    font-weight: lighter !important;
+    margin:4px 0px 10px 0px  
+}
+
+#results_leftcol h3{
+    color: #000;
+    font-weight: lighter !important;
+    margin-top:0px;
+}
+
+#ca-search, #us-search {
+    font-weight: lighter;
+    text-transform: uppercase;
+}
+
+#results_rightcol{
+    text-transform:uppercase;   
+}
+
+#results_rightcol h3 {
+    font-weight: lighter !important;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.results_secs{
+    float:left;
+    margin-top:4px;
+}
+
+.results_lable div{
+    float:left;
+    margin-top:13px;
+}
+
+#results_cityLable{
+    margin-right:63px;
+}
+
+
+.results_secs div{
+    float:left; 
+}
+
+
+.results_btn{
+    
+    float:left; 
+}
+
+.loc_result_citystate .inputStyle, #results_rightcol .inputStyle, .loc_result_citystate select{
+    background-color:#f0f0f0;
+    outline:solid 1px #c9c9c9;
+    border:0px;
+    height:19px;
+    width: 170px;      
+    
+}
+#cityTxtField{
+    margin-right:13px;  
+}
+.results_radios{
+    width:400px;
+    float:left;
+    margin-bottom:10px;
+    padding:0px !important;
+    text-transform:capitalize !important;
+    
+}
+.results_radios div{
+    float: left;
+    height: 23px;
+    line-height: 26px;
+    margin-right: 12px;
+    padding-left: 6px;
+}
+.results_radios .activeRadiobtn{
+background-color:#fff;
+color: #000;
+}
+.results_radios .inactiveRadiobtn label{
+background-color: #E2E2E2;
+    color: #000000;
+    display: inline-block;
+    height: 23px;   
+    padding-bottom: 0;
+    padding-left: 17px;
+    padding-right: 9px;
+    padding-top: 0;
+
+}
+.results_radios label {
+    margin-left: 8px;
+    padding-bottom: 0;
+    padding-left: 17px;
+    padding-right: 9px;
+    padding-top: 0;
+}
+.results_searchBtn{
+    margin-top:13px;
+    cursor:pointer;
+    height: 34px;
+    width: 170px;
+}
+.resultSpacer{
+    margin-top:10px;    
+}
+#or {
+    margin-bottom: 20px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 20px;
+}
+/*  This ends the CSS block is for store locator pages  */
+#loc-zone-error{
+color:#000000
+}
+#loc-zone-error { border: solid 2px #f99}
+#loc-zone-error {background: #f8f8f8 repeat-x 50% bottom}
+#loc-zone-error { margin: 1px 1px; text-align: left; padding: 6px; font-size: 12px; margin-top:40px}
+
+/*  This ends the CSS block is for store locator pages  */
+
+/* 04.21.2014 borderfree */
+#whbm-footer-parent {height: 330px;}
+#whbm-footer-bbmembership hr {top:260px;}
+#whbm-footer-borderFree{border-bottom: 1px solid #333333;margin-top: 27px;padding-bottom: 27px;}
+
+/* 04.25.2014 outfitPage IE fix*/
+.isOutfitPage #productView{ position:static !important\9; }

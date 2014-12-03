@@ -1,0 +1,2789 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html webdriver="true" xmlns:fb="http://www.facebook.com/2008/fbml" class="dj_gecko dj_contentbox js flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head><style data-component="ClosedCaptionButton" data-description="Scene7DefaultCSS" media="screen" type="text/css">.s7closedcaptionbutton {
+	position:absolute;
+	width:25px;
+	height:25px;
+ }
+.s7closedcaptionbutton[selected='true'][state='up'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/closedcaptions_up.png);
+ }
+.s7closedcaptionbutton[selected='true'][state='over'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/closedcaptions_over.png);
+ }
+.s7closedcaptionbutton[selected='true'][state='down'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/closedcaptions_down.png);
+ }
+.s7closedcaptionbutton[selected='true'][state='disabled'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/closedcaptions_disabled.png);
+ }
+.s7closedcaptionbutton[selected='false'][state='up'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/closedcaptions_disabled.png);
+ }
+.s7closedcaptionbutton[selected='false'][state='over'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/closedcaptions_over.png);
+ }
+.s7closedcaptionbutton[selected='false'][state='down'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/closedcaptions_down.png);
+ }
+.s7closedcaptionbutton[selected='false'][state='disabled'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/closedcaptions_disabled.png);
+ }
+</style><style data-component="ThumbnailPageButton" data-description="Scene7DefaultCSS" media="screen" type="text/css">.s7thumbnailpagebutton {
+	position:absolute;
+	width:25px;
+	height:25px;
+ }
+.s7thumbnailpagebutton[selected='true'][state='up'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/thumb_up.png);
+ }
+.s7thumbnailpagebutton[selected='true'][state='over'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/thumb_over.png);
+ }
+.s7thumbnailpagebutton[selected='true'][state='down'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/thumb_down.png);
+ }
+.s7thumbnailpagebutton[selected='true'][state='disabled'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/thumb_disabled.png);
+ }
+.s7thumbnailpagebutton[selected='false'][state='up'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/page_up.png);
+ }
+.s7thumbnailpagebutton[selected='false'][state='over'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/page_over.png);
+ }
+.s7thumbnailpagebutton[selected='false'][state='down'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/page_down.png);
+ }
+.s7thumbnailpagebutton[selected='false'][state='disabled'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/page_disabled.png);
+ }
+</style><style data-component="ScrubberSwatchesButton" data-description="Scene7DefaultCSS" media="screen" type="text/css">.s7scrubberswatchesbutton {
+	position:absolute;
+	width:25px;
+	height:25px;
+ }
+.s7scrubberswatchesbutton[selected='true'][state='up'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/swatches_up.png);
+ }
+.s7scrubberswatchesbutton[selected='true'][state='over'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/swatches_over.png);
+ }
+.s7scrubberswatchesbutton[selected='true'][state='down'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/swatches_down.png);
+ }
+.s7scrubberswatchesbutton[selected='true'][state='disabled'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/swatches_disabled.png);
+ }
+.s7scrubberswatchesbutton[selected='false'][state='up'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/scrubber_up.png);
+ }
+.s7scrubberswatchesbutton[selected='false'][state='over'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/scrubber_over.png);
+ }
+.s7scrubberswatchesbutton[selected='false'][state='down'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/scrubber_down.png);
+ }
+.s7scrubberswatchesbutton[selected='false'][state='disabled'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/scrubber_disabled.png);
+ }
+</style><style data-component="FullScreenButton" data-description="Scene7DefaultCSS" media="screen" type="text/css">.s7fullscreenbutton {
+	position:absolute;
+	width:25px;
+	height:25px;
+ }
+.s7fullscreenbutton[selected='true'][state='up'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/fullscreen_up.png);
+ }
+.s7fullscreenbutton[selected='true'][state='over'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/fullscreen_over.png);
+ }
+.s7fullscreenbutton[selected='true'][state='down'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/fullscreen_down.png);
+ }
+.s7fullscreenbutton[selected='true'][state='disabled'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/fullscreen_disabled.png);
+ }
+.s7fullscreenbutton[selected='false'][state='up'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/minscreen_up.png);
+ }
+.s7fullscreenbutton[selected='false'][state='over'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/minscreen_over.png);
+ }
+.s7fullscreenbutton[selected='false'][state='down'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/minscreen_down.png);
+ }
+.s7fullscreenbutton[selected='false'][state='disabled'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/minscreen_disabled.png);
+ }
+</style><style data-component="PlayPauseButton" data-description="Scene7DefaultCSS" media="screen" type="text/css">.s7playpausebutton {
+	position:absolute;
+	width:25px;
+	height:25px;
+ }
+.s7playpausebutton[selected='true'][state='up'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/play_up.png);
+ }
+.s7playpausebutton[selected='true'][state='over'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/play_over.png);
+ }
+.s7playpausebutton[selected='true'][state='down'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/play_down.png);
+ }
+.s7playpausebutton[selected='true'][state='disabled'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/play_disabled.png);
+ }
+.s7playpausebutton[selected='false'][state='up'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/pause_up.png);
+ }
+.s7playpausebutton[selected='false'][state='over'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/pause_over.png);
+ }
+.s7playpausebutton[selected='false'][state='down'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/pause_down.png);
+ }
+.s7playpausebutton[selected='false'][state='disabled'][state='up'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/pause_disabled.png);
+ }
+.s7playpausebutton[selected='true'][replay='true'][state='up'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/replay_up.png);
+ }
+.s7playpausebutton[selected='true'][replay='true'][state='over'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/replay_over.png);
+ }
+.s7playpausebutton[selected='true'][replay='true'][state='down'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/replay_down.png);
+ }
+.s7playpausebutton[selected='true'][replay='true'][state='disabled'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/replay_disabled.png);
+ }
+</style><style data-component="ScrollDownButton" data-description="Scene7DefaultCSS" media="screen" type="text/css">.s7scrolldownbutton {
+	width:25px;
+	height:25px;
+	background-size:contain;
+	background-repeat:no-repeat;
+	background-position:center;
+	-webkit-touch-callout:none;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+ }
+.s7scrolldownbutton[state='up'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/scroll_down_up.png);
+ }
+.s7scrolldownbutton[state='over'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/scroll_down_over.png);
+ }
+.s7scrolldownbutton[state='down'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/scroll_down_down.png);
+ }
+.s7scrolldownbutton[state='disabled'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/scroll_down_disabled.png);
+ }
+.s7scrolldownbutton {
+	width:20px;
+	height:20px;
+ }
+</style><style data-component="ScrollUpButton" data-description="Scene7DefaultCSS" media="screen" type="text/css">.s7scrollupbutton {
+	width:25px;
+	height:25px;
+	background-size:contain;
+	background-repeat:no-repeat;
+	background-position:center;
+	-webkit-touch-callout:none;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+ }
+.s7scrollupbutton[state='up'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/scroll_up_up.png);
+ }
+.s7scrollupbutton[state='over'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/scroll_up_over.png);
+ }
+.s7scrollupbutton[state='down'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/scroll_up_down.png);
+ }
+.s7scrollupbutton[state='disabled'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/scroll_up_disabled.png);
+ }
+.s7scrollupbutton {
+	width:20px;
+	height:20px;
+ }
+</style><style data-component="ScrollRightButton" data-description="Scene7DefaultCSS" media="screen" type="text/css">.s7scrollrightbutton {
+	width:25px;
+	height:25px;
+	background-size:contain;
+	background-repeat:no-repeat;
+	background-position:center;
+	-webkit-touch-callout:none;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+ }
+.s7scrollrightbutton[state='up'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/scroll_right_up.png);
+ }
+.s7scrollrightbutton[state='over'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/scroll_right_over.png);
+ }
+.s7scrollrightbutton[state='down'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/scroll_right_down.png);
+ }
+.s7scrollrightbutton[state='disabled'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/scroll_right_disabled.png);
+ }
+.s7scrollrightbutton {
+	width:20px;
+	height:20px;
+ }
+</style><style data-component="ScrollLeftButton" data-description="Scene7DefaultCSS" media="screen" type="text/css">.s7scrollleftbutton {
+	width:25px;
+	height:25px;
+	background-size:contain;
+	background-repeat:no-repeat;
+	background-position:center;
+	-webkit-touch-callout:none;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+ }
+.s7scrollleftbutton[state='up'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/scroll_left_up.png);
+ }
+.s7scrollleftbutton[state='over'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/scroll_left_over.png);
+ }
+.s7scrollleftbutton[state='down'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/scroll_left_down.png);
+ }
+.s7scrollleftbutton[state='disabled'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/scroll_left_disabled.png);
+ }
+.s7scrollleftbutton {
+	width:20px;
+	height:20px;
+ }
+</style><style data-component="PanRightButton" data-description="Scene7DefaultCSS" media="screen" type="text/css">.s7panrightbutton {
+	width:25px;
+	height:25px;
+	background-size:contain;
+	background-repeat:no-repeat;
+	background-position:center;
+	-webkit-touch-callout:none;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+ }
+.s7panrightbutton[state='up'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/panright_up.png);
+ }
+.s7panrightbutton[state='over'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/panright_over.png);
+ }
+.s7panrightbutton[state='down'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/panright_down.png);
+ }
+.s7panrightbutton[state='disabled'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/panright_disabled.png);
+ }
+</style><style data-component="PanLeftButton" data-description="Scene7DefaultCSS" media="screen" type="text/css">.s7panleftbutton {
+	width:25px;
+	height:25px;
+	background-size:contain;
+	background-repeat:no-repeat;
+	background-position:center;
+	-webkit-touch-callout:none;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+ }
+.s7panleftbutton[state='up'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/panleft_up.png);
+ }
+.s7panleftbutton[state='over'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/panleft_over.png);
+ }
+.s7panleftbutton[state='down'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/panleft_down.png);
+ }
+.s7panleftbutton[state='disabled'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/panleft_disabled.png);
+ }
+</style><style data-component="PanDownButton" data-description="Scene7DefaultCSS" media="screen" type="text/css">.s7pandownbutton {
+	width:25px;
+	height:25px;
+	background-size:contain;
+	background-repeat:no-repeat;
+	background-position:center;
+	-webkit-touch-callout:none;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+ }
+.s7pandownbutton[state='up'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/pandown_up.png);
+ }
+.s7pandownbutton[state='over'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/pandown_over.png);
+ }
+.s7pandownbutton[state='down'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/pandown_down.png);
+ }
+.s7pandownbutton[state='disabled'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/pandown_disabled.png);
+ }
+</style><style data-component="PanUpButton" data-description="Scene7DefaultCSS" media="screen" type="text/css">.s7panupbutton {
+	width:25px;
+	height:25px;
+	background-size:contain;
+	background-repeat:no-repeat;
+	background-position:center;
+	-webkit-touch-callout:none;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+ }
+.s7panupbutton[state='up'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/panup_up.png);
+ }
+.s7panupbutton[state='over'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/panup_over.png);
+ }
+.s7panupbutton[state='down'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/panup_down.png);
+ }
+.s7panupbutton[state='disabled'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/panup_disabled.png);
+ }
+</style><style data-component="ZoomOutButton" data-description="Scene7DefaultCSS" media="screen" type="text/css">.s7zoomoutbutton {
+	width:25px;
+	height:25px;
+	background-size:contain;
+	background-repeat:no-repeat;
+	background-position:center;
+	-webkit-touch-callout:none;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+ }
+.s7zoomoutbutton[state='up'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/zoomout_up.png);
+ }
+.s7zoomoutbutton[state='over'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/zoomout_over.png);
+ }
+.s7zoomoutbutton[state='down'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/zoomout_down.png);
+ }
+.s7zoomoutbutton[state='disabled'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/zoomout_disabled.png);
+ }
+</style><style data-component="ZoomInButton" data-description="Scene7DefaultCSS" media="screen" type="text/css">.s7zoominbutton {
+	width:25px;
+	height:25px;
+	background-size:contain;
+	background-repeat:no-repeat;
+	background-position:center;
+	-webkit-touch-callout:none;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+ }
+.s7zoominbutton[state='up'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/zoomin_up.png);
+ }
+.s7zoominbutton[state='over'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/zoomin_over.png);
+ }
+.s7zoominbutton[state='down'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/zoomin_down.png);
+ }
+.s7zoominbutton[state='disabled'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/zoomin_disabled.png);
+ }
+</style><style data-component="ZoomResetButton" data-description="Scene7DefaultCSS" media="screen" type="text/css">.s7zoomresetbutton {
+	width:25px;
+	height:25px;
+	background-size:contain;
+	background-repeat:no-repeat;
+	background-position:center;
+	-webkit-touch-callout:none;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+ }
+.s7zoomresetbutton[state='up'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/zoomreset_up.png);
+ }
+.s7zoomresetbutton[state='over'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/zoomreset_over.png);
+ }
+.s7zoomresetbutton[state='down'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/zoomreset_down.png);
+ }
+.s7zoomresetbutton[state='disabled'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/zoomreset_disabled.png);
+ }
+</style><style data-component="CloseButton" data-description="Scene7DefaultCSS" media="screen" type="text/css">.s7closebutton {
+	width:25px;
+	height:25px;
+	background-size:contain;
+	background-repeat:no-repeat;
+	background-position:center;
+	-webkit-touch-callout:none;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+ }
+.s7closebutton[state='up'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/close_up.png);
+ }
+.s7closebutton[state='over'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/close_over.png);
+ }
+.s7closebutton[state='down'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/close_down.png);
+ }
+.s7closebutton[state='disabled'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/close_disabled.png);
+ }
+.s7closebutton {
+	width:32px;
+	height:32px;
+ }
+</style><style data-component="SimpleToolTip" data-description="Scene7DefaultCSS" media="screen" type="text/css">.s7tooltip {
+	position:absolute;
+	padding:5px;
+	line-height:100%;
+	text-align:center;
+	background-color:rgb(224, 224, 224);
+	color:rgb(26,26,26);
+	font-family:Helvetica, sans-serif;
+	font-size:11px;
+	border:1px solid rgb(191,191,191);
+ }
+</style><style data-component="Swatches" data-description="Scene7DefaultCSS" media="screen" type="text/css">.s7swatches {
+	background-color:rgba(100, 100, 100, 0.2);
+	z-index:0;
+	user-select:none;
+	-ms-user-select:none;
+	-moz-user-select:-moz-none;
+	-webkit-user-select:none;
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+	width:500px;
+	height:250px;
+ }
+.s7swatches .s7thumbcell {
+	margin:5px;
+ }
+.s7swatches .s7thumb {
+	border:1px solid transparent;
+	width:75px;
+	height:75px;
+ }
+.s7swatches .s7thumb[state='selected'] {
+	border:1px solid #FFFFFF;
+ }
+.s7swatches .s7thumb .s7thumboverlay {
+	width:100%;
+	height:100%;
+ }
+.s7swatches .s7thumb .s7thumboverlay[type='swatchset'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/asset_type_swatches.png);
+ }
+.s7swatches .s7thumb .s7thumboverlay[type='spinset'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/asset_type_spin.png);
+ }
+.s7swatches .s7thumb .s7thumboverlay[type='video'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/asset_type_video.png);
+ }
+.s7swatches .s7label {
+	font-family:Helvetica, sans-serif;
+	font-size:12px;
+ }
+.s7swatches .s7scrollleftbutton {
+	display:block;
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:20px;
+	height:20px;
+ }
+.s7swatches .s7scrollleftbutton[state='up'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/scroll_left_up.png);
+ }
+.s7swatches .s7scrollleftbutton[state='over'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/scroll_left_over.png);
+ }
+.s7swatches .s7scrollleftbutton[state='down'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/scroll_left_down.png);
+ }
+.s7swatches .s7scrollleftbutton[state='disabled'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/scroll_left_disabled.png);
+ }
+.s7swatches .s7scrollrightbutton {
+	display:block;
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:20px;
+	height:20px;
+ }
+.s7swatches .s7scrollrightbutton[state='up'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/scroll_right_up.png);
+ }
+.s7swatches .s7scrollrightbutton[state='over'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/scroll_right_over.png);
+ }
+.s7swatches .s7scrollrightbutton[state='down'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/scroll_right_down.png);
+ }
+.s7swatches .s7scrollrightbutton[state='disabled'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/scroll_right_disabled.png);
+ }
+.s7swatches .s7scrollupbutton {
+	display:block;
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:20px;
+	height:20px;
+ }
+.s7swatches .s7scrollupbutton[state='up'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/scroll_up_up.png);
+ }
+.s7swatches .s7scrollupbutton[state='over'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/scroll_up_over.png);
+ }
+.s7swatches .s7scrollupbutton[state='down'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/scroll_up_down.png);
+ }
+.s7swatches .s7scrollupbutton[state='disabled'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/scroll_up_disabled.png);
+ }
+.s7swatches .s7scrolldownbutton {
+	display:block;
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:20px;
+	height:20px;
+ }
+.s7swatches .s7scrolldownbutton[state='up'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/scroll_down_up.png);
+ }
+.s7swatches .s7scrolldownbutton[state='over'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/scroll_down_over.png);
+ }
+.s7swatches .s7scrolldownbutton[state='down'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/scroll_down_down.png);
+ }
+.s7swatches .s7scrolldownbutton[state='disabled'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/scroll_down_disabled.png);
+ }
+</style><style data-component="Container" data-description="Scene7DefaultCSS" media="screen" type="text/css">.s7container {
+	overflow:hidden;
+ }
+.s7container[mode='fullscreen'] {
+	border:0px !important;
+	margin:0px !important;
+	padding:0px !important;
+ }
+</style><iframe id="__cmbFrame" name="__cmbFrame" frameborder="0" height="0" width="0"></iframe><script src="www.nyandcompany.com_files/tpv.js" id="__cmbRemoteTpv0"></script><script src="www.nyandcompany.com_files/crumb5.js"></script><script src="www.nyandcompany.com_files/magpie.js" async="" type="text/javascript"></script><style data-component="ZoomView" data-description="Scene7DefaultCSS" media="screen" type="text/css">.s7zoomview {
+	position:absolute;
+	background-color:#FFFFFF;
+	user-select:none;
+	-moz-user-select:-moz-none;
+	-webkit-user-select:none;
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+ }
+.s7zoomview[cursortype='default'] {
+	cursor:default;
+ }
+.s7zoomview[cursortype='zoomin'] {
+	cursor:default;
+ }
+.s7zoomview[cursortype='reset'] {
+	cursor:default;
+ }
+.s7zoomview[cursortype='drag'] {
+	cursor:default;
+ }
+.s7zoomview[cursortype='slide'] {
+	cursor:default;
+ }
+.s7zoomview .s7iconeffect {
+	width:120px;
+	height:120px;
+	-webkit-transform:translateZ(0px);
+	background-repeat:no-repeat;
+	background-position:center;
+ }
+.s7zoomview .s7iconeffect[media-type='standard'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/doubletapicon.png);
+ }
+.s7zoomview .s7iconeffect[media-type='multitouch'] {
+	background-image:url(http://s7d2.scene7.com/s7sdk/2.5/images/sdk/zoomicon.png);
+ }
+</style>
+  	<!-- 
+	          Server: w219109apss2004+prod1d 
+	      --> 
+	    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">  
+
+     <script src="www.nyandcompany.com_files/a.js" async="" type="text/javascript"></script><script src="www.nyandcompany.com_files/ga.js" async="" type="text/javascript"></script><script src="www.nyandcompany.com_files/crumb5.js"></script><script src="www.nyandcompany.com_files/bv-primary.js"></script><script src="www.nyandcompany.com_files/batch.js"></script><script type="text/javascript">var NREUMQ=NREUMQ||[];NREUMQ.push(["mark","firstbyte",new Date().getTime()]);</script><link rel="stylesheet" href="www.nyandcompany.com_files/global.css">
+	
+	<link rel="stylesheet" href="www.nyandcompany.com_files/store.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    
+
+
+    <link href="www.nyandcompany.com_files/screen.css" rel="stylesheet" type="text/css"><link media="all" href="www.nyandcompany.com_files/widget007.css" type="text/css" rel="stylesheet"><script id="s7sdk.image.ZoomView" src="www.nyandcompany.com_files/ZoomView.js" type="text/javascript" language="javascript"></script><script id="s7sdk.set.Swatches" src="www.nyandcompany.com_files/Swatches.js" type="text/javascript" language="javascript"></script><script id="s7sdk.common.Container" src="www.nyandcompany.com_files/Container.js" type="text/javascript" language="javascript"></script><script id="s7sdk.set.MediaSet" src="www.nyandcompany.com_files/MediaSet.js" type="text/javascript" language="javascript"></script><script id="s7sdk.image.View" src="www.nyandcompany.com_files/View.js" type="text/javascript" language="javascript"></script><script id="s7sdk.common.IS" src="www.nyandcompany.com_files/IS.js" type="text/javascript" language="javascript"></script><script id="s7sdk.common.IconEffect" src="www.nyandcompany.com_files/IconEffect.js" type="text/javascript" language="javascript"></script><script id="s7sdk.common.ItemDesc" src="www.nyandcompany.com_files/ItemDesc.js" type="text/javascript" language="javascript"></script><script id="s7sdk.event.InputController" src="www.nyandcompany.com_files/InputController.js" type="text/javascript" language="javascript"></script><script async="" src="www.nyandcompany.com_files/p13n_generated.js" charset="UTF-8" type="text/javascript"></script><script id="s7sdk.event.Event" src="www.nyandcompany.com_files/Event.js" type="text/javascript" language="javascript"></script><script id="s7sdk.common.ScrollableDiv" src="www.nyandcompany.com_files/ScrollableDiv.js" type="text/javascript" language="javascript"></script><script id="s7sdk.common.Thumb" src="www.nyandcompany.com_files/Thumb.js" type="text/javascript" language="javascript"></script><script id="s7sdk.utils.SwatchesParser" src="www.nyandcompany.com_files/SwatchesParser.js" type="text/javascript" language="javascript"></script><script id="s7sdk.common.Geometry" src="www.nyandcompany.com_files/Geometry.js" type="text/javascript" language="javascript"></script><script id="s7sdk.common.Button" src="www.nyandcompany.com_files/Button.js" type="text/javascript" language="javascript"></script><meta content="Bleecker Street Straight-Leg Pant - Pinstripe - Average  - New York &amp; Company" itemprop="name"><meta content="Shop Bleecker Street Straight-Leg Pant - Pinstripe - Average . Find your perfect size online at the best price at New York &amp; Company. " itemprop="description"><meta itemprop="image" content="http://images.nyandcompany.com/is/image/NewYorkCompany/productdetaildefault/Bleecker-Street-Straight-Leg-Pant-Pinstripe-Average-_06194468_094.jpg"><meta content="Bleecker Street Straight-Leg Pant - Pinstripe - Average  - New York &amp; Company" property="og:title"><meta property="og:type" content="product"><meta content="http://www.nyandcompany.com/nyco/prod/sale/suits/bleecker-street-straight-leg-pant-pinstripe-average-/A-prod2210011/" property="og:url"><meta property="og:image" content="http://images.nyandcompany.com/is/image/NewYorkCompany/productdetaildefault/Bleecker-Street-Straight-Leg-Pant-Pinstripe-Average-_06194468_094.jpg"><meta content="Shop Bleecker Street Straight-Leg Pant - Pinstripe - Average . Find your perfect size online at the best price at New York &amp; Company. " property="og:description"><meta content="New York &amp; Company" property="og:site_name"><meta property="fb:admins" content="421191914656803"><meta property="fb:app_id" content="421191914656803"><meta property="og:price:amount" content="26.47"><meta property="og:price:standard_amount" content="52.95"><meta property="og:price:currency" content="USD"><meta content="In Stock" property="og:availability"><script id="s7sdk.common.Enumeration" src="www.nyandcompany.com_files/Enumeration.js" type="text/javascript" language="javascript"></script><script id="s7sdk.image.Resolution" src="www.nyandcompany.com_files/Resolution.js" type="text/javascript" language="javascript"></script><script id="s7sdk.image.Tile" src="www.nyandcompany.com_files/Tile.js" type="text/javascript" language="javascript"></script><script id="s7sdk.utils.Version" src="www.nyandcompany.com_files/Version.js" type="text/javascript" language="javascript"></script><script id="s7sdk.common.Data" src="www.nyandcompany.com_files/Data.js" type="text/javascript" language="javascript"></script><script src="www.nyandcompany.com_files/secondary.js" data-requiremodule="secondary" data-requirecontext="_BV" async="" charset="utf-8" type="text/javascript"></script><script src="www.nyandcompany.com_files/06194468_is.js" language="javascript" type="text/javascript" id="s7req_181350782"></script><script src="www.nyandcompany.com_files/06194468_is_002.js" language="javascript" type="text/javascript" id="s7req_252590032"></script><script src="www.nyandcompany.com_files/06194468_094.js" language="javascript" type="text/javascript" id="s7req_255751505"></script><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f6f7f8;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3a5795;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{max-height:590px;min-height:590px;max-width:500px;min-width:500px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #2f477a;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f8;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}</style></head><body class=""><input id="contentType" value="product" type="hidden">
+    <title>Bleecker Street Straight-Leg Pant - Pinstripe - Average  - New York &amp; Company</title>
+ 
+      <input id="ogTitle" value="Bleecker Street Straight-Leg Pant - Pinstripe - Average  - New York &amp; Company" type="hidden">
+   <meta name="msvalidate.01" content="E0FE05432129881DD73874AE6E66D49F">
+<meta name="google-site-verification" content="qN_DKXndM2oVCGaJ_47eXl8c0WLfUK3WZYubh3hwwQw">  
+  <meta name="description" content="Shop Bleecker Street Straight-Leg Pant - Pinstripe - Average . Find your perfect size online at the best price at New York &amp; Company. ">
+			<input id="description" value="Shop Bleecker Street Straight-Leg Pant - Pinstripe - Average . Find your perfect size online at the best price at New York &amp; Company. " type="hidden">
+		<meta name="author" content="ATG Store Fashion">
+  
+  <link rel="schema.DC" href="http://www.purl.org/dc/elements/1.1/">
+	<link rel="schema.DCTERMS" href="http://www.purl.org/dc/terms/">
+	<link rel="schema.DCMITYPE" href="http://www.purl.org/dc/dcmitype/">
+	<input id="URL" value="http://www.nyandcompany.com/nyco/prod/sale/suits/bleecker-street-straight-leg-pant-pinstripe-average-/A-prod2210011/" type="hidden">
+                  <link rel="canonical" href="http://www.nyandcompany.com/nyco/prod/sale/suits/bleecker-street-straight-leg-pant-pinstripe-average-/A-prod2210011/"> 
+            <!--TWITTER CARD  new -->
+					<meta name="twitter:card" content="product">
+					<meta name="twitter:site" content="@nyandcompany">
+					<meta name="twitter:title" content="Bleecker Street Straight-Leg Pant - Pinstripe - Average  - New York &amp; Company">
+					<meta name="twitter:description" content="Shop Bleecker Street Straight-Leg Pant - Pinstripe - Average . Find your perfect size online at the best price at New York &amp; Company. ">
+					<meta name="twitter:creator" content="@nyandcompany">
+					<meta name="twitter:image" content="http://images.nyandcompany.com/is/image/NewYorkCompany/productdetaildefault/Bleecker-Street-Straight-Leg-Pant-Pinstripe-Average-_06194468.jpg">
+					<meta name="twitter:data1" content="$52.95">
+					<meta name="twitter:label1" content="Price">
+					<meta name="twitter:data2" content="BLACK/WHITE">
+					<meta name="twitter:label2" content="Color">
+					<!--TWITTER CARD -->
+	<meta name="DC.title" content="Bleecker Street Straight-Leg Pant - Pinstripe - Average  - New York &amp; Company">
+  
+  <meta name="DC.creator" content="ATG Store Fashion">
+    
+  <meta name="DC.subject" content="">
+    
+  <meta name="DC.description" content="Shop Bleecker Street Straight-Leg Pant - Pinstripe - Average . Find your perfect size online at the best price at New York &amp; Company. ">
+    
+  <meta name="DC.publisher" content="ATG Store Fashion">
+    
+  <meta name="DC.type" scheme="DCTERMS.DCMIType" content="Text">
+   
+  <meta name="DC.format" content="text/html">
+    
+  <meta name="DC.language" scheme="RFC1766" content="en">
+    
+  <meta name="DC.rights" content="/company/terms.jsp">
+    
+    
+  <meta name="DC.identifier" scheme="DCTERMS.URI" content="/cartridges/ProdDetailPage/ProdDetailPage.jsp">
+<script type="text/javascript" src="www.nyandcompany.com_files/bvapi.js"></script>
+		<script language="javascript" type="text/javascript" src="www.nyandcompany.com_files/Utils.js"></script><link rel="icon" type="image/png" href="http://www.nyandcompany.com/crsdocroot/images/storefront/site/storeUS/favicon.png">
+
+    <input id="IDMyBagTEXT" value="My Bag" type="hidden">
+  	<input name="sizeErrorMessage" value="Please select a size." id="sizeErrorMessage_id" type="hidden">
+   	<input id="applicationPath" value="/nyco" type="hidden">
+   	<input id="brandName" value="New York &amp; Company" type="hidden">
+   	<script type="text/javascript">
+	    
+	    var djConfig={
+	      baseScriptUri: "/dojo-1/dojo/",
+	      disableFlashStorage: true,
+	      parseOnLoad: true,
+	      isDebug: false
+	    };
+  	</script>
+	<script type="text/javascript" src="www.nyandcompany.com_files/addthis_widget.js"></script><div id="_atssh" style="visibility: hidden; height: 1px; width: 1px; position: absolute; z-index: 100000;"><iframe src="www.nyandcompany.com_files/sh180.html" style="height: 1px; width: 1px; position: absolute; z-index: 100000; border: 0px none; left: 0px; top: 0px;" title="AddThis utility frame" id="_atssh660"></iframe></div><script src="www.nyandcompany.com_files/core164.js" type="text/javascript"></script>
+	
+	<script type="text/javascript" src="www.nyandcompany.com_files/dojo.js"></script>
+  	
+
+  	<script type="text/javascript">    
+	    
+	    var contextPath="/nyco";	        
+	    
+	    dojo.registerModulePath('atg.store', contextPath+'/javascript');
+  	</script>
+  	
+  	<script type="text/javascript" src="www.nyandcompany.com_files/conversion_async.js" charset="utf-8"></script>
+  															         
+  	<script type="text/javascript" src="www.nyandcompany.com_files/customPageStartScripts.js"></script><style>.mboxDefault { visibility:visible; }</style>
+  	
+  
+  	  
+  
+<header class="container-full">
+	<div class="promo regular">
+			<div class="container-fixed">
+				<div class="row promocontent">
+				<a href="#SweetDeals" onclick="Dialogs.self().show('promotion'); return false;">
+							Cyber Monday WebBusters! Everything 50%-80% Off + $30 Off $100+ 
+(Code 1412) &amp; Free Shipping On Any Order. Click for Details.</a>
+						<input value="Cyber Monday WebBusters! Everything 50%-80% Off + $30 Off $100+ (Code 1412) &amp; Free Shipping On Any Order. Click for Details." id="promotTitle" type="hidden">
+						<input value="Extended for One Day Only! Cyber Monday &amp; Amazing Online Only WebBusters! Everything 50%-80% Off (excludes select NY Deals &amp; Gift Cards) &amp; as an Online Only Bonus Take an Extra $30 Off Orders Over $100 with Code 1412 or $15 Off $50+ with Code 1411 (Excludes WebBusters, NY Deals, Clearance, &amp; Gift Cards). Plus Free Standard Shipping (valid in the US only including Puerto Rico) On Any Order – no code needed." id="promotMessage" type="hidden">
+					</div>
+			</div>
+		</div>
+		
+		<nav class="standard">
+         <div class="masthead">
+			<div class="container-fixed">
+				<div class="row">
+         			<ul class="col4 admin">
+						<li class="login">
+							<a style="cursor: default;" href="" class="header_nav">
+								Log In</a>
+						</li>
+						
+						<a id="myWishList" class="wishlist wishListLogOut" href="http://www.nyandcompany.com/nyco/wish-list/;jsessionid=EC606BB0692C4437F1E1244F7A72E54D">Wish list</a></ul>
+					
+					<div class="col4">
+						<div class="col4">
+			<a class="logo" href="http://www.nyandcompany.com/nyco/;jsessionid=EC606BB0692C4437F1E1244F7A72E54D"></a></div>
+	</div>
+					<div class="col4">
+							<ul class="admin1 right">
+								<li class="scrollbag mybag my_mini_bag" id="atg_store_richcart"><a widgetid="richCartTrigger" id="richCartTrigger" href="http://www.nyandcompany.com/nyco/shopping-bag/" class="" dojoattachevent="onmouseover:toggleCart, onmouseout:toggleCart1" dojoattachpoint="triggerLink" title="Show Cart">My Bag<span id="atg_store_cartQty">(0)</span></a><li style="overflow: hidden; height: 0px; opacity: 1; visibility: hidden;" widgetid="atg_store_widget_RichCartSummary_0" id="atg_store_widget_RichCartSummary_0">
+<h4 class="hassubhead">Bag Total: 
+	<span class="amount" dojoattachpoint="csSubtotal,csSubtotalContainer">$0.00</span>
+</h4>
+<hr style="display: block">
+<div class="scrollable gscrollbar">
+	
+<div style="height: 250px;" class="scrollbar disable"><div style="height: 250px;" class="track"><div style="top: 0px; height: 250px;" class="thumb"></div></div></div><div style="height: 250px;" class="viewport"><div style="top: 0px;" class="overview"><ul id="atg_store_csContent" class="minicart" dojoattachpoint="csContent,containerNode">
+		<li dojoattachpoint="csEmptyMessage" class="atg_store_emptyRichCart">
+			<span>Bag is empty</span>
+		</li>
+	</ul></div></div></div>
+<hr class="bottom" style="display: block">
+<div>
+	<a style="display: none;" href="javascript:void(0);" onclick="javascript:submitCheckout();checkoutItemFromCart('checkoutItem');" class="button float" dojoattachpoint="csCheckout"> 
+		<span>Checkout</span> 
+	</a> 
+	<a class="smbtn" dojoattachpoint="csFullCheckout" href="http://www.nyandcompany.com/nyco/shopping-bag/;jsessionid=EC606BB0692C4437F1E1244F7A72E54D">
+		VIEW MY BAG 
+	</a>
+</div>
+</li></li>
+								<li class="globalsearch">
+									<p class="label">Search</p>
+									<p class="icon"></p>
+								</li>
+							</ul>
+						</div>
+						
+	          			<div class="row-end">&nbsp;</div>
+				</div>
+			</div>
+		</div>
+		
+		<script type="text/javascript" src="www.nyandcompany.com_files/jquery.js"></script>
+	<div class="globalsearch-container">
+	<form name="searchForm" id="searchForm" class="container-fixed vert-content container" onsubmit="" autocomplete="off">
+	<div class="vert-content content">
+	<div class="container">
+	<div>
+	
+<input id="searchText" class="searchInput" name="Ntt" maxlength="100" type="text">
+
+	<div class="auto-complete" style="display: none;" id="dim_serch_cont">
+	</div>
+	</div>
+	<div><input id="globalSearchSubmit" class="icon search go" value=" " onclick="removeEnterSearchTerm()" type="submit"></div>
+	<div class="icon search close"></div>
+	</div>
+	</div>
+
+	</form>
+	</div>
+	<script language="javascript" src="www.nyandcompany.com_files/endeca-auto-suggest.js"></script>
+	<script type="text/javascript">
+		function removeEnterSearchTerm(){
+			var searchText=$('#searchText').val();
+			if(searchText=='Enter Search Term'){
+				$('#searchText').val("")
+			}
+		}
+	</script>
+<div class="toplevel">
+					<div class="container-full tier1">
+						<div class="container-fixed">
+							<a class="cat-link" href="#/N-103443/" onclick="omnitureTopNavigationClicks('Gifts');">
+											Gifts</a>
+									<a class="cat-link" href="#/N-102756/" onclick="omnitureTopNavigationClicks('Trends');">
+											Trends</a>
+									<a class="cat-link" href="#/N-102689/" onclick="omnitureTopNavigationClicks('New Arrivals');">
+											New Arrivals</a>
+									<a class="cat-link" href="#/N-102687/" onclick="omnitureTopNavigationClicks('Eva Mendes');">
+											Eva Mendes</a>
+									<a class="cat-link" href="#/N-102581/" onclick="omnitureTopNavigationClicks('Apparel');">
+											Apparel</a>
+									<a class="cat-link" href="#/N-102739/" onclick="omnitureTopNavigationClicks('Suiting');">
+											Suiting</a>
+									<a class="cat-link" href="#/N-102706/" onclick="omnitureTopNavigationClicks('Pants');">
+											Pants</a>
+									<a class="cat-link" href="#/N-102748/" onclick="omnitureTopNavigationClicks('Tops');">
+											Tops</a>
+									<a class="cat-link" href="#/N-102714/" onclick="omnitureTopNavigationClicks('Petite &amp; Tall');">
+											Petite &amp; Tall</a>
+									<a class="cat-link" href="#/N-102560/" onclick="omnitureTopNavigationClicks('Accessories');">
+											Accessories</a>
+									<a class="cat-link" href="#/N-102672/" onclick="omnitureTopNavigationClicks('Clearance');">
+											Clearance</a>
+									</div>
+					</div>
+					<div class="bottom-shadow"></div>
+				</div>
+			</nav>
+	
+	<nav class="compact">
+		<div class="masthead">
+			<div class="container-fixed">
+				<div class="row">
+					
+					<ul class="col4 admin">
+						<li class="login">
+							<a style="cursor: default;" href="">Log In</a>
+						</li>
+						<a id="myWishList" class="wishlist wishListLogOut" href="http://www.nyandcompany.com/nyco/wish-list/;jsessionid=EC606BB0692C4437F1E1244F7A72E54D">Wish list</a></ul>
+					
+															
+					<div class="col4">
+						<div class="col4">
+			<a class="logo" href="http://www.nyandcompany.com/nyco/;jsessionid=EC606BB0692C4437F1E1244F7A72E54D"></a></div>
+	</div>
+					<div class="col4">
+							<ul class="admin1 right">
+								<li class="globalsearch">
+									<p class="label">Search</p>
+								<p class="icon"></p>
+								</li>
+							</ul>
+						</div>	
+						
+	          			<div class="row-end">&nbsp;</div>
+				</div>
+			</div>
+		</div>
+	
+		
+		<div class="toplevel">
+					<div class="container-full tier1">
+						<div class="container-fixed">
+							<a class="cat-link" href="#/N-103443/" onclick="omnitureTopNavigationClicks('Gifts');">
+											Gifts</a>
+									<a class="cat-link" href="#/N-102756/" onclick="omnitureTopNavigationClicks('Trends');">
+											Trends</a>
+									<a class="cat-link" href="#/N-102689/" onclick="omnitureTopNavigationClicks('New Arrivals');">
+											New Arrivals</a>
+									<a class="cat-link" href="#/N-102687/" onclick="omnitureTopNavigationClicks('Eva Mendes');">
+											Eva Mendes</a>
+									<a class="cat-link" href="#/N-102581/" onclick="omnitureTopNavigationClicks('Apparel');">
+											Apparel</a>
+									<a class="cat-link" href="#/N-102739/" onclick="omnitureTopNavigationClicks('Suiting');">
+											Suiting</a>
+									<a class="cat-link" href="#/N-102706/" onclick="omnitureTopNavigationClicks('Pants');">
+											Pants</a>
+									<a class="cat-link" href="#/N-102748/" onclick="omnitureTopNavigationClicks('Tops');">
+											Tops</a>
+									<a class="cat-link" href="#/N-102714/" onclick="omnitureTopNavigationClicks('Petite &amp; Tall');">
+											Petite &amp; Tall</a>
+									<a class="cat-link" href="#/N-102560/" onclick="omnitureTopNavigationClicks('Accessories');">
+											Accessories</a>
+									<a class="cat-link" href="#/N-102672/" onclick="omnitureTopNavigationClicks('Clearance');">
+											Clearance</a>
+									</div>
+					</div>
+					<div class="bottom-shadow"></div>
+				</div>
+			</nav>
+	
+	<nav class="dropdown">
+		<div class="icon arrows-md down"></div>
+		<div class="container-fixed cat-link">
+					<div id="subCat103443">		
+			<div class="row">
+				<div class="col2 stacked-anchors">
+						<a href="http://www.nyandcompany.com/nyco/promo/HolidayGiftGuide/" onclick="omnitureSubCatNavigationClicks('Holiday Gift Guide','http://www.nyandcompany.com/nyco/promo/HolidayGiftGuide/');">
+								Holiday Gift Guide</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/new/holiday-gifts/all-holiday-gifts/N-103422/" onclick="omnitureSubCatNavigationClicks('Holiday Gifts','/nyco/cat/new/holiday-gifts/all-holiday-gifts/N-103422/');">
+								Holiday Gifts</a>
+						</div></div>
+			</div>		        
+		<div class="col6 ddpromo">
+								<a href="http://www.nyandcompany.com/nyco/cat/new/must-haves/N-102880?No=0&amp;Nrpp=108#&amp;icid=flyout_11302014">
+									<img src="www.nyandcompany.com_files/120214-flyout-50-80-NewYorkandCompany.jpg" alt="The Flyout Promo">
+								</a>
+							</div>
+						<div class="row-end">&nbsp;</div>
+				</div>
+			<div class="container-fixed cat-link">
+					<div id="subCat102756">		
+			<div class="row">
+				<div class="col2 stacked-anchors">
+						<a href="http://www.nyandcompany.com/nyco/cat/trends/N-102757/" onclick="omnitureSubCatNavigationClicks('All Latest Trends','/nyco/cat/trends/N-102757/');">
+								All Latest Trends</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/trends/eva-mendes-new-blue-collection/N-103396/" onclick="omnitureSubCatNavigationClicks('Eva's New Collection','/nyco/cat/trends/eva-mendes-new-blue-collection/N-103396/');">
+								Eva's New Collection</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/trends/fall-fashion-finds/N-103356/" onclick="omnitureSubCatNavigationClicks('Fall Fashion Finds','/nyco/cat/trends/fall-fashion-finds/N-103356/');">
+								Fall Fashion Finds</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/trends/fall-outerwear/N-103358/" onclick="omnitureSubCatNavigationClicks('Powerfully Chic','/nyco/cat/trends/fall-outerwear/N-103358/');">
+								Powerfully Chic</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/trends/womens-black-work-pants-fit-guide/N-103301/" onclick="omnitureSubCatNavigationClicks('The Perfect Pant Fit Quiz','/nyco/cat/trends/womens-black-work-pants-fit-guide/N-103301/');">
+								The Perfect Pant Fit Quiz</a>
+						<a href="http://www.nyandcompany.com/nyco/promo/CityChicFallSweaters/" onclick="omnitureSubCatNavigationClicks('Cold Comfort','http://www.nyandcompany.com/nyco/promo/CityChicFallSweaters/');">
+								Cold Comfort</a>
+						</div><div class="col2 stacked-anchors">
+						<a href="http://www.nyandcompany.com/nyco/promo/BlackLace" onclick="omnitureSubCatNavigationClicks('Lace To The Top','http://www.nyandcompany.com/nyco/promo/BlackLace');">
+								Lace To The Top</a>
+						<a href="http://www.nyandcompany.com/nyco/promo/BoldFallBlouses/" onclick="omnitureSubCatNavigationClicks('Bold Bright Beautiful Blouses','http://www.nyandcompany.com/nyco/promo/BoldFallBlouses/');">
+								Bold Bright Beautiful Blouses</a>
+						</div></div>
+			</div>		        
+		<div class="col6 ddpromo">
+								<a href="http://www.nyandcompany.com/nyco/cat/new/must-haves/N-102880?No=0&amp;Nrpp=108#&amp;icid=flyout_11302014">
+									<img src="www.nyandcompany.com_files/120214-flyout-50-80-NewYorkandCompany.jpg" alt="The Flyout Promo">
+								</a>
+							</div>
+						<div class="row-end">&nbsp;</div>
+				</div>
+			<div class="container-fixed cat-link">
+					<div id="subCat102689">		
+			<div class="row">
+				<div class="col2 stacked-anchors">
+						<a href="http://www.nyandcompany.com/nyco/cat/new/holiday-gifts/all-holiday-gifts/N-103422/" onclick="omnitureSubCatNavigationClicks('Holiday Gifts','/nyco/cat/new/holiday-gifts/all-holiday-gifts/N-103422/');">
+								Holiday Gifts</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/new/must-haves/N-102880/" onclick="omnitureSubCatNavigationClicks('Must Haves','/nyco/cat/new/must-haves/N-102880/');">
+								Must Haves</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/new/eva-mendes/N-102843/" onclick="omnitureSubCatNavigationClicks('Eva Mendes Collection','/nyco/cat/new/eva-mendes/N-102843/');">
+								Eva Mendes Collection</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/new/tops/N-102690/" onclick="omnitureSubCatNavigationClicks('Tops','/nyco/cat/new/tops/N-102690/');">
+								Tops</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/new/sweaters/N-102692/" onclick="omnitureSubCatNavigationClicks('Sweaters','/nyco/cat/new/sweaters/N-102692/');">
+								Sweaters</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/new/dresses/N-102698/" onclick="omnitureSubCatNavigationClicks('Dresses','/nyco/cat/new/dresses/N-102698/');">
+								Dresses</a>
+						</div><div class="col2 stacked-anchors">
+						<a href="http://www.nyandcompany.com/nyco/cat/new/pants/N-102693/" onclick="omnitureSubCatNavigationClicks('Pants','/nyco/cat/new/pants/N-102693/');">
+								Pants</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/new/jeans/N-102694/" onclick="omnitureSubCatNavigationClicks('Soho Jeans','/nyco/cat/new/jeans/N-102694/');">
+								Soho Jeans</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/new/skirts/N-102695/" onclick="omnitureSubCatNavigationClicks('Skirts','/nyco/cat/new/skirts/N-102695/');">
+								Skirts</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/new/jackets/N-102696/" onclick="omnitureSubCatNavigationClicks('Jackets','/nyco/cat/new/jackets/N-102696/');">
+								Jackets</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/new/suits/N-102697/" onclick="omnitureSubCatNavigationClicks('Suiting','/nyco/cat/new/suits/N-102697/');">
+								Suiting</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/new/outerwear/N-102699/" onclick="omnitureSubCatNavigationClicks('Outerwear','/nyco/cat/new/outerwear/N-102699/');">
+								Outerwear</a>
+						</div><div class="col2 stacked-anchors">
+						<a href="http://www.nyandcompany.com/nyco/cat/new/loungewear/N-102701/" onclick="omnitureSubCatNavigationClicks('Lounge &amp; Yoga','/nyco/cat/new/loungewear/N-102701/');">
+								Lounge &amp; Yoga</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/new/online-exclusives/N-102702/" onclick="omnitureSubCatNavigationClicks('Online Exclusives','/nyco/cat/new/online-exclusives/N-102702/');">
+								Online Exclusives</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/new/accessories/N-102703/" onclick="omnitureSubCatNavigationClicks('Accessories','/nyco/cat/new/accessories/N-102703/');">
+								Accessories</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/new/jewelry/N-102704/" onclick="omnitureSubCatNavigationClicks('Jewelry','/nyco/cat/new/jewelry/N-102704/');">
+								Jewelry</a>
+						</div></div>
+			</div>		        
+		<div class="col6 ddpromo">
+								<a href="http://www.nyandcompany.com/nyco/cat/new/must-haves/N-102880?No=0&amp;Nrpp=108#&amp;icid=flyout_11302014">
+									<img src="www.nyandcompany.com_files/120214-flyout-50-80-NewYorkandCompany.jpg" alt="The Flyout Promo">
+								</a>
+							</div>
+						<div class="row-end">&nbsp;</div>
+				</div>
+			<div class="container-fixed cat-link">
+					<div id="subCat102687">		
+			<div class="row">
+				<div class="col2 stacked-anchors">
+						<a href="http://www.nyandcompany.com/nyco/cat/eva-mendes/N-102688/" onclick="omnitureSubCatNavigationClicks('Eva Mendes Collection','/nyco/cat/eva-mendes/N-102688/');">
+								Eva Mendes Collection</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/trends/eva-mendes-new-blue-collection/N-103396/" onclick="omnitureSubCatNavigationClicks('Eva's Looks','http://www.nyandcompany.com/nyco/cat/trends/eva-mendes-new-blue-collection/N-103396/');">
+								Eva's Looks</a>
+						</div></div>
+			</div>		        
+		<div class="col6 ddpromo">
+								<a href="http://www.nyandcompany.com/nyco/cat/new/must-haves/N-102880?No=0&amp;Nrpp=108#&amp;icid=flyout_11302014">
+									<img src="www.nyandcompany.com_files/120214-flyout-50-80-NewYorkandCompany.jpg" alt="The Flyout Promo">
+								</a>
+							</div>
+						<div class="row-end">&nbsp;</div>
+				</div>
+			<div class="container-fixed cat-link">
+					<div id="subCat102581">		
+			<div class="row">
+				<div class="col2 stacked-anchors">
+						<a href="http://www.nyandcompany.com/nyco/cat/doorbusters/N-102800/" onclick="omnitureSubCatNavigationClicks('Doorbusters','/nyco/cat/doorbusters/N-102800/');">
+								Doorbusters</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/ny-deals/N-102582/" onclick="omnitureSubCatNavigationClicks('NY Deals','/nyco/cat/ny-deals/N-102582/');">
+								NY Deals</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/new/holiday-gifts/all-holiday-gifts/N-103422/" onclick="omnitureSubCatNavigationClicks('Holiday Gifts','/nyco/cat/new/holiday-gifts/all-holiday-gifts/N-103422/');">
+								Holiday Gifts</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/eva-mendes/N-102583/" onclick="omnitureSubCatNavigationClicks('Eva Mendes Collection','/nyco/cat/eva-mendes/N-102583/');">
+								Eva Mendes Collection</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/tops/N-102781/" onclick="omnitureSubCatNavigationClicks('Tops','/nyco/cat/tops/N-102781/');">
+								Tops</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/sweaters/N-102596/" onclick="omnitureSubCatNavigationClicks('Sweaters','/nyco/cat/sweaters/N-102596/');">
+								Sweaters</a>
+						</div><div class="col2 stacked-anchors">
+						<a href="http://www.nyandcompany.com/nyco/cat/dresses/N-102626/" onclick="omnitureSubCatNavigationClicks('Dresses','/nyco/cat/dresses/N-102626/');">
+								Dresses</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/pants/N-102601/" onclick="omnitureSubCatNavigationClicks('Pants','/nyco/cat/pants/N-102601/');">
+								Pants</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/jeans/N-102609/" onclick="omnitureSubCatNavigationClicks('Soho Jeans','/nyco/cat/jeans/N-102609/');">
+								Soho Jeans</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/skirts/N-102618/" onclick="omnitureSubCatNavigationClicks('Skirts','/nyco/cat/skirts/N-102618/');">
+								Skirts</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/jackets/N-102622/" onclick="omnitureSubCatNavigationClicks('Jackets','/nyco/cat/jackets/N-102622/');">
+								Jackets</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/suits/N-102670/" onclick="omnitureSubCatNavigationClicks('Suiting','/nyco/cat/suits/N-102670/');">
+								Suiting</a>
+						</div><div class="col2 stacked-anchors">
+						<a href="http://www.nyandcompany.com/nyco/cat/outerwear/N-102634/" onclick="omnitureSubCatNavigationClicks('Outerwear','/nyco/cat/outerwear/N-102634/');">
+								Outerwear</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/loungewear/N-102641/" onclick="omnitureSubCatNavigationClicks('Lounge &amp; Yoga','/nyco/cat/loungewear/N-102641/');">
+								Lounge &amp; Yoga</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/online-exclusives/N-102654/" onclick="omnitureSubCatNavigationClicks('Online Exclusives','/nyco/cat/online-exclusives/N-102654/');">
+								Online Exclusives</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/sale/N-102959/" onclick="omnitureSubCatNavigationClicks('Sale','/nyco/cat/sale/N-102959/');">
+								Sale</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/gift-cards/N-102671/" onclick="omnitureSubCatNavigationClicks('Gift Cards','/nyco/cat/gift-cards/N-102671/');">
+								Gift Cards</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/N-103392/" onclick="omnitureSubCatNavigationClicks('St. Jude Donation','/nyco/cat/N-103392/');">
+								St. Jude Donation</a>
+						</div></div>
+			</div>		        
+		<div class="col6 ddpromo">
+								<a href="http://www.nyandcompany.com/nyco/cat/new/must-haves/N-102880?No=0&amp;Nrpp=108#&amp;icid=flyout_11302014">
+									<img src="www.nyandcompany.com_files/120214-flyout-50-80-NewYorkandCompany.jpg" alt="The Flyout Promo">
+								</a>
+							</div>
+						<div class="row-end">&nbsp;</div>
+				</div>
+			<div class="container-fixed cat-link">
+					<div id="subCat102739">		
+			<div class="row">
+				<div class="col2 stacked-anchors">
+						<a href="http://www.nyandcompany.com/nyco/cat/suits/N-102747/" onclick="omnitureSubCatNavigationClicks('All Suiting','/nyco/cat/suits/N-102747/');">
+								All Suiting</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/suits/7th-avenue/N-102740/" onclick="omnitureSubCatNavigationClicks('7th Avenue Suiting Collection','/nyco/cat/suits/7th-avenue/N-102740/');">
+								7th Avenue Suiting Collection</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/suits/bleecker-street/N-102741/" onclick="omnitureSubCatNavigationClicks('Bleecker Street','/nyco/cat/suits/bleecker-street/N-102741/');">
+								Bleecker Street</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/suits/crosby-street/N-102742/" onclick="omnitureSubCatNavigationClicks('Crosby Street','/nyco/cat/suits/crosby-street/N-102742/');">
+								Crosby Street</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/suits/pants/N-102743/" onclick="omnitureSubCatNavigationClicks('Pants','/nyco/cat/suits/pants/N-102743/');">
+								Pants</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/suits/jackets/N-102744/" onclick="omnitureSubCatNavigationClicks('Jackets','/nyco/cat/suits/jackets/N-102744/');">
+								Jackets</a>
+						</div></div>
+			</div>		        
+		<div class="col6 ddpromo">
+								<a href="http://www.nyandcompany.com/nyco/cat/new/must-haves/N-102880?No=0&amp;Nrpp=108#&amp;icid=flyout_11302014">
+									<img src="www.nyandcompany.com_files/120214-flyout-50-80-NewYorkandCompany.jpg" alt="The Flyout Promo">
+								</a>
+							</div>
+						<div class="row-end">&nbsp;</div>
+				</div>
+			<div class="container-fixed cat-link">
+					<div id="subCat102706">		
+			<div class="row">
+				<div class="col2 stacked-anchors">
+						<a href="http://www.nyandcompany.com/nyco/cat/pants/N-102707/" onclick="omnitureSubCatNavigationClicks('All Pants','/nyco/cat/pants/N-102707/');">
+								All Pants</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/pants/7th-avenue/N-102708/" onclick="omnitureSubCatNavigationClicks('7th Avenue','/nyco/cat/pants/7th-avenue/N-102708/');">
+								7th Avenue</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/pants/crosby-street/N-102709/" onclick="omnitureSubCatNavigationClicks('Crosby Street','/nyco/cat/pants/crosby-street/N-102709/');">
+								Crosby Street</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/pants/work/N-102711/" onclick="omnitureSubCatNavigationClicks('Career','/nyco/cat/pants/work/N-102711/');">
+								Career</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/pants/casual/N-102712/" onclick="omnitureSubCatNavigationClicks('Leggings','/nyco/cat/pants/casual/N-102712/');">
+								Leggings</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/pants/jeans/N-102713/" onclick="omnitureSubCatNavigationClicks('Soho Jeans','/nyco/cat/pants/jeans/N-102713/');">
+								Soho Jeans</a>
+						</div><div class="col2 stacked-anchors">
+						<a href="http://www.nyandcompany.com/nyco/cat/pants/petite-pants/N-102792/" onclick="omnitureSubCatNavigationClicks('Petite Pants','/nyco/cat/pants/petite-pants/N-102792/');">
+								Petite Pants</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/pants/tall-pants/N-102793/" onclick="omnitureSubCatNavigationClicks('Tall Pants','/nyco/cat/pants/tall-pants/N-102793/');">
+								Tall Pants</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/trends/womens-black-work-pants-fit-guide/N-103301/" onclick="omnitureSubCatNavigationClicks('The Perfect Pant Fit Quiz','http://www.nyandcompany.com/nyco/cat/trends/womens-black-work-pants-fit-guide/N-103301/');">
+								The Perfect Pant Fit Quiz</a>
+						</div></div>
+			</div>		        
+		<div class="col6 ddpromo">
+								<a href="http://www.nyandcompany.com/nyco/cat/new/must-haves/N-102880?No=0&amp;Nrpp=108#&amp;icid=flyout_11302014">
+									<img src="www.nyandcompany.com_files/120214-flyout-50-80-NewYorkandCompany.jpg" alt="The Flyout Promo">
+								</a>
+							</div>
+						<div class="row-end">&nbsp;</div>
+				</div>
+			<div class="container-fixed cat-link">
+					<div id="subCat102748">		
+			<div class="row">
+				<div class="col2 stacked-anchors">
+						<a href="http://www.nyandcompany.com/nyco/cat/tops/N-102794/" onclick="omnitureSubCatNavigationClicks('All Tops','/nyco/cat/tops/N-102794/');">
+								All Tops</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/tops/N-102796/" onclick="omnitureSubCatNavigationClicks('All Sweaters','/nyco/cat/tops/N-102796/');">
+								All Sweaters</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/tops/shirts-blouses/N-102749/" onclick="omnitureSubCatNavigationClicks('Shirts &amp; Blouses','/nyco/cat/tops/shirts-blouses/N-102749/');">
+								Shirts &amp; Blouses</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/tops/knits-tees/N-102795/" onclick="omnitureSubCatNavigationClicks('Knits &amp; Tees','/nyco/cat/tops/knits-tees/N-102795/');">
+								Knits &amp; Tees</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/tops/camis-shells/N-102750/" onclick="omnitureSubCatNavigationClicks('Camis &amp; Shells','/nyco/cat/tops/camis-shells/N-102750/');">
+								Camis &amp; Shells</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/tops/mercer-shirts/N-103048/" onclick="omnitureSubCatNavigationClicks('Mercer Shop','/nyco/cat/tops/mercer-shirts/N-103048/');">
+								Mercer Shop</a>
+						</div><div class="col2 stacked-anchors">
+						<a href="http://www.nyandcompany.com/nyco/promo/BoldFallBlouses/" onclick="omnitureSubCatNavigationClicks('Bold Bright Beautiful Blouses','http://www.nyandcompany.com/nyco/promo/BoldFallBlouses/');">
+								Bold Bright Beautiful Blouses</a>
+						<a href="http://www.nyandcompany.com/nyco/promo/CityChicFallSweaters/" onclick="omnitureSubCatNavigationClicks('Cold Comfort','http://www.nyandcompany.com/nyco/promo/CityChicFallSweaters/');">
+								Cold Comfort</a>
+						</div></div>
+			</div>		        
+		<div class="col6 ddpromo">
+								<a href="http://www.nyandcompany.com/nyco/cat/new/must-haves/N-102880?No=0&amp;Nrpp=108#&amp;icid=flyout_11302014">
+									<img src="www.nyandcompany.com_files/120214-flyout-50-80-NewYorkandCompany.jpg" alt="The Flyout Promo">
+								</a>
+							</div>
+						<div class="row-end">&nbsp;</div>
+				</div>
+			<div class="container-fixed cat-link">
+					<div id="subCat102714">		
+			<div class="row">
+				<div class="col2 stacked-anchors">
+						<a href="http://www.nyandcompany.com/nyco/cat/petite-pants/N-102827/" onclick="omnitureSubCatNavigationClicks('Petite Pants','/nyco/cat/petite-pants/N-102827/');">
+								Petite Pants</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/petite-jeans/N-102828/" onclick="omnitureSubCatNavigationClicks('Petite Jeans','/nyco/cat/petite-jeans/N-102828/');">
+								Petite Jeans</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/petite-suits/N-102831/" onclick="omnitureSubCatNavigationClicks('Petite Suiting','/nyco/cat/petite-suits/N-102831/');">
+								Petite Suiting</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/petite-loungewear/N-102833/" onclick="omnitureSubCatNavigationClicks('Petite Lounge &amp; Yoga','/nyco/cat/petite-loungewear/N-102833/');">
+								Petite Lounge &amp; Yoga</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/tall-pants/N-102835/" onclick="omnitureSubCatNavigationClicks('Tall Pants','/nyco/cat/tall-pants/N-102835/');">
+								Tall Pants</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/tall-jeans/N-102836/" onclick="omnitureSubCatNavigationClicks('Tall Jeans','/nyco/cat/tall-jeans/N-102836/');">
+								Tall Jeans</a>
+						</div><div class="col2 stacked-anchors">
+						<a href="http://www.nyandcompany.com/nyco/cat/tall-suits/N-102839/" onclick="omnitureSubCatNavigationClicks('Tall Suiting','/nyco/cat/tall-suits/N-102839/');">
+								Tall Suiting</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/tall-loungewear/N-102841/" onclick="omnitureSubCatNavigationClicks('Tall Lounge &amp; Yoga','/nyco/cat/tall-loungewear/N-102841/');">
+								Tall Lounge &amp; Yoga</a>
+						</div></div>
+			</div>		        
+		<div class="col6 ddpromo">
+								<a href="http://www.nyandcompany.com/nyco/cat/new/must-haves/N-102880?No=0&amp;Nrpp=108#&amp;icid=flyout_11302014">
+									<img src="www.nyandcompany.com_files/120214-flyout-50-80-NewYorkandCompany.jpg" alt="The Flyout Promo">
+								</a>
+							</div>
+						<div class="row-end">&nbsp;</div>
+				</div>
+			<div class="container-fixed cat-link">
+					<div id="subCat102560">		
+			<div class="row">
+				<div class="col2 stacked-anchors">
+						<a href="http://www.nyandcompany.com/nyco/cat/new-arrivals/accessories/N-102889/" onclick="omnitureSubCatNavigationClicks('New Arrivals','/nyco/cat/new-arrivals/accessories/N-102889/');">
+								New Arrivals</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/new/holiday-gifts/all-holiday-gifts/N-103422/" onclick="omnitureSubCatNavigationClicks('Holiday Gifts','/nyco/cat/new/holiday-gifts/all-holiday-gifts/N-103422/');">
+								Holiday Gifts</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/beauty/N-102561/" onclick="omnitureSubCatNavigationClicks('NY&amp;C Beauty','/nyco/cat/beauty/N-102561/');">
+								NY&amp;C Beauty</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/jewelry/N-102567/" onclick="omnitureSubCatNavigationClicks('Jewelry','/nyco/cat/jewelry/N-102567/');">
+								Jewelry</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/watches/N-102890/" onclick="omnitureSubCatNavigationClicks('Watches','/nyco/cat/watches/N-102890/');">
+								Watches</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/footwear/N-102576/" onclick="omnitureSubCatNavigationClicks('Shoes','/nyco/cat/footwear/N-102576/');">
+								Shoes</a>
+						</div><div class="col2 stacked-anchors">
+						<a href="http://www.nyandcompany.com/nyco/cat/hats-gloves-scarves/N-102563/" onclick="omnitureSubCatNavigationClicks('Hats, Gloves &amp; Scarves','/nyco/cat/hats-gloves-scarves/N-102563/');">
+								Hats, Gloves &amp; Scarves</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/scarves/N-102575/" onclick="omnitureSubCatNavigationClicks('Scarves','/nyco/cat/scarves/N-102575/');">
+								Scarves</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/wraps/N-102579/" onclick="omnitureSubCatNavigationClicks('Wraps','/nyco/cat/wraps/N-102579/');">
+								Wraps</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/handbags/N-102564/" onclick="omnitureSubCatNavigationClicks('Handbags','/nyco/cat/handbags/N-102564/');">
+								Handbags</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/wristlets-wallets/N-102580/" onclick="omnitureSubCatNavigationClicks('Wristlets &amp; Wallets','/nyco/cat/wristlets-wallets/N-102580/');">
+								Wristlets &amp; Wallets</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/belts/N-102562/" onclick="omnitureSubCatNavigationClicks('Belts','/nyco/cat/belts/N-102562/');">
+								Belts</a>
+						</div><div class="col2 stacked-anchors">
+						<a href="http://www.nyandcompany.com/nyco/cat/tights/N-102578/" onclick="omnitureSubCatNavigationClicks('Tights','/nyco/cat/tights/N-102578/');">
+								Tights</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/sunglasses/N-102577/" onclick="omnitureSubCatNavigationClicks('Sunglasses','/nyco/cat/sunglasses/N-102577/');">
+								Sunglasses</a>
+						</div></div>
+			</div>		        
+		<div class="col6 ddpromo">
+								<a href="http://www.nyandcompany.com/nyco/cat/new/must-haves/N-102880?No=0&amp;Nrpp=108#&amp;icid=flyout_11302014">
+									<img src="www.nyandcompany.com_files/120214-flyout-50-80-NewYorkandCompany.jpg" alt="The Flyout Promo">
+								</a>
+							</div>
+						<div class="row-end">&nbsp;</div>
+				</div>
+			<div class="container-fixed cat-link">
+					<div id="subCat102672">		
+			<div class="row">
+				<div class="col2 stacked-anchors">
+						<a href="http://www.nyandcompany.com/nyco/cat/sale/all-clearance/N-103005/" onclick="omnitureSubCatNavigationClicks('All Clearance','/nyco/cat/sale/all-clearance/N-103005/');">
+								All Clearance</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/sale/tops/N-102676/" onclick="omnitureSubCatNavigationClicks('Tops','/nyco/cat/sale/tops/N-102676/');">
+								Tops</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/sale/pants/N-102680/" onclick="omnitureSubCatNavigationClicks('Pants','/nyco/cat/sale/pants/N-102680/');">
+								Pants</a>
+						<a href="http://www.nyandcompany.com/nyco/cat/sale/online-exclusives/N-102678/" onclick="omnitureSubCatNavigationClicks('Online Exclusives','/nyco/cat/sale/online-exclusives/N-102678/');">
+								Online Exclusives</a>
+						</div></div>
+			</div>		        
+		<div class="col6 ddpromo">
+								<a href="http://www.nyandcompany.com/nyco/cat/new/must-haves/N-102880?No=0&amp;Nrpp=108#&amp;icid=flyout_11302014">
+									<img src="www.nyandcompany.com_files/120214-flyout-50-80-NewYorkandCompany.jpg" alt="The Flyout Promo">
+								</a>
+							</div>
+						<div class="row-end">&nbsp;</div>
+				</div>
+			</nav>				
+<nav class="dropdown-admin">
+				<ul class="container-fixed">
+					<li class="contents login">
+				<h4 class="hassubhead">Log In to Your Account</h4>
+				<p class="subhead">Don't have an account? <a href="http://www.nyandcompany.com/nyco/register/;jsessionid=EC606BB0692C4437F1E1244F7A72E54D">REGISTER HERE</a></p>
+	            <form id="nyco_login_formId" action="https://www.nyandcompany.com/nyco/prod/suits/bleecker-street/bleecker-street-straight-leg-pant-pinstripe-average-/A-prod2210011/#.VH6mDtYl7_p" class="sm" onclick="setEmailValue();setPasswordValue();" method="post" autocomplete="off"><div style="display:none"><input name="_dyncharset" value="UTF-8" type="hidden"> </div><div style="display:none"><input name="_dynSessConf" value="-4161070416702063000" type="hidden"> </div><input name="/atg/userprofiling/B2CProfileFormHandler.loginErrorURL" value="/nyco/login/" type="hidden"><input name="_D:/atg/userprofiling/B2CProfileFormHandler.loginErrorURL" value=" " type="hidden"><input name="bypassSwitch" value="true" type="hidden"> 	
+			          <input name="/atg/userprofiling/B2CProfileFormHandler.loginSuccessURL" value="/nyco/prod/suits/bleecker-street/bleecker-street-straight-leg-pant-pinstripe-average-/A-prod2210011/" type="hidden"><input name="_D:/atg/userprofiling/B2CProfileFormHandler.loginSuccessURL" value=" " type="hidden"><input id="login_email_target" name="login_email" placeholder="EMAIL ADDRESS" class="reg" maxlength="40" autocomplete="off" type="text">
+								<input id="paymentSecCompleted" name="/atg/userprofiling/B2CProfileFormHandler.scPaymentSecComplt" value="" type="hidden"><input name="_D:/atg/userprofiling/B2CProfileFormHandler.scPaymentSecComplt" value=" " type="hidden"><input id="atg_store_registerLoginEmailAddress" maxlength="40" name="atg_store_registerLoginEmailAddress" value="" type="hidden"><input name="_D:atg_store_registerLoginEmailAddress" value=" " type="hidden"><input id="login_target" name="login_pass" value="" placeholder="PASSWORD" class="reg" maxlength="10" onkeydown="if(event.keyCode==13)loginSubmitForm()" type="password">
+									<input id="atg_store_registerLoginPassword" name="login_pass" value="Password" type="hidden"><input name="_D:login_pass" value=" " type="hidden"><!--				 
+			          
+					
+						<input id="atg_store_registerLoginEmailAddress" name="atg_store_registerLoginEmailAddress" value="Email Address" type="text"/><input name="_D:atg_store_registerLoginEmailAddress" value=" " type="hidden"/><input id="atg_store_registerLoginPassword" name="login_pass" value="" type="password"/><input name="_D:login_pass" value=" " type="hidden"/>
+			
+								
+							--><div class="clearall floatleft">
+							<input id="atg_store_loginButton" name="/atg/userprofiling/B2CProfileFormHandler.login" value="Login" type="submit"><input name="_D:/atg/userprofiling/B2CProfileFormHandler.login" value=" " type="hidden"><a class="smbtn" href="http://www.nyandcompany.com/nyco/myaccount/passwordReset.jsp;jsessionid=EC606BB0692C4437F1E1244F7A72E54D">Forgot your password?</a></div><!--/clearall-->
+							<div class="input-combo clearfix">
+									<div class="customwrapper checkbox"><input style="display: none;" id="cbRemember" name="/atg/userprofiling/B2CProfileFormHandler.value.autoLogin" value="true" checked="checked" type="checkbox"><label class="selected" for="cbRemember"><span class="input selected"></span>
+									Remember Me</label></div><input name="_D:/atg/userprofiling/B2CProfileFormHandler.value.autoLogin" value=" " type="hidden">
+								</div>
+							<hr>
+				<div style="display:none"><input name="_DARGS" value="/nyco/myaccount/gadgets/nycoLogin.jsp.nyco_login_formId" type="hidden"> </div></form><div class="vert-content container">
+					<a class="content fbicon" onclick="fblogin();return false;" href="#FBCONNECT">
+<div class=" fb_reset" id="fb-root"><script async="" src="www.nyandcompany.com_files/all.js"></script><script src="www.nyandcompany.com_files/all.js" async=""></script><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe src="www.nyandcompany.com_files/7r8gQb8MIqE.html" style="border: medium none;" tabindex="-1" title="Facebook Cross Domain Communication Frame" aria-hidden="true" id="fb_xdm_frame_http" scrolling="no" allowtransparency="true" name="fb_xdm_frame_http" frameborder="0"></iframe><iframe src="www.nyandcompany.com_files/7r8gQb8MIqE_002.html" style="border: medium none;" tabindex="-1" title="Facebook Cross Domain Communication Frame" aria-hidden="true" id="fb_xdm_frame_https" scrolling="no" allowtransparency="true" name="fb_xdm_frame_https" frameborder="0"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div>
+<script type="text/javascript" src="www.nyandcompany.com_files/jquery.js"></script>
+<script type="text/javascript" src="www.nyandcompany.com_files/fbpost.js"></script>
+<form id="getAppIdForm">
+<input value="421191914656803" id="getAppId" type="hidden">
+<input value="/nyco/prod/suits/bleecker-street/bleecker-street-straight-leg-pant-pinstripe-average-/A-prod2210011/" id="getAppURL" type="hidden">
+</form>
+<p>
+	<!-- <fb:login-button onlogin="OnLoginRedirection();"
+	perms="email,user_birthday,status_update,publish_stream,xmpp_login">	
+	</fb:login-button> -->
+	</p><div class="icon social fb"></div>                                                                                          
+	 <div style="margin-top:-25px;margin-left:45px; ">                              
+	 <span class="content" style="text-transform: uppercase;">
+	 	Connect with	
+		&nbsp;Facebook</span>
+	</div>
+<p></p>
+
+</a></div>				
+			 </li><!--/login-->
+		<li class="wishlist">
+	</li><!--/wishlist-->
+		
+	<script>
+
+	 function loginSubmitForm(){ 
+	     console.log('Enter click');
+	     $('#atg_store_loginButton').click();
+	 }
+	$(document).ready(function(){
+  //       $('#nyco_login_formId').removeAttr('action');
+		  $('#nyco_login_formId').attr('action', location.href.replace(/^http:/, 'https:'));
+		})
+	$(function(){	
+		
+		
+		$('.wishlist.wishlistCount').mouseover(function(){
+ $('.contents.wishlist .scrollable').gscrollbar('update');		
+		});
+	});
+
+	$(function (){
+
+		// adding place Holder input field who doesn't support placeHolder attr | start 
+		if(!Modernizr.input.placeholder){
+
+		    $('[placeholder]').focus(function() {
+		      var input = $(this);
+		      if (input.val() == input.attr('placeholder')) {
+		        input.val('');
+		        input.removeClass('placeholder');
+		      }
+		    }).blur(function() {
+		      var input = $(this);
+		      if (input.val() == '' || input.val() == input.attr('placeholder')) {
+		        input.addClass('placeholder');
+		        input.val(input.attr('placeholder'));
+		      }
+		    }).blur();
+		    $('[placeholder]').parents('form').submit(function() {
+		      $(this).find('[placeholder]').each(function() {
+		        var input = $(this);
+		        if (input.val() == input.attr('placeholder')) {
+		          input.val('');
+		        }
+		      })
+		    });
+
+		}
+		// adding place Holder input field who doesn't support placeHolder attr | end 
+	  
+	}); 
+	</script>
+</ul>
+				</nav>
+			
+				<ul class="dropdown-mybag">	
+					<div class="container-fixed">					
+					<li style="background: none repeat scroll 0% 0% rgb(255, 255, 255);" class="contents my_mini_bag white" id="my_mini_bag">
+						<script type="text/javascript">
+  dojo.addOnLoad(function(){
+    
+    
+    var triggerWidget=new atg.store.widget.RichCartTrigger({
+      id:"richCartTrigger",
+      containerNodeId:"atg_store_richcart",
+      cartOpenCssClass: "",
+      i18n: {cartImg: '', 
+             showCart: 'Show Cart', 
+             hideCart:'Hide Cart'
+             }
+    });
+    
+    var richCartWidget=new atg.store.widget.RichCartSummary({
+      id:"",
+      containerNodeId:"atg_store_richcart",
+      quantityNodeId:"atg_store_cartQty",
+      hijackClassName:"atg_behavior_addItemToCart",
+      doHijack:true,
+      data: {"itemCount":0,"itemsQuantity":0},
+      i18n: {"checkout":"Checkout","subtotal":"Subtotal","myCartSummary":"My Bag Summary","close":"Close","cartIsEmpty":"Bag is empty","addingToCart":"Adding...","itemCount":"(${0})","labelSeparator":":","viewCart":"View Full Bag","your":"Your","itemsSubtotal":"item(s) subtotal","priceSeparator":"x"},
+      url:{
+        checkout: "/nyco/shopping-bag/;jsessionid=EC606BB0692C4437F1E1244F7A72E54D",
+        error: "/nyco/shopping-bag/;jsessionid=EC606BB0692C4437F1E1244F7A72E54D"
+      },
+      duration:{
+        // Durations in ms of animation elements
+        highlight: 3000,
+        scroll: 700,
+        wipe: 280,
+        autoHide: 2000
+      },
+      highlightColor: "#ffff99"
+    });
+    
+    
+    triggerWidget.startup();
+    richCartWidget.startup();
+    triggerWidget.cartWidget=richCartWidget;
+    });    
+</script>
+<li style="height: auto; opacity: 0; visibility: hidden; display: none;" widgetid="atg_store_widget_RichCartSummary_0" id="atg_store_widget_RichCartSummary_0">
+<h4 class="hassubhead">Bag Total: 
+	<span class="amount" dojoattachpoint="csSubtotal,csSubtotalContainer">$0.00</span>
+</h4>
+<hr style="display: block">
+<div class="scrollable gscrollbar">
+	
+<div style="height: 250px;" class="scrollbar disable"><div style="height: 250px;" class="track"><div style="top: 0px; height: 250px;" class="thumb"></div></div></div><div style="height: 250px;" class="viewport"><div style="top: 0px;" class="overview"><ul id="atg_store_csContent" class="minicart" dojoattachpoint="csContent,containerNode">
+		<li dojoattachpoint="csEmptyMessage" class="atg_store_emptyRichCart">
+			<span>Bag is empty</span>
+		</li>
+	</ul></div></div></div>
+<hr class="bottom" style="display: block">
+<div>
+	<a style="display: none;" href="javascript:void(0);" onclick="javascript:submitCheckout();checkoutItemFromCart('checkoutItem');" class="button float" dojoattachpoint="csCheckout"> 
+		<span>Checkout</span> 
+	</a> 
+	<a class="smbtn" dojoattachpoint="csFullCheckout" href="http://www.nyandcompany.com/nyco/shopping-bag/;jsessionid=EC606BB0692C4437F1E1244F7A72E54D">
+		VIEW MY BAG 
+	</a>
+</div>
+</li></li>
+				
+					<div id="miniCheckout" class="displayNone">
+						<!-- do not display the checkout button wen no items in bag -->
+
+	</div>	
+					</div>
+				</ul>
+			<!--Begin TellApart-->
+	<script charset="utf-8" type="text/javascript">
+		var __cmbLoaded=false,__cmbRunnable=null;
+			(
+				function(){
+					try{
+                    	var b;
+                    		var actionType = "updateCart";
+							function d() {
+							};
+							if("https:"==document.location.protocol)
+								b="https://sslt.tellapart.com/crumb.js";
+							else{
+								for(var g=navigator.userAgent,h=0,e=0,i=g.length;e<i;e++)
+									h^=g.charCodeAt(e);
+									b="http://static.tellaparts.com/crumb"+h%10+".js"
+								}
+								if(actionType==="tx"){
+									__cmbRunnable=d;
+									document.write("\x3Cscripttype='text/java"+"script'src='"+b+"'\x3E\x3C/script\x3E");
+									__cmbLoaded=true
+								}else{
+									var a=document.createElement("script");
+									a.src=b;
+									a.onload=function(){
+										__cmbLoaded=true;d()
+									};
+									a.onreadystatechange=function(){
+										if(/loaded|complete/.test(a.readyState)){
+											__cmbLoaded=true;d()
+										}
+									};
+									var s=document.getElementsByTagName("script")[0];
+									s.parentNode.insertBefore(a, s)
+								}
+						}catch(j){}
+					}
+				)
+			();
+		</script>
+		<script language="JavaScript" type="text/javascript">
+        	if(__cmbRunnable!=null){
+				__cmbRunnable();
+				__cmbRunnable=null
+			};
+		</script>
+		<!--End TellApart-->
+		<script charset="utf-8" type="text/javascript">
+		function checkoutItemFromCart(eventName){
+				var actionType = "updatecart";
+				if (__cmbLoaded) {
+					var action = TellApartCrumb.makeCrumbAction("nyefx6fdZKHW",actionType);
+					if(eventName == 'removeAllItem'){
+						action.setActionAttr("UpdateCartType","PartialRemove");
+					}
+					if(eventName == 'checkoutItem'){
+						action.setActionAttr("UpdateCartType","Full");
+					}
+					
+					//If determined that user is logged in, then get information from User Profile
+					  action.setUserId("");
+					action.finalize();
+				}				
+			}
+		</script>
+</header><div class="dimSearchSuggContainer"></div>
+ 
+ <input id="og_site_name" value="New York &amp; Company" type="hidden">
+	<input id="site_name" value="@nyandcompany" type="hidden">
+	<input id="creator" value="@nyandcompany" type="hidden">
+	<input id="URL" value="http://www.nyandcompany.com/nyco/prod/sale/suits/bleecker-street-straight-leg-pant-pinstripe-average-/A-prod2210011/" type="hidden">
+		<div id="container">
+				<div class="container-fixed pdp-container"><input id="prodId" value="prod2210011" type="hidden">
+				<input id="quickView" value="" type="hidden">
+				<input id="quickViewPopup" value="" type="hidden">
+				<input id="categoryId" value="cat10009" type="hidden">
+				<div class="container-inner">
+					<input id="title" value="Bleecker Street Straight-Leg Pant - Pinstripe - Average " type="hidden">
+		
+		<div class="row product product-details" id="picker_contents">
+			<div id="col5Container06194468" class="pdpcol5" onclick="zoomOmnitureEvent();">
+							<div class="nav back-prev-next">
+
+									<a class="back" href="http://www.nyandcompany.com/nyco/cat/suits/bleecker-street/N-102741/">
+										<div class="icon arrows-sm right solid"></div>Back to Bleecker Street</a>
+
+									<ul class="prod">
+			</ul>
+</div><!--/nav-->
+							<link charset="utf-8" title="no title" media="screen" type="text/css" href="www.nyandcompany.com_files/scene7.css" rel="stylesheet">
+<input value="094" id="colorCode" type="hidden">
+<input value="06194468" id="productExternalId" type="hidden">
+<script type="text/javascript" src="www.nyandcompany.com_files/scene7.js"></script>
+
+<input id="prodImageUrl" value="http://images.nyandcompany.com/is/image/NewYorkCompany/productdetaildefault/Bleecker-Street-Straight-Leg-Pant-Pinstripe-Average-_06194468_094.jpg" type="hidden">
+<input id="ogprodImageUrl06194468" value="http://images.nyandcompany.com/is/image/NewYorkCompany/productdetaildefault/Bleecker-Street-Straight-Leg-Pant-Pinstripe-Average-_06194468_094.jpg" type="hidden">
+<noscript>
+<div class="images">
+	<img alt="" src="http://images.nyandcompany.com/is/image/NewYorkCompany/productdetaildefault/Bleecker-Street-Straight-Leg-Pant-Pinstripe-Average-_06194468_094.jpg">
+</div>
+</noscript>
+
+<script type="text/javascript">
+		$('#col5Container06194468').ready(function(){
+			initializeScene7Components('06194468','094', '0', false);
+			//setTimeout(function(){$(".sharecontainer").insertAfter($("canvas").parent().parent()).show();}, 3000);
+		 }); 
+	 	</script>
+	<script language="javascript" type="text/javascript">
+
+	/*
+		For this example, we set up a zoom viewer with swatches.
+		We need
+		s7sdk.image.ZoomView for zoom viewer area,
+		s7sdk.common.Container as a container of all components,
+		s7sdk.set.Swatches for alternate views
+ 	*/
+	s7sdk.Util.lib.include('s7sdk.image.ZoomView');
+	s7sdk.Util.lib.include('s7sdk.set.Swatches');
+	s7sdk.Util.lib.include('s7sdk.common.Container');
+	s7sdk.Util.lib.include('s7sdk.set.MediaSet');
+</script>
+<link charset="utf-8" title="no title" media="screen" type="text/css" href="www.nyandcompany.com_files/scene7.css" rel="stylesheet">
+<div style="position: relative; width: 342px; height: 455px;" class="s7container" id="images-container06194468" lang="en"><div cursortype="zoomin" style="width: 342px; height: 455px;" class="s7zoomview" id="images06194468" lang="en"><div style="z-index: 0; position: absolute; left: 0px; width: 342px; height: 455px;"><div style="z-index: 900; position: absolute; width: 0px; height: 455px; left: 0px;"><canvas style="width: 0px; height: 455px;" height="0" width="0"></canvas></div><div style="z-index: 910; position: absolute; width: 342px; height: 455px; left: 0px;"><canvas style="width: 342px; height: 455px;" height="910" width="684"></canvas></div></div></div></div></div><!--/images-->
+						
+						<input id="productExternalId" value="06194468" type="hidden">
+<input id="apiKey" value="40bd4ddcbc963ab0" type="hidden">
+<input id="integration" value="recs" type="hidden">
+<input id="profileId" value="1062844715" type="hidden">
+
+<script type="text/javascript">
+	//prod6960029
+	$BV.ui("rr", "show_reviews", {contentContainerDiv : 'BVRRContainer',
+	                              productId : '06194468'});
+	$BV.ui( 'rr', 'inline_ratings', { productIds : ['06194468'],
+								containerPrefix : 'BVRRSummaryContainer'});
+	function clickBV(bvExternalId) {
+	        $BV.ui('rr', 'submit_review', { productId : '06194468' });
+	}
+
+</script> 
+<!-- Reach Relevance Integration Start -->
+		<script src="www.nyandcompany.com_files/p13n.js"></script>
+		<script charset="utf-8" type="text/javascript">
+		
+			var integration = $('#integration').val();
+			var productExternalId = $('#productExternalId').val();
+			var profileId = 1062844715;
+			
+			var R3_COMMON = new r3_common();
+			R3_COMMON.setApiKey('40bd4ddcbc963ab0');
+			R3_COMMON.setBaseUrl(window.location.protocol+'//' + 'recs' + '.richrelevance.com/rrserver/');
+			R3_COMMON.setClickthruServer(window.location.protocol+"//"+window.location.host);
+			R3_COMMON.setSessionId('EC606BB0692C4437F1E1244F7A72E54D');
+		
+			if(profileId != null) {
+				R3_COMMON.setUserId('1062844715'); // if exists, set it; if not, set it as session ID
+			}else {
+				R3_COMMON.setUserId('EC606BB0692C4437F1E1244F7A72E54D');
+			}
+		
+			R3_COMMON.addPlacementType('item_page.rr1');
+		
+			//If available, we highly recommend you provide the current relevant category ID
+			R3_COMMON.addCategoryHintId('cat10037');
+		
+			var R3_ITEM = new r3_item();
+			R3_ITEM.setId('06194468');
+		
+		</script>
+		
+		<script charset="utf-8" type="text/javascript">
+		        RR.jsonCallback = function() {
+		              //Process Placements provided in RR.data.JSON.placements   
+		              var obj = RR.data.JSON.placements[0];
+		          	  $("#youMayLike").css('display','block');
+		              //alert(RR.data.JSON);
+		              for(var i=0;i<obj.items.length;i++){
+
+			              var samePrice = false;
+			              var salePriceSame = false;
+			              if(obj.items[i].listprice == obj.items[i].saleprice && obj.items[i].saleprice == obj.items[i].price) {
+			            	  samePrice = true;
+			              }else if(obj.items[i].saleprice == obj.items[i].listprice) {
+			            	  salePriceSame = true;
+			              }else {
+			            	  salePriceSame = false;
+			              }
+
+						  var pdpImageUrl = obj.items[i].imageurl
+						  var imageUrl = pdpImageUrl.replace('productdetailalsolike','pdpalsolike'); 
+		            	  var regPriceStart = '';
+		                  var startLI= '<li class="verticle-recommended-image">';
+		                  var startAnchortag = ' <a href="' + obj.items[i].linkurl + "?mayWeAlsoSuggestProd=true" + '">';
+						  var salePrice = obj.items[i].saleprice;
+		                  var imgTag =' <img data-altimage=" ' + imageUrl + '" alt="" border="1"  height="100%" width="100%" src="' + imageUrl + '"/>';
+		                  var endAnchorTag = "</a>";
+			              var nameDisplayStartPtag = '<p class="name">';
+			              var NDData = obj.items[i].name ; 
+			              var startNDAnchortag = ' <a class="rr_product_link" href="' + obj.items[i].linkurl + '">';
+			              var endNDAnchorTag = "</a>";
+			              var nameDisplayEndPtag = "</p>";
+		                  var startpPriceTag = '<p class="price sale">';
+
+		                  if(samePrice) {
+		                	  regPriceStart = '<span>';
+		                  }else {
+		                	  if(salePrice != '' && salePriceSame) {
+			                	  regPriceStart = '<span class="regprice">';
+			                  }else {
+			                	  regPriceStart = '<span class="regprice">';
+			                  }
+		                  }
+		                  
+		                  var salePriceData = '';
+		                  var regPriceData = obj.items[i].price;
+		                  var regPriceEnd = "</span>";
+		                  var salePriceStart = '<span class="saleprice">';
+
+		                  if(salePrice != '' && salePriceSame) {
+		                  	  salePriceData = " " +obj.items[i].saleprice;
+		                  }else {
+		                	  salePriceData = " " +obj.items[i].saleprice + " - " + obj.items[i].listprice;
+		                  }
+		                  
+		                  var salePriceEnd = "</span>";
+		                  var promoTagStart = '<span class="promo">';
+		                  var promoTagData = obj.items[i].promotagline;
+		                  if(promoTagData != null && promoTagData.indexOf('#') >= 0) {
+							  promoTagData = promoTagData.substring(promoTagData.indexOf('#')+1, promoTagData.length);
+		                  }
+		                  var promoTagEnd = "</span>";
+		                  var endPpPriceTag = "</p>";
+		                  var endALI = '</li>';
+		                  if(samePrice) {
+		                	  $("#recommendedList").append(startLI + startAnchortag + imgTag + endAnchorTag + endALI + nameDisplayStartPtag + startNDAnchortag + NDData + endNDAnchorTag + nameDisplayEndPtag + startpPriceTag + regPriceStart + regPriceData + regPriceEnd + promoTagStart + promoTagData + promoTagEnd + endPpPriceTag);
+		                  }else {
+		                	  $("#recommendedList").append(startLI + startAnchortag + imgTag + endAnchorTag + endALI + nameDisplayStartPtag + startNDAnchortag + NDData + endNDAnchorTag + nameDisplayEndPtag + startpPriceTag + regPriceStart + regPriceData + regPriceEnd + salePriceStart + salePriceData + salePriceEnd + promoTagStart + promoTagData + promoTagEnd + endPpPriceTag);
+		                  }
+		                  
+		              }
+		        }
+		
+		        r3();
+		</script>
+<!-- Reach Relevance Integration End -->
+
+<p id="fitColor" class="displayNone">094</p>
+		<p id="fitProductId" class="displayNone">prod2210011</p>
+		<input id="omnitureSkuId" value="22057879" type="hidden">
+		
+	
+	<input id="omnitureQuickFlag" value="" type="hidden">
+<form id="wish_id" name="wish_id" action="/nyco/quickview;jsessionid=EC606BB0692C4437F1E1244F7A72E54D?A=sku-22057824..prod2210011.masterCatalog.en__US.100001&amp;_DARGS=/nyco/cartridges/ProdDetailPage/gadgets/pickerContents.jsp.wish_id" method="post"><div style="display:none"><input name="_dyncharset" value="UTF-8" type="hidden"> </div><div style="display:none"><input name="_dynSessConf" value="-4161070416702063000" type="hidden"> </div><input name="/atg/store/order/purchase/CartFormHandler.siteId" value="100001" type="hidden"><input name="_D:/atg/store/order/purchase/CartFormHandler.siteId" value=" " type="hidden"><input id="wishListQty" name="/atg/commerce/gifts/GiftlistFormHandler.quantity" value="1" type="hidden"><input name="_D:/atg/commerce/gifts/GiftlistFormHandler.quantity" value=" " type="hidden"><input id="wishListProductId" name="/atg/commerce/gifts/GiftlistFormHandler.productId" value="prod2210011" type="hidden"><input name="_D:/atg/commerce/gifts/GiftlistFormHandler.productId" value=" " type="hidden"><input name="/atg/store/order/purchase/CartFormHandler.addItemToGiftlistErrorURL" value="/browse/gadgets/notifymeErrorMessage.jsp" type="hidden"><input name="_D:/atg/store/order/purchase/CartFormHandler.addItemToGiftlistErrorURL" value=" " type="hidden"><input name="/atg/commerce/gifts/GiftlistFormHandler.addItemToGiftlistLoginURL" value="/nyco/global/util/loginRedirect.jsp" type="hidden"><input name="_D:/atg/commerce/gifts/GiftlistFormHandler.addItemToGiftlistLoginURL" value=" " type="hidden"><input name="/atg/store/order/purchase/CartFormHandler.addItemToGiftlistSuccessURLMap.gl1047413375" value="/nyco/browse/gadgets/notifymeErrorMessage.jsp" type="hidden"><input name="_D:/atg/store/order/purchase/CartFormHandler.addItemToGiftlistSuccessURLMap.gl1047413375" value=" " type="hidden"><input id="wishListSkuGiftCard" name="/atg/commerce/gifts/GiftlistFormHandler.catalogRefIds" value="22057879" type="hidden"><input name="_D:/atg/commerce/gifts/GiftlistFormHandler.catalogRefIds" value=" " type="hidden"><input id="wishListGiftId" name="/atg/commerce/gifts/GiftlistFormHandler.giftlistId" value="gl1047413375" type="hidden"><input name="_D:/atg/commerce/gifts/GiftlistFormHandler.giftlistId" value=" " type="hidden"><input id="product_wish_id" value="prod2210011" type="hidden">
+	 <input id="sku_wish_id" value="22057879" type="hidden">
+		 <input id="prod_wish_extid" value="06194468" type="hidden">		 
+	 <input id="wishListId" name="gl1047413375" value="WISH IT" class="atg_store_textButton" type="hidden"><input name="_D:gl1047413375" value=" " type="hidden"><div style="display:none"><input name="_DARGS" value="/nyco/cartridges/ProdDetailPage/gadgets/pickerContents.jsp.wish_id" type="hidden"> </div></form><form id="mimic_cart" action="/nyco/cart/json/cartContents.jsp;jsessionid=EC606BB0692C4437F1E1244F7A72E54D?_DARGS=/nyco/cartridges/ProdDetailPage/gadgets/pickerContents.jsp.mimic_cart" class="colpdp info" method="post"><div style="display:none"><input name="_dyncharset" value="UTF-8" type="hidden"> </div><div style="display:none"><input name="_dynSessConf" value="-4161070416702063000" type="hidden"> </div><p class="meta">
+	 		
+     			New Arrivals
+     		</p>
+
+		<h1>Bleecker Street Straight-Leg Pant - Pinstripe - Average </h1>
+			<p class="meta sku">06194468</p>
+		<p id="fitId" class="displayNone">06194468</p>
+		
+		<ul class="pricingdetails spaced-vert" id="giftParentCardPrice">
+			<li>
+			<p class="price sale" id="productPrice">
+			<span class="regprice"> 
+										<input value="52.95" id="listPrice" type="hidden">
+										<input value="52.95" id="listPrice06194468" type="hidden">
+										$52.95</span>
+									<span class="saleprice">
+										<input value="26.47" id="salePrice" type="hidden">
+										<input value="26.47" id="salePrice06194468" type="hidden">
+										$26.47</span>
+									<span>
+									</span></p><p class="micro_red">
+												50% Off 
+</p>
+                                        	
+								<input value="26.47" id="nyco_addtobag__price" type="hidden">
+	<input value="26.47" id="taLookprice_06194468" type="hidden">
+<p></p>
+<p class="micro_red">
+	</p>
+
+<input name="/atg/store/order/purchase/CartFormHandler.addItemToOrderErrorURL" value="/nyco/quickview?A=sku-22057824..prod2210011.masterCatalog.en__US.100001" type="hidden"><input name="_D:/atg/store/order/purchase/CartFormHandler.addItemToOrderErrorURL" value=" " type="hidden"><input name="/atg/store/order/purchase/CartFormHandler.addItemCount" value="1" type="hidden"><input name="_D:/atg/store/order/purchase/CartFormHandler.addItemCount" value=" " type="hidden"><input name="/atg/store/order/purchase/CartFormHandler.addItemToOrderSuccessURL" value="/nyco/cart/cart.jsp" type="hidden"><input name="_D:/atg/store/order/purchase/CartFormHandler.addItemToOrderSuccessURL" value=" " type="hidden"><input name="/atg/store/order/purchase/CartFormHandler.sessionExpirationURL" value="/nyco/global/sessionExpired.jsp" type="hidden"><input name="_D:/atg/store/order/purchase/CartFormHandler.sessionExpirationURL" value=" " type="hidden"><input name="/atg/store/order/purchase/CartFormHandler.items[0].catalogRefId" value="22057879" type="hidden"><input name="_D:/atg/store/order/purchase/CartFormHandler.items[0].catalogRefId" value=" " type="hidden"><input name="/atg/store/order/purchase/CartFormHandler.items[0].productId" value="prod2210011" type="hidden"><input name="_D:/atg/store/order/purchase/CartFormHandler.items[0].productId" value=" " type="hidden"><input name="/atg/store/order/purchase/CartFormHandler.ajaxAddItemToOrderErrorUrl" value="/nyco/cart/json/errors.jsp" type="hidden"><input name="_D:/atg/store/order/purchase/CartFormHandler.ajaxAddItemToOrderErrorUrl" value=" " type="hidden"></li>
+			<li>
+				<div class="tab details" data-tabcontent="content1">
+					<div class="icon arrows-sm down dark"></div>
+					<p class="label">Details</p>
+				</div>					
+			</li>
+			
+			<li>
+						<div class="tab" data-tabcontent="content2">
+							<div class="icon arrows-sm down dark"></div>
+								<div class="label">
+									<div class="label_review"> Reviews</div>
+									<div class="star_rev_label">
+										<div id="BVRRSummaryContainer-06194468"> <div class="bv-cleanslate"> <div data-bv-v="ratingItem:3" class="bv-shared bv-core-container-85 bv-rating-top-statistic"> <!--[if lt IE 7]> <div class="bv-compat bvie6 bvie-lt8 bvie"> <![endif]--> <!--[if IE 7]> <div class="bv-compat bvie7 bvie-lt8 bvie"> <![endif]--> <!--[if IE 8]> <div class="bv-compat bvie8 bvie"> <![endif]--> <!--[if IE 9]> <div class="bv-compat bvie9 bvie"> <![endif]--> <!--[if gt IE 9]> <!--><div class="bv-compat"> <!--<![endif]--> <div class="bv-inline-rating-container">  <dl class="bv-stars-container" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating" role="presentation">      <dd class="bv-rating-ratio" role="presentation">  <span class="bv-rating-stars-container">   <span class="bv-rating-stars bv-rating-stars-off" aria-hidden="true">  ★★★★★  </span> <span class="bv-rating-stars-on bv-rating-stars" style="width:0% !important;" aria-hidden="true">  ★★★★★  </span> <meta itemprop="bestRating" content="5">     </span>  </dd>      <dd class="bv-rating-ratio-count" role="presentation">   <span class="bv-rating-label">  (0) </span>   </dd>   </dl>   </div> </div> </div> </div></div>
+									</div>
+							</div>
+						</div>
+				    </li>
+				<li class="content-container">
+				<div class="content1 details displayBlock">
+					 Bleecker Street Straight-Leg Pant - Pinstripe - Average <br><br>
+					 Pinstripe perfection! A feminine twist on iconic menswear style, 
+our sleek, modern pant creates polished, work-ready style with a 
+slimming fit through the hip and thigh.<br><br><p>overview</p><ol><li>Online Exclusive.</li><li>Zip front with hook-and-bar closure.</li><li>Belt loops.</li><li>Front slash pockets.</li><li>Back welt pockets.</li><li>Darts below back waistband.</li><li>Available in Petite &amp; Tall.</li></ol><br><p>fit &amp; sizing</p><ol><li>Slim straight leg.</li><li>Full length.</li><li>Sits just below waist.</li><li>Slimming through hip &amp; thigh.</li><li>Inseam: 32 inches.</li></ol><br><p>fabric &amp; care</p><ol><li>64% Polyester, 34% Rayon, 2% Spandex.</li><li>Machine Wash or Dry Clean.</li><li>Imported.</li></ol> <br><br>
+				     </div>
+				
+				<div class="content2" style="margin:0px !important;">
+		<div class="review" id="qucikAllReview">
+		
+		<p class="micro">Featured Review</p>
+		
+			<h3></h3>
+			<p></p>
+		    <div class="vert-content container spaced-vert">
+		            <div class="vert-content content spaced-float-left">
+		                   <a href="#WriteReview" class="button float" onclick="javascript:clickBV('06194468');">Write a Review</a>
+		                   <a href="#AddToWishlist" class="next-to-btn allreviews">READ ALL REVIEWS</a>
+		                  		  </div>
+		   </div><!--/vert-content-->
+	   </div><!--/review-->  
+</div>             
+	<script type="text/javascript">
+	 $(document).ready(function(){
+	   if(''=='true')
+	   {
+	       TweenMax.to(window,1.5,{scrollTo:{y:$("#container .reviews > h3").offset().top-100}});
+	   }	
+	   $(".allreviews").live("click", function (t) {     TweenMax.to(window,1.5,{scrollTo:{y:$("#container .reviews > h3").offset().top-100}});})      	   
+	   });
+	   
+ </script></li>
+		</ul><!--/pricingdetails-->
+		
+		<div class="vert-content container spaced-vert">
+	<div class="vert-content content spaced-float-left">
+<div style="width: 54px;" class="customwrapper select"><select class="mobile" style="opacity: 0;" name="prod_prodsize" id="prod_prodsize" onchange="atg.store.picker.clickSize(this.options[this.selectedIndex].value, '06194468', '094', 'prod2210011');" data-defaultlabel="Size"><option selected="selected" value="">Size</option>
+<option value="2">
+		  
+            
+              2
+			
+			</option>
+		
+          <option value="4">
+		  
+            
+              4
+			
+			</option>
+		
+          <option value="6">
+		  
+            
+              6
+			
+			</option>
+		
+          <option value="8">
+		  
+            
+              8
+			
+			</option>
+		
+          <option value="10">
+		  
+            
+              10
+			
+			</option>
+		
+          <option value="12">
+		  
+            
+              12
+			
+			</option>
+		
+          <option value="14">
+		  
+            
+              14
+			
+			</option>
+		
+          <option value="16">
+		  
+            
+              16
+			
+			</option>
+		
+          </select><div class="input"><div class="display"><span>Size</span><div class="icon"></div></div></div></div>
+          		<div style="width: 80px;" class="customwrapper select"><select class="mobile" style="opacity: 0;" name="prod_prodfit" id="prod_prodfit" data-defaultlabel="Select Fit" onchange="changeProportion(this.options[this.selectedIndex].value);">
+				<option value="prod2210011" selected="selected" disabled="true">Average</option>
+				
+				 <option value="/nyco/prod/sale/suits/bleecker-street-straight-leg-pant-pinstripe-petite/A-prod2210012">Petite</option>
+								<option value="/nyco/prod/sale/suits/bleecker-street-straight-leg-pant-pinstripe-tall/A-prod2210013">Tall</option>
+								</select><div class="input"><div class="display"><span>Average</span><div class="icon"></div></div></div></div>
+		<a class="next-to-ddslick" href="#SizeChart" onclick="Dialogs.self().show('sizechart'); return false;">Size Chart</a>
+							</div>
+		</div><!--/vert-content-->
+<p class="errormsg clearfix" id="errorMsgSizeprod2210013"></p>
+				<p class="errormsg clearfix" id="errorMsgSize"></p>
+				<div class="colors spaced-vert">
+		
+		<p class="price lg sale clearfix">
+				<span class="saleprice">
+				 $26.47</span>
+				 </p>
+		<div class="border active" style="border:5px solid #f4f4f4 !important;border-radius:50px;"><a href="javascript:void(0)" title="BLACK/WHITE Has Been Selected"> <img style="margin-left:-4px;margin-top:-4px;" alt="BLACK/WHITE" src="www.nyandcompany.com_files/Bleecker-Street-Straight-Leg-Pant-Pinstripe-Average-_0619446.png"></a></div>
+					<div class="label">
+			       		BLACK/WHITE<input id="selectedColor06194468" value="BLACK/WHITE" type="hidden">
+			       		 <meta content="BLACK/WHITE">
+			       </div>
+				</div>
+		<!--/colors-->
+
+	
+
+	<input id="prodId_06194468" value="prod2210011" type="hidden">
+		<div class="vert-content container spaced-vert">
+			<div class="vert-content content spaced-float-left">
+					<div style="width: 53px;" class="customwrapper select"><select class="mobile" style="opacity: 0;" name="prod_prodqty" id="prod_prodqty" onchange="selectQty(this.options[this.selectedIndex].value, this)" data-defaultlabel="Qty"><option value="">Qty</option>
+			<option value="1" selected="selected">1</option>
+					<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
+							</select><div class="input"><div class="display"><span>1</span><div class="icon"></div></div></div></div>
+   <input widgetid="atg_store_widget_enterSubmit_0" id="atg_store_widget_enterSubmit_0" maxlength="5" dojotype="atg.store.widget.enterSubmit" targetbutton="atg_behavior_addItemToCart" name="/atg/store/order/purchase/CartFormHandler.items[0].quantity" value="1" class="atg_store_numericInput" size="2" type="hidden"><input name="_D:/atg/store/order/purchase/CartFormHandler.items[0].quantity" value=" " type="hidden"><span class="next-to-ddslick lightfont" style="word-wrap: break-word;width: 30em;display: block;">
+				<input id="availablityMessage06194468" value="In Stock" type="hidden">
+				   <input id="nycoAvailabilityMessage_prod2210011" value="In Stock" type="hidden">
+					<br>
+				</span>				
+				<span class="next-to-ddslick lightfont availmsg" style="margin-left:70px;">					
+					</span>
+			</div>
+		</div><!--/vert-content-->		
+		<div itemscope="" itemtype="http://schema.org/Product" style="opacity: 0;height: 0px;width: 0px;">
+	<meta itemprop="name" content="Bleecker Street Straight-Leg Pant - Pinstripe - Average ">
+	<meta itemprop="description" content="Bleecker Street Straight-Leg Pant - Pinstripe - Average ">
+	<meta itemprop="image" content="http://images.nyandcompany.com/is/image/NewYorkCompany/productdetaildefault/Bleecker-Street-Straight-Leg-Pant-Pinstripe-Average-_06194468_094.jpg">
+    <meta itemprop="productID" content="06194468">
+    <meta itemprop="color" content="BLACK/WHITE">
+    <div itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+	    <meta itemprop="price" content="52.95">
+	   	<meta itemprop="availability" itemtype="http://schema.org/ItemAvailability" content="In Stock">				    		  
+	    	<meta itemprop="priceCurrency" content="USD">     	 
+    </div>
+</div>
+<p class="errormsg">
+			</p>
+				
+		<p class="errormsg clearfix" id="errorMsgQuantityprod2210011"></p>
+			<p class="errormsg clearfix" id="errorMsgQty"></p>
+			<p class="errormsg clearfix" id="errorMsgAddToBag"></p>
+				<p class="" id="successAddtoWishMsg"></p>
+			<div class="vert-content container spaced-vert">
+				<div class="vert-content content spaced-float-left">
+					<input id="atg_behavior_addItemToCart" title="Add to Bag" name="/atg/store/order/purchase/CartFormHandler.addItemToOrder" value="Add to Bag" class="atg_behavior_addItemToCart handleRightMargin15" type="submit"><input name="_D:/atg/store/order/purchase/CartFormHandler.addItemToOrder" value=" " type="hidden"><input name="/atg/store/order/purchase/CartFormHandler.skuType" value="" type="hidden"><input name="_D:/atg/store/order/purchase/CartFormHandler.skuType" value=" " type="hidden"><script type="text/javascript">
+	    
+		function addToShoppingCart() {
+			if (__cmbLoaded) {
+				var actionType = "updatecart";
+				var action = TellApartCrumb.makeCrumbAction("nyefx6fdZKHW",
+						actionType);
+						
+						// where nyefx6fdZKHW is TellApart Account ID
+						action.setActionAttr("UpdateCartType","PartialAdd");
+						//adding items, this will iterate for as many items are present in the bag
+						
+						var externalId  = $("#productExternalId").val();
+						var currentSkuQuantity  = $("#prod_prodqty").val();
+						var price  = $("#salePrice").val();
+						if(price == null) {
+			                price = $("#listPrice").val();
+						}
+						action.beginItem();
+					    action.setItemAttr("SKU", externalId);
+						action.setItemAttr("ProductPrice",price);//selected SKU price
+						action.setItemAttr("ProductCurrency", "USD");
+						action.setItemAttr("ItemCount", currentSkuQuantity);
+						
+						action.endItem();
+						//end of adding items
+						//If determined that user is logged in, then get information from User Profile
+						action.setUserId("");
+						action.finalize();
+			}
+		}
+	</script>
+
+<input id="pickStoreId" name="/atg/store/order/purchase/CartFormHandler.pickStoreId" value="" type="hidden"><input name="_D:/atg/store/order/purchase/CartFormHandler.pickStoreId" value=" " type="hidden"><input id="selectedSkuId" name="selectedSkuId" value="22057879" type="hidden">
+				     <input id="sizeChartUrl" value="/cartridges/ProdDetailPage/gadgets/dialog_sizechart.jsp" type="hidden">
+				     <input id="prodId" name="selectedProdId" value="prod2210011" type="hidden">
+					  <input id="availabilityType" value="available" type="hidden">
+				                    
+					<input name="/atg/store/order/purchase/CartFormHandler.addItemToGiftlistSuccessURLMap.gl1047413375" value="ajaxUrl" type="hidden"><input name="_D:/atg/store/order/purchase/CartFormHandler.addItemToGiftlistSuccessURLMap.gl1047413375" value=" " type="hidden"><input name="/atg/store/order/purchase/CartFormHandler.addItemToGiftlistErrorURL" value="ajaxUrl;jsessionid=EC606BB0692C4437F1E1244F7A72E54D?productId=prod2210011&amp;categoryId=cat10009&amp;tokenId=&amp;categoryNavIds=" type="hidden"><input name="_D:/atg/store/order/purchase/CartFormHandler.addItemToGiftlistErrorURL" value=" " type="hidden"><a class="next-to-largebtn handleLeftMargin1 " href="#AddToWishlist" onclick="redirectLogin()">Add to Wishlist</a>
+			
+          <script type="text/javascript">
+
+
+
+
+
+ function submitWishList() { 
+
+	    console.log('wishlist get called..');
+	 	var sizeVal = $("#prod_prodsize").val();
+	 	var giftCard = $("#giftCardAdd").val();
+	 	var qtyVal = $("#prod_prodqty").val();
+
+	 	var jewelary = $("#jewelary").val();
+	 	if(jewelary != '' && typeof jewelary != 'undefined') {
+	 		sizeVal = "dummy";
+	 	}
+
+	 	var flag = false;
+		if(typeof giftCard === 'undefined') {
+			flag = true;
+	 	}
+		
+		if(sizeVal != null && sizeVal != '' && sizeVal != 'Size' && sizeVal != '-1' && qtyVal != '-1' && qtyVal != '' ||  flag == false) {
+			console.log('selected size =' + sizeVal);
+			var appPath = $("#applicationPath").val();
+			var selectedQty = $("#prod_prodqty").val();
+			console.log('qty = ' + selectedQty);
+			if(selectedQty != '' && selectedQty != null ) {
+				$('#wishListQty').val(selectedQty);
+			}
+
+			//Start : handle error for gift card page only
+			if(flag == false && giftCard == 'giftCart' && selectedQty == '') {
+				document.getElementById('errorMsgQty').innerHTML = 'How many do you want? Please fill in a valid quantity.';	
+			}
+
+			if(flag == false && giftCard == 'giftCart' && sizeVal == '') { 
+				document.getElementById('errorMsgSize').innerHTML = 'Please select a size.';
+
+			//End : handle error for gift card page only
+			}else {
+				$('#wish_id').ajaxSubmit( {
+			 	    dataType : "json",
+				    	beforeSubmit:function(){
+							//validation for not null email
+						},
+						success : function(response) {
+							
+							console.log("Response of WishList:"+response);
+							if(response.status == 'error') {
+								$("#errorEmailId").html(response.error_msg);
+							}
+												
+						},
+						error : function(response) {
+							$.post(appPath+"/cartridges/ProdDetailPage/gadgets/wishListCount.jsp", function(data){
+							 $(".wishlistCount").html(data);
+							})
+							$.post(appPath+"/myaccount/richWishList.jsp", function(data){
+							 $("#richWishList").html(data);
+							})
+							//set successful message for wishlist
+							console.log("successfully addedd inside the wishlist");
+							document.getElementById('successAddtoWishMsg').innerHTML = 'This style has been added to your Wishlist.';		
+						}
+					
+					
+				});
+
+			}
+			
+		}else {
+			//check if quantity then display qty message
+			if(qtyVal == '-1' || qtyVal == '') {
+				document.getElementById('errorMsgQty').innerHTML = 'How many do you want? Please fill in a valid quantity.';	
+			}
+			
+			if(sizeVal == '-1' || sizeVal == '') {
+				document.getElementById('errorMsgSize').innerHTML = 'Please select a size.';
+			}		
+		}
+		
+			 
+	  }
+
+	  function redirectLogin(){
+		  
+		console.log('wishlist get called..');
+	 	var sizeVal = $("#prod_prodsize").val();
+	 	var giftCard = $("#giftCardAdd").val();
+	 	var qtyVal = $("#prod_prodqty").val();
+	 	var appPath = $("#applicationPath").val();
+	 	var jewelary = $("#jewelary").val();
+	 	if(jewelary != '' && typeof jewelary != 'undefined') {
+	 		sizeVal = "dummy";
+	 	}
+	 	
+	 	var flag = false;
+	 	if(typeof giftCard === 'undefined') {
+			flag = true;
+	 	}
+		
+		if(sizeVal != null && sizeVal != '' && sizeVal != 'Size' && sizeVal != '-1' && qtyVal != '-1'||  flag == false) {
+			console.log('selected size =' + sizeVal);
+			var selectedQty = $("#prod_prodqty").val();
+			console.log('qty = ' + selectedQty);
+			if(selectedQty != '' && selectedQty != null ) {
+				$('#wishListQty').val(selectedQty);
+			}
+			
+			var wishListQty=$('#wishListQty').val();
+			var applicationPath=$('#applicationPath').val();
+			var productId=$('#product_wish_id').val();
+			var wishProdExtId=$('#prod_wish_extid').val();
+			var skuID=$('#sku_wish_id').val();
+			if(giftCard == 'giftCart') {
+				skuID=$('#wishListSkuGiftCard').val();
+			}
+			var loginSuccessUrl=window.location.href;
+
+			$.ajax({
+				type: "POST",
+				dataType : "json",
+				url: appPath+"/global/util/setSessionBeanWishList.jsp?productVal="+productId+"&skuVal="+skuID+"&wishListQty="+wishListQty+"&wishProdExtId="+wishProdExtId+"&loginSuccessUrl="+loginSuccessUrl,
+				success: function(data){
+					if(data.success == 'true') {
+						 window.location=appPath+"/login/";
+					}
+				}
+			});
+			
+		}else {
+			//check if quantity then display qty message
+			if(qtyVal == '-1') {
+				document.getElementById('errorMsgQty').innerHTML = 'How many do you want? Please fill in a valid quantity.';	
+			}
+			document.getElementById('errorMsgSize').innerHTML = 'Please select a size.';	
+							
+		}
+		  
+	  }
+</script>
+
+</div>
+			</div><!--/vert-content-->
+			
+			<input class="button float large" id="selectButtonprod2210011" value="Select This Item" onclick="javascript:looksDetail('prod2210011','22057879', '06194468')" type="hidden">
+			<input id="deselectButtonprod2210011" class="next-to-largebtn deselect" onclick="javascript:looksDetailDeselect('prod2210011')" type="hidden">
+			
+			<!--/viewfull-->
+			<div style="display:none"><input name="_DARGS" value="/nyco/cartridges/ProdDetailPage/gadgets/pickerContents.jsp.mimic_cart" type="hidden"> </div></form><!--/info-->
+
+ <script type="text/javascript">
+		function addToShoppingCartForEditFromCart() {
+			if (__cmbLoaded) {
+				var actionType = "updatecart";
+				var action = TellApartCrumb.makeCrumbAction("nyefx6fdZKHW",
+						actionType);
+						
+						// where nyefx6fdZKHW is TellApart Account ID
+						action.setActionAttr("UpdateCartType","PartialAdd");
+						//adding items, this will iterate for as many items are present in the bag
+						
+						var externalId  = $("#productExternalId").val();
+						var currentSkuQuantity  = $("#prod_prodqty").val();
+						var taIsGiftCardCart = $("#taGiftCardOnCart").val();
+						console.log("taGiftCardOnCart: "+taIsGiftCardCart);
+						
+						if(taIsGiftCardCart == 'true'){
+							var price = $('#prod_prodsize option:selected').text();
+							price = price.replace('$','');
+						}
+						else{
+							var price  = $("#salePrice").val();
+							if(price == null) {
+				                price = $("#listPrice").val();
+							}	
+						}
+						console.log("taPrice"+price);
+						console.log("tacurrentSkuQuantity"+currentSkuQuantity);
+						action.beginItem();
+					    action.setItemAttr("SKU", externalId);
+						action.setItemAttr("ProductPrice",price);//selected SKU price
+						action.setItemAttr("ProductCurrency", "USD");
+						action.setItemAttr("ItemCount", currentSkuQuantity);
+						
+						action.endItem();
+						//end of adding items
+						//If determined that user is logged in, then get information from User Profile
+						action.setUserId("");
+						action.finalize();
+			}
+		}
+	</script>
+	
+	 <script type="text/javascript">
+	    
+		function addToShoppingCartFromGiftCart() {
+			if (__cmbLoaded) {
+				var actionType = "updatecart";
+				var action = TellApartCrumb.makeCrumbAction("nyefx6fdZKHW",
+						actionType);
+						
+						// where nyefx6fdZKHW is TellApart Account ID
+						action.setActionAttr("UpdateCartType","PartialAdd");
+						//adding items, this will iterate for as many items are present in the bag
+						
+						var externalId  = $("#productExternalId").val();
+						var currentSkuQuantity  = $("#prod_prodqty").val();
+						var price = $('#prod_prodsize option:selected').text();
+						price = price.replace('$','');
+						action.beginItem();
+					    action.setItemAttr("SKU", externalId);
+						action.setItemAttr("ProductPrice",price);//selected SKU price
+						action.setItemAttr("ProductCurrency", "USD");
+						action.setItemAttr("ItemCount", currentSkuQuantity);
+						
+						action.endItem();
+						//end of adding items
+						//If determined that user is logged in, then get information from User Profile
+						action.setUserId("");
+						action.finalize();
+			}
+		}
+	</script>
+
+<input id="admins" value="421191914656803" type="hidden">
+<input id="AppId" value="421191914656803" type="hidden">
+
+<input value="094" id="colorCode" type="hidden">
+<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+<script type="text/javascript">
+if(0=='1'){
+	var ticketPrice = $('#giftCardListPrice').val();
+}else{
+	var ticketPrice = $('#listPrice').val();
+}
+var temp =$('#salePrice').val();
+var onlyticketPrice=" ";
+    ticketPrice='$'+ticketPrice;
+if(typeof temp == 'undefined' || temp == null) 
+	{   var sPrice = " ";
+	    onlyticketPrice=ticketPrice;
+	    ticketPrice=" ";
+	  }else
+	{ sPrice = '$'+temp;}
+
+var addthis_share = {
+	title: 'Bleecker Street Straight-Leg Pant - Pinstripe - Average ',                                         
+	width: "600",
+	height: "500",
+	screenshot:'http://images.nyandcompany.com/is/image/NewYorkCompany/productdetaildefault/Bleecker-Street-Straight-Leg-Pant-Pinstripe-Average-_06194468_094.jpg',
+	templates: {
+		twitter: '{{title}} from @nyandcompany {{url}}',
+	},
+	email_vars:{
+		contextUrl:'http://www.nyandcompany.com:80',
+		image:'http://images.nyandcompany.com/is/image/NewYorkCompany/productdetaildefault/Bleecker-Street-Straight-Leg-Pant-Pinstripe-Average-_06194468_094.jpg',
+		ticketPrice:ticketPrice,
+		onlyticketPrice:onlyticketPrice,
+		salePrice:sPrice,
+		prodName:'Bleecker Street Straight-Leg Pant - Pinstripe - Average '		 
+	}
+}
+
+</script>
+
+<div class="sharecontainer" style="display:block;">
+	<div class="clearfix shareicons">
+	<ul class="share">
+		<li class="icon share label"></li>
+		<li><a href="#" title="Facebook" class="addthis_button_facebook at300b"><span style="display: block;" class="icon share fb"></span></a></li>
+		<li><a href="#" title="Tweet" class="addthis_button_twitter at300b"><span style="display: block;" class="icon share tw"> </span></a></li>
+		<li><span><a class="addthis_button_pinterest_pinit at300b" pi:pinit:url="" pi:pinit:media="http://images.nyandcompany.com/is/image/NewYorkCompany/productdetaildefault/Bleecker-Street-Straight-Leg-Pant-Pinstripe-Average-_06194468_094.jpg" style=""><iframe src="www.nyandcompany.com_files/pinit022.html" role="presentation" scrolling="no" allowtransparency="true" scrollbars="no" style="width:40px; height:25px;" frameborder="0"></iframe></a></span>
+		</li>
+		<li><a href="#" title="Email" target="_blank" class="addthis_button_email at300b" addthis:title="Bleecker Street Straight-Leg Pant - Pinstripe - Average "><span style="display: block;" class="icon share email"> </span></a></li>
+		<li><a href="#" title="Print" class="addthis_button_print at300b"><span style="display: block;" class="icon share print"> </span></a></li>
+			<li><a class="addthis_button_facebook_like at300b"><div fb-iframe-plugin-query="action=like&amp;app_id=421191914656803&amp;font=arial&amp;href=http%3A%2F%2Fwww.nyandcompany.com%2Fnyco%2Fprod%2Fsale%2Fsuits%2Fbleecker-street-straight-leg-pant-pinstripe-average-%2FA-prod2210011%2F&amp;layout=button_count&amp;locale=en_US&amp;ref=.VH6mDhuHp91.like&amp;sdk=joey&amp;send=false&amp;show_faces=false&amp;width=90" fb-xfbml-state="rendered" data-send="false" data-href="http://www.nyandcompany.com/nyco/prod/sale/suits/bleecker-street-straight-leg-pant-pinstripe-average-/A-prod2210011/" data-font="arial" data-width="90" data-action="like" data-show_faces="false" data-layout="button_count" class="fb-like fb_iframe_widget" data-ref=".VH6mDhuHp91.like"><span style="vertical-align: bottom; width: 76px; height: 20px;"><iframe class="" src="www.nyandcompany.com_files/like.html" style="border: medium none; visibility: visible; width: 76px; height: 20px;" title="fb:like Facebook Social Plugin" scrolling="no" allowtransparency="true" name="f1b361ee733f9cc" frameborder="0" height="1000px" width="90px"></iframe></span></div></a></li>			   
+			<li> <a title="Google+" target="_blank" href="http://www.addthis.com/bookmark.php?v=300&amp;winname=addthis&amp;pub=ra-5195303846087591&amp;source=tbx-300&amp;lng=en-US&amp;s=google_plusone_share&amp;url=http%3A%2F%2Fwww.nyandcompany.com%3A80%2Fprod%2Fsuits%2Fbleecker-street%2Fbleecker-street-straight-leg-pant-pinstripe-average-%2FA-prod2210011%2F&amp;title=Bleecker%20Street%20Straight-Leg%20Pant%20-%20Pinstripe%20-%20Average&amp;ate=AT-ra-5195303846087591/-/-/547ea60ec65bdb10/2&amp;frommenu=1&amp;uid=547ea60e8262369e&amp;email_vars=contextUrl%3Dhttp%253A%252F%252Fwww.nyandcompany.com%253A80%26image%3Dhttp%253A%252F%252Fimages.nyandcompany.com%252Fis%252Fimage%252FNewYorkCompany%252Fproductdetaildefault%252FBleecker-Street-Straight-Leg-Pant-Pinstripe-Average-_06194468_094.jpg%26ticketPrice%3D%252452.95%26onlyticketPrice%3D%2520%26salePrice%3D%252426.47%26prodName%3DBleecker%2520Street%2520Straight-Leg%2520Pant%2520-%2520Pinstripe%2520-%2520Average%2520&amp;screenshot=http%3A%2F%2Fimages.nyandcompany.com%2Fis%2Fimage%2FNewYorkCompany%2Fproductdetaildefault%2FBleecker-Street-Straight-Leg-Pant-Pinstripe-Average-_06194468_094.jpg&amp;ufbl=1&amp;width=600&amp;height=500&amp;ct=1&amp;rsi=547e6344a4c5fe54&amp;gen=1&amp;tt=0&amp;captcha_provider=nucaptcha" class="addthis_button_google_plusone_share at300b" addthis:url="http://www.nyandcompany.com:80/prod/suits/bleecker-street/bleecker-street-straight-leg-pant-pinstripe-average-/A-prod2210011/"><span class="at16nc at300bs at15nc at15t_google_plusone_share at16t_google_plusone_share"><span class="at_a11y">Share on google_plusone_share</span></span></a></li>
+	</ul>
+	</div>
+		<div class="zoom-dbl-clk"> Double click to zoom </div>
+</div>
+ 
+<form id="colorsizerefreshform" action="/nyco/quickview;jsessionid=EC606BB0692C4437F1E1244F7A72E54D?A=sku-22057824..prod2210011.masterCatalog.en__US.100001&amp;_DARGS=/nyco/cartridges/ProductDetail/ProductDetail.jsp.colorsizerefreshform" method="post"><div style="display:none"><input name="_dyncharset" value="UTF-8" type="hidden"> </div><div style="display:none"><input name="_dynSessConf" value="-4161070416702063000" type="hidden"> </div><input name="productId" value="prod2210011" type="hidden">
+		  	<input name="fromPage" value="" type="hidden">
+			<input name="categoryId" value="cat10009" type="hidden">
+			<input name="selectedColor" value="BLACK/WHITE" type="hidden">
+			<input name="selectedSize" value="" type="hidden">
+			<input name="savedquantity" value="" type="hidden">
+			<input name="savedgiftlist" value="" type="hidden">
+			<input name="tokenId" value="" type="hidden">
+			<input name="isLooksProductDetail" value="false" type="hidden">
+			<input name="className" value="" type="hidden">		  
+		</form><div class="row-end">&nbsp;</div><!--/row-end-->	
+						</div><!--/row.product-->
+			
+	<!--<script language="javascript" type="text/javascript">
+		$(window).load(function () {
+			$(".sharecontainer").insertAfter(".s7container").show();
+		});
+	
+	</script>
+-->
+<div class="completelook">
+														<h3 class="inline" style=" margin-left: 14px!important;">Complete this look</h3>
+														<hr style=" margin-left: 14px!important;">
+														<ul class="products grid">
+												<li class="complete-look-product">
+											  		<a href="http://www.nyandcompany.com/nyco/prod/outerwear/wool-blend-hooded-peacoat/A-prod1610009;jsessionid=EC606BB0692C4437F1E1244F7A72E54D?completeLook=true"><img alt="Wool-Blend Hooded Peacoat" src="www.nyandcompany.com_files/Wool-Blend-Hooded-Peacoat_06152405_006.jpg"></a><p class="name" style="margin-bottom:5px !important; margin-top:10px !important;"><a href="http://www.nyandcompany.com/nyco/prod/outerwear/wool-blend-hooded-peacoat/A-prod1610009?completeLook=true">Wool-Blend Hooded Peacoat</a></p>
+													<p class="price sale">
+                                          <span class="regprice">
+                                                            $129.95</span>
+                                          <span class="saleprice">
+                                                            $49.99</span>
+                                          <span>
+                                       		</span></p><p class="errormsg">
+							62% Off 
+</p>
+                                        	
+                           <p></p>
+                <span class="redFont"></span>
+		
+												</li>
+											<li class="complete-look-product">
+											  		<a href="http://www.nyandcompany.com/nyco/prod/sale/sweaters/cowl-neck-ribbed-sweater/A-prod2230001;jsessionid=EC606BB0692C4437F1E1244F7A72E54D?completeLook=true"><img alt="Cowl-Neck Ribbed Sweater" src="www.nyandcompany.com_files/Cowl-Neck-Ribbed-Sweater_02988307_280.jpg"></a><p class="name" style="margin-bottom:5px !important; margin-top:10px !important;"><a href="http://www.nyandcompany.com/nyco/prod/sale/sweaters/cowl-neck-ribbed-sweater/A-prod2230001?completeLook=true">Cowl-Neck Ribbed Sweater</a></p>
+													<p class="price sale">
+                                          <span class="regprice">
+                                                            $49.95</span>
+                                          <span class="saleprice">
+                                                            $25.00</span>
+                                          <span>
+                                       		</span></p><p class="errormsg">
+							50% Off 
+</p>
+                                        	
+                           <p></p>
+                <span class="redFont"></span>
+		
+												</li>
+											<li class="complete-look-product">
+											  		<a href="http://www.nyandcompany.com/nyco/prod/sale/sweaters/turtleneck-eyelash-sweater/A-prod2060004;jsessionid=EC606BB0692C4437F1E1244F7A72E54D?completeLook=true"><img alt="Turtleneck Eyelash Sweater" src="www.nyandcompany.com_files/Turtleneck-Eyelash-Sweater_02128429_904.jpg"></a><p class="name" style="margin-bottom:5px !important; margin-top:10px !important;"><a href="http://www.nyandcompany.com/nyco/prod/sale/sweaters/turtleneck-eyelash-sweater/A-prod2060004?completeLook=true">Turtleneck Eyelash Sweater</a></p>
+													<p class="price sale">
+                                          <span class="regprice">
+                                                            $52.95</span>
+                                          <span class="saleprice">
+                                                            $25.00</span>
+                                          <span>
+                                       		</span></p><p class="errormsg">
+							53% Off 
+</p>
+                                        	
+                           <p></p>
+                <span class="redFont"></span>
+		
+												</li>
+											</ul>
+</div><!--/completelook-->
+
+<div class="row-end">&nbsp;</div>
+					<!--/shopmore.products--> <div class="reviews">
+	<h3>Reviews
+	<div class="icon expand minus"></div>
+	</h3>
+	<div class="content-container">
+
+		<div class="content">
+			<div id="BVRRContainer"> <div class="bv-cleanslate"> <div data-bv-v="contentList:1" class="bv-shared bv-core-container-85"> <!--[if lt IE 7]> <div class="bv-compat bvie6 bvie-lt8 bvie"> <![endif]--> <!--[if IE 7]> <div class="bv-compat bvie7 bvie-lt8 bvie"> <![endif]--> <!--[if IE 8]> <div class="bv-compat bv-scroll-spy bvie8 bvie"> <![endif]--> <!--[if IE 9]> <div class="bv-compat bv-scroll-spy bvie9 bvie"> <![endif]--> <!--[if gt IE 9]> <!--><div class="bv-compat bv-scroll-spy" data-bv-target="review"> <!--<![endif]--> <meta name="bvDateModified" content=""> <div class="bv-content-list-container">  <div class="bv-header"> <div class="bv-action-bar">   <h2 class="bv-action-bar-header">Reviews</h2>        </div>   <div class="bv-inline-form-container"></div>    </div>  <div class="bv-content-placeholder">   <a href="javascript:void(0)" class="bv-rating-stars-container bv-focusable">  <span class="bv-rating-stars bv-rating-stars-off"> ★★★★★ </span>  </a>   <a class="bv-write-review-label bv-text-link bv-focusable bv-submission-button" href="javascript:void(0)">  BE THE FIRST TO REVIEW THIS PRODUCT </a>     </div>       <div data-bv-v="contentFilter:3" class="bv-content-filter bv-filter-controls-hidden bv-active-filters-hidden"> <div data-bv-v="FilterControls:10" class="bv-filter-controls"> <div class="bv-filters bv-hidden" role="menubar"> <div data-bv-v="FilterSelect:11" class="bv-content-filter-select"> <div class="bv-dropdown" data-bv-filter-for="Rating"> <div class="bv-dropdown-target"> <button onclick="return false;" type="button" class="bv-focusable" role="menuitem" aria-haspopup="true" aria-owns="bv-content-filter-dropdown-Rating"> <span class="bv-dropdown-arrow" aria-hidden="true" role="presentation"> ▼ </span> <span class="bv-dropdown-title">Rating</span> <span class="bv-off-screen">Menu, press enter to show options</span> </button> </div> <label for="bv-dropdown-select-11" class="bv-off-screen"> Filter by </label> <select id="bv-dropdown-select-11" class="bv-select-cleanslate bv-dropdown-select">  <option selected="selected" value="1"> 1 star </option>  <option value="2"> 2 stars </option>  <option value="3"> 3 stars </option>  <option value="4"> 4 stars </option>  <option value="5"> 5 stars </option>  </select> </div> </div>  </div> </div>  <div data-bv-v="ActiveFilters:12" class="bv-active-filters bv-hidden"> <span class="bv-active-filters-list-title">Active Filters</span> <ul class="bv-active-filters-list">  <li data-bv-filter-headerid="Rating" class="bv-active-filters-list-item bv-filter-hidden">  <button onclick="return false;" type="button" data-bv-filter-option="1" class="bv-active-filter-button bv-focusable bv-hidden" title="Rating"> 1 star <span class="bv-close-icon" aria-hidden="true"> ✘ </span> <span class="bv-off-screen">Remove Filter</span> </button>  <button onclick="return false;" type="button" data-bv-filter-option="2" class="bv-active-filter-button bv-focusable bv-hidden" title="Rating"> 2 stars <span class="bv-close-icon" aria-hidden="true"> ✘ </span> <span class="bv-off-screen">Remove Filter</span> </button>  <button onclick="return false;" type="button" data-bv-filter-option="3" class="bv-active-filter-button bv-focusable bv-hidden" title="Rating"> 3 stars <span class="bv-close-icon" aria-hidden="true"> ✘ </span> <span class="bv-off-screen">Remove Filter</span> </button>  <button onclick="return false;" type="button" data-bv-filter-option="4" class="bv-active-filter-button bv-focusable bv-hidden" title="Rating"> 4 stars <span class="bv-close-icon" aria-hidden="true"> ✘ </span> <span class="bv-off-screen">Remove Filter</span> </button>  <button onclick="return false;" type="button" data-bv-filter-option="5" class="bv-active-filter-button bv-focusable bv-hidden" title="Rating"> 5 stars <span class="bv-close-icon" aria-hidden="true"> ✘ </span> <span class="bv-off-screen">Remove Filter</span> </button>  </li>  <li class="bv-active-filters-list-item"> <button onclick="return false;" type="button" class="bv-active-filter-button-clear bv-focusable"> <span aria-hidden="true">Clear All</span> <span class="bv-close-icon" aria-hidden="true"> ✘ </span> <span class="bv-off-screen">Clear All Filters</span> </button> </li> </ul> </div>  </div>   <ol data-bv-v="contentItemCollection:2" class="bv-content-list bv-content-list-Reviews">  </ol>    </div> </div> </div> </div> </div>
+
+		</div>
+
+		<!--/content-->
+
+	</div>
+	<!--/content-container--></div>
+	<!--/reviews-->
+
+</div>	<!--/container-inner-->
+				
+				<div class="vert-recommended-container">
+					  <p class="label" id="youMayLike" style="display: block;">You may also like</p>
+					  <ul class="verticle-recommended-image-container" id="recommendedList">
+					  <li class="verticle-recommended-image"> <a href="http://recs.richrelevance.com/rrserver/click?a=40bd4ddcbc963ab0&amp;vg=1a681968-9c4a-4abc-8646-9a5283a6b06d&amp;pti=1&amp;pa=rr1&amp;hpi=3141&amp;stn=CategorySiloedPurchaseCP&amp;stid=110&amp;rti=2&amp;sgs=&amp;u=1062844715&amp;mvtId=0&amp;mvtTs=1417586191309&amp;uguid=7e7183ee-5eae-4c8b-1c1d-5f5283a0fe98&amp;channelId=WEB&amp;s=EC606BB0692C4437F1E1244F7A72E54D&amp;pg=1688&amp;p=04792894&amp;ind=0&amp;ct=http%3A%2F%2Fwww.nyandcompany.com%2Fnyco%2Fprod%2Fnew%2Fsuits%2FCrosby-Street-Straight-Leg-Pant-Average%2FA-prod1700014?mayWeAlsoSuggestProd=true"> <img data-altimage=" http://images.nyandcompany.com/is/image/NewYorkCompany/pdpalsolike/Crosby-Street-Straight-Leg-Pant-Average_04792894_006.jpg" alt="" src="www.nyandcompany.com_files/Crosby-Street-Straight-Leg-Pant-Average_04792894_006.jpg" height="100%" border="1" width="100%"></a></li><p class="name"> <a class="rr_product_link" href="http://recs.richrelevance.com/rrserver/click?a=40bd4ddcbc963ab0&amp;vg=1a681968-9c4a-4abc-8646-9a5283a6b06d&amp;pti=1&amp;pa=rr1&amp;hpi=3141&amp;stn=CategorySiloedPurchaseCP&amp;stid=110&amp;rti=2&amp;sgs=&amp;u=1062844715&amp;mvtId=0&amp;mvtTs=1417586191309&amp;uguid=7e7183ee-5eae-4c8b-1c1d-5f5283a0fe98&amp;channelId=WEB&amp;s=EC606BB0692C4437F1E1244F7A72E54D&amp;pg=1688&amp;p=04792894&amp;ind=0&amp;ct=http%3A%2F%2Fwww.nyandcompany.com%2Fnyco%2Fprod%2Fnew%2Fsuits%2FCrosby-Street-Straight-Leg-Pant-Average%2FA-prod1700014">Crosby Street Straight Leg Pant - Average</a></p><p class="price sale"><span class="regprice">$46.95</span><span class="saleprice"> $23.47</span><span class="promo"></span></p><li class="verticle-recommended-image"> <a href="http://recs.richrelevance.com/rrserver/click?a=40bd4ddcbc963ab0&amp;vg=1a681968-9c4a-4abc-8646-9a5283a6b06d&amp;pti=1&amp;pa=rr1&amp;hpi=3141&amp;stn=CategorySiloedPurchaseCP&amp;stid=110&amp;rti=2&amp;sgs=&amp;u=1062844715&amp;mvtId=0&amp;mvtTs=1417586191309&amp;uguid=7e7183ee-5eae-4c8b-1c1d-5f5283a0fe98&amp;channelId=WEB&amp;s=EC606BB0692C4437F1E1244F7A72E54D&amp;pg=1688&amp;p=04652969&amp;ind=1&amp;ct=http%3A%2F%2Fwww.nyandcompany.com%2Fnyco%2Fprod%2Fsale%2Fsuits%2FCrosby-Street-SuperStretch-Slim-Leg-Pant-%2FA-prod1640019?mayWeAlsoSuggestProd=true"> <img data-altimage=" http://images.nyandcompany.com/is/image/NewYorkCompany/pdpalsolike/Crosby-Street-SuperStretch-Slim-Leg-Pant_04652969_006.jpg" alt="" src="www.nyandcompany.com_files/Crosby-Street-SuperStretch-Slim-Leg-Pant_04652969_006.jpg" height="100%" border="1" width="100%"></a></li><p class="name"> <a class="rr_product_link" href="http://recs.richrelevance.com/rrserver/click?a=40bd4ddcbc963ab0&amp;vg=1a681968-9c4a-4abc-8646-9a5283a6b06d&amp;pti=1&amp;pa=rr1&amp;hpi=3141&amp;stn=CategorySiloedPurchaseCP&amp;stid=110&amp;rti=2&amp;sgs=&amp;u=1062844715&amp;mvtId=0&amp;mvtTs=1417586191309&amp;uguid=7e7183ee-5eae-4c8b-1c1d-5f5283a0fe98&amp;channelId=WEB&amp;s=EC606BB0692C4437F1E1244F7A72E54D&amp;pg=1688&amp;p=04652969&amp;ind=1&amp;ct=http%3A%2F%2Fwww.nyandcompany.com%2Fnyco%2Fprod%2Fsale%2Fsuits%2FCrosby-Street-SuperStretch-Slim-Leg-Pant-%2FA-prod1640019">Crosby Street SuperStretch Slim Leg Pant</a></p><p class="price sale"><span class="regprice">$59.95</span><span class="saleprice"> $29.97</span><span class="promo"></span></p><li class="verticle-recommended-image"> <a href="http://recs.richrelevance.com/rrserver/click?a=40bd4ddcbc963ab0&amp;vg=1a681968-9c4a-4abc-8646-9a5283a6b06d&amp;pti=1&amp;pa=rr1&amp;hpi=3141&amp;stn=CategorySiloedPurchaseCP&amp;stid=110&amp;rti=2&amp;sgs=&amp;u=1062844715&amp;mvtId=0&amp;mvtTs=1417586191309&amp;uguid=7e7183ee-5eae-4c8b-1c1d-5f5283a0fe98&amp;channelId=WEB&amp;s=EC606BB0692C4437F1E1244F7A72E54D&amp;pg=1688&amp;p=04792474&amp;ind=2&amp;ct=http%3A%2F%2Fwww.nyandcompany.com%2Fnyco%2Fprod%2Fnew%2Fsuits%2FCrosby-Street-Straight-Leg-Pant-Black-White-Average%2FA-prod1750005?mayWeAlsoSuggestProd=true"> <img data-altimage=" http://images.nyandcompany.com/is/image/NewYorkCompany/pdpalsolike/Crosby-Street-Straight-Leg-Pant-Black-White-Average_04792474_094.jpg" alt="" src="www.nyandcompany.com_files/Crosby-Street-Straight-Leg-Pant-Black-White-Average_04792474.jpg" height="100%" border="1" width="100%"></a></li><p class="name"> <a class="rr_product_link" href="http://recs.richrelevance.com/rrserver/click?a=40bd4ddcbc963ab0&amp;vg=1a681968-9c4a-4abc-8646-9a5283a6b06d&amp;pti=1&amp;pa=rr1&amp;hpi=3141&amp;stn=CategorySiloedPurchaseCP&amp;stid=110&amp;rti=2&amp;sgs=&amp;u=1062844715&amp;mvtId=0&amp;mvtTs=1417586191309&amp;uguid=7e7183ee-5eae-4c8b-1c1d-5f5283a0fe98&amp;channelId=WEB&amp;s=EC606BB0692C4437F1E1244F7A72E54D&amp;pg=1688&amp;p=04792474&amp;ind=2&amp;ct=http%3A%2F%2Fwww.nyandcompany.com%2Fnyco%2Fprod%2Fnew%2Fsuits%2FCrosby-Street-Straight-Leg-Pant-Black-White-Average%2FA-prod1750005">Crosby Street Straight Leg Pant - Black/White - Average</a></p><p class="price sale"><span class="regprice">$52.95</span><span class="saleprice"> $26.47</span><span class="promo"></span></p><li class="verticle-recommended-image"> <a href="http://recs.richrelevance.com/rrserver/click?a=40bd4ddcbc963ab0&amp;vg=1a681968-9c4a-4abc-8646-9a5283a6b06d&amp;pti=1&amp;pa=rr1&amp;hpi=3141&amp;stn=CategorySiloedPurchaseCP&amp;stid=110&amp;rti=2&amp;sgs=&amp;u=1062844715&amp;mvtId=0&amp;mvtTs=1417586191309&amp;uguid=7e7183ee-5eae-4c8b-1c1d-5f5283a0fe98&amp;channelId=WEB&amp;s=EC606BB0692C4437F1E1244F7A72E54D&amp;pg=1688&amp;p=04799079&amp;ind=3&amp;ct=http%3A%2F%2Fwww.nyandcompany.com%2Fnyco%2Fprod%2Fnew%2Fsuits%2FCrosby-Street-Straight-Leg-Pant-Brown-Heather-Average%2FA-prod1890002?mayWeAlsoSuggestProd=true"> <img data-altimage=" http://images.nyandcompany.com/is/image/NewYorkCompany/pdpalsolike/Crosby-Street-Straight-Leg-Pant-Brown-Heather-Average_04799079_830.jpg" alt="" src="www.nyandcompany.com_files/Crosby-Street-Straight-Leg-Pant-Brown-Heather-Average_047990.jpg" height="100%" border="1" width="100%"></a></li><p class="name"> <a class="rr_product_link" href="http://recs.richrelevance.com/rrserver/click?a=40bd4ddcbc963ab0&amp;vg=1a681968-9c4a-4abc-8646-9a5283a6b06d&amp;pti=1&amp;pa=rr1&amp;hpi=3141&amp;stn=CategorySiloedPurchaseCP&amp;stid=110&amp;rti=2&amp;sgs=&amp;u=1062844715&amp;mvtId=0&amp;mvtTs=1417586191309&amp;uguid=7e7183ee-5eae-4c8b-1c1d-5f5283a0fe98&amp;channelId=WEB&amp;s=EC606BB0692C4437F1E1244F7A72E54D&amp;pg=1688&amp;p=04799079&amp;ind=3&amp;ct=http%3A%2F%2Fwww.nyandcompany.com%2Fnyco%2Fprod%2Fnew%2Fsuits%2FCrosby-Street-Straight-Leg-Pant-Brown-Heather-Average%2FA-prod1890002">Crosby Street Straight Leg Pant - Brown Heather - Average</a></p><p class="price sale"><span class="regprice">$46.95</span><span class="saleprice"> $23.47</span><span class="promo"></span></p></ul>
+					  </div>
+				</div>
+				<!--/container-fixed--></div>
+				<!--/container -->
+			<!--
+		Basic dialog box. class name dictates content-specific styles, but that hasn't been
+		fully developed yet.
+		-->
+			<div id="dialogbox" class="quickview">
+				<div class="dialogbox-bg" data-dialogaction="close"></div><!--/bg-->
+				<div class="dialogbox-container" style="top: 861.5px;">
+					<div class="dialogbox-close" data-dialogaction="close"></div><!--/close-->
+					<div class="dialogbox-content"></div><!--/content-->
+				</div><!--/container-->
+			</div><!--/dialogbox.quickview-->	
+		<div style="float:left; height:1px;width:840px;"></div>
+	<!--
+	Basic dialog box. class name dictates content-specific styles, but that hasn't been
+	fully developed yet.
+-->
+
+<div id="dialogbox" class="quickview">
+	<div class="dialogbox-bg" data-dialogaction="close"></div><!--/bg-->
+	<div class="dialogbox-container">
+		<div class="dialogbox-close" data-dialogaction="close"></div><!--/close-->
+		<div class="dialogbox-content"></div><!--/content-->
+	</div><!--/container-->
+</div><!--/dialogbox.quickview--><!-- omniture sitecatalyst content starts here-->
+	<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-25865479-1']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+<script type="text/javascript">
+(function() {
+	var h = 'com-nyandcompany.netmng.com';
+	var t = document.createElement('script');
+	t.type = 'text/javascript'; t.async = true;
+	var p = 'https:'==document.location.protocol?'https://':'http://';
+	var m = document.referrer.match(/https?:\/\/([a-z]+\.[a-z\.]+)/i);
+	var r = (m && m[1] != document.location.hostname) ? ('&ref=' + escape(document.referrer)) : '';
+	t.src = p + h + '/?async=1' + r;
+	var s = document.getElementsByTagName('script')[0];
+	s.parentNode.insertBefore(t, s);
+})();
+</script>
+<input value="EC606BB0692C4437F1E1244F7A72E54D" id="omnitureSessionId" type="hidden">
+
+<input value="anonymous" id="userLoggedIn" type="hidden">
+	<!-- Adobe Marketing Cloud Tag Loader Code Copyright 1996-2013 Adobe, Inc. All Rights Reserved More info available at http://www.adobe.com/solutions/digital-marketing.html -->
+								<script type="text/javascript">
+									//<![CDATA[ 
+									var amc=amc||{};
+									if(!amc.on){amc.on=amc.call=function(){}};
+									document.write("<scr"+"ipt type=\"text/javascript\" src=\"//www.adobetag.com/d1/v2/ZDEtbmV3eW9ya2FuZGNvbXBhbnktNDM0Ni0yNjQ3/amc.js\"></sc"+"ript>");
+									//]]>
+								</script><script type="text/javascript" src="www.nyandcompany.com_files/amc.js"></script><div class="bv-verify-css-loaded" style="height: 0px; width: 0px; border: 0px none;"></div><script id="scToTargetPlugin" type="text/javascript">try {
+
+mboxScPluginFetcher = function(b, Bc) { this.b = b; this.Bc = Bc;};mboxScPluginFetcher.prototype.Cc = function(v) { v.setBasePath('/m2/' + this.b + '/sc/standard'); this.Dc(v); var e = v.buildUrl(); e += '&scPluginVersion=1'; return e;};mboxScPluginFetcher.prototype.Dc = function(v) { var Ec = [ "dynamicVariablePrefix","visitorID","vmk","ppu","charSet", "visitorNamespace","cookieDomainPeriods","cookieLifetime","pageName", "currencyCode","variableProvider","channel","server", "pageType","transactionID","purchaseID","campaign","state","zip","events", "products","linkName","linkType","resolution","colorDepth", "javascriptVersion","javaEnabled","cookiesEnabled","browserWidth", "browserHeight","connectionType","homepage","pe","pev1","pev2","pev3", "visitorSampling","visitorSamplingGroup","dynamicAccountSelection", "dynamicAccountList","dynamicAccountMatch","trackDownloadLinks", "trackExternalLinks","trackInlineStats","linkLeaveQueryString", "linkDownloadFileTypes","linkExternalFilters","linkInternalFilters", "linkTrackVars","linkTrackEvents","linkNames","lnk","eo" ]; for (var i = 0; i < Ec.length; i++) { this.Fc(Ec[i], v); } for (var i = 1; i <= 75; i++) { this.Fc('prop' + i, v); this.Fc('eVar' + i, v); this.Fc('hier' + i, v); }};mboxScPluginFetcher.prototype.Fc = function(g, v) { var h = this.Bc[g]; if (typeof(h) === 'undefined' || h === null || h === '') { return; } v.addParameter(g, h);};mboxScPluginFetcher.prototype.cancel = function() { };mboxScPluginFetcher.prototype.fetch = function(v) { v.setServerType(this.getType()); var e = this.Cc(v); this.w = document.createElement('script'); this.w.src = e; document.body.appendChild(this.w);};mboxScPluginFetcher.prototype.getType = function() { return 'ajax';};function mboxLoadSCPlugin(Bc) { if (!Bc) { return null; } Bc.m_tt = function(Bc) { var Gc = Bc.m_i('tt'); Gc.G = true; Gc.b = 'newyorkandcompany'; Gc['_t'] = function() { if (!this.isEnabled()) { return; } var X = this.Ic(); if (X) { var Tb = new mboxScPluginFetcher(this.b, this.s); X.setFetcher(Tb); X.load(); } }; Gc.isEnabled = function() { return this.G && mboxFactoryDefault.isEnabled(); }; Gc.Ic = function() { var _ = this.Jc(); var Eb = document.createElement('DIV'); return mboxFactoryDefault.create(_, new Array(), Eb); }; Gc.Jc = function() { var Kc = this.s.events && this.s.events.indexOf('purchase') != -1; return 'SiteCatalyst: ' + (Kc ? 'purchase' : 'event'); }; }; return Bc.loadModule('tt');};mboxVizTargetUrl = function(_ ) { if (!mboxFactoryDefault.isEnabled()) { return; } var v = mboxFactoryDefault.getUrlBuilder().clone(); v.setBasePath('/m2/' + 'newyorkandcompany' + '/viztarget'); v.addParameter('mbox', _); v.addParameter('mboxId', 0); v.addParameter('mboxCount', mboxFactoryDefault.getMboxes().length() + 1); var pb = new Date(); v.addParameter('mboxTime', pb.getTime() - (pb.getTimezoneOffset() * 60000)); v.addParameter('mboxPage', mboxGenerateId()); var c = mboxShiftArray(arguments); if (c && c.length > 0) { v.addParameters(c); } return v.buildUrl();};
+
+} catch (e) { console.log(e); }; amc.call('getLoaderById', 0).publish('ontagload.scToTargetPlugin', {id: 'scToTargetPlugin',tag: amc.call('getById', 'scToTargetPlugin')})</script><script id="sitecatalyst_stub" type="text/javascript">var s=new SC_Stub();
+s.tagContainerName="Main_s";
+
+/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+function SC_Stub(){var t=this,w=t.w=window;t.d=w.document;t._c='s_l';if(!w.s_c_il){w.s_c_il=[];w.s_c_in=0}t._il=w.s_c_il;t._in=w.s_c_in;t._il[t._in]=t;w.s_c_in++;t.fs=function(x,y){if(x&&y){var a=
+x.split(','),b=y.split(','),i,j;for(i=0;i<a.length;i++){for(j=0;j<b.length;j++)if(a[i]==b[j])return 1}}return 0};t.aa=function(a){var b=0,i;if(a){b=[];for(i=0;i<a.length;i++)b[i]=a[i]}return b};t.wl=[
+];t.wq=[];t.createAsynchronousCustomTagHandler=function(o,f){var t=this,x,i;if(!f){f=o;o=0;x=t.w}else{if(!t.w[o])t.w[o]={};x=t.wl[o]=t.w[o]}if(typeof(f)!='object')f=[f];for(i=0;i<f.length;i++)if(!x[f[
+i]])x[f[i]]=new Function('var t=s_c_il['+t._in+'];t.wq[t.wq.length]={'+(o?'o:"'+o+'",':'')+'f:"'+f[i]+'",a:t.aa(arguments)}')};t.as=function(x){var y=[],i;for(i=1;i<x.length;i++)y[y.length]=x[i]
+return y};t.s=0;t.contextData={};t.retrieveLightData={};if(!w.s_giq)w.s_giq=[];t._gi=w.s_gi;w.s_gi=new Function('u','var t=s_c_il['+t._in+
+'],w=t.w,l=t._il,i,j,x,s;u=u.toLowerCase();if(l)for(j=0;j<2;j++)for(i=0;i<l.length;i++){s=l[i];x=s._c;if((!x||x=="s_c"||(j>0&&x=="s_l"))&&s.oun&&(s.oun==u||(s.fs&&s.sa&&s.fs(s.oun,u)))){'+
+'if(s.sa)s.sa(u);return s}}if(!t.oun){t.sa(u);return t}if(t._gi)return t._gi(u);s=new SC_Stub();s.tagContainerName="s_tca_"+w.s_giq.length;s.sa(u);w.s_giq[w.s_giq.length]=s;return s');t.sa=function(u)
+{var t=this;if(t.s)t.s.sa(u);t.un=u;if(!t.oun)t.oun=u;else if(!t.fs(t.oun,u))t.oun+=','+u};t.tq=[];t.track=t.t=function(vo){var t=this,m;if(t.s)return t.s.t(vo);if(!vo)vo={};for(m in t){if(m!='un'
+||t.u!=t.un)vo[m]=t[m]}t.tq[t.tq.length]=vo;t.lnk=t.linkName=t.linkType='';return '';};t.trackLink=t.tl=function(o,u,n,vo){var t=this;if(t.s)return t.s.tl(o,u,v,vo);t.lnk=o;t.linkType=u;t.linkName=n
+return t.t(vo)};t.trackLight=function(p,ss,i,vo){var t=this;if(t.s)return t.s.trackLight(p,ss,i,vo);t.lightProfileID=p;t.lightStoreForSeconds=ss;t.lightIncrementBy=i;return t.t(vo)};t.lmq=[]
+t.loadModule=function(n,u,d){var t=this;if(t.s)return t.s.loadModule(n,u,d);t.lmq[t.lmq.length]={n:n,u:u,d:d};return 0};t.ml=[];t.mmq=[];t.mo=function(m,f){var t=this,i;t.ml[m]=t[m]={};if(f)
+for(i=0;i<f.length;i++)t[m][f[i]]=new Function('var t=s_c_il['+t._in+'];t.mmq[t.mmq.length]={m:"'+m+'",f:"'+f[i]+'",a:t.aa(arguments)}')};t.mo('Media',['open','play','stop','close','track']);t.mo(
+'Survey',['launch']);}; amc.call('getLoaderById', 0).publish('ontagload.sitecatalyst_stub', {id: 'sitecatalyst_stub',tag: amc.call('getById', 'sitecatalyst_stub')})</script><script src="www.nyandcompany.com_files/sitecatalyst.js" defer="defer" async="" id="sitecatalyst" type="text/javascript"></script>
+							<!-- End Adobe Marketing Cloud Tag Loader Code -->
+							
+						<script type="text/javascript"> 
+			amc.on('load', function (event, data) {
+
+			var refinementSku = $('#refinementSku').val();
+			var expressCheckoutEvent = '';
+			
+
+			
+			var serverDomain = document.domain;
+			s.server=serverDomain;
+			
+								
+					s.channel="Suiting".toLowerCase();
+					s.pageName="Suiting:Bleecker Street:details:Bleecker Street Straight-Leg Pant - Pinstripe - Average ".toLowerCase();
+					s.prop6="product details".toLowerCase();
+									
+			
+			s.prop1="".toLowerCase();
+
+			s.prop2=""
+					
+			s.prop3="Suiting".toLowerCase();
+
+			s.eVar3="Suiting:Bleecker Street".toLowerCase();
+
+			s.prop10="Bleecker Street".toLowerCase();
+			
+			s.prop14="".toLowerCase();
+
+			s.prop15="".toLowerCase();
+
+			s.prop16=""
+
+			s.prop18=""
+
+			s.prop19=""
+
+			s.prop20=""
+
+			s.prop21="".toLowerCase();
+
+			s.prop21="".toLowerCase();
+
+			s.prop22=serverDomain;
+
+			
+				
+			s.eVar38=""
+
+			
+			
+					s.events="prodView".toLowerCase();
+				
+					s.products=";06194468;;;;eVar28=browse".toLowerCase();
+				
+						s.eVar42="no rating";
+					
+			
+
+			s.eVar4=""
+
+			s.purchaseID=""
+			
+			s.eVar27 = refinementSku;
+
+			s.eVar15 = "not logged in"
+
+			s.eVar17 = ""
+
+			s.zip = ""
+
+			s.state = "".toLowerCase();
+
+			s.pageType="product details";
+
+			s.eVar47 = ""
+
+			s.eVar48 = ""
+			
+
+ 		    s.t();
+ 		   });
+
+			
+	 	</script>	
+
+		<!--sitecatalyst content ends here-->
+	
+	<script type="text/javascript">
+		/* <![CDATA[ */
+		var google_conversion_id = 1059486783;
+		var google_conversion_label = "dgOsCKX9wAIQv_iZ-QM";
+		var google_custom_params = window.google_tag_params;
+		var google_remarketing_only = true;
+
+		
+		var ecomm_pagetype = "product";
+			
+		var ecomm_prodid = "06194468";
+		var ecomm_totalvalue = "";
+		/* ]]> */
+	</script>
+	<script type="text/javascript" src="www.nyandcompany.com_files/conversion.js">
+		
+	</script><iframe name="google_conversion_frame" title="Google conversion frame" src="www.nyandcompany.com_files/a.html" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" frameborder="0" height="13" width="300">&lt;img
+ height="1" width="1" border="0" alt="" 
+src="http://googleads.g.doubleclick.net/pagead/viewthroughconversion/1059486783/?frame=0&amp;random=1417586191086&amp;cv=7&amp;fst=1417586191086&amp;num=1&amp;fmt=1&amp;label=dgOsCKX9wAIQv_iZ-QM&amp;guid=ON&amp;u_h=900&amp;u_w=1440&amp;u_ah=873&amp;u_aw=1440&amp;u_cd=24&amp;u_his=50&amp;u_tz=-300&amp;u_java=true&amp;u_nplug=7&amp;u_nmime=66&amp;frm=0&amp;url=http%3A//www.nyandcompany.com/nyco/prod/suits/bleecker-street/bleecker-street-straight-leg-pant-pinstripe-average-/A-prod2210011/%23.VH5jRKTF_lQ&amp;vis=1"
+ /&gt;</iframe>
+	<noscript>
+		<div style="display: inline;">
+			<img height="1" width="1" style="border-style: none;" alt=""
+				src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1059486783/?value=1.00&amp;currency_code=USD&amp;label=dgOsCKX9wAIQv_iZ-QM&amp;guid=ON&amp;script=0" />
+		</div>
+	</noscript>
+<footer>
+<div class="brand container-full">
+		<a class="logo" href="http://www.nyandcompany.com/nyco/"><div class="logo"></div><!--/logo-->
+		</a></div><!--/brand-->
+	<div class="hiddenHoverImages displayNone">
+		<img src="www.nyandcompany.com_files/leftarrow_hover.png">
+		<img src="www.nyandcompany.com_files/rightarrow_hover.png">
+	</div><!-- /hidden hover images -->
+	<div class="info container-full">
+		<div class="container-fixed">
+			<div class="row">
+				<div class="col4">
+					<h3>
+						SIGN UP. GET $25.</h3>
+					<input value="ENTER YOUR EMAIL ADDRESS" name="newsemail" id="newsemail" maxlength="40" data-preserve-default="true" type="text">
+					<p>
+						Exclusive offers. NY News. Insider savings.</p>
+				</div><!--/newsletter-->
+				<div class="col4">
+					<h3>
+						SOCIALIZE</h3>
+					<ul class="socialicons">
+						<li><a class="icon social fb" href="https://www.facebook.com/NewYorkandCompany" target="_blank"></a></li><!--/facebook-->
+						<li><a class="icon social tw" href="https://twitter.com/nyandcompany" target="_blank"></a></li><!--/twitter-->
+						<li><a class="icon social pin" href="http://pinterest.com/nyandcompany/" target="_blank"></a></li><!--/pinterest-->
+						<li><a class="icon social gp" href="https://plus.google.com/101161647899238921526" target="_blank" rel="publisher"></a></li><!--/googleplus-->
+						<li><a class="icon social insta" href="#" id="nycoInstagramLink"></a></li><!--/instagram-->
+					</ul>
+					<h3 class="inline">
+						- OR -</h3>
+				</div><!--/socialize-->
+				<div class="col4 rewards">
+					<h3>
+						NY&amp;C REWARDS</h3>
+					<p>
+						NY&amp;C Rewards members<br>receive many exclusive perks.<br>Apply now to start saving.</p>
+				</div><!--/nyc rewards-->
+				<div class="row-end">&nbsp;</div><!--/row-end-->
+			</div>
+			<div class="row">
+				<div class="col4">
+					<input value="SIGN UP" id="subscriptionEmail" type="button"> 
+				</div><!--/newsletter-->
+				<div class="col4">
+					<input value="Text Us" onclick="window.open('http://nystyl.com','_blank')" type="button"> 
+				</div><!--/socialize-->
+				<div class="col4 rewards">
+					<a class="button" href="http://www.nyandcompany.com/nyco/static/nyco-reward-card/">
+						Apply Now</a> 
+				</div><!--/nyc rewards-->
+				<div class="row-end">&nbsp;</div><!--/row-end-->
+			</div>
+		</div><!--/container-fixed-->
+	</div><!--/info-->
+	<div class="util container-full">
+		<div class="container-fixed">
+			<div class="row">
+				<div class="col2 stacked-anchors">
+					<a href="http://www.nyandcompany.com/nyco/static/help/">
+						CUSTOMER SERVICE</a>
+					<a href="http://www.nyandcompany.com/nyco/static/nyco-reward-card/">
+						NY&amp;C REWARDS CARD</a>
+				</div><!--/col2-->
+				<div class="col2 stacked-anchors">
+					<a href="http://www.nyandcompany.com/nyco/cat/gift-cards/N-102671">
+						GIFT CARDS</a>	
+					<a href="http://www.nyandcompany.com/nyco/browse/referaFriend.jsp">
+						REFER A FRIEND</a>
+				</div><!--/col2-->
+				<div class="col2 stacked-anchors">
+				<a href="http://www.nyandcompany.com/nyco/locations/" title="Find a Store">
+							STORE LOCATOR</a>
+					<a href="http://www.nyandcompany.com/nyco/static/about/aboutus/">
+						ABOUT NY&amp;C</a>
+				</div><!--/col2-->
+				<div class="col2 stacked-anchors">
+					<a href="http://www.nyandcompany.com/nyco/static/contact/">
+						CONTACT US</a>
+
+					<a href="http://www.nyandcompany.com/nyco/static/about/careers/">
+						CAREERS</a>
+				</div><!--/col2-->
+				<div class="col2 stacked-anchors">
+					<a href="http://www.nyandcompany.com/nyco/static/help/orders/tracking/">
+						ORDER STATUS</a>
+					<a href="http://www.nyandcompany.com/nyco/static/about/philanthropy/">
+						OUR CHARITIES</a>
+				</div><!--/col2-->
+				<div class="col2 phonenumber">
+					<p>
+						1.800.961.9906</p>
+				</div><!--/col2-->
+				<div class="row-end">&nbsp;</div><!--/row-end-->
+			</div> <!--/stacked links-->
+			<div class="row">
+				<div class="col12 adminlegal horizontal-links">
+					<a href="http://www.nyandcompany.com/nyco/static/privacy-policy/">
+						PRIVACY POLICY</a>
+					<a href="http://www.nyandcompany.com/nyco/static/ca-privacy-rights/">
+						CALIFORNIA PRIVACY RIGHTS</a>
+					<a href="http://www.nyandcompany.com/nyco/static/transparency/">
+						SUPPLY CHAIN TRANSPARENCY</a>				 
+					<a href="http://www.nyandcompany.com/nyco/static/terms-conditions/">
+						TERMS &amp; CONDITIONS</a>
+					<a href="http://www.nyandcompany.com/nyco/sitemap/">
+						SITE MAP</a>
+				</div><!--/col12-->
+				<div class="row-end">&nbsp;</div><!--/row-end-->
+			</div> <!--/legal + admin links-->
+			<div class="row">
+				<div class="col12 verisign">
+				<a target="VRSN_Splash" tabindex="-1" href="https://trustsealinfo.verisign.com/splash?form_file=fdf/splash.fdf&amp;dn=www.symantec.com&amp;lang=en"><img oncontextmenu="return false;" src="www.nyandcompany.com_files/verisign.jpg" name="seal" alt="" border="true">
+				</a>
+				</div><!--/col12-->
+				<div class="row-end">&nbsp;</div><!--/row-end-->
+			</div> <!--/verisign-->
+			<div class="row copyright">
+				<div class="col12">
+					© 2008-2014 New York &amp; Company. All Rights Reserved.</div><!--/col12-->
+				<div class="row-end">&nbsp;</div><!--/row-end-->
+			</div> <!--/copyright-->
+		</div><!--/container-fixed-->
+	</div><!--/util-->
+</footer><!--/footer--><script type="text/javascript" src="www.nyandcompany.com_files/customPageEndScript.js"></script>
+	
+<script type="text/javascript">if (!NREUMQ.f) { NREUMQ.f=function() {NREUMQ.push(["load",new Date().getTime()]);var e=document.createElement("script");e.type="text/javascript";e.src=(("http:"===document.location.protocol)?"http:":"https:") + "//" + "js-agent.newrelic.com/nr-100.js";document.body.appendChild(e);if(NREUMQ.a)NREUMQ.a();};NREUMQ.a=window.onload;window.onload=NREUMQ.f;};NREUMQ.push(["nrfj","beacon-4.newrelic.com","ed008858fc","2698227,2793988","YVVQbUtQC0oCBRVaWlgfeGppHgZYERITWlFRVUEWaUMKXScDFVJcWmBTXlweNUsMAiVWQVdZXmlYVgAXCRUR",0,129,new Date().getTime(),"","","","",""]);</script>
+
+
+	
+		
+	
+		
+
+	
+	
+		
+
+	
+	
+		
+
+
+		
+
+		
+	
+	
+		
+	
+		
+				<script language="JavaScript" type="text/javascript">
+							var __cmbLoaded=false,__cmbRunnable=null;
+
+							(function(){
+									try{
+										var b;
+										// The retailer fills in this section.
+										var actionType = "pv";
+										
+										function d() {
+											var action = TellApartCrumb.makeCrumbAction("nyefx6fdZKHW",
+												actionType);
+											    
+												action.setActionAttr("PageType", "Product");
+												action.setUserId("");
+												action.setActionAttr("SKU", "06194468");
+												action.setActionAttr("ProductCategoryPath", "Suiting > Bleecker Street");
+												action.finalize();
+										}
+										if("https:"==document.location.protocol)
+											b="https://sslt.tellapart.com/crumb.js";
+										else{
+											for(var g=navigator.userAgent,h=0,e=0,i=g.length;e<i;e++)
+												h^=g.charCodeAt(e);
+												b="http://static.tellaparts.com/crumb"+h%10+".js"
+											}
+												if(actionType==="tx"){
+														__cmbRunnable=d;
+														document.write("\x3Cscripttype='text/java"+"script'src='"+b+"'\x3E\x3C/script\x3E");
+														__cmbLoaded=true
+													}else{
+														var a=document.createElement("script");
+														a.src=b;
+														a.onload=function(){
+															__cmbLoaded=true;d()
+														};
+														a.onreadystatechange=function(){
+															if(/loaded|complete/.test(a.readyState)){
+															__cmbLoaded=true;d()
+															}
+														};
+														var s=document.getElementsByTagName("script")[0];
+														s.parentNode.insertBefore(a, s)
+													}
+									}catch(j){}
+								}
+							)
+							();
+				</script>
+			<script language="JavaScript" type="text/javascript">
+			if(__cmbRunnable!=null){
+				__cmbRunnable();
+				__cmbRunnable=null
+			};
+			</script>
+			<!--End TellApart-->
+		<!-- End : Tell A Part Script  for 'Product Detail Page' -->
+
+<!-- Start : Tell A Part Script  for 'Product Detail Page for QuickView' -->	
+	
+		<!-- End : Tell A Part Script  for 'Product Detail Page for QuickView' -->
+
+<!-- Start : Tell A Part Script  for 'Product Detail Page for LookPage' -->	
+	
+		<!-- End : Tell A Part Script  for 'Product Detail Page for LookPage' -->
+
+
+		<!-- Start : Tell A Part Script  for 'Order Confirmation' -->
+
+		<!-- End : Tell A Part Script  for Order Confirmation -->
+	<script type="text/javascript">
+		setSchemaMarkupTags('product');
+		
+		setOgTags('product');
+	</script>
+<script type="text/javascript" src="www.nyandcompany.com_files/addthis_widget.js"></script><span style="display: none;" class="" id="0"></span><span style="display: none;" class="" id="1"></span><span style="display: none;" class="" id="2"></span><script src="www.nyandcompany.com_files/nr-100.js" type="text/javascript"></script><script src="www.nyandcompany.com_files/ed008858fc.js" type="text/javascript"></script></body></html>
+<!-- End : Tell A Part Script  for 'Shopping Cart Page' -->
+<!-- Start : Tell A Part Script  for 'Product Detail Page' -->
+<!-- End : Tell A Part Script  for 'Product Detail Page' -->
+<!-- Start : Tell A Part Script  for 'Product Detail Page for QuickView' -->
+<!-- End : Tell A Part Script  for 'Product Detail Page for QuickView' -->
+<!-- Start : Tell A Part Script  for 'Product Detail Page for LookPage' -->
+<!-- End : Tell A Part Script  for 'Product Detail Page for LookPage' -->
+<!-- Start : Tell A Part Script  for 'Order Confirmation' -->
+<!-- End : Tell A Part Script  for Order Confirmation -->
+<!-- End : Tell A Part Script  for 'Shopping Cart Page' -->
+<!-- Start : Tell A Part Script  for 'Product Detail Page' -->
+<!--Begin TellApart-->

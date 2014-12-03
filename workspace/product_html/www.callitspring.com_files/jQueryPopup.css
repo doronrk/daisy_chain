@@ -1,0 +1,73 @@
+#div_Background_Popup{
+	display:none;
+	position:fixed;
+	_position:absolute; /* hack for internet explorer 6*/
+	height:100%;
+	width:100%;
+	top:0;
+	left:0;
+	background:#fff;
+	z-index:1;
+}
+#div_jQuery_Popup{
+	display:none;
+	position:fixed;
+	_position:absolute; /* hack for internet explorer 6*/
+	/*height:310px;*/
+	width:375px;
+	background:#FFFFFF;
+	border:2px solid #293E6B;
+	z-index:2;
+	font-size:11px;
+	padding: 0;
+	height:auto !important;
+}
+#div_CloseBT_Popup{
+	height:20px;
+	padding-bottom:0;
+	padding-left:0;
+	padding-right:0;
+	padding-top:0;
+	text-align:right;
+	width:100%;
+	display:block !important;
+}
+#div_CloseBT_Popup span {
+}
+#div_CloseBT_Popup span a {
+	display: block;
+	float: right;
+	margin-top:4px;
+	padding-right:8px;
+	width: 44px;
+	height: 20px;
+	text-indent: 9999px;
+	outline: 0;
+	background-repeat: no-repeat;
+}
+body.langeng #div_CloseBT_Popup span a {
+	background-image: url('/_static/images/www/eng/alertBoxCloseButton.gif');
+}
+body.langfre #div_CloseBT_Popup span a {
+	background-image: url('/_static/images/www/fre/alertBoxCloseButton.gif');
+}
+#div_CloseBT_Popup span a:hover {
+	background-position: 0 -20px;
+}
+#div_jQuery_Popup_Content {
+	padding: 7px 22px 23px 22px;
+}
+
+#div_jQuery_Popup_Content input[type=button] {
+	border:solid 0;
+	height:22px;
+	font-size:11px;
+	font-weight:bold;
+	background:#5f9baf;
+	text-transform:uppercase;
+	color:#fff;
+	font-family:helvetica,arial;
+	}
+	
+#div_jQuery_Popup_Content .aldoFullWdith .textfield {width:317px;}
+.langfre #div_jQuery_Popup_Content .aldoFullWdith .textfield {width:304px;}

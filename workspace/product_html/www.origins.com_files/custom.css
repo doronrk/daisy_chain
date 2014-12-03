@@ -1,0 +1,186 @@
+/* ORIGINS CUSTOM
+_____________________________*/
+
+/* Global override - please remove
+_____________________________*/
+.body-container .ie6-wrap #infonav { padding: 0;}
+.body-container .ie6-wrap #infonav ul#infolist {margin: 0; } 
+.body-container .ie6-wrap #navigation { padding: 0; }
+.body-container .ie6-wrap #navigation ul#navlist { margin: 0; }
+   
+
+/* set H elements to reset, added padding/margin as needed. 
+h1,h2,h3,h4,h5 { font-weight: bold; }
+
+h1 {
+    font-size: 22px;
+	line-height: 22px;
+}
+
+h2 {
+    font-size: 18px;
+}
+
+h3 {
+    font-size: 16px;
+    line-height: 16px;
+}
+
+h4 {
+	font-size: 14px;
+    line-height: 14px;
+}
+
+h5 {
+    font-size: 12px;
+    line-height: 12px;
+}
+
+
+a {
+    color: #808080;
+}
+*/
+
+/* added from brx css */
+input.error { border: 1px solid #b50404; }
+label.error { color: #B50404; }
+input[type=hidden], input[type=image], input[type=radio] { 
+    border: 0;
+    padding: 0;
+}
+
+.form-submit {
+	border: none;
+}
+
+
+/* Browser Reset
+---------------------------- */
+a { border: 0; } /* | fieldset,img, | removes dotted line in FF */
+img { outline: none; } /* removes dotted line when inside of url */
+sup, sub { line-height: 0; } /* stops line-height uneveness in elements with sub, sup */
+
+
+/*vertical align
+---------------------------- */
+.vmid { vertical-align: middle; }
+
+/* Padding + Margins
+---------------------------- 
+.p30t { padding-top: 30px; }
+.p20t { padding-top: 20px; }
+.p18t { padding-top: 18px; }
+.p15t { padding-top: 15px; }
+.p12t { padding-top: 12px; }
+.p10t { padding-top: 10px; }
+.p08t { padding-top: 8px; }
+.p06t { padding-top: 6px; }
+.p05t { padding-top: 5px; }
+
+.p20l { padding-left: 20px; }
+.p05l { padding-left: 5px; }
+
+.p20r { padding-right: 20px; }
+
+.p40b { padding-bottom: 20px; }
+.p24b { padding-bottom: 24px; }
+.p20b { padding-bottom: 20px; }
+.p12b { padding-bottom: 12px; }
+.p10b { padding-bottom: 10px; }
+.p02b { padding-bottom: 2px; }
+.p16b { padding-bottom: 16px; }
+.p34b { padding-bottom: 34px; }
+
+.m18t { margin-top: 18px; }
+*/
+
+/*Typography
+----------------------------*/
+.coral-text { color: #007d68; }
+.orange-text { color: #f47b20; }
+.pink-text { color: #c60751; }
+.small-text { font-size: 10px; }
+
+/*outlines
+----------------------------*/
+.tb-line { border-top: solid 1px #bdbdbd; border-bottom: solid 1px #bdbdbd; }
+
+/* Layout
+---------------------------- */
+.error_messages { margin: 15px 0; color: #c60751; font-weight: bold; }
+#content { float: left; }
+#sidebar {
+	float: left;
+	width: 200px;
+	padding: 20px 20px 22px 20px;
+	background: #f0f5e8;
+}
+
+
+#cat_root_link {display: block; margin: 25px 0; clear: both;}
+.optionsDivInvisible { display:none; }
+.form-submit { border: none; }
+
+
+/* Reusable Dropdown Menu
+---------------------------- */
+.selection { 
+	position: relative; /*for z-index*/
+	height: 20px;
+	min-height: 20px;
+}
+.selection ul.optionlist { float: left; }
+
+.selection ul.optionlist li.alpha { float: left; }
+
+.selection ul.optionlist li.alpha a.alpha { 
+	background: url(/images/stores/selection-bg.gif) no-repeat top right;
+	display: block;
+ 	/*text-indent: -9999px;*/
+	padding: 2px;
+	height: 14px;
+	min-height: 14px;
+	line-height: 14px;
+	border: solid 1px #bdbdbd; 
+ 	color: #808080;
+}
+
+.selection ul.optionlist li.alpha a.alpha:hover,
+.selection ul.optionlist li.alpha:hover a.alpha,
+.selection ul.optionlist li.alpha.sfhover a.alpha { background-position: right -18px; }
+
+/*sub-menu */
+.selection ul.optionlist { position: relative;}
+.selection .relative-box { position: relative;}
+.selection ul.optionlist .absolute-box { position: absolute; left: -999em; top:0;} 
+.selection ul.optionlist li.alpha:hover .menu-box,
+.selection ul.optionlist li.alpha.sfhover .menu-box { left: 0; top: 0; }
+.selection ul.optionlist li:hover,
+.selection ul.optionlist li.sfhover { position: static; }  
+
+.selection ul.sub-list { 
+	background: #ffffff;
+	border-left: solid 1px #dbdbdb;
+	border-right: solid 1px #dbdbdb;
+}
+
+.selection ul.sub-list li {
+	display: block;
+}
+
+.selection ul.sub-list li a {
+	display: block;
+	padding: 0 2px 0 2px;
+	height: 16px;
+	min-height: 16px;
+	line-height: 16px;
+	border-bottom: solid 1px #dbdbdb;
+
+}
+
+.selection ul.sub-list li:hover,
+.selection ul.sub-list li a:hover {
+	background: #dbdbdb;
+	color: #808080;
+}

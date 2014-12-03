@@ -1,0 +1,98 @@
+<html webdriver="true"><head>
+<title>AlphaIndustries.com: Email Product Availability</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="Stylesheet" href="emailreserve-foralpha_data/styles.css">
+<script type="text/javascript" src="emailreserve-foralpha_data/jquery.js"></script>
+<script language="Javascript">
+	jQuery(document).ready(function($){
+		$('#emailReserve').on('submit', function(event){
+			//event.preventDefault();
+			var msg = "";
+			var fname = $('#userName').val().trim();
+			var email = $('#userEmail').val().trim();
+			if (fname == "") {
+				msg = "Please enter your name";
+			} else if (email == "") {
+				msg = "Please enter your email address";
+			} else if (email.length > 0) {
+				//perform email validation
+				if (email.indexOf("@")== -1) {
+					msg = "Entered E-mail is invalid";
+				}
+				if (email.indexOf(".")== -1) {
+					msg = "Entered E-mail is invalid";
+				}
+				var aa=0;
+				var bb=0;
+				var cc=0;
+				var td="";
+				for (j =0; j<email.length; j++) {
+					if(email.charAt(j) =="@") {
+						aa=j;
+						cc=cc+1;
+						if ((aa==0) || (cc>1)) {
+							msg = "Enter E-mail Id in Valid Format";
+							break;
+						}
+					} else if(email.charAt(j)==".") {
+						bb=j;
+						td=td+email.charAt(j);
+						if (td==".."){
+							msg = "Enter E-mail Id in Valid Format";
+							break;
+						}
+						if (bb==0) {
+							msg = "Enter E-mail Id in Valid Format";
+							break;
+						}
+					} else {
+						td="";
+					}
+				}
+				if (aa == email.length-1) {
+					msg = "Enter E-mail Id in Valid Format";
+				}
+				if (bb == email.length-1) {
+					msg = "Enter E-mail Id in Valid Format";
+				}
+				if(aa >= (bb-1)) {
+					msg = "Enter E-mail Id in Valid Format";
+				}
+			}
+			//submit the form or return the error message
+			if (msg.length > 1) {
+				$('#email-alert').empty().text(msg).show();
+				return false;
+			} else {
+				//console.log('ok to submit');
+			}
+		});
+		//Check for success message
+		if (typeof(success) != 'undefined' && success.length) {
+			$('#emailReserve').hide();
+			$('#emailReserveWrap').append(success);
+		}
+	});
+</script>
+</head>
+<body>
+	<div id="emailReserveWrap">
+		<form id="emailReserve" name="form1" method="post" action="/emailreserve-foralpha.asp?save=1&amp;id=1926&amp;opt=0">
+			<h4 class="emailReservetext">Send me an email when product is in stock!</h4>
+			<div class="emailReservebox">
+				<label>Your Name:</label>
+				<input id="userName" class="emresem" name="YourName" type="text">
+				<label>Email:</label>
+				<input id="userEmail" class="emresem" name="YourID" type="text">
+				<input class="emressub button" name="SendMail" value="Submit" height="24" type="submit" width="104">
+			</div>
+			<div id="email-alert" style="display:none;"></div>
+			
+			<!--<div class="emailReserveMaster"><p><br />Alpha Industries will happily send you an email when this particular
+item returns back to our store. <br /><br />We appreciate&nbsp;your continued interest in our products and will do our best
+to replenish our stock supply as quickly as possible.</p></div>-->
+		</form>
+	</div>
+
+
+</body></html>

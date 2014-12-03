@@ -1,0 +1,79 @@
+_mf_tag = {
+	"init": function() {
+	  var id = 'mf_bt_div2';
+		var div = this.create_element(document, ['div', 'id', id]);
+    if(div) {
+      div.style.display = "none";
+      var body = document.getElementsByTagName('body')[0].firstChild;
+      if(body) body.parentNode.insertBefore(div, body);
+      var mf_query_string = this.find_our_tag();
+      if (mf_query_string.length > 0) mf_query_string = "&" + mf_query_string;
+      var match = RegExp('stockNumber/([^/]+)/').exec(document.location.pathname);
+      if (match != null) {
+        mf_query_string += '&prodID=' + match[1];
+      }
+      var iframe = '<' + 'iframe src="' + window.location.protocol + '//tags.mediaforge.com/pix/1446?type=pos' + mf_query_string + '" width="0" height="0"></iframe>';
+      this.inner_html(id, iframe);
+      this.set_timeout(3000);
+      // highly custom code here....
+      var mf_random = this.guid();
+      var parameters = mf_query_string.split('&');
+      var mf_ordernumber = "";
+      var mf_price = "";
+      for (var param_index = 0; param_index < parameters.length; param_index++) {
+        if (parameters[param_index].indexOf('orderNumber') != -1) {
+          var split_query = parameters[param_index].split('=');
+          if (split_query.length == 2) mf_ordernumber = split_query[1];
+        }
+        if (parameters[param_index].indexOf('price') != -1) {
+          var split_query = parameters[param_index].split('=');
+          if (split_query.length == 2) mf_price = split_query[1];
+        }
+      }
+      div.appendChild(img);
+    }
+	},
+	"create_element": function(doc, def, parent) {
+		var el = null;
+		if (typeof doc.createElementNS != "undefined") el = doc.createElementNS('http://www.w3.org/1999/xhtml', def[0]);
+		else if(typeof doc.createElement != "undefined") el = doc.createElement(def[0]);
+		if (!el) return false;
+		for(var i = 1; i < def.length; i++) el.setAttribute(def[i++], def[i]);
+		if (parent) parent.appendChild(el);
+		return el;
+	},
+	"set_timeout": function(t) {
+		this.timeout = setTimeout('timeout_mf()', t ? t : 3000);
+	},
+	"inner_html": function(id, html) {
+		document.getElementById(id).innerHTML = html;
+	},
+  "find_our_tag": function() {
+    var query_string = "";
+    var scripts = document.getElementsByTagName('script');
+    for (var script_index = 0; script_index < scripts.length; script_index++) {
+      script_name = scripts[script_index].src;
+      if (script_name.indexOf("tags.mediaforge.com") != -1) {
+        var index = script_name.indexOf("?");
+        if (index > -1) {
+          query_string = script_name.substr(index + 1);
+          break;
+        }
+      }
+    }
+    return query_string;
+  }, // custom code here too...
+  "S4": function() {
+    return (((1+Math.random())*0x10000)|0).toString(16).substring(1);
+  },
+  "guid": function() {
+    return (this.S4()+this.S4()+"-"+this.S4()+"-"+this.S4()+"-"+this.S4()+"-"+this.S4()+this.S4()+this.S4());
+  }        
+};
+
+function timeout_mf() {
+	var t = _mf_tag.timeout;
+	if(t) _mf_tag.inner_html('mf_bt_div2', '');
+}
+
+_mf_tag.init();

@@ -1,0 +1,480 @@
+﻿/* ************************************
+		Item Styles - Grid View
+   ************************************ */
+div#items
+{
+	margin-bottom: 25px;
+}
+div#items h2.header
+{
+	font-size: 23px;
+	font-weight: normal;
+	line-height: 23px;
+	margin: 0 0 22px;
+	padding-bottom: 12px;
+	border-bottom: solid 1px #AAAAAA /* border gray */;
+}
+div#items .row
+{
+	overflow: auto;
+	width: 100%;
+	margin: 0 0 16px 0;
+}
+div#items .row h1
+{
+	margin-bottom: 25px;
+	padding-bottom: 12px;
+	border-bottom: solid 1px #AAAAAA /* border gray */;
+}
+div#items .item a.name
+{
+	border-bottom: solid 1px white;
+}
+div#items .item a.name:hover
+{
+	color: #5C2946 /*  eggplant */;
+	border-bottom: solid 1px #5C2946 /*  eggplant */;
+}
+div#items .item
+{
+	float: left;
+	display: inline;
+	overflow: auto;
+	width: 180px;
+	margin: 0 16px 0 0;
+	padding-bottom: 5px;
+	
+}
+div#items .item.last
+{
+	margin: 0;
+}
+div#items .item dt
+{
+	float: left;
+	position: relative;
+	overflow: hidden;
+}
+div#items .item p, div#items .item a
+{
+	margin: 0;
+}
+div#items .item img
+{
+	height: 180px;
+	width: 180px;
+}
+div#items .item dt a, div#items .item dt a:hover
+{
+	border-bottom: none;
+}
+div#items .item .productinfo
+{
+	margin-left: 0;
+	margin-top: 0;
+	padding-top: 6px;
+}
+div#items .item a.name
+{
+	font-size: .90em;
+}
+div#items .item .price
+{
+	font-size: .90em;
+	font-weight: bold;
+}
+div#items .item .offer
+{
+	font-weight: normal;
+	color: #921E1E /* bordeux heavy */;
+}
+div#items .item .sale
+{
+	font-size: .90em;
+	color: #921E1E /* bordeux heavy */;
+	font-weight: bold;
+}
+div#items .item .regular
+{
+	font-size: .90em;
+	color: #999999 /* shadow gray */;
+}
+/* ************************************
+		Quick View Float
+   ************************************ */
+div#items span.boxcaption
+{
+	float: left;
+	position: absolute;
+	top: 90px;
+	left: 0;
+	background: transparent;
+	padding-left: 54px; /* width: 100%; */
+	opacity: .90;
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90) /* For IE 5-7 */;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)" /* For IE 8 */;
+}
+div#items span.cover
+{
+	top: 205px;
+}
+/* ************************************
+		Item Styles -  
+		- Search Results Grid View
+   ************************************ */
+div#results #items
+{
+	margin-top: 24px;
+}
+div#results #items .item
+{
+	width: 171px;
+}
+div#results #items .item img
+{
+	width: 171px;
+	height: 171px;
+}
+div#results div#items span.boxcaption
+{
+	padding-left: 36px;
+}
+
+/* ************************************
+		Item Styles - Column View
+   ************************************ */
+div#itemsColumn
+{
+    margin-bottom: 25px;
+    overflow: auto;
+}
+div#itemsColumn .item
+{
+    float: left;
+    display: inline;
+    overflow: auto;
+    margin: 0 24px 0 0;
+    padding: 0;
+}
+div#itemsColumn .item.last
+{
+    margin: 0;
+}
+div#itemsColumn .images
+{
+    float: left;
+    display: inline;
+    width: 180px;
+    margin: 0 16px 0 0;
+    padding: 0;
+}
+div#itemsColumn .productinfo
+{
+    float: left;
+    display: inline;
+    width: 176px;
+    overflow: auto;
+}
+div#itemsColumn h2.header
+{
+    font-size: 23px;
+    line-height: 23px;
+    margin: 0 0 22px 0;
+    border-bottom: solid 1px #AAAAAA /* border gray */;
+    padding: 0 0 12px 0;
+}
+div#itemsColumn .row
+{
+    overflow: auto;
+    width: 100%;
+    margin: 0 0 25px 0;
+}
+div#itemsColumn .row h1
+{
+    padding-bottom: 12px;
+    margin-bottom: 22px;
+    border-bottom: solid 1px #AAAAAA /* border gray */;
+}
+div#itemsColumn .item .productinfo h2
+{
+    font-size: 13px;
+    line-height: 13px;
+    font-weight: bold;
+    margin: 0 0 13px 0;
+    padding: 0;
+}
+div#itemsColumn .item p.story
+{
+    margin: 0 0 13px 0;
+    padding: 0;
+}
+div#itemsColumn .item a.name
+{
+    border-bottom: dotted 1px transparent;
+}
+div#itemsColumn .item a.name:hover
+{
+    color: #5C2946 /*  eggplant */;
+    border-bottom: solid 1px #5C2946 /*  eggplant */;
+}
+
+div#itemsColumn .item .images
+{
+    overflow: hidden;
+    position: relative;
+}
+div#itemsColumn .images img
+{
+    height: 180px;
+    width: 180px;
+}
+div#itemsColumn .images a, div#itemsColumn .images a:hover
+{
+    border-bottom: 0;
+}
+
+div#itemsColumn .item a.name
+{
+    font-size: .90em;
+}
+div#itemsColumn .item .price
+{
+    font-size: .90em;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+div#itemsColumn .item .offer
+{
+    font-weight: normal;
+    color: #921E1E /* bordeux heavy */;
+    margin-bottom: 0;
+}
+div#itemsColumn .item .sale
+{
+    font-size: .90em;
+    color: #921E1E /* bordeux heavy */;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+div#itemsColumn .item .ratings
+{
+    /* Future Use */
+    margin-bottom: 0;
+}
+div#itemsColumn .item .regular
+{
+    font-size: .90em;
+    color: #999999 /* shadow gray */;
+    margin-bottom: 0;
+}
+/* ************************************
+		Quick View Float
+   ************************************ */
+div#itemsColumn span.boxcaption
+{
+    float: left;
+    position: absolute;
+    top: 90px;
+    left: 0;
+    background: transparent; /* width: 100%; */
+    opacity: .90; /* For IE 5-7 */
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90); /* For IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+}
+div#itemsColumn span.cover
+{
+    top: 205px;
+}
+div#itemsColumn span.boxcaption
+{
+    padding-left: 54px;
+}
+/* ************************************
+		Item Styles -  
+		- Search Results Column View
+   ************************************ */
+div#results #itemsColumn .row
+{
+    margin-top: 24px;
+}
+div#results #itemsColumn .productinfo
+{
+    float: left;
+    display: inline;
+    width: 171px;
+}
+div#results #itemsColumn .item
+{
+    margin-right: 12px;
+}
+div#results #itemsColumn .item img
+{
+    width: 171px;
+    height: 171px;
+    float: left;
+    display: inline;
+}
+div#results #itemsColumn span.boxcaption
+{
+    padding-left: 36px;
+}
+
+/* ************************************
+		Item Styles - List View
+   ************************************ */
+div#itemsList
+{
+	margin-bottom: 25px;
+	overflow: auto;
+}
+div#itemsList .item
+{
+	clear: both;
+	overflow: auto;
+	margin: 0 0 35px 0;
+	padding: 0;
+}
+div#itemsList .images
+{
+	float: left;
+	display: inline;
+	width: 180px;
+	margin: 0 16px 0 0;
+	padding: 0;
+}
+div#itemsList .productinfo
+{
+	float: left;
+	display: inline;
+	width: 596px;
+}
+
+div#itemsList .row
+{
+	overflow: auto;
+	width: 100%;
+	margin: 0 0 25px 0;
+}
+div#itemsList h2.header
+{
+	font-size: 23px;
+    line-height: 23px;
+    margin: 0 0 22px 0;
+    border-bottom: solid 1px #AAAAAA /* border gray */;
+    padding: 0 0 12px 0;
+}
+
+div#itemsList .item p.story
+{
+	margin: 0 0 13px 0;
+	padding: 0;
+}
+div#itemsList .item a.name
+{
+	border-bottom: dotted 1px transparent;
+}
+div#itemsList .item a.name:hover
+{
+	color: #5C2946 /*  eggplant */;
+	border-bottom: solid 1px #5C2946 /*  eggplant */;
+}
+
+div#itemsList .item .images
+{
+	position: relative;
+	overflow: hidden;
+}
+div#itemsList .images img
+{
+	height: 180px;
+	width: 180px;
+}
+div#itemsList .images a, div#itemsList .images a:hover
+{
+	border-bottom: 0;
+}
+
+div#itemsList .item a.name
+{
+	font-size: .90em;
+}
+div#itemsList .item .price
+{
+	font-size: .90em;
+	font-weight: bold;
+	margin-bottom: 0;
+}
+div#itemsList .item .offer
+{
+	font-weight: normal;
+	color: #921E1E /* bordeux heavy */;
+	margin-bottom: 0;
+}
+div#itemsList .item .sale
+{
+	font-size: .90em;
+	color: #921E1E /* bordeux heavy */;
+	font-weight: bold;
+	margin-bottom: 0;
+}
+div#itemsList .item .ratings
+{
+	/* Future Use */
+	margin-bottom: 0;
+}
+div#itemsList .item .regular
+{
+	font-size: .90em;
+	color: #999999 /* shadow gray */;
+	margin-bottom: 0;
+}
+/* ************************************
+		Quick View Float
+   ************************************ */
+div#itemsList span.boxcaption
+{
+	float: left;
+	position: absolute;
+	top: 90px;
+	left: 0;
+	background: transparent;
+	/* width: 100%; */
+	opacity: .90; /* For IE 5-7 */
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90); /* For IE 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+}
+div#itemsList span.cover
+{
+	top: 205px;
+}
+div#itemsList span.boxcaption
+{
+	padding-left: 54px;
+}
+/* **************************************
+	Search Results -
+	- Item List View
+   ************************************** */
+div#results div#itemsList
+{
+	margin-top: 24px;
+}
+div#results div#itemsList .productinfo
+{
+	float: left;
+	display: inline;
+	width: 570px;
+}
+div#results div#itemsList .images
+{
+	float: left;
+	display: inline;
+	width: 171px;
+	margin: 0 16px 0 0;
+	padding: 0;
+}
+div#results div#itemsList .images img
+{
+	height: 171px;
+	width: 171px;
+}

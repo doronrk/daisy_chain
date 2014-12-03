@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html webdriver="true"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title></title>
+    
+        <script type="text/javascript" language="javascript">
+
+
+   var total = 21;
+   var pixels = [[{id:"5419",url:"http:\/\/ib.adnxs.com\/seg?add=346751&redir=http%3A%2F%2Fib.adnxs.com%2Fsetuid%3Fentity%3D75%26code%3DCAESEGTuOjClsth1wtUf3d-IUgA"},{id:"8637",url:"http:\/\/ib.adnxs.com\/seg?add=346751&redir=http%3A%2F%2Fib.adnxs.com%2Fsetuid%3Fentity%3D75%26code%3DCAESEGTuOjClsth1wtUf3d-IUgA"},{id:"30709",url:"http:\/\/ib.adnxs.com\/seg?add=346751&redir=http%3A%2F%2Fib.adnxs.com%2Fsetuid%3Fentity%3D75%26code%3DCAESEGTuOjClsth1wtUf3d-IUgA"},{id:"32025",url:"http:\/\/ib.adnxs.com\/seg?add=1833777&t=2"},{id:"5081",url:"http:\/\/ib.adnxs.com\/seg?add=346751&redir=http%3A%2F%2Fib.adnxs.com%2Fsetuid%3Fentity%3D75%26code%3DCAESEGTuOjClsth1wtUf3d-IUgA"},{id:"32504",url:"http:\/\/ib.adnxs.com\/seg?add=346751&redir=http%3A%2F%2Fib.adnxs.com%2Fsetuid%3Fentity%3D75%26code%3DCAESEGTuOjClsth1wtUf3d-IUgA"},{id:"33108",url:"http:\/\/ib.adnxs.com\/seg?add=2180013&t=2"}],[{id:"26139,5504",url:"http:\/\/image2.pubmatic.com\/AdServer\/Pug?vcode=bz0yJnR5cGU9MSZjb2RlPTI1MzEmdGw9MTI5NjAw&amp;piggybackCookie=googid:CAESEGTuOjClsth1wtUf3d-IUgA&vcode=bz0yJnR5cGU9MSZjb2RlPTI3MzQmdGw9MTU3NjgwMA==&piggybackCookie=googid:CAESEGTuOjClsth1wtUf3d-IUgA"}],[{id:"32012",url:"http:\/\/cdn.ir-p.mythingsmedia.net\/prod\/Banners\/transparent.gif"},{id:"10292",url:"http:\/\/cdn.ir-p.mythingsmedia.net\/prod\/Banners\/transparent.gif"}],[{id:"5498",url:"http:\/\/ad.360yield.com\/match?publisher_dsp_id=53&external_user_id=CAESEGTuOjClsth1wtUf3d-IUgA&expiration=30days"}],[{id:"31918",url:"http:\/\/eu-u.openx.net\/w\/1.0\/sd?id=537073531&val=CAESEGTuOjClsth1wtUf3d-IUgA"},{id:"31920",url:"http:\/\/eu-u.openx.net\/w\/1.0\/sd?id=537073531&val=CAESEGTuOjClsth1wtUf3d-IUgA"}],[{id:"5830",url:"http:\/\/delivery.swid.switchads.com\/adserver\/info.php?action=STORE&info=MYTS:CAESEGTuOjClsth1wtUf3d-IUgA"}],[{id:"31985",url:"http:\/\/uk-ox-d.openxadexchange.com\/w\/1.0\/rs?as=537064347&cb=259321743277517"},{id:"31981",url:"http:\/\/uk-ox-d.openxadexchange.com\/w\/1.0\/rs?as=537064347&cb=259321743277517"}],[{id:"32476",url:"http:\/\/googleads.g.doubleclick.net\/pagead\/viewthroughconversion\/1005351440\/?value=1.00&currency_code=USD&label=mkQ4CLn8jlYQkOSx3wM&guid=ON&script=0"},{id:"31266",url:"http:\/\/googleads.g.doubleclick.net\/pagead\/viewthroughconversion\/1005351440\/?value=1.000000&label=_8JhCJivgQMQkOSx3wM&guid=ON&script=0"}],[{id:"8861",url:"http:\/\/www.googleadservices.com\/pagead\/conversion\/1005351440\/?value=0&amp;label=_8JhCJivgQMQkOSx3wM&amp;guid=ON&amp;script=0"}],[{id:"5421",url:"http:\/\/pixel.rubiconproject.com\/tap.php?v=14463&nid=2689&put=CAESEGTuOjClsth1wtUf3d-IUgA&expires=30"}],[{id:"5507,5514",url:"http:\/\/ad.yieldmanager.com\/pixel?id=1805774&t=2"}]];
+   var pixIds = [];
+   var chainsOK = {};
+   var tm = null;
+   
+
+   Object.prototype.count = function(){var c = 0;var i;for(i in this){if (this.hasOwnProperty(i)){c++;}};return c;}
+   Array.prototype.contains = function (obj) { var i = this.length; while (i--) { if (this[i] === obj) { return true; } } return false; };
+
+   function PixelChain(chain,indexInChain){
+        var pixel = pixels[chain][indexInChain];
+        if (indexInChain>=pixels[chain].length-1){
+            Pixel(pixel.url, function(){ pixIds[chain][pixIds[chain].length] = pixel.id; chainsOK[chain]=true; trackPixels(); });
+        }
+        else{
+            Pixel(pixel.url,function(){ pixIds[chain][pixIds[chain].length] = pixel.id; window.setTimeout(function(){PixelChain(chain,indexInChain+1),0}) } );
+        }
+    }
+
+    function trackPixels(){
+        if (chainsOK.count()>=pixels.length) {
+            if (tm!=null) window.clearTimeout(tm);
+            location.replace("pixtrk.aspx?atok=2091-100-us&pxs="+linearize(pixIds));
+        }
+    }
+
+    function linearize(arr2d){
+        var out = [];
+        for(var i=0;i<arr2d.length;i++)
+            for(var j=0;j<arr2d[i].length;j++)
+                if (!out.contains(arr2d[i][j]))
+                    out[out.length] = arr2d[i][j];
+        return out.join(",");
+    }
+        
+    function trackPixel(pixelid){
+        //for iframe and script pixels
+        Pixel("pixtrk.aspx?atok=2091-100-us&pxs="+pixelid+"&mode=pixel");
+    }
+
+    function Pixel(url, func) {
+        if (typeof(mtContainer)!="undefined"){
+            var pixel = document.createElement("img");
+            pixel.style.display = "none";
+            if (typeof (func) == "function") {pixel.onload = func; pixel.onerror = func;} else {pixel.onload = function() {};pixel.onerror = function() {};}
+            pixel.src = url;
+            mtContainer.appendChild(pixel);
+        }
+    }
+
+
+    function startPixeling(){
+      if (typeof(mtContainer)!="undefined"){
+          if (document.cookie.indexOf("2091-100-us") > -1) {
+            for (var i = 0; i < pixels.length; i++) {
+                pixIds[i] = [];
+                PixelChain(i, 0);
+            }
+            tm = window.setTimeout('if (total>0){location.replace("pixtrk.aspx?atok=2091-100-us&pxs="+linearize(pixIds)+"&progress="+chainsOK.count()+"/"+pixels.length)}', 30000);
+          }
+          else{
+              location.replace("pixtrk.aspx?atok=2091-100-us&bc=1");
+          }
+      }
+    }
+        </script>
+    
+    
+</head>
+<body onload="if (window.startPixeling) startPixeling();">
+    
+        <div style="display: none" id="_mtContainer">
+        <img src="pix_data/seg.gif" style="display: none;"><img src="pix_data/Pug.gif" style="display: none;"><img src="pix_data/transparent.gif" style="display: none;"><img src="pix_data/match.gif" style="display: none;"><img src="pix_data/sd.gif" style="display: none;"><img src="pix_data/info.gif" style="display: none;"><img src="pix_data/rs.gif" style="display: none;"><img src="pix_data/a.gif" style="display: none;"><img src="pix_data/a_003.gif" style="display: none;"><img src="pix_data/tap.gif" style="display: none;"><img src="pix_data/pixel.gif" style="display: none;"><img src="pix_data/transparent.gif" style="display: none;"><img src="pix_data/rs.gif" style="display: none;"><img src="pix_data/sd.gif" style="display: none;"><img src="pix_data/seg.gif" style="display: none;"><img src="pix_data/seg.gif" style="display: none;"><img src="pix_data/seg_002.gif" style="display: none;"><img src="pix_data/a_002.gif" style="display: none;"><img src="pix_data/seg.gif" style="display: none;"><img src="pix_data/seg.gif" style="display: none;"><img src="http://ib.adnxs.com/seg?add=2180013&amp;t=2" style="display: none;"></div>
+        <script type="text/javascript">
+            var mtContainer = document.getElementById("_mtContainer");             
+        </script>
+    
+    
+    <img src="pix_data/fbpix_002.html" style="display:none;width:1px;height:1px"><img src="pix_data/fbpix.html" style="display:none;width:1px;height:1px"><img src="pix_data/u.html" style="display:none;width:1px;height:1px">
+    <script type="text/javascript">
+        
+    </script>
+    
+
+
+
+</body></html>

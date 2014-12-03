@@ -1,0 +1,26 @@
+<html webdriver="true"><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+</head>
+<body>
+<script language="JavaScript">
+  var isSecure=window.location.href.indexOf("https:") == 0;
+  var beaconUrl = "http://www.gnc.com/recommendationpixel/user.jsp?uid=B0659B1D-3F5F-5E44-0E17-211754186D62";
+  if (isSecure)
+  {
+ 	beaconUrl = beaconUrl.replace(/^http:/,"https:");
+  }
+  document.write('<img src="' + beaconUrl + '" height="1" width="1"/>');
+</script><img src="p_data/user.html" height="1" width="1">
+<iframe src="p_data/track.html" id="mbframe" scrolling="no" style="display: none;" frameborder="0" height="0" width="0"></iframe>
+<script language="JavaScript">
+  var isSecure=window.location.href.indexOf("https:") == 0;
+  var adSrcUrl = "http://ads.p.veruta.com/adserver/track?merchantid=22207822007&category=&cmid=B0659B1D-3F5F-5E44-0E17-211754186D62&itemid=37934638808&eventid=0&ifmode=1&pvts=1417585990844";
+  if (isSecure)
+  {
+ 	adSrcUrl = adSrcUrl.replace(/^http:/,"https:");
+  }
+  document.getElementById('mbframe').src=adSrcUrl;
+</script>
+
+
+</body></html>

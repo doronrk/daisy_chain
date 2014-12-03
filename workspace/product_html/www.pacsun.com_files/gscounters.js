@@ -1,0 +1,1 @@
+gigya._.apiAdapters.web.callback({"statusCode":200,"errorCode":0,"statusReason":"OK","callId":"668980a2ca76403e8ae2f8bd3f2ab28e","context":"R1444920172"});

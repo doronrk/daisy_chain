@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html webdriver="true"><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<script type="text/javascript">
+<!--
+var page_name = "";
+var protocol = window.location.protocol;
+
+// Get query string following the question mark
+var qs = location.href.substring(location.href.indexOf("?")+1);
+
+// Split parameters into an array of name=value pairs, assuming pairs are separated by ampersands
+var params = qs.split("&");
+
+// looking for page_name parameter value
+for (i=0;i<params.length;i++){
+  pos = params[i].indexOf("=");
+  if (pos == -1){ continue }
+  if( params[i].substring(0,pos) == "page_name" ) {
+    page_name = (params[i].substring(pos+1)).toLowerCase();
+    break;
+  }
+}
+
+// SALE CONFIRMATION DE, US, FR, UK
+
+if (page_name == "confirmation_page_de" || page_name == "confirmation_page_us" || page_name == "confirmation_page_fr" || page_name == "confirmation_page_uk") {
+    var cost_value = "unknown";
+    var items_value = "unknown";
+    var roi_string = "";
+
+    for (i = 0; i < params.length; i++) {
+        pos = params[i].indexOf("=");
+        if (pos == -1) {
+            continue;
+        }
+        if (params[i].substring(0, pos).toLowerCase() == "amount") {
+            cost_value = (params[i].substring(pos + 1));
+        } else if (params[i].substring(0, pos).toLowerCase() == "quantity") {
+            items_value = (params[i].substring(pos + 1));
+        }
+    }
+    
+    if (page_name == "confirmation_page_de") {
+    roi_string = "&Sale_De=1&Amount_De=" + cost_value + "&Quantity_De=" + items_value + "";
+    } if (page_name == "confirmation_page_us") {
+    roi_string = "&Sale_Us=1&Amount_Us=" + cost_value + "&Quantity_Us=" + items_value + "";
+    } if (page_name == "confirmation_page_fr") {
+    roi_string = "&Sale_Fr=1&Amount_Fr=" + cost_value + "&Quantity_Fr=" + items_value + "";
+    } if (page_name == "confirmation_page_uk") {
+    roi_string = "&Sale_Uk=1&Amount_Uk=" + cost_value + "&Quantity_Uk=" + items_value + "";
+    }
+
+    for (i = 0; i < params.length; i++) {
+        pos = params[i].indexOf("=");
+        if (pos == -1) {
+            continue;
+        }
+        if (params[i].substring(0, pos).toLowerCase() == "amount") {
+            params[i] = params[i] + roi_string;
+        }
+    }
+}
+
+if ( page_name == "confirmation_page_de" || page_name == "hb_sc_confirmation" || page_name == "hb_sc_boxers_uk" || page_name == "hb_sc_checkout4_de" || page_name == "hb_sc_sneakers_fr" || page_name == "hb_sc_boxers_fr" || page_name == "hb_sc_checkout3_fr" || page_name == "hb_sc_checkout2_uk" || page_name == "confirmation_page_fr" || page_name == "confirmation_page_us" || page_name == "hb_sc_loungewear" || page_name == "hb_sc_checkout1_fr" || page_name == "hb_sc_knitwear_fr" || page_name == "hb_sc_polos_de" || page_name == "hb_sc_checkout4_uk" || page_name == "hb_sc_knitwear" || page_name == "hb_sc_socks_fr" || page_name == "hb_sc_checkout5_uk" || page_name == "hb_sc_sneakers" || page_name == "hb_sc_polos_uk" || page_name == "hb_sc_checkout4_fr" || page_name == "hb_sc_sneakers_uk" || page_name == "hb_sc_tshirts_de" || page_name == "hb_sc_sneakers_de" || page_name == "hb_sc_tshirts_fr" || page_name == "hb_sc_checkout3" || page_name == "hb_sc_knitwear_de" || page_name == "hb_sc_loungewear_uk" || page_name == "hb_sc_checkout1" || page_name == "hb_sc_loungewear_fr" || page_name == "hb_sc_sportshirts_uk" || page_name == "hb_sc_sportshirts_fr" || page_name == "hb_sc_checkout2" || page_name == "hb_sc_socks" || page_name == "hb_sc_checkout2_de" || page_name == "hb_sc_checkout5_de" || page_name == "hb_sc_knitwear_uk" || page_name == "hb_sc_tshirts" || page_name == "hb_sc_checkout3_de" || page_name == "hb_sc_loungewear_de" || page_name == "hb_sc_tshirts_uk" || page_name == "hb_sc_checkout1_uk" || page_name == "hb_sc_boxers" || page_name == "hb_sc_polos" || page_name == "hb_sc_checkout1_de" || page_name == "hb_sc_checkout5" || page_name == "hb_sc_dress_shirts_uk" || page_name == "hb_sc_sportshirts_de" || page_name == "hb_sc_socks_de" || page_name == "hb_sc_dress_shirts_fr" || page_name == "hb_sc_dress_shirts" || page_name == "hb_sc_sportshirts" || page_name == "hb_sc_checkout5_fr" || page_name == "hb_sc_checkout2_fr" || page_name == "hb_sc_socks_uk" || page_name == "confirmation_page_uk" || page_name == "hb_sc_polos_fr" || page_name == "hb_sc_checkout4" || page_name == "hb_sc_checkout3_uk" || page_name == "hb_sc_dress_shirts_de" || page_name == "hb_sc_boxers_de"){
+var mt_tags_all = new Array;
+
+// Conversant Technology assigned Site Tracking Tags Array - all tags will be served, regardless of lastvendor cookie or vendor override
+if( page_name == "confirmation_page_de" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Revenue_De=<Revenue_DE/>&Sale_De=<Sale_DE/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "hb_sc_confirmation" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Hb_Sc_Confirmation=<HB_SC_Confirmation/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "hb_sc_boxers_uk" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Hb_Sc_Boxers_Uk=<HB_SC_Boxers_UK/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "hb_sc_checkout4_de" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Hb_Sc_Checkout4_De=<HB_SC_Checkout4_DE/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "hb_sc_sneakers_fr" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Hb_Sc_Sneakers_Fr=<HB_SC_Sneakers_FR/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "hb_sc_boxers_fr" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Hb_Sc_Boxers_Fr=<HB_SC_Boxers_FR/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "hb_sc_checkout3_fr" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Hb_Sc_Checkout3_Fr=<HB_SC_Checkout3_FR/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "hb_sc_checkout2_uk" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Hb_Sc_Checkout2_Uk=<HB_SC_Checkout2_UK/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "confirmation_page_fr" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Revenue_Fr=<Revenue_FR/>&Sale_Fr=<Sale_FR/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "confirmation_page_us" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Amount=<Amount/>&Quantity=<Quantity/>&Sale=<Sale/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "hb_sc_loungewear" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Hb_Sc_Loungewear=<HB_SC_Loungewear/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "hb_sc_checkout1_fr" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Hb_Sc_Checkout1_Fr=<HB_SC_Checkout1_FR/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "hb_sc_knitwear_fr" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Hb_Sc_Knitwear_Fr=<HB_SC_Knitwear_FR/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "hb_sc_polos_de" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Hb_Sc_Polos_De=<HB_SC_Polos_DE/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "hb_sc_checkout4_uk" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Hb_Sc_Checkout4_Uk=<HB_SC_Checkout4_UK/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "hb_sc_knitwear" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Hb_Sc_Knitwear=<HB_SC_Knitwear/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "hb_sc_socks_fr" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Hb_Sc_Socks_Fr=<HB_SC_Socks_FR/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "hb_sc_checkout5_uk" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Hb_Sc_Checkout5_Uk=<HB_SC_Checkout5_UK/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "hb_sc_sneakers" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Hb_Sc_Sneakers=<HB_SC_Sneakers/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "hb_sc_polos_uk" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Hb_Sc_Polos_Uk=<HB_SC_Polos_UK/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "hb_sc_checkout4_fr" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Hb_Sc_Checkout4_Fr=<HB_SC_Checkout4_FR/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "hb_sc_sneakers_uk" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Hb_Sc_Sneakers_Uk=<HB_SC_Sneakers_UK/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "hb_sc_tshirts_de" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Hb_Sc_Tshirts_De=<HB_SC_Tshirts_DE/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "hb_sc_sneakers_de" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Hb_Sc_Sneakers_De=<HB_SC_Sneakers_DE/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "hb_sc_tshirts_fr" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Hb_Sc_Tshirts_Fr=<HB_SC_Tshirts_FR/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "hb_sc_checkout3" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Hb_Sc_Checkout3=<HB_SC_Checkout3/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "hb_sc_knitwear_de" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Hb_Sc_Knitwear_De=<HB_SC_Knitwear_DE/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "hb_sc_loungewear_uk" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Hb_Sc_Loungewear_Uk=<HB_SC_Loungewear_UK/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "hb_sc_checkout1" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Hb_Sc_Checkout1=<HB_SC_Checkout1/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "hb_sc_loungewear_fr" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Hb_Sc_Loungewear_Fr=<HB_SC_Loungewear_FR/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "hb_sc_sportshirts_uk" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Hb_Sc_Sportshirts_Uk=<HB_SC_Sportshirts_UK/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "hb_sc_sportshirts_fr" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Hb_Sc_Sportshirts_Fr=<HB_SC_Sportshirts_FR/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "hb_sc_checkout2" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Hb_Sc_Checkout2=<HB_SC_Checkout2/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "hb_sc_socks" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Hb_Sc_Socks=<HB_SC_Socks/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "hb_sc_checkout2_de" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Hb_Sc_Checkout2_De=<HB_SC_Checkout2_DE/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "hb_sc_checkout5_de" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Hb_Sc_Checkout5_De=<HB_SC_Checkout5_DE/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "hb_sc_knitwear_uk" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Hb_Sc_Knitwear_Uk=<HB_SC_Knitwear_UK/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "hb_sc_tshirts" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Hb_Sc_Tshirts=<HB_SC_Tshirts/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "hb_sc_checkout3_de" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Hb_Sc_Checkout3_De=<HB_SC_Checkout3_DE/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "hb_sc_loungewear_de" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Hb_Sc_Loungewear_De=<HB_SC_Loungewear_DE/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "hb_sc_tshirts_uk" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Hb_Sc_Tshirts_Uk=<HB_SC_Tshirts_UK/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "hb_sc_checkout1_uk" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Hb_Sc_Checkout1_Uk=<HB_SC_Checkout1_UK/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "hb_sc_boxers" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Hb_Sc_Boxers=<HB_SC_Boxers/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "hb_sc_polos" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Hb_Sc_Polos=<HB_SC_Polos/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "hb_sc_checkout1_de" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Hb_Sc_Checkout1_De=<HB_SC_Checkout1_DE/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "hb_sc_checkout5" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Hb_Sc_Checkout5=<HB_SC_Checkout5/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "hb_sc_dress_shirts_uk" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Hb_Sc_Dress_Shirts_Uk=<HB_SC_Dress_Shirts_UK/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "hb_sc_sportshirts_de" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Hb_Sc_Sportshirts_De=<HB_SC_Sportshirts_DE/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "hb_sc_socks_de" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Hb_Sc_Socks_De=<HB_SC_Socks_DE/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "hb_sc_dress_shirts_fr" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Hb_Sc_Dress_Shirts_Fr=<HB_SC_Dress_Shirts_FR/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "hb_sc_dress_shirts" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Hb_Sc_Dress_Shirts=<HB_SC_Dress_Shirts/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "hb_sc_sportshirts" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Hb_Sc_Sportshirts=<HB_SC_Sportshirts/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "hb_sc_checkout5_fr" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Hb_Sc_Checkout5_Fr=<HB_SC_Checkout5_FR/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "hb_sc_checkout2_fr" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Hb_Sc_Checkout2_Fr=<HB_SC_Checkout2_FR/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "hb_sc_socks_uk" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Hb_Sc_Socks_Uk=<HB_SC_Socks_UK/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "confirmation_page_uk" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Revenue_Uk=<Revenue_UK/>&Sale_Uk=<Sale_UK/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "hb_sc_polos_fr" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Hb_Sc_Polos_Fr=<HB_SC_Polos_FR/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "hb_sc_checkout4" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Hb_Sc_Checkout4=<HB_SC_Checkout4/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "hb_sc_checkout3_uk" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Hb_Sc_Checkout3_Uk=<HB_SC_Checkout3_UK/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "hb_sc_dress_shirts_de" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Hb_Sc_Dress_Shirts_De=<HB_SC_Dress_Shirts_DE/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "hb_sc_boxers_de" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//adfarm.mediaplex.com/ad/bk/23761-168110-3840-0?Hb_Sc_Boxers_De=<HB_SC_Boxers_DE/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}
+
+
+
+// Combine all tracking tags into one string
+var mt_tags_str = mt_tags_all.join("\n");
+
+// Replace all parameter macros in the tracking tags string
+for (i=0;i<params.length;i++){
+  pos = params[i].indexOf("=");
+  if (pos == -1){
+    continue;
+  }
+  var name = params[i].substring(0,pos);
+  var value = params[i].substring(pos+1);
+  
+  // Create a regular expression to match all instances of the paramater macro and replace with values from the query string
+  var regex_str = "<" + name + "\\/>";
+  myregexp = new RegExp(regex_str, "gi");
+  
+  mt_tags_str = mt_tags_str.replace(myregexp, value);
+}
+
+
+}
+
+if( mt_tags_str ) {
+// Clean up any macros that may not have been replaced
+mt_tags_str = mt_tags_str.replace(/<[^<>&?=+*#@!%^~;\s'"]+\/>/gi, "");
+
+// Write out all tracking tags
+document.write(mt_tags_str);
+}
+//-->
+</script></head><body><img src="universal_data/23761-168110-3840-0.gif" height="1" border="0" width="1">
+<title></title>
+
+<p></p>
+
+  </body></html>

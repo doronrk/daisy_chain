@@ -1,0 +1,322 @@
+/*MrEavesModernBook*/ 
+                
+        @font-face{ 
+            font-family: 'MrEavesModernBook';
+            src: url('/styles/fonts/MrEaves/MrEavesModernBookAlternates/mreavesmodaltbk-040112001EmigreWebOnly.eot');
+            src: url('/styles/fonts/MrEaves/MrEavesModernBookAlternates/mreavesmodaltbk-040112001EmigreWebOnly.eot?#iefix') format('embedded-opentype'),
+                 url('/styles/fonts/MrEaves/MrEavesModernBookAlternates/mreavesmodaltbk-040112001EmigreWebOnly.woff') format('woff');
+        }
+        
+        .MrEavesModernBook
+        {
+            font-family: 'MrEavesModernBook',Verdana,Arial,Helvetica,Sans-Serif;
+        }
+
+        /* On-PDP "NEED IT NOW" box */
+        div#findInStoreContainer {
+            position:relative;
+            z-index:800;
+            width:536px;
+        }
+        div#productquickview div#findInStoreContainer {
+            margin-top:20px;
+        }
+
+        div#findInStoreContainer div#findInStore {
+            height:60px;
+            border:2px solid #E3A841;
+            padding:10px;
+            position:relative;
+        }
+        div#findInStoreContainer div#findInStore span.needItNow {
+            font-family: 'MrEavesModernBook',Verdana,Arial,Helvetica,Sans-Serif;
+            font-size: 40px;
+            color: #E3A841;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+        }
+        div#findInStoreContainer div#findInStore span#findInStore_needItNow {
+            position:absolute;
+            top:18px;
+            left:20px;
+        }
+        div#productquickview div#findInStoreContainer div#findInStore span#findInStore_needItNow {
+            position:absolute;
+            top:0px;
+            left:20px;
+        }
+        div#findInStoreContainer div#findInStore a#findInStoreButton {
+            position:absolute;
+            top:20px;
+            right:20px;
+        }
+        div#findInStoreContainer div#findInStore a#findInStoreButton span {
+            width:150px;
+        }
+        div#findInStoreContainer div#findInStore span#findInStore_checkAvail {
+            position:absolute;
+            bottom:10px;
+            left:20px;
+            font-weight: bold;
+            color:#444;
+        }
+        div#findInStoreContainer div#findInStore span#findInStore_checkAvail span.findInStoreActivate {
+            color:#E3A841;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        /* Find in Store popup settings */
+        div#findInStoreContainer div.findInStorePopup {
+            border:1px solid #000;
+            border-radius: 5px;
+            padding:10px;
+            display:none;
+            position:absolute;
+            top:0px;
+            right:0px;
+            background-color:#fff;
+            box-shadow: 5px 5px 10px #888888;
+        }
+        div#findInStoreContainer div.findInStorePopup div.findInStoreClose {
+            border:1px solid #000;
+            border-radius: 2px;
+            font-weight: bold;
+            width:15px;
+            height:14px;
+            position:absolute;
+            right:5px;
+            top:5px;
+            cursor: pointer;
+        }
+        div#findInStoreContainer div.findInStorePopup div.findInStoreClose>a>span {
+            position:relative;
+            left:3px;
+            top:-5px;
+            color:#444;
+        } 
+        div#productquickview div#findInStoreContainer div.findInStorePopup div.findInStoreClose>a>span {
+            top:-2px;
+        } 
+        div#findInStoreContainer div.findInStorePopup div.findInStoreClose>a:hover {
+            color:#444;
+            border-bottom: none;
+        }
+
+        /* Find in store popup form */
+        div#findInStoreContainer div#findInStoreFormContainer {
+            height:70px;
+            width:514px;
+        }
+        div#findInStoreContainer div#findInStoreFormContainer p#findInStoreFormInstructions {
+            width:112px;
+            position:absolute;
+            left:20px;
+            top:10px;
+            line-height:12px;
+        }
+        div#findInStoreContainer div#findInStoreFormContainer span#findInStoreFormZipCodeLabel {
+            position:absolute;
+            left:191px;
+            top:20px;
+        }
+        div#findInStoreContainer div#findInStoreFormContainer div#findInStoreFormZipCodeError {
+            position:absolute;
+            bottom:-23px;
+            left:172px;
+        }
+        div#findInStoreContainer div#findInStoreFormContainer form#findInStoreForm {
+            width:492px;
+            position:absolute;
+            bottom:25px;
+            left:20px;
+        }
+        div#findInStoreContainer div#findInStoreFormContainer form#findInStoreForm input#findInStoreFormZipCode {
+            width:105px;
+        }
+        div#findInStoreContainer div#findInStoreFormContainer form#findInStoreForm select#findInStoreFormMiles {
+            width:60px;
+        }
+        div#findInStoreContainer div#findInStoreFormContainer form#findInStoreForm a#findInStoreSubmit {
+            float:right;
+        }
+        div#findInStoreContainer div#findInStoreFormContainer form#findInStoreForm a#findInStoreSubmit span {
+            width:150px;
+        }
+
+        /* Find in Store results popup settings */
+        div#findInStoreContainer div#findInStoreResultsContainer {
+            height:auto;
+            width:600px;
+            padding:20px;
+        }
+        div#productquickview div#findInStoreContainer div#findInStoreResultsContainer {
+            top:-200px;
+        }
+        div#findInStoreContainer div#findInStoreResultsContainer div#findInStoreResults_options {
+            height:230px;
+        }
+        div#findInStoreContainer div#findInStoreResultsContainer div#findInStoreResults_options div#findInStoreResults_optionsLeft {
+            width:200px;
+            margin-right: 20px;
+            float:left;
+            position:relative;
+            overflow: visible;
+        }
+        div#findInStoreContainer div#findInStoreResultsContainer div#findInStoreResults_options div#findInStoreResults_optionsLeft img {
+            margin-bottom: 10px;
+        }
+        div#findInStoreContainer div#findInStoreResultsContainer div#findInStoreResults_options div#findInStoreResults_optionsLeft select {
+            width:100%;
+            margin-bottom: 10px;
+        }
+        div#findInStoreContainer div#findInStoreResultsContainer div#findInStoreResults_options div#findInStoreResults_optionsLeft label#findInStoreErrorCode {
+            position: absolute;
+            bottom: 10px;
+            width: 250px;
+            left: 200px;
+        }
+        div#productquickview div#findInStoreContainer div#findInStoreResultsContainer div#findInStoreResults_options div#findInStoreResults_optionsLeft label#findInStoreErrorCode { 
+            bottom:35px; 
+        }
+        div#findInStoreContainer div#findInStoreResultsContainer div#findInStoreResults_options div#findInStoreResults_optionsRight {
+            width:375px;
+            float:left;
+        }
+        div#findInStoreContainer div#findInStoreResultsContainer div#findInStoreResults_options div#findInStoreResults_optionsRight span#findInStoresResultsTitle {
+            font-weight: bold;
+            display:block;
+            margin-bottom:20px;
+        }
+        div#findInStoreContainer div#findInStoreResultsContainer div#findInStoreResults_options div#findInStoreResults_optionsRight label {
+            font-weight:bold;
+            margin-right:5px;
+        }
+        div#findInStoreContainer div#findInStoreResultsContainer div#findInStoreResults_options div#findInStoreResults_optionsRight input#findInStoresResults_optionsQuantity {
+            width:2em;
+            margin-right:5px;
+        }
+        div#findInStoreContainer div#findInStoreResultsContainer div#findInStoreResults_options div#findInStoreResults_optionsRight a#findInStoresResults_optionsQuantityEdit {
+            margin-right:30px;
+            font-weight: bold;
+            display:inline-block;
+            width:40px;
+        }
+        div#findInStoreContainer div#findInStoreResultsContainer div#findInStoreResults_options div#findInStoreResults_optionsRight span#findInStoresResults_optionsSku {
+            margin-right:30px;
+        }
+        div#findInStoreContainer div#findInStoreResultsContainer div#findInStoreResults_options div#findInStoreResults_optionsRight span#findInStoresResults_optionsPrice {
+            font-weight: bold;
+        }
+        div#findInStoreContainer div#findInStoreResultsContainer div#findInStoreResults_options div#findInStoreResults_optionsRight span#findInStoresResults_optionsPrice ul li {
+            float:none;
+            font-size:13px;
+            display:none;
+        }
+        div#findInStoreContainer div#findInStoreResultsContainer div#findInStoreResults_options div#findInStoreResults_optionsRight span#findInStoresResults_optionsPrice ul li:first-child {
+            display:block;
+        }
+        div#findInStoreContainer div#findInStoreResultsContainer div#findInStoreResults_options div#findInStoreResults_optionsRight span#findInStoresResults_optionsLocation {
+            padding-top:20px;
+            display:block;
+        }
+        div#findInStoreContainer div#findInStoreResultsContainer div#findInStoreResults_options div#findInStoreResults_optionsRight span#findInStoresResults_optionsLocation a {
+            font-weight: bold;
+        }
+        div#findInStoreContainer div#findInStoreResultsContainer div#findInStoreResults_options div#findInStoreResults_optionsRight label#findInStoresResults_optionsColorLabel,
+        div#findInStoreContainer div#findInStoreResultsContainer div#findInStoreResults_options div#findInStoreResults_optionsRight label#findInStoresResults_optionsSizeLabel {
+            font-weight: normal;
+            display:block;
+            margin-bottom:15px;
+            position:relative;
+            top:45px;
+        }
+        
+        div#findInStoreContainer div#findInStoreResultsContainer div#findInStoreResults_locations div#findInStoreResults_locations_content {
+            border:2px solid #999;
+            border-radius: 5px;
+            padding:5px;
+        }
+        div#findInStoreContainer div#findInStoreResultsContainer div#findInStoreResults_locations table thead,
+        div#findInStoreContainer div#findInStoreResultsContainer div#findInStoreResults_locations table tbody {
+            display:block;
+            width:585px;
+        }
+        div#findInStoreContainer div#findInStoreResultsContainer div#findInStoreResults_locations table tbody {
+            max-height:250px;
+            overflow-x:hidden;
+            overflow-y:auto;
+        }
+        div#productquickview div#findInStoreContainer div#findInStoreResultsContainer div#findInStoreResults_locations table tbody {
+            max-height:205px;
+        }
+        div#findInStoreContainer div#findInStoreResultsContainer div#findInStoreResults_locations table tr td {
+            border-bottom: 1px solid #999;
+            padding-top:10px;
+        }
+        div#findInStoreContainer div#findInStoreResultsContainer div#findInStoreResults_locations table tr:first-child td {
+            padding-top:0px;
+        }
+        div#findInStoreContainer div#findInStoreResultsContainer div#findInStoreResults_locations table tr:last-child td {
+            border-bottom:none;
+        }
+        div#findInStoreContainer div#findInStoreResultsContainer div#findInStoreResults_locations table tr td,
+        div#findInStoreContainer div#findInStoreResultsContainer div#findInStoreResults_locations table tr th {
+            padding: 0 0 10px 0;
+            vertical-align: top;
+            text-align: left;
+        }
+        div#findInStoreContainer div#findInStoreResultsContainer div#findInStoreResults_locations table tr td:first-child,
+        div#findInStoreContainer div#findInStoreResultsContainer div#findInStoreResults_locations table tr th:first-child {
+            width:200px;
+        }
+        div#findInStoreContainer div#findInStoreResultsContainer div#findInStoreResults_locations table tr td:nth-child(2),
+        div#findInStoreContainer div#findInStoreResultsContainer div#findInStoreResults_locations table tr th:nth-child(2) {
+            width:170px;
+        }
+        div#findInStoreContainer div#findInStoreResultsContainer div#findInStoreResults_locations table tr td:nth-child(3),
+        div#findInStoreContainer div#findInStoreResultsContainer div#findInStoreResults_locations table tr th:nth-child(3) {
+            width:80px;
+        }
+        div#findInStoreContainer div#findInStoreResultsContainer div#findInStoreResults_locations table a.findInStore_storeName {
+            font-weight: bold;
+        }
+        div#findInStoreContainer div#findInStoreResultsContainer div#findInStoreResults_locations table td dd {
+            margin-left:1em;
+        }
+        div#findInStoreContainer div#findInStoreResultsContainer div#findInStoreResults_locations table a {
+            border-bottom: 1px solid #000;
+        }
+        div#findInStoreContainer div#findInStoreResultsContainer div#findInStoreResults_locations table span.findInStore_fewLeft {
+            text-transform: uppercase;
+            font-weight: bold;
+            color: #f0a441;
+        }
+        div#findInStoreContainer div#findInStoreResultsContainer div#findInStoreResults_locations table span.findInStore_available {
+            text-transform: uppercase;
+            font-weight: bold;
+            color: #2d9667;
+        }
+        div#findInStoreContainer div#findInStoreResultsContainer div#findInStoreResults_locations table span.findInStore_unavailable {
+            text-transform: uppercase;
+            font-weight: bold;
+            color: #f92140;
+        }
+        div#findInStoreResults_options div#findInStoreResults_optionsRight form#findInStoreSearchResultsForm a {
+            color: #444444;
+        }
+        
+        a.findInStoreLink{
+        	color: #444444;
+        }
+        div#findInStoreZipCodeText{
+        	text-align:right;
+        }
+        div#findInStoreZipCodeText a#findInStoresResults_optionsLocationEdit{
+			font-weight:bold;
+			margin-right:5px;
+        }
+        div#findInStoreResults_optionsRight a#findInStoresResults_optionsQuantitySave{
+		    font-weight: bold;
+		    margin-right: 30px;
+        }

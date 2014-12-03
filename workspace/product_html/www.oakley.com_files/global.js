@@ -1,0 +1,1 @@
+!function(a){a.globalEvents={_subscriptions:{},trigger:function(a,b){if(null!=this._subscriptions[a])for(var c in this._subscriptions[a]){var d=this._subscriptions[a][c];"function"==typeof d&&d(b)}},on:function(a,b){null==this._subscriptions[a]&&(this._subscriptions[a]=[]),this._subscriptions[a].push(b)}}}(jQuery);

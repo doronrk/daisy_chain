@@ -1,0 +1,88 @@
+
+div#geoRedirectModalOverlay {position:absolute;}
+#geoRedirectModal  {height:auto !important; position:absolute !important;}
+
+#geoRedirectModal .geo-buttons {display: table; margin: 0 auto}
+#geoRedirectModal .black-button.bordered {
+    padding: 7px 20px;
+    border-radius: 2px;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "brandon_bold",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 27px;
+    min-height: 23px;
+    text-align: center;
+    text-transform: uppercase;
+    border: 3px solid #000;
+    }
+#geoRedirectModal .green-button {padding: 10px 20px; margin-right: 5px;
+    background-color: #3cb878;
+    border: medium none;
+    border-radius: 2px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "brandon_bold",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 27px;
+    min-height: 23px;
+    text-align: center;
+    text-transform: uppercase;
+    }
+
+#geoRedirectModal .green-button,
+#geoRedirectModal .black-button.bordered {margin-top: 10px;}
+
+#geoRedirectModal .icon {margin: 0px 3px; display:inline-block;}
+#geoRedirectModal #geo-redirect-back {background-color:rgba(17,17,17,0.7);  width:100%; height:100%; position: fixed; top:0; left: 0px; z-index:1;}
+
+
+.ui-dialog #geoRedirectModal .genericESpot { background: #fff !important; margin: 0 auto; position:relative;  z-index:10;  padding: 0px;}
+#geoRedirectModal section{ padding: 10%;}
+
+
+#geoRedirectModal p {text-transform:none; text-align:center; margin-bottom: 30px; font-size: 18px; line-height:22px;}
+#geoRedirectModal h4 {margin-bottom: 25px; font-size:20px; line-height: 24px; text-align:center;}
+
+#geoRedirectModal .no-wrap {white-space:nowrap}
+#geoRedirectModal .geo-logo {margin: 0px  auto 70px; display:inherit;}
+
+.ui-dialog {
+    height: inherit;
+    position: absolute;
+    top: 50px !important;
+    width: 65% !important;
+
+}
+
+
+/* = @media < 680
+--------------------------------------------------------------------------------*/	
+    
+@media (max-width:680px) {
+	.ui-dialog { top: 50px !important;}
+	#geoRedirectModal .green-button {margin-right: 0px;}
+	#geoRedirectModal {min-width: 320px;  }
+	#geoRedirectModal .green-button,
+	#geoRedirectModal .black-button.bordered { display:table; padding-left: 15px; padding-right: 15px; margin: 10px auto 0px;}
+	.ui-dialog #geoRedirectModal .genericESpot {width: 90%;}
+	#geoRedirectModal p {font-size: 14px;}
+	#geoRedirectModal .icon {display:none;}
+	
+}
+
+/* = @media < 340
+--------------------------------------------------------------------------------*/	
+    
+@media (max-width:340px) {
+	#geoRedirectModal a {font-size: 13px;}
+	#geoRedirectModal .green-button,
+	#geoRedirectModal .black-button.bordered { display:table; padding-left: 20px; padding-right: 20px;}
+	#geoRedirectModal section{ padding:  10% 5%;}
+}
+

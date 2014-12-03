@@ -1,0 +1,113 @@
+gigya._.apiAdapters.web.callback({
+  "threadCount": 0,
+  "settings": {
+    "useSiteLogin": false,
+    "shareToSNCheckboxChecked": true,
+    "enableFBComments": true,
+    "mode": "reviews",
+    "newCommentPosition": "bottom",
+    "disableRSS": true,
+    "disableCommentsCount": true,
+    "repliesCollapsed": false,
+    "displayPosNegVotes": false,
+    "refreshMode": "off",
+    "refreshInterval": 0,
+    "maxCommentLength": 5000,
+    "enableRichTextEditing": false,
+    "enableUserTagging": false,
+    "enableUserSorting": false,
+    "requireGuestName": true,
+    "enableMediaItems": false,
+    "readOnly": false,
+    "threadingDepth": 2,
+    "sortBy": "votesDesc",
+    "allowNegativeVoting": true,
+    "allowGuest": false,
+    "pageSize": 25,
+    "enableCommentTitles": "firstInThread_mandatory",
+    "enableCommentBody": "enabled_mandatory",
+    "allowCommentDeletion": false,
+    "isGuestEmailRequired": false,
+    "enableFlagging": true,
+    "enableRatings": "firstInThread_mandatory",
+    "flaggingEmailAfter": 1,
+    "flaggingPendingAfter": 4,
+    "moderationState": 0,
+    "enableVoting": true,
+    "allowMultipleReviewsPerUser": false,
+    "allowAnonymous": false,
+    "ratingDims": [],
+    "highlightGroupsSettings": [
+      {
+        "name": "Moderators",
+        "type": "moderator",
+        "enabled": true,
+        "showBadge": true,
+        "badgeText": "Moderator",
+        "badgeColor": "#00AEEF",
+        "badgeFrame": "rectangle",
+        "commenterNameColor": "#00AEEF"
+      },
+      {
+        "name": "Staff",
+        "type": "user",
+        "enabled": false,
+        "showBadge": true,
+        "badgeText": "Staff",
+        "badgeColor": "#39B54A",
+        "badgeFrame": "rectangle",
+        "commenterNameColor": "#000000"
+      },
+      {
+        "name": "Experts",
+        "type": "user",
+        "enabled": false,
+        "showBadge": true,
+        "badgeText": "Expert",
+        "badgeColor": "#828282",
+        "badgeFrame": "rectangle",
+        "commenterNameColor": "#000000"
+      },
+      {
+        "name": "Journalists",
+        "type": "user",
+        "enabled": false,
+        "showBadge": true,
+        "badgeText": "Journalist",
+        "badgeColor": "#7A3CC6",
+        "badgeFrame": "rectangle",
+        "commenterNameColor": "#000000"
+      },
+      {
+        "name": "Pick",
+        "type": "comment",
+        "enabled": false,
+        "showBadge": true,
+        "badgeText": "Editor's Pick",
+        "badgeColor": "#009CDC",
+        "badgeFrame": "none",
+        "badgeImageURL": "https://cdns.gigya.com/gs/i/comments2/editors_pick.png",
+        "commentBackgroundColor": "#E5F8FF"
+      }
+    ]
+  },
+  "streamInfo": {
+    "commentCount": 0,
+    "threadCount": 0,
+    "rssURL": "http://comments.US1.gigya.com/comments/rss/6210811/products/0133250504600",
+    "avgRatings": {
+      "_overall": 0.0
+    },
+    "isUserSubscribed": false
+  },
+  "comments": [],
+  "commentCount": 0,
+  "next": "0",
+  "nextTS": 0,
+  "hasMore": false,
+  "statusCode": 200,
+  "errorCode": 0,
+  "statusReason": "OK",
+  "callId": "6b2819a7edc04cbdb4182731c2e87780",
+  "context": "R4227778490"
+});

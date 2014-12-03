@@ -1,0 +1,1 @@
+BrightTag.instance.appendContent('\x3c!-- GoDataFeed code for product details pages --\x3e\n\x3cscript language\x3d\x22javascript\x22 type\x3d\x22text/javascript\x22 src\x3d\x22http://tracking.godatafeed.com/gdf_click.js\x22\x3e\x3c/script\x3e\n',{tagId:602673});

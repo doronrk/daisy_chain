@@ -1,0 +1,247 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html webdriver="true"><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<script type="text/javascript">
+<!--
+var page_name = "";
+var protocol = window.location.protocol;
+
+// Get query string following the question mark
+var qs = location.href.substring(location.href.indexOf("?")+1);
+
+// Split parameters into an array of name=value pairs, assuming pairs are separated by ampersands
+var params = qs.split("&");
+
+// looking for page_name parameter value
+for (i=0;i<params.length;i++){
+  pos = params[i].indexOf("=");
+  if (pos == -1){ continue }
+  if( params[i].substring(0,pos) == "page_name" ) {
+    page_name = (params[i].substring(pos+1)).toLowerCase();
+    break;
+  }
+}
+
+if ( page_name == "th_cart_abandonment_retargeting" || page_name == "retargeting_cartabandonment" || page_name == "th_confirmation_page_2012" || page_name == "th_confirmation_page" || page_name == "th_cart_abandonment_2012" || page_name == "global_retargeting" || page_name == "th_golf_remarketing" || page_name == "th_tommygirl_retargeting" || page_name == "global_tag_2012" || page_name == "th_landing_page" || page_name == "th_biggirl_retargeting"){
+var mt_tags_all = new Array;
+
+// MOJO assigned Site Tracking Tags Array - all tags will be served, regardless of lastvendor cookie or vendor override
+if( page_name == "th_cart_abandonment_retargeting" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//altfarm.mediaplex.com/ad/bk/17313-119087-3840-0?Th_Cart_Abandonment_Retargeting=<TH_Cart_Abandonment_Retargeting/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "retargeting_cartabandonment" ) {
+ mt_tags_all[0] = "<img width=\"1\" height=\"1\" src=\"" + protocol + "//secure.media6degrees.com/orbserv/hbpix?pixId=9046&pcv=50\" />";
+mt_tags_all[1] = "<img height=\"1\" width=\"1\" src=\"" + protocol + "//view.atdmt.com/action/SMB_ConvDirect_Add_to_Cart_15Mar2012\"/>";
+mt_tags_all[2] = "<scr" + "ipt type=\"text/javascript\">";
+mt_tags_all[2] += "\r\n/* <![CDATA[ */";
+mt_tags_all[2] += "\r\nvar google_conversion_id = 988292095;";
+mt_tags_all[2] += "\r\nvar google_conversion_language = \"en\";";
+mt_tags_all[2] += "\r\nvar google_conversion_format = \"3\";";
+mt_tags_all[2] += "\r\nvar google_conversion_color = \"666666\";";
+mt_tags_all[2] += "\r\nvar google_conversion_label = \"fEaECNnEzQIQ_8eg1wM\";";
+mt_tags_all[2] += "\r\nvar google_conversion_value = 0;";
+mt_tags_all[2] += "\r\n/* ]]> */";
+mt_tags_all[2] += "\r\n</scr" + "ipt>";
+mt_tags_all[2] += "\r\n<scr" + "ipt type=\"text/javascript\" src=\"" + protocol + "//www.googleadservices.com/pagead/conversion.js\">";
+mt_tags_all[2] += "\r\n</scr" + "ipt>";
+mt_tags_all[2] += "\r\n<noscript>";
+mt_tags_all[2] += "\r\n<div style=\"display:inline;\">";
+mt_tags_all[2] += "\r\n<img height=\"1\" width=\"1\" style=\"border-style:none;\" alt=\"\" src=\"" + protocol + "//www.googleadservices.com/pagead/conversion/988292095/?label=fEaECNnEzQIQ_8eg1wM&amp;guid=ON&amp;script=0\"/>";
+mt_tags_all[2] += "\r\n</div>";
+mt_tags_all[2] += "\r\n</noscript>";
+mt_tags_all[3] = "<img src=\"" + protocol + "//secure.leadback.advertising.com/adcedge/lb?site=695501&srvc=1&betr=1186ea0e_NDM_cs=[+]270cd83f_NDM_cs[720]&betq=17036=[+]468021[720]\" width = \"1\" height = \"1\" border = \"0\">";
+mt_tags_all.push("<img src=\"" + protocol + "//altfarm.mediaplex.com/ad/bk/17313-119087-3840-0?Retargeting_Cartabandonment=<Retargeting_CartAbandonment/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "th_confirmation_page_2012" ) {
+ mt_tags_all[0] = "<scr" + "ipt type=\"text/javascript\" src=\"" + protocol + "//tags.mediaforge.com/js/738/?orderNumber=123&price=45.67\"></scr" + "ipt>";
+mt_tags_all.push("<img src=\"" + protocol + "//altfarm.mediaplex.com/ad/bk/17313-119087-3840-0?Th_Confirmation_Page_2012=<TH_Confirmation_Page_2012/>&Th_Revenue=<TH_Revenue/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "th_confirmation_page" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//altfarm.mediaplex.com/ad/bk/17313-119087-3840-0?Orders=<Orders/>&Revenue=<Revenue/>&Th_Confirmation_Page=<TH_Confirmation_Page/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "th_cart_abandonment_2012" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//altfarm.mediaplex.com/ad/bk/17313-119087-3840-0?Th_Cart_Abandonment_2012=<TH_Cart_Abandonment_2012/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "global_retargeting" ) {
+ mt_tags_all[0] = "<img height=\"1\" width=\"1\" src=\"" + protocol + "//view.atdmt.com/action/SMB_ConvDirect_HomePage_15Mar2012\"/>";
+mt_tags_all[1] = "<scr" + "ipt type=\"text/javascript\">";
+mt_tags_all[1] += "\r\n/* <![CDATA[ */";
+mt_tags_all[1] += "\r\nvar google_conversion_id = 988292095;";
+mt_tags_all[1] += "\r\nvar google_conversion_language = \"en\";";
+mt_tags_all[1] += "\r\nvar google_conversion_format = \"3\";";
+mt_tags_all[1] += "\r\nvar google_conversion_color = \"666666\";";
+mt_tags_all[1] += "\r\nvar google_conversion_label = \"Q7XUCLmyzAIQ_8eg1wM\";";
+mt_tags_all[1] += "\r\nvar google_conversion_value = 0;";
+mt_tags_all[1] += "\r\n/* ]]> */";
+mt_tags_all[1] += "\r\n</scr" + "ipt>";
+mt_tags_all[1] += "\r\n<scr" + "ipt type=\"text/javascript\" src=\"" + protocol + "//www.googleadservices.com/pagead/conversion.js\">";
+mt_tags_all[1] += "\r\n</scr" + "ipt>";
+mt_tags_all.push("<img src=\"" + protocol + "//altfarm.mediaplex.com/ad/bk/17313-119087-3840-0?Globalretargeting=<GlobalRetargeting/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "th_golf_remarketing" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//altfarm.mediaplex.com/ad/bk/17313-119087-3840-0?Th_Golf_Remarketing=<TH_Golf_Remarketing/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "th_tommygirl_retargeting" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//altfarm.mediaplex.com/ad/bk/17313-119087-3840-0?Th_Tommygirl_Retargeting=<TH_TommyGirl_Retargeting/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "global_tag_2012" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//altfarm.mediaplex.com/ad/bk/17313-119087-3840-0?Global_Tag_2012=<Global_Tag_2012/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "th_landing_page" ) {
+ mt_tags_all[0] = "<img width=\"1\" height=\"1\" src=\"" + protocol + "//secure.media6degrees.com/orbserv/hbpix?pixId=9045&pcv=49\" />";
+mt_tags_all[1] = "<img height=\"1\" width=\"1\" src=\"" + protocol + "//view.atdmt.com/action/SMB_ConvDirect_HomePage_15Mar2012\"/>";
+mt_tags_all.push("<img src=\"" + protocol + "//altfarm.mediaplex.com/ad/bk/17313-119087-3840-0?Th_Landing_Page=<TH_Landing_Page/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}if( page_name == "th_biggirl_retargeting" ) {
+ mt_tags_all.push("<img src=\"" + protocol + "//altfarm.mediaplex.com/ad/bk/17313-119087-3840-0?Th_Biggirl_Retargeting=<TH_BigGirl_Retargeting/>&mpuid=<mpuid/>\" border=0 height=1 width=1>");
+}
+
+
+
+// Combine all tracking tags into one string
+var mt_tags_str = mt_tags_all.join("\n");
+
+// Replace all parameter macros in the tracking tags string
+for (i=0;i<params.length;i++){
+  pos = params[i].indexOf("=");
+  if (pos == -1){
+    continue;
+  }
+  var name = params[i].substring(0,pos);
+  var value = params[i].substring(pos+1);
+  
+  // Create a regular expression to match all instances of the paramater macro and replace with values from the query string
+  var regex_str = "<" + name + "\\/>";
+  myregexp = new RegExp(regex_str, "gi");
+  
+  mt_tags_str = mt_tags_str.replace(myregexp, value);
+}
+
+
+}
+if ( page_name == "sale_page"){
+var client_id = 17313;
+var mt_tags_all = new Array;
+var mt_tags_str = "";
+
+// MOJO assigned Site Tracking Tags - one vendor tag will be served, based on lastvendor cookie or vendor override
+  var mt_tags = new Array;
+if( page_name == "sale_page" ) {
+mt_tags["s40814"] = "<img src=\"" + protocol + "//secure.ace-tag.advertising.com/action/type=637106320/bins=1/rich=0/mnum=1516/logs=0\" width = \"1\" height = \"1\" border = \"0\">";
+mt_tags["MPLX"] = "<img src=\"" + protocol + "//altfarm.mediaplex.com/ad/bk/17313-119087-3840-0?Sales=<Sales/>&Salesrevenue=<SalesRevenue/>&mpuid=<mpuid/>\" border=0 height=1 width=1>";
+}
+
+// MOJO assigned Site Tracking Tags Array - all tags will be served, regardless of lastvendor cookie or vendor override
+  var mt_tags_all = new Array;
+  if( page_name == "sale_page" ) {mt_tags_all[0] = "<scr" + "ipt type=\"text/javascript\">";
+mt_tags_all[0] += "\r\nvar google_conversion_id = 988292095;";
+mt_tags_all[0] += "\r\nvar google_conversion_language = \"en\";";
+mt_tags_all[0] += "\r\nvar google_conversion_format = \"3\";";
+mt_tags_all[0] += "\r\nvar google_conversion_color = \"ffffff\";";
+mt_tags_all[0] += "\r\nvar google_conversion_label = \"n1KLCKGGsgIQ_8eg1wM\";";
+mt_tags_all[0] += "\r\nvar google_conversion_value = 0;";
+mt_tags_all[0] += "\r\n</scr" + "ipt>";
+mt_tags_all[0] += "\r\n<scr" + "ipt type=\"text/javascript\" src=\"" + protocol + "//www.googleadservices.com/pagead/conversion.js\">";
+mt_tags_all[0] += "\r\n</scr" + "ipt>";
+
+        }if( page_name == "sale_page" ) {mt_tags_all[1] = "<img width=\"1\" height=\"1\" src=\"" + protocol + "//action.media6degrees.com/orbserv/hbpix?pixId=9049&pcv=53\" />";
+
+        }if( page_name == "sale_page" ) {mt_tags_all[2] = "<img height=\"1\" width=\"1\" src=\"" + protocol + "//view.atdmt.com/action/SMB_ConvDirect_Confirmation_15Mar2012\"/>";
+
+        }if( page_name == "sale_page" ) {mt_tags_all[3] = "<scr" + "ipt type=\"text/javascript\">";
+mt_tags_all[3] += "\r\n/* <![CDATA[ */";
+mt_tags_all[3] += "\r\nvar google_conversion_id = 988292095;";
+mt_tags_all[3] += "\r\nvar google_conversion_language = \"en\";";
+mt_tags_all[3] += "\r\nvar google_conversion_format = \"3\";";
+mt_tags_all[3] += "\r\nvar google_conversion_color = \"666666\";";
+mt_tags_all[3] += "\r\nvar google_conversion_label = \"2VeqCKm0zAIQ_8eg1wM\";";
+mt_tags_all[3] += "\r\nvar google_conversion_value = 0;";
+mt_tags_all[3] += "\r\n/* ]]> */";
+mt_tags_all[3] += "\r\n</scr" + "ipt>";
+mt_tags_all[3] += "\r\n<scr" + "ipt type=\"text/javascript\" src=\"" + protocol + "//www.googleadservices.com/pagead/conversion.js\">";
+mt_tags_all[3] += "\r\n</scr" + "ipt>";
+
+        }
+
+
+
+// Check to see if there is a vendor override and build a string of tracking tags
+if (qs.search(/(!?)mpvo=(\d+)/)!=-1){
+  var ven_o = "s" + RegExp.$2;
+
+  // If a tracking tag exists for the override vendor add to the tracking tags string  
+  if(mt_tags[ven_o]){  
+    mt_tags_str = mt_tags_str + "\n" +  mt_tags[ven_o];
+  }
+  
+  // If a MOJO tracking tag exists and it wasn't blocked by the override parameter add to tags string
+  if (RegExp.$1 != "!" && mt_tags["MPLX"]){ 
+  	mt_tags_str = mt_tags_str + "\n" + mt_tags["MPLX"];
+  }
+  
+  // Remove the override paramater from the parameters array
+  params.pop(); 
+}
+
+// If no vendor override, get vendor ID from lastvendor cookie and build a string of tracking tags
+else{
+
+  var mojo_cookie = "";
+  var mojo_cookie_name = new Array( "mojo2", "mojo3" );
+  var c_temp, v_pos;
+  for( var i=0; i < mojo_cookie_name.length; i++ ) {
+    var c_temp = document.cookie;
+    v_pos = c_temp.indexOf( mojo_cookie_name[i] );
+    if( v_pos >= 0 ) {
+      c_temp = c_temp.substring( v_pos + 6);
+      v_pos = c_temp.indexOf( ";" );
+      if( v_pos >= 0 ) c_temp = c_temp.substring( 0, v_pos );
+      mojo_cookie += "/" + c_temp;
+    }
+  }  
+  var ven;
+  var myregexp = new RegExp( "/" + client_id + ":(\\d+)");
+  mojo_cookie.search(myregexp);
+  ven = "s" + RegExp.$1;
+
+  // If a tracking tag exists for the vendor add to the tracking tags string
+  if(mt_tags[ven]){
+    mt_tags_str += "\n" + mt_tags[ven];
+  }  
+  
+  // If a MOJO tracking tag exists add to tags string
+  if(mt_tags["MPLX"]){ 
+    mt_tags_str += "\n" + mt_tags["MPLX"];
+  }
+}
+
+// Combine all tracking tags from second array into one string
+if (mt_tags_all.length > 0){
+  mt_tags_str += "\n" + mt_tags_all.join("\n");
+}
+
+// Replace all parameter macros in the tracking tags string
+for (i=0;i<params.length;i++){
+  var pos = params[i].indexOf("=");
+  if (pos == -1){
+    continue;
+  }
+  var name = params[i].substring(0,pos);
+  var value = params[i].substring(pos+1);
+  
+  // Create a regular expression to match all instances of the paramater macro
+  // and replace with value from the query string
+  var regex_str = "<" + name + "\\/>";
+  myregexp = new RegExp(regex_str, "gi");
+  
+  mt_tags_str = mt_tags_str.replace(myregexp, value);
+}
+
+
+
+}
+
+if( mt_tags_str ) {
+// Clean up any macros that may not have been replaced
+mt_tags_str = mt_tags_str.replace(/<[^<>&?=+*#@!%^~;\s'"]+\/>/gi, "");
+
+// Write out all tracking tags
+document.write(mt_tags_str);
+}
+//-->
+</script></head><body><img src="universal_data/17313-119087-3840-0.gif" border="0" height="1" width="1">
+<title></title>
+
+<p></p>
+
+  </body></html>

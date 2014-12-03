@@ -1,0 +1,1612 @@
+/*color for the textfield select and fields comes from basic not defined here*/
+
+/*general*/
+.informationBlock1 h3 {font-weight: bold; color: #666; padding-bottom: 10px; font-size: 1em;}
+#checkOutLeftBanner {width: 160px; margin-right:20px;float:left; height: 250px;} /* height is temporary */
+
+.show {  }
+.hide { display: none; }
+
+.disabled {
+	-moz-opacity:.25;
+	opacity:.25;
+	filter: alpha(opacity=25);
+	filter: progid:DXImageTransform.Microsoft.Alpha(opacity=25);		
+	}
+
+.hasError,
+.hasError a { color: #f00; }
+
+label.hasError { color: #f00 !important; }
+
+/*checkout Process*/
+#contentCheckout {clear: right; width: 932px; padding:0px 0px 20px; background: #fff; height: auto;}  
+#contentCheckout #blockRightWide {width: 300px; float: left;font-size: 1em;margin:0 0 10px 50px;}
+#contentCheckout #blockRightWide .fieldLabel, #contentCheckout #blockRightWide .fieldLabelBold {width: 140px;}
+#contentCheckout #blockRightWide .formRow .textfield {  width: 130px;  margin: 0 0 5px 0; }
+#contentCheckout #blockRightWide .formRow .note {display:block;margin:0 0 10px 140px; padding:0px; border:1px solid #fff;}
+#contentCheckout #blockRightWide .formRow .shorttextfield { color:#666; width: 100px;  margin: 0 0 5px 0; }
+
+#checkoutSteps {
+	float: right; 
+	width: 752px; 
+	overflow: hidden;
+	height: 30px;
+	margin-bottom: 30px;
+	margin-top: 15px;
+	background-image: url('/etc/cssImages/checkoutSteps.gif');
+	background-repeat: repeat-x;
+}
+
+#checkoutSteps ul {
+	padding: 0;
+}
+#checkoutSteps ul li {
+	float: left;
+}
+#checkoutSteps ul li span {
+	display: block;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	text-transform: uppercase;
+	width:188px;
+	/*width: 158px;
+	padding-right: 30px;*/
+	color:#5b9eb1;
+}
+
+body.langfre #checkoutSteps ul li span {
+	width:139px;
+	}
+
+body.langfre #checkoutSteps ul li#step1 span {
+	width:215px;
+	}
+
+#checkoutSteps ul li.active {
+/*	background-image: url('/etc/cssImages/checkoutStepL.gif'); */
+	background-color: #3d3c3d;
+	background-repeat: no-repeat;
+}
+#checkoutSteps ul li.active span {
+	/*background-image: url('/etc/cssImages/checkoutStepR.gif');*/
+	background-position: 100% 0;
+	background-repeat: no-repeat;
+	color: #fff;
+}
+
+#checkoutBottom {width: 752px; float:left; padding:0; margin: 0px auto; min-height:150px; height:auto !important; height:150px;	}
+#checkoutBottom #signInBlock h3 {display: none;}
+#signInBlock h3 {display: none;}
+#signInBlock .ShippingError {padding-bottom:30px;background:#fff;}
+#checkoutBottom h4 {font-weight: normal; /*color: #666;*/ padding: 10px 0;}
+#checkoutBottom .note {padding-top: 15px;}
+
+#checkoutBottom h3 {
+    background-color: #CACAC8;
+    color: #3D3C3D;
+    font-size: 11px;
+    font-weight: bold;
+    margin: 0 0 10px;
+    padding: 1px 5px 1px 6px;
+    text-align: left;
+    text-transform: uppercase;
+} 
+/* styles for all forms */
+
+div#contentCheckout .formNote {
+	overflow: hidden;
+	margin-bottom: 8px;
+	padding: 0 20px;
+}
+
+div#contentCheckout .formErrorNote {
+	overflow: hidden;
+	margin-bottom: 8px;
+	padding: 4px 20px 4px 35px;
+	line-height: 14px;
+	font-size: 12px;
+	font-weight: bold;
+	color: #f00;
+	background-image: url('/etc/cssImages/formErrorNote.gif');
+	background-repeat: no-repeat;
+	background-position: 20px 4px;
+}
+
+div#shoppingbagBlock .formErrorNote {
+	overflow: hidden;
+	margin-bottom: 20px;
+	padding: 4px 0px 4px 15px;
+	line-height: 14px;
+	font-size: 12px;
+	font-weight: bold;
+	color: #f00;
+	background-image: url('/etc/cssImages/formErrorNote.gif');
+	background-repeat: no-repeat;
+	background-position: 0 4px;
+}
+
+div#contentCheckout .mandatoryFields {
+	overflow: hidden;
+	margin-bottom: 8px;
+	padding: 0 20px;
+	text-align: right;
+	/*color: #333;*/
+}
+
+div#contentCheckout fieldset {
+	overflow: hidden;
+	margin-bottom: 8px;
+	padding: 0 15px;
+}
+
+div#contentCheckout fieldset.buttonRow a.mainButton {
+	float: right;
+}
+
+div#shoppingbagBlock label,
+div#contentCheckout label  {
+	float: left;
+	text-transform: uppercase;
+	font-weight: bold;
+	/*color: #333;*/
+	width: 104px;
+}
+
+div#shoppingbagBlock label .extra,
+div#contentCheckout label .extra  {
+	text-transform: none;
+}
+
+div#shoppingbagBlock label  {
+	width: auto;
+}
+
+div#contentCheckout label  {
+	line-height: 14px;
+	padding: 4px 0;
+}
+
+div#shoppingbagBlock fieldset.radio input,
+div#contentCheckout fieldset.radio input,
+div#contentCheckout fieldset.check input  {
+	float: left;
+	width: 14px;
+	height: 14px;
+	margin: 4px 0;
+	padding: 0;
+	cursor: pointer;
+}
+
+div#shoppingbagBlock fieldset.radio label,
+div#contentCheckout fieldset.radio label,
+div#contentCheckout fieldset.check label  {
+	width: auto;
+	padding-left: 6px;
+	font-weight: normal;
+	cursor: pointer;
+}
+
+div#shoppingbagBlock input.textfield,
+div#contentCheckout input.textfield  {
+	background-color: #fff;
+	border: 1px solid #9d9d9d;
+	height: 16px;
+	padding: 2px 3px 2px 1px;
+	float: left;
+	width: 190px;
+	margin: 0;
+}
+
+div#shoppingbagBlock .formRow select.textfield,
+div#contentCheckout select.textfield  {
+	background-color: #fff;
+	border: 1px solid #9d9d9d;
+	height: 22px;
+	padding: 2px 3px 2px 1px;
+	float: left;
+	margin: 0;
+	width: 196px;
+}
+
+div#shoppingbagBlock .formRow select.textfield  {
+	width: auto;
+}
+
+div#shoppingbagBlock .shorttextfield,
+div#contentCheckout .shorttextfield  {
+	width: 100px !important;
+}
+
+div#shoppingbagBlock .phonetextfield,
+div#contentCheckout .phonetextfield  {
+	width: 26px !important;
+	margin-right: 5px !important;
+	text-align: center;
+}
+
+div#shoppingbagBlock .exptextfield,
+div#contentCheckout .exptextfield  {
+	width: 54px !important;
+	margin-right: 5px !important;
+}
+
+div#shoppingbagBlock select.exptextfield,
+div#contentCheckout select.exptextfield  {
+	width: 60px !important;
+}
+
+span.phoneext  {
+	line-height: 22px;
+	float: left;
+	display: block;
+	margin-right: 5px;
+	width: 20px;
+}
+
+div#shoppingbagBlock .phoneexttextfield,
+div#contentCheckout .phoneexttextfield  {
+	width: 54px !important;
+	text-align: center;
+}
+
+div#contentCheckout div.help  {
+	line-height: 12px;
+	font-size: 9px;
+	padding-top: 5px;
+	float: right;
+	width: 196px;
+	display: inline;
+}
+
+.formRowError {padding: 0;}
+.formRow span.textfield, .formRowError span.textfield { float: left; padding:0; font-size: 1em;}
+.formRow input.textfield, .formRowError input.textfield, .formRow .textAreaLarge, .formRowError .textAreaLarge { width: 160px; margin: 0 0 10px 0; padding:0; font-size: 1em;}
+/*.formRow .shorttextfield{ font-size: .9em; padding: 0;}*/
+
+
+div#shoppingbagBlock .formRow,
+div#checkoutBlock .formRow,
+div#confirmationSummaryBlock .formRow  {
+	clear: both; 
+	overflow: hidden; 
+	margin: 0 0 13px;
+	/*color: #666;*/
+	line-height: 22px;
+	padding: 0 20px;
+	width: 320px;
+}
+
+div#shoppingbagBlock .formRow  {
+	width: 320px;
+}
+
+div#checkoutBlock .formRow,
+div#confirmationSummaryBlock .formRow  {
+	width: 300px;
+}
+
+.formRow div.value  {
+	float: right;
+	/*color: #333;*/
+}
+
+#summaryBlock .formRow div.value  {text-align:right;width:196px;}
+
+.formRow a.mainButton  {
+	float: right;
+}
+
+div#checkoutBlock fieldset div.value  {
+	float: right;
+	line-height: 22px;
+	font-weight: bold;
+	/*color: #333;*/
+}
+
+.taxesRow div.value,
+.promoRow div.value  {
+	width: 180px;
+}
+
+.formRow .okButton  {
+}
+
+.formRow .okButton span {padding-top:0;}
+
+.formRow .help  {
+	line-height: 12px;
+	font-size: 9px;
+	padding-top: 5px;
+	clear: both;
+	color:#7a7a7a;
+	/*color: #666;*/
+}
+
+.help a {color:#7a7a7a;}
+
+.hasError .help  {
+	color: #f00;
+}
+
+.promoRow .hasError .help a {
+	color:#293E6B;	
+	}
+
+
+div#shoppingbagBlock .subtotalRow label,
+div#checkoutBlock .subtotalRow label,
+div#shoppingbagBlock .subtotalRow div.value,
+div#checkoutBlock .subtotalRow div.value {
+	/*color: #fff;*/
+}
+
+div#shoppingbagBlock .subtotalRow,
+div#checkoutBlock .subtotalRow,
+div#confirmationSummaryBlock .subtotalRow {
+	line-height: 28px;
+	background-color: #9e9d9e;
+	font-size:13px;
+	font-weight:bold;
+	color: #fff;
+}
+
+div#shoppingbagBlock .totalRow,
+div#checkoutBlock .totalRow,
+div#confirmationSummaryBlock .totalRow {
+	line-height: 28px;
+	background-color: #3d3c3d;
+	color: #fff;
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 0;
+}
+
+div#shoppingbagBlock .totalRow  {
+	margin-bottom: 20px;
+}
+
+div#contentCheckout .totalRow label {
+	line-height: 20px;
+}
+
+div#contentCheckout .help {color:#949494;}
+
+.checkoutBtnRow {
+	width: 360px;
+	overflow: hidden;
+}
+
+.checkoutBtnRow a.mainButton {
+	float: right;
+	background-color: #5B9EB1;
+    background-image: none;
+}
+.formRow {
+    clear: both;
+    color: #3D3C3D;
+    margin: 0;
+    padding: 2px;
+}
+.formRowLongButton { /* text-align:right; overflow: hidden; */ float: right; }
+.formRowColor { clear: both;  padding: 2px; margin:0; background:#efeae6; color: #333;}
+.formRowError { clear: both;  padding: 2px; margin:0; }
+.formRow .introText {height:30px; }
+.formRowColor select{ /*text-transform: lowercase;*/ margin: 0 0 0 5px; padding: 0;}
+}
+.formRow .fieldLabel, .formRow .fieldLabelBold, .formRowError .fieldLabel, .formRow .fieldLabelBold {
+    color: #3D3C3D;
+    float: left;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    width: 140px;
+}
+.fieldDisplayBold {font-weight: bold;  margin-right: 20px; margin: 0 0 5px 0; }
+.fieldDisplay{color: #444; font-weight:normal; margin-right: 20px; margin: 0 0 5px 0; }
+.fieldLabel {display:inline-block;width: 150px;}
+.formRowFF .fieldLabelFF, .formRow .fieldLabelBold, .formRowError .fieldLabelFF, .formRow .fieldLabelBold { float: left;  margin:0; padding:0; width: 140px;}
+.fieldLabelFF {width: 150px; font-weight: normal;color: #444;}
+.fieldLabelBold {width: 150px; font-weight:bold;}
+.gst {font-weight:bold; padding-right:2px;}
+
+#newsLetterSignup #introText 	{}
+#newsLetterSignup #introText p	{padding:10px 5px 0 5px; }
+#newsLetterSignup img		{margin-bottom: 10px;}
+#signupLeft			{width:300px; float:left; margin-left:90px; margin-top:40px;}
+#signupRight	 	{width:250px; float:left; margin-left:0px; margin-right: -3px; margin-top:40px;}
+#signupLeft	.formRow, #signupRight .formRow {width:250px; overflow:hidden;}
+#newsLetterSignup label		{clear:left; width:100px; float:left; margin:7px 0 4px 0;}
+#newsLetterSignup input		{width:136px; float:left; margin:7px 0 3px 0;}
+#newsLetterSignup input.radioButton	{width:13px; height:13px; float:left; margin:7px 5px 0 5px;}
+#newsLetterSignup .radioText	{width:50px; float:left; margin:7px 0 0 0;}
+#newsLetterSignup select		{width:140px; float:left; margin:7px 0 3px 0; }
+#newsLetterSignup .formRowError		{height:30px; background:#eaeaea;}
+#newsLetterSignup .formRowRightShort	{width:630px; clear:both; float:left; margin-top:30px;}
+#newsLetterSignup .mainButton	{float:right;}
+
+#newsLetterSignup #thankYouHeader	{text-align:left; font-weight:bold;margin-top:0px;}
+#newsLetterSignup #thankYouHeader #thankYouHeaderImg	{text-align: center;}
+#newsLetterSignup #thankYouHeader strong,
+#newsLetterSignup .vipThankYouText strong	{color:#37a5b4;}
+#newsLetterSignup .vipThankYouText a, #newsLetterSignup .vipThankYouText a:hover, #newsLetterSignup .vipThankYouText a:visited 	{color:#2a5225;}
+#newsLetterSignup #promoCode	{width:200px; height:30px; line-height:30px; font-size:16px; font-weight:bold; text-align:center; background:#E4EACC; margin:30px auto 0;}
+#newsLetterSignup .vipThankYouText	{margin:10px 0; text-align:left-justify;}
+#newsLetterSignup .vipThankYouDisclaimer	{margin:20px 0; text-align:justify;}
+
+/* checkout block (every step) */
+
+div#checkoutBlock {
+	float: right;
+	overflow: hidden;
+	width: 752px;
+	position: relative;
+}
+
+/* STEP 1: sign-in and shipping */
+
+/* sign-in block */
+
+div#signInBlock {
+	margin-bottom: 30px;
+	overflow: hidden;
+	width: 752px;
+	background-image: url(/etc/cssImages/signInBlock.gif);
+	background-repeat: repeat-y;
+	background-position: 50% 0;
+	position: relative;
+}
+
+.signInLeftbox {padding: 0px 20px 0px 50px; float:left;}
+#customerBox, #signInBox {margin:0; padding:0; font-size:15px; }
+#hideShowNew, #hideShowLogin {display:none;}
+#customerForm {margin:10px 0px 10px 25px; padding:0px;}
+#customerForm fieldset, #signInForm fieldset {margin-top:10px;}
+#customerForm label, #signInForm label {
+    color: #3D3C3D;
+    display: block;
+    font-weight: bold;
+    margin: 5px 0;
+}
+#customerForm input, #signInForm input {
+    color: #3D3C3D;
+    font-family: helvetica,sans-serif;
+    font-size: 11px;
+    margin: 2px 0 3px;
+}
+#signInBlock div.right {float:right;}
+.right {margin-top:5px; text-align:right; }
+
+.left {text-align:left;}
+.center {text-align:center;}
+.isize {width:200px;}
+
+
+.clear {clear:both;}
+.signInRightbox {margin:0px 0px 0px 70px; float:left;}
+#signInForm {padding:15px 0px 0px 25px; width:206px;}
+#signInForm .right{margin-top:20px;}
+.signInLeftbox, .signInRightbox {width: 285px;}
+.margRight {margin-right:25px;}
+.padLeft {padding-left:25px;}
+.printbtn {float:right;}
+
+div#signInBlock div#newGuestLogin {
+	float: left;
+	overflow: hidden;
+	width: 340px;
+}
+
+div#signInBlock div#returningLogin {
+	float: right;
+	overflow: hidden;
+	width: 340px;
+}
+
+div#signInBlock h2 {
+	line-height: 28px;
+	background-color: #9e9d9e;
+	color: #fff;
+	padding: 0 20px;
+	text-transform: uppercase;
+	margin-bottom: 16px;
+}
+
+div#signInBlock fieldset div.value {
+	font-weight: normal;
+}
+
+div#signInBlock fieldset.buttonRow {
+	margin-top: 16px;
+	margin-bottom: 0;
+}
+
+/* shipping block */
+
+div#shippingBlock {
+	margin-bottom: 30px;
+	overflow: hidden;
+	width: 752px;
+}
+
+div#shippingBlock h2,
+div#billingBlock h2,
+div#paymentInfoBlock h2 {
+	line-height: 28px;
+	background-color: #9e9d9e;
+	color: #fff;
+	padding: 0 20px;
+	text-transform: uppercase;
+	margin-bottom: 16px;
+}
+
+div#shippingBlock div#shipToMe,
+div#billingBlock div#billToShipping,
+div#paymentInfoBlock div#payWithCC {
+	float: left;
+	overflow: hidden;
+	width: 340px;
+	height: 22px;
+	margin-bottom: 16px;
+}
+
+
+
+div#billingBlock div#billToShipping {
+	margin-bottom: 8px;
+}
+
+div#shippingBlock div#shipToStore,
+div#billingBlock div#billToNew,
+div#paymentInfoBlock div#payWithInterac,
+div#paymentInfoBlock div#payWithPaypal {
+	float: right;
+	overflow: hidden;
+	width: 340px;
+	height: 22px;
+	margin-bottom: 16px;
+}
+
+.shippingBlockReverse div#shipToMe {
+	float:right !important;
+	}
+
+.shippingBlockReverse div#shipToStore {
+	float:left !important;
+	}
+
+.shippingBlockReverse div#shipToStoreForm {
+	float:left !important;
+	}	
+
+
+div#billingBlock div#billToNew {
+	margin-bottom: 8px;
+}
+
+div#shippingBlock div#shipToMe fieldset label,
+div#shippingBlock div#shipToStore fieldset label,
+div#billingBlock div#billToShipping fieldset label,
+div#billingBlock div#billToNew fieldset label,
+div#paymentInfoBlock div#payWithCC fieldset label,
+div#paymentInfoBlock div#payWithPaypal fieldset label {
+	/*color: #666;*/
+}
+
+div#paymentInfoBlock div#payWithInterac fieldset label {
+	margin-top:-3px;
+	width: 280px;
+}
+
+div#shippingBlock div#shipToMe fieldset a,
+div#shippingBlock div#shipToStore fieldset a,
+div#billingBlock div#billToShipping fieldset a,
+div#billingBlock div#billToNew fieldset a,
+div#paymentInfoBlock div#payWithCC fieldset a,
+div#paymentInfoBlock div#payWithPaypal fieldset a {
+	float: left;
+	line-height: 22px;
+	margin-left: 4px;
+}
+
+div#shippingBlock div#shipToMe,
+div#shippingBlock div#shipToStore {
+	height:auto;
+	}
+	
+div#shippingBlock div#shipToMe a,
+div#shippingBlock div#shipToStore a {
+	/*clear:both;
+	margin-left:20px !important;
+	line-height:10px !important;
+	margin-bottom:3px !important;*/
+	white-space:nowrap;	
+	margin-top:-1px;	
+	}
+
+div#shippingBlock div#shipToMeForm,
+div#billingBlock div#billToNewForm {
+	clear: both;
+	width: 752px;
+	overflow: hidden;
+}
+
+div#shippingBlock div#shipToMeForm div#shipToMeFormCol1,
+div#billingBlock div#billToNewForm div#billToNewFormCol1 {
+	clear: left;
+	float: left;
+	overflow: hidden;
+	width: 340px;
+}
+
+div#shippingBlock div#shipToMeForm div#shipToMeFormCol2,
+div#billingBlock div#billToNewForm div#billToNewFormCol2 {
+	float: right;
+	overflow: hidden;
+	width: 340px;
+}
+
+div#shippingBlock div#shipToStoreForm {
+	clear: both;
+	float: right;
+	overflow: hidden;
+	width: 340px;
+}
+
+div#shippingBlock div#shipToStoreForm label {
+	width: 100%;
+	font-weight: normal;
+}
+
+div#shippingBlock div#shipToStoreForm label {
+	width: 100%;
+	font-weight: normal;
+}
+
+div#shippingBlock div#shipToStoreForm input.textfield {
+	width: 210px;
+}
+
+.ui-menu .ui-menu-item a {
+	color: #293E6B;;
+	font-family: arial,helvetica,sans-serif;
+	font-size: 11px;
+	font-weight:n ormal;
+}
+
+.ui-menu .ui-menu-item a.ui-state-hover,
+.ui-menu .ui-menu-item a.ui-state-active {
+	color: #fff !important;
+	background-color: #39f;
+	background-image: none;
+	border: 0 none;
+	margin: 0;
+	-moz-border-radius: 0;
+}
+
+div#shippingBlock div#shipToStoreForm select.textfield {
+	width: 216px;
+}
+
+div#shippingBlock div#shipToStoreForm input#shipToStorePostal {
+	height: 16px;
+	padding: 2px;
+	margin-right: 6px;
+	border: 1px solid #9D9D9D;
+	width: 102px !important;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0){
+	div#shippingBlock div#shipToStoreForm input#shipToStorePostal { height: 14px; }
+}
+
+div#shippingBlock div#shipToStoreForm select#shipToStoreRadius {
+	height: 22px;
+	padding: 2px;
+	border: 1px solid #9D9D9D;
+	width: 102px !important;
+}
+
+div#shippingBlock div#shipToStoreForm input.shorttextfield,
+div#shippingBlock div#shipToStoreForm select.shorttextfield {
+	float:left !important;
+	width:100px !important;
+	}
+
+div#shippingBlock div#shipToStoreForm a.mainButton {
+	float: right;
+}
+
+div#shippingBlock div#shipToStoreForm a.mainButton span {
+	/*width: 60px;
+	padding: 0 0 0 14px;*/
+	padding:0px 12px 0;
+}
+
+div#shippingBlock div#shipToStoreForm div.help {
+	width: 100%;
+	float: left;
+}
+
+div#shippingBlock div#shipToStoreResults div#pickupNote {
+	clear: both;
+	/*background-color:#000000;*/
+	line-height: 26px;
+	color: #3d3c3d;
+	text-transform: uppercase;
+	text-align: center;
+	margin: 0 auto 16px auto;
+	border:solid 1px #3d3c3d;
+}
+
+div#shippingBlock div#shipToStoreResults div#shipToStoreResultsButton {
+	overflow: hidden;
+	width: 752px;
+	margin-bottom: 16px;
+}
+
+div#shippingBlock div#shipToStoreResults div#shipToStoreResultsButton .mainButton {
+	float: right;
+}
+
+div#shippingBlock div#shipToStoreResults h4,
+div#paymentSummaryBlock div#giftCardCol h4 {
+	clear: both;
+	margin-bottom: 8px;
+	overflow: hidden;
+	padding: 4px 0;
+}
+
+div#shippingBlock div#shipToStoreResults h4 {
+	margin-left:20px;
+	
+}
+
+div#shippingBlock div#shipToStoreResults div#proceedToPaymentBtn input {
+	float:right;
+	margin-bottom:10px;
+	}
+
+
+div#shippingBlock div#shipToStoreResults {
+	clear: both;
+	width: 752px;
+	overflow: hidden;
+}
+
+div#shippingBlock div#shipToStoreResults div#shipToStoreResultsQuery {
+	clear: both;
+	float: right;
+	overflow: hidden;
+	width: 340px;
+	margin-bottom: 8px;
+}
+
+div#shippingBlock div#shipToStoreResults div#shipToStoreResultsQuery h4 {
+	margin:0 0 10px 40px;
+}
+
+div#shippingBlock div#shipToStoreResults div#shipToStoreResults2 {
+	clear:both;
+	}
+	
+	
+div#shippingBlock div#shipToStoreResults div#shipToStoreResultsCol1,
+div#shippingBlock div#shipToStoreResults div#shipToStoreResultsCol2,
+div#shippingBlock div#shipToStoreResults div#shipToStoreResultsCol3 {
+	float: left;
+	overflow: hidden;
+	width: 250px;
+}
+
+div#shippingBlock div#shipToStoreResults div#shipToStoreResultsCol1 fieldset.radio,
+div#shippingBlock div#shipToStoreResults div#shipToStoreResultsCol2 fieldset.radio,
+div#shippingBlock div#shipToStoreResults div#shipToStoreResultsCol3 fieldset.radio {
+	padding:0 20px;
+}
+
+div#shippingBlock div#shipToStoreResults fieldset.radio label {
+	text-transform: none;
+}
+
+div#shippingBlock div#shipToStoreResults fieldset.radio p {
+	clear: left;
+	padding-left: 20px;
+}
+
+/* STEP 2: payment */
+
+/* billing block */
+
+div#billingBlock {
+	margin-bottom: 30px;
+	overflow: hidden;
+	width: 752px;
+}
+
+
+/* payment summary block */
+
+div#paymentSummaryBlock {
+	margin-bottom: 30px;
+	overflow: hidden;
+	width: 752px;
+}
+
+div#paymentSummaryBlock div#giftCardCol {
+	float: left;
+	overflow: hidden;
+	width: 340px;
+}
+
+div#paymentSummaryBlock div#giftCardCol h2 a {
+	color:#FFF;
+	}
+	
+div#paymentSummaryBlock div#giftCardCol h2 a:hover {	
+	color:#293E6B !important;
+}
+
+div#paymentSummaryBlock div#giftCardCol div#GiftCardFormApply {
+	
+	}
+
+div#paymentSummaryBlock div#giftCardCol div#GiftCardFormApply fieldset {
+	clear:both;
+	}
+	
+div#paymentSummaryBlock div#giftCardCol div#GiftCardFormApply fieldset span#GiftCardNumber,
+div#paymentSummaryBlock div#giftCardCol div#GiftCardFormApply fieldset span#GiftCardBalance {
+	padding:4px 0;
+	display:block;
+	float:right;
+	font-weight:bold;
+	}
+	
+span#GiftCardSeq {
+	display:inline;
+}
+	
+div#paymentSummaryBlock div#totalsCol {
+	float: right;
+	overflow: hidden;
+	width: 340px;
+}
+
+div#paymentSummaryBlock h2 {
+	line-height: 28px;
+	background-color: #9e9d9e;
+	color: #fff;
+	padding: 0 20px;
+	text-transform: uppercase;
+	margin-bottom: 16px;
+}
+
+div#paymentSummaryBlock h2 a {
+	float: right;
+	text-transform: none;
+	color: #333;
+	font-weight: normal;
+}
+
+div#paymentSummaryBlock fieldset.buttonRow {
+	margin-top: 16px;
+	margin-bottom: 0;
+}
+
+div#paymentSummaryBlock fieldset.buttonRow a.mainButton {
+	float: right;
+}
+
+div#orderSummaryBlock div#addressesCol fieldset.buttonRow a.mainButton {
+	float:left;
+	margin-left:60px;
+}
+
+div#paymentSummaryBlock div#giftCardCol div#giftCardImage {
+	float: left;
+	width: 104px;
+	height: 70px;
+	margin-bottom: 16px;
+}
+
+div#paymentSummaryBlock div#giftCardCol div#giftCardRadios {
+	float: left;
+	width: 236px;
+}
+
+div#paymentSummaryBlock div#giftCardCol div#giftCardRadios fieldset {
+	float: left;
+}
+
+div#paymentSummaryBlock div#giftCardCol div#giftCardForm {
+	clear: both;
+	width: 340px;
+	overflow: hidden;
+}
+
+div#paymentSummaryBlock div#giftCardCol div#giftCardMax {
+	clear: both;
+	width: 340px;
+	overflow: hidden;
+}
+
+div#paymentSummaryBlock div#giftCardCol div#giftCardMax h4 {
+	font-weight: bold;
+	color: #f00;
+}
+
+div#paymentSummaryBlock div#giftCardCol div#giftCardResults1,
+div#paymentSummaryBlock div#giftCardCol div#giftCardResults2 {
+	clear: both;
+	width: 340px;
+	overflow: hidden;
+	margin-bottom: 16px;
+}
+
+/* payment info block */
+
+div#paymentInfoBlock {
+	overflow: hidden;
+	width: 752px;
+}
+
+div#paymentInfoBlock div#payWithCC,
+div#paymentInfoBlock div#payWithInterac,
+div#paymentInfoBlock div#payWithPaypal {
+	height: auto;
+}
+
+div#paymentInfoBlock div#payWithCC div.paymentLogos,
+div#paymentInfoBlock div#payWithInterac div.paymentLogos,
+div#paymentInfoBlock div#payWithPaypal div.paymentLogos {
+	clear: both;
+	padding: 0 20px;
+	width: 300px;
+	overflow: hidden;
+	margin-bottom: 8px;
+}
+
+div#paymentInfoBlock div#payWithInterac div.paymentLogos,
+div#paymentInfoBlock div#payWithPaypal div.paymentLogos,
+div#paymentInfoBlock div#payWithInterac div.formNote {
+	padding: 0 20px 0 40px;
+	width: 280px;
+}
+
+div#paymentInfoBlock div#payWithCC div.paymentLogos a,
+div#paymentInfoBlock div#payWithInterac div.paymentLogos a,
+div#paymentInfoBlock div#payWithPaypal div.paymentLogos img {
+	display: block;
+	float: left;
+}
+
+div#paymentInfoBlock div#payWithCC div.paymentLogos a {
+	margin-top: 2px;
+}
+
+div#paymentInfoBlock div#payWithCC div.paymentLogos a#logoVisa {
+	margin-right: 40px;
+}
+
+div#paymentInfoBlock div#payWithCC div.paymentLogos a#logoMC {
+	margin-right: 41px;
+}
+
+div#paymentInfoBlock div#payWithCC div.paymentLogos a#logoAmex {
+	margin-right: 41px;
+}
+
+div#paymentInfoBlock div#payWithCC div.paymentLogos a#logoDiscover {
+}
+
+div#paymentInfoBlock div#payWithCCForm {
+	clear: both;
+	margin-top: 16px;
+}
+
+div#payWithCCForm input.textfield {margin-top:8px;}
+div#payWithCCForm input.exptextfield {margin-top:0;}
+
+/* STEP 3: order summary */
+
+/* shopping bag table */
+
+div#shoppingBagTable {
+	float: left;
+	width: 752px;
+	margin-bottom: 8px;
+}
+
+#shoppingBagTable table { 
+	width: 100%;
+}
+#shoppingBagTable table img {margin-left: 15px;}
+#shoppingBagTable table thead {
+	line-height: 28px;
+	background-color: #9e9d9e;
+	color: #fff;
+	padding: 0 20px;
+	text-transform: uppercase;
+	text-align: center;
+	font-weight: bold;
+}
+#shoppingBagTable table tbody td{border-bottom: 1px solid #eaeaea; height: 50px;text-align: center; vertical-align:middle;}
+#shoppingBagTable table tbody td.last{border-right: 0; height: 50px;}
+#shoppingBagTable table td.img {width: 113px;}
+#shoppingBagTable table td.style {width: 85px;}
+#shoppingBagTable table td.color {/*width: 148px;*/}
+#shoppingBagTable table td.size {width: 34px;}
+#shoppingBagTable table td.price {width: 167px;}
+#shoppingBagTable table td.quantity {width: 67px;}
+#shoppingBagTable table td.last {/*width: auto;*/}
+#shoppingBagTable .textfield{  width:80px;  margin: 0 0 5px 0;  padding:0; }
+
+div#buttonRowUpdateBag {
+	height: 22px;
+	margin-bottom: 16px;
+	padding: 0 20px 16px 0;
+	overflow: hidden;
+	border-bottom:solid 1px #7e99aa;
+}
+
+div#buttonRowUpdateBag a.mainButton {
+	float: right;
+}
+
+/* order summary block */
+
+div#orderSummaryBlock {
+	margin-bottom: 30px;
+	overflow: hidden;
+	width: 752px;
+}
+
+div#orderSummaryBlock div#addressesCol {
+	float: left;
+	overflow: hidden;
+	width: 340px;
+}
+
+div#orderSummaryBlock div#totalsCol {
+	float: right;
+	overflow: hidden;
+	width: 340px;
+}
+
+div#orderSummaryBlock div#totalsCol .formRow a.mainButton  {
+	margin-top: 8px;
+	clear: right;
+}
+
+div#orderSummaryBlock h2 {
+	line-height: 28px;
+	background-color: #9e9d9d;
+	color: #fff;
+	padding: 0 20px;
+	text-transform: uppercase;
+	margin-bottom: 16px;
+}
+
+div#orderSummaryBlock h2 a {
+	float: right;
+	text-transform: none;
+	color: #333;
+	font-weight: normal;
+}
+
+div#orderSummaryBlock fieldset.buttonRow {
+	margin-top: 8px;
+	margin-bottom: 0;
+}
+
+div#orderSummaryBlock fieldset.buttonRow a.mainButton {
+	float: right;
+}
+
+div#orderSummaryBlock div#totalsCol div#summaryBlock fieldset.buttonRow {
+	padding-right:0;
+	clear:both;
+	}
+	
+div#orderSummaryBlock div#addressesCol div#shippingAddressBlock,
+div#orderSummaryBlock div#addressesCol div#billingAddressBlock,
+div#orderSummaryBlock div#totalsCol div#summaryBlock,
+div#orderSummaryBlock div#totalsCol div#paymentInfoBlock {
+	overflow: hidden;
+	width: 340px;
+}
+
+div#orderSummaryBlock div#totalsCol div#paymentInfoBlock div#payPalInfo, 
+div#orderSummaryBlock div#totalsCol div#paymentInfoBlock div#interactInfo {
+	margin-bottom:15px;
+}
+
+
+
+div#orderSummaryBlock div#addressesCol div#shippingAddressBlock,
+div#orderSummaryBlock div#addressesCol div#billingAddressBlock,
+div#orderSummaryBlock div#totalsCol div#summaryBlock {
+	margin-bottom: 30px;
+}
+
+div#orderSummaryBlock div#addressesCol div.address {
+	line-height: 14px;
+	padding: 2px 20px;
+}
+
+
+div#orderSummaryBlock div#totalsCol div#paymentInfoBlock div#giftCardInfo1,
+div#orderSummaryBlock div#totalsCol div#paymentInfoBlock div#giftCardInfo1,
+div#orderSummaryBlock div#totalsCol div#paymentInfoBlock div#CCInfo {
+	overflow: hidden;
+	width: 340px;
+	margin-bottom: 30px;
+}
+
+div#orderSummaryBlock div#totalsCol div#newsLetterOptIn fieldset label {
+	width: 280px;
+	text-transform: none;
+	/*color: #666;*/
+}
+
+div#orderSummaryBlock div#totalsCol div.checkoutBtnRow {
+	width: 340px;
+}
+
+div#orderSummaryBlock div#totalsCol div.checkoutBtnRow a.mainButton {
+	margin-bottom: 10px;
+}
+
+div#orderSummaryBlock div#totalsCol div.checkoutBtnRow div#submitNote {
+	padding-left: 20px;
+	clear:both;
+}
+
+div#orderSummaryBlock div#totalsCol div.checkoutBtnRow div#submitNote h4 {
+	text-transform: uppercase;
+	font-weight: bold;
+	/*color: #333;*/
+	margin-bottom: 5px;
+	clear: both;
+	text-align: left;
+	font-size: 12px;
+	white-space: nowrap;
+}
+
+div#orderSummaryBlock div#totalsCol div.checkoutBtnRow div#submitNote p {
+	text-align: justify;
+}
+
+/* STEP 4: order confirmation */
+
+div#confirmationBlock h2 {
+	font-size: 12px;
+	text-align: center;
+	margin-bottom: 16px;
+	text-transform: uppercase;
+	color:#3d3c3d;
+}
+
+div#confirmationBlock div#confirmationOrderNumber {
+	width: 290px;
+	height: 40px;
+	background-image: url(/etc/cssImages/confirmationOrderNumber.gif);
+	background-repeat: no-repeat;
+	margin: 0 auto;
+	line-height: 40px;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 12px;
+	font-weight: bold;
+	color: #5f9baf;
+	margin-bottom: 16px;
+}
+
+div#confirmationBlock div#confirmationPickupNote {
+	clear: both;
+	background-color:#000;
+	background-image: url("/etc/cssImages/pickupNote.gif");
+	background-repeat: no-repeat;
+	line-height: 26px;
+	color: #fff;
+	text-transform: uppercase;
+	text-align: center;
+	margin: 0 auto 16px auto;
+}
+
+div#confirmationBlock h3 {
+	font-size: 12px;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #3d3c3d;
+	margin-bottom: 12px;
+	background-color:#fff;
+}
+
+div#confirmationBlock p {
+	margin-bottom: 12px;
+}
+
+div#confirmationBlock span.trackingInfo {
+	color: #333;
+}
+
+div#confirmationBlock div#confirmationShipToZIP {
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 12px;
+	font-weight: bold;
+	color: #5f9baf;
+	margin-bottom: 16px;
+}
+
+/* confirmation summary block */
+
+div#confirmationSummaryBlock {
+	margin-bottom: 30px;
+	overflow: hidden;
+	width: 752px;
+	clear:both;
+}
+
+div#confirmationSummaryBlock h2 {
+	line-height: 28px;
+	background-color: #3d3c3d;
+	color: #fff;
+	padding: 0 20px;
+	text-transform: uppercase;
+	margin-bottom: 16px;
+}
+
+div#confirmationSummaryBlock div#createAccountCol,
+div#confirmationSummaryBlock div#haveAccountCol {
+	float: left;
+	overflow: hidden;
+	width: 340px;
+	}
+
+div#confirmationSummaryBlock div#createAccountCol h2,
+div#confirmationSummaryBlock div#haveAccountCol h2{
+	background-color:#9e9d9e;
+	color:#fff;
+	}
+
+div#confirmationSummaryBlock div#createAccountCol h4,
+div#confirmationSummaryBlock div#haveAccountCol h4 {
+	clear: both;
+	margin-bottom: 8px;
+	overflow: hidden;
+	padding: 4px 20px;
+}
+
+div#confirmationSummaryBlock div#haveAccountCol h2 {
+	background-image: url(/etc/cssImages/haveAccount.gif);
+	color: #fff;
+	text-align: center;
+}
+
+div#confirmationSummaryBlock div#createAccountCol label {
+	width: 144px;
+}
+
+div#confirmationSummaryBlock div#createAccountCol input.textfield {
+	width: 150px;
+}
+
+div#confirmationSummaryBlock div#totalsCol {
+	float: right;
+	overflow: hidden;
+	width: 340px;
+}
+
+div#confirmationSummaryBlock fieldset.buttonRow {
+	margin-top: 8px;
+	margin-bottom: 0;
+}
+
+/* button block (most steps) */
+
+div#buttonBlock {
+	clear: both;
+	float: right;
+}
+
+div#buttonBlock .mainButton {
+	float: right;
+	background-image:none;
+	background-color:#5b9eb1;
+}
+
+div#buttonBlock div#buttonNote {
+	float: right;
+	clear: both;
+	width: 235px;
+	margin-top: 5px;
+}
+
+.langfre div#buttonBlock div#buttonNote {width:179px;}
+
+#bannerBottomCustomerService {clear: both; height: 80px; align:center; border-top:solid 20px #fff; border-bottom:solid 20px #fff;}
+#bannerBottomCustomerService td {padding:0;}
+#bannerBottomCustomerService td a {display:block; text-decoration:none;}
+
+#bannerBottomCustomerService td.VerifiedByVisa {width:130px; padding-top:5px;}
+#bannerBottomCustomerService td.MasterCard {width:130px; padding-top:5px;}
+#bannerBottomCustomerService td.McAfeeSecure {width:70px;  padding-top:5px;}
+#bannerBottomCustomerService td.VeriSign {padding-left:30px; width:75px; text-align:right;}
+div.CustServUKeng td.VeriSign {}
+
+#bannerBottomCheckout {
+	float: right;
+	width: 752px;
+	/*height: 80px;*/
+	height: auto;
+	border-top:solid 20px #fff;
+}
+
+#bannerBottomCheckout img {float:left;}
+#bannerBottomCheckout table {float:left;}
+#bannerBottomCheckout td {padding:0}
+#bannerBottomCheckout td a {display:block; text-decoration:none;}
+
+#bannerBottomCheckout td.VerifiedByVisa {width:110px; padding-top:5px;}
+div.checkoutCAeng td.VerifiedByVisa {width:120px !important;}
+div.checkoutCAfre td.VerifiedByVisa {width:120px !important;}
+#bannerBottomCheckout td.MasterCard {width:110px; padding-top:5px;}
+#bannerBottomCheckout td.McAfeeSecure {width:70px;  padding-top:5px;}
+#bannerBottomCheckout td.VeriSign {padding-left:25px; width:75px; text-align:right; }
+div.checkoutCAfre td.VeriSign a {margin-right:25px;}
+div.checkoutUKeng td.VeriSign a {}
+#bannerBottomCheckout td.VeriSign .note {width:75px; }
+
+
+
+/*.customerServiceLogos {width:370px;}*/
+.noHassleReturn { float: left; height: 70px; width: 209px;}
+.hackerSafe {float: left; height: 70px; width: 100px; padding-left:40px;}
+.Verisign {
+	float: left; 
+	height: 70px; 
+	width: 100px; 
+	background-image:url(/_static/images/www/shared/checkoutVeriSign.png); 
+	background-repeat:no-repeat;  
+	padding: 0 10px;
+	}
+.Privacy {
+	float: right; 
+	height: 70px; 
+	width: 209px; 
+	background-image:url(../banners/checkoutPrivacy.gif);
+	background-repeat:no-repeat;  
+	}
+
+.InteracRight {float: right; height: 35px; width: 85px; padding-left:40px ;}
+.verifyByVisaRight {float: right; height: 55px; width: 85px; display:inline; margin-top:5px;}
+.masterCardRight {float: right; height: 35px; width: 81px; display:inline; margin-top:5px; margin-left:63px;}
+.hackerSafeRight {float:right; height: 70px; width: 65px; margin-top:5px;margin-left:63px;}
+.VerisignRight {float: right; height: 110px; width: 88px; background-image:url(/_static/images/www/shared/checkoutVeriSign.png); background-repeat:no-repeat; padding:0; margin:0; background-position:top right; margin-left:43px;}
+
+.checkoutProcess .masterCardRight {margin-left:20px;}
+.checkoutProcess .hackerSafeRight {margin-left:20px;}
+.checkoutProcess .VerisignRight {margin-left:5px;}
+
+
+
+.payPalRight {float:right; height: 40px; width: 150px;margin-right: 7px;margin-top: 5px;}
+.padding {width:80px; height:37px;}
+.VerisignRight a:hover {color: #f37421;}
+div.note {margin-top:10px; padding-left:0; text-align:right; }
+
+.payPalBox {
+	height: 34px;
+	}
+	
+.payPalBox input.radio {margin:10px 5px 0 0; width:14px; height:14px;}
+.payPalBox img {float: left;}
+.payPalBox .payPalTxtBox {
+	height: 34px;
+	line-height: 34px;
+	float:left;
+	padding-left: 5px;
+	color: #333;
+	font-weight: bold;
+	text-transform: uppercase;
+	}
+.payPalBox .payPalTxtBox a {
+	font-weight: normal;
+	text-transform: none;
+	}
+
+
+/* Shopping Bag Dynamic Banner */
+
+div.sbBannerbox {
+	margin-bottom: 20px;
+	padding: 9px;
+	border: 1px solid #7e99aa;
+}
+
+div.sbBannerbox .sbImage { /*width: 160px;*/width:115px; height: 160px; float: left; }
+div.sbBannerbox .sbImage img {height:auto !important;width:auto !important;}
+div.sbBannerbox #sbBanner { /*width: 155px;*/width:180px; float: right; margin-bottom: 10px; }
+div.sbBannerbox .sbbutton {float: left;padding-left: 22px;width: 158px;}
+div.sbBannerbox #sbBanner h4 { margin-bottom: 5px; font-weight: bold; }
+div.sbBannerbox #sbBanner p { margin-bottom: 15px; }
+div.sbBannerbox #sbBanner p.redeem {color:#619db7; white-space: nowrap; font-weight:bold;}
+div.sbBannerbox #sbBanner p.sbGC { line-height: 18px; margin-top: 10px; font-weight: bold; }
+div.sbBannerbox #sbBanner p.sbGC .gcAmountLabel {width:90px; float:left;text-transform:uppercase;}
+div.sbBannerbox #sbBanner p.sbGC select { float: left; }
+div.sbBannerbox .sbbutton .mainButton span { /*padding: 0 0 0 14px; width: 141px;*/ }
+
+/*--Shopping Bag Dynamic Banner*/
+
+/*banner right column*/
+#bannerRightColumnCheckout {float: right; width: 210px; height: 100px; margin-top: 20px; padding: 0;}
+
+/*my account styles ---- shopping bag styles*/
+
+#shoppingbagBlock {
+	width:752px; 
+	float:left; 
+	height: auto; 
+	padding-bottom: 20px; 
+	margin: 0px;  
+	position: relative;
+}
+
+#shoppingCartLeftBanner {
+	float:left; 
+	width: 160px; 
+	margin-right: 20px;
+}
+
+a.liveChat { display: block; float: left; padding-bottom: 10px; }
+a.liveChat img { display: block; }
+#myaccountBlock  {width:932px; height: auto; padding-bottom: 20px; margin: 0px auto;}
+.titlemyaccount {padding: 5px; background:#000; color: #fff; margin-bottom: 10px; ytext-transform: uppercase;}
+#myaccountMsgBlock {float:right; width: 270px; height: auto; margin: 0; background:#F3F1ED; padding: 10px; margin-bottom: 20px;}
+#myaccountBlock p {color: #999;padding: 10px;}
+#myaccountBlock ul {padding: 10px;}
+#myaccountBlock li {color: #999; list-style: disc; padding-left: 5px; margin-left: 20px;}
+#myaccountBlock #blockLeftNarrow li {margin-left: 0px;}
+#myaccountBlock .blockleft { clear: both;float:left;  padding:0;   width: 350px; }
+#myaccountBlock .blockright {float:right; width: 350px;  margin: 0; padding:0}
+#myaccountBlock #secondaryNavRight {float:right; margin: 5px 0;}
+#myaccountBlock .wishListButtons {float:right; margin: 5px 0; clear: right;}
+#myaccountBlock div#newsLetterBox h3 {margin-top: 25px; text-transform: uppercase; color:#333; }
+
+.formRow2{
+	width:615px;
+	float:right;
+	margin-bottom:4px;
+}
+
+.formRow2 .radioButton{
+	margin-left:-2px;
+	margin-right:3px;
+}
+
+#shoppingbagLeftBanners {clear: both; float: left;width: 335px; height: auto;}
+#shoppingbagLeftBanners .banner {width: 335px; margin: 0; /*border: 1px solid #ccc;*/}
+
+div#shoppingbagBlock div#buttonRow {
+	min-height: 28px;
+	margin: 10px 0 20px 0;
+	padding-left: 20px;
+	overflow: hidden;
+}
+
+div#shoppingbagBlock a.proceedButton {
+	float: right;
+	background-color:#5b9eb1;
+	background-image:none;
+}
+
+div#shoppingbagBlock div#shoppingBagTable {
+	float: left;
+	width: 752px;
+}
+
+div#shoppingbagBlock div#totals { 
+	float:right; 
+	width: 360px; 
+	overflow: hidden; 
+}
+
+.alertbox .mainButton, .alertboxSmall .mainButton, .alertboxSmallError .mainButton, .alertboxCustom .mainButton {
+	width:auto !important;
+	}
+	
+div#shoppingbagBlock div#totals div.value { 
+	text-align: right;
+}
+
+div#shoppingbagBlock div#totals div.value div.help { 
+	text-align: left;
+}
+
+#shoppingbagBlock #summaryBlock .fieldLabelBold {
+    color: #3D3C3D;
+    text-transform: uppercase;
+    width: 200px;
+}
+
+#checkoutStepseng li.done strong, #checkoutStepsfre li.done strong {
+    color: #3D3C3D;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+.fieldbothNote {
+    color: #3D3C3D;
+    float: right;
+    margin: 0 5px;
+    padding: 0 0 10px;
+    width: 155px;
+}
+
+div.pobox {
+    color: #3D3C3D;
+    display: inline;
+    float: right;
+    margin: 0 70px 5px 0;
+    padding: 0;
+    width: 134px;
+}
+
+#shippingBlock .formRow .shorttextfield {
+    color: #3D3C3D;
+    margin: 0 0 5px;
+    width: 130px;
+}
+#checkoutStepseng li.done span, #checkoutStepsfre li.done span {
+    color: #3C3D3C;
+    margin-right: 3px;
+}
+.formRowRightTotal {
+    color: #3D3C3D;
+    float: right;
+    text-align: right;
+    width: 100px;
+}
+#newsLetterSignup #thankYouHeader strong, #newsLetterSignup .vipThankYouText strong {
+    color: #5F9BAF;
+}
+.sbBannerbox {
+    border-bottom: 1px solid #EAEAEA;
+    border-top: 1px solid #EAEAEA;
+    color: #3D3C3D;
+    /*margin: 20px 0 0;*/
+    padding: 10px;
+}
+#shippingForm .formRow label, #billingForm .formRow label {
+    color: #3D3C3D;
+    font-weight: bold;
+}
+
+div#orderSummaryBlock div#totalsCol a.mainButton span {padding-top:0;}
+div#orderSummaryBlock div#totalsCol paymentInfoBlock a.mainButton span {padding-top:4px;}
+div#orderSummaryBlock div#totalsCol .totalRow {background-color:#5b9eb1;}
+
+div#totals .subtotalRow {margin-bottom:24px;}
+div#totals .formRow {margin-bottom:19px;}
+
+div#confirmationSummaryBlock .totalRow {background-color:#5b9eb1;}
+div#totals .totalRow {margin-top:32px;}
+
+#CCInfo a.mainButton span {padding-top:4px;}
+
+.popupGiftCard {text-align: center;}
+.popupGiftCard h1 {font-size: 25px;font-weight: bold;}
+.popupGiftCard .mainButton {display: inline-block;float: none;}
+
+div#checkoutBlock div#interactInfo fieldset div.value {font-weight:normal;color:#3D3C3D;line-height:normal !important;float:none;width:100%;}
+
+#securityQuestionForm {overflow:hidden;}
+#securityQuestionForm #securityQuestion {margin:10px 0 5px 0;}
+#securityQuestionForm #securityAnswer {float:right;width:143px;}
+#securityQuestionForm #mainButtonDiv {float:right;clear:both;}
+.formErrorNote {color:#f00;}

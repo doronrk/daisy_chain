@@ -1,0 +1,245 @@
+html,body {
+    height:100%;
+}
+*:focus {
+    outline: 0;
+}
+/* TAG IT */
+.box-tags{
+    border: 1px solid #E2E2E2;
+    border-left: 0;
+    border-right: 0;
+    float: left;
+    position: relative;
+    width: 100%;
+    overflow:visible;
+}
+.invis-while-loading {visibility: hidden}
+#tag_form{
+    float:left;
+    border-left: 1px solid #E2E2E2;
+}
+
+.checkmark_icon {
+    background: transparent url('../images/tag_assets/icon-checkmark.png') 0 100% no-repeat;
+    display: inline-block;
+    float: left;
+    height: 17px;
+    padding: 0 0 0 10px;
+    width: 17px;
+}
+
+#tag_form input {
+    border: 0;
+    padding:0 15px;
+    margin:0;
+    font-size:13px;
+    font-family: "Myriad Pro", "Myriad Web", "Tahoma", "Helvetica", "Arial", sans-serif;
+    font-style:italic;
+    height: 100%;
+    color:#CDCDCD;
+    min-height: 45px;
+}
+input:focus::-webkit-input-placeholder
+{
+    color: transparent;
+}
+#input_load {
+    left: 70px;
+    position: absolute;
+    top: 40%
+}
+#tag_form button {
+    background-color: #442359;
+    border: 0px;
+    color: #fff;
+    display: block;
+    float: left;
+    height: 100%;
+    margin: 0px;
+    padding:15px 32px 13px 32px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size:13px;
+    font-family: "Myriad Pro", "Myriad Web", "Tahoma", "Helvetica", "Arial", sans-serif;
+    font-weight:500;
+}
+
+#validation_feedback{
+    background:url('../images/tag_assets/icon-exclamation.png') 10px 10px no-repeat #3d3d3d;
+    bottom: -37px;
+    color: #fff;
+    float: left;
+    font-size: 12px;
+    left: 0px;
+    padding: 10px 10px 10px 30px;
+    position: absolute;
+    width: 930px;
+    z-index: 8001;
+}
+    .close-validation-feedback{
+        color: #fff;
+        cursor: pointer;
+        font-size: 20px;
+        width: 20px;
+        position: absolute;
+        top: 5px;
+        right: 10px;
+    }
+
+#tag_wrap{
+    clear:none;
+    display: inline-block;
+    line-height: 14px;
+    overflow: hidden;
+    padding: 15px 0 0;
+    white-space: nowrap;
+    width: 645px;
+}
+
+#tag_wrap a, #tag_wrap span{
+    font-family:"Oswald", sans-serif;
+    padding:0 15px;
+}
+
+#tag_wrap span#no_tags{
+    color:#FCAF17;
+    font-size: 13px;
+    line-height: 15px;
+    padding:0 0 0 10px;
+}
+
+#tag_toggle{
+    display: block;
+    position:absolute;
+    font-weight:600;
+    text-align:center;
+    width:21px;
+    height:21px;
+    top: 50%;
+    right:0px;
+    margin-top: -10px;
+    cursor:pointer;
+}
+
+.tag-toggle-closed {
+    background:url('../images/tag_assets/icon-expand.png') 0px 0px no-repeat;
+}
+.tag-toggle-open {
+    background:url('../images/tag_assets/icon-collapse.png') 0px 0px no-repeat;
+}
+
+#tag_toggle.selected{
+    background:#FCAF17;
+}
+
+button#tag_it{
+    cursor: pointer;
+}
+#more_tags{
+    background-color: #fff;
+    border: 6px solid #E2E2E2;
+    font-family:"Oswald", sans-serif;
+    position:absolute;
+    z-index:8000;
+    overflow:auto;
+    padding: 10px 25px 40px;
+    margin:0 0 0 288px;
+    width: 620px;
+}
+
+#more_tags a{
+    padding: 10px;
+    display: inline-block;
+}
+
+#more_tags a:hover, #more_tags a:active{
+    color:#FCAF17;
+}
+
+
+/*
+    Setting unique font properties depending on integer size in class ^= "tag_weight"
+    Could add more states for :hover, :visited
+*/
+/* 1-10 */
+[class $="t1"]:link,[class $="t1"]:visited,
+[class $="t2"]:link,[class $="t2"]:visited,
+[class $="t3"]:link,[class $="t3"]:visited,
+[class $="t4"]:link,[class $="t4"]:visited,
+[class $="t5"]:link,[class $="t5"]:visited,
+[class $="t6"]:link,[class $="t6"]:visited,
+[class $="t7"]:link,[class $="t7"]:visited,
+[class $="t8"]:link,[class $="t8"]:visited
+[class $="t9"]:link,[class $="t9"]:visited,
+[class $="t10"]:link,[class $="t10"]:visited
+{
+    color: #787878;
+    font-size: 14px;
+    font-weight: 300;
+}
+/* 11-19 */
+[class $="t11"]:link, [class $="t11"]:visited,
+[class $="t12"]:link, [class $="t12"]:visited,
+[class $="t13"]:link, [class $="t13"]:visited,
+[class $="t14"]:link, [class $="t14"]:visited,
+[class $="t15"]:link, [class $="t15"]:visited,
+[class $="t16"]:link, [class $="t16"]:visited,
+[class $="t17"]:link, [class $="t17"]:visited,
+[class $="t18"]:link, [class $="t18"]:visited,
+[class $="t19"]:link, [class $="t19"]:visited
+
+{
+    color: #393939;
+    font-size: 14px;
+}
+
+/* 20-29 */
+[class *= "t2"]:link:not([class $= "t2"]):link,
+[class *= "t2"]:visited:not([class $= "t2"]):visited
+{
+    color: #FCAF17;
+    font-size: 16px;
+}
+
+/* 30-39 */
+[class *= "t3"]:link:not([class $= "t3"]):link,
+[class *= "t3"]:visited:not([class $= "t3"]):visited
+
+{
+    color: #a3a38d;
+    font-size: 18px;
+
+}
+
+/* 40-49 */
+[class *= "t4"]:link:not([class $= "t4"]):link,
+[class *= "t4"]:visited:not([class $= "t4"]):visited
+
+{
+    color: #13AA91;
+    font-size: 20px;
+}
+
+
+/* 50-99 */
+[class *= "t5"]:not([class $= "t5"]):link, [class *= "t5"]:not([class $= "t5"]):visited,
+[class *= "t6"]:not([class $= "t6"]):link, [class *= "t6"]:not([class $= "t6"]):visited,
+[class *= "t7"]:not([class $= "t7"]):link, [class *= "t7"]:not([class $= "t7"]):visited,
+[class *= "t8"]:not([class $= "t8"]):link, [class *= "t8"]:not([class $= "t8"]):visited,
+[class *= "t9"]:not([class $= "t9"]):link, [class *= "t9"]:not([class $= "t9"]):visited
+
+{
+    color: #dd5900;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+/* weed out 100-199, making sure not to get 1 or 10-19 */
+[class *= "t1"]:not([class $= "t1"]):not([class $= "t10"]):not([class $= "t11"]):not([class $= "t12"]):not([class $= "t13"]):not([class $= "t14"]):not([class $= "t15"]):not([class $= "t16"]):not([class $= "t17"]):not([class $= "t18"]):not([class $= "t19"])
+{
+   /* what do? */
+    color: #dd5900;
+    font-size: 22px;
+    font-weight: 500;
+}

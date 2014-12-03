@@ -1,0 +1,1 @@
+if(typeof S7ConfigMain=="undefined"){var S7ConfigMain={};var S7ConfigObject=function(b,c,a){this.isVersion=b||"2.8";this.isViewerRoot=c||"/is-viewers";this.isRoot=a||"/is/image/"};var S7Config=new S7ConfigObject();var sjroot=S7Config.isViewerRoot;var sjimageServer=S7Config.isRoot};

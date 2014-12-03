@@ -1,0 +1,58 @@
+/* don't put anything in here unless it a.) is only for the subtabs, b.) isn't already in styles.css */
+/* this is a stripped / customized version of www.alistapart.com sliding doors technique */
+.subnavs
+{
+	float: left;
+	width: 100%;
+}
+
+.subnavs ul
+{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.subnavs li
+{
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+
+.subnavs a
+{
+	float: left;
+	display: block;
+	margin: 0;
+	padding: 0px 15px 0px 15px;
+	text-decoration: none;
+}
+
+.subnavs > ul a
+{
+	width: auto;
+}
+/* Commented Backslash Hack hides rule from IE5-Mac \*/
+.subnavs a
+{
+	float: none;
+}
+/* End IE5-Mac hack */
+
+.subnavs .current a
+{
+	font-weight: bold;
+}
+
+.subnavs .current a:hover
+{
+	/*cursor: default;*/
+	font-weight: bold;
+}
+
+.subnavs a:hover
+{
+	color: #78AA3B;
+	font-weight: bold;
+}

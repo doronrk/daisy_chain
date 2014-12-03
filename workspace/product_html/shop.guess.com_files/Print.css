@@ -1,0 +1,21 @@
+﻿@media print
+{
+	.noprint, .noprintDynamic {
+		display: none;
+	}
+
+	.liveChat, #chatImage, .navbar, #header, #footer, #accountNav, .btn, .btn-danger, .btn-large, .leftNav {
+		display: none;
+	}
+
+	/*moving printable element to the top left side of the page*/
+	/*setting min size for printable area (in some cases dialogs are collapsing)*/
+	.printableElement{
+		border: none;
+		position: absolute!important;
+		left: 0px!important;
+		top: 0px!important;
+		min-width: 1000px!important;
+		min-height: 1000px!important;
+	}
+}

@@ -1,0 +1,1 @@
+pulse.forward(["http%3A%2F%2Ftacoda.at.atwola.com%2Fatx%2Fsync%2Fbuysi%2Fbuysi%2FFCD76C58-10C5-45C3-B31C-F0D8D9A7C9AB"]);

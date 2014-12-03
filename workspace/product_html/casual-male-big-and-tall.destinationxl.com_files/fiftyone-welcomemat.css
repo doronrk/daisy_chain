@@ -1,0 +1,94 @@
+/*----------------------------------------------------------------------------------------
+ *                   This is the FiftyOne Welcome Mat CSS Stylesheet
+ *
+ * The style below controls the appearance of the country specific light-box that welcomes
+ * international customers to your web site and lets them know that you are ready and willing
+ * to do business with them.
+ *
+ * Each style element contains a description to help you edit the Welcome Mat to match your
+ * corporate standards.
+ *
+ * Save this file as master.css and provide to FiftyOne Platform Integration.
+ *
+ * -----------------------------------------------------------------------------------------/*
+ 
+/* modal: The overall background of the light-box.  If you are using a background image, you should add it to this ID.*/
+#modal {
+    background: url("") no-repeat right top;
+ 
+}
+/* language: The upper right hand "In English" link that appears on all non English welcome mats*/
+#language {
+    position:absolute;
+    top:60px;
+    left:540px;
+}
+/* title: container that holds the flag and the headline */
+#title {}
+/* flag: The location of the flag.  The flag will display with the corresponding Welcome Mat content */
+#flag {
+    width:35px;
+    height:23px;
+    margin:5px 10px;
+    background: no-repeat right top;
+    float:left;
+}
+/* headline: The main title such as "Now shipping in Australia" */
+#headline {
+    float:left;
+        text-align: center;
+}
+/* subheadline: We make it easy to shop from Australia with:" */
+#subheadline {
+    clear:both;
+}
+/* sellspoint: bulleted list */
+#sellspoint {
+width:500px;
+}
+#sellspoint ul {
+    list-style-type:disc;
+}
+#sellspoint li{
+    padding:0px 0px 9px 0px;
+    margin-left:40px;
+}
+/* outro: The text right after the bullets "Inside the checkout you'll find more frequently asked question about shipping to Australia." */
+#outro {
+    text-align:center;
+    padding: 6px;
+    clear:both;
+}
+/* #button: The continue Shopping button */
+#button {
+    margin-bottom:20px;
+    text-align:center;
+}
+#button button {
+    border: 0;
+    text-align:center;
+    width:300px;
+    cursor:pointer;
+}
+/* #notshipLink: Not shipping from XXX text */
+#notshipLink {
+    clear:both;
+    text-align: center;
+    padding-bottom:5px;
+}
+/* #customTxt: The merchant customized text that always appears in English.  */
+#customTxt {
+    text-align: center;
+}
+/*----------------------------------------------------------------------------------------
+Country Specific:
+Each Welcome Mat code div is tagged with the two letter country code. Using this two letter
+country code as a class, it is possible to create themes that appear different per country.
+The pre-created regional themes use these classes, allowing them to each contain different
+country specific backgrounds etc.  Add any 2 letter country code here to use a custom flag.
+---------------------------------------------------------------------------------------- */
+#modal .AU {}
+#modal .CA {}
+#modal .DE {}
+#modal .ES {}
+#modal .GB {}

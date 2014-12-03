@@ -1,0 +1,1 @@
+function cmCreateProductviewTag(productID,productName,categoryID,attributes,cm_vc){cmMakeTag(["tid","5","pi",c1(cm_ClientID)?c1(cm_ClientID):"Product: "+ productName+" ("+ productID+")","pr",productID,"pm",productName,"cg",categoryID,"pc","Y","cm_vc",cm_vc?cm_vc:cmExtractParameter("cm_vc",document.location.href),"cmAttributes",attributes]);}

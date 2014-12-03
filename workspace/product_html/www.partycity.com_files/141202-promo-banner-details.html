@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html webdriver="true"><head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="robots" content="noindex,nofollow">
+		<link rel="shortcut icon" href="http://www.partycity.com/images/set_c/en_us/favicon.ico">
+
+		<title>Party City Site Wide Offer</title>
+
+		<style type="text/css">
+			body {margin:0; padding:0;}
+		</style>
+	</head>
+	<body>
+		<!-- Update the date on this image call -->
+		<img id="home_top_promo_img" src="141202-promo-banner-details_data/141202-promo-banner.gif" alt="$10 off on Orders 75+:omni:SAVENOW" title="Click for Details" usemap="#top_promo_link" height="92" border="0" width="525">
+
+		<map id="top_promo_link" name="top_promo_link">
+			<!-- Update the Coords for these Areas and the path to the Include Files in PCPop-->
+			<area shape="rect" coords="195,60,324,83" href="javascript:top.window.PC_Pop('430','825',%20'',%20'',%20'/text/partycity/banners/global/2014/141202-store-details.html','','','close_on_outside_click','auto');" alt="Print Store Coupon" title="Print Store Coupon">
+			<area shape="rect" coords="325,65,380,81" href="javascript:top.window.PC_Pop('455','820',%20'',%20'',%20'/text/partycity/banners/global/2014/141202-coupon-details.html','','','close_on_outside_click','auto');" alt="$10 off on Orders 75+:omni:SAVENOW" title="Click for Details">
+			<!-- Uncomment this out if it's only coupon Details -->
+			<area shape="rect" coords="0,0,525,92" href="javascript:top.window.PC_Pop('455','820',%20'',%20'',%20'/text/partycity/banners/global/2014/141202-coupon-details.html','','','close_on_outside_click','auto');" alt="$10 off on Orders 75+:omni:SAVENOW" title="Click for Details">
+		</map>
+
+		<map id="top_promo_link_kiosk_map" name="top_promo_link_kiosk_map">
+			<area shape="rect" coords="0,0,525,92" href="javascript:top.window.PC_Pop('275','700',%20'',%20'',%20'/images/set_c/en_us/local/banners/global/121101-kiosk-free-shipping-details.gif','','','close_on_outside_click','auto');" alt="Free Ship $0:Kiosk" title="Click for Details">
+	</map>
+
+		<script type="text/javascript">
+			function readCookie(name) {
+				var name_eq = name + "=";
+				var cookie = document.cookie.split(';');
+
+				var result = false;
+
+				for (var i = 0; i < cookie.length; i++) {
+					var c = cookie[i];
+					while (c.charAt(0) == ' ') {
+						c = c.substring(1, c.length);
+					}
+
+					if (c.indexOf(name_eq) == 0) {
+						result =  c.substring(name_eq.length, c.length);
+						i      = cookie.length;
+					}
+				}
+
+				return result;
+			}
+
+			var kioskCookie = readCookie("kioskid");
+
+			if (kioskCookie !== false && kioskCookie != "") {
+				document.getElementById('home_top_promo_img').src = "/images/set_c/en_us/local/banners/global/121101-kiosk-free-shipping.gif";
+				document.getElementById('home_top_promo_img').alt = "Free Ship $0:Kiosk";
+				/*document.getElementById('home_top_promo_img').useMap = null;*/
+				document.getElementById('home_top_promo_img').useMap = "#top_promo_link_kiosk_map";
+			}
+		</script>
+
+		<script type="text/javascript" src="141202-promo-banner-details_data/b2b_banner.js"></script>
+	
+
+</body></html>

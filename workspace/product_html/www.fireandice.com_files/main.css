@@ -1,0 +1,78 @@
+/*
+$Id: main.css, sandra Exp $
+vim: set ts=2 sw=2 sts=2 et:
+*/
+
+/* Layout */
+.menu-fancy-categories-list .content {
+  overflow: visible;
+  padding: 5px 6px 8px 5px;
+}
+
+.fancycat-explorer-scheme {
+  padding-top: 5px;
+  padding-left: 8px;
+  overflow: hidden;
+}
+.fancycat-explorer-scheme ul {
+  list-style: none;
+  padding: 0px;
+}
+.fancycat-explorer-scheme ul li {
+  padding: 4px 0px 2px 14px;
+  position: relative;
+  background: none;
+}
+.fancycat-explorer-scheme ul.fancycat-explorer-level-1 li {
+  padding-bottom: 0px;
+}
+.fancycat-explorer-scheme ul li ul {
+  margin-top: 0px;
+}
+
+.fancycat-explorer-scheme li.closed ul {
+  display: none;
+}
+.fancycat-explorer-scheme ul li a:link,
+  .fancycat-explorer-scheme ul li a:visited,
+  .fancycat-explorer-scheme ul li a:hover,
+  .fancycat-explorer-scheme ul li a:active
+{
+  color: #324c76;
+  font-size: 11px;
+}
+.fancycat-explorer-scheme li a.arrow:link,
+  .fancycat-explorer-scheme li a.arrow:visited,
+  .fancycat-explorer-scheme li a.arrow:hover,
+  .fancycat-explorer-scheme li a.arrow:active
+{
+  display: block;
+  position: absolute;
+  left: 0px;
+  top: 4px;
+  outline-style: none;
+  width: 9px;
+  height: 18px;
+  background: transparent url(tree_subdir_minus.gif) no-repeat left top;
+  overflow: hidden;
+}
+.fancycat-explorer-scheme li.closed a.arrow:link,
+  .fancycat-explorer-scheme li.closed a.arrow:visited,
+  .fancycat-explorer-scheme li.closed a.arrow:hover,
+  .fancycat-explorer-scheme li.closed a.arrow:active
+{
+  background: transparent url(tree_subdir_plus.gif) no-repeat left top;
+}
+.fancycat-explorer-scheme a.empty-link:link,
+  .fancycat-explorer-scheme a.empty-link:visited,
+  .fancycat-explorer-scheme a.empty-link:hover,
+  .fancycat-explorer-scheme a.empty-link:active
+{
+}
+.fancycat-explorer-scheme a.extended:link,
+  .fancycat-explorer-scheme a.extended:visited,
+  .fancycat-explorer-scheme a.extended:hover,
+  .fancycat-explorer-scheme a.extended:active
+{
+  font-weight: bold;
+}

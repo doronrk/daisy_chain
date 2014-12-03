@@ -1,0 +1,89 @@
+/***************************************************************************
+OLAPIC FACEBOX *************************************************************
+***************************************************************************/
+#olapic_facebox {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+	text-align: left;
+	width: auto !important;
+}
+
+#olapic_facebox .popup {
+	position: relative;
+	border: 3px solid rgba(0,0,0,0);
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: 0 0 18px rgba(0,0,0,0.4);
+	-moz-box-shadow: 0 0 18px rgba(0,0,0,0.4);
+	box-shadow: 0 0 18px rgba(0,0,0,0.4);
+}
+
+.ie8 #olapic_facebox .popup {
+	border: 3px solid #cecece;
+}
+
+#olapic_facebox .content {
+	display: table;
+	width: 370px;
+	padding: 10px;
+	background: #fff;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+
+#olapic_facebox .content > p:first-child {
+	margin-top: 0;
+}
+
+#olapic_facebox .content > p:last-child {
+	margin-bottom: 0;
+}
+
+#olapic_facebox .close {
+	position: absolute;
+	top: -18px;
+	right: -18px;
+	padding: 2px;
+}
+
+#olapic_facebox .close img {
+	opacity: 1;
+}
+
+#olapic_facebox .close:hover img {
+	opacity: .8;
+}
+
+#olapic_facebox .loading {
+	text-align: center;
+}
+
+#olapic_facebox .image {
+	text-align: center;
+}
+
+#olapic_facebox img {
+	border: 0;
+	margin: 0;
+}
+
+#olapic_facebox_overlay {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 100%;
+}
+
+.olapic_facebox_hide {
+	z-index: -100;
+}
+
+.olapic_facebox_overlayBG {
+	background-color: #000;
+	z-index: 99;
+}

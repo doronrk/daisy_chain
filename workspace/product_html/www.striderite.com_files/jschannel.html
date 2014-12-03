@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html webdriver="true"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <title></title>
+        <!--[if lt IE 9]>
+			<script src="../json2.js"></script>
+		<![endif]-->
+        <script type="text/javascript" src="jschannel_data/jschannel.js"></script>
+        <script type="text/javascript" src="jschannel_data/sha1.js"></script>
+        <script type="text/javascript" src="jschannel_data/underscore.js"></script>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var chRememberedItems = Channel.build({
+                window : window.parent,
+                origin : "*",
+                scope  : "rememberedItems"
+            });
+
+            chRememberedItems.bind("get", function(trans, p) {
+                var currentObject = null;
+                var defaultObject = {
+                    h : "",
+                    c : "0",
+                    d : []
+                };
+
+                try {
+                    currentObject = JSON.parse(window.localStorage.getItem("rememberedItems"));
+                }
+                catch (e) {}
+
+                var isObject = _.isObject(currentObject);
+                var hasHash  = (isObject && _.has(currentObject, "h") && _.isString(currentObject.h));
+                var hasCount = (isObject && _.has(currentObject, "c") && _.isString(currentObject.c));
+                var hasData  = (isObject && _.has(currentObject, "d") && _.isArray(currentObject.d));
+                var isValid  = (hasHash && hasCount && hasData);
+
+                return isValid ? JSON.stringify(currentObject) : JSON.stringify(defaultObject);
+            });
+
+            chRememberedItems.bind("set", function(trans, p) {
+                try {
+                    window.localStorage.setItem("rememberedItems", p);
+                }
+                catch (e) {}
+
+                return null;
+            });
+
+            chRememberedItems.bind("add", function(trans, p) {
+                var requestItems = (function() {
+                    var _defaultItems = [];
+                    var _requestItems = null;
+
+                    try {
+                        _requestItems = JSON.parse(p);
+                    }
+                    catch (e) {}
+
+                    var isValid = _.isArray(_requestItems);
+
+                    return isValid ? _requestItems : _defaultItems;
+                })();
+                var rememberedItems = (function() {
+                    var currentObject = null;
+                    var defaultObject = {
+                        h : "",
+                        c : "0",
+                        d : []
+                    };
+
+                    try {
+                        currentObject = JSON.parse(window.localStorage.getItem("rememberedItems"));
+                    }
+                    catch (e) {}
+
+                    var isObject = _.isObject(currentObject);
+                    var hasHash  = (isObject && _.has(currentObject, "h") && _.isString(currentObject.h));
+                    var hasCount = (isObject && _.has(currentObject, "c") && _.isString(currentObject.c));
+                    var hasData  = (isObject && _.has(currentObject, "d") && _.isArray(currentObject.d));
+                    var isValid  = (hasHash && hasCount && hasData);
+
+                    return isValid ? currentObject : defaultObject;
+                })();
+                var newData        = _.extend({}, rememberedItems);
+                var quotaEexceeded = false;
+                var idNotFound = false; //to skip save 'dateAdded', if 'id' not found
+
+                _.each(requestItems, function(item) {
+                    if (quotaEexceeded || idNotFound) {
+                        return;
+                    }
+
+                    if (_.contains(newData.d, item)) {
+                    	idNotFound = true; // the next item is 'dateAdded', skip it
+                        return;
+                    }
+
+                    newData.d.push(item);
+                    newData.h = (CryptoJS.SHA1(JSON.stringify(newData.d))).toString(CryptoJS.enc.Hex);
+                    newData.c = _.size(newData.d).toFixed();
+
+                    var jsonString = JSON.stringify(newData);
+                    if (jsonString.length < 120000) {
+                        try {
+                            window.localStorage.setItem("rememberedItems", jsonString);
+                            rememberedItems = _.extend({}, newData);
+                        }
+                        catch (e) {}
+                    }
+                    else {
+                        quotaEexceeded = true;
+                    }
+                });
+
+                if (quotaEexceeded) {
+                    return JSON.stringify({
+                        h : rememberedItems.h,
+                        c : rememberedItems.c
+                    });
+                }
+                else {
+                    return JSON.stringify({
+                        h : newData.h,
+                        c : newData.c
+                    });
+                }
+            });
+
+            chRememberedItems.bind("del", function(trans, p) {
+                var requestItems = (function() {
+                    var _defaultItems = [];
+                    var _requestItems = null;
+
+                    try {
+                        _requestItems = JSON.parse(p);
+                    }
+                    catch (e) {}
+
+                    var isValid = _.isArray(_requestItems);
+
+                    return isValid ? _requestItems : _defaultItems;
+                })();
+                var rememberedItems = (function() {
+                    var currentObject = null;
+                    var defaultObject = {
+                        h : "",
+                        c : "0",
+                        d : []
+                    };
+
+                    try {
+                        currentObject = JSON.parse(window.localStorage.getItem("rememberedItems"));
+                    }
+                    catch (e) {}
+
+                    var isObject = _.isObject(currentObject);
+                    var hasHash  = (isObject && _.has(currentObject, "h") && _.isString(currentObject.h));
+                    var hasCount = (isObject && _.has(currentObject, "c") && _.isString(currentObject.c));
+                    var hasData  = (isObject && _.has(currentObject, "d") && _.isArray(currentObject.d));
+                    var isValid  = (hasHash && hasCount && hasData);
+
+                    return isValid ? currentObject : defaultObject;
+                })();
+                var newData        = _.extend({}, rememberedItems);
+                var quotaEexceeded = false;
+
+                _.each(requestItems, function(item) {
+                    if (quotaEexceeded) {
+                        return;
+                    }
+
+					var s = item.split('%');
+					var id = s[0];
+					var date = s[1];
+                    
+					if (date){
+						var sData = JSON.stringify(newData.d);
+						var sItem = '"'+id+'","'+date+'"';
+						
+	                    if ( !(new RegExp(sItem)).test(sData) ) {
+	                        return;
+	                    }
+	                    
+	                    var nd = newData.d;
+	                    for (var i = 0; i < nd.length; i++) {
+	                        if (nd[i] == id && nd[i+1] == date) { nd.splice(i, 2); }
+	                    }
+	                    newData.d = nd;
+					} else {
+						// without date						
+						var sData = JSON.stringify(newData.d);
+						var sItem = '"'+id+'"';
+						
+	                    if ( !(new RegExp(sItem)).test(sData) ) {
+	                        return;
+	                    }
+					
+	                    var nd = newData.d;
+	                    for (var i = 0; i < nd.length; i++) {
+	                        if (nd[i] == id) { nd.splice(i, 2); }
+	                    }
+	                    newData.d = nd;
+					}
+                    
+                    newData.h = (CryptoJS.SHA1(JSON.stringify(newData.d))).toString(CryptoJS.enc.Hex);
+                    newData.c = _.size(newData.d).toFixed();
+
+                    var jsonString = JSON.stringify(newData);
+                    if (jsonString.length < 120000) {
+                        try {
+                            window.localStorage.setItem("rememberedItems", jsonString);
+                            rememberedItems = _.extend({}, newData);
+                        }
+                        catch (e) {}
+                    }
+                    else {
+                        quotaEexceeded = true;
+                    }
+                });
+
+                if (quotaEexceeded) {
+                    return JSON.stringify({
+                        h : rememberedItems.h,
+                        c : rememberedItems.c
+                    });
+                }
+                else {
+                    return JSON.stringify({
+                        h : newData.h,
+                        c : newData.c
+                    });
+                }
+            });
+
+            
+            chRememberedItems.bind("repl", function(trans, p) {
+                var requestItems = (function() {
+                    var _defaultItems = [];
+                    var _requestItems = null;
+
+                    try {
+                        _requestItems = JSON.parse(p);
+                    }
+                    catch (e) {}
+
+                    var isValid = _.isArray(_requestItems);
+
+                    return isValid ? _requestItems : _defaultItems;
+                })();
+                var rememberedItems = (function() {
+                    var currentObject = null;
+                    var defaultObject = {
+                        h : "",
+                        c : "0",
+                        d : []
+                    };
+
+                    try {
+                        currentObject = JSON.parse(window.localStorage.getItem("rememberedItems"));
+                    }
+                    catch (e) {}
+
+                    var isObject = _.isObject(currentObject);
+                    var hasHash  = (isObject && _.has(currentObject, "h") && _.isString(currentObject.h));
+                    var hasCount = (isObject && _.has(currentObject, "c") && _.isString(currentObject.c));
+                    var hasData  = (isObject && _.has(currentObject, "d") && _.isArray(currentObject.d));
+                    var isValid  = (hasHash && hasCount && hasData);
+
+                    return isValid ? currentObject : defaultObject;
+                })();
+                var newData        = _.extend({}, rememberedItems);
+                var quotaEexceeded = false;
+
+                _.each(requestItems, function(item) {
+                    if (quotaEexceeded) {
+                        return;
+                    }
+
+                    
+					var s = item.split('%%');
+					var oldItem = s[0];
+					var newItem = s[1];
+					
+					var i = oldItem.split('%');
+					var id = i[0];
+					var date = i[1];
+					
+                    
+					var sData = JSON.stringify(newData.d);
+					var sItem = '"'+id+'","'+date+'"';
+					
+                    if ( !(new RegExp(sItem)).test(sData) ) {
+                        return;
+                    }
+
+                    var nd = newData.d;
+                    for (var i = 0; i < nd.length; i++) {
+                        if (nd[i] == id && nd[i+1] == date) { nd.splice(i, 1, newItem); }
+                    }
+                    newData.d = nd;
+
+                    
+                    newData.h = (CryptoJS.SHA1(JSON.stringify(newData.d))).toString(CryptoJS.enc.Hex);
+                    newData.c = _.size(newData.d).toFixed();
+
+                    var jsonString = JSON.stringify(newData);
+                    if (jsonString.length < 120000) {
+                        try {
+                            window.localStorage.setItem("rememberedItems", jsonString);
+                            rememberedItems = _.extend({}, newData);
+                        }
+                        catch (e) {}
+                    }
+                    else {
+                        quotaEexceeded = true;
+                    }
+                });
+
+                if (quotaEexceeded) {
+                    return JSON.stringify({
+                        h : rememberedItems.h,
+                        c : rememberedItems.c
+                    });
+                }
+                else {
+                    return JSON.stringify({
+                        h : newData.h,
+                        c : newData.c
+                    });
+                }
+            });
+            
+            
+   		</script>
+    
+</body></html>

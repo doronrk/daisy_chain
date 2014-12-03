@@ -1,0 +1,1 @@
+function getOlisID(){try{return window.kioskpro_id.toString();}catch(a){return null;}}function isOlisIdCookieSet(){return document.cookie.indexOf("OlisId")>=0;}function setOlisIdCookie(a){document.cookie="OlisId="+a+";path=/";}function kp_Vars_DidInject(){if(!isOlisIdCookieSet()){olisId=getOlisID();if(olisId){setOlisIdCookie(olisId);}}}

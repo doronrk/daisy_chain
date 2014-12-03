@@ -1,0 +1,3 @@
+var MONETATE_AUTH = 'monetate_auth';
+var MONETATE_AUTH_COOKIE_EXPIRY = 7;
+createCookie(MONETATE_AUTH, 'true', MONETATE_AUTH_COOKIE_EXPIRY);

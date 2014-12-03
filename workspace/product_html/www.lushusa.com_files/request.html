@@ -1,0 +1,12 @@
+OG.modifiers = {};OG.thresholds = {};OG.product_offer_map = {};
+(function() {
+    try {
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = 'https://static.ordergroove.com/24ba702afa0711e2a776a4badb29755d/1/0/w.js';
+
+        var head = document.getElementsByTagName('head')[0];
+        head.appendChild(script);
+    } catch(err) { console.log("OG: Could not attach script tag to the head."); }
+}());OG.product_offer_map["05433"] = "0";
+OG.product_autoship_map = {"05433": false};

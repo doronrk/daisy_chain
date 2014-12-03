@@ -1,0 +1,567 @@
+/* HTML ELEMENTS */
+body
+{
+	background: #23538C url(backgroundgradient.jpg) repeat-x top left;
+	color: #999999;
+	font-family: Verdana;
+	font-size: .8em; /* 13px */
+	margin: 5px 0 10px 0;
+}
+
+body, td, div, p
+{
+	line-height: 1.6em;
+}
+
+a
+{
+	color: #4374ae;
+	text-decoration:underline;
+}
+
+/* not sure if these H classes will be used */
+h1, h2, h3
+{
+	font-weight: normal;
+	margin: 0;
+}
+
+h1.pagetitle
+{
+	color: #4374AE;
+	font-size: 1.65em;
+	margin-bottom: 12px;
+}
+
+h2
+{
+	font-size: 1.3em;
+	margin-top: 12px;
+}
+
+.h2 /* like an inline h2, that can be placed in other containers */
+{
+	font-size: 1.3em;
+	margin-top: 12px;
+}
+
+h3
+{
+	font-size: 1.15em;
+	margin-top: 12px;
+	font-weight: bold;
+}
+
+.h3 /* like an inline h3, that can be placed in other containers */
+{
+	font-size: 1.15em;
+	margin-top: 12px;
+	font-weight: bold;
+}
+
+a
+{
+	text-decoration: underline;
+}
+
+a:hover
+{
+	text-decoration: none;
+}
+
+a img
+{
+	border: 0;
+}
+
+
+/* SPECIFIC PLACES/STRUCTURES ON THE PAGES */
+#frame1 /* just to keep the stuff outside the actual / main frame lined up right */
+{
+	margin: 0 auto 0 auto;
+	width: 988px;
+}
+
+#frame2
+{
+	background-color: #fff;
+	border: solid 1px #605271;
+	padding: 6px 0 8px 0px;
+	width: 986px; /* + border 2x1 + padding 0 */
+}
+
+#quicknav
+{
+	height: 24px;
+	padding-left: 16px;
+	padding-right: 16px;
+}
+
+#quicknav input
+{
+	border: solid 1px #cccccc;
+	color: #999999;
+	font-size: .9em;
+	margin: 0;
+	padding: 0;
+}
+
+#quicknav #search1
+{
+	color: #999999;
+	float: left;
+	height: 100%;
+}
+
+#quicknav #navlinks1
+{
+	text-align: right;
+}
+
+#quicknav #navlinks1 a
+{
+	color: #666666;
+	display: inline-block;
+	text-decoration:none;
+}
+
+#quicknav #navlinks1 a:hover
+{
+	color: #4374AE;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+#quicknav #navlinks1 .current
+{
+	font-weight: bold;
+	color: #4374AE;
+}
+
+
+#banner /* logo / rotating images, etc */
+{
+	background: lightblue url(categorylandingcandidate.jpg) no-repeat top left;
+	border-top: solid 2px #b3b3b3;
+	border-bottom: solid 2px #b3b3b3;
+	height: 242px;
+}
+
+#topnavcontainer
+{
+height:42px;
+	border-bottom:0;
+}
+
+#topnav /* primary site navigation, actual CSS is in tabs.css */
+{
+}
+
+.subnav
+{
+	display: none; /* overridden in template */
+	font-size: 1.1em;
+	text-align: center;
+}
+
+.subnav a
+{
+	color: #78AA3B;
+	margin-left: 15px;
+	margin-right: 15px;
+	text-decoration: none;
+}
+.subnav a:hover
+{
+	font-weight: bold;
+	text-decoration: none;
+}
+.subnav .subcurrent
+{
+}
+
+#moreinfo
+{
+	padding: 10px;
+}
+
+#moreinfo img
+{
+	border: solid 1px #78AA3B;
+}
+
+#moreinfo .subhead
+{
+	color: #78AA3B;
+	font-weight: bold;
+}
+
+#moreinfo img
+{
+	float: left;
+	margin-right: 10px;
+}
+
+#promospace
+{
+	margin-bottom: 16px;
+	margin-left: 8px;
+	margin-top: 20px;
+}
+
+#promospace div, #promospace p
+{
+}
+
+#promospace p
+{
+	margin: 0;
+	padding: 0;
+}
+
+
+.fbcolumn1, .fbcolumn2, .fbcolumn3
+{
+	vertical-align: top;
+}
+
+.fbcolumn1
+{
+	border-right: solid 1px #cccccc;
+	padding-left: 15px;
+	padding-right: 15px;
+	width: 451px; /* + border 1px + padding 15x2 = 482 */
+}
+
+.fbcolumn1 p, .fbcolumn1 div 
+{
+	line-height: 1.3em;
+}
+
+.fbcolumn2
+{
+	border-right: solid 1px #cccccc;
+	font-size: .85em;
+	padding-left: 15px;
+	padding-right: 15px;
+	width: 203px; /* + border 1x1 + padding 15x2  = 234 */
+}
+
+.fbcolumn2 p, .fbcolumn2 div 
+{
+	line-height: 1.2em;
+}
+
+.fbcolumn3
+{
+	font-size: .9em;
+	padding-left: 15px;
+	padding-right: 15px;
+	width: 224px; /* + padding 15x2 = 254 */
+}
+
+.fbcolumn3 p, .fbcolumn3 div 
+{
+	line-height: 1.3em;
+}
+
+.fbstyle1 .image
+{
+	float: left;
+	text-align: center;
+	margin-right: 15px;
+}
+
+.fbstyle1 .image img
+{
+	border: solid 1px #605271;
+	margin-bottom:2px;
+}
+
+.fbstyle1 .subhead
+{
+	color: #605271;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+.fbstyle1 a
+{
+	color: #605271;
+	text-decoration: underline;
+}
+
+.fbstyle2
+{
+	margin: 0 auto 0 auto; /* center the image and text in the column */
+	width: 186px; /* keeps the text and the image (184px + 1x2 border) the same width */
+}
+
+.fbstyle2 .subhead
+{
+	color: #BE1E2D;
+	font-weight: bold;
+}
+
+.fbstyle2 img
+{
+	border: solid 1px #BE1E2D;
+	margin-bottom: 15px;
+}
+
+.fbstyle2 a
+{
+	color: #BE1E2D;
+	text-decoration: underline;
+}
+
+.fbstyle3 .subhead
+{
+	color: #2B388F;
+	font-weight: bold;
+}
+
+.fbstyle3 a
+{
+	color: #2B388F;
+	text-decoration: underline;
+}
+
+#maincontent
+{
+	margin: 8px 8px 8px 8px;
+}
+
+
+#shopframe
+{
+	background-color: #F6F5F7;
+	border: solid 1px #605271;
+}
+
+#shopquicknav
+{
+	background-color: #605271;
+	color: #fff;
+	font-size: .9em;
+	height: 2em;
+	line-height: 2em;
+	margin-bottom: 4px;
+	padding: 1px 8px 3px 15px;
+}
+
+#shopquicknav a
+{
+	color: #fff;
+	text-decoration: underline;
+}
+
+#search2
+{
+	float: right;
+}
+
+#search2 input
+{
+	margin-top: 3px;
+	padding: 0;
+	font-size: .9em;
+}
+
+#shopnav
+{
+	font-size:.85em;
+	padding: 15px;
+	width: 162px; /* + padding 15x2 */
+	vertical-align: top;
+}
+
+#shopnav td, #shopnav p, #shopnav div
+{
+	line-height:1.2em;
+}
+
+#shopnav a:hover
+{
+	font-weight:bold;
+	text-decoration:none;
+}
+
+#shopnav .current a
+{
+	color: #4374AE;
+}
+
+#shopnav .current a:hover
+{
+	font-weight:bold;
+	text-decoration:none;
+}
+
+#shopbody
+{
+	background-color: #ffffff;
+	border: solid 1px #ccc;
+	padding-left: 10px; /* padding-right just sorts itself out */
+	padding-bottom: 20px;
+	vertical-align:top;
+}
+
+#shopbody #breadcrumbs
+{
+	font-size: .8em;
+	height: 2em;
+	padding-top: 2px;
+}
+
+#shopbody #breadcrumbs a
+{
+	color: #999999;
+	text-decoration: underline;
+}
+
+#shopspacer
+{
+	/* maybe try to figure a cooler way to do this...*/
+	width: 4px;
+}
+
+#shopfooter
+{
+	padding: 3px 40px 3px 15px;
+}
+
+.productbox
+{
+	float: left;
+	font-size: .8em;
+	line-height: 1.2em;
+	margin: 15px 30px 15px 30px; /* final row's bottom margin doesn't stick due to float(?) */
+	/* ie 6 could use margin-left @ 22px, see IE6.css */
+	text-align: center;
+	width: 124px; /* + margin 30x2 + padding 1x2 */
+}
+
+.productbox .itemname
+{
+	font-weight: bold;
+}
+
+.productbox a
+{
+	color: #4374AE;
+	text-decoration: underline;
+}
+
+.productbox img
+{
+	border: solid 1px #ADA987;
+	height: 94px;
+	margin: 0 auto 6px auto;
+	width: 126px;
+}
+
+#footer
+{
+	color: #fff;
+	font-size: .8em;
+	padding-right: 3px;
+	text-align: right;
+    background:transparent;
+}
+
+#footer a
+{
+	color: #fff;
+}
+
+/* SPECIFIC FONTS CLASSES */
+.offscreen /* not my favorite thing to do, but it works... */
+{
+	margin: 0 0 0 -5000px;
+	display: none;
+}
+
+.error
+{
+	color: #FF0000;
+}
+
+.centered
+{
+	text-align: center;
+}
+
+.bold
+{
+	font-weight: bold;
+}
+
+.floatleft
+{
+	float: left;
+}
+
+.overclear
+{
+	width: 100%;
+	overflow: hidden;
+}
+
+.black
+{
+	color:#000000;
+}
+
+.pcCatTier_1 /* dark plum */
+{
+	color:#605271;
+}
+
+
+.pcCatTier_2 /* dark plum */
+{
+	color:#605271;
+	margin-left:10px;
+}
+
+
+/* PAGE SPECIFIC ITEMS */
+
+/* start event page */
+#eventpage
+{
+	padding-left: 59px;
+	padding-right: 10px;
+	margin-top: 20px;
+}
+
+.eventcontainer img
+{
+	border: solid 1px #000;
+	float: left;
+}
+
+.eventcontainer
+{
+	margin: 25px 0 20px 0;
+}
+
+.eventdetail
+{
+	line-height: 1.2em;
+	padding-left: 184px;
+}
+
+.eventdetail .subhead1
+{
+	color: #D74037;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+.eventdetail .subhead2
+{
+	color: #4374AE;
+}
+/* end event page */

@@ -1,0 +1,7 @@
+(function(window){
+/*!*/
+var racOpts={version:"0.4",base:"http://harryanddavid.resultspage.com",onsubmit:undefined,target:["sli_search_rac"]};try{if(sliglobalopts&&sliglobalopts.rac){for(var i in sliglobalopts.rac){racOpts[i]=sliglobalopts.rac[i]}}}catch(e){}if(document.location.href.match(/atst\.bcohome\.bco\.com/)){racOpts.base="http://gifts-hand.atst.bcohome.bco.com";
+/*!*/
+}racOpts.onsubmit=function(param){};Function.prototype.slibind=function(obj){var method=this,temp=function(){return method.apply(obj,arguments)
+};return temp};var sliAutocomplete={opts:{version:"",path:"http://assets.resultspage.com/js/rac/sli-rac.stub",ext:"js",https:true},init:function(opts){for(var i in opts){this.opts[i]=opts[i]}this.load()},load:function(){var obj=this;if(obj.oScript){obj.stubInit()}else{obj.oScript=document.createElement("script");obj.oScript.type="text/javascript";var path=obj.opts.path+".";if(obj.opts.version!=""){path+=obj.opts.version+"."}path+=obj.opts.ext;if(obj.opts.https&&document.location.protocol=="https:"){path=path.replace(/^https?:/i,"https:")
+}obj.oScript.src=path;document.body.appendChild(obj.oScript)}},extend:function(obj){if(obj.extend){obj.extend(this)}else{for(var i in obj){this[i]=obj[i]}}}};window.sliAutocomplete=sliAutocomplete;if(jQuery.ready){jQuery(document).ready(function(){window.sliAutocomplete.init(racOpts)})}else{window.sliAutocomplete.init(racOpts)}})(window);

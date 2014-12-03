@@ -1,0 +1,294 @@
+/* CAROUSEL TEXT STYLES */
+.look-book .sharp-sans-exbld-14 {
+  font-family: "SharpSansNo1-Extrabold";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: 0.2em;
+  line-height:1em;
+}
+
+.look-book .ogg-50 {
+  font-family: "Ogg-Roman";
+  font-size: 50px;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: -0.02em;
+  line-height:50px;
+}
+
+.look-book .circular-pro-14 {
+  font-family: "LLCircularProWeb-Book";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: 0.2em;
+  line-height:16px;
+}
+/* ***** */
+
+
+.look-book .cf:before, .cf:after { content: " "; display: table; }
+.look-book .cf:after { clear: both; }
+.look-book .cf { *zoom: 1; }
+
+
+/* MAIN STYLES */
+
+.look-book {
+  margin:50px auto 65px;
+  position:relative;
+  width:797px;
+}
+
+.look-book *, .look-book *:before, .look-book *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.look-book .rel { position: relative; }
+.look-book .full-w { width:100%; }
+
+.look-book h1,
+.look-book h2 {
+  color:#000;
+  margin:0;
+  text-transform: uppercase;
+  text-align: center;
+}
+.look-book h2 {
+  margin-top:8px;
+}
+.look-book h2 span {
+  position: relative;
+  top:-4px;
+}
+
+.look-book ul, .look-book li {
+  list-style: none;
+  margin:0;
+  padding:0;
+}
+
+.look-book a {
+  text-decoration: none;
+}
+
+.look-book p {
+  margin:0;
+  padding:0;
+}
+
+
+.look-book .cta {
+  background:black;
+  border:1px solid white;
+  color:white;
+  display:inline-block;
+  font-family: "SharpSansNo1-Extrabold";
+  font-size:12px;
+  font-weight: normal;
+  height:42px;
+  letter-spacing: 0.2em;
+  line-height: 40px;
+  padding:0 30px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.look-book .cta:hover {
+  border-color:black;
+  background:white;
+  color:black;
+}
+
+.look-book .carousel-navigation-wrapper {
+  margin-top:40px;
+}
+
+.look-book .cc-carousel {
+  height:415px;
+  margin:0 auto;
+  overflow:hidden;
+  position:relative;
+  width:596px;
+}
+
+.look-book .cc-carousel-content {
+  height:100%;
+  position:relative;
+  width:50000px;
+}
+
+.look-book .cc-slide {
+  cursor: default;
+  float:left;
+  height:100%;
+  position:relative;
+  overflow:hidden;
+  width:596px;
+}
+
+.look-book .cc-slide.active {
+  /*left:0;*/
+}
+
+.look-book .cc-slide-content {
+  position: relative;
+  display:inline-block;
+}
+
+.look-book .cc-slide > img {
+  display:block;
+}
+
+.look-book .cc-slide .hotspot {
+  display:none;
+}
+.look-book .nav-arrow {
+  cursor: pointer;
+
+  position:absolute;
+  top:0;
+  height:100%;
+  width:25px;
+}
+
+.look-book .nav-arrow span {
+  display:block;
+  background:url(../img/nav-arrows.png) no-repeat;
+  height:9px;
+  margin-top:-5px;
+  position:absolute;
+  top:50%;
+  width:25px;
+}
+.look-book .nav-arrow.left {
+  left:2px;
+}
+.look-book .nav-arrow.right {
+  right:2px;
+}
+
+.look-book .nav-arrow.right span {
+  background-position: 0 100%;
+}
+
+.look-book .pagination-wrap {
+  text-align: center;
+  margin-top: 52px;
+}
+.look-book .pagination {
+  display:inline-block;
+}
+.look-book .pagination li {
+  cursor:pointer;
+  float:left;
+  padding:6px;
+}
+
+.look-book .pagination li:before {
+  content:"";
+  background:#bfbfbf;
+  border-radius: 100%;
+  display:block;
+  height:8px;
+  width:8px;
+}
+
+.look-book .pagination li.active:before,
+.look-book .pagination li:hover:before {
+  background-color:black;
+}
+
+
+/* HOTSPOTS */
+.look-book .cc-slide .qve-section {
+  position:absolute;
+  visibility: hidden;
+}
+
+.look-book .cc-slide .qve-section img {
+  position:relative;
+  width:28px;
+  height:29px;
+}
+.look-book .cc-slide .qve-section:hover img {
+  top:-18px\9;
+  left:-17px\9;
+  width:63px\9;
+  height:65px\9;
+}
+.look-book .cc-slide .qve-section .pqve-btn {
+  font-family: "SharpSansNo1-Extrabold";
+  font-weight: normal;
+  letter-spacing: 0.2em;
+  font-size: 12px;
+  position:absolute;
+  top:1px;
+  width:122px;
+  height:26px;
+  line-height:26px;
+  padding-left:11px;
+  color:#000;
+  cursor:pointer;
+  display:none;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.look-book .cc-slide .qve-section.hover {
+  z-index:5000;
+}
+.look-book .cc-slide .qve-section.hover .pqve-btn {
+  display:block;
+}
+
+
+
+.look-book .links-wrap {
+  margin:25px auto 0;
+  position:relative;
+  width:596px;
+  height:42px;
+}
+.look-book .links {
+  position:absolute;
+  width:596px;
+  top:0;
+  left:0;
+  text-align:center;
+}
+
+.look-book .links li {
+  width:293px;
+  display:inline-block;
+  margin-left:10px;
+}
+
+.look-book .links li:first-child {
+  margin-left:0;
+}
+
+.look-book .cta {
+  background:black;
+  border:1px solid black;
+  color:white;
+  display:inline-block;
+  font-family: "SharpSansNo1-Extrabold";
+  font-size:12px;
+  font-weight: normal;
+  height:42px;
+  letter-spacing: 0.2em;
+  line-height: 40px;
+  padding:0 30px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.look-book .cta:hover {
+  border-color:black;
+  background:white;
+  color:black;
+}

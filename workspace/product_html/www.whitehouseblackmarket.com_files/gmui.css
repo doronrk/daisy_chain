@@ -1,0 +1,1173 @@
+/**
+  Gifting Common
+*/
+
+.is-order-page .jqmOverlay { opacity:0.5 !important; filter:alpha(opacity=50) !important; }
+
+#gmuiModal {
+	width: 620px !important;
+	top: 15% !important;
+	display:none;
+}
+
+#gmuiModal a.qvClose{
+    float: right;
+    width: 40px;
+    height: 40px;
+    top: -20px;
+    position: relative;
+    left: 20px;
+    background: transparent url('/store/images/checkout_redesign/modal_close_btn.png') no-repeat center center;
+    _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/store/images/checkout_redesign/modal_close_btn.png', sizingMethod='scale');
+    _background-color: transparent;
+    _background: none;
+    cursor: pointer;
+}
+
+
+span.gifting-icon {
+    display: inline-block;
+    width: 12px;
+    height: 13px;
+    background: url('/web_assets/gmui/images/giftIcon.png') no-repeat;
+}
+div.pcItemGift span.gifting-icon {
+	margin-top:6px;
+}
+.is-order-confirm-page .sb-print-prod-column1 span.gifting-icon{
+	margin-right: 5px;	
+}
+.is-order-confirm-page .sb-print-prod-column1 table td{
+	padding-bottom:2px;	
+}
+div.gmui-header {
+    width:620px;
+    height:48px;
+}
+div.gmui-header span {
+    display:none;
+}
+
+.gmui-button {
+    cursor: pointer;
+    border:none;
+}
+
+.gmui-button span {
+    display:none;
+}
+
+/*.controls {
+    overflow:hidden;
+}*/
+
+.controls button {
+    float:left;
+}
+
+.controls .previous {
+    float: left;
+    line-height: 24px;
+    margin-left: 20px;
+    font-size: 11px;
+}
+
+.next.gmui-button {
+    width: 160px;
+    height: 28px;
+    background: url('/web_assets/gmui/images/modal-button-add-gift.png') no-repeat;
+    margin-right:20px;
+}
+
+.giftList .next.gmui-button{
+    background: url('/web_assets/gmui/images/modal-button-next.png') no-repeat;
+}
+
+.gmui-error-box {
+    color:#990000;
+    border: 1px solid #990000;
+    display: block;
+    clear: both;
+    width: 580px;
+    margin: 10px auto;
+    padding: 10px 0;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.gmui-error-hidden {
+    display:none;
+}
+
+.gift-button-hide {
+    display:none;
+}
+
+/**
+  Checkout page
+*/
+
+#co-shipping-gift-options {
+    color:#000;
+    font-family: Arial,Helvetica,sans-serif;
+    font-style: normal;
+    font-size: 11px;
+    width:580px;
+	padding-top:30px;
+}
+#co-shipping #co-shipping-gift-options{
+	margin-top:0px;
+}
+#co-shipping .co-gifted-items h2{
+	margin-top:none;	
+}
+.co-gifted-items dd{
+	padding-bottom:0;
+	color:#989898;	
+}
+#co-shipping .co-gifted-items dd.gift-controls{
+	color:#444444;
+	margin-top:3px;
+}
+#co-shipping-gift-options p{
+	font-size:13px !important;
+	color:#444;	
+}
+#co-shipping-saved-addresses .co-label{
+	padding-top:20px;
+	font-weight:normal;
+}
+#co-shipping-options .co-shipping-review-title h2 {
+    margin: 10px 0 20px;
+}
+
+.is-order-confirm-page h2 span.co-shipping-review-title-separator-2,
+.is-order-confirm-page h2 span.co-shipping-review-title-address1,
+#co-shipping-options .co-shipping-review-title h2 span.co-shipping-review-title-separator-2,
+#co-shipping-options .co-shipping-review-title h2 span.co-shipping-review-title-address1 {
+    font-size: 12px;
+}
+
+#co-shipping-review-names-wrapper {
+    margin-bottom: 5px;
+}
+
+.co-shipping-not-multi .co-products-in-shipment, .co-shipping-not-multi .co-products-in-shipment-title{
+    display:none;
+}
+.createShipAddressShipMethodDiv #co-shipping-save-address{
+	position:relative;
+	top:3px;
+}
+.createShipAddressShipMethodDiv #co-shipping-save-address, #modal-form-save-shippingMethod{
+	margin-right:4px;
+}
+.createShipAddressShipMethodDiv .co-shipping-cell{
+	font-size:11px;
+	vertical-align:middle;
+}
+button.shipToMulitAddress {
+    width: 190px;
+    height: 20px;
+    background: url('/web_assets/gmui/images/button-ship-to-multiple-addresses.png') no-repeat;
+}
+
+.co-shipping-has-multi button.shipToMulitAddress {
+    width: 170px;
+    height: 20px;
+    background: url('/web_assets/gmui/images/button-edit-shipping-options.png') no-repeat;
+}
+
+.co-shipping-not-multi #co-shipping-multi-address{
+    display:block;
+    margin-bottom: 20px;
+}
+
+.co-shipping-not-multi #co-shipping-edit-multi-address {
+    display:block;
+    padding-top: 10px;
+}
+
+.start-step #co-shipping-edit-multi-address {
+    display: none;
+}
+
+.co-shipping-form-header {
+    padding-top:10px;
+}
+
+.co-shipping-form-header span {
+    float:left;
+}
+
+.co-shipping-form-header #co-shipping-multi-address {
+    margin-bottom: 0;
+}
+
+#co-shipping-multi-address {
+    float:right;
+}
+
+button.giftOptionsButton.view-gift-options {
+    width: 128px;
+    height: 20px;
+    background: url('/web_assets/gmui/images/button-view-gift-options.png') no-repeat;
+}
+
+button.giftOptionsButton.gift-more-items {
+    width: 130px;
+    height: 30px;
+    background: url('/web_assets/gmui/images/button-gift-more-items.png') no-repeat;
+}
+
+#co-shipping-gift-options {
+    overflow:hidden;
+}
+
+#co-shipping-gift-options button.giftOptionsButton.gift-more-items {
+    float:right;
+}
+
+#co-shipping-gift-promo {
+    float:left;
+}
+
+#co-shipping-gift {
+    float:right;
+    margin:5px 0;
+}
+
+#co-shipping-review.co-shipment-0 {
+    border-top: none;
+    padding-top: 0px;
+}
+
+.co-gifted-items h2 {
+    margin: 15px 0 0 0;
+    font-size: 17px;
+}
+
+.co-gifted-items ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow:hidden;
+    width: 580px;
+}
+
+.co-gifted-items ul li {
+    float:left;
+    margin-top: 10px;
+}
+
+.co-gifted-items ul li img,
+.co-gifted-items ul li dl {
+    float:left;
+}
+.co-gifted-items ul li dl {
+    margin: 0 10px 0;
+    padding: 0;
+    width: 215px;
+}
+.co-gifted-items ul li dl:nth-child(odd)
+{
+    width: 225px;
+}
+.co-gifted-items ul li dl:nth-child(even)
+{
+	margin:0 0 0 10px;
+	width:225px;
+}
+.co-gifted-items ul li dl dt, .co-gifted-items dl dt {
+    font-size: 12px;
+}
+
+.co-gifted-items dd {
+    margin: 0;
+    padding: 3px 0 0 0;
+}
+
+
+.co-gifted-items dd .gift-to-seperator{
+	padding:0 5px;
+}
+
+.co-gifted-items dd.gift-controls{
+	font-size: 10px;
+}
+.co-gifted-items.gifted-together .gifted-item{
+    margin: 5px 22px 0 0;
+}
+
+.gift-controls {
+    overflow: hidden;
+}
+
+.gift-controls span.gift-edit {
+    margin-right: 14px;
+}
+
+.gift-controls span.gift-edit,
+.gift-controls span.gift-remove {
+    float:left;
+    text-decoration: underline;
+    cursor: pointer;
+	color:#444444;
+}	
+
+.gift-controls span.gift-remove-hide {
+    display:none;
+}
+
+.gift-controls span.gift-remove-confirm {
+    cursor: default;
+    text-decoration: none;
+    color: #990000;
+}
+
+.gift-controls .gift-remove-confirm-yes,
+.gift-controls .gift-remove-confirm-no {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#co-shipping-review {
+    border-top: 2px solid #000;
+    margin: 10px 0;
+}
+
+#co-shipping-review .co-gift-more-items-wrapper {
+    display: none;
+}
+
+.co-shipping-review-options-wrapper {
+    overflow:hidden;
+}
+
+.co-shipping-review-products {
+    margin-top:20px;
+}
+
+.co-shipping-review-products h2 {
+    font-size: 15px;
+    margin: 10px 0 0;
+}
+
+.co-shipping-copy-hide {
+    display:none;
+}
+
+/**
+  Address Modal
+*/
+
+div.gmui-header.assign-items-to-addresses {
+   background: url('/web_assets/gmui/images/modal-header-assign-items-to-addresss.png') no-repeat #f8f5ed;
+}
+
+.addressList table {
+    width:580px;
+    margin:0px 19px;
+    border-spacing:0;
+    border-collapse:collapse;
+}
+
+.addressList table.addressTableHeader {
+    margin-top: 35px;
+}
+
+.addressList .addressTable-wrapper {
+    height: 536px;
+	width:599px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: block;
+}
+
+.addressList table td {
+    padding:0px;
+    margin:0px;
+}
+
+.addressList table th {
+    text-align: left;
+    padding-bottom: 10px;
+    text-align: left;
+}
+
+.addressList table th.itemHeader {
+    width:370px;
+}
+.addressList table td.itemCell{
+	width:342px;	
+}
+.addressList button.finish {
+    width: 159px;
+    height:28px;
+    border: none;
+}
+
+.addressList dl.itemDetails {
+    float:left;
+    width: 195px;
+    text-align: left;
+    margin: 0px;
+    padding: 0px;
+}
+
+.addressList dl.itemDetails dd {
+    padding-top:8px;
+    font-size: 11px;
+}
+
+.addressList dl.itemDetails dd.item-is-gift {
+    display:none;
+}
+
+.addressList dl.itemDetails dt, .addressList dl.itemDetails dd {
+    margin:0px;
+}
+
+.addressList td.itemCell, .addressList td.addressCell {
+    vertical-align: top;
+}
+
+.addressList td.itemCell div.item-wrapper {
+    margin: 20px 0;
+    min-height: 65px;
+    overflow:hidden;
+}
+
+.addressList .itemCell img {
+    float:left;
+    margin-right: 10px;
+}
+
+.addressList .addressCell {
+    width: 190px;
+    padding-top: 20px;
+    text-align: left;
+}
+
+.addressList .addressCell select {
+    width: 180px;
+}
+.addressTable .item-price-label{
+	margin-right:3px;
+}
+
+#modal-update-shippingAddr.createShipAddressShipMethodDiv h3{
+	padding-bottom:0;
+}
+#modal-update-shippingAddr.createShipAddressShipMethodDiv#modal-update-shippingAddr{
+	border-bottom: 1px solid #A8A8A8;
+    padding-bottom: 30px;
+}
+/**
+  Create New Address Modal
+*/
+
+div.gmui-header.add-new-address {
+   background: url('/web_assets/gmui/images/modal-header-add-new-address.png') no-repeat #f1645d;
+}
+div.createShipAddressShipMethodDiv {
+    margin: 5px 20px;
+    padding: 15px 0 0 0;
+}
+#modal-update-shippingMethod{
+	margin-top: 10px;
+	margin-top: 15px\9;
+	margin-bottom:0px\9;	
+}
+#modal-update-shippingMethod .controls{
+	padding-left: 0px !important;	
+}
+#modal-update-shippingAddr.createShipAddressShipMethodDiv{
+	border:none;
+}
+
+.new-address-shipping-method #createShipAddressShipMethod {
+    margin: 20px;
+}
+
+.new-address-shipping-method #createShipAddressShipMethodSubmit {
+    background: url('/store/images/checkout_redesign/co_modal_btn_updateYourOrder.gif') no-repeat;
+    width: 187px;
+    height: 37px;
+}
+
+div.bottom-border-gold {
+    border-bottom: 1px solid #ba8748;
+}
+
+#createShipAddressShipMethod .save-apply {
+    background: url('/web_assets/gmui/images/modal-button-save-and-apply.png') no-repeat;
+    width: 152px;
+    height: 37px;
+}
+
+.modal-form-save-shippingMethod-wrapper {
+    padding-top:5px;
+}
+.modal-form-save-shippingMethod-wrapper #modal-form-save-shippingMethod{
+	margin-right:7px;	
+}
+/**
+   Gifting Modal
+*/
+div.gmui-header.gifting-options {
+    background: url('/web_assets/gmui/images/modal-header-gifting-options.png') no-repeat #f8f5ed;
+}
+
+.newGift h3 {
+    margin-top: 30px;
+    font-size: 22px;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.newGift #together,.newGift #individual {
+    width: 255px;
+    height: 271px;
+    background: none;
+    cursor:pointer;
+    border: 1px solid #fff;
+	padding-bottom: 15px;
+}
+
+.newGift #together,
+.newGift #individual {
+    background: url('/web_assets/gmui/images/modal-button-new-gift-grad-inactive.png') repeat-x;
+}
+
+.newGift #together:hover,
+.newGift #individual:hover {
+    border: 1px solid #ccc;
+    background: url('/web_assets/gmui/images/modal-button-new-gift-grad.png') repeat-x;
+}
+
+.newGift #together .gift-together-icon {
+    background: url('/web_assets/gmui/images/modal-gift-together-icons.png') no-repeat center 10px;
+    width: 100%;
+    height: 170px;
+    display: block;
+}
+
+.newGift #individual .gift-individual-icon {
+    background: url('/web_assets/gmui/images/modal-gift-individual-icons.png') no-repeat center 10px;
+    width: 100%;
+    height: 170px;
+    display: block;
+}
+
+/* .newGift #together h2 {
+    margin-top:0;
+    margin-bottom: 5px;
+}
+
+.newGift #individual h2 {
+    margin-top:0;
+    margin-bottom: 5px;
+} */
+
+.newGift #together h2, .newGift #individual h2{
+	font-size: 18px;
+	font-weight:normal;
+	 margin: 5px 0 8px !important;
+	 font-weight:normal;
+}
+
+.newGift #together .gift-together-text {
+    font-size: 12px;
+}
+
+.newGift #together .gift-together-text, .newGift #individual .gift-individual-text {
+    font-size: 11px !important;
+    line-height: 16px;
+}
+
+.newGift ul.gift-selection {
+    margin:25px 20px;
+    padding:0px;
+    overflow: hidden;
+}
+
+.newGift ul.gift-selection li.gift-or {
+    text-transform: uppercase;
+    margin: 135px 25px 0 25px;
+    float: left;
+    font-weight:bold;
+}
+.giftItem #giftItemForm .itemGiftbox ul{
+	border-top: 1px solid #E1E1E1;
+    padding-top: 20px !important;
+}
+.giftItem .togetherMessage h3 {
+    text-align: left;
+    margin: 20px 20px 20px;
+}
+
+.giftItem .itemStepDetails {
+    border-bottom: 1px solid #E6DDC4;
+    margin-bottom: 20px;
+    overflow: hidden;
+    padding: 30px 20px 20px;
+    text-align: left;
+}
+
+.giftItem .itemStepDetails .itemImage {
+    float:left;
+}
+
+.giftItem .itemStepDetails .itemDetails {
+    float:left;
+    margin-left:10px;
+}
+
+.giftItem .itemStepDetails .itemDetails h3 {
+    margin-bottom: 10px;
+    margin-left: 0;
+    margin-top:-3px;
+    font-size: 22px;
+}
+.giftItem .itemPrice{
+	font-size:11px;	
+	margin-top:6px;
+}
+.giftItem .itemPrice small{
+	color:#989898;
+}
+
+.giftItem .itemStepDetails .itemDetails span {
+    display:block;
+}
+
+.giftItem .togetherMessage span {
+    display:none;
+}
+
+.giftItem button.finish {
+    width: 159px;
+    height: 28px;
+}
+
+.giftItem .itemMessage {
+    margin: 0 20px;
+}
+
+.giftItem .itemMessageFields {
+    text-align: left;
+}
+
+.giftItem .itemMessageFields li.toFromMessage {
+    float:left;
+}
+
+.giftItem .itemMessageFields .giftbox-not-available {
+    display:block;
+}
+
+.giftItem .itemMessageFields .itemGiftbox {
+    display:block;
+}
+
+.giftItem ul {
+    margin: 0;
+    padding: 0;
+}
+
+.giftItem  li.toFromMessage {
+    float:left;
+}
+
+.giftItem .itemMessageFields #giftedTo,.giftItem .itemMessageFields #giftedFrom {
+    width: 280px;
+    margin-right:0px;
+}
+
+.giftItem .itemMessageFields .toFromMessage .giftedFrom label {
+    margin-top:20px;
+}
+.giftItem li.giftedTo label, .giftItem li.giftedFrom label{
+    display:block;
+    padding-bottom: 2px;
+    width: 70px;
+}
+
+.giftItem .giftMessage {
+    float: left;
+    width: 280px;
+    margin-left: 15px;
+}
+.giftItem #giftMessage {
+    width: 280px;
+    height: 75px;
+    margin-top: 2px;
+    overflow:auto;
+}
+
+.giftItem .remainingCharsMessage-wrapper {
+    text-align: right;
+    clear: both;
+    padding: 10px 0 20px 0;
+    font-size: 10px;
+    color:#474747;
+}
+
+.giftItem .itemGiftbox {
+    margin: 0px 20px;
+    text-align: left;
+}
+.giftItem .itemGiftbox ul {
+    overflow: hidden;
+    clear:both;
+}
+
+.giftItem .giftReceipt{
+    display:none;
+}
+
+.giftItem .hasGiftReceipt {
+    text-align: left;
+    margin: 20px 20px 0;
+    padding: 20px 0px;
+	border-top: 1px solid #E1E1E1;
+	border-bottom: 1px solid #E1E1E1;
+}
+
+.giftItem .hasGiftReceiptCheckbox {
+    display: none;
+}
+
+.giftItem .hasGiftMessage {
+    display:none;
+}
+
+.giftItem .giftBoxCheckbox {
+    float:left;
+}
+
+.giftItem .giftBoxCheckbox input {
+    margin-right: 10px;
+    position: relative;
+    top: 2px;
+}
+
+.giftItem .boxDetails {
+    float:left;
+    width: 170px;
+}
+
+.giftItem .boxName {
+	font-size:12px;
+}
+
+.giftItem .boxDescription {
+    display:block;
+    font-size:11px;
+}
+.giftItem .boxAdditionalDescription {
+    display:block;
+    font-size:11px;
+	margin-top:10px;
+}
+.giftItem .boxDetails img {
+    display: block;
+}
+
+.giftItem .giftBoxOption.noBoxOption {
+    display:none;
+}
+
+.giftList {
+    text-align: left;
+}
+
+.giftList h3 {
+    font-size:25px;
+    margin: 30px 20px;
+}
+
+.giftList span.isGifted-empty {
+    text-align: center;
+    margin: 30px 20px;
+}
+
+.giftList span.selectItem {
+    float: left;
+    width: 24px;
+}
+
+.giftList dl {
+    margin-left: 24px;
+}
+
+.giftList dl dd {
+    margin: 0;
+    padding: 0;
+}
+.giftList .item  dl dd span {
+	color: #989898;
+	margin-right:3px;
+}
+
+/**
+  Order Confirmation
+*/
+body.multiship-true #co-orderReview-items-header {
+    display:none;
+}
+
+.is-order-confirm .co-orderReview-gifts {
+    display: none;
+}
+
+.my-order-shipment-header {
+    display:block;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    padding-top: 25px;
+}
+
+body.multiship-true .co-orderReview-content {
+    overflow:hidden;
+}
+
+body.multiship-true .co-orderReview-content h2 {
+    margin:0px;
+}
+body.multiship-true .my-order-shipment-title h2 {
+    padding-top: 25px;
+    border-top: 1px solid #ccc;
+}
+
+body.multiship-true .my-order-shipment-title.my-order-shipment-1 h2 {
+    border:none;
+}
+
+.is-order-confirm-page tr.my-order-shipment-title.my-order-shipment-1 td {
+    padding-top: 0;
+}
+
+body.multiship-true .co-orderReview-content h2.co-orderReview-shipping-title {
+
+}
+
+body.multiship-true #co-orderReview-items-wrapper {
+    display:none;
+}
+
+body.multiship-false .co-orderReview-shipping-title {
+    display: none;
+}
+
+.is-order-confirm-page .co-gifted-items {
+    padding-top:20px;
+}
+
+.is-order-confirm-page .co-orderReview-content {
+    padding: 0 0 0 20px;
+    margin:0px;
+    overflow: hidden;
+    width: 601px;
+}
+
+.is-order-confirm-page .hasGift-false {
+    display: none;
+}
+
+.is-order-confirm-page #co-shipping-header,
+.is-order-confirm-page #co-billing-header,
+.is-order-confirm-page .co-orderReview-header {
+    position: relative;
+}
+
+.is-order-confirm-page .co-gifted-items.gifted-together,
+.is-order-confirm-page .co-gifted-items.gifted-individually {
+  clear:both;
+}
+
+.is-order-confirm-page .co-gifted-items.gifted-individually ul {
+    overflow: hidden;
+}
+
+.is-order-confirm-page .co-gifted-items.gifted-individually li {
+
+}
+
+.is-order-confirm-page.multiship-false .my-order-shipment-title,
+.is-order-confirm-page.multiship-false .my-order-shipment-header {
+    display:none;
+}
+
+.is-order-confirm-page.multiship-true #co-orderReview-items-header{
+    display:none;
+}
+
+.is-order-confirm-page .co-orderReview-content h2 {
+    margin-bottom: 0px;
+    font-size: 25px;
+}
+
+.is-order-confirm-page .co-orderReview-content #co-orderReview-items-list h2{
+	font-size: 22px;	
+}
+
+.is-order-confirm-page .co-orderReview-content .co-gifted-items h2{
+    color: #444444;
+    font-style: normal;
+    font-family: Trebuchet, Arial, sans-serif;
+    font-size: 15px;
+    font-weight:normal;
+    margin-bottom: 0px;
+}
+.gifted-together dt {
+    margin-top: 10px;
+}
+
+.is-order-confirm-page .co-orderReview-content .co-gifted-items dl {
+    margin-top: 0px;
+}
+
+.is-order-confirm-page .co-orderReview-content .co-gifted-items ul,
+.is-order-confirm-page .co-orderReview-content .co-gifted-items ul li {
+
+}
+.gifted-items .packaged-together-message, .gifted-together .packaged-together-message{
+	margin-left:3px;
+}
+.gifted-items .gift-box-type-and-price{
+	margin-top:0px;
+}
+.is-order-confirm-page .co-shipping-group {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #ccc;
+}
+
+.is-order-confirm-page .co-shipping-group.co-sg-1 {
+    border-top:none;
+    padding-top: 0;
+}
+
+.is-order-confirm-page .co-orderReview-options {
+    padding:0px;
+}
+
+.is-order-confirm-page .co-orderReview-content.co-orderReview-order-details,
+.is-order-confirm-page .co-orderReview-content.co-orderReview-billing
+{
+    margin-top:20px;
+}
+
+.is-order-confirm-page #co-orderReview .co-orderReview-content {
+    margin-top: 0px;
+}
+
+.is-order-confirm-page .print-products {
+
+}
+
+.is-order-confirm-page #co-orderReview-items-list .print-item-row {
+    padding-top: 20px;
+}
+
+.is-order-confirm-page .print-products{
+    display: none;
+}
+
+.is-order-confirm-page .my-order-shipment-title {
+    margin-top: 10px;
+}
+
+.is-order-confirm-page .my-order-shipment-title h2{
+    margin-bottom: 0px;
+}
+
+.is-order-confirm-page #co-orderReview-items {
+    border-bottom: 1px solid #ccc;
+}
+
+.is-order-confirm-page #co-orderReview-items {
+    margin-bottom: 50px;
+}
+
+.is-order-confirm-page tr.my-order-shipment-title td {
+    padding-top: 20px;
+}
+
+.is-order-confirm-page #co-orderReview-items-wrapper {
+    padding-top: 0;
+}
+
+.is-order-confirm-page #co-orderReview-items {
+    padding: 0 0 20px 0;
+}
+
+.is-order-confirm-page .co-shipping-group h2.co-orderReview-shipping-title {
+    padding-bottom: 15px;
+}
+
+.is-order-confirm-page td.item-is-gift {
+    padding-top: 4px;
+	padding-bottom:6px !important;
+}
+
+.is-order-confirm-page .giftOptionsButton, .is-order-confirm-page .gift-controls{
+    display:none;
+}
+
+.is-order-confirm-page .shipment-gifting {
+
+    clear:both;
+}
+
+.is-order-confirm-page .shipment-gifting .co-products-in-shipment {
+
+}
+
+.is-order-confirm-page .co-orderReview-content h2.co-products-in-shipment-title  {
+    padding-top: 20px;
+    color: #444444;
+    font-style: normal;
+    font-family: Trebuchet, Arial, sans-serif;
+    font-size: 15px;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+body.multiship-false #co-orderReview-items-header {
+    margin-top:15px
+}
+
+#gmuiModal ul {
+    list-style: none;
+}
+.newGift ul li {
+    float:left;
+}
+.newGift ul li button {
+    display:block;
+}
+#gmuiModal {
+    background:#fff;
+}
+ul.scrollableList {
+    list-style: none;
+    overflow:auto;
+    margin: 0px 0px 0px 20px;
+    padding: 0px;
+    max-width: 620px;
+    min-height:165px;
+    min-width:590px;
+    max-height: 480px;
+}
+ul.scrollableList li {
+    float:left;
+    width: 130px;
+    height: 160px;
+    margin-right:15px;
+	margin-bottom:15px
+}
+ul.scrollableList dl dt{
+	margin: 2px 0;
+}
+.giftList .scrollableList dt  {
+   margin:10px 0 7px 0;
+   margin-bottom:1px\9;
+}
+.giftList .scrollableList dl dd  {
+    font-size:11px;
+}
+.gmui-form-error {
+    color:red;
+    display:block;
+    margin:10px auto;
+}
+#gmuiModal .controls {
+    text-align: left;
+    padding: 25px 0 25px 20px;
+	overflow: hidden;
+}
+#gmuiModal .controls button {
+    float:left;
+}
+#gmuiModal .controls .previous {
+    float: left;
+    line-height: 24px;
+    margin-left: 20px;
+    font-size: 11px;
+}
+#gmuiModal .giftList .controls{
+	padding-top:0px;
+}
+#createShipAddressShipMethod .controls {
+	padding-top:40px;
+    padding-bottom: 0px\9;
+}
+.co-products-in-shipment {
+    list-style: none;
+    margin: 0px auto;
+    padding: 0px;
+    overflow:hidden;
+    clear:both;
+}
+.co-products-in-shipment li {
+    float:left;
+    margin: 0px 10px 0px 0px;
+}
+
+h2.co-products-in-shipment-title {
+    margin: 20px 0 10px 0;
+    margin-top:15px\9;
+}
+
+.co-shipping-review-options.last {
+   /*  float:right; */
+}
+
+#co-shipping-edit-multi-address{
+    overflow:hidden;
+    /* width:580px; */
+    width:auto;
+}
+.shipToMulitAddress {
+    float:right;
+}
+.co-shipping-has-multi #co-shipping-multi-address{
+    display:none;
+}
+.co-shipping-has-multi #co-shipping-edit-multi-address{
+    display:block;
+	float:right;
+    padding-top:15px;
+}
+.co-shipping-not-multi .co-shipping-review-title h2 {
+    display:none;
+}
+
+#co-shipping-header {
+    position: relative;
+    /* margin-bottom: 15px; */
+}
+
+#co-shipping-content {
+    clear:both;
+    padding-top: 5px;
+}
+
+#co-order-commit-actions {
+    margin-top: 20px;
+}
+.co-cart-column1 {
+    padding-right: 9px !important;
+    width: 0;
+}
+.session-timeout-actions{
+	margin-top:20px;
+}
+#co-orderDetails-summary .co-gifted-items dd{
+	margin:5px 0 0;	
+}

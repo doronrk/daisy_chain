@@ -1,0 +1,836 @@
+/* jqModal base Styling courtesy of;
+	Brice Burgess <bhb@iceburg.net> */
+
+/* The Window's CSS z-index value is respected (takes priority). If none is supplied,
+	the Window's z-index value will be set to 3000 by default (via jqModal.js). */
+.modalContainer{
+	position: absolute;
+	top: 67%;
+	_top: 66%;
+	left: 14%;
+	_left: 30%;
+	margin-left: -312px;
+	display: none;
+}
+html>/**/body .modalContainer{
+	top: 63%;
+	left: 31%;
+}
+.giftModalContainer{
+	position: absolute;
+	top: 25%;
+	_top:25%;
+	left: 10%;
+	_left: 34%;
+	margin-left: -312px;
+	display: none;
+}
+
+html>/**/body .giftModalContainer{
+	top: 29%;
+	left: 50%;
+}
+
+* html #emailModal {
+	 position: absolute;
+	 top: expression((document.documentElement.scrollTop || document.body.scrollTop) + Math.round(17 * (document.documentElement.offsetHeight || document.body.clientHeight) / 100) + 'px');
+}
+
+.panel{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#shippingContent .panel{
+	width: 150px;
+	height: 300px;
+}
+#paymentContent .panel{
+	background: yellow;
+	width: 300px;
+	height: 300px;
+}
+.jqmWindow {
+
+}
+.jqmOverlay { background-color: none; }
+.jqmGiftOverlay { background-color: #fff; }
+
+/* Background iframe styling for IE6. Prevents ActiveX bleed-through (<select> form elements, etc.) */
+* iframe.jqm {position:absolute;top:0;left:0;z-index:-1;
+	width: expression(this.parentNode.offsetWidth+'px');
+	height: expression(this.parentNode.offsetHeight+'px');
+}
+
+
+
+/* Gift Packing Popup
+---------------------------------------------------------*/
+
+#addGiftPacking .modalContainer{
+	
+}
+#addGiftPacking .container,
+#removeGiftPacking .container{
+	width: 419px;
+	height: 360px;
+	background: url(../../images/revamp/giftPackaging/bg_dropShadow.png) no-repeat 0 0;
+	margin: 0 auto;
+	padding:6px 0 0 11px;
+	overflow:hidden;
+}
+
+#addGiftPacking .container .header,
+#removeGiftPacking .container .header{
+	background-color: #a49791;
+	padding: 5px 5px 0 0;
+	color: #fff;
+	margin: 0 auto;
+	text-align:center;	
+	width: 405px;
+	height: 77px;
+	float:left;
+}
+
+
+#addGiftPacking .container .header .closeBtn,
+#removeGiftPacking .container .header .closeBtn,
+#shippingContent .shippingFeeCont .closeBtn,
+#paymentContent #deferredPaymentContainer .closeBtn,
+#emailContainer .closeBtn{
+	float:right; 
+}
+#addGiftPacking .container .header a img,
+#removeGiftPacking .container .header a img,
+#shippingContent .shippingFeeCont a img,
+#paymentContent #deferredPaymentContainer a img,
+#emailContainer a img{border: none;}
+
+#addGiftPacking .container .header h1,
+#removeGiftPacking .container .header h1{
+	padding:0;
+	text-indent: -200em;
+	margin: 24px auto 0 auto;
+}
+
+html>/**/body #addGiftPacking .container .header h1,
+html>/**/body #removeGiftPacking .container .header h1 {
+	margin: 20px auto 0 auto;
+}
+#addGiftPacking .container .header h1.addPackaging{
+	background:url(../../images/revamp/giftPackaging/title_addPackaging.gif) no-repeat; 
+	width:198px; 
+	height: 27px;
+}
+#removeGiftPacking .container .header h1.removePackaging{
+	background:url(../../images/revamp/giftPackaging/title_removePackaging.gif) no-repeat; 
+	width:240px; 
+	height: 28px;
+}
+#removeGiftPacking .container h2{
+	margin:0 0 12px 0;
+	font-size:14px;	
+	color: #786a65;
+	font-weight:normal;
+	text-transform:uppercase;
+}
+#addGiftPacking .container .header p,
+#removeGiftPacking .container .header p{padding: 0; margin:6px 0 0 0; color: #eae7e6; font-size:12px;}
+
+#removeGiftPacking .removeGiftPackagingForm,
+#addGiftPacking .addGiftPackagingForm{
+	padding: 14px 10px 0 10px;
+	text-align:center;
+	float:left;
+	background-color: #f1efee;
+	width: 390px;
+	height:256px;
+}
+
+#addGiftPacking fieldset,
+#removeGiftPacking fieldset{
+	padding:0 5px 5px 5px;
+	border-style: hidden;
+	border-width: 0;
+	color: #786a65;
+	background-color: #f1efee;
+	font-size: 12px;
+}
+
+#addGiftPacking fieldset ol {
+	margin: 0;
+	padding: 15px 0 10px 0;
+}
+#removeGiftPacking fieldset ol {
+	margin: 0;
+	padding: 0 0 10px 0;
+}
+#addGiftPacking fieldset ol li,
+#removeGiftPacking fieldset ol li {
+	list-style: none;
+	margin: 0;
+	padding: 1px 0 6px 0;
+	overflow: hidden;
+	_height: 1%;
+}
+
+
+#addGiftPacking fieldset label,
+#removeGiftPacking fieldset label{
+	float: left;
+	width: 75px;
+	margin-right: 9px;
+	font-size:12px;
+	color: #786a65;
+	vertical-align: top;
+	text-align: right;
+}
+#addGiftPacking .addGiftPackagingForm input,
+#removeGiftPacking .removeGiftPackagingForm input{
+	width: 250px;
+	float: left;
+	font-size:12px;
+	color: #948f8f;
+}
+#removeGiftPacking .removeGiftPackagingForm input{
+	background-color:#f1efee;
+}
+#removeGiftPacking li.textAreaBox {
+	clear:both;
+	margin:0;
+	padding:0;
+}
+#addGiftPacking li.textAreaBox label,
+#removeGiftPacking li.textAreaBox label{
+	text-align: left; 
+	width:100%;
+	margin: 28px 0 0 0 ;
+	font-size:12px;
+	color: #786a65;
+	overflow:hidden;
+}
+#addGiftPacking li.textAreaBox textarea,
+#removeGiftPacking li.textAreaBox textarea{
+	width: 373px;
+	float:left;
+	padding:5px 0 0 5px;	
+	color: #948f8f;
+	font-size:12px;
+	margin: 0;
+	height: 70px;
+	font-family: Arial, Helvetica, sans-serif;}
+#removeGiftPacking li.textAreaBox textarea{
+	background-color:#f1efee;
+}
+#addGiftPacking li.buttonsContainer,
+#removeGiftPacking li.buttonsContainer{
+	float: right;
+	margin:0;
+	padding:0;	
+}
+	
+#addGiftPacking input.cancel,
+#removeGiftPacking input.cancel,
+#addGiftPacking input.save,
+#removeGiftPacking input.remove{
+	border: none;
+	text-align:right;
+	width: 72px;
+	height: 25px;
+	margin: 7px 0 0 15px;
+	padding: 0 0 0 0;
+	}
+
+#addGiftPacking input.cancel,
+#removeGiftPacking input.cancel{
+	width: 78px;
+}
+#removeGiftPacking input.remove{
+	width: 73px;
+}
+
+/* EMAIL Popup
+---------------------------------------------------------*/
+
+.subscribe{
+    width: 20px !important;
+    display: inline !important;
+    border: none !important;
+}
+
+#emailContainer select,
+#emailContainer textarea,
+#emailContainer input{
+	padding: 2px 5px;
+	color: #8e8a89;
+	margin:0; padding:0;
+	font:12px Arial !important;
+}
+#emailContent .modalContainer{
+	margin: 0 !important;
+}
+#emailContainer{
+	width: 615px;
+	height: 450px;
+	_height: 300px !important;
+	padding: 10px 10px 0 0;
+	background-color: #efeeec;
+	border: 1px solid #d8d3cf;
+	font-size: 11px;
+	font-family:Arial, Helvetica, Verdana, Sans-serif;
+}
+#emailContainer h1{
+	margin: 33px 0 20px 20px;
+	padding:0;
+	width:198px; 
+	height: 27px;
+	border-bottom: 1px solid #d6d2cf;
+}
+
+#emailContainer .introText{
+	color: #6d6865;
+	margin: 0 20px 10px 20px;
+}
+
+#emailContainer .emailUsForm{
+	text-align:left;
+	margin:0; 
+	padding:0;
+}
+#emailContainer .emailUsForm fieldset {
+	padding: 0 0 0 0;
+	margin: 0 20px;
+	border:none;
+	color: #786a65;
+	font-size: 12px;
+}
+#emailContainer fieldset ol {
+	padding: 5px 0 0 0;
+	margin:0;
+}
+#emailContainer fieldset ol li {
+	list-style: none;
+	padding: 1px 0 5px 0;
+	margin:0; 
+	overflow: hidden;
+	_height: 1%;
+}
+/* possible */
+#emailContainer fieldset label{
+	float: left;
+	width: 100px;
+	margin-right: 10px;
+	font-size:12px;
+	color: #786a65;
+	vertical-align: top;
+	text-align: right;
+}
+#emailContainer form.emailUsForm li label{
+	margin-top:0;
+}
+/* possible */
+#emailContainer form.emailUsForm input{
+	float: left;
+	font-size:12px !important;
+	font-family:Arial, Helvetica, sans-serif;
+	padding: 2px;
+	color: #948f8f;
+}
+#emailContainer li.textAreaBox {
+	clear:both;
+	padding:0 0 0 8px;
+}
+#emailContainer li.textAreaBox label{
+	text-align: left; 
+	width:auto;
+	margin: 0 10px 0 0;
+	font-size:12px;
+	color: #786a65;
+}
+#emailContainer li.textAreaBox textarea{
+	margin: 10px 0 0 0;
+	font-family:Arial, Helvetica, sans-serif;
+	width: 99%;
+	height: 75px;
+	overflow:hidden;
+	font-size:12px;
+	color: #948f8f;
+}
+	
+#emailContainer form.emailUsForm select{
+	width: 220px;
+	float: left;
+}
+#emailContainer li.buttonsContainer{
+	float: right;
+}
+	
+#emailContainer .emailUsForm input.send{
+	border: none;
+	text-align:right;
+	width: 66px;
+	height: 28px;
+	margin: 2px 0 0 10px;
+	}
+#emailContainer .subscribeMails{float:left; height: auto; font-size:10px;}
+#emailContainer .subscribeMails input.subscribe{
+	width: 14px;
+	height:14px;
+	float:left;
+	border: none;
+}
+#emailContainer fieldset li.subscribeMails{
+	width: 230px;
+}
+#emailContainer fieldset .subscribeMails label{
+	text-align:left;
+	line-height:14px;
+	font-size: 10px;
+	display:inline;
+	float:left;
+	padding: 0; 
+	margin: 0 0 10px 5px;
+	width: 90%}
+	
+#emailContainer form.emailUsForm fieldset .subscribeMails p{ 
+	clear:both;
+	padding: 0 0 10px 22px; 
+	margin: 0;
+	text-align:left;
+}
+#emailContainer .subscribeMails  a{color: #6bd0ce; text-decoration:none;}
+
+#emailContainer img.emailArrow {
+	margin: 45px 0 0 0;
+}
+body #emailContainer img.emailArrow {
+	margin: 20px 0 0 0;
+}
+/* Shipping Popup Styles
+-------------------------------------*/
+.shippingFeeCont{
+	border:1px solid #d4d2d3; 
+	width: 235px; 
+	background-color: #fff;
+	padding: 0 5px 5px 20px ;
+	color:#736968; 
+}
+
+#shippingContent .shippingFeeCont h4{
+	font-size:14px !important; 
+	color: #786a65;
+	margin:0 0 5px 0; 
+	width: 110px;
+	height: 13px;
+	text-indent: -200em;
+	background:url(../../images/revamp/shipping/title_standardShipping.gif) no-repeat;
+	
+}
+#shippingContent .shippingFeeCont img.closeBtn {
+	padding:5px 0 0 0;
+	
+}
+#shippingContent .shippingFeeCont .shippingFee{
+	text-align:center;
+	font-size:14px;
+	margin-right:10px;
+}
+#shippingContent .shippingFeeCont td{text-align:right; padding: 2px 17px 0 0;font:12px Arial;}
+#shippingContent .shippingFeeCont tr.headerRow{
+	background-color:#cec6c0; 
+	color: #fff;
+}
+
+#shippingContent .shippingFeeCont tr.headerRow th{padding: 0 10px; font-size:16px;}
+#shippingContent .shippingFeeCont tr.headerRow th.firstCol{width: 150px;font:14px Arial;font-weight:normal;
+}
+#shippingContent .shippingFeeCont tr.headerRow th.secondCol{width: 65px;font:14px Arial;font-weight:normal}
+#shippingContent .shippingFeeCont tr.alternateRow{background-color:#efeeec;}
+
+#shippingContent #shippingGlossaryPopup {
+	position: absolute;
+	z-index: 500;
+	padding: 2px 4px;
+	top: 240px !important;
+	width: 630px;
+	text-align: left;
+}
+
+#shippingContent .content{
+	background: #fff;
+} 
+#shippingContent img.shippingArrow {
+	margin: 120px 0 0 -15px;
+	position:absolute;
+}
+html>/**/body #shippingContent img.shippingArrow {
+	margin: 120px 0 0 -15px;
+}
+/*********************************/
+
+#paymentContent #deferredPaymentContainer{
+	width: 383px;
+	padding: 0 10px 8px 7px;
+	height:600px;
+}	
+html>/**/body #paymentContent #deferredPaymentContainer{
+	height:616px;
+}	
+.deferredPaymentCont {
+	width: 379px;	
+	margin-top: -6px;
+	padding: 5px 4px 20px 0;
+	background-color:#f0eeed;
+	border:solid 1px #d9d1cc;
+	height:590px;
+}
+html>/**/body .deferredPaymentCont{
+	height:595px;
+}
+*html .deferredPaymentCont /*for IE6*/ {
+	margin-top: 0;
+}
+.deferredPaymentCont img.arrow {
+	position:relative;
+	top:-20px;
+}
+#paymentContent div.deferredPayment{
+	padding: 0 0 5px 0 !important;
+	margin:25px 0 0 0;
+	width:212px; 
+	height: 26px; 
+	text-indent:-200em;
+	border:none;
+}
+	
+#paymentContent #deferredPaymentContainer p.introText{
+	color: #6a6663;
+	margin: 15px 0 0 36px;
+	font:12px Arial;
+	width:310px;
+}
+
+/* Clear
+---------------------------------------------------------*/
+.clearFix:after{
+content: ".";
+display: block;
+height: 0;
+clear: both;
+visibility: hidden;
+}
+
+.clearFix{height: 1% !important;}
+.clearFix{display: inline-table;}
+.clearFix{display: block; zoom:1;}
+	
+---------------------------------------------------------*/
+
+
+
+
+/* for demo */
+	/* jqModal base Styling courtesy of;
+	Brice Burgess <bhb@iceburg.net> */
+
+/* The Window's CSS z-index value is respected (takes priority). If none is supplied,
+	the Window's z-index value will be set to 3000 by default (via jqModal.js). */
+.modalContainer{
+	position: absolute;
+	display: none;
+	top:292px;
+}
+html>/**/body .modalContainer{
+	top:284px;
+	left:560px;
+}
+*html .modalContainer{
+	left:520px;
+	top:285px;
+}
+.giftModalContainer{
+	position: absolute;
+	top: 30%;
+	_top:25%;
+	left: 15%;
+	_left: 34%;
+	margin-left: -210px;
+	display: none;
+}
+
+html>/**/body .giftModalContainer{
+	top: 29%;
+	left: 50%;
+}
+
+* html #emailModal {
+	 position: absolute;
+	 top: expression((document.documentElement.scrollTop || document.body.scrollTop) + Math.round(17 * (document.documentElement.offsetHeight || document.body.clientHeight) / 100) + 'px');
+}
+
+.panel{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#shippingContent .panel{
+	width: 150px;
+	height: 300px;
+}
+#paymentContent .panel{
+	background: yellow;
+	width: 300px;
+	height: 300px;
+}
+.jqmWindow {
+
+}
+.jqmOverlay { background-color: none; }
+
+/* Background iframe styling for IE6. Prevents ActiveX bleed-through (<select> form elements, etc.) */
+* iframe.jqm {position:absolute;top:0;left:0;z-index:-1;
+	width: expression(this.parentNode.offsetWidth+'px');
+	height: expression(this.parentNode.offsetHeight+'px');
+}
+
+
+/*********************Item Description Table****************/
+table.shoppingBag {
+	margin: 0 0 20px 0;
+	width: 872px;
+	text-align:center;
+}
+table.shoppingBag th{
+	background-color: #efeeec;
+	font-weight:bold;
+	font-size:12px;
+	padding: 4px 20px;
+}
+table.shoppingBag th.itemDescription,
+table.shoppingBag th.itemCodem{	
+	width:20%;
+	text-align:left;
+}
+table.shoppingBag th.itemDescription{
+	padding: 4px 0;
+}
+table.shoppingBag th.itemPrice{
+ width:15%;
+}
+
+table.shoppingBag td{	
+	vertical-align:top !important; 
+	padding: 10px 0 0 0;
+	font-size:12px;}
+	
+table.shoppingBag td.firstCol{
+	padding: 10px 0 0 20px;
+	text-align:left;
+}
+
+table.shoppingBag td.itemDescription{
+	color: #ccc;
+	text-align:left;
+}
+table.shoppingBag td.itemDescription span{
+		text-decoration:underline;
+		color:#94877E;
+}
+
+table.shoppingBag td.itemPrice{
+	text-align:right;
+	padding:10px 20px 0 0;
+}
+
+table.shoppingBag td.itemStatus{
+	 text-align:left;
+	 font-size:10px;
+}
+table.shoppingBag td.itemStatus span{
+	color: #ccc;
+}
+
+#addGiftPacking .container .header p,
+#removeGiftPacking .container .header p{font-size:12px !important;font-family: Arial, Helvetica, Verdana, Sans-serif;}
+/*input{border: 1px solid #a09695;
+	padding: 2px 5px;
+	color: #8e8a89;
+}*/
+
+.shippingArrow {
+	margin:97px 0 0 -15px!important;
+}
+.removeGiftPackagingForm fieldset ol li label, .addGiftPackagingForm  fieldset ol li label {
+	font-family:Arial, Helvetica, sans-serif!important;
+}
+/* for demo */
+
+/* Modal Overlay 
+	==== underscore infront of the property is an IE6 hack.  Those properties will only show in IE6 or less, but nothing else.
+*/
+.modalBackground{
+    position:fixed; 
+    top:0px; 
+    bottom:0px; 
+    left:0px;
+    right:0px;
+    overflow:hidden; 
+    padding:0; 
+    margin:0; 
+    background-color:#000; 
+    filter:alpha(opacity=50); 
+    opacity:0.5; 
+    z-index:1000; 
+    _position:absolute;
+    _height: expression(document.documentElement.scrollTop + document.documentElement.clientHeight + "px");
+    _width: expression(document.body.clientWidth + "px");
+
+}
+
+.modalMessage { 
+    position:fixed; 
+    top:30%; 
+    left:43%;
+    padding:5px 0px 5px 0px; 
+    z-index:1001; 
+    background-color:#fff;
+    border:solid 1px #000;
+    _position:absolute; 
+    _top: expression(document.documentElement.scrollTop + (document.documentElement.clientHeight * .30) + "px")
+
+}
+
+.modalMessage2011 { 
+    position:fixed; 
+    top:30%; 
+    left:43%;
+    padding:5px 0px 5px 0px; 
+    z-index:1001; 
+    background-color:#fff;
+    border:solid 1px #000;
+    height:150px;
+    width:350px;
+    _position:absolute; 
+    _top: expression(document.documentElement.scrollTop + (document.documentElement.clientHeight * .30) + "px")
+
+}
+
+.modalApplication { 
+    position:fixed; 
+    top:5%; 
+    left:10%;
+    padding:5px 0px 5px 0px; 
+    z-index:1001; 
+    background-color:#fff;
+    border:solid 1px #000;
+    width:75%;
+    _position:absolute; 
+    _top: expression(document.documentElement.scrollTop + (document.documentElement.clientHeight * .30) + "px")
+
+}
+
+/* New iteration of modal message circa August 2010. Generic popup, close and ok buttons. */
+
+#modalMessage2010 { 
+    position:fixed; 
+    top:30%; 
+    left:37%;
+    width: 400px;
+    z-index:1001; 
+    background-color:#fff;
+    border:solid 1px #b5aca6;
+    _position:absolute; 
+    _top: expression(document.documentElement.scrollTop + (document.documentElement.clientHeight * .30) + "px")
+
+}
+
+#modalMessage2010 .modalMsgtop 
+{
+	background-color: #90867f;
+	border-bottom: 3px solid #686868;
+	height: 25px;
+	vertical-align: middle;
+	color:#fff;
+	font-family:Arial;
+	font-size: 12pt ;
+	font-weight: bold;
+	padding: 5px 5px 5px 10px;
+}
+
+#modalMessage2010 .modalMsgContent 
+{
+	padding: 15px 10px 15px 10px;
+	font-family: Arial;
+	font-size:12px;
+	color: #94877e;
+}
+
+#modalMessage2010 .modalMsgFooter
+{
+	background-color: #eae7e5;
+	height: 30px;
+	padding: 5px 10px 5px;
+}
+
+.modalMessageWait { 
+    position:fixed; 
+    top:30%; 
+    left:43%;
+    padding:5px 0px 5px 0px; 
+    z-index:1001; 
+    background-color:#fff;
+    border:solid 1px #000;
+    height:150px;
+    width:350px;
+    _position:absolute; 
+    _top: expression(document.documentElement.scrollTop + (document.documentElement.clientHeight * .30) + "px")
+
+}
+
+/* 2011 ADS popup use*/
+#modalMessage2011  
+{
+    -webkit-overflow-scrolling: touch;
+    max-height: none;
+    position:fixed; 
+    top:30%; 
+    left:37%;
+    width: 400px;
+    z-index:1001; 
+    background-color:#fff;
+    border:solid 1px #b5aca6;
+    _position:absolute; 
+    _top: expression(document.documentElement.scrollTop + (document.documentElement.clientHeight * .30) + "px")
+
+}
+
+#modalMessage2011 .modalMsgtop 
+{
+	background-color: #90867f;
+	border-bottom: 3px solid #686868;
+	height: 25px;
+	vertical-align: middle;
+	color:#fff;
+	font-family:Arial;
+	font-size: 12pt ;
+	font-weight: bold;
+	padding: 5px 5px 5px 10px;
+}
+
+#modalMessage2011 .modalMsgContent 
+{
+	padding: 15px 10px 15px 10px;
+	font-family: Arial;
+	font-size:12px;
+	color: #94877e;
+	max-height: none;
+}
+
+#modalMessage2011 .modalMsgFooter
+{
+	background-color: #eae7e5;
+	height: 30px;
+	padding: 5px 10px 5px;
+}

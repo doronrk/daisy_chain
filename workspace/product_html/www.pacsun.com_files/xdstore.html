@@ -1,0 +1,6 @@
+<!DOCTYPE html>
+<html webdriver="true"><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252"><title>xdstore</title><script>
+(function(c,d){function e(b,a){a=JSON.stringify(a);b.source.postMessage(a,b.origin)}function f(b){var a=b.data;"string"===typeof a&&(a=JSON.parse(a));a.data&&(a.value=a.data);"get"===a.cmd?(a.value=d.getItem(a.key),e(b,a)):"set"===a.cmd&&a.value?(d.setItem(a.key,a.value),e(b,a)):"delete"===a.cmd&&(d.removeItem(a.key),a.value=null,e(b,a))}c.addEventListener?c.addEventListener("message",f,!1):c.attachEvent&&c.attachEvent("onmessage",f)})(window,localStorage);
+</script>
+</head><body></body></html>

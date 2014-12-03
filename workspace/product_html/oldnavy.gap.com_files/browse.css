@@ -1,0 +1,559 @@
+a:link,a:visited,a:active{text-decoration:none;}
+a:hover{text-decoration:underline;}
+
+.marketingMessage{color:#fff;font-size:18px;}
+
+/***** Begin styles common to Category,Sale/Clearance,Seach and MUPs pages *****/
+/* Category Header */
+#catHdrRoundedTop{background-color:#00436e;height:5px;padding:0px;margin:0px;overflow:hidden;}
+#catHdrRoundedTop  #catHdrRoundedRight,#catHdrRoundedTop  #catHdrRoundedLeft{background-color:#fff;height:5px;width:5px;padding:0px;margin:0px;}
+#catHdrRoundedTop  #catHdrRoundedLeft{background-image:url(/assets/browse/category/en/corner_header_L_blue.gif);float:left;}
+#catHdrRoundedTop  #catHdrRoundedRight{background-image:url(/assets/browse/category/en/corner_header_R_blue.gif);float:right;}
+#catHdr{background-color:#00436e;height:25px;}
+
+/* Sale/Clearance Header */
+#saleHdrRndTop,#saleHdrRndBtm{background-color:#c00;height:5px;padding:0px;margin:0px;overflow:hidden;}
+#saleHdrRndBtm{clear:both;margin-bottom:5px;}
+#saleHdrRndTop  .right,#saleHdrRndTop  .left,#saleHdrRndBtm  .right,#saleHdrRndBtm  .left{background-color:#fff;height:5px;width:5px;padding:0px;margin:0px;}
+#saleHdrRndTop  .left{background-image:url(/assets/browse/category/en/on_sale_left_top_red_cnr.gif);float:left;}
+#saleHdrRndTop  .right{background-image:url(/assets/browse/category/en/on_sale_right_top_red_cnr.gif);float:right;}
+#saleHdrRndBtm  .left{background-image:url(/assets/browse/category/en/on_sale_left_btm_red_cnr.gif);float:left;}
+#saleHdrRndBtm  .right{background-image:url(/assets/browse/category/en/on_sale_right_btm_red_cnr.gif);float:right;}
+#saleHdr{background-color:#c00;height:25px;}
+#saleName,#catName{margin:1px 0px 0px 5px;float:left;font-size:16px;font-weight:bold;color:#fff;}
+#saleName{text-transform:uppercase;}
+#saleMenu{padding-top:3px;width:200px;float:left;text-align:center;font-size:12px;font-weight:bold;color:#fff;}
+#clearanceName{background-image:url(/assets/browse/category/en/on_sale_clearance.gif);width:108px;height:22px;float:left;}
+
+/* Product Iteration */
+.mupsMessage{color:#f00;font-size:11px;text-decoration:none;font-weight:normal;text-transform:lowercase;}
+a.mupsLink:link,a.mupsLink:active,a.mupsLink:hover,a.mupsLink:visited{font-weight:normal;text-decoration:underline;text-transform:capitalize;}
+
+a.productItemName:link,a.productItemName:visited,a.productItemName:active{display:block;font-size:11px;text-align:center;text-decoration:none;width:202px;}
+a.productItemName:hover{font-size:11px;text-decoration:underline;text-align:center;}
+a.productItemName span.vendorName{}
+span.productPricing,li.marketing-flag{text-align:center;}
+.category-iteration-name{padding:15px;color:#989898;font-size:15px;text-decoration:none;font-weight:500;}
+
+/* Product Iteration cont. */
+.productCatItem span.mupSupMessage{display:block;clear:both;}
+.brandBreak{display:block;width:10px;clear:left;height:0px;line-height:1px;}
+*html .brandBreak{margin-bottom:-3px;}
+
+
+/* Begin: Shop By Size */
+#shopBySizeTools {background:url(/assets/browse/category/en/shopbysize_title.gif) no-repeat 0px 0px;padding:0px 0px 1px 94px;margin:0px;}
+#shopBySizeTools ul {list-style-type:none;white-space:nowrap;width:488px;height:17px;}
+#shopBySizeTools li{background:url(/assets/browse/category/en/shopbysize_arrow_small.gif) no-repeat 3px 6px;float:left;line-height:18px;padding-left:10px;}
+#shopBySizeTools li a{color:#00436e;font-size:11px;font-weight:normal;}
+#shopBySizeTools li.reset{padding-right:15px;}
+#shopBySizeSelections {margin:0px;padding:0px 10px 10px 5px;float:left; width:810px;}
+#shopBySizeSelections li {float:left;}
+#shopBySizeSelections li.sizeFinderDropdowns{vertical-align:baseline;width:118px;padding:0px 5px 4px 0px;}
+#shopBySizeSelections li.sizeFinderDropdowns label {color:#666;font-size:11px;font-weight:normal;margin:0px;padding:0px;white-space:nowrap;}
+#shopBySizeSelections li.sizeFinderDropdowns select{width:118px;padding:0px;margin:1px 0px 0px 0px;background-color:#e2e5e5;color:#333;font-size:11px;border-bottom:1px solid #999;}
+#shopBySizeSelections li.sizeFinderDropdowns select.active {background:#fff;font-weight:bold;color:#333;}
+#shopBySizeSelections li.sizeFinderFind {margin:15px 0px 0px 0px;}
+#shopBySizeSelections li.sizeFinderReset {margin:15px 0px 0px 5px;}
+#shopBySizeSelections li.sizeFinderDropdownsNoLabel select{margin-top:3px;}
+#shopBySizeSelections li.sizeFinderFindNoLabel {margin:3px 0px 0px 0px;}
+#shopBySizeSelections li.sizeFinderResetNoLabel {margin:3px 0px 0px 5px;}
+
+/* end Shop By Size*/
+
+/* most likely not going to use: #breadcrumbTrail{float:left;width:480px;height:16px;margin:0px;padding:0px;line-height:16px;}  */
+/* #breadcrumbTrail p.searchResults{margin:0px;padding:0px;line-height:16px;height:16px;} */
+
+.productToolsLine{clear:both;}
+.sortBySelection,.paginationSearchModeControl,.categoryPaging{float:left;width:194px;margin:0px;padding:0px;margin-bottom:2px;}
+.sortBySelection{text-align:left;}
+* html label.sortByLabel{position:relative;top:-2px;}
+.paginationSearchModeControl{text-align:center;padding-top:3px;}
+.categoryPaging{float:right;text-align:right;padding-top:3px;}
+.seeAll{font-weight:bold;margin:0px 10px 0px 10px;}
+a.seeAllLink{font-weight:normal;margin:0px 10px 0px 10px;}
+
+/* Begin:Tab Styles */
+#tabnav{padding:0px 0px 0px 10px; height:20px;background:url(/assets/browse/category/en/tab_spacer.gif) repeat-x bottom;}
+* html #tabnav{margin:0px 0px 0px 0px;}
+#tabnav li{margin:0px;padding:0px;display:inline;list-style-type:none;line-height:12px;}
+#tabnav li a{font-size:11px;color:#666;text-decoration:none;}
+#tabnav span{float:left;}
+#tabnav span.center{border-bottom:none;display:block;width:auto;max-width:470px;padding:0px 5px 0px 5px;}
+
+/* Active Left Tab */
+#tabActiveLeft span{height:20px;background-color:#fff;color:#00436e;border-bottom:none;}
+#tabActiveLeft span.center{height:16px;padding-top:4px;}
+#tabActiveLeft span.right{margin-right:2px;height:19px;}
+
+/* Active Right Tab */
+#tabActiveRight span{height:20px;background-color:#fff;border-bottom:none;color:#00436e;font-weight:bold;}
+#tabActiveRight span.center{height:16px;padding-top:4px;}
+#tabActiveRight span.right{height:19px;}
+
+/* Inactive Left Tab */
+#tabInactiveLeft span.left{background:url(/assets/browse/category/en/category_tab_left_inactive.gif) no-repeat top;}
+#tabInactiveLeft span{height:19px;background-color:#E2F1FF;border-bottom:none;}
+#tabInactiveLeft span.center{background:url(/assets/browse/category/en/category_tab_center_inactive.gif) repeat-x top;height:15px;padding-top:4px;}
+#tabInactiveLeft span.right{background-color:#fff;margin-right:2px;}
+#tabInactiveLeft span em {font-weight:normal;}
+
+/* Inactive Right Tab */
+#tabInactiveRight span.left{background:url(/assets/browse/category/en/category_tab_left_inactive.gif) no-repeat top;}
+#tabInactiveRight span{height:19px;background-color:#E2F1FF;border-bottom:none;}
+#tabInactiveRight span.center{background:url(/assets/browse/category/en/category_tab_center_inactive.gif) repeat-x top;height:15px;padding-top:4px;}
+#tabInactiveRight span.right{background-color:#fff;}
+#tabInactiveRight span em {font-weight:normal;}
+
+/* span */
+span.left{background:url(/assets/browse/category/en/category_tab_left.gif) no-repeat top;display:block;width:6px;}
+span.right{background:url(/assets/browse/category/en/category_tab_right.gif) no-repeat top;display:block;width:6px;}
+span.center{background:url(/assets/browse/category/en/category_tab_center.gif) repeat-x top;}
+
+#tabTable,#tabTableOff{margin:0px;padding:7px 0px 0;width:824px;}
+#tabTableOff{border:none;}
+#tabTableOff .clear5{height:0px;}
+
+.liLink{cursor:pointer;}
+/* End:Tab Styles */
+/***** End styles common to Category,Sale/Clearance,Seach and MUPs pages *****/
+
+/* Safari Specific */
+/*#shopBySizeSelections li.sizeFinderFind{margin:15px 13px 0px 4px;#}*/
+
+/* brand3 corresponds to Old Navy - US */
+/* brand9 corresponds to Old Navy - CA */
+.brand3, .brand9 {}
+
+.brand3 .quickLookWindowTop, .brand9 .quickLookWindowTop{background-color:transparent !important}
+
+.brand3 .quickLookWindowClose, .brand9 .quickLookWindowClose{background-color:transparent !important;height:19px;}
+
+.brand3 #quickLookClose, .brand9 #quickLookClose{margin-top:3px;width:19px;}
+
+.brand3 .topBadge, .brand9 .topBadge { overflow:hidden; height: 22px; background:transparent url(/gid/assets/common/en/titleBar_QL_oldnavy.gif) top left no-repeat;}
+.brand3 .topBadgeFix, .brand9 .topBadgeFix {padding-top: 5px;}
+.brand3 .quickLookWindowContent .productMarketingFlag, .brand9 .quickLookWindowContent .productMarketingFlag{font-size:10px;height:15px;line-height:15px;}
+.brand3 .quickLookPageError, .brand9 .quickLookPageError{margin:0px;padding:0px 5px 5px 0px;line-height:1em;display:none;}
+.brand3 .crossSellImage, .brand9 .crossSellImage {width:120px; height: 160px;}
+.brand3 #quickLookSize1Text,
+    .brand3 #quickLookSize2Text,
+    .brand9 #quickLookSize1Text,
+    .brand9 #quickLookSize2Text{margin-top: 5px; margin-bottom: 2px; width:150px;border:1px solid white;}
+.brand3 .quickLookSelectionLabel a:link,
+    .brand3 .quickLookSelectionLabel a:visited,
+    .brand3 .quickLookSelectionLabel a:active,
+    .brand3 .quickLookSelectionLabel a:hover,
+    .brand9 .quickLookSelectionLabel a:link,
+    .brand9 .quickLookSelectionLabel a:visited,
+    .brand9 .quickLookSelectionLabel a:active,
+    .brand9 .quickLookSelectionLabel a:hover{text-decoration:underline;}
+.brand3 .quickLookMupMessage, .brand9 .quickLookMupMessage{margin:5px 0px 5px 2px;font-weight:bold;color:#f60;}
+.brand3 .quickLookGIDPromoMessage,
+    .brand3 #quickLookGIDPromoMessage,
+    .brand3 #productPageGIDPromoMessage,
+    .brand9 .quickLookGIDPromoMessage,
+    .brand9 #quickLookGIDPromoMessage,
+    .brand9 #productPageGIDPromoMessage {margin:5px 0px 5px 2px;font-weight:bold;color:#f60;display:none;}
+.brand3 .quickLookMarketingFlagStyle,
+    .brand3 #quickLookMarketingFlagStyle,
+    .brand3 #productPageMarketingFlagStyle,
+    .brand9 .quickLookMarketingFlagStyle,
+    .brand9 #quickLookMarketingFlagStyle,
+    .brand9 #productPageMarketingFlagStyle {display:none; margin-bottom: 5px;}
+.brand3 .quickLookMarketingCallOut,
+    .brand3 #quickLookMarketingCallOut,
+    .brand3 #productPageMarketingCallOut,
+    .brand9 .quickLookMarketingCallOut,
+    .brand9 #quickLookMarketingCallOut,
+    .brand9 #productPageMarketingCallOut {display:none;}
+.brand3 #quickLookMarketingFlagColor,
+
+    .brand3 #productPageMarketingFlagColor,
+    .brand9 #quickLookMarketingFlagColor,
+    .brand9 #productPageMarketingFlagColor {display:none;height:15px;margin:0px 0px 0px 3px;}
+.brand3 #quickLookMarketingFlagSize,
+    .brand3 #productPageMerketingFlagSize,
+    .brand9 #quickLookMarketingFlagSize,
+    .brand9 #productPageMerketingFlagSize {display:none;height:15px;margin:0px 0px 0px 3px;}
+.brand3 .quickLookMupMessageStyle,
+    .brand3 #quickLookMupMessageStyle,
+    .brand3 #productPageMupMessageStyle,
+    .brand9 .quickLookMupMessageStyle,
+    .brand9 #quickLookMupMessageStyle,
+    .brand9 #productPageMupMessageStyle{display:none;}
+.brand3 #quicklook_product_image, .brand9 #quicklook_product_image {width:202px; height:270px;}
+.brand3 .quickLookProductImageTools, .brand9 .quickLookProductImageTools{text-align:center;width:202px;padding:0px;margin:0px;}
+.brand3 .quickLookProductName, .brand9 .quickLookProductName{width:197px;padding:5px 0px 0px 0px;background-color:#fff;font-weight:bold;}
+.brand3 .quickLookProductOriginCopy, .brand9 .quickLookProductOriginCopy{font-size:9px;}
+.brand3 #quickLookMarketingContentLeft, .brand9 #quickLookMarketingContentLeft{width:197px;padding:0px 0px 5px 5px;background-color:#fff;}
+.brand3 #quickLookInfoTabs img, .brand9 #quickLookInfoTabs img{cursor: pointer;}
+
+.brand3 #quickLookInfoTabs .off {background-color: #CCD4D4;}
+
+.brand3 .quickLookSizeTab, .brand9 .quickLookSizeTab{float:left;}
+.brand3 .quickLookOverviewTab, .brand9 .quickLookOverviewTab{float:left;}
+.brand3 .quickLookTabSpacer, .brand9 .quickLookTabSpacer{float:left;width:17px;height:19px;border-bottom:1px solid #9fa1a4;}
+.brand3 #quickLookSwatches p, .brand9 #quickLookSwatches p{padding:0px;margin:0px;}
+.brand3 #quickLookColorSwatches, .brand9 #quickLookColorSwatches{padding:0px 0px 10px 1px;}
+.brand3 .quickLookTabContent ul,
+.brand3 #quickLookTabArea ul,
+.brand9 .quickLookTabContent ul,
+.brand9 #quickLookTabArea ul {list-style:disc outside;margin:0px 0px 10px 15px;}
+.brand3 .quickLookTabContent li a:link,.quickLookTabContent li a:visited,.quickLookTabContent li a:hover,.quickLookTabContent li a:active,
+.brand9 .quickLookTabContent li a:link,.quickLookTabContent li a:visited,.quickLookTabContent li a:hover,.quickLookTabContent li a:active{text-decoration:underline;}
+.brand3 .quickLookTabContent .productID, .brand9 .quickLookTabContent .productID{padding:10px 0px 0px 0px;}
+.brand3 .quickLookTabContent .productDetail, .brand9 .quickLookTabContent .productDetail{margin:5px 0px 0px 0px;font-weight:bold;font-size:11px; text-align: right;}
+.brand3 #quickLookVariants, .brand9 #quickLookVariants{margin:3px 0px 3px 2px;}
+.brand3 #quickLookVariants .legal, .brand9 #quickLookVariants .legal{font-size:9px;line-height:10px;}
+.brand3 .quickLookPriceText, .brand9 .quickLookPriceText{color:#00436e;}
+.brand3 #quickLookProductDetail, .brand9 #quickLookProductDetail{float:right;margin:0px 5px 0px 0px;}
+.brand3 .quickLookAddtoBag, .brand9 .quickLookAddtoBag{float:right;margin:5px 0px 0px 0px;}
+
+.brand3 .quickLookAddToBagArea {background-color:#afb3b6;}
+.brand3 .quickLookConfirmationArea, .brand9 .quickLookConfirmationArea{background-color:#afb3b6; border-left-color:#ffffff;}
+
+.brand3 .quickLookConfirmationAreaBottom, .brand9 .quickLookConfirmationAreaBottom{}
+.brand3 #quickLookInventoryStatusWindow, .brand9 #quickLookInventoryStatusWindow{width:150px;color:#003C69;padding:5px 0px 0px 0px;font-size:11px;}
+.brand3 .quickLookOnOrderDate, .brand9 .quickLookOnOrderDate{font-weight:bold;}
+.brand3 .quickLookOnOrderBkg, .brand9 .quickLookOnOrderBkg{background-color:#AFB3B6;}
+.brand3 .quickLookLowInventoryBkg, .brand9 .quickLookLowInventoryBkg{background-image:url(/gid/assets/common/quicklook/en/OldNavy_lowinventory_bkg.gif);}
+.brand3 #quickLookLauncher a img#quickLook, .brand9 #quickLookLauncher a img#quickLook{width:88px;height:28px;}
+.brand3 #moreViewsBtn, .brand9 #moreViewsBtn { vertical-align: middle; cursor: pointer;}
+.brand3 .brandBadge, .brand9 .brandBadge { width: 120px; text-align: right; height: 40px; position: absolute; top:0px; left:0px;}
+.brand3 #outfit_product_image, .brand9 #outfit_product_image { width: 120px; height: 160px; }
+.brand3 .smallbox_img, .brand9 .smallbox_img { width: 58px; height: 77px; }
+.brand3 .imgDiv, .brand9 .imgDiv {position: relative; margin-bottom: 3px;}
+
+
+.brand3 .swatchLabelName, .brand9 .swatchLabelName{font-weight:bold;color:#00436e;}
+.brand3 .swatchLabel, .brand9 .swatchLabel{font-weight:normal; display:none;}
+.brand3 .productId, .brand9 .productId {float: left;}
+
+.brand3 #swatchContent input,
+.brand3 #quickLookSwatches input,
+.brand3 #shoppingBagEditSwatches input,
+.brand3 #colorSwatches input,
+.brand3 #swatchContent button,
+.brand3 #quickLookSwatches button,
+.brand3 #shoppingBagEditSwatches button,
+.brand3 #colorSwatches button,
+.brand3 #fistProductSwatches input, 
+.brand3 #fistProductSwatches button,
+.brand9 #swatchContent input,
+.brand9 #quickLookSwatches input,
+.brand9 #shoppingBagEditSwatches input,
+.brand9 #colorSwatches input,
+.brand9 #swatchContent button,
+.brand9 #quickLookSwatches button,
+.brand9 #shoppingBagEditSwatches button,
+.brand9 #colorSwatches button,
+.brand9 #fistProductSwatches input, 
+.brand9 #fistProductSwatches button { display: block; float: left; text-align: center; vertical-align: middle; border:1px solid #9fa1a4; padding: 1px; margin: 2px; cursor: pointer; background-color:#ccd4d4; font-weight: bold; color: #00436e; }
+
+
+.brand3 #swatchContent .hover,
+.brand3 #swatchContent .selected,
+.brand3 #quickLookSwatches .hover,
+.brand3 #quickLookSwatches .selected,
+.brand3 #shoppingBagEditSwatches .selected,
+.brand3 #shoppingBagEditSwatches .hover,
+.brand3 #fistProductSwatches .selected,
+.brand3 #fistProductSwatches .hover,
+.brand3 #colorSwatches .hover, 
+.brand3 #colorSwatches .selected,
+.brand9 #swatchContent .hover,
+.brand9 #swatchContent .selected,
+.brand9 #quickLookSwatches .hover,
+.brand9 #quickLookSwatches .selected,
+.brand9 #shoppingBagEditSwatches .selected,
+.brand9 #shoppingBagEditSwatches .hover,
+.brand9 #colorSwatches .hover, 
+.brand9 #fistProductSwatches .selected,
+.brand9 #fistProductSwatches .hover,
+.brand9 #colorSwatches .selected {border:2px solid #00436e; margin: 1px;}
+
+.brand3 #swatchContent .soldOut,
+.brand3 #quickLookSwatches .soldOut,
+.brand3 #shoppingBagEditSwatches .soldOut,
+.brand9 #swatchContent .soldOut,
+.brand9 #quickLookSwatches .soldOut,
+.brand9 #shoppingBagEditSwatches .soldOut{border:1px dotted #9fa1a4; color:#9fa1a4; margin: 2px; background-color:#fff}
+
+.brand3 #swatchContent .selectedSoldOut,
+.brand3 #quickLookSwatches .selectedSoldOut,
+.brand3 #shoppingBagEditSwatches .selectedSoldOut,
+.brand9 #swatchContent .selectedSoldOut,
+.brand9 #quickLookSwatches .selectedSoldOut,
+.brand9 #shoppingBagEditSwatches .selectedSoldOut{border:2px dotted #9fa1a4;background-color:#fff;color:#9fa1a4; margin: 1px; }
+
+.brand3 .thumbs, .brand9 .thumbs {
+    margin: 3px;
+    border: solid 1px #afb3b6;
+    cursor : pointer;
+    text-align: center;
+    vertical-align:middle;
+    padding: 1px;
+    width: 38px;
+    height: 51px;
+}
+
+.brand3 .thumbSelected, .brand9 .thumbSelected {
+    margin: 2px;
+    border: solid 2px #00436e;
+    cursor : pointer;
+    text-align: center;
+    vertical-align:middle;
+    padding: 1px;
+    width: 38px;
+    height: 51px;
+}
+
+.brand3 #colorThumbs, .brand9 #colorThumbs {
+    float : left;
+}
+
+.brand3 #swatchContent .soldOut, .brand3 #quickLookSwatches .soldOut,
+.brand3 #shoppingBagEditSwatches .soldOut,
+.brand9 #swatchContent .soldOut, .brand9 #quickLookSwatches .soldOut,
+.brand9 #shoppingBagEditSwatches .soldOut{border:1px dotted #9fa1a4; color:#9fa1a4; margin: 2px; background-color:#fff}
+
+.brand3 #swatchContent .selectedSoldOut,
+.brand3 #quickLookSwatches .selectedSoldOut,
+.brand3 #shoppingBagEditSwatches .selectedSoldOut,
+.brand9 #swatchContent .selectedSoldOut,
+.brand9 #quickLookSwatches .selectedSoldOut,
+.brand9 #shoppingBagEditSwatches .selectedSoldOut{border:2px dotted #9fa1a4;background-color:#fff;color:#9fa1a4; margin: 1px; }
+
+.brand3 .sprite-button_add_to_bag_on,.brand3 .sprite-button_add_to_bag_over,
+.brand9 .sprite-button_add_to_bag_on,.brand9 .sprite-button_add_to_bag_over {float:right; background-position: 0 -10px; width: 63px; height: 19px; margin:5px 0px 9px 9px;}
+.brand3 .sprite-OldNavy_quickLookContent_bkg,
+.brand9 .sprite-OldNavy_quickLookContent_bkg { background-position: 0 -45px; width: 388px; height: 2px; }
+.brand3 .sprite-tab_size_off,
+.brand9 .sprite-tab_size_off { background-position: 0 -57px; width: 65px; height: 20px; }
+.brand3 .sprite-sizeChart, .brand9 .sprite-sizeChart { background-position: 0 -87px; width: 63px; height: 20px; }
+.brand3 .sprite-tab_overview_off, .brand9 .sprite-tab_overview_off { background-position: 0 -117px; width: 65px; height: 20px; }
+.brand3 .sprite-button_more_views, .brand9 .sprite-button_more_views { background-position: 0 -147px; width: 85px; height: 25px; }
+.brand3 .sprite-OldNavy_quickLook_topedge, .brand9 .sprite-OldNavy_quickLook_topedge { background-position: 0 -182px; width: 388px; height: 10px; }
+.brand3 .sprite-tab_size_on, .brand3 .sprite-tab_size_over,
+.brand9 .sprite-tab_size_on, .brand9 .sprite-tab_size_over { background-position: 0 -202px; width: 65px; height: 20px; }
+.brand3 .sprite-OldNavy_quickLook_bottomedge, .brand9 .sprite-OldNavy_quickLook_bottomedge { background-position: 0 -232px; width: 388px; height: 15px;  float: right; margin-bottom: 5px; margin-top: 5px; }
+.brand3 .sprite-button_add_to_bag_out, .brand9 .sprite-button_add_to_bag_out { background-position: 0 -257px; width: 68px; height: 25px;  float:right; margin-bottom: 5px; margin-top:5px;}
+.brand3 .sprite-tab_overview_on, .brand3 .sprite-tab_overview_over,
+.brand9 .sprite-tab_overview_on, .brand9 .sprite-tab_overview_over { background-position: 0 -292px; width: 65px; height: 20px; }
+.brand3 .sprite-button_quicklook_launcher_on, .brand9 .sprite-button_quicklook_launcher_on { background-position: 0 -322px; width: 79px; height: 23px; }
+.brand3 .sprite-quickLook_close, .brand9 .sprite-quickLook_close { background-position: 0 -355px; width: 15px; height: 15px; margin-left: 12px; margin-bottom: 5px; }
+.brand3 .sprite-button_quicklook_launcher_over, .brand9 .sprite-button_quicklook_launcher_over { background-position: 0 -385px; width: 79px; height: 23px; }
+.brand3 .sprite-button_add_to_bag_off, .brand9 .sprite-button_add_to_bag_off {float:right; background-position: 0 -418px; width: 63px; height: 19px; margin:5px 0px 9px 9px;}
+
+.brand3 .sprite-mailonly, .brand9 .sprite-mailonly,
+.brand3 .sprite-intlmailonly, .brand9 .sprite-intlmailonly { background-position: 0 -453px; width: 330px; height: 16px; }
+.brand3 .sprite-freereturn, .brand9 .sprite-freereturn { background-position: 0 -480px; width: 160px; height: 16px; }
+.brand3 .sprite-nonreturnable, .brand9 .sprite-nonreturnable,
+.brand3 .sprite-notintlship, .brand9 .sprite-notintlship  { background-position: 0 -507px; width: 160px; height: 16px; }
+
+.brand3 #productMailOnlyReturn .sprite,
+.brand3 #productIntlMailOnlyReturn .sprite,
+.brand3 #productFreeReturn .sprite,
+.brand3 #productNonreturnable .sprite,
+.brand3 #productNotIntlShip .notintlship { height:16px; width:25px; vertical-align: middle; background-color:#E1E1E1; background: url("/assets/common/quicklook/en_US/quicklook-sprites.gif") no-repeat scroll left top transparent; }
+
+.brand3 #productMailOnlyReturn .mailonly,
+.brand3 #productIntlMailOnlyReturn .intlmailonly { background-position:0 -453px; }
+.brand3 #productFreeReturn .freereturn { background-position:0 -480px;}
+.brand3 #productNonreturnable .nonreturnable,
+.brand3 #productNotIntlShip .notintlship { background-position:0 -507px; }
+
+.brand3 #productMailOnlyReturn,
+.brand3 #productIntlMailOnlyReturn,
+.brand3 #productFreeReturn,
+.brand3 #productNonreturnable,
+.brand3 #productNotIntlShip { background-color: #00416B; border: none; margin: -3px 0 0; *margin:-20px 0 0; width: auto; height: auto; text-transform: lowercase; float: right; padding: 2px 5px 2px 0; zoom: 1;}
+
+/* business jkraft needs the text with as is case - overriding it */
+.brand3 #productFreeReturn {text-transform: none;}
+
+/*\*/ * html .brand3 #productMailOnlyReturn {padding-top: 2px;}
+/*\*/ * html .brand3 #productIntlMailOnlyReturn {padding-top: 2px;}
+/*\*/ * html .brand3 #productFreeReturn {padding-top: 2px;}
+/*\*/ * html .brand3 #productNonreturnable {padding-top: 2px;}
+/*\*/ * html .brand3 #productNotIntlShip {padding-top: 2px;}
+
+#productMailOnlyReturn2{background-color:#00416B; color:#ffffff;}
+#productIntlMailOnlyReturn2{background-color:#00416B; color:#ffffff;}
+#productFreeReturn2{background-color:#00416B; color:#ffffff;}
+#productNonreturnable2{background-color:#00416B; color:#ffffff;}
+#productNotIntlShip2{background-color:#00416B; color:#ffffff;}
+
+.brand3 #productMailOnlyReturn2 .sprite,
+.brand3 #productIntlMailOnlyReturn2 .sprite,
+.brand3 #productFreeReturn2 .sprite,
+.brand3 #productNonreturnable2 .sprite,
+.brand3 #productNotIntlShip2 .sprite { height:16px; width:25px; vertical-align: middle; background-color:#E1E1E1; background: url("/assets/common/quicklook/en_US/quicklook-sprites.gif") no-repeat scroll left top transparent; }
+
+.brand3 #productMailOnlyReturn2 .mailonly,
+.brand3 #productIntlMailOnlyReturn2 .intlmailonly { background-position:0 -453px; }
+.brand3 #productFreeReturn2 .freereturn { background-position:0 -480px;}
+.brand3 #productNonreturnable2 .nonreturnable,
+.brand3 #productNotIntlShip2 .notintlship { background-position:0 -507px; }
+
+.swatchDiv { width: 100%; }
+
+/* Division Wide Footer */
+#divisionWideFooterContainerRow1, #divisionWideFooterContainerRow2, #divisionWideFooterContainerRow3{ width:770px;}
+#divisionWideFooterContainerGroup1{width:770px;float:left;}
+#divisionWideFooterContainerGroup2{width:385px;float:left;}
+#divisionWideFooterContainerGroup3{width:385px;float:left;}
+#divisionWideFooterContainerGroup4{width:256px;float:left;}
+#divisionWideFooterContainerGroup5{width:258px;float:left;}
+#divisionWideFooterContainerGroup6{width:256px;float:left;}
+
+/* safari hack - dont remove # sign */
+.brand3 #sizeDimensionSwatchContent .hover, 
+.brand3 #sizeDimensionSwatchContent .selected,
+.brand3 #quickLookSize1Swatches .hover, 
+.brand3 #quickLookSize1Swatches .selected,
+.brand3 #quickLookSize2Swatches .hover, 
+.brand3 #quickLookSize2Swatches .selected,
+.brand3 #shoppingBagEditSizeSwatches .hover, 
+.brand3 #shoppingBagEditSizeSwatches .selected,
+.brand3 #fistProductSize .hover, 
+.brand3 #fistProductSize .selected,
+.brand3 #sizeDimensionSwatchContent .selectedSoldOut,
+.brand3 #quickLookSize1Swatches .selectedSoldOut,
+.brand3 #quickLookSize2Swatches .selectedSoldOut,
+.brand3 #shoppingBagEditSizeSwatches .selectedSoldOut,
+.brand9 #sizeDimensionSwatchContent .hover, 
+.brand9 #sizeDimensionSwatchContent .selected,
+.brand9 #quickLookSize1Swatches .hover, 
+.brand9 #quickLookSize1Swatches .selected,
+.brand9 #quickLookSize2Swatches .hover, 
+.brand9 #quickLookSize2Swatches .selected,
+.brand9 #shoppingBagEditSizeSwatches .hover, 
+.brand9 #shoppingBagEditSizeSwatches .selected,
+.brand9 #fistProductSize .hover, 
+.brand9 #fistProductSize .selected,
+.brand9 #sizeDimensionSwatchContent .selectedSoldOut,
+.brand9 #quickLookSize1Swatches .selectedSoldOut,
+.brand9 #quickLookSize2Swatches .selectedSoldOut,
+.brand9 #shoppingBagEditSizeSwatches .selectedSoldOut
+{margin: 2px;  margin-top: 1px; margin-bottom: 1px; #}
+
+
+/* Product Iteration - placed here to override styles above */
+* html .productCatItem{margin:0 1px 8px 0px; text-align:center;}
+.productCatItem{text-align:center;}
+
+/* Swatches */
+* html .productCatItem .imgDiv {margin-bottom:1px;}
+html>body .productCatItem .imgDiv {*margin-bottom:4px;}
+.marketingFlagContainer{height:28px;}
+
+/* Catalog 1: Product Iteration - Remove when Catalog 2 launches */
+.productItem {float:left; margin:6px 0 8px 0 !important;text-align:left;width:206px;}
+.productItem .priceDisplay{display:block;}
+.productItem a.productItemName:link, .productItem a.productItemName:visited, .productItem a.productItemName:hover, .productItem a.productItemName:active{display:inline;}
+
+/* SearchDex */
+#searchDexFooter .expFooter {text-align:center;padding-top:10px;padding-bottom:10px;}
+#searchDexFooter .expFooter A:link{text-decoration:none}
+#searchDexFooter .expFooter A:visited{text-decoration:none}
+#searchDexFooter .expFooter A:active{text-decoration:none}
+#searchDexFooter .expFooter A:hover{text-decoration:none}
+#searchDexFooter .brandExp { padding-bottom:10px;}
+#searchDexFooter .linkContainer{display:none;}
+#searchDexFooter .plus {margin-left:-2px;cursor:pointer;cursor:hand;font-size:9px;}
+#searchDexFooter .minus{display:none;margin-left:-2px;cursor:pointer;cursor:hand;font-size:10px;}
+
+#standardHomepageMarker{width:770px;min-height:310px;margin-bottom:5px;margin-top:5px;}
+#largeAquisition{float:left;width:160px;min-height:161px;margin-right:5px;}
+#largeMinorMarker{width:605px;min-height:90px;}
+#mediumMinorMarker1{float:left;width:465px;min-height:90px;overflow:hidden;margin-right:5px;}
+#smallMinorMarker1{float:left;width:300px;min-height:90px;overflow:hidden;margin-right:5px;}
+#smallMinorMarker2{float:left;width:300px;min-height:90px;overflow:hidden;}
+
+#highlightMarkerTop {margin-top:5px;}
+#highlightMarkerBottom {margin-bottom:5px;}
+
+#homeLayoutRow2{width:770px;height:161px;}
+#homeLayoutCol2{float:left;width:605px;height:161px;}
+#minorMarkers{width:605px;min-height:90px; }
+
+.clear { clear: both; }
+
+/* SiteWide Css */
+.brand3 #addToBagContent .addToBagBtn,
+.brand3 #confirmationContentTop .addToBagBtn,
+.brand3 #confirmationContentBottom .addToBagBtn {float:right; height:19px; width: 63px; margin: 9px; cursor: pointer; background: url("/assets/common/quicklook/en_US/quicklook-sprites.gif") no-repeat scroll left top transparent; }
+
+.brand3 #addToBagContent .out,
+.brand3 #confirmationContentTop .out,
+.brand3 #confirmationContentBottom .out { background-position: 0 -257px; }
+
+.brand3 #addToBagContent .off,
+.brand3 #confirmationContentTop .off,
+.brand3 #confirmationContentBottom .off { background-position: 0 -418px;  }
+
+.brand3 #addToBagContent .on,
+.brand3 #confirmationContentTop .on,
+.brand3 #confirmationContentBottom .on { background-position: 0 -10px;  }
+
+.brand3 #imageTools #moreViewsBtn,
+.brand3 #moduleProductImageTools #moreViewsBtn { background: url("/assets/common/quicklook/en/quicklook-sprites.gif") no-repeat scroll left top transparent; background-position:0 -147px;height:25px; width:85px; }
+
+.brand3 #swatchContent .sizeChartImage,
+.brand3 #quickLookSwatches .sizeChartImage { height:20px;width:63px;background: url("/assets/common/quicklook/en/quicklook-sprites.gif") no-repeat scroll left top transparent; background-position:0 -87px;}
+
+.brand3 .quickLookClose { cursor: pointer; background: url("/assets/common/quicklook/en/quicklook-sprites.gif") no-repeat scroll left top transparent; background-position: 0 -355px; width: 15px; height: 15px; margin: 0px 0px 12px 15px; }
+
+
+/***fr_CA Override Styles***/
+
+.locale_fr_CA .brand3 #addToBagContent .addToBagBtn,
+.locale_fr_CA .brand3 #confirmationContentTop .addToBagBtn,
+.locale_fr_CA .brand3 #confirmationContentBottom .addToBagBtn {background-image: url("/assets/common/quicklook/fr_CA/quicklook-sprites.gif"); }
+
+.locale_fr_CA .brand3 #addToBagContent .out,
+.locale_fr_CA .brand3 #confirmationContentTop .out,
+.locale_fr_CA .brand3 #confirmationContentBottom .out {background-position:0 -259px; width:87px; }
+
+.locale_fr_CA .brand3 #addToBagContent .off,
+.locale_fr_CA .brand3 #confirmationContentTop .off,
+.locale_fr_CA .brand3 #confirmationContentBottom .off {background-position:0 -10px; width:92px; margin-left:4px;}
+
+.locale_fr_CA .brand3 #addToBagContent .on,
+.locale_fr_CA .brand3 #confirmationContentTop .on,
+.locale_fr_CA .brand3 #confirmationContentBottom .on {background-position:0 -10px; width:92px; margin-left:4px;}
+
+
+.locale_fr_CA .brand3 #imageTools #moreViewsBtn,
+.locale_fr_CA .brand3 #moduleProductImageTools #moreViewsBtn { background-image: url("/assets/common/quicklook/fr_CA/quicklook-sprites.gif"); background-position:0 -145px;height:25px; width:85px; }
+
+
+.locale_fr_CA .brand3 #swatchContent .sizeChartImage,
+.locale_fr_CA .brand3 #quickLookSwatches .sizeChartImage { background-image: url("/assets/common/quicklook/fr_CA/quicklook-sprites.gif"); width:96px;}
+
+.locale_fr_CA .brand3 .sprite-sizeChart, .locale_fr_CA .brand9 .sprite-sizeChart { background-position: 0 -87px; height: 20px; width: 102px;}
+
+.locale_fr_CA .brand3 .sprite-button_add_to_bag_off, .brand9 .sprite-button_add_to_bag_off {background-position: 0 -10px; width: 92px;}
+
+.locale_fr_CA .brand3 #productNotIntlShip2 .sprite {background-image: url("/assets/common/quicklook/fr_CA/quicklook-sprites.gif"); }
+
+.locale_fr_CA .brand3 .sprite-button_add_to_bag_on,.brand3 .sprite-button_add_to_bag_over,
+.locale_fr_CA .brand9 .sprite-button_add_to_bag_on,.brand9 .sprite-button_add_to_bag_over {background-position: 0 -10px; width: 92px;}
+
+.locale_fr_CA .brand3 .sprite-button_add_to_bag_out, .brand9 .sprite-button_add_to_bag_out { background-position: 0 -257px; width: 88px; height: 25px;  float:right; margin-bottom: 5px; margin-top:5px;}
+
+/* NAV20-234 - Category faceted search specific - removes the clear and resets the padding */
+.categoryFacetedSearch #searchResultsInfoContainer .productToolsLine {
+    clear: none;
+    height: 25px;
+    padding: 0 0;
+    margin-bottom: 0px;
+    width: 70%;
+    background-color: inherit;
+}
+.categoryFacetedSearch #searchResultsInfoContainer .productToolsLine .sortBySelection {
+    padding: 4px 0 4px 0;
+    width: 320px;
+}

@@ -1,0 +1,1630 @@
+/*
+	name:	Product Page Layout
+	file:	productdetail_layout.css
+	desc:	The major section layout of the product detail page.
+*/
+#product, #productdetail, #productaccessories, #companionproducts, .cookingclasses
+{
+	float: left;
+	width: 990px;
+	margin: 0;
+	padding: 0;
+	display: inline;
+}
+#productdetail
+{
+	margin-bottom: 16px;
+}
+#productdetail .primary,
+#productdetail .secondary
+{
+	float: left;
+	display: inline;
+}
+* html #productdetail .primary,
+* html #productdetail .secondary
+{
+	display: inline /* IE6 3-pixel fix */;
+}
+#productdetail .primary
+{
+	width: 536px;
+	/*
+	position: absolute;
+	left: 47%;
+	z-index: 100;*/
+}
+#productdetail .secondary
+{
+	margin-right: 24px;
+	/*width: 430px;*/
+	position:relative;
+	z-index: 200;
+}
+#productaccessories .haserror,
+#companionproducts .haserror,
+.cookingclasses .haserror
+{
+	margin-bottom: 0;
+}
+/* *********************************************
+			Product Name
+   ********************************************* */
+#product div#primary .name
+{
+	font-size: 17px;
+	line-height: 17px;
+	font-weight: bold;
+	margin: 0 0 16px 0;
+}
+/* *********************************************
+			Outlook Section
+   ********************************************* */
+.shareIcon
+{
+	padding:1px 5px 5px 0px;
+	margin-bottom:-8px;
+	*margin-bottom:-5px;
+}
+.stwrapper
+{
+	position:absolute!important;
+	z-index:3001!important;
+}
+#product  div#primary .outlook
+{
+	margin: 0 0 24px 0
+}
+#product .outlook .rating,
+#product .outlook .review,
+#product .outlook .social
+{
+	font-size: 11px;
+	line-height: 11px;
+	margin-right: 16px;
+}
+#product .outlook .rating
+{
+	font-weight: bold;
+}
+#product .outlook .review a
+{
+	color: #444444;
+}
+
+#product .outlook .review a:hover
+{
+	border-bottom: solid 1px #5C2946 /*  eggplant */;
+}
+/* *********************************************
+			Pricing Section
+   ********************************************* */
+#product div#primary .pricing
+{
+	font-size: 13px;
+	line-height: 13px;
+	margin: 0 0 24px 0;
+}
+#product .pricing li
+{
+	display: inline;
+	margin-right: 12px;
+}
+#product .pricing .sale
+{
+	font-weight: bold;
+	color: #921E1E /* bordeux heavy */;
+}
+#product .pricing .regular
+{
+	color: #AAAAAA /* border gray */;
+}
+#product .pricing .price
+{
+	font-weight: bold;
+}
+/* *********************************************
+			Options Section
+   ********************************************* */
+#product  div.primary .options
+{
+	float: left;
+	margin: 0 0 24px 0;
+	padding: 0;
+	display: inline;
+}
+#product .options label
+{
+	font-weight: bold;
+}
+#product .options li
+{
+	display: inline;
+	margin-right: 12px;
+}
+#product .options .size select,
+#product .options .color select
+{
+	width: 12em;
+	margin-left: 2px;
+}
+/* *********************************************
+			Offers Section
+   ********************************************* */
+#product  div.primary .offers
+{
+	float: left;
+	margin: 0 0 24px 0;
+	padding: 0;
+	width: 70%;
+	font-size: 0.9em;
+	display: inline;
+}
+#product  div.primary .offers dl
+{
+	margin: 0;
+	padding: 0;
+}
+#product .offers label
+{
+	font-weight: bold;
+}
+#product .offers dd a
+{
+	color: #444444;
+}
+/* *********************************************
+			Purchasing Section
+   ********************************************* */
+#product .purchasing label
+{
+	font-weight: bold;
+}
+#product div#primary .purchasing ul li
+{
+	float: right;
+	margin:0 12px 0 0;
+	display: inline;
+}
+#product .purchasing li.last
+{
+	margin-right: 0px;
+}
+#product .purchasing li:last-of-type
+{
+	/* Must be seperate for IE 8 */
+	margin-right: 0px;
+}
+#product .purchasing .quantity input
+{
+	width: 2em;
+	margin-left: 4px;
+}
+#product div#primary .purchasing
+{
+	display: inline;
+	float: left;
+	left: -32px;
+	line-height: 23px;
+	margin: 0 0 24px 0;
+	position: relative;
+	width: 536px;
+}
+#product .purchasing .waitlist input,
+#product .purchasing .waitlist .prompt
+{
+	width: 252px;
+}
+#product .purchasing .waitlist .prompt
+{
+	line-height: 1.5em;
+}
+#product div#primary .purchasing.byrows
+{
+	left: 0px;
+}
+#product div#primary .purchasing.byrows ul,
+#product div#primary .purchasing.byrows ul.first
+{
+	clear: both;
+	float: left;
+	width: 100%;
+	margin-bottom: 12px;
+}
+#product div#primary .purchasing.byrows ul.last
+{
+	margin-bottom: 0px;
+}
+#product div#primary .purchasing.byrows ul:last-of-type
+{
+	/* Must be seperate for IE 8 */
+	margin-bottom: 0px;
+}
+#product div#primary .purchasing ul li.cart,
+#product div#primary .purchasing ul li.wishlist,
+#product div#primary .purchasing ul li.mycollections
+{
+	float: left;
+	margin: 0 0 0 12px;
+}
+#product div#primary .purchasing ul li.registry,
+#product div#primary .purchasing ul li.quantity
+{
+	float: left;
+	margin: 0 0 0 0;
+}
+#product div#primary .purchasing.byrows ul li:first-of-type
+{
+	/* Must be seperate for IE 8 */
+	float: left;
+	margin: 0 0 0 0;
+}
+#product div#primary .purchasing.byrows ul li.cart
+{
+	padding-left: 50px;
+}
+#product div#primary .purchasing.byrows ul li.cart a.button span,
+#product div#primary .purchasing.byrows ul li.cart a.buttonalt span
+{
+	font-size: 14px;
+	text-transform: uppercase;
+	width: 180px;
+}
+#product div#primary .purchasing ul li.mycollections a.imagelink
+{
+	margin-left: 8px;
+}
+#product div#primary .purchasing ul li.mycollections img
+{
+	height: 23px;
+	width: 20px;
+	margin-top: 5px;
+}
+#product div#primary .purchasing ul li.mycollections a.button
+{
+	background: url(/styles/images/button_mv_left.jpg) no-repeat left top;
+	padding: 0 0 0 22px;
+	color: white;
+}
+#product div#primary .purchasing ul li.mycollections a.button span
+{
+	background: url(/styles/images/button_mv_right.jpg) no-repeat right top;
+	padding: 0 28px 0 6px;
+}
+/* *********************************************
+			BML Promotional Targeter/Content
+   ********************************************* */
+.ProdPageBMLPromoTargeter {
+	clear: both;
+	margin-bottom: 20px;
+}
+
+/* *********************************************
+			Related Items Section
+   ********************************************* */
+#product .relateditems
+{
+	clear: both;
+	margin-bottom: 26px;
+	overflow: auto;
+}
+#product .relateditems li
+{
+	float: left;
+	display: inline;
+	padding: 0 10px 0 10px;
+	border-right: solid 1px #AAAAAA /* border gray */;
+}
+#product .relateditems li a
+{
+	color: #444444;
+}
+#product .relateditems li.last
+{
+	border-right: none;
+}
+/* *********************************************
+			Tab Section
+   ********************************************* */
+#productdetail .tabshopping.pdp
+{
+	width: 528px;
+}
+#productdetail .tabdescription
+{
+	overflow: auto;
+}
+/* *********************************************
+			Tab Menu
+   ********************************************* */
+#productdetail .tabshopping.pdp div.tabs ul.menu
+{
+	width: 502px;
+	padding: 0;
+	margin: 0 0 -1px 13px; /* pull the menu down 1px, and indent it left */
+	background: url(/styles/images/small_tab_box_back_nav.gif) no-repeat bottom left; /* tab row background */
+}
+#productdetail .tabshopping.pdp div.tabs ul.menu li.first
+{
+	margin-left: 0px /* position the first tab name from the left (expose bkgnd) */;
+}
+#productdetail .tabshopping.pdp div.tabs ul.menu li a span
+{
+	padding-left: 9px /* space on left side of tab name */;
+	padding-right: 11px /* space on right side of tab name */;
+	font-size: 11px /* font size of tab name */;
+}
+#productdetail .tabshopping.pdp div.tabs ul.menu li a span.last
+{
+	padding-right: 12px;
+}
+#productdetail .tabshopping.pdp div.tabs ul.menu li.last a
+{
+	padding: 0 0 0 4px /* pull right tab to the right */;
+}
+#productdetail .tabshopping.pdp div.tabs ul.menu li.first a span
+{
+}
+#productdetail .tabshopping.pdp div.tabs ul.menu li.active a
+{
+	background: url(/styles/images/carsl5_top_nav_ovr_left.gif) no-repeat bottom left; /* left section */
+}
+#productdetail .tabshopping.pdp div.tabs ul.menu li.last.active a span,
+#productdetail .tabshopping.pdp div.tabs ul.menu li.active a span
+{
+	background: url(/styles/images/carsl5_top_nav_ovr_right.gif) no-repeat bottom right; /* right section */
+}
+/* *********************************************
+			Tab Boxes
+   ********************************************* */
+#productdetail .tabshopping.pdp div.tabs div.tab
+{
+	background: url(/styles/images/small_tab_box_top.gif) no-repeat top left; /* box top */
+}
+#productdetail .tabshopping.pdp div.tabs div.tab .box
+{
+	background: url(/styles/images/small_tab_box_btm.gif) no-repeat bottom right; /* box btm */
+	width: 496px;
+	padding-bottom: 16px;
+}
+#productdetail .tabshopping.pdp div.tabs div.tab .boxsides
+{
+	background: url(/styles/images/small_tab_box_mid_528_3.gif) repeat-y left top; /* box btm */
+	width: 496px;
+}
+#productdetail .tabshopping.pdp div.tabs div.tab .boxbtm
+{
+	float: left;
+	background: url(/styles/images/small_tab_box_btm_528_16.gif) no-repeat right bottom; /* box btm */
+	width: 528px;
+	height: 16px;
+	display: inline-block;
+}
+/* *********************************************
+			Description Text
+   ********************************************* */
+#productdetail .tabdescription .tab a
+{
+	border-bottom: dotted 1px #444444 /* charcoal */;
+}
+#productdetail .tabdescription p,
+#productdetail .tabdescription ul,
+#productdetail .tabdescription ol
+{
+	margin-bottom: 1.75em;
+}
+#productdetail .tabdescription p.last,
+#productdetail .tabdescription ul.last,
+#productdetail .tabdescription ol.last
+{
+	margin-bottom: 0;
+}
+#productdetail .tabdescription ul
+{
+	list-style-type: square;
+	list-style-position: inside;
+}
+#productdetail .productbugs
+{
+	font-size: .90em;
+	font-weight: bold;
+}
+/* *********************************************
+			Zoom Image Section
+   ********************************************* */
+#productdetail .mainimage img
+{
+	height: 426px;
+	width: 426px;
+	border: solid 1px #AAAAAA /* border gray */;
+	margin: 1px;
+}
+#productdetail .mainimage a,
+#productdetail .jqzoom
+{
+	height: 430px;
+	width: 430px;
+	border: none;
+}
+#productdetail .zoomit
+{
+	text-align: center;
+	margin: 6px 0 6px 0;
+}
+/* *********************************************
+			Color Choices Section
+   ********************************************* */
+#productdetail .colorchoices
+{
+	width: 430px;
+	overflow: auto;
+	margin-bottom: 26px;
+}
+#productdetail .swatches
+{
+	width: 282px;
+	overflow: auto;
+	margin: 0 auto;
+}
+#productdetail .swatches a
+{
+	margin: 2px 6px 4px 0;
+	border: solid 1px white;
+	float: left;
+	display: block;
+}
+#productdetail .swatches a img
+{
+	width: 23px;
+	height: 23px;
+	border: solid 1px #AAAAAA /* border gray */;
+}
+#productdetail .swatches a:hover,
+#productdetail .swatches a:hover img,
+#productdetail .swatches a.active,
+#productdetail .swatches a.active img
+{
+	border: solid 1px #DB8F21 /* tomato */;
+}
+/* *********************************************
+			Alt Views Section
+   ********************************************* */
+#productdetail .views
+{
+	width: 300px;
+	overflow: auto;
+	margin: 0 auto 25px auto;
+}
+#productdetail .views .row
+{
+	overflow: auto;
+	margin: 0 auto 6px auto;
+}
+#productdetail .views a
+{
+	margin-right: 6px;
+	border: solid 1px white;
+	float: left;
+	display: block;
+}
+#productdetail .views a img
+{
+	width: 47px;
+	height: 47px;
+	border: solid 1px #AAAAAA /* border gray */;
+}
+#productdetail .views a:hover,
+#productdetail .views a:hover img,
+#productdetail .views a.active,
+#productdetail .views a.active img
+{
+	border: solid 1px #DB8F21 /* tomato */;
+}
+/*
+	use this file with pdpProductAccessories.htm to populate the
+	The Collection, Product Accessories, and companionproducts sections of the
+	Product Detail Page
+*/
+#product h3#companionproductstitle,
+#product h3#productaccessoriestitle,
+h3.cookingclassestitle,
+#product h3#collectionaccessoriestitle,
+#product h3#cookingclassestitle
+{
+	float: left;
+	font-size: 23px;
+	line-height: 29px;
+	padding-bottom: 9px;
+	border-bottom: solid 1px #AAAAAA;
+	width: 990px;
+	display: inline;
+}
+#productaccessories .productinfo .itemwrapper
+{
+	clear: both;
+	float: left;
+	overflow: visible;
+	border-bottom: solid 1px #AAAAAA;
+	margin: 16px 0 0 0;
+	padding: 0 0 16px 0;
+	width: 990px;
+}
+/*
+	name: Product Detail Accessories
+*/
+#productaccessories img.itemImg
+{
+	float: left;
+	height: 120px;
+	width: 120px;
+	margin: 30px 20px 0 0;
+	display: inline;
+}
+#productaccessories .info{
+	float: left;
+	width: 850px;
+	display: inline;
+}
+#productaccessories .productinfo .itemwrapper.last
+{
+	border: none;
+}
+#productaccessories .name
+{
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 14px;
+	margin: 0 0 8px 0;
+	padding: 0;
+}
+#productaccessories .productinfo .outlook
+{
+	/*margin-bottom: 12px;*/
+	overflow: hidden;
+}
+#productaccessories .productinfo .outlook p
+{
+	margin: 0px;
+	padding: 0px;
+}
+/*  add this missing style when merge style */
+#productaccessories .productinfo .outlook .rating p img.star
+{
+	margin: -3px 0 3px;
+	padding-right: 500px;
+	padding-bottom: 8px;
+}
+#productaccessories .story
+{
+	margin-bottom: 12px;
+}
+#productaccessories .story p
+{
+	display: block;
+	margin: 0px;
+	padding: 0px;
+	word-wrap: break-word;
+}
+#productaccessories .story p a.moreinfo
+{
+	color: #DB8F21;
+}
+#productaccessories .pricing
+{
+/* margin-bottom: 15px;*/
+	z-index: 2;
+	font-size: 13px;
+	line-height: 13px;
+	margin: 6px 0 6px 0;
+}
+#productaccessories .column1
+{
+	float: left;
+	width: 575px;
+	display: inline;
+}
+#productaccessories .column1 fieldset.offers
+{
+	width: 70%;
+	margin: 0;
+	padding: 0;
+	font-size: 0.9em;
+}
+#productaccessories .column1 a
+{
+	border-bottom: dotted 1px #444444 /* charcole */;
+}
+#productaccessories .column1 a:hover
+{
+	border-bottom: solid 1px #5C2946  /*  eggplant */;
+}
+#productaccessories .column1 a.moreinfo
+{
+	border-bottom: none;
+}
+#productaccessories .column1 a.moreinfo:hover
+{
+	border-bottom: solid 1px #DB8F21 /* tomato */;
+}
+#productaccessories .column2
+{
+	float: right;
+	display: block;
+	margin: 0px;
+	padding: 0px;
+	width: 275px;
+	overflow: visible;
+}
+* html #productaccessories .column2
+{
+	/* these properties will only be read in IE lte 6! */
+	overflow: hidden;
+}
+#productaccessories .column2 .options
+{
+	float: right;
+}
+#productaccessories .column2 .options li
+{
+	display: block;
+	margin: 0px 0px 0px 0px;
+	padding: 5px 0px 5px 0px;
+}
+#productaccessories .column2 .options li.size
+{
+	margin: 0px;
+}
+#productaccessories .column2 .options li.size label
+{
+	margin-right: 12px;
+	padding-left: 7px;
+}
+#productaccessories .column2 .options li.size select
+{
+	margin-left: 8px;
+}
+#productaccessories .column2 .options li.color label
+{
+	margin-right: 16px;
+}
+#productaccessories .column2 .options li.color select
+{
+	margin-left: 5px;
+}
+#productaccessories .column2 .options li.colorbug
+{
+	text-align: right;
+	line-height: 12px;
+	margin-right: 25px;
+}
+#productaccessories .purchasing
+{
+	float: right;
+	padding: 0;
+	margin: -23px 0 0 0;
+	width: 536px;
+	display: inline;
+}
+#productaccessories .purchasing.byrows
+{
+	width: 510px;
+}
+#productaccessories .purchasing ul
+{
+	float:right;
+	/*width:850px;*/
+}
+#productaccessories .purchasing.byrows ul,
+#productaccessories .purchasing ul.first,
+#productaccessories .purchasing ul.last
+{
+	float: left;
+}
+#productaccessories .purchasing ul li
+{
+	float: right;
+	margin: 0 0 0 12px;
+	display: inline;
+}
+#productaccessories .purchasing ul li.quantity,
+#productaccessories .purchasing ul li.cart,
+#productaccessories .purchasing ul li.registry,
+#productaccessories .purchasing ul li.wishlist
+{
+	float: left;
+	margin: 0 0 0 12px;
+}
+#productaccessories .purchasing ul li.mycollections
+{
+	display: none;
+}
+/* these properties will only be read in IE lte 6! ----------- no use ---------
+* html #productaccessories .purchasing {
+	position: relative;
+}
+*/
+#productaccessories .offers dl,
+#productaccessories .offers dl dd
+{
+	margin: 0;
+	padding: 0;
+}
+#productaccessories .outlook .review,
+#productaccessories .outlook .social
+{
+	display: none;
+}
+#productaccessories select.dropdown
+{
+	margin-right: 0;
+}
+/*
+	name: Product Detail Cooking Classes
+	desc: styles for cooking class list on Product Detail Page
+*/
+.cookingclasses .productinfo .itemwrapper
+{
+	float: left;
+	margin: 16px 0 0 0;
+	padding: 0 0 16px 0;
+	border-bottom: 1px solid #AAAAAA;
+	overflow: auto;
+	display: inline;
+}
+.cookingclasses .productinfo .itemwrapper h2 a
+{
+	color:#444444;
+}
+.cookingclasses .productinfo .itemwrapper.last
+{
+	border: none;
+}
+.cookingclasses img.itemImg
+{
+	float: left;
+	height: 120px;
+	width: 120px;
+	margin: 30px 20px 0 0;
+	padding: 0;
+	display: inline;
+}
+.cookingclasses .info
+{
+	float: left;
+	width: 850px;
+	display: inline;
+}
+.cookingclasses h2.name
+{
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 14px;
+	margin: 0 0 8px 0;
+	padding: 0;
+}
+.cookingclasses .outlook
+{
+	margin-bottom: 3px;
+}
+.cookingclasses .outlook  p,
+.cookingclasses .story p
+{
+	margin: 0;
+	padding: 0;
+}
+.cookingclasses .column1
+{
+	float: left;
+	width: 575px;
+	display: inline;
+}
+.cookingclasses .column1 a
+{
+	border-bottom: dotted 1px #444444 /* charcole */;
+}
+.cookingclasses .column1 a:hover
+{
+	border-bottom: solid 1px #5C2946  /*  eggplant */;
+}
+.cookingclasses .column1 a.moreinfo
+{
+	border-bottom: none;
+}
+.cookingclasses .column1 a.moreinfo:hover
+{
+	border-bottom: solid 1px #DB8F21 /* tomato */;
+}
+.cookingclasses.column1 fieldset.offers
+{
+	width: 60%;
+	margin: 0;
+	padding: 0;
+	font-size: 0.9em;
+}
+.cookingclasses .column2
+{
+	float: right;
+	margin: 0px;
+	padding: 0px;
+	width: 275px;
+	overflow: visible;
+	display: inline;
+}
+* html .cookingclasses .column2
+{
+	/* these properties will only be read in IE lte 6! */
+	overflow: hidden;
+}
+.cookingclasses .story
+{
+	margin-bottom: 12px;
+}
+.cookingclasses .offers
+{
+	font-size: 11px;
+	line-height: 1.5em;
+	margin: 0;
+	padding: 0;
+}
+.cookingclasses .offers dl,
+.cookingclasses .offers dl dd
+{
+	margin: 0;
+	padding: 0;
+}
+.cookingclasses .outlook .review,
+.cookingclasses .outlook .social
+{
+	display: none;
+}
+.cookingclasses .learnmore
+{
+	font-size: 11px;
+	font-weight: bold;
+	margin: 0;
+	padding: 0;
+}
+.cookingclasses .learnmore a
+{
+	font-size: 11px;
+	font-weight: normal;
+	margin-left: 5px;
+	color:#444444;
+}
+/* *********************************************
+			Outlook Section
+   ********************************************* */
+.cookingclasses .outlook .rating,
+.cookingclasses .outlook .review,
+.cookingclasses .outlook .social
+{
+	font-size: 11px;
+	margin-right: 16px;
+}
+.cookingclasses .outlook .rating
+{
+	font-weight: bold;
+	line-height: 18px;
+}
+.cookingclasses .outlook .review a
+{
+	color: #444444;
+}
+.cookingclasses .outlook .review a:hover
+{
+	border-bottom: solid 1px #5C2946 /*  eggplant */;
+}
+/* *********************************************
+			Pricing Section
+   ********************************************* */
+.cookingclasses .pricing
+{
+	margin: 6px 0 6px 0;
+	font-size: 13px;
+	line-height: 13px;
+}
+.cookingclasses .pricing li
+{
+	display: inline;
+	margin-right: 12px;
+}
+.cookingclasses .pricing .price
+{
+	font-weight: bold;
+}
+.cookingclasses .pricing .sale
+{
+	font-weight: bold;
+	color: #921E1E /* bordeux heavy */;
+}
+.cookingclasses .pricing .regular
+{
+	color: #AAAAAA /* border gray */;
+}
+/* *********************************************
+			Options Section
+   ********************************************* */
+.cookingclasses .options label
+{
+	font-weight: bold;
+}
+.cookingclasses .options .size select,
+.cookingclasses .options .color select
+{
+	width: 12em;
+	margin-left: 2px;
+}
+.cookingclasses .column2 .options
+{
+	float: right;
+	padding: 0;
+	margin: 0;
+	width: 275px;
+	display: inline;
+}
+.cookingclasses .column2 .options li
+{
+	margin: 0;
+	padding: 5px 0 5px 0;
+	text-align: right;
+}
+.cookingclasses .column2 .options li.location
+{
+	margin: 0;
+}
+.cookingclasses .column2 .options li.location select
+{
+	margin-left: 8px;
+	margin-right: 0;
+}
+/* *********************************************
+			Offers Section
+   ********************************************* */
+.cookingclasses .offers
+{
+	margin: 0 0 12px 0;
+	padding: 0;
+	display: block;
+	width: 60%;
+}
+.cookingclasses .offers label
+{
+	font-weight: bold;
+}
+.cookingclasses .offers dd a
+{
+	color: #444444;
+}
+/* *********************************************
+			Purchasing Section
+   ********************************************* */
+.cookingclasses .purchasing
+{
+	float: right;
+	padding: 0;
+	margin: -23px 0 0 0;
+	width: 850px;
+	display: inline;
+
+}
+/* these properties will only be read in IE lte 6!  ----------- no use ---------
+* html .cookingclasses .purchasing {
+	position: relative;
+	margin-left: -520px;
+}
+*/
+.cookingclasses .purchasing label
+{
+	font-weight: bold;
+}
+.cookingclasses .purchasing ul li
+{
+	float: right;
+	margin: 0 0 0 12px;
+	display: inline;
+}
+.cookingclasses .purchasing .quantity input
+{
+	width: 2em;
+	margin-left: 4px;
+}
+/* *********************************************
+			Related Items Section
+   ********************************************* */
+.cookingclasses .relateditems
+{
+	clear: both;
+	margin-bottom: 26px;
+	overflow: auto;
+}
+.cookingclasses .relateditems li
+{
+	float: left;
+	display: inline;
+	padding: 0 5px 0 5px;
+	border-right: solid 1px #AAAAAA /* border gray */;
+}
+.cookingclasses .relateditems li a
+{
+	color: #444444;
+}
+.cookingclasses .relateditems li.last
+{
+	border-right: none;
+}
+/* *********************************************
+			Zoom Image Section
+   ********************************************* */
+.cookingclassesdetail .mainimage img
+{
+	height: 426px;
+	width: 426px;
+	border: solid 1px #AAAAAA /* border gray */;
+	margin: 1px;
+}
+.cookingclassesdetail .mainimage a,
+.cookingclassesdetail .jqzoom
+{
+	height: 430px;
+	width: 430px;
+	border: none;
+}
+.cookingclassesdetail .zoomit
+{
+	text-align: center;
+	margin: 6px 0 6px 0;
+}
+/* *********************************************
+			Description Text
+   ********************************************* */
+.cookingclassesdetail .productbugs
+{
+	font-size: .90em;
+	font-weight: bold;
+}
+.cookingclassesdetail .tabdescription p,
+.cookingclassesdetail .tabdescription ul,
+.cookingclassesdetail .tabdescription ol
+{
+	margin-bottom: 1.75em;
+}
+.cookingclassesdetail .tabdescription ul
+{
+	list-style-type: square;
+	list-style-position: inside;
+}
+.cookingclasses select.dropdown
+{
+	margin-right: 0;
+}
+/* fix bug */
+.specialTab1
+{
+	overflow:hidden;
+}
+#accteditaddress div.popupmain p.story
+{
+	text-align:center;
+	margin-top:50px;
+	margin-bottom:40px;
+}
+#accteditaddress div.actions
+{
+	height:19px;
+	margin-top:0;
+	margin-bottom:11px;
+}
+*html #accteditaddress div.actions
+{
+	margin-top:18px;
+}
+#accteditaddress div.actions ul li
+{
+	float:right;
+	padding-left:10px;
+	display:inline;
+}
+/* ********************************************
+		Flash Video functionality
+   ******************************************** */
+#product .videos .video,
+#product .video
+{
+	width: 428px;
+	height: 316px;
+}
+#product .videos .frame .video,
+#product .frame .video
+{
+	/*  Test code */
+	width: 394px;
+	height: 291px;
+}
+#product #description .videos .video,
+#product #description .video
+{
+	width: 494px;
+	height: 365px;
+}
+/* ********************************
+		HiDef Videos
+   ******************************** */
+#product .videos.hidef .video img,
+#product .videos.hidef .video,
+#product .hidef .video img,
+#product .hidef .video,
+#product .video.hidef img,
+#product .video.hidef
+{
+	width: 428px;
+	height: 241px;
+}
+#product .videos.hidef .frame .video img,
+#product .videos.hidef .frame .video,
+#product .hidef .frame .video img,
+#product .hidef .frame .video,
+#product .frame .video.hidef img,
+#product .frame .video.hidef
+{
+	/*  Test code */
+	width: 394px;
+	height: 222px;
+}
+#product #description .videos.hidef .video object,
+#product #description .videos.hidef .video img,
+#product #description .videos.hidef .video,
+#product #description .hidef .video object,
+#product #description .hidef .video img,
+#product #description .hidef .video,
+#product #description .video.hidef object,
+#product #description .video.hidef img,
+#product #description .video.hidef
+{
+	width: 494px;
+	height: 278px;
+}
+/* ********************************************
+		Floating Product Video functionality
+   ******************************************** */
+#product #productVideo
+{
+	/* Hide video until it is moved inside the secondary html container */
+	display: none;
+}
+#product #productdetail .secondary #productVideo
+{
+	/* Make sure the video is visible */
+	display: block;
+}
+#product #productdetail .secondary #productVideo .videos .frame
+{
+	position: absolute;
+	top: 0px;
+	left: -9999px;
+	display: none;
+	border: none;
+}
+#product #productdetail .secondary #productVideo .videos.hidef .frame
+{
+	/*
+	padding-top: 161px;
+	height: 249px;*/
+}
+#product #productdetail .secondary #productVideo .videos .videoMenu
+{
+	display: none;
+}
+#product #productdetail .secondary #productVideo .videos .videoMenu.play
+{
+	z-index: +201;
+	display: block;
+	position: absolute;
+	top: 3px;
+	left: 356px;
+	height: 68px;
+	width: 68px;
+}
+#product #productdetail .secondary #productVideo .videos .videoMenu.play img
+{
+	width: 68px;
+	height: 68px;
+	display: inline;
+}
+#product #productdetail .secondary #productVideo .videos.openned .videoMenu.play
+{
+	display: none;
+}
+#product #productdetail .secondary #productVideo .videos.openned .frame
+{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 428px;
+	width: 428px;
+	padding: 0 0 0 0;
+	z-index: +200;
+	display: block;
+	background: none;
+}
+#product #productdetail .secondary #productVideo .videos.openned .frame .box
+{
+	height: 362px;
+	width: 428px;
+	padding: 32px 0 0 0;
+	background-color: #888888;
+}
+#product #productdetail .secondary #productVideo .videos.openned .videoMenu.close
+{
+	display: block;
+	height: 34px;
+	background-color: #5C2946;
+	padding: 2px 18px 0 18px;
+}
+#product #productdetail .secondary #productVideo .videos .videoMenu h4.videoTitle
+{
+	text-align: left;
+	color: #ffffff;
+}
+#product #productdetail .secondary #productVideo .videos.openned .frame a.close
+{
+	background: url(/styles/images/popup_box_close_x.gif) no-repeat right center;
+	padding-right: 18px;
+	margin-right: 18px;
+	color: White;
+	border: none;
+	line-height: 35px;
+	position: absolute;
+	top: 0;
+	right: 0px;
+	z-index: +1;
+}
+#product #productdetail .secondary #productVideo .videos.openned .frame a.close:hover
+{
+	color: White;
+	border: none;
+	text-decoration: underline;
+}
+#product #productdetail .secondary #productVideo .videos.openned .frame .video
+{
+	border: solid 1px #AAAAAA;
+	width: 426px;
+	height: 315px;
+	position: absolute;
+	top: 102px;
+	left: 0px;
+	padding: 0;
+}
+#product #productdetail .secondary #productVideo .videos.openned.hidef .frame .video,
+#product #productdetail .secondary #productVideo .videos.hidef .video img,
+#product #productdetail .secondary #productVideo .videos.hidef .video,
+#product #productdetail .secondary #productVideo .hidef .video img,
+#product #productdetail .secondary #productVideo .hidef .video
+{
+	width: 426px;
+	height: 240px;
+}
+
+
+
+
+/* Merged from widgets/pdpYouMayAlsoLike.css */
+
+/*
+	name: PDP - You may also like widget
+	file: PDPYouMayAlsoLike.css
+	desc: Defines specific styles for the 'You may also like' section of the Product Detail Page
+*/
+
+
+#youmayalsolike
+{
+	margin: 0;
+	padding: 0;
+	width: 990px;
+	overflow: auto;
+	clear:both;
+	background: url(/styles/images/content_box1_top.gif) no-repeat top left;
+}
+#youmayalsolike #items
+{
+	overflow: auto;
+	background: url(/styles/images/content_box1_btm.gif) no-repeat bottom left;
+	width: 958px;
+	margin: 7px 0 0 0;
+	padding: 0px 16px 0 16px;
+}
+#product #igdrec_1,
+#product .youmayalsolike
+{
+	margin: 0 0 16px 0;
+	padding: 7px 0 0 0;
+	width: 990px;
+	overflow: auto;
+	clear:both;
+	background: url(/styles/images/content_box1_top.gif) no-repeat top left;
+}
+#product .youmayalsolike #igdrec_1
+{
+	margin: 0;
+	padding: 0;
+	background: none;
+}
+#product #igdrec_1 .box,
+#product #igdrec_1 #items.box,
+#product .youmayalsolike .box,
+#product .youmayalsolike #items.box
+{
+	position: relative;
+	margin: 0 0 0 0;
+	overflow: hidden;
+	padding: 0 0 7px 12px;
+	background: url(/styles/images/content_box1_btm.gif) no-repeat bottom left;
+	width: 978px;
+}
+#youmayalsolike .row
+{
+	overflow: auto;
+	width: 958px;
+	padding: 0;
+	margin: 0px 0 25px 0;
+	float: left;
+}
+#product #igdrec_1 .box h2.header
+{
+
+	font-size: 23px;
+	line-height: 23px;
+	font-weight: normal;
+	padding-right: 30px;
+	margin-bottom: 22px;
+	padding-left: 16px;
+	margin-top:10px;
+}
+#product #igdrec_1 .infiniteCarousel,
+#product .youmayalsolike .infiniteCarousel
+{
+	width: 900px;
+	margin-left: 37px;
+	padding: 0;
+	float:left;
+	display:inline;
+}
+#product #youmayalsolike .carousel .infiniteCarousel ul li,
+#product .carousel.youmayalsolike .infiniteCarousel ul li,
+#product .carousel.youmayalsolike.by5 .infiniteCarousel ul li
+{
+	display: block;
+	float: left;
+	margin: 0 18px 0 0;
+	padding: 0;
+	width: 164px;
+}
+#product .carousel .arrowforward
+{
+	/* assumes that the width is 990 pixels */
+	position: absolute;
+	height: 27px;
+	width: 27px;
+	top: 140px;
+	left: 950px;
+	border: none;
+	margin: 0px;
+	padding: 0px;
+	cursor: pointer;
+	background: url(/styles/images/content_box_slide_right_off.gif) no-repeat top left;
+	z-index: 500;
+	text-indent: -9999px;                 /* sends the text off-screen */
+	white-space: nowrap;                  /* because only the first line is indented */
+	overflow: hidden;
+}
+#product .carousel .arrowback
+{
+	/* assumes that the width is 990 pixels */
+	position: absolute;
+	height: 27px;
+	width: 27px;
+	top: 140px;
+	left: 12px;
+	border: none;
+	margin: 0px;
+	padding: 0px;
+	cursor: pointer;
+	background: url(/styles/images/content_box_slide_left_off.gif) no-repeat top left;
+	z-index: 500;
+	text-indent: -9999px;                 /* sends the text off-screen */
+	white-space: nowrap;                  /* because only the first line is indented */
+	overflow: hidden;
+}
+#product .carousel .arrowforward a,
+#product .carousel a.arrowforward,
+#product .carousel .arrowback a,
+#product .carousel a.arrowback
+{
+	outline: none;  /* prevents dotted line when link is active */
+}
+#product .carousel .arrowforward a:hover,
+#product .carousel a.arrowforward:hover
+{
+	background: url(/styles/images/content_box_slide_right_on.gif) no-repeat top left;
+}
+#product .carousel .arrowback a:hover,
+#product .carousel a.arrowback:hover
+{
+	background: url(/styles/images/content_box_slide_left_on.gif) no-repeat top left;
+}
+#product #youmayalsolike dl.item
+{
+	display: inline;
+	float: left;
+	overflow: hidden;
+	margin: 0px 16px 0px 0px;
+	width: 178px;
+	padding: 0;
+}
+
+#product .youmayalsolike div#item.box ul li dl.item,
+#product #igdrec_1 ul li dl.item
+{
+	margin: 0;
+	width: 163px;
+	padding: 0 0 14px 0;
+}
+#product #youmayalsolike dl.item.last,
+#product .youmayalsolike dl.item.last,
+#product #igdrec_1 dl.item.last
+{
+	margin: 0 0 0 0;
+}
+#product #youmayalsolike h3,
+#product .youmayalsolike h3,
+#product #igdrec_1 h3
+{
+	padding: 0px;
+	margin: 9px 0px 12px 0;
+	font-size: 23px;
+	line-height: 23px;
+}
+#product #youmayalsolike dl.item a,
+#product .youmayalsolike dl.item a,
+#product #igdrec_1 dl.item a
+{
+	border: none;
+	font-weight: normal;
+}
+#product #youmayalsolike dl.item a:hover,
+#product .youmayalsolike dl.item a:hover,
+#product #igdrec_1  dl.item a:hover
+{
+	text-decoration: underline;
+}
+#product .youmayalsolike dl.item dt,
+#product #igdrec_1 dl.item dt
+{
+	height: 163px;
+	overflow: hidden;
+	float: none; /* override items.css */
+}
+#product .youmayalsolike dl.item dd,
+#product #igdrec_1 dl.item dd
+{
+	padding: 0;
+	margin: 16px 0 0 0;
+	margin: 8px 0 0 0;
+}
+#youmayalsolike img
+{
+	width: 175px;
+	height: 175px;
+}
+#product #youmayalsolike .carousel dl.item img,
+#product .youmayalsolike dl.item img,
+#product #igdrec_1 dl.item img
+{
+	width: 163px;
+	height: 163px;
+	margin: 0;
+}
+#product #igdrec_1 .item .starFrame img.star,
+#product .youmayalsolike .item .starFrame img.star
+{
+	width:80px;
+	height:14px;
+	border-style: none;
+}
+/* ************************************
+		Quick View Float
+   ************************************ */
+div#items span
+{
+	font-weight: bold;
+}
+/* ****************************************************
+		Button Quick View
+   **************************************************** */
+#product #youmayalsolike .carousel .infiniteCarousel ul li dl.item a.buttonqv,
+#product .youmayalsolike dl.item a.buttonqv,
+#product #igdrec_1 dl.item a.buttonqv
+{
+	display: block;
+	font: bold 11px verdana, arial, tahoma, sans-serif;
+	line-height: 26px;
+	height: 26px;
+	color: #444444 /* charcoal */;
+	background: url(/styles/images/quick_view_btn.gif) no-repeat top left;
+	text-decoration: none;
+	border: none;
+	width: 90px;
+	padding-left: 10px;
+}
+#product #youmayalsolike .carousel .infiniteCarousel ul li dl.item a.buttonqv span,
+#product .youmayalsolike dl.item a.buttonqv span,
+#product #igdrec_1 dl.item a.buttonqv span
+{
+	display: block;
+}
+#product #youmayalsolike .carousel .infiniteCarousel ul li dl.item a.buttonqv:hover,
+#product .youmayalsolike dl.item a.buttonqv:hover,
+#product #igdrec_1 dl.item a.buttonqv:hover
+{
+	border: none;
+	text-decoration: underline;
+}
+/**********************************************/
+#pdp-recslot
+{
+	margin: 0px 0px 16px 0px;
+	padding: 0px 0px 0px 0px;
+	width: 990px;
+	overflow: auto;
+	clear:both;
+	background: url(/styles/images/content_box1_top.gif) no-repeat top left;
+}
+#pdp-recslot #items
+{
+	overflow: auto;
+	background: url(/styles/images/content_box1_btm.gif) no-repeat bottom left;
+	width: 958px;
+	margin: 7px 0 0 0;
+	padding: 0px 16px 0 16px;
+}
+#pdp-recslot .row
+{
+	overflow: auto;
+	width: 958px;
+	padding: 0;
+	margin: 0px 0 25px 0;
+	float: left;
+}
+#product #pdp-recslot dl.item
+{
+	display: inline;
+	float: left;
+	overflow: hidden;
+	margin: 0px 16px 0px 0px;
+	width: 178px;
+}
+#product #pdp-recslot dl.item.last
+{
+	margin: 0 0 0 0;
+}
+#product #pdp-recslot h3
+{
+	padding: 0px;
+	margin: 9px 0px 12px 0;
+	font-size: 23px;
+	line-height: 23px;
+}
+#product #pdp-recslot dl.item a
+{
+	border: none;
+	font-weight: normal;
+}
+#product #pdp-recslot dl.item a:hover
+{
+	text-decoration: underline;
+}
+#pdp-recslot img
+{
+	width: 175px;
+	height: 175px;
+}

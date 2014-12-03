@@ -1,0 +1,45 @@
+<html webdriver="true"><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252"></head><body><script type="text/javascript">
+//wsc 20140918
+//cd
+//b4
+//
+var str='',
+	sgID=(str)?str.split('-')[1]:'',
+	MT=(typeof localStorage!=='undefined'&&localStorage.ftGUID)?true:false,
+	url='http://servedby.flashtalking.com/spot/4/4631;30287;3168/?spotName=Famous_Footwear_Product_Pages&U7=39600&cachebuster=816988.4514331114';
+if((sgID&&sgID==='3168')||MT){
+	if(MT){
+		url+='&ft_guid='+localStorage.ftGUID;
+	}
+	new Image().src = url;
+}
+</script>
+<img style="border-style:none;" alt="" src="a_data/a.gif" height="1" width="1">
+<script>
+function getQueryVar(url, qp) {
+    var qv = new RegExp(".+?\\?.*?(" + qp + ")=(.*?)(&|$)").exec(url);
+    return qv != null ? qv[2] : "";
+}
+function setSegment() {
+    var sku = getQueryVar(window.location.href, 'U7');
+    if (sku != "") {
+        var pixelImage = new Image();
+        pixelImage.src = location.protocol + '//elb.flashtalking.com/services/famous_footwear/famous_footwear_jun2014/segment.php?a=v&sku=' + sku;
+    }
+}
+function fireMMPixel(){
+    var sku = getQueryVar(window.location.href, 'U7');
+    if (sku != "") {
+        var pixelImage = new Image();
+        pixelImage.src = location.protocol + '//pixel.mathtag.com/event/img?mt_id=615376&mt_adid=112920&mt_vid=751&mt_cid=&mt_nfinst=855999&mt_rhsinst=855997&mt_prid2=' + sku;
+    }
+}
+function init() {
+	if(document.cookie.indexOf('mm_fbx_test') > -1){
+		fireMMPixel();
+	}
+    setSegment();
+}
+init();
+</script></body></html>

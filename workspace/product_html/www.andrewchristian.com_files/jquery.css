@@ -1,0 +1,171 @@
+/**
+ * HoverScroll Style Sheet
+ *
+ * @author RasCarlito <carl.ogren@gmail.com>
+ * @version 0.2.4
+ * @revision 21
+ */
+
+/* Main container */
+div.hoverscroll {
+	position:relative;
+	margin:0 auto;
+}
+
+
+/* List container */
+div.hoverscroll div.listcontainer {
+	overflow:hidden;
+}
+div.hoverscroll div.fixed-listcontainer {
+    overflow: hidden;
+    float: left;
+}
+
+/* Actual list containing items */
+div.hoverscroll ul.list {
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+
+/* Items contained in the list */
+div.hoverscroll ul.list li.item {
+	display:block;
+	padding:0;
+}
+div.hoverscroll.horizontal ul.list li.item {
+	float:left;
+	margin-right:30px;
+	width:90px;
+	height:90px;
+}
+div.hoverscroll.horizontal ul.list li:last-child{ margin-right:0;}
+div.hoverscroll.horizontal.rtl ul.list li.item {
+	float: right;
+}
+div.hoverscroll.horizontal ul.list li.item .product-name{ height:32px; overflow:hidden; text-align:center; padding:3px 0 0 0;}
+div.hoverscroll.horizontal ul.list li.item .product-color{ 
+	font-family: 'HelveticaNeueLTstdCnregular','texgyreheroscnregular'; font-size:13px; line-height:18px; font-weight:normal; color:#000000; text-decoration:none; text-align:center; text-transform:capitalize; height:18px; overflow:hidden;
+}
+
+div.hoverscroll.horizontal ul.list li.item .product-name a {
+    color: #000000;
+    font-family: 'HelveticaNeueLTstdCnregular','texgyreheroscnregular';
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 14px;
+    text-decoration: none;
+	text-align:center;
+}
+
+
+/* Arrows */
+div.hoverscroll div.arrow {
+	position:absolute;
+	float:none;
+	background-color:#fff;
+	background-position:center;
+	background-repeat:no-repeat;
+	opacity:0.8;
+	filter:alpha(opacity=80);
+}
+div.hoverscroll div.fixed-arrow {
+    display: block;
+    float: left;
+    background-color: #fff;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+div.hoverscroll div.arrow.left,
+div.hoverscroll div.arrow.right,
+div.hoverscroll div.fixed-arrow.left,
+div.hoverscroll div.fixed-arrow.right {
+	top:0px;
+	width:40px;
+	height:50%;
+}
+div.hoverscroll div.arrow.left,
+div.hoverscroll div.fixed-arrow.left {
+	left:-27px;
+	background-image:url('../images/arrow-left-small.png');
+}
+div.hoverscroll div.arrow.right,
+div.hoverscroll div.fixed-arrow.right {
+	right:0;
+	background-image:url('../images/arrow-right-small.png');
+}
+
+div.hoverscroll div.arrow.top,
+div.hoverscroll div.arrow.bottom,
+div.hoverscroll div.fixed-arrow.top,
+div.hoverscroll div.fixed-arrow.bottom {
+	left:0px;
+	width:100%;
+	height:40px;
+}
+div.hoverscroll div.arrow.top,
+div.hoverscroll div.fixed-arrow.top {
+	top:0px;
+	background-image:url('gfx/arrow-up-small.png');
+	
+}
+div.hoverscroll div.arrow.bottom,
+div.hoverscroll div.fixed-arrow.bottom {
+	bottom:0px;
+	background-image:url('gfx/arrow-down-small.png');
+}
+
+
+/* Hover Zones */
+/*
+div.hoverscroll div.hoverZoneLeft,
+div.hoverscroll div.hoverZoneRight,
+div.hoverscroll div.hoverZoneTop,
+div.hoverscroll div.hoverZoneBottom {
+	position:absolute;
+}
+div.hoverscroll div.hoverZoneLeft {
+	cursor: url('gfx/mouse-arrow-left.cur'), w-resize;
+	top:0px;
+	left:0px;
+	width:40%;
+	height:100%;
+}
+div.hoverscroll div.hoverZoneRight {
+	cursor: url('gfx/mouse-arrow-right.cur'), w-resize;
+	top:0px;
+	right:0px;
+	width:40%;
+	height:100%;
+}
+div.hoverscroll div.hoverZoneTop {
+	cursor: url('gfx/mouse-arrow-up.cur'), n-resize;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:40%;
+}
+div.hoverscroll div.hoverZoneBottom {
+	cursor: url('gfx/mouse-arrow-down.cur'), n-resize;
+	bottom:0px;
+	left:0px;
+	width:100%;
+	height:40%;
+}
+*/
+
+.type-info { z-index:50; background:#fff; /*height:667px;*/ overflow:auto; width:555px; }
+.top .listcontainer {
+        width: 920px !important;
+		margin:0 0 0 18px;
+}
+	
+	#my-list li {
+		width: 122px;
+		height: 147px;
+		background: #fff;
+		position:relative;
+		/*border: #000 solid 1px;*/
+	}

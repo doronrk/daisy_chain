@@ -1,0 +1,3697 @@
+/*====================
+    *** Fonts ***
+====================
+Opensans = font-family: 'Open Sans', sans-serif;
+Opensans Condensed = font-family: 'Open Sans Condensed', sans-serif;
+Arimo - font-family: 'Arimo', sans-serif;
+*/
+
+/*===================
+*** Helper Classes ***
+====================*/
+.left {float: left;}
+.right {float: right;}
+
+
+
+section.main {margin-top:7px;}
+
+.clearfix:before, .clearfix:after {
+	content: "";
+	display: table;
+}
+.clearfix:after {
+	clear: both;
+}
+.clearfix {
+	zoom: 1;
+}
+.clear {
+	clear: both;
+}
+.last-item {
+	margin-right: 0 !important;
+	padding-right: 0 !important;
+	border-right: none !important;
+}
+.no-margin {
+	margin: 0;
+}
+.relative {
+	position: relative;
+}
+.searchbx {
+	color: #000;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 13px;
+	text-indent: 2px;
+	padding:  0 !important;
+}
+.hide {
+	display: none;
+}
+
+::-webkit-input-placeholder {
+ color: #aeaeae;
+}
+
+:-moz-placeholder {
+ color: #aeaeae;
+}
+.placeholder {
+	color: #aeaeae;
+}
+.gradient, .items table tr td {
+	background: rgb(255,255,255);
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNkY2RjZGMiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(220, 220, 220, 1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 1)), color-stop(50%, rgba(255, 255, 255, 1)), color-stop(100%, rgba(220, 220, 220, 1)));
+	background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(220, 220, 220, 1) 100%);
+	background: -o-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(220, 220, 220, 1) 100%);
+	background: -ms-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(220, 220, 220, 1) 100%);
+	background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(220, 220, 220, 1) 100%);
+ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#dcdcdc', GradientType=0 );
+}
+.rounded {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+*:focus {
+	outline: none;
+}
+/*===================
+*** Global Styles ***
+===================*/
+
+body {
+	background: #FFFFFF  url(../images/FYE_HolidayBknd.jpg) repeat-y top center;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 12px;
+	line-height: 1.5em;
+}
+.container {
+	width: 1021px;
+	margin: 0 auto;
+	background: #FFF;
+}
+.wrap {
+	width: 960px;
+	margin: 0 auto;
+	padding: 0 31px;
+}
+.promotions .wrap {padding:0;}
+
+/* Christmas header */
+
+.top {
+	background: #FFF url(http://www.fye.com/stores/fye/images/header-xmas.jpg) repeat-x;
+}
+.logo {
+	display: block;
+	width: 140px;
+	height: 129px;
+	background: url(../images/logo-xmas.png);
+	text-indent: -9999px;
+	margin: 7px auto;
+}
+
+/* Header */
+/*
+.top {
+	background: #FFF url(http://www.fye.com/stores/fye/images/header.png) repeat-x;
+}
+.logo {
+	display: block;
+	width: 140px;
+	height: 129px;
+	background: url(../images/logo.png);
+	text-indent: -9999px;
+	margin: 7px auto;
+}
+*/
+
+.logo-section {
+	width: 240px;
+	text-align: center;
+}
+.large-ad {
+	line-height:1em;
+}
+/* all form DIVs have position property set to relative so we can easily position newly created SPAN */
+.select-container.header {
+	position: relative;
+	width: 194px;
+	margin: 0 auto 7px;
+	cursor: pointer;
+	height: 31px;
+}
+.select-container.header:hover {
+	cursor: pointer;
+}
+/* setting the width and height of the SELECT element to match the replacing graphics */
+.select-container.header select {
+	position:relative;
+	z-index:10;
+	width:194px !important;
+	height:31px !important;
+	line-height:29px;
+	cursor: pointer;
+}
+/* dynamically created SPAN, placed below the SELECT */
+.select-container.header span.select {
+	position:absolute;
+	bottom:0;
+	float:left;
+	left:0;
+	width:194px;
+	height:31px;
+	line-height:29px;
+	text-align: left;
+	background:url(http://www.fye.com/stores/fye/images/select.png) no-repeat 0 0;
+	cursor:pointer;
+	z-index:1;
+	text-indent: 8px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 13px;
+	color: #454545;
+	text-shadow: 0 -1px 0 rgba(255, 255, 255, .7);
+	cursor: pointer;
+}
+/*Sort*/
+.select-container.sorter {
+	position: relative;
+	width: 194px;
+	margin: 0;
+	cursor: pointer;
+	height: 31px;
+	display: inline-block;
+	margin-right: 5px;
+}
+.select-container.sorter:hover {
+	cursor: pointer;
+}
+/* setting the width and height of the SELECT element to match the replacing graphics */
+.select-container.sorter select {
+	position:relative;
+	z-index:10;
+	width:194px !important;
+	height:31px !important;
+	line-height:29px;
+	cursor: pointer;
+}
+/* dynamically created SPAN, placed below the SELECT */
+.select-container.sorter span.select {
+	position:absolute;
+	bottom:0;
+	float:left;
+	left:0;
+	width:194px;
+	height:31px;
+	line-height:29px;
+	text-align: left;
+	background:url(http://www.fye.com/stores/fye/images/select.png) no-repeat 0 0;
+	cursor:pointer;
+	z-index:1;
+	text-indent: 8px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 13px;
+	color: #454545;
+	text-shadow: 0 -1px 0 rgba(255, 255, 255, .7);
+	cursor: pointer;
+}
+.main-select:hover {
+	cursor: pointer;
+}
+/* all form DIVs have position property set to relative so we can easily position newly created SPAN */
+.select-container.shipping, .select-container.large {
+	position: relative;
+	width: 216px;
+	cursor: pointer;
+	height: 31px;
+}
+.select-container.shipping:hover, .select-container.large:hover {
+	cursor: pointer;
+}
+/* setting the width and height of the SELECT element to match the replacing graphics */
+.select-container.shipping select, .select-container.large select {
+	position:relative;
+	z-index:10;
+	width:216px !important;
+	height:31px !important;
+	line-height:29px;
+	cursor: pointer;
+}
+/* dynamically created SPAN, placed below the SELECT */
+.select-container.shipping span.select, .select-container.large span.select {
+	position:absolute;
+	bottom:0;
+	float:left;
+	left:0;
+	width:216px;
+	height:31px;
+	line-height:29px;
+	text-align: left;
+	background:url(http://www.fye.com/stores/fye/images/shipping-select.png) no-repeat 0 0;
+	cursor:pointer;
+	z-index:1;
+	text-indent: 8px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 13px;
+	color: #454545;
+	text-shadow: 0 -1px 0 rgba(255, 255, 255, .7);
+	cursor: pointer;
+}
+/*XL select*/
+.select-container.x-large {
+	position: relative;
+	width: 301px;
+	cursor: pointer;
+	height: 31px;
+}
+.select-container.x-large:hover {
+	cursor: pointer;
+}
+/* setting the width and height of the SELECT element to match the replacing graphics */
+.select-container.x-large select {
+	position:relative;
+	z-index:10;
+	width:301px !important;
+	height:31px !important;
+	line-height:29px;
+	cursor: pointer;
+}
+/* dynamically created SPAN, placed below the SELECT */
+.select-container.x-large span.select {
+	position:absolute;
+	bottom:0;
+	float:left;
+	left:0;
+	width:301px;
+	height:31px;
+	line-height:29px;
+	text-align: left;
+	background:url(http://www.fye.com/stores/fye/images/x-large-select.png) no-repeat 0 0;
+	cursor:pointer;
+	z-index:1;
+	text-indent: 8px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 13px;
+	color: #454545;
+	text-shadow: 0 -1px 0 rgba(255, 255, 255, .7);
+	cursor: pointer;
+}
+/*X-small select*/
+.select-container.x-small {
+	position: relative;
+	width: 84px;
+	cursor: pointer;
+	height: 31px;
+}
+.select-container.x-small:hover {
+	cursor: pointer;
+}
+/* setting the width and height of the SELECT element to match the replacing graphics */
+.select-container.x-small select {
+	position:relative;
+	z-index:10;
+	width:84px !important;
+	height:31px !important;
+	line-height:29px;
+	cursor: pointer;
+}
+/* dynamically created SPAN, placed below the SELECT */
+.select-container.x-small span.select {
+	position:absolute;
+	bottom:0;
+	float:left;
+	left:0;
+	width:84px;
+	height:31px;
+	line-height:29px;
+	text-align: left;
+	background:url(http://www.fye.com/stores/fye/images/x-small-select.png) no-repeat 0 0;
+	cursor:pointer;
+	z-index:1;
+	text-indent: 8px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 13px;
+	color: #454545;
+	text-shadow: 0 -1px 0 rgba(255, 255, 255, .7);
+	cursor: pointer;
+}
+/* all form DIVs have position property set to relative so we can easily position newly created SPAN */
+.select-container.selling, .select-container.small {
+	position: relative;
+	width: 140px;
+	cursor: pointer;
+	height: 31px;
+	float: right;
+}
+.select-container.selling:hover {
+	cursor: pointer;
+}
+/* setting the width and height of the SELECT element to match the replacing graphics */
+.select-container.selling select, .select-container.small select {
+	position:relative;
+	z-index:10;
+	width:140px !important;
+	height:31px !important;
+	line-height:29px;
+	cursor: pointer;
+}
+/* dynamically created SPAN, placed below the SELECT */
+.select-container.selling span.select, .select-container.small span.select {
+	position:absolute;
+	bottom:0;
+	float:left;
+	left:0;
+	width:140px;
+	height:31px;
+	line-height:29px;
+	text-align: left;
+	background:url(http://www.fye.com/stores/fye/images/small-drop.png) no-repeat 0 0;
+	cursor:pointer;
+	z-index:1;
+	text-indent: 8px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 13px;
+	color: #454545;
+	text-shadow: 0 -1px 0 rgba(255, 255, 255, .7);
+	cursor: pointer;
+}
+.searchform {
+	width: 182px;
+	height: 28px;
+	display: block;
+	margin: 0 auto;
+	background: white;
+	padding: 0 4px;
+	border-radius: 3px;
+	border: 1px solid #a9a9a9;
+}
+.searchform input[type="text"] {
+	width: 130px;
+	border: none;
+	background: transparent;
+	height: 30px;
+	line-height: 2em;
+	float: left;
+}
+.searchform input[type="submit"], input.go {
+	margin-top: 1px;
+	float: right;
+	display: block;
+	background: url(http://www.fye.com/stores/fye/images/go.png);
+	width: 42px;
+	height: 27px;
+	border: none;
+	outline: 0;
+	text-indent: -9999px;
+	font-size: 0;
+	line-height: 0;
+}
+.coupon-apply {
+	width: 206px;
+	height: 28px;
+	display: block;
+	margin: 0;
+	background: white;
+	padding: 0 4px;
+	border-radius: 3px;
+	border: 1px solid #c3c3c3;
+}
+.coupon-apply input[type="text"] {
+	width: 130px;
+	border: none;
+	background: transparent;
+	margin-top: 4px;
+	float: left;
+}
+.coupon-apply input[type="submit"] {
+	margin-top: 1px;
+	float: right;
+	display: block;
+	background: url(http://www.fye.com/stores/fye/images/apply.png);
+	width: 62px;
+	height: 27px;
+	border: none;
+	outline: 0;
+	text-indent: -9999px;
+	font-size: 0;
+	line-height: 0;
+}
+.btn {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	color: #FFF;
+	text-transform: uppercase;
+	font-size: 14px;
+	text-shadow: 0 -1px rgba(0, 0, 0, .4);
+	height: 25px;
+	line-height: 25px;
+	background: rgb(246,165,36);
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y2YTUyNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNjZTg3MTMiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top, rgba(246, 165, 36, 1) 0%, rgba(206, 135, 19, 1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(246, 165, 36, 1)), color-stop(100%, rgba(206, 135, 19, 1)));
+	background: -webkit-linear-gradient(top, rgba(246, 165, 36, 1) 0%, rgba(206, 135, 19, 1) 100%);
+	background: -o-linear-gradient(top, rgba(246, 165, 36, 1) 0%, rgba(206, 135, 19, 1) 100%);
+	background: -ms-linear-gradient(top, rgba(246, 165, 36, 1) 0%, rgba(206, 135, 19, 1) 100%);
+	background: linear-gradient(to bottom, rgba(246, 165, 36, 1) 0%, rgba(206, 135, 19, 1) 100%);
+ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6a524', endColorstr='#ce8713', GradientType=0 );
+	-webkit-box-shadow: inset 0 2px 0 rgba(255, 255, 255, .5);
+	border: none;
+}
+/*===================
+*** Typography ***
+===================*/
+
+h1 {
+	color: #001d32;
+	margin: 0;
+}
+h2 {
+	color: #001d32;
+}
+h3 {
+	font-family: 'Arimo', sans-serif;
+	font-weight: bold;
+	font-size: 18px;
+	margin: 0 0 5px 0;
+	color: #001d32;
+}
+a {
+	color: #0076c2;
+	text-decoration: none;
+	outline: 0;
+}
+a, a:hover, a:active, a:focus {
+	outline: 0 !important;
+}
+ input::-moz-focus-inner {
+border: 0;
+}
+/*===================
+*** Navigation ***
+===================*/
+
+.nav-section {
+	width: 710px;
+	text-align: right;
+	height: 92px;
+	position: relative;
+}
+header ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+header ul li {
+	display: inline-block;
+	zoom: 1;
+ *display: inline;
+}
+header ul li a {
+ -webkit-transition: all .1s ease-in-out;
+ -moz-transition: all .1s ease-in-out;
+ -ms-transition: all .1s ease-in-out;
+ -o-transition: all .1s ease-in-out;
+ transition: all .1s ease-in-out;
+}
+/*Top Links*/
+.top-links {
+}
+.top-links ul {
+	float: right;
+}
+.top-links ul li {
+	font-family: 'Open Sans Condensed', Arial, sans-serif;
+	float: left;
+	color: #FFF;
+	height: 27px;
+	line-height: 27px;
+	padding: 0 7px;
+	background: #003a64;
+}
+.top-links ul li:first-child {
+	-webkit-border-bottom-left-radius: 3px;
+	-moz-border-radius-bottomleft: 3px;
+	border-bottom-left-radius: 3px;
+}
+.top-links ul li:last-child {
+	-webkit-border-bottom-right-radius: 3px;
+	-moz-border-radius-bottomright: 3px;
+	border-bottom-right-radius: 3px;
+}
+.top-links ul li a {
+	color: #FFF;
+	text-decoration: none;
+	font-size: 16px;
+}
+.top-links ul li a:hover {
+	color: #64b1e2;
+}
+.top-links ul li.cart {
+	background: #f8a725;
+	text-transform: uppercase;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-weight: bold
+}
+.top-links ul li.cart a:hover {
+	color: #FFF;
+}
+.top-links ul li.cart a:before {
+	content: url(http://www.fye.com/stores/fye/images/cart.png);
+	margin-right: 5px;
+}
+.cart-total {
+	margin-left: 5px;
+}
+/* Primary Nav */
+.primary-nav {
+	clear: both;
+	height: 36px;
+	position: relative;
+	z-index: 500;
+}
+.primary-nav > ul > {
+	height: 36px;
+}
+.primary-nav > ul > li {
+	padding: 10px 8px 8px 8px;
+	height: 20px;
+	position: relative;
+	z-index: 500;
+}
+.primary-nav > ul > li:last-child {
+	margin-right: 0;
+}
+.primary-nav > ul > li > a {
+	font-family: 'Arimo', sans-serif;
+	color: #FFF;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-size: 24px;
+	display: block;
+	height: 18px;
+	float: left;
+	font-weight: bold;
+	position: relative;
+	overflow: visible;
+}
+.primary-nav > ul > li > a:hover {
+	color: #64b1e2;
+}
+.sub-menu {
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 36px;
+	width: 125%;
+	padding: 10px;
+	background: #004779;
+	text-align: left;
+	-webkit-border-radius: 5px;
+	-webkit-border-top-left-radius: 0;
+	-moz-border-radius: 5px;
+	-moz-border-radius-topleft: 0;
+	border-radius: 5px;
+	border-top-left-radius: 0;
+	z-index: 500;
+}
+.sub-menu li {
+	margin-bottom: 8px;
+	display: block;
+}
+.sub-menu li a {
+	color: #FFF;
+	text-decoration: none;
+	font-size: 14px;
+}
+.sub-menul li a:hover {
+	color: #64b1e2;
+}
+.sub-menu li a.featured {
+	font-size: 16px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+.primary-nav > ul > li.with-sub-menu:hover {
+	background: #004779;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+.primary-nav > ul > li.with-sub-menu:hover a {
+	color: #FFF;
+}
+.secondary-nav {
+	margin-top: 8px;
+}
+.secondary-nav ul {
+}
+.secondary-nav ul li {
+	color: #FFF;
+}
+.secondary-nav ul li a {
+	font-family: 'Arimo';
+	color: #FFF;
+	font-size: 14px;
+	text-decoration: none;
+}
+.secondary-nav ul li a:hover {
+	color: #64b1e2;
+}
+.secondary-nav ul li {
+	border-right: 1px solid #FFF;
+	margin-right: 4px;
+	padding-right: 8px;
+	height: 15px;
+}
+.secondary-nav ul li.last-item a {
+	font-weight:bold;
+}
+.secondary-nav ul li:last-child:after {
+	content: '';
+	margin: 0;
+}
+.deal-title {
+	color: #FFFF00;
+	font-weight: bold;
+}
+/*Shipping Banner*/
+.shipping-banner {
+	display: block;
+	position: relative;
+	line-height:1em;
+}
+.shipping-banner:before {
+	content: '';
+	width: 5px;
+	height: 5px;
+	top: 5px;
+	left: -5px;
+	background: url(http://www.fye.com/stores/fye/images/inverted-corners.png) no-repeat 0 0;
+	position: absolute;
+}
+.shipping-banner:after {
+	content: '';
+	width: 5px;
+	height: 5px;
+	top: 5px;
+	right: -4px;
+	background: url(http://www.fye.com/stores/fye/images/inverted-corners.png) no-repeat -5px 0;
+	position: absolute;
+}
+.metal .shipping-banner:before, .metal .shipping-banner:after {
+	background-image: url(http://www.fye.com/stores/fye/images/inverted-corners-dk.png) !important;
+}
+/*Header Form*/
+
+/*===================
+*** Main Area ***
+===================*/
+
+/* Product Grid */
+
+.product-grid {
+	margin-bottom: 15px;
+}
+.box {
+	width: 465px;
+	margin: 0 30px 15px 0;
+	float: left;
+}
+.box-top {
+	margin-bottom: 4px;
+}
+.box h2 {
+	margin: 0;
+	color: #001d32;
+	text-transform: uppercase;
+	font-family: 'Arimo', sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+}
+.box-top h2 a {
+	font-size: 12px;
+	font-family: Georgia, serif;
+	color: #0075bf;
+	font-style: italic;
+	text-transform: lowercase;
+	margin-left: 5px;
+}
+.carousel.recommended {
+	width: 710px;
+	margin-top: 15px;
+}
+.carousel.small {
+	width: 465px;
+}
+.carousel.large {
+	width: 960px;
+	float: none;
+	clear: both;
+}
+.carousel.medium {
+	width: 710px;
+	float: none;
+	clear: both;
+}
+.carousel .viewport {
+	float: left;
+	height: 230px;
+	overflow: hidden;
+	position: relative;
+	margin-left: 20px;
+}
+.carousel.large .viewport {
+	width: 960px;
+	overflow: visible !important;
+	margin: 0;
+}
+.carousel.small .viewport {
+	width: 436px;
+	overflow: visible !important;
+	margin: 0;
+}
+.carousel.medium .viewport {
+	width: 670px;
+	overflow: visible !important;
+	margin: 0;
+}
+.carousel .buttons {
+	display: block;
+	margin: 0 0 0 0;
+	float: left;
+	height: 18px;
+	width: 18px;
+	background: url(http://www.fye.com/stores/fye/images/arrows.png);
+	text-indent: -9999px;
+}
+.carousel .next {
+	margin: 0 0 0 0;
+}
+.carousel .disable {
+	opacity: 0.5;
+}
+.carousel .disable:hover {
+	cursor: default;
+}
+.buttons.prev {
+	background-position: 0 0
+}
+.buttons.next {
+	background-position: -18px 0;
+}
+.carousel.recommended .viewport {
+	height: auto;
+}
+/*Big Carousel*/
+/* Container DIV - automatically generated */
+.simply-scroll-container {
+	position: relative;
+}
+/* Clip DIV - automatically generated */
+.simply-scroll-clip {
+	position: relative;
+	overflow: hidden;
+}
+/* UL/OL/DIV - the element that simplyScroll is inited on
+Class name automatically added to element */
+.simply-scroll-list {
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.simply-scroll-list li {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.simply-scroll-list li img {
+	border: none;
+	display: block;
+}
+/* Master button styles - note that up and down versions
+have been removed in this example */
+
+.simply-scroll-btn {
+	position: absolute;
+	background-image: url(http://www.fye.com/stores/fye/images/big-arrows.png);
+	width: 40px;
+	height: 230px;
+	z-index:3;
+	cursor: pointer;
+	display: none;
+}
+.simply-scroll-btn-left {
+	left: 0;
+	bottom: 0;
+	background-position: 0 0;
+}
+.simply-scroll-btn-left.disabled {
+	background-position: 0 0 !important;
+}
+.simply-scroll-btn-right {
+	right: 0;
+	bottom: 0;
+	background-position: -41px 0;
+}
+.simply-scroll-btn-right.disabled {
+	background-position: -41px 0 !important;
+}
+/* Custom class modifications - adds to / overrides above
+
+.simply-scroll is default base class */
+
+/* Container DIV */
+.carousel.large .simply-scroll {
+	width: 960px;
+	height: 230px;
+}
+.carousel.medium .simply-scroll {
+	width: 710px;
+	height: 230px;
+}
+.carousel.small .simply-scroll {
+	width: 466px;
+	height: 230px;
+}
+/* Clip DIV */
+.carousel.large .simply-scroll .simply-scroll-clip {
+	width: 920px;
+	height: 230px;
+	margin-left: 20px;
+}
+.carousel.medium .simply-scroll .simply-scroll-clip {
+	width: 670px;
+	height: 230px;
+	margin-left: 20px;
+}
+.carousel.small .simply-scroll .simply-scroll-clip {
+	width: 426px;
+	height: 230px;
+	margin-left: 20px;
+}
+/* Explicitly set height/width of each list item */
+.simply-scroll .simply-scroll-list li {
+	float: left; /* Horizontal scroll only */
+}
+.carousel .overview {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.overview li {
+	float: left;
+	margin: 0 25px 0 0;
+	padding: 1px;
+	width: 88px;
+	font-size: 13px;
+	font-family: 'Open Sans Condensed', Arial;
+	text-transform: uppercase;
+}
+.carousel.table-carousel .overview li {
+	margin: 0;
+	width: 710px;
+	padding: 0;
+}
+/* Individual Product */
+.overview li span {
+	display: inline;
+}
+.overview .title {
+	font-family: 'Open Sans Condensed', Arial;
+	color: #000;
+	font-size: 11px;
+	line-height: 1.2em;
+	margin-bottom: 5px;
+	font-weight: bold;
+	text-transform:uppercase;
+}
+.overview .title a {
+	color: #000;
+}
+.overview a.artist {
+	display: block;
+	text-decoration: underline;
+	margin-bottom: 5px;
+	font-size: 11px;
+	line-height: 1.2em;
+	font-weight: bold;
+	text-transform:uppercase;
+}
+.overview .regular-price, td .regular-price {
+	font-size: 11px;
+	font-weight: bold;
+	text-transform:uppercase;
+	line-height:1.2em;
+	margin:8px 0px 5px 0px;
+}
+ .reg-price-strike {
+    font-size: 11px;
+	font-weight: bold;
+	text-transform:uppercase;
+	text-decoration: line-through;
+	line-height:1.2em;
+	margin:8px 0px 5px 0px;
+}
+.overview .our-price, td .our-price, .overview .out-price, td .out-price {
+	font-size: 11px;
+	font-family: "Open Sans", Gadget, sans-serif;
+	font-weight: 800;
+	text-transform:uppercase;
+	line-height:1.2em;
+	margin:8px 0px 5px 0px;
+}
+.sale-price {
+	font-size: 12px;
+	font-family: "Open Sans", Gadget, sans-serif;
+	font-weight: bold;
+	color: #ab0515;
+	text-transform: uppercase;
+	line-height: 1.2em;
+
+}
+.overview li a {
+	display: block;
+	position: relative;
+	text-transform:uppercase;
+}
+.overview li > div {
+	margin-bottom: 5px;
+}
+.overview .members-price, .pop-up .members-price, td .members-price {
+	text-transform: uppercase;
+	color: #000;
+	font-family: "Open Sans", Gadget, sans-serif;
+	font-size: 11px;
+	line-height: 1.2em;
+	font-weight: 800;
+}
+.overview .members-price span, .pop-up .members-price span, td .members-price span {
+	color: #005998;
+}
+.overview .product-image {
+ -webkit-transition: all .1s ease-in-out;
+ -moz-transition: all .1s ease-in-out;
+ -ms-transition: all .1s ease-in-out;
+ -o-transition: all .1s ease-in-out;
+ transition: all .1s ease-in-out;
+}
+.overview .product-image:hover {
+	opacity: .85;
+}
+ul.movie .product-image {
+	text-align:center !important;
+	height:80px;
+}
+/*===================
+*** Promotions ***
+===================*/
+
+.promotions {
+	width:960px;
+	margin:0px auto;
+	padding: 31px;
+	background: #001d32;
+}
+.promotions ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.promotions ul li {
+	float: left;
+	margin-right: 40px;
+}
+.promotions ul li:last-child {
+	margin-right: 0;
+}
+/*==========================
+*** Additional Resources ***
+==========================*/
+
+.additional-resources {
+	padding: 30px 0 50px 0;
+}
+.pod {
+	float: left;
+	margin-right: 20px;
+	width: 300px;
+}
+.pod ul {
+	padding: 15px 0;
+	border-top: 2px solid #839ab5;
+	border-bottom: 2px solid #839ab5;
+	margin: 0;
+	list-style: none;
+	min-height: 78px;
+}
+.pod ul li {
+	background: url(http://www.fye.com/stores/fye/images/dot.png) no-repeat left 8px;
+	padding: 0 0 0 10px;
+	margin: 0 0 5px 0;
+	line-height: 1.5em;
+}
+.pod ul li a {
+	border-bottom: 1px solid #005998;
+}
+.fyeguy {
+	width: 125px;
+	background: url(http://www.fye.com/stores/fye/images/SocialMediaIcons4.jpg);
+	height: 150px;
+	position: relative;
+}
+.fyeguy a {
+	display: block;
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	text-indent: -9999px;
+	font-size: 0;
+	line-height: 0;
+}
+.fye-twitter {
+	top: 5px;
+	left: 60px;
+}
+.fye-facebook {
+	top: 5px;
+	left: 5px;
+}
+.fye-foursquare {
+	top: 75px;
+	left: 65px;
+}
+.fye-instagram {
+	top: 75px;
+	left: 5px;
+}
+.counter {
+	font-size: 12px;
+	font-family: Georgia, serif;
+	color: #0075BF;
+	font-style: italic;
+	text-transform: lowercase;
+	margin: 0;
+	display: block;
+	float: left;
+	width: 65px;
+	text-align: center;
+}
+/*===================
+*** Footer ***
+===================*/
+
+footer {
+	background: #001d32;
+	padding: 15px 0 40px;
+	line-height: 1.3em;
+}
+.footer-links {
+	list-style: none;
+	padding: 0;
+	margin: 0 0 10px 0;
+	text-align: center;
+}
+.footer-links li {
+	display: inline;
+	color: #005998;
+}
+.footer-links li:after {
+	content: '|';
+	margin: 0 5px;
+}
+.footer-links li:last-child:after {
+	content: '';
+	margin: 0;
+}
+.copy {
+	color: #FFF;
+	font-size: 12px;
+}
+.copy img {
+	margin-right: 10px;
+}
+.footer-links li a {
+	color: #FFF;
+	font-size: 12px;
+}
+/* Pop-up */
+
+.popup-container {
+	width: 80px;
+	height: 80px;
+	position: relative;
+}
+.pop-up {
+	width: 242px;
+	height: 221px;
+	background: url(http://www.fye.com/stores/fye/images/pop-up.png) no-repeat 0 0;
+	padding: 30px 30px 30px 60px;
+	font-family: 'Open Sans Condensed', arial;
+	font-size: 12px;
+	text-transform: none;
+	display: none;
+	font-weight:bold;
+}
+.pop-up.left-aligned {
+	padding: 30px 60px 30px 30px;
+	background: url(http://www.fye.com/stores/fye/images/pop-up-r.png) no-repeat top right;
+}
+.blue.button {
+	outline: 0;
+	border: none;
+	background: url(http://www.fye.com/stores/fye/images/buy-buttons.png) no-repeat 0 0;
+	display: block;
+	width: 87px;
+	height: 26px;
+	line-height: 0;
+	font-size: 0;
+	text-indent: -9999px;
+	margin-bottom: 6px;
+	margin-left:-3px;
+}
+.preorder.button {
+	outline: 0;
+	border: none;
+	background: url(http://www.fye.com/stores/fye/images/preorder-button.png) no-repeat 0 0;
+	display: block;
+	width: 94px;
+	height: 26px;
+	line-height: 0;
+	font-size: 0;
+	text-indent: -9999px;
+	margin-bottom: 6px;
+	margin-left:-3px;
+}
+.green.button {
+	outline: 0;
+	border: none;
+	background: url(http://www.fye.com/stores/fye/images/buy-buttons.png) no-repeat 0 -26px;
+	display: block;
+	width: 87px;
+	height: 26px;
+	line-height: 0;
+	font-size: 0;
+	text-indent: -9999px;
+	margin-bottom: 6px;
+	margin-left:-3px;
+	position: relative;
+}
+.purple.button {
+	outline: 0;
+	border: none;
+	background: url(http://www.fye.com/stores/fye/images/sell.png) no-repeat 0 0;
+	display: block;
+	width: 86px;
+	height: 27px;
+	line-height: 0;
+	font-size: 0;
+	text-indent: -9999px;
+	margin-bottom: 6px;
+}
+.gray.button {
+	outline: 0;
+	border: none;
+	background: url(http://www.fye.com/stores/fye/images/notify-button.png) no-repeat 0 0;
+	display: block;
+	width: 96px;
+	height: 27px;
+	line-height: 0;
+	font-size: 0;
+	text-indent: -9999px;
+	margin-bottom: 6px;
+}
+.last-one {
+	color: #f30000;
+	position: absolute;
+	right: -30px;
+	top: 2px;
+	font-weight: bold;
+	font-family: Arial Black, Arial, sans-serif;
+	font-size: 10px;
+	text-transform: uppercase;
+}
+.pop-up h3 {
+	font-family: 'Open Sans Condensed', arial;
+	color: #000;
+	font-size: 14px;
+	line-height: 1.2em;
+	margin: 0 0 5px 0;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+.pop-up p {
+	font-size: 12px;
+	line-height: 1.3em;
+	margin: 0 0 6px 0;
+}
+.pop-up a {
+	text-decoration: underline;
+}
+.pop-up-artist {
+	margin: 0 0 5px 0;
+	text-transform: uppercase;
+	font-size: 12px;
+}
+.pop-up p a {
+	display: inline;
+	text-transform: uppercase;
+}
+.buy-buttons p {
+	margin: 0 0 3px 0;
+}
+.dave-banner {
+	margin: -7px 0 6px 0;
+}
+/*=================
+== Shopping Cart ==
+==================*/
+
+.sidebar {
+	width: 220px;
+	float: left;
+}
+.sidebar .module {
+	padding: 10px;
+	margin-bottom: 20px;
+}
+.module h3 {
+	font-size: 16px;
+}
+.module > div {
+	width: 90px;
+	margin: 5px;
+	float: left;
+}
+.right-box {
+	width: 710px;
+	float: right;
+}
+.fye-recommends {
+	background: #FFF url(http://www.fye.com/stores/fye/images/small-logo.png) no-repeat left center;
+	padding: 6px 0 0 44px;
+	height: 34px;
+	margin-bottom: 0;
+}
+/*Color Headers*/
+
+.heading {
+	padding: 5px 10px;
+	margin: 0;
+	color: #FFF;
+	text-transform: uppercase;
+}
+.dark-blue {
+	background: #001d32;
+}
+.purple {
+	background: #762a84;
+}
+.red {
+	background: #bf0000;
+}
+.items {
+	clear: both;
+}
+.items table {
+	padding: 10px;
+}
+.sky-blue {
+	background: #0075bf;
+}
+.light-blue {
+	background: #005998;
+}
+thead th {
+	color: #999999;
+	font-size: 12px;
+	font-style: italic;
+	font-weight: bold;
+	font-family: Georgia, serif;
+	text-align: left;
+}
+.items .count {
+	border-radius: 3px;
+	border: 1px solid #CCC;
+	width: 42px;
+	height: 27px;
+	text-align: center;
+}
+.table-container {
+	padding: 10px 0 0 0;
+}
+.table-container table {
+	width: 100%;
+}
+.table-container table th {
+	padding-bottom: 5px;
+}
+.table-container table td {
+	padding: 0 25px 0 0;
+}
+.update {
+	border: none;
+	line-height: 0;
+	text-indent: -9999px;
+	display: block;
+	width: 96px;
+	height: 27px;
+	background: url(http://www.fye.com/stores/fye/images/update.png) no-repeat;
+}
+td.title {
+	width: 75px;
+}
+td.product-price {
+	font-family: 'Open Sans', 'Arial Black', sans-serif;
+	font-size: 13px;
+	font-weight: 800;
+	color: #000;
+}
+td.product-title {
+	font-size: 14px;
+	font-weight: bold;
+	font-family: 'Open Sans Condensed', sans-serif;
+	text-transform: uppercase;
+	color: #000;
+	line-height: 1.4em;
+	width: 190px;
+	vertical-align: middle !important;
+}
+td.product-title span {
+	font-weight: normal;
+}
+td.product-title a {
+	text-decoration: underline;
+}
+td.title {
+	font-family: 'Open Sans Condensed';
+	font-weight: bold;
+	font-size: 11px;
+	text-transform: uppercase;
+	vertical-align: middle !important;
+	line-height:1.3em;
+}
+td.title a {
+	text-decoration: underline;
+}
+td.button {
+	padding: 0 !important;
+	width: 96px;
+}
+td.product-image {
+	padding: 0!important;
+	vertical-align: middle !important;
+}
+.buy-total h2, .sell-total h2 {
+	color: #001d32;
+	font-size:1.4em;
+}
+.deadlines {
+	color: #FFF;
+	padding: 10px;
+	width: 280px;
+	margin-top:5px;
+}
+.deadlines ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.deadlines ul li {
+	display: inline;
+	margin: 0 10px 0 0;
+	font-size: 11px;
+}
+.deadlines h4 {
+	margin: 0;
+	font-size: 12px;
+}
+.additional-header {
+	width: 400px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+.additional-header h3 {
+	font-size: 16px;
+	font-weight: normal;
+	text-transform: uppercase;
+}
+.additional-header h3 strong {
+	font-weight: bold;
+}
+.additional-header h3 span {
+	font-weight: bold;
+	color: #005998;
+}
+.top-cart {
+	margin-bottom: 10px;
+}
+.continue-shopping {
+	font-size: 13px;
+	font-family: Georgia, serif;
+	color: #0075bf;
+	font-style: italic;
+	margin-right: 20px;
+	font-weight: normal;
+	display: inline-block;
+	zoom: 1;
+*display: inline;
+float:right;
+}
+a.checkout {
+	display: inline-block;
+	text-indent: -9999px;
+	width: 188px;
+	height: 27px;
+	background: url(http://www.fye.com/stores/fye/images/checkout-button.png) no-repeat;
+	zoom: 1;
+ *display: inline;
+ float:right;
+}
+.checkout-links {
+	height: 27px;
+	line-height: 27px;
+}
+/*
+.sell-total {
+	padding-top: 20px;
+}
+.sell-total h2 span {
+	margin-left: 40px;
+}
+*/
+
+.new-total {
+	font-size:1.4em;
+}
+.prev-total {
+	font-weight: normal !important;
+	font-size:1.4em;
+}
+.terms {
+	width: 330px;
+}
+.terms p {
+	color: #000;
+	font-size: 10px;
+	margin: 0 0 30px 0;
+}
+.cart-bottom .right.checkout-links {
+	margin: 0px 0 0 0;
+}
+.payment-details {
+	width: 100%;
+	margin-bottom: 20px;
+}
+.payment-details th, .payment-details td {
+	color: #000;
+	font-size: 12px;
+}
+.payment-details td {
+	padding-top: 5px;
+	width: 20%;
+}
+.payment-details th {
+	font-style: normal;
+	padding-bottom: 5px;
+	font-family: Helvetica, Arial, sans-serif;
+}
+.payment-details thead {
+	border-bottom: 1px solid #CCC;
+}
+.payment-details td span {
+	display: block;
+}
+.payment-details td.billing-questions {
+	width: 40%;
+}
+.empty-cell {
+	text-indent: -9999px;
+}
+.billing-questions span a {
+	font-size: 10px;
+}
+.place-order {
+	outline: 0;
+	border: none;
+	display: inline-block;
+	text-indent: -9999px;
+	background: url(http://www.fye.com/stores/fye/images/place-order.png);
+	width: 188px;
+	height: 27px;
+	zoom: 1;
+	margin-bottom:5px;
+ *display: inline;
+}
+.sell-total > div {
+	clear: both;
+	float: right;
+	width: 450px;
+	text-align: right;
+	margin: 10px 0;
+	height: 31px;
+	line-height: 31px;
+}
+.promos-shipping {
+	border-top: 2px solid #CCC;
+	border-bottom: 2px solid #CCC;
+	padding: 10px 0;
+	margin-top: 10px;
+}
+.promos-shipping ul {
+	margin: 5px 0;
+	padding: 0;
+	list-style: none;
+	height: 31px;
+	line-height: 31px;
+}
+.promos-shipping ul li {
+	display: inline-block;
+	zoom: 1;
+ *display: inline;
+	float: left;
+	font-size:12px;
+}
+.promos-shipping a {
+	text-decoration: underline;
+}
+.promos-shipping ul li.first {
+	width: 356px;
+}
+.promos-shipping ul li.last {
+	width: 130px;
+	text-align: right;
+}
+span.plus {
+	color: #000;
+	font-size: 18px;
+}
+span.minus {
+	color: #bf0000;
+	font-size: 18px
+}
+img.card {
+	float: left;
+	margin: 0 20px 40px 0;
+}
+.cart-bottom p {
+	font-size: 11px;
+	margin: 0 0 15px 0;
+	width:335px;
+}
+.cart-bottom p a, .cart-bottom p a:hover, .cart-bottom p a:active, .cart-bottom p a:focus {
+	text-decoration:underline;
+}
+.cart-bottom p strong {
+	font-weight: bold;
+	font-size: 14px;
+}
+.cart-bottom p span {
+	display: block;
+	margin-top: 10px;
+	font-size: 10px;
+}
+.cart-bottom p span a {
+	text-decoration: underline;
+	font-style:italic;
+}
+.cart-bottom .left {
+	width: 345px;
+}
+.cart-bottom {
+	padding: 20px 0
+}
+.cart-bottom .right h2 {
+	margin: 0 0 10px 0;
+	font-size:1.4em;
+}
+.checktop {
+	margin-bottom:25px;
+}
+/*Billing Info*/
+.billing-main .column {
+	width: 50%;
+	float: left;
+}
+.column-inner {
+	padding-right: 45px;
+}
+input[type="text"], input[type="password"], textarea {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border: 1px solid #C3C3C3;
+	padding: 6px;
+	display: block;
+	border-top: 1px solid #949494;
+}
+input.large-input {
+	width: 80%;
+}
+input.medium-input {
+	width: 60%;
+}
+input.small-input {
+	width: 13%;
+}
+input.login {
+	width: 88px;
+	height: 28px;
+	background: url(http://www.fye.com/stores/fye/images/login.png) no-repeat;
+	zoom: 1;
+ *display: inline;
+	border:0px;
+}
+input.registor {
+	width: 150px;
+	height: 28px;
+	background: url(../images/registor.png) no-repeat;
+	zoom: 1;
+ *display: inline;
+	border:0px;
+}
+input.continue {
+	width: 150px;
+	height: 28px;
+	background: url(../images/continue.png) no-repeat;
+	zoom: 1;
+ *display: inline;
+	border:0px;
+}
+input.placeOrder {
+	width: 187px;
+	height: 27px;
+	background: url(../images/placeorder.png) no-repeat;
+	zoom: 1;
+ *display: inline;
+	border:0px;
+}
+input.addNew {
+	width: 171px;
+	height: 28px;
+	background: url(../images/addnew.png) no-repeat;
+	zoom: 1;
+ *display: inline;
+	border:0px;
+}
+input.addNewCard {
+	width: 188px;
+	height: 28px;
+	background: url(../images/addcard.png) no-repeat;
+	zoom: 1;
+ *display: inline;
+	border:0px;
+}
+.btn.coupons {
+	width: 135px;
+	height: 28px;
+	background: url(../images/coupons.png) no-repeat;
+	zoom: 1;
+ *display: inline;
+	border:0px;
+	display: inline-block;
+}
+input.submit {
+	width: 95px;
+	height: 29px;
+	background: url(http://www.fye.com/stores/fye/images/submit.png) no-repeat;
+	zoom: 1;
+ *display: inline;
+	border:0px;
+}
+input.select {
+	width: 92px;
+	height: 29px;
+	background: url(../images/select.png) no-repeat;
+	zoom: 1;
+ *display: inline;
+	border:0px;
+}
+input.cancel {
+	width: 79px;
+	height: 27px;
+	background: url(../images/cancel.png) no-repeat;
+	zoom: 1;
+ *display: inline;
+	border:0px;
+	margin-left: 10px;
+    margin-top: 2px;
+	cursor:default;
+}
+input.edit {
+	width: 52px;
+	height: 27px;
+	background: url(../images/edit.png) no-repeat;
+	zoom: 1;
+ *display: inline;
+	border:0px;
+}
+select.inline-select {
+	display:inline;
+	padding:4px;
+}
+.form-footer {
+	clear: both;
+}
+.column-inner > div {
+	margin-bottom: 20px;
+}
+.zip {
+	width: 80px;
+}
+.zip input.small-input {
+	width: 100%;
+}
+.billing-info label {
+	display: block;
+	text-transform: uppercase;
+	margin: 0 0 5px 0;
+	font-size: 12px;
+}
+.billing-info label span {
+	font-size: 10px;
+	text-transform: none;
+	margin-left: 10px;
+}
+input[name="address"] {
+	margin-bottom: 8px;
+}
+.info-pop {
+	background: url(http://www.fye.com/stores/fye/images/info-pop.png);
+	width: 295px;
+	height: 150px;
+	padding: 25px 55px 25px 62px;
+}
+.info-pop .left {
+	width: 50%;
+}
+.info-pop .right {
+	width: 50%;
+}
+.info-pop h5 {
+	font-size: 10px;
+	margin: 0;
+}
+.info-pop p {
+	font-size: 10px;
+	margin: 0 0 15px 0;
+}
+a.info-graphic {
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	background: url(http://www.fye.com/stores/fye/images/info.png);
+	text-indent: -9999px;
+}
+input[name="security-code"] {
+	display: inline-block;
+	margin-right: 5px;
+}
+.billing-info div.info {
+	position: absolute;
+	right: -326px;
+	top: -109px;
+	z-index: 500;
+	display: none;
+}
+label[for="same-address"] span {
+	position: relative;
+	top: -3px;
+}
+.column h4 {
+	margin: 0 0 10px 0;
+	padding: 0 0 5px 0;
+	border-bottom: 1px solid #C3C3C3;
+	font-size: 12px;
+}
+.form-body {
+	border-bottom: 1px solid #C3C3C3;
+	margin-bottom: 20px;
+}
+input.proceed {
+	background: url(http://www.fye.com/stores/fye/images/proceed.png) no-repeat;
+	float: right;
+	border: none;
+	width: 188px;
+	height: 27px;
+}
+input.button-proceed-checkout {
+	background: url(http://www.fye.com/stores/fye/images/button-proceed-checkout.png) no-repeat;
+	float: right;
+	border: none;
+	width: 188px;
+	height: 27px;
+}
+input.button-checkout-cc {
+	background: url(http://www.fye.com/stores/fye/images/button-checkout-cc.png) no-repeat;
+	float: right;
+	border: none;
+	width: 188px;
+	height: 27px;
+}
+input.button-place-order-cc {
+	background: url(http://www.fye.com/stores/fye/images/button-place-order-cc.png) no-repeat;
+	float: right;
+	border: none;
+	width: 188px;
+	height: 27px;
+}
+.billing-top {
+	margin-bottom: 30px;
+}
+.billing-top h1 {
+	margin: 0 0 15px 0;
+}
+.billing-top p {
+	margin: 0;
+	font-size: 12px;
+}
+.billing-top a {
+	text-decoration: underline;
+}
+.billing-main {
+	margin-bottom: 70px;
+}
+.items table tr td:first-child {
+	-webkit-border-bottom-left-radius: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	border-bottom-left-radius: 5px;
+	width: 50px;
+}
+.items table tr td:last-child {
+	-webkit-border-bottom-right-radius: 5px;
+	-moz-border-radius-bottomright: 5px;
+	border-bottom-right-radius: 5px;
+}
+.items table tr td {
+	padding:10px !important;
+	vertical-align: top;
+	font-family: 'Open Sans Condensed';
+}
+.items table thead th {
+	padding: 0 10px;
+}
+.recommendations-box {
+	margin-bottom: 0px;
+}
+.recommendations-box ul {
+	padding: 10px 19px 0px 19px;
+	margin: 0;
+	list-style: none;
+	border-top: 0px;
+	border-bottom: 2px solid #0075bf;
+}
+.recommendations-box li {
+	width: 90px;
+	float: left;
+	margin: 10px;
+}
+.recommendations-box h2 {
+	position: relative;
+	top: 12px;
+	color: #001d32;
+	padding-right: 20px;
+	float: none;
+	display: inline-block;
+	margin: 0;
+	text-transform: uppercase;
+	font-size: 18px;
+	height: 32px;
+}
+.single-product .breadcrumb {
+	margin-bottom: 5px;
+}
+.breadcrumb a {
+	font-family: Georgia;
+	font-style: italic;
+}
+.breadcrumb h2 {
+	display: inline;
+	color: #001d32;
+	margin-left: 5px;
+	text-transform: uppercase;
+	font-size: 18px;
+}
+.breadcrumb ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.breadcrumb ul li {
+	display: inline;
+	color: #005998;
+}
+ .breadcrumb ul li::after {
+ content: "/";
+ margin: 0 5px;
+}
+.category-sidebar ul {
+	padding: 0;
+	margin: 0px 0px 0px 25px;
+	list-style: none;
+}
+.category-sidebar ul li {
+	margin: 0 0 3px 0;
+}
+.category-sidebar ul li a {
+	color: #001d32;
+	font-size: 13px;
+}
+.category-sidebar ul li.large {
+	margin: 0 0 4px 0;
+}
+.category-sidebar ul li.large a {
+	font-family: 'Arimo', sans-serif;
+	font-weight: bold;
+	font-size: 16px;
+	margin: 0 0 5px 0;
+	color: #001d32;
+	text-transform: uppercase;
+}
+td.button-cell {
+	vertical-align: top;
+	width:150px;
+}
+.info-box {
+	width: 138px;
+	padding: 0 15px 15px 15px;
+}
+.info-box h3 {
+	font-size:15px;
+	text-transform:uppercase;
+}
+.info-box ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.info-box li {
+	font-size: 12px;
+}
+.info-box li a {
+	text-decoration: underline;
+}
+.info-box li a, .info-box li span.stars {
+	color: #005998;
+}
+.info-box li span.stars {
+	font-size:16px;
+	line-height:10px;
+}
+.review p {
+	line-height: 1.5em;
+	font-size: 12px;
+}
+.product-details {
+	width:530px;
+}
+.product-details hgroup {
+}
+.product-details hgroup h2, .product-details hgroup h3 {
+	margin: 0 0 7px 0;
+	text-transform:uppercase;
+}
+.product-details hgroup h3 span {
+	font-size: 14px;
+	display: block;
+	font-weight: normal;
+}
+.product-details hgroup h2 a {
+	font-size: 14px;
+	text-decoration: underline;
+	text-transform: uppercase;
+}
+.purchase-options {
+	width: 490px;
+}
+.purchase-options > div {
+	margin-right: 40px;
+	position: relative;
+}
+.purchase-options p {
+	font-size: 12px;
+	text-transform: uppercase;
+	margin: 0;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-weight:bold;
+}
+.purchase-options .member-price {
+	font-family: 'Arial Black', 'Open Sans', sans-serif;
+	text-transform: uppercase;
+	font-size: 10px;
+}
+.specialicon {
+	margin:-10px 0px 0px 20px;
+}
+.reveal-modal-bg {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	background: #000;
+	background: rgba(0, 0, 0, 0.45);
+	z-index: 40;
+	display: none;
+	top: 0;
+	left: 0;
+}
+.reveal-modal {
+	background: #fff;
+	visibility: hidden;
+	display: none;
+	top: 100px;
+	left: 50%;
+	margin-left: -260px;
+	width: 520px;
+	position: absolute;
+	z-index: 41;
+	padding: 0;
+	-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+	-moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+.reveal-modal .close-reveal-modal {
+	position: absolute;
+	top: 11px;
+	right: 11px;
+	color: #0075bf;
+	font-style: italic;
+	cursor: pointer;
+	font-size:9px;
+	text-transform:uppercase;
+}
+.reveal-modal .close-reveal-modal span {
+	font-size:14px;
+	font-style:normal;
+}
+.reveal-modal.small {
+	width: 30%;
+	margin-left: -15%;
+}
+.reveal-modal.medium {
+	width: 32%;
+	margin-left: -14%;
+}
+.reveal-modal.large {
+	width: 60%;
+	margin-left: -30%;
+}
+.reveal-modal.xlarge {
+	width: 70%;
+	margin-left: -35%;
+}
+.reveal-modal.expand {
+	width: 90%;
+	margin-left: -45%;
+}
+.reveal-modal .row {
+	min-width: 0;
+	margin-bottom: 10px;
+}
+.reveal-modal > :first-child {
+	margin-top: 0;
+}
+.reveal-modal > :last-child {
+	margin-bottom: 0;
+}
+#table-slider {
+	height: auto;
+	overflow:hidden;
+}
+#table-slider .viewport {
+	float: left;
+	width: 690px;
+	height: auto;
+	overflow: hidden;
+	position: relative;
+}
+#table-slider .buttons {
+	display: block;
+	margin: 30px 10px 0 0;
+	float: left;
+}
+#table-slider .next {
+	margin: 30px 0 0 10px;
+}
+#table-slider .disable {
+	visibility: hidden;
+}
+#table-slider .overview {
+	list-style: none;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	left: 0;
+	top: 0;
+}
+#table-slider ul li {
+	float: left;
+	height: auto;
+	border: 1px solid #dcdcdc;
+	width: 690px;
+}
+.blue-price {
+	color: #005998;
+}
+p.add-to-wishlist-blue a, p.add-to-wishlist-blue a:hover {
+	color: #005998;
+	text-decoration: underline;
+	font-size: 12px;
+	font-weight:normal;
+}
+.green-price {
+	color: #4e761c;
+}
+p.add-to-wishlist-green a, p.add-to-wishlist-green a:hover {
+	color: #4e761c;
+	text-decoration: underline;
+	font-size: 12px;
+	font-weight:normal;
+}
+.share {
+	width: 138px;
+}
+.mail-copy {
+	height: 17px;
+	line-height: 17px;
+	background: url(http://www.fye.com/stores/fye/images/mail-icon.png) no-repeat left center;
+	padding-left: 30px;
+}
+.mail-copy a {
+	font-size:11px;
+	text-transform:uppercase;
+	text-decoration:underline;
+}
+.bottom-details {
+	margin-top: 0px;
+}
+.sell-copy {
+	margin-top: 5px;
+	margin-left:-3px;
+}
+.sell-copy .modal-link {
+	text-decoration: none;
+	text-indent: -9999px;
+	display: block;
+	background: url(http://www.fye.com/stores/fye/images/new-sell.png) no-repeat 0 0;
+	width: 150px;
+	height: 16px;
+	margin-top: 20px;
+}
+.reveal-modal {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+.reveal-modal h2 {
+	background: #001d32;
+	color: #FFF;
+	padding: 10px 5px 5px 15px;
+	border-radius: 5px 5px 0 0;
+	text-transform: uppercase;
+	color: #FFF;
+	font-style: italic;
+	margin: 0;
+	font-size:1.3em;
+}
+.modal-footer {
+	background: #001d32;
+	border-radius: 0 0 5px 5px;
+	color: #FFF;
+}
+.modal-body {
+	padding: 15px;
+	font-family: 'Open Sans Condensed';
+	font-size: 13px;
+	text-transform: uppercase;
+}
+.modal-body small {
+	text-transform: none;
+	padding-top:0px;
+}
+.modal-body p {
+	margin: 0 0 5px 0;
+	font-size: 14px;
+}
+.modal-body .artist {
+	text-decoration: underline;
+}
+.modal-body .title {
+	font-weight: bold;
+	font-size: 15px;
+}
+.modal-body .title span {
+	font-weight: normal;
+	display: block;
+	font-size: 14px;
+}
+.modal-body .left {
+	width: 86px;
+}
+.modal-body .right {
+	width: 280px;
+}
+p.we-will-pay {
+	font-family: 'Arial Black', 'Open Sans';
+	padding-bottom:0px;
+	margin-bottom:0px;
+	line-height:12px;
+}
+p.we-will-pay span {
+	color: #800093;
+}
+.modal-footer {
+	padding: 15px;
+}
+.modal-footer .half {
+	width: 50%;
+}
+.modal-footer p {
+	margin: 0 5px;
+	font-size: 12px;
+	padding-right:3px;
+}
+.modal-footer p strong {
+	font-weight: bold;
+	font-size: 14px;
+}
+.policy {
+	width: 180px !important;
+}
+.policy p {
+	font-size: 10px;
+	text-transform:none;
+}
+.policy p a {
+	text-decoration: underline;
+	text-transform:none;
+}
+.lower-info {
+	margin-top: 18px;
+}
+.gift-card-page h2 {
+	text-transform: uppercase;
+}
+.card-options {
+	margin: 30px 0;
+}
+.card-pod {
+	width: 216px;
+	float: left;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	margin-right: 22px;
+	min-height: 295px;
+	position: relative;
+}
+.card-pod h3 {
+	color: #FFF;
+	text-transform: uppercase;
+	padding: 10px;
+	line-height: 1.2em;
+}
+.card-pod p {
+	font-size: 14px;
+	margin: 0 0 10px 0;
+}
+.card-pod.purchase {
+	border: 3px solid #001d32;
+}
+.card-pod.activate {
+	border: 3px solid #0075bf;
+}
+.card-pod.inquiry {
+	border: 3px solid #005998;
+	margin-right: 0;
+}
+.card-opions div:last-child {
+	margin-right: 0;
+}
+.card-pod form {
+	width: 180px;
+	margin: 0 auto;
+	position: relative;
+	top: 35px;
+}
+.card-pod form.submitted {
+	width: 180px;
+	margin: 0 auto;
+	position: relative;
+	top: 0px !important;
+}
+.pod-content {
+	padding: 30px 10px 0;
+}
+.card-pod input[type="text"] {
+	width: 167px;
+	margin: 10px 0;
+}
+.terms-and-conditions ul {
+	padding: 0;
+	list-style-position: inside;
+	font-size: 10px;
+	margin: 0;
+}
+.terms-and-conditions h4 {
+	margin: 0;
+	font-size: 10px;
+}
+a.gift-card {
+	background: url(http://www.fye.com/stores/fye/images/card-button.png) no-repeat;
+	width: 182px;
+	height: 27px;
+	margin: 0 auto;
+	display: block;
+	text-indent: -9999px;
+}
+.success p span {
+	font-weight: bold;
+	display: block;
+	font-weight: bold;
+	font-size: 24px;
+	margin-top: 10px;
+}
+.error {
+	font-size: 10px;
+	color: #cc0000;
+	line-height: 1.3em;
+}
+.error {
+	font-size: 12px;
+}
+.alert-box {
+	height: 50px;
+	line-height: 50px;
+	margin: 10px 0 30px;
+}
+.alert-box > div {
+	padding: 0 15px;
+}
+.alert-box > div * {
+	display: inline-block;
+	margin: 0;
+}
+.alert-box h3 {
+	font-size: 14px;
+	text-transform: uppercase;
+}
+.alert-box p {
+	font-size: 13px;
+}
+a.purchase-button {
+	width: 108px;
+	height: 27px;
+	text-indent: -9999px;
+	display: block;
+	background: url(http://www.fye.com/stores/fye/images/purchase-button.png);
+	position: relative;
+	top: 13px;
+}
+.select-card {
+}
+.card-select-form {margin-top:60px;}
+.card-heading {margin-top:15px;}
+.select-card {
+	overflow: visible;
+	list-style: none;
+	padding: 0;
+	margin: 10px auto 30px;
+}
+.select-card li {
+	padding: 0 45px;
+	float: left;
+	border-right: 1px solid #ebebeb;
+	height: 95px;
+}
+.select-card li:first-child {
+	margin-left: 0;
+	border-left: none;
+	padding-left: 0;
+}
+.select-card li:last-child {
+	margin-right: 0;
+	border-right: none;
+	padding-right: 0;
+}
+.select-card li input[type="radio"] {
+	display: block;
+	margin: 10px auto;
+	cursor: pointer;
+}
+.padded {
+	width: 633px;
+	margin: 30px auto 0;
+}
+.padded > .left, .padded > .right {
+	width: 48%;
+}
+.padded input[type="text"] {
+	width: 292px;
+	height: 29px;
+	padding: 0 5px;
+	line-height: 29px;
+	margin: 0 0 15px 0;
+}
+.padded .select-container {
+	margin: 0 0 15px 0;
+}
+input[name="zip"] {
+	width: 180px !important;
+}
+.cols input[name="zip"] {
+	width:70% !important;
+}
+.state-select {
+	width: 84px !important;
+}
+.bottom-form {
+	padding: 20px 0 0 0;
+}
+.bottom-form textarea {
+	width: 620px;
+	height: 110px;
+}
+input[type="submit"].add-to-shopping-cart {
+	display: block;
+	float: right;
+	width: 188px;
+	height: 27px;
+	background: url(http://www.fye.com/stores/fye/images/shopping-add.png) no-repeat;
+	border: none;
+	outline: 0;
+	margin-top: 15px;
+}
+.social {
+	width: 300px;
+}
+.social .mail-copy {
+	display: inline;
+	margin-left: 30px;
+}
+.card-heading h2 {
+	margin: 0;
+}
+.table-container ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.table-container ul li {
+	float: left;
+}
+.slide {
+	width: 710px;
+}
+input[type="checkbox"] {
+	cursor: pointer;
+}
+.category-filter {
+	padding: 0;
+	margin: 15px 0;
+	list-style: none;
+	overflow: hidden;
+}
+.category-filter li {
+	float: left;
+	padding-right: 10px;
+	margin-right: 10px;
+	border-right: 1px solid #005998;
+}
+.category-filter li a {
+	text-transform: uppercase;
+	font-size: 18px;
+	text-decoration: none;
+	border-bottom: 1px solid #005998;
+}
+.category-filter li a.active {
+	font-weight: bold;
+}
+.sell.button {
+	width: 86px;
+	height: 27px;
+	background: url(http://www.fye.com/stores/fye/images/sell-button.png) no-repeat;
+	display: block;
+	text-indent: -9999px;
+}
+.sell-area p {
+	text-transform: uppercase;
+	color: #000;
+	font-family: "Open Sans", Gadget, sans-serif;
+	font-size: 11px;
+	font-weight: 800;
+	margin: 0;
+}
+.sell-area p span {
+	color: #762a84;
+}
+.items table.my-stuff-table tr td {
+	vertical-align: middle;
+}
+.table-container .viewport {
+	margin: 0;
+	height: auto;
+	width: 710px;
+}
+a.select-items {
+	display: inline-block;
+	width: 187px;
+	height: 27px;
+	background: url(http://www.fye.com/stores/fye/images/select-items.png) no-repeat 0 0;
+	text-indent: -9999px;
+	margin-right: 5px;
+}
+a.remove-items {
+	display: inline-block;
+	width: 187px;
+	height: 27px;
+	background: url(http://www.fye.com/stores/fye/images/remove-items.png) no-repeat 0 0;
+	text-indent: -9999px;
+}
+.table-header {
+	height: 31px;
+	line-height: 31px;
+	margin: 0 0 15px 0;
+}
+.table-header .select-container.large {
+	display: inline-block;
+}
+.table-header .viewport {
+	height: auto;
+}
+.table-carousel .controls {
+	margin-bottom: 15px;
+}
+.my-stuff .counter {
+	line-height: 17px;
+}
+.my-stuff h2 {
+	text-transform: uppercase;
+}
+.my-stuff .overview li span {
+	display: inline;
+}
+.error-text {
+	color:#CC0000;
+}
+/*Metal Page*/
+body.metal {
+	background: #FFFFFF url(http://www.fye.com/stores/fye/images/metal-bg.jpg) no-repeat center top;
+}
+.metal .container {
+	background: #000 url(http://www.fye.com/stores/fye/images/metal-container-bg.jpg) no-repeat center 50px;
+}
+.metal .top {
+	background: url(http://www.fye.com/stores/fye/images/header.png) repeat-x;
+}
+.metal .category-sidebar ul li.large a, .metal .category-sidebar ul li a {
+	color: #4d9dd1;
+}
+.metal .gradient, .metal .items table tr td {
+	background: rgb(22,22,22);
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzE2MTYxNiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMyZDJkMmQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top, rgba(22, 22, 22, 1) 0%, rgba(45, 45, 45, 1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(22, 22, 22, 1)), color-stop(100%, rgba(45, 45, 45, 1)));
+	background: -webkit-linear-gradient(top, rgba(22, 22, 22, 1) 0%, rgba(45, 45, 45, 1) 100%);
+	background: -o-linear-gradient(top, rgba(22, 22, 22, 1) 0%, rgba(45, 45, 45, 1) 100%);
+	background: -ms-linear-gradient(top, rgba(22, 22, 22, 1) 0%, rgba(45, 45, 45, 1) 100%);
+	background: linear-gradient(to bottom, rgba(22, 22, 22, 1) 0%, rgba(45, 45, 45, 1) 100%);
+ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#161616', endColorstr='#2d2d2d', GradientType=0 );
+}
+.metal tr td, .metal .overview a, .metal .overview .members-price, .metal .pop-up .members-price, .metal td .members-price, .metal .overview .title, .metal .our-price {
+	color: #FFF;
+}
+.metal .recommendations-box h2 {
+	position: relative;
+	top: 22px;
+	color: #4d9dd1;
+	padding-right: 20px;
+	float: none;
+	display: block;
+	margin: 0;
+	text-transform: uppercase;
+	font-size: 18px;
+	height: 22px;
+}
+.metal .fye-recommends {
+	background: transparent url(http://www.fye.com/stores/fye/images/recommends-divider.png) no-repeat right center;
+	padding: 6px 0 0 0;
+	height: 34px;
+	margin-bottom: 0;
+}
+.metal .recommendations-box ul {
+	border-top: none;
+}
+.metal h3, .metal .overview a.artist, .metal .overview .members-price span, .metal .pop-up .members-price span, .metal td .members-price span {
+	color: #4d9dd1;
+}
+.metal .breadcrumb a, .metal .breadcrumb h2 {
+	color: #0075bf;
+}
+.metal .pod {
+	color: #FFF;
+}
+.metal .large-ad {
+	margin-bottom: 15px;
+}
+.metal .breadcrumb {
+	margin-bottom: 5px;
+}
+/*Grammy Page*/
+.grammy-nav {
+	text-align: center;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.grammy-nav li {
+	display: inline-block;
+	border-right: 1px solid orange;
+	padding: 0 7px;
+	margin: 0 0 10px 0;
+}
+.grammy-nav li a {
+	font-size: 15px;
+	color: #0075bf;
+	text-transform: uppercase;
+	font-family: 'Open Sans Condensed', Arial, sans-serif;
+	font-weight: bold;
+}
+.grammy-nav li.no-border {
+	border-right: none;
+	padding: 0 0 0 10px;
+}
+.grammys .recommendations-box ul {
+	border: none;
+	padding: 40px 0 0 0;
+}
+.grammys .recommendations-box ul.noslide {
+	border: medium none;
+	padding: 10px 0 0;
+}
+.grammys .recommendations-box li {
+	margin: 0 10px 0 0;
+}
+.grammy-header {
+	text-indent: -9999px;
+	width: 100%;
+}
+.grammy-banner {
+	margin: 0 0 5px 0;
+}
+.grammys .breadcrumb {
+	margin: 10px 0;
+}
+h2.album-year {
+	background: url(http://www.fye.com/stores/fye/images/grammy2011-aoty.jpg) no-repeat left top;
+}
+h2.song-year {
+	background: url(http://www.fye.com/stores/fye/images/grammy2011-soty.jpg) no-repeat left top;
+}
+h2.record-year {
+	background: url(http://www.fye.com/stores/fye/images/grammy2011-roty.jpg) no-repeat left top;
+}
+h2.new-artist {
+	background: url(http://www.fye.com/stores/fye/images/grammy2011-bna.jpg) no-repeat left top;
+}
+h2.best-duo {
+	background: url(http://www.fye.com/stores/fye/images/grammy2011-ppdg.jpg) no-repeat left top;
+}
+h2.alternative {
+	background: url(http://www.fye.com/stores/fye/images/grammy2011-alt.jpg) no-repeat left top;
+}
+h2.pop-vocal {
+	background: url(http://www.fye.com/stores/fye/images/grammy2011-pv.jpg) no-repeat left top;
+}
+h2.r-and-b {
+	background: url(http://www.fye.com/stores/fye/images/grammy2011-crb.jpg) no-repeat left top;
+}
+h2.country-album {
+	background: url(http://www.fye.com/stores/fye/images/grammy2011-ccd.jpg) no-repeat left top;
+}
+h2.rock-performance {
+	background: url(http://www.fye.com/stores/fye/images/grammy2011-rockper.jpg) no-repeat left top;
+}
+h2.rock-album {
+	background: url(http://www.fye.com/stores/fye/images/grammy2011-rock.jpg) no-repeat left top;
+}
+h2.rap-album {
+	background: url(http://www.fye.com/stores/fye/images/grammy2011-rapalbum.jpg) no-repeat left top;
+}
+h2.country-song {
+	background: url(http://www.fye.com/stores/fye/images/grammy2011-bcs.jpg) no-repeat left top;
+}
+.metal thead {
+	background: #161616;
+}
+/*Sell Page*/
+
+.recommendations-box ul.sell-box {
+	border: none;
+	clear: both;
+}
+.recommendations-box .sell-box li {
+	width: 180px;
+	margin: 0 14px 0 0;
+	padding: 15px;
+	min-height:  310px;
+}
+.sell-table {
+	width: 100%;
+}
+.sell-box span {
+	display: block;
+	margin: 0 0 -5px 0;
+}
+h2.no-logo {
+	padding-left: 0;
+	background-image: none;
+	height: 22px !important;
+}
+.sell-top {
+	text-align: center;
+	margin-bottom: 10px;
+}
+.sell-top h3 {
+	text-transform: uppercase;
+	font-size: 16px;
+	margin-bottom: 10px;
+}
+
+.prod-type-large {
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 20px;
+	margin-bottom: 10px;
+	margin-top:10px;
+	font-weight:bold;
+}
+
+.sell-price, .purchase-options p.sell-price {
+	vertical-align: text-top;
+	font-family: 'Arimo', sans-serif;
+	font-style: italic;
+	font-size: 14px;
+	font-weight:bold;
+	margin-top:2px;
+}
+.sell-price span, .purchase-options p.sell-price span {
+	color:#6c0c7a;
+}
+.sell-table td {
+	font-size: 11px;
+	font-family: Arial;
+	margin-bottom: 3px;
+}
+.sell-table td a {
+	text-decoration: underline;
+}
+.sell-search > div {
+	float: left !important;
+	margin-right: 10px;
+}
+.sell-search {
+	padding-top: 7px;
+	overflow: hidden;
+	padding-bottom: 30px;
+	margin-top: 10px;
+}
+.sell-search .select-container.small {
+	margin-left: 25px;
+}
+.sell-search form {
+	width: 266px;
+}
+.sell-search input.large-input {
+	width: 67%;
+	float: left;
+}
+.sell-search form input[type="submit"] {
+	display: inline-block;
+	float: right;
+	width: 66px;
+	height: 27px;
+	background: url(http://www.fye.com/stores/fye/images/find-it.png);
+	border: none;
+	outline: 0;
+	text-indent: -9999px;
+}
+.sell-search p {
+	margin: 0 0 25px 0;
+}
+.product-heading {
+	border-bottom: 2px solid #cccccc;
+	padding: 0 0 20px 0;
+	margin: 0 0 20px 0;
+}
+.product-heading hgroup {
+	width: 300px;
+}
+/* Tabs */
+.tab-container {
+	width: 520px;
+}
+.tab-nav {
+	border-bottom: 2px solid #0075bf;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.tab-nav li {
+	display: block;
+	float: left;
+	margin-right: 3px;
+}
+.tab-nav li a {
+	color: #FFF;
+	font-family: Arial, sans-serif;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 13px;
+	padding: 0 7px;
+	height: 26px;
+	line-height: 26px;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	background: #004779;
+	text-decoration: none;
+	display: block;
+ -webkit-transition: all .1s ease-in-out;
+ -moz-transition: all .1s ease-in-out;
+ -ms-transition: all .1s ease-in-out;
+ -o-transition: all .1s ease-in-out;
+ transition: all .1s ease-in-out;
+}
+.tab-nav li a.active {
+	background: #0075bf;
+}
+.play-button {
+	display: inline-block;
+	position: absolute;
+	left: 10px;
+	border: none;
+	padding: 0;
+	margin: 0;
+	background: url('../images/play.png');
+	width: 18px;
+	height: 18px;
+ -webkit-transition: all .1s ease-in-out;
+ -moz-transition: all .1s ease-in-out;
+ -ms-transition: all .1s ease-in-out;
+ -o-transition: all .1s ease-in-out;
+ transition: all .1s ease-in-out;
+	text-indent: -9999px;
+	top: 4px;
+}
+.pause-button {
+	display: inline-block;
+	position: absolute;
+	left: 10px;
+	border: none;
+	padding: 0;
+	margin: 0;
+	background: url('../images/pause.png');
+	width: 17px;
+	height: 18px;
+ -webkit-transition: all .1s ease-in-out;
+ -moz-transition: all .1s ease-in-out;
+ -ms-transition: all .1s ease-in-out;
+ -o-transition: all .1s ease-in-out;
+ transition: all .1s ease-in-out;
+	text-indent: -9999px;
+	top: 4px;
+}
+.play-button:hover, .pause-button:hover {
+	opacity: .5;
+}
+.tabs ol.track-listing {
+	margin: 0;
+	padding: 0;
+	list-style-position: inside;
+}
+.tabs ol.track-listing li {
+	position: relative;
+	height: 28px;
+	line-height: 28px;
+	padding-left: 10px;
+}
+.track-name {
+	position: relative;
+	left: 6px;
+}
+.tabs {
+	padding-top: 10px;
+}
+.tabs .collapsable {
+	overflow:hidden;
+	height: 190px;
+	padding-bottom: 20px;
+}
+.tabs .review p {
+	margin-top: 0;
+}
+.more-collapse {
+	padding-top: 10px;
+}
+.more-collapse button {
+	display: block;
+	text-indent: -9999px;
+	width: 520px;
+	height: 8px;
+	background: url(../images/more-collapse.png);
+	padding: 0;
+	margin: 0;
+	outline: 0;
+	border: none;
+}
+.single .more-collapse button {
+	display: block;
+	text-indent: -9999px;
+	width: 710px;
+	height: 8px;
+	background: url(../images/single-more-collapse.png);
+	padding: 0;
+	margin: 0;
+	outline: 0;
+	border: none;
+}
+.more-collapse button.more {
+	background-position: 0 0;
+}
+.more-collapse button.collapse {
+	background-position: 0 -8px;
+}
+.you-may-also-like {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.you-may-also-like a {
+	text-decoration: underline;
+}
+.album-art {
+	text-align: left;
+	width:163px;
+	line-height:1em;
+}
+.play-trailer {
+	display: block;
+	margin-top: 5px;
+}
+.tabs ul {
+	padding: 0;
+	margin: 0;
+	list-style: none
+}
+.tabs ul a {
+	text-decoration: underline;
+}
+.tabs ol {
+	padding: 0;
+	margin: 0;
+	list-style-position: inside;
+}
+.tabs ol li {
+	margin-bottom: 8px;
+}
+.game-controls li {
+	margin-bottom: 5px;
+}
+/* Single Product Page Modifications */
+.single .tab-container {
+	width: 100%;
+	margin-top:25px;
+}
+.single .tab-nav {
+	text-align: center;
+	border-bottom-width: 5px;
+}
+.single .tab-nav li {
+	display: inline-block;
+	margin: 0;
+	float: none;
+	vertical-align: bottom;
+}
+.single .info-box {
+	width: 100%;
+	padding: 0;
+}
+.single .breadcrumb a {
+	font-size: 14px;
+}
+.single .product-heading h2 {
+	font-size: 20px;
+	font-weight: normal;
+}
+.single .product-details hgroup h2 {
+	font-size: 20px;
+	font-weight: normal;
+}
+.single .product-details hgroup h3 {
+	margin: 0 0 7px 0;
+	text-transform: uppercase;
+	font-size: 20px;
+}
+.product-details hgroup h2 a {
+	font-size: 20px;
+	text-decoration: none;
+	text-transform: uppercase;
+	border-bottom: 1px solid #005998;
+}
+.single .product-heading hgroup {
+	width: 100%;
+}
+.single .release-date {
+	font-family: 'Arimo', sans-serif;
+}
+.single .sell-copy .modal-link {
+	text-decoration: none;
+	text-indent: -9999px;
+	display: block;
+	background: url(http://www.fye.com/stores/fye/images/orange-sell.png) no-repeat 0 0;
+	width: 155px;
+	height: 29px;
+	margin-top: 0;
+}
+.single .divider {
+	border-right: 2px solid #CCCCCC;
+	padding-right: 20px;
+}
+.single .purchase-options .button {
+	margin-top: 10px;
+}
+.single .product-heading {
+	margin: 0;
+	padding-bottom:7px !important;
+}
+.single .specials-badge {
+	margin-top: 10px;
+	font-weight: bold;
+	line-height: 1.3em;
+	margin-top: 10px;
+	text-align: center;
+	width: 70px;
+	font-size:10px;
+}
+.single .divider .left {
+	margin-right: 15px;
+}
+.single .purchase-options > div {
+	margin-right: 20px;
+}
+.single .last-one {
+	color: #f30000;
+	position: absolute;
+	right: -20px;
+	top: 12px;
+	font-family: 'Arial Black', Arial, sans-serif;
+	font-size: 10px;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+.single .purchase-options p {
+	font-size: 12px;
+	font-family: 'Arimo';
+	font-weight: normal;
+}
+.single .purchase-options p span {
+	font-size: 12px;
+	font-family: 'Open Sans';
+	font-weight: bold;
+}
+.single .purchase-options .member-price {
+	font-family: 'Open Sans' !important;
+	font-weight: 800 !important;
+}
+.single .recommendations-box ul {
+	border-bottom: none;
+}
+.single .tab-nav li a.active {
+	height: 28px;
+	line-height: 28px;
+}
+ .single .track-listing li:nth-child(odd) {
+ background: #dedede;
+}
+.single .track-time-title p {
+	color: #0075bf;
+	font-size: 10px;
+	text-transform: uppercase;
+	font-family: 'Open Sans';
+	font-weight: bold;
+}
+.track-listing .time {
+	margin-right: 10px;
+}
+/* Slider */
+
+.slider {
+}
+.slider ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.slides {
+	float: left;
+	width: 720px;
+}
+.slider-nav {
+	width: 240px;
+	float: right;
+	background-color: #004779;
+}
+.slider-nav ul {
+	text-align: center;
+}
+.slider-nav ul li {
+	border-bottom: 2px solid #00375e;
+	padding-top: 7px;
+}
+.slider-nav ul li a {
+	display: inline-block;
+}
+.slider-nav ul li a img {
+	display: block;
+	border: 2px solid transparent;
+}
+.cycle-slide-active img {
+	border-color: #F8a725 !important;
+}
+.nav-control {
+	text-indent: -9999px;
+	display: block;
+	background-color: #004779;
+	height: 25px;
+}
+.prev-link {
+	background: url(http://www.fye.com/stores/fye/images/nav-icon-prev.png) no-repeat center center;
+	border-bottom: 2px solid #00375e;
+}
+.next-link {
+	background: url(http://www.fye.com/stores/fye/images/nav-icon-next.png) no-repeat center center;
+}
+.slide-description {
+	color: #FFF;
+	font-weight: bold;
+	font-size: 12px;
+	display: block;
+	line-height: 1;
+}
+.slide-thumbs {
+	height: 198px;
+	overflow: hidden;
+}
+/**   Used Page */
+.used .breadcrumb .used-heading {
+	margin-top: 30px;
+	color: #005998;
+	font-size: 22px;
+	font-style: italic;
+	text-transform: none;
+	font-family: "open sans";
+	padding-right: 25px;
+	background: url(../images/heading-arrow.png) no-repeat right center;
+}
+.used .tabs-nav {
+	border-bottom: 6px solid #0075bf;
+}
+.used .tabs-nav li {
+	background: #004779;
+	margin: 0 3px;
+	padding: 10px 15px 6px;
+	width: auto;
+	border-radius: 5px 5px 0 0;
+}
+.used .tabs-nav li a {
+	color: white;
+	font-size: 18px;
+	font-family: arimo;
+}
+.used .tabs-nav li.current {
+	background: #0075bf;
+}
+.used .used-filter {
+	margin: 15px 0;
+	padding-bottom: 15px;
+	border-bottom: 3px solid #3391cc;
+}
+.used .used-filter .filter-item {
+	float: left;
+	margin-right: 15px;
+}
+.used .used-filter .filter-item label {
+	display: block;
+	font-family: 'open sans';
+	font-size: 13px;
+	font-weight: bold;
+	margin-bottom: 2px;
+}
+.used .overview {
+	border: none;
+	padding: 0;
+	margin-bottom: 10px;
+}
+.used .featured-deals {
+}
+.used .featured-deals .deals-wrap .item {
+	margin: 10px 10px 20px;
+	display: block;
+	text-align: center;
+}
+.used .overview a.artist {
+	color: #4e761c;
+}
+.used-text {
+	display: none;
+}
+.used .used-text {
+	color: #0075BF;
+	display: block;
+	font-family: arimo;
+	font-size: 95px;
+	font-weight: bold;
+	margin-left:190px;
+	position: absolute;
+	top: 26px;
+	z-index: 0;
+}
+.stepHolder {margin-top: -47px; margin-left: 206px;}
+.cartSteps {
+	width: 400px;
+	margin-left: 155px;
+	margin-top: 15px;
+	list-style-type: none;
+}
+.cartSteps li {
+	float: left;
+	position: relative;
+}
+.cartSteps li .point {
+	width: 29px;
+	height: 30px;
+	display: block;
+	background: url(../images/steps.png) no-repeat;
+}
+.cartSteps li .info {
+	position: absolute;
+	font-weight: bold;
+	color: #005999;
+	width: 150px;
+	margin-left: -75px;
+	left: 50%;
+	text-align: center;
+	top: 35px;
+}
+.cartSteps li.complete .point {
+	background-position: -10px -5px;
+}
+.cartSteps li.bar {
+	background: url(../images/steps.png) repeat-x -10px -106px;
+	height: 30px;
+	width: 150px;
+}
+.cartSteps li.unComplete .point {
+	background-position: -9px -75px;
+}
+.cartSteps li.active .point {
+	background-position: -10px -40px;
+}
+.shopCart {
+	margin: 40px 0;
+}
+.shopCart > .registration p, .shopCart > .login p {
+	font-weight:bold;
+}
+.shopCart input[type="text"], .shopCart input[type="password"], textarea {
+	width: 85%;
+}
+.shopCart > .login {
+	float: right;
+	width: 200px;
+	padding: 15px 25px;
+	margin-right: 30px;
+}
+.shopCart > .registration {
+	float: right;
+	width: 450px;
+	margin-right: 50px;
+	padding: 15px 25px;
+	background: #f5f5f5;
+}
+.formError {color:red;font-style:italic;}
+.shopCart > .registration input[type="checkbox"] {
+	margin-bottom: 4px;
+	float: left;
+	margin-right: 5px;
+	margin-top: 3px;
+}
+.col2 {
+	margin-left: -2%;
+}
+.col2 .cols {
+	width: 48%;
+	float: left;
+	margin-left: 2%;
+}
+.shopCart > .shipAddress {
+	margin-left: 280px;
+}
+.shopCart > .shipAddress h2 {
+	color: #003a66;
+}
+.shopCart > .shipAddress .form {
+	margin-left: 70px;
+	width: 350px;
+}
+.shopCart > .shipAddress input[type="text"].inner {
+	width: 70%;
+}
+.shopCart > .shipAddress .cols select {
+	width: 85%;
+	padding: 4px;
+	border-radius: 5px;
+	border: 1px solid #aaa;
+}
+.shopCart > .shipAddress .set {
+	text-align: right;
+	margin-right: 32px;
+}
+.shopCart .signupMsg {
+	border: 2px solid #ccc;
+	padding: 4px 70px 4px 12px;
+	line-height: 24px;
+	font-size: 13pt;
+	font-family: 'Arimo', sans-serif;
+}
+.shopCart .signupMsg strong {
+	text-transform:uppercase;
+}
+.shopCart .signupMsg img {
+	vertical-align: top;
+}
+.shopCart .signupMsg a {
+	color: #0059a8;
+	text-decoration: underline;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+.placeOrder .order {
+	float: left;
+	width: 650px;
+	margin-right: 20px;
+}
+.placeOrder .order h4 {
+	font-size: 10pt;
+}
+.placeOrder .order .codeSearch {
+	position: relative;
+	margin-top: -10px;
+	margin-bottom: 20px;
+}
+.cart-bottom .cols div .codeSearch {
+	position: relative;
+}
+.placeOrder .order .codeSearch input[type="text"], .cart-bottom .cols div .codeSearch input[type="text"] {
+	width: 130px;
+	height: 20px;
+	padding-right: 60px;
+}
+.placeOrder .order .codeSearch input[type="submit"], .cart-bottom .cols div .codeSearch input[type="submit"] {
+	background:url(../images/apply.png) no-repeat center center;
+	border: none;
+	overflow: hidden;
+	text-indent: -999px;
+	width: 62px;
+	height: 30px;
+	position: absolute;
+	top: 1px;
+	right: -2px;
+}
+.caps
+{
+	text-transform:uppercase;
+}
+.placeOrder .order .hrHeading {
+	border-top: 2px solid #ddd;
+	border-bottom: 2px solid #ddd;
+	padding: 10px;
+	text-transform: uppercase;
+	font-size: 11pt;
+}
+.right-box .hrHeading {
+	border-top: 2px solid #ddd;
+	border-bottom: 2px solid #ddd;
+	padding: 10px;
+}
+.blueColor {
+	color: #00599b !important;
+}
+.dBlueColor
+{
+	color: #003a66 !important;
+}
+.orangeColor {
+	color:#f7a625 !important;
+}
+.grayColor {
+	color:#999999 !important;
+}
+.h28
+{
+	line-height:26px;
+}
+a.uLink {
+	text-decoration:underline;
+}
+a.uLink.small {
+	text-decoration:underline;
+	font-size:8pt;
+}
+.placeOrder .order a {
+	text-decoration:underline;
+}
+.card-icon {
+	line-height:24px;
+}
+.placeOrder .order p .icon {
+	vertical-align:top;
+}
+.placeOrder .order .prolist {
+	margin: 0 50px 0 0;
+	padding: 0;
+	list-style: none;
+	float: left;
+}
+.placeOrder .order .prolist > li {
+	margin-bottom:30px;
+}
+.placeOrder .order .prolist .leftSec {
+	float: left;
+	margin-right: 10px;
+	width:60px;
+}
+.placeOrder .order .prolist .leftSec img {
+}
+.placeOrder .order .prolist .infoSec {
+	float: left;
+	width:190px;
+}
+.placeOrder .order .prolist .infoSec p {
+	margin:0;
+}
+.placeOrder .order .prolist .infoSec strong {
+}
+.placeOrder .order .shipSpeed {
+	float: left;
+}
+.placeOrder .order .shipSpeed h5 {
+	font-size:11pt;
+	margin: 0 0 10px;
+}
+.placeOrder .order .shipSpeed ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.placeOrder .order .shipSpeed ul li {
+	margin: 0px 0 1px;
+	display: block;
+	line-height: 24px;
+}
+.placeOrder .order .shipSpeed ul li input[type="radio"] {
+	vertical-align: top;
+	margin-top: 5px;
+	margin-right: 5px;
+}
+.placeOrder .order h2, .placeOrder .cartSummary h2 {
+	color:#003a66;
+}
+.placeOrder .cartSummary h2 span {
+	color:#003a66;
+}
+.placeOrder .cartSummary {
+	float: left;
+	width: 240px;
+	background: #e8e8e8;
+	padding: 10px 25px;
+}
+.placeOrder .cartSummary hr {
+	border-bottom: 1px solid #fff;
+	border-top: 1px solid #aaa;
+	border-left: 0;
+	border-right: 0;
+	margin: 12px 0;
+}
+.placeOrder .cartSummary input[type="checkbox"] {
+	margin: 10px 5px 10px 0;
+	vertical-align: middle;
+}
+.placeOrder .cartSummary p {
+	margin:0;
+}
+.placeOrder .cartSummary center p {
+	margin:2px 0;
+}
+.placeOrder .cartSummary .label {
+}
+.placeOrder .cartSummary .value {
+	float: right;
+}
+.col3 {
+	margin-left:-2%;
+}
+.col3 .cols {
+	width:31.33%;
+	float:left;
+	margin-left:2%;
+}
+.paymentMethod {
+	margin: 0 100px;
+}
+.paymentMethod .form {
+	background: #e8e8e8;
+	padding: 10px 10px 10px 40px;
+}
+.paymentMethod select {
+	padding: 4px 5px;
+	width: 88%;
+	border-radius: 5px;
+	border: 1px solid #aaa;
+}
+.paymentMethod .cols .cols select {
+	width: 138px;
+}
+.paymentMethod .cols .cols input[type="text"] {
+	width: 111px;
+}
+.shippingAddress {
+	margin: 0 100px;
+}
+.shippingAddress .setRight {
+	float:right;
+}
+.shopCart input[type="text"].midWid, .paymentMethod select.midWid
+{
+	width:220px;
+	display: inline-block;
+margin-right: 10px;
+}
+.adds {
+	height:100px;
+	padding: 20px 15px 15px 0;
+	line-height: 14px;
+
+}
+.pad10
+{
+	padding:10px 0;
+}
+.toolTip
+{
+	position:relative;
+}
+.toolTipWrap
+{
+	position:absolute;
+	padding:15px;
+	background:#fff;
+	border:1px solid #aaa;
+	left: 50%;
+	bottom: 20px;
+	margin-left: -125px;
+	width: 200px;
+	color:#000;
+	z-index: 2;
+	text-indent: 0;
+}
+.vr {
+	position: absolute;
+	width: 2px;
+	top: 0;
+	bottom: 0;
+	background: #ddd;
+	content: "";
+	right: 0;
+}
+.adds.default {
+	background: url(../images/default.png) no-repeat 0 0;
+}
+.col4 {
+	margin-left: -3%;
+	margin-top: 15px;
+}
+.cols {
+	margin-left: 3%;
+	width: 22%;
+	float:left;
+	position:relative;
+	margin-bottom:25px;
+}
+.cart-bottom .cols {
+	margin-bottom: 5px;
+}
+
+h3.freeship {
+	font-weight: normal;
+	margin: 60px 0px 10px 0px;
+	text-transform: uppercase;
+}
+
+.cart-bottom .cols form#shippingForm select {
+	width: 193px !important;
+}
+
+.cart-bottom .cols .cartcalc {
+	float: right;
+	text-align: right;
+	font-size: 18px;
+	width: 130px;
+	margin-right: -11px;
+	padding-top: 3px;
+}
+
+.place-order-address {
+	font-size: 14px;
+	font-weight: bold;
+	font-family: 'Open Sans Condensed', sans-serif;
+	text-transform: uppercase;
+	line-height: 1.4em;
+
+}

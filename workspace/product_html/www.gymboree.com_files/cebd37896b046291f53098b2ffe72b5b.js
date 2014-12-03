@@ -1,0 +1,2 @@
+Bootstrapper.bindDependencyDOMParsed(function(){var Bootstrapper=window["Bootstrapper"];var ensightenOptions=Bootstrapper.ensightenOptions;var obj=Bootstrapper.dataManager.getData();if(obj.productPage){window.CI_ItemID=obj.CI_ItemID;window.CI_ItemPrice=obj.CI_ItemPrice;window.CI_ItemAvailability=obj.CI_ItemAvailability}var siteId=obj.siteId;var prefix="http://cts.";if(window.location.protocol.length>5)prefix="https://cts-secure.";var url=prefix+"channelintelligence.com/truetag2/"+siteId+"/truetag.js";
+Bootstrapper.insertScript(url)},558825,[433201],155644,[155652]);

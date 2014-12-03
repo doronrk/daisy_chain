@@ -1,0 +1,191 @@
+/*Don't put margins on specific banners anymore*/
+#pageContainer {padding:10px 0 0;}
+#header, .targettedCampaignBanner { margin:0 auto; width:960px }
+#content-body {margin-top:10px;}
+#header {z-index: 5; position: relative;} 
+.printCoupon #TopMargin, .printCoupon #rewardsBar { z-index: 1;} 
+body .navlist-main {z-index: inherit;}
+
+/* Special handeling for IE specifically so the line-height doesn't trigger the looks of a double margin. */
+.targettedCampaignBanner{font-size:0px;}
+/* Right now we're assuming any text inside the banner will be contained in a div at some level */
+.targettedCampaignBanner div {font-size:12px;}
+
+.sitewide {
+  position: relative;
+  /*margin-top: 10px;*/
+}
+.sitewide .map {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  text-indent: -999px;
+  overflow: hidden;
+  top: 0;
+  bottom: 0;
+  height: auto;
+  background: url(/Content/core/spacer.gif);
+}
+.sitewide .exclusionsDropdown {
+  display: none;
+  border: 1px solid #D0D0D0;
+  padding: 16px 75px 16px 20px;
+  position: absolute;
+  top: 40px;
+  z-index: 1001;
+  width: auto;
+  left: 6px;
+  right: 6px;
+  border-top: none;
+  background: white;
+}
+.sitewide .exclusionsDropdown h4 {
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+.modalContainer {
+  position: fixed;
+  top: -500px;
+  width: 650px;
+  left: 50%;
+  margin-left: -325px;
+  background: #F0F0F0;
+  color: #333333;
+  z-index: 100000;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  border: 3px solid #333333;
+  text-align: right;
+  -webkit-box-shadow: 0 0 10px #333333;
+  -moz-box-shadow: 0 0 10px #333333;
+  box-shadow: 0 0 10px #333333;
+}
+.modalContainer h2 {
+  padding: 0;
+  margin: 15px 20px;
+  color: inherit;
+  text-align: left;
+}
+.modalContainer .modalMarkup {
+  background: #ffffff;
+  padding: 20px 0;
+  text-align: center;
+  border: 1px solid #BBBBBB;
+  border-left: none;
+  border-right: none;
+}
+.modalContainer .modalMarkup img {
+  display: block;
+  margin: 0 auto;
+}
+.modalContainer .htmlbtn {
+  font-size: 15px;
+  text-decoration: none;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  padding: 8px 15px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  margin: 10px 10px 10px;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+.modalContainer .htmlbtn:hover,
+.modalContainer .htmlbtn:focus {
+  text-decoration: none;
+}
+.modalContainer .grey {
+  background-color: #d6d6d6;
+  background-image: -moz-linear-gradient(top, #e8e8e8, #bcbcbc);
+  background-image: -ms-linear-gradient(top, #e8e8e8, #bcbcbc);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#e8e8e8), to(#bcbcbc));
+  background-image: -webkit-linear-gradient(top, #e8e8e8, #bcbcbc);
+  background-image: -o-linear-gradient(top, #e8e8e8, #bcbcbc);
+  background-image: linear-gradient(top, #e8e8e8, #bcbcbc);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e8e8e8', endColorstr='#bcbcbc', GradientType=0);
+  border-color: #bcbcbc #bcbcbc #969696;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  color: #333333;
+  border: 1px solid #afafaf;
+  margin-right: 0;
+}
+.modalContainer .grey:hover,
+.modalContainer .grey:focus {
+  color: #333333;
+  background-color: #cecece;
+  background-image: -moz-linear-gradient(top, #e8e8e8, #a8a8a8);
+  background-image: -ms-linear-gradient(top, #e8e8e8, #a8a8a8);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#e8e8e8), to(#a8a8a8));
+  background-image: -webkit-linear-gradient(top, #e8e8e8, #a8a8a8);
+  background-image: -o-linear-gradient(top, #e8e8e8, #a8a8a8);
+  background-image: linear-gradient(top, #e8e8e8, #a8a8a8);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e8e8e8', endColorstr='#a8a8a8', GradientType=0);
+  border-color: #a8a8a8 #a8a8a8 #818181;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  border: 1px solid #a8a8a8;
+}
+.modalContainer .blue {
+  background-color: #3a8ed0;
+  background-image: -moz-linear-gradient(top, #48b0f4, #255b9a);
+  background-image: -ms-linear-gradient(top, #48b0f4, #255b9a);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#48b0f4), to(#255b9a));
+  background-image: -webkit-linear-gradient(top, #48b0f4, #255b9a);
+  background-image: -o-linear-gradient(top, #48b0f4, #255b9a);
+  background-image: linear-gradient(top, #48b0f4, #255b9a);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#48b0f4', endColorstr='#255b9a', GradientType=0);
+  border-color: #255b9a #255b9a #16375c;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  color: #ffffff;
+  border: 1px solid #204f85;
+}
+.modalContainer .blue:hover,
+.modalContainer .blue:focus {
+  color: #ffffff;
+  background-color: #3786c3;
+  background-image: -moz-linear-gradient(top, #48b0f4, #1d4879);
+  background-image: -ms-linear-gradient(top, #48b0f4, #1d4879);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#48b0f4), to(#1d4879));
+  background-image: -webkit-linear-gradient(top, #48b0f4, #1d4879);
+  background-image: -o-linear-gradient(top, #48b0f4, #1d4879);
+  background-image: linear-gradient(top, #48b0f4, #1d4879);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#48b0f4', endColorstr='#1d4879', GradientType=0);
+  border-color: #1d4879 #1d4879 #0e233b;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  border: 1px solid #1d4879;
+}
+.modalCover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: url(/Content/core/banners/cover.png);
+  z-index: 99999;
+  display: none;
+}
+.closex {
+  font-size: 28px;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: #999;
+  text-decoration: none;
+  line-height: 28px;
+}
+.closex:hover,
+.closex:focus {
+  color: #808080;
+}
+.modalContainer.tooFar {
+  position: absolute !important;
+  top: 0 !important;
+  margin-top: 0 !important;
+}

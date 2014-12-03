@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html webdriver="true"><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252"></head><body>
+    <script>
+      (function(){
+        function parseQueryString(){
+          var ret = {}, parts = location.search.substring(1).split('&');
+          for (var i = parts.length; i--;) {
+            var vardef = parts[i].split('='), varname = vardef[0], value = vardef[1];
+            ret[varname] = value;
+          }
+          return ret;
+        }
+        var queryParams = parseQueryString();
+
+        var markup = "<img width=\"1\" height=\"1\" src=\"//action.media6degrees.com/orbserv/hbpix?pixId=23576&pcv=57\" />";
+
+        for (var name in queryParams){
+          var regex = new RegExp('%' + name.replace('.', '\.') + '%', 'ig');
+          markup = markup.replace(regex, queryParams[name]);
+        }
+
+        document.write(markup)
+      })();
+    </script><img src="satellite-546bb9e66331610018840500_data/hbpix.gif" height="1" width="1">
+  
+
+</body></html>

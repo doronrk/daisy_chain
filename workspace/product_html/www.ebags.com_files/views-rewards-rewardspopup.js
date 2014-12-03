@@ -1,0 +1,1 @@
+define("views-rewards-rewardspopup",["jquery"],function(n){var t=n("#rewardsPopupWrapper div.rewardsPopup"),i;n(document).on("mouseenter","#rewardsPopupWrapper",function(){window.clearTimeout(i);t.css("display","block")});n(document).on("mouseleave","#rewardsPopupWrapper",function(){i=setTimeout(function(){t.is(":visible")&&t.hide()},500)})})

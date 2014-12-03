@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html webdriver="true"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title></title>
+    
+        <script type="text/javascript" language="javascript">
+
+
+   var total = 0;
+   var pixels = [];
+   var pixIds = [];
+   var chainsOK = {};
+   var tm = null;
+   
+
+   Object.prototype.count = function(){var c = 0;var i;for(i in this){if (this.hasOwnProperty(i)){c++;}};return c;}
+   Array.prototype.contains = function (obj) { var i = this.length; while (i--) { if (this[i] === obj) { return true; } } return false; };
+
+   function PixelChain(chain,indexInChain){
+        var pixel = pixels[chain][indexInChain];
+        if (indexInChain>=pixels[chain].length-1){
+            Pixel(pixel.url, function(){ pixIds[chain][pixIds[chain].length] = pixel.id; chainsOK[chain]=true; trackPixels(); });
+        }
+        else{
+            Pixel(pixel.url,function(){ pixIds[chain][pixIds[chain].length] = pixel.id; window.setTimeout(function(){PixelChain(chain,indexInChain+1),0}) } );
+        }
+    }
+
+    function trackPixels(){
+        if (chainsOK.count()>=pixels.length) {
+            if (tm!=null) window.clearTimeout(tm);
+            location.replace("pixtrk.aspx?atok=2830-100-us&pxs="+linearize(pixIds));
+        }
+    }
+
+    function linearize(arr2d){
+        var out = [];
+        for(var i=0;i<arr2d.length;i++)
+            for(var j=0;j<arr2d[i].length;j++)
+                if (!out.contains(arr2d[i][j]))
+                    out[out.length] = arr2d[i][j];
+        return out.join(",");
+    }
+        
+    function trackPixel(pixelid){
+        //for iframe and script pixels
+        Pixel("pixtrk.aspx?atok=2830-100-us&pxs="+pixelid+"&mode=pixel");
+    }
+
+    function Pixel(url, func) {
+        if (typeof(mtContainer)!="undefined"){
+            var pixel = document.createElement("img");
+            pixel.style.display = "none";
+            if (typeof (func) == "function") {pixel.onload = func; pixel.onerror = func;} else {pixel.onload = function() {};pixel.onerror = function() {};}
+            pixel.src = url;
+            mtContainer.appendChild(pixel);
+        }
+    }
+
+
+    function startPixeling(){
+      if (typeof(mtContainer)!="undefined"){
+          if (document.cookie.indexOf("2830-100-us") > -1) {
+            for (var i = 0; i < pixels.length; i++) {
+                pixIds[i] = [];
+                PixelChain(i, 0);
+            }
+            tm = window.setTimeout('if (total>0){location.replace("pixtrk.aspx?atok=2830-100-us&pxs="+linearize(pixIds)+"&progress="+chainsOK.count()+"/"+pixels.length)}', 30000);
+          }
+          else{
+              location.replace("pixtrk.aspx?atok=2830-100-us&bc=1");
+          }
+      }
+    }
+        </script>
+    
+    
+</head>
+<body onload="if (window.startPixeling) startPixeling();">
+    
+        <div style="display: none" id="_mtContainer">
+        </div>
+        <script type="text/javascript">
+            var mtContainer = document.getElementById("_mtContainer");             
+        </script>
+    
+    
+    <iframe src="pix_data/pixel.html" style="display:none" height="1" width="1"></iframe>
+    <script type="text/javascript">
+        
+    </script>
+    
+
+
+
+</body></html>

@@ -1,0 +1,3999 @@
+@charset "UTF-8"; 
+
+
+/*Talbots*/ 
+
+/*Begin Rest*/ 
+html, body, div, span, applet, object, iframe, 
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, 
+a, abbr, acronym, address, big, cite, code, 
+del, dfn, em, font, img, ins, kbd, q, s, samp, 
+small, strike, strong, sub, sup, tt, var, 
+dl, dt, dd, ol, ul, li, 
+fieldset, form, label, legend, 
+table, caption, tbody, tfoot, thead, tr, th, td, input { 
+margin: 0; 
+padding: 0; 
+border: 0; 
+outline: 0; 
+font-weight: inherit; 
+font-style: inherit; 
+font-size: 100%; 
+font-family: inherit; 
+vertical-align: baseline; 
+} 
+
+input[type="hidden"]{ 
+visibility:hidden !important; 
+} 
+
+
+
+/* remember to define focus styles! */ 
+:focus { 
+outline: 0; 
+} 
+body { 
+line-height: 1; 
+color: black; 
+background: white; 
+} 
+ol, ul { 
+list-style: none; 
+} 
+
+.talbotsList { 
+list-style-type:disc; 
+} 
+
+/* tables still need 'cellspacing="0"' in the markup */ 
+table { 
+border-collapse: separate; 
+border-spacing: 0; 
+} 
+caption, th, td { 
+text-align: left; 
+font-weight: normal; 
+} 
+blockquote:before, blockquote:after, 
+q:before, q:after { 
+content: ""; 
+} 
+blockquote, q { 
+quotes: "" ""; 
+} 
+/*End Reset*/ 
+
+
+html{ 
+height:100%; 
+min-height:600px; 
+} 
+
+img{ 
+display:block; 
+} 
+
+#noCssHeader{ 
+display:none; 
+} 
+
+body{ 
+position:relative; 
+height:100%; 
+width:100%; 
+font-family:Arial,Helvetica Verdana,sans-serif; 
+min-height:100%; 
+font-size:62.5%; 
+color: #535353; 
+} 
+
+a{ 
+color: #666; 
+text-decoration: none; 
+} 
+a:hover{ 
+text-decoration: underline !important; 
+} 
+#talbotsHeader{ 
+_height:1%; 
+} 
+
+
+
+#wishListConfirmation{ 
+background: url(/images/backgrounds/lg-modal-bot.png) bottom left no-repeat; 
+_background: url(/images/backgrounds/lg-modal-bot.gif) bottom left no-repeat; 
+width: 647px; 
+_height: 180px; 
+z-index: 30000; 
+padding-bottom: 7px; 
+position: fixed; 
+_position: absolute !important; 
+left: 50% !important; 
+margin: -90px 0 0 -320px !important; 
+} 
+
+#wishListConfirmation .modalContent{ 
+padding: 20px 35px 35px 20px; 
+font-size: 11px; 
+
+} 
+#wishListConfirmation h3{ 
+font-size: 17px; 
+color: #333; 
+font-family:"Times New Roman", Times, serif; 
+float: left; 
+min-width: 10px; 
+white-space: nowrap; 
+margin-bottom: 10px; 
+margin-right: 10px; 
+} 
+#wishListConfirmation a.emphasis{ 
+color: #34718d; 
+display: block; 
+padding: 5px 0; 
+min-width: 10px; 
+white-space: nowrap; 
+} 
+#wishListConfirmation table{ 
+clear: left; 
+width: 100%; 
+} 
+
+
+#wishListConfirmation table th{ 
+border-top: 1px solid #cccccc; 
+border-bottom: 1px solid #cccccc; 
+background: #f1f1f2; 
+padding: 8px 15px; 
+} 
+
+
+#wishListConfirmation table td{ 
+padding: 8px 0; 
+font-size: 11px; 
+font-family:Arial,Helvetica Verdana,sans-serif; 
+vertical-align: top; 
+border-bottom: 1px solid #F4F3E5; 
+margin-bottom: 8px; 
+} 
+#wishListConfirmation table td.last{ 
+border-bottom: none 
+margin-bottom: 0; 
+} 
+
+#wishListConfirmation table h3{ 
+font-size: 16px; 
+margin-bottom: 0px; 
+} 
+#wishListConfirmation td span{ 
+display: block; 
+padding: 5px 0; 
+} 
+#wishListConfirmation td .thumb{ 
+float: left; 
+width:90px; 
+height: 105px; 
+display:block !important; 
+} 
+#wishListConfirmation td .thumb img{ 
+
+} 
+#wishListConfirmation td img.chip{ 
+margin-right: 10px; 
+float: left; 
+} 
+#wishListConfirmation td span.colorName{ 
+padding: 5px 0; 
+clear: none; 
+} 
+#wishListConfirmation td span.productSku{ 
+color: #999; 
+} 
+#wishListConfirmation td .normalPrice{ 
+margin-left: 15px; 
+display: block; 
+} 
+#wishListConfirmation td .salePrice{ 
+margin-left: 15px; 
+display: block; 
+} 
+#wishListConfirmation td .itemPrice{ 
+margin-left: 15px; 
+display: block; 
+} 
+
+/* GLOBAL MODAL DIALOG STYLES*/ 
+.modalContainer{ 
+padding-bottom: 7px; 
+background: url(/images/backgrounds/lg-modal-bot.png) bottom left no-repeat; 
+_background: url(/images/backgrounds/lg-modal-bot.gif) bottom left no-repeat; 
+} 
+.modalContent{ 
+background: url(/images/backgrounds/lg-modal-top.png) 0 0 no-repeat; 
+_background: url(/images/backgrounds/lg-modal-top.gif) 0 0 no-repeat; 
+} 
+#securityQuestionWindow{ 
+display: none; 
+position:absolute; 
+background:url(/images/backgrounds/dialog-sm-bg.png) no-repeat top left; 
+width:357px; 
+height:169px; 
+z-index: 50000; 
+top:300px; 
+margin:0 0 0 -177px; 
+} 
+
+/*#securityQuestionWindow h2{ 
+position:absolute; 
+top:10px; 
+left:25px; 
+}*/ 
+
+/*#securityQuestionWindow fieldset{ 
+position:absolute !important; 
+top:60px !important; 
+left:25px !important; 
+}*/ 
+
+/*#securityQuestionWindow #forgotAnswer{ 
+position:absolute !important; 
+top:31px !important; 
+left:0 !important; 
+}*/ 
+
+/*#securityQuestionWindow .buttonStyle1{ 
+position:relative; 
+top:30px !important; 
+left:0 !important; 
+}*/ 
+
+/*#securityQuestionWindow .buttonStyle2{ 
+position:relative; 
+top:30px !important; 
+left:0 !important; 
+}*/ 
+
+/*#securityQuestionWindow #securityAnswerModal{ 
+position:absolute; 
+top:8px; 
+left:0; 
+}*/ 
+
+#securityQuestionWindow h2{ 
+margin-left:15px; 
+padding-bottom: 10px !important; 
+} 
+
+#securityQuestionWindow fieldset{ 
+margin-left:15px; 
+} 
+
+#securityQuestionWindow .button{ 
+margin-right:10px; 
+} 
+#securityQuestionWindow #answerErrors{ 
+margin: 0 !important; 
+padding: 0 0 5px 15px; 
+} 
+#securityQuestionWindow #answerErrors ul{ 
+margin: 0 !important; 
+} 
+#securityQuestionWindow #securityAnswerModal{ 
+border-color:#958F77 #CBC3AC #CBC3AC; 
+border-style:solid; 
+border-width:1px; 
+display:block; 
+float:none; 
+font-size:11px; 
+margin-top:4px; 
+width:150px 
+} 
+
+.modalDialog{ 
+position: absolute; 
+display:none; 
+top: 200px; 
+left:50%; 
+z-index: 50000; 
+} 
+.modalDialog .closeButton{ 
+position: absolute; 
+top:0; 
+right: 0; 
+display: block !important; 
+text-indent: -9999px; 
+cursor: pointer; 
+width: 80px; 
+height: 25px; 
+background:url(/images/clear.gif); 
+} 
+
+.modalDialog .closeText{ 
+position: absolute; 
+top:2px; 
+right: 2px; 
+display: block !important; 
+cursor: pointer; 
+height: 25px; 
+background:url(/images/clear.gif); 
+color: black !important; 
+} 
+
+.jqmWindow { 
+
+} 
+.jqmOverlay { 
+background-color: #000; 
+position: absolute; 
+z-index: 15000; 
+} 
+/* Background iframe styling for IE6. Prevents ActiveX bleed-through (<select> form elements, etc.) */ 
+* iframe.jqm {position:absolute;top:0;left:0;z-index:-1; 
+width: expression(this.parentNode.offsetWidth+'px'); 
+height: expression(this.parentNode.offsetHeight+'px'); 
+} 
+/* Fixed posistioning emulation for IE6 
+Star selector used to hide definition from browsers other than IE6 
+For valid CSS, use a conditional include instead */ 
+* html .jqmWindow { 
+position: absolute; 
+top: expression((document.documentElement.scrollTop || document.body.scrollTop) + Math.round(17 * (document.documentElement.offsetHeight || document.body.clientHeight) / 100) + 'px'); 
+} 
+.modalDialog h2{ 
+font-family:"Times New Roman", Times, serif; 
+font-size: 17px; 
+padding: 15px 0; 
+font-weight:normal !important; 
+} 
+.modalDialog label{ 
+padding-bottom: 10px; 
+display: block; 
+} 
+.modalDialog label input{ 
+margin-top: 10px; 
+} 
+.modalDialog #forgotAnswer{ 
+display: inline; 
+padding-bottom: 10px; 
+font-size: 10px; 
+color: #34718d; 
+} 
+.modalDialog .buttonStyle1{ 
+float: left; 
+} 
+/*.modalDialog div.buttonStyle2 { 
+float: none !important; 
+margin-left: 70px !important; 
+}*/ 
+
+/* END GLOBAL MODAL DIALOG STYLES*/ 
+
+/*
+#homeContentContainer{ 
+width: 1044px; 
+margin: 0 auto; 
+background: url(/images/backgrounds/bg-drop-shadow.gif); 
+} 
+*/
+
+#container{ 
+position:relative; 
+width:961px; 
+height:auto; 
+min-height:100%; 
+_height:100%; 
+/* z-index:2;  removed for quickView grey issue in firefox*/
+margin: 0 auto; 
+} 
+#popupContainer{ 
+position:relative; 
+height:auto; 
+min-height:100%; 
+_height:100%; 
+z-index:2; 
+margin: 0 auto; 
+} 
+
+/* SITE BG CHANGES - TB5SXO */
+
+
+#contentWrapper{ 
+background: url(/images/backgrounds/landingBG.png) repeat-y #FFFFFF; 
+display:block; 
+margin-top:1px; 
+/*margin-left:22px;*/ 
+margin-bottom: 70px; /* CHANGED - TB5SXO */   /* CHANGED - 061913 Site BG Change - TB5SXO */
+position: relative; 
+/*top: 40px;*/ 
+}
+
+#sitemap #contentWrapper{ 
+background: #fff !important; 
+} 
+
+#content{ 
+position: relative; 
+font-size: 11px; 
+min-height: 300px; 
+_height: 300px !important; 
+} 
+
+
+#printButton{ 
+	display: block; 
+	position: absolute; 
+	top: 5px; 
+	right: 10px; 
+	width: 46px; 
+	height: 14px; 
+	text-indent: -9999px; 
+	background: url(/images/icons/print.png) 0 0 no-repeat;
+	/* border: 1px solid #535353;  */
+} 
+
+
+#contentBottom{ 
+clear:left; 
+background: url(/images/backgrounds/landingBGbottom.png) no-repeat; 
+height:5px; 
+width:960px; 
+overflow:hidden; 
+} 
+
+#sitemap #contentBottom{ 
+display: none !important; 
+} 
+
+#logo{ 
+margin-left:auto; 
+margin-right:auto; 
+margin-bottom:16px; 
+width:159px; 
+height:44px; 
+} 
+
+#talbotsHeader a{ 
+z-index:1; 
+display:block; 
+/*width:175px;*/ 
+height:44px; 
+text-indent:-99999px; 
+} 
+
+#secondaryNav li, #quickNav li{ 
+list-style-type:none; 
+float:left; 
+position: relative; 
+} 
+#quickNav li { 
+margin-right:0; 
+/* background: none repeat scroll 0 0 #ECECEB; 
+border: 1px solid #DDDDDD; */ /* updates at bottom for site background color to white */ 
+} 
+
+#mainNav li{ 
+list-style-type:none; 
+float:left; 
+/*position: relative;*/ 
+} 
+
+#header{ 
+position:relative; 
+width:100%; 
+height:113px;
+padding-top:5px; 
+/*JF 05/07/2014 this causes issues with the autosuggest dropdown; commenting out to fix, any elements needing higher z-index can be set individually*/
+/*z-index:10000;*/
+}
+
+/*
+.catalogView #header #quickNav{ 
+left: -231px; 
+top:-10px !important; 
+*top:0 !important; 
+}
+*/
+
+/*
+#catalogGalleryView #header #quickNav{ 
+left: -231px; 
+top:-10px !important; 
+*top:0 !important; 
+}
+*/
+
+#outfitOcassionPage.outfitGallery #header #quickNav{
+top:10px !important;
+*top:0px !important;
+}
+
+/*
+.productDetail #header #quickNav{ 
+left: -231px;
+top:-10px !important; 
+*top:0 !important;
+}
+*/
+
+/*
+#outfitDetailPage #header #quickNav{
+*top:10px !important;
+}
+*/
+
+
+#outfitOcassionPage #header #quickNav{
+/* top: 10px !important; */
+*top:0px !important;
+}
+
+/*
+#shoppingGiftBag #header #quickNav{ 
+left: -223px; 
+top:-10px !important; 
+*top:0 !important; 
+}
+*/
+
+#findaStore #quickNav{
+top: -10px !important;
+*top: 0px !important;
+}
+
+/*
+#createAccount #header #quickNav{ 
+left: -239px; 
+width: 1438px; 
+}
+*/
+
+/*
+#myInformation #header #quickNav{ 
+left: -239px; 
+width: 1438px; 
+}
+*/
+
+#header #quickNav { 
+} 
+
+/*
+#quickNav{ 
+z-index:200; 
+background: none repeat scroll 0 0 #E3E2D8 !important; 
+height: 27px; 
+left: -211px; 
+position: absolute; 
+width: 1423px; 
+*width: 1420px; 
+top: 0 !important; 
+}
+*/
+
+/*
+#header #innerQuickNav { 
+width:1000px; 
+} 
+*/
+
+/*
+.catalogView #header #innerQuickNav { 
+width:961px; 
+left: -232px; 
+}
+*/
+
+/*
+#catalogGalleryView #header #innerQuickNav { 
+width:961px; 
+left: -232px; 
+}
+*/
+
+/*
+.productDetail #header #innerQuickNav { 
+width:961px; 
+left: -232px;
+/* tb5sxo positioning fix 111411 MSIE ONLY */
+/*
+top:10px\0; 
+} 
+*/
+
+/*
+#shoppingGiftBag #header #innerQuickNav { 
+width:977px; 
+left: -223px; 
+}
+*/
+
+/*
+#createAccount #header #innerQuickNav { 
+width:961px; 
+left: -232px; 
+}
+*/
+
+/*
+#myInformation #header #innerQuickNav { 
+width:961px; 
+left: -232px; 
+}
+*/
+
+/*
+#innerQuickNav { 
+float:right !important; 
+width:961px; 
+left: -215px; 
+position: relative; 
+} 
+*/
+
+/*
+#innerQuickNav{ 
+_height: 1%; 
+} 
+*/
+
+#quickNav a, 
+#quickNav h3{ 
+position:relative; 
+z-index:1; 
+color: #e7e7cc; 
+font-size:11px !important; 
+text-align: center; 
+width: auto; 
+display: block; 
+padding: 12px 10px !important; 
+white-space:nowrap; 
+font-weight: bold; 
+} 
+#quickNav h3{ 
+padding: 4px 0px; 
+} 
+
+
+#quickNav span#welcome{ 
+color:#fff; 
+height: 12px; 
+text-align: center; 
+} 
+
+
+
+#quickNav span#welcome a:hover{ 
+font-weight: normal !important; 
+color: #000 !important; 
+} 
+
+#welcomeAssociate{ 
+
+
+
+
+
+width: 222px; 
+height: 12px; 
+text-align: right; 
+position: absolute; 
+top: -15px !important; 
+right: 120px !important; 
+} 
+
+#welcomeCustomer{ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+font-family: arial; 
+font-size: 12px; 
+height: 12px; 
+padding-top: 2px; 
+position: relative !important; 
+} 
+
+
+#quickNav a#logout { 
+color:#e7e7cc; 
+padding:0; 
+margin-left:5px; 
+display:inline; 
+position: absolute; 
+padding: 0 !important; 
+font-weight: bold !important; 
+font-size: 12px !important; 
+} 
+
+#quickNav a#logout:hover { 
+color:#333333; 
+} 
+
+#quickNav a#signIn { 
+color:#e7e7cc; 
+padding:0; 
+display:inline; 
+} 
+#myTalbots{ 
+/*width: 52px;*/ 
+} 
+
+#myTalbots a{ 
+padding-left:7px; 
+} 
+
+
+/* ******************************* Begin: Find A Store Top Menu *********************** */ 
+li#findastoreAjaxForm{ 
+
+} 
+
+li#findastoreAjaxForm a{ 
+padding-left:5px; 
+padding-right:5px; 
+} 
+
+li#findastoreAjaxForm a:hover{ 
+font-weight: normal !important; 
+color: #000 !important; 
+} 
+
+#findastoreLayout{ 
+width:268px !important; 
+min-height: 10px; 
+_background: #f5f3e6 !important; 
+font-size: 11px; 
+display: none; 
+_overflow:hidden; 
+position: absolute; 
+top: 30px; 
+left:34px; 
+} 
+
+#findastoreLayout img{ 
+display:inline !important; 
+float: left; 
+
+} 
+
+.storeIcon1{ 
+width:20px; 
+height:20px !important; 
+display:inline !important; 
+margin-right:5px !important; 
+} 
+
+
+/* ******************************* End: Find A Store Top Menu *********************** */ 
+
+
+
+/* ********************************** Begin: Email Top Menu ************************* */ 
+
+li#emailAjaxForm{ 
+
+} 
+
+li#emailAjaxForm a{ 
+padding-left:5px; 
+padding-right:5px; 
+text-decoration: none !important; 
+} 
+
+li#emailAjaxForm a:hover{ 
+font-weight: normal !important; 
+color: #000 !important; 
+} 
+
+
+#emailLayout{ 
+width:268px !important; 
+min-height: 10px; 
+_background: #f5f3e6 !important; 
+font-size: 11px; 
+display: none; 
+_overflow:hidden; 
+position: absolute; 
+top: 30px; 
+left:-31px; 
+} 
+
+#emailLayout img{ 
+display:inline !important; 
+float: left; 
+
+} 
+
+
+
+.emailIcon1{ 
+width:20px; 
+height:20px !important; 
+display:inline !important; 
+margin-right:5px !important; 
+} 
+
+
+/* ********************************** End: Email Top Menu ************************* */ 
+
+
+/* ******************************** Begin: Search Top Menu ************************* */ 
+
+li#searchAjaxForm{ 
+
+} 
+
+li#searchAjaxForm a{ 
+padding-left:5px; 
+padding-right:5px; 
+} 
+
+li#searchAjaxForm a:hover{ 
+font-weight: normal !important; 
+color: #000 !important; 
+text-decoration: none !important; 
+} 
+
+#searchLayout{ 
+min-height: 10px; 
+_background: #f5f3e6 !important; 
+font-size: 11px; 
+display: none; 
+_overflow:hidden; 
+position: relative; 
+float: left; 
+} 
+
+
+.searchIcon1{ 
+display:inline !important; 
+margin: 0 0 0 0 !important; 
+float:left; 
+height: 32px;
+border-top: 1px solid #cccccc;
+border-bottom: 1px solid #cccccc;
+border-right: 1px solid #cccccc;
+} 
+
+
+.searchIcon{ 
+padding-right:5px !important; 
+} 
+
+
+
+/* ******************************** End: Search Top Menu ************************* */ 
+
+li#separator{ 
+padding-left:3px; 
+padding-right:3px; 
+padding-top:4px; 
+padding-bottom:4px; 
+} 
+
+.textTopMenu { 
+background-color: #FFFFFF !important; 
+/* border: 1px solid #FFFFFF !important; */
+color: #666666 !important; 
+display: inline !important; 
+float: left; 
+font-size: 12px !important; 
+height: 21px !important;
+*height:19px !important; 
+padding: 2px !important;
+*padding-top:4px !important; 
+width: 140px !important; 
+*width:125px !important;
+border-top: 1px solid #cccccc!important;
+border-left: 1px solid #cccccc!important;
+border-bottom: 1px solid #cccccc!important;
+} 
+
+
+/* ******************************** Begin: Wishlist Top Menu ************************* */ 
+
+#wishlist{ 
+float: left !important; 
+} 
+
+#wishlist a{ 
+padding-left:5px; 
+padding-right:5px; 
+} 
+
+/*
+li#wishlist a:hover{ 
+font-weight: bold !important; 
+color: #000 !important; 
+text-decoration: none; 
+}
+*/
+
+/* ******************************** End: Wishlist Top Menu ************************* */ 
+
+
+/* Shopping Bag Top Menu */ 
+li#shoppingBag{ 
+background: none repeat scroll 0 0 #333333 !important; 
+color: #FFFFFF; 
+padding: 3px 0px !important; 
+margin-top: -1px; 
+height:29px; 
+width: 80px; 
+} 
+
+li#shoppingBag a { 
+} 
+
+li#shoppingBag a:hover{ 
+font-weight: bold !important; 
+color: #000 !important; 
+text-decoration: none !important; 
+} 
+
+/*
+li#shoppingBag h3{ 
+color: #FFFFFF !important; 
+font-weight: bold; 
+}
+*/
+
+/*
+li#shoppingBag h3.active{ 
+background-color: #000000; 
+color: #FFFFFF !important; 
+font-weight: bold; 
+}
+*/
+
+li#welcomeCustomer{ 
+background: none repeat scroll 0 0 #E3E2D8; 
+color: #666666; 
+padding: 6px 0 0 4px; 
+height: 18px; 
+font-weight: bold;
+border: none!important; /* site BG change - tb5sxo */ 
+} 
+
+#shoppingBag span{ 
+font-weight: normal; 
+} 
+
+#shoppingBag .active span{ 
+font-weight: normal; 
+}
+
+/* 
+li#shoppingBag h3 a{ 
+display: inline !important; 
+color: #FFFFFF !important; 
+font-family: Arial,Helvetica,sans-serif !important; 
+font-size: 12px !important; 
+font-weight: bold; 
+}
+*/
+
+li#shoppingBag h3.active a{ 
+color: #FFFFFF !important; 
+} 
+
+li#shoppingBag a{ 
+font-weight: bold !important; 
+color: #FFFFFF !important; 
+} 
+
+li#shoppingBag a:hover{ 
+font-weight: bold !important; 
+color: #FFFFFF !important; 
+} 
+
+/* Sign-In / Sign-Out Bag Top Menu */
+/*
+li#signInOut{ 
+background: none repeat scroll 0 0 #333333; 
+color: #FFFFFF !important; 
+padding-bottom: 7px; 
+margin-top: -1px; 
+height: 27px; 
+}
+*/
+
+/*
+li#signInOut a#signIn { 
+color: #FFFFFF !important; 
+display: block !important; 
+padding: 0 10px !important; 
+font-family: Arial,Helvetica,sans-serif !important; 
+font-size: 12px !important; 
+font-weight: bold; 
+}
+*/
+
+/*
+li#signInOut h3{ 
+color: #FFFFFF !important; 
+font-weight: bold; 
+}
+*/
+
+/*
+li#signInOut h3.active{ 
+color: #FFFFFF !important; 
+background-color: #000000; 
+padding: 7px 10px 7px 10px !important; 
+}
+*/
+
+/*
+li#wishlist a:hover{ 
+font-weight: bold !important; 
+color: #000 !important; 
+text-decoration: none !important; 
+}
+*/
+
+li#signInOut a#logout { 
+padding-top:4px !important; 
+padding-bottom:4px !important; 
+padding-left: 5px !important; 
+padding-right: 5px !important; 
+display: block !important; 
+} 
+
+li#signInOut a:hover{ 
+font-weight: bold !important; 
+color: #FFFFFF !important; 
+text-decoration: none !important; 
+} 
+
+.text{ 
+float:left !important; 
+font-size:10px !important; 
+margin-right:4px !important; 
+padding: 2px !important; 
+} 
+
+.textFooter { 
+background-color:#FFFFFF; 
+color:#666666; 
+border: 1px solid #c3c2b5; 
+height: 14px; 
+padding: 3px; 
+float: left; 
+font-size: 10px; 
+padding: 2px; 
+width: 180px; 
+} 
+
+#quickNav .text{ 
+width: 175px; 
+} 
+
+#storeFinder .text{ 
+background-color:#000; 
+} 
+
+#storeFinder form{ 
+padding-top:8px; 
+padding-left:13px; 
+} 
+
+/* 
+#quickNav form{ 
+padding-top:7px; 
+padding-left:7px; 
+padding-bottom:4px; 
+position:relative; 
+z-index:1; 
+} 
+*/ 
+
+#quickNav ul{ 
+display: block; 
+_height:1%; 
+margin: 0; 
+} 
+
+#quickNav ul li a{ 
+text-decoration:none; 
+}
+
+
+
+/* Persistent Cart */ 
+
+#shoppingBag h3{ 
+cursor: pointer !important; 
+font-family:Arial, Helvetica, sans-serif !important; 
+text-align:right; 
+padding: 5px 10px 10px !important; 
+} 
+
+/* Site BG Change - tb5sxo */
+#persistentCart{ 
+width:258px !important; 
+min-height: 10px;
+/* 
+background: transparent url(/images/backgrounds/persistentCart.png) bottom right no-repeat; 
+_background: #f5f3e6 !important; 
+*/
+z-index: 50000; 
+font-size: 11px; 
+display: none; 
+padding: 0 4px 14px 0; 
+margin: 0 0 0 0; 
+_overflow:hidden; 
+position: absolute; 
+top: 40px; 
+right:-1px; /* changed - tb5sxo */
+_top: 16px; 
+_right:0;
+background-color: #ffffff; /* changed - tb5sxo */
+border: 2px solid #cccccc; /* changed - tb5sxo */
+}
+ 
+*+ html div#persistentCart{ 
+top:34px; 
+
+width: auto; 
+} 
+
+#persistentCart h4{ 
+font-family:"Times New Roman", Times, serif; 
+font-size: 13px; 
+padding: 10px; 
+background: url(/images/backgrounds/pc-header-close.png) top right no-repeat scroll; 
+cursor: pointer; 
+color: #535353; 
+} 
+#persistentCart .cartAd{ 
+padding: 0 10px; 
+} 
+
+* #persistentCart ul { 
+height: expression( this.scrollHeight > 268 ? "269px" : "auto" ); /* sets max-height for IE */ 
+} 
+
+#persistentCart ul{ 
+max-height: 269px; 
+overflow: auto; 
+margin: 0 3px 0 10px; 
+position:relative; 
+} 
+
+
+/* Site BG Change - tb5sxo */
+#persistentCart ul li{ 
+background-color: #f1f1f2; /* changed - tb5sxo */
+border: none!important; /* changed - tb5sxo */
+color: #535353; /* changed - tb5sxo */
+float: none; 
+font-weight: normal; 
+min-height: 69px; 
+padding: 10px 17px 10px 65px; 
+position: relative; 
+width: 160px; 
+}
+
+
+#persistentCart ul li.first{ 
+border-top: none; 
+} 
+#persistentCart ul li img{ 
+position: absolute; 
+top: 10px; 
+left:0px; 
+} 
+#persistentCart ul li h4.closeCartTrigger{ 
+background: url(/images/backgrounds/pc-header-close.gif) top right no-repeat !important; 
+} 
+#persistentCart ul li h4{ 
+font-family:Arial,Helvetica Verdana,sans-serif; 
+font-size: 11px; 
+padding: 2px 0 2px; 
+cursor: auto; 
+font-weight: bold; 
+color: #535353; 
+background: none; 
+} 
+#persistentCart ul li p{ 
+padding: 1px 0; 
+color: #999; 
+margin:0; 
+line-height: 1.25em; 
+} 
+#persistentCart ul li p.availability{ 
+margin-bottom: 5px; 
+} 
+#persistentCart ul li .normalPrice{ 
+float:left; 
+min-width: 10px; 
+_width: 10px; 
+margin-right: 10px; 
+white-space: nowrap; 
+font-size: 11px; 
+color: #535353; 
+} 
+#persistentCart ul li .salePrice{ 
+float:left; 
+min-width: 10px; 
+_width: 10px; 
+margin-right: 10px; 
+white-space: nowrap; 
+font-size: 11px; 
+color: #535353; 
+} 
+#persistentCart .pcView{ 
+width: 80px; 
+float: left; 
+margin-right: 5px; 
+margin-left: 5px; 
+color: #535353; 
+display: block; 
+margin-bottom:10px;/*Added by Avinash*/ 
+padding: 0 3px !important; 
+} 
+#persistentCart .pcCheckout{ 
+display: none; 
+} 
+.open .pcCheckout, 
+.open .pcView{ 
+display: block !important; 
+}
+
+
+/* Site BG Chnage - tb5sxo */
+#pcTotal{ 
+background-color: #f1f1f2; /* changed - tb5sxo */
+text-align: right; 
+position:relative; 
+padding: 7px; 
+font-weight: bold; 
+margin-bottom: 5px; 
+_height:1%; 
+color: #535353; /* changed - tb5sxo */
+}
+
+
+#pcTotal .pctQuanity{ 
+display: block; 
+position: absolute; 
+left: 7px; 
+top: 7px; 
+font-weight: normal; 
+} 
+#navWrapper{ 
+width:auto; 
+height:30px; 
+padding:0 0 0 65px; 
+_padding: 0 0 0 85px; 
+} 
+
+#mainNav{ 
+margin: 0; 
+width:auto !important; 
+height:30px; 
+line-height:30px; 
+} 
+
+
+#mainNav a{ 
+font-family:Arial, Helvetica, sans-serif; 
+text-decoration:none !important; 
+font-size:10px; 
+margin:0 15px; 
+} 
+
+
+.rootMenu { 
+font-family:Arial, Helvetica, sans-serif; 
+text-decoration:none !important; 
+font-size: 12px !important; 
+margin: 0 15px; 
+font-weight: bold !important; 
+color: #333333 !important; 
+} 
+
+.rootMenuPlus { 
+font-family:Arial, Helvetica, sans-serif; 
+text-decoration:none !important; 
+font-size: 12px !important; 
+margin: 0 0 0 15px !important; 
+font-weight: bold !important; 
+color: #333333 !important; 
+} 
+
+.saleMenu { 
+margin: 0 7px 0 15px !important; 
+} 
+
+.apparelMenu { 
+margin: 0 15px 0 50px !important; 
+} 
+
+.plusSize { 
+margin: 0 15px 0 0 !important; 
+font-size: 10px !important; 
+color: #666666 !important; 
+font-weight: bold !important; 
+} 
+
+.size{ 
+font-size:8px; 
+} 
+
+.clear{ 
+float:right; 
+padding-bottom:4px;
+} 
+
+
+/* Change to Site Background Color - 061113 - tb5sxo */
+/* site BG changes - tb5sxo */
+	#footer{ 
+	float: left; 
+	text-align: center;
+	width: 960px; /* added - tb5sxo */
+	height: 200px; /* added - tb5sxo */
+	background-color: #ffffff;  /* changed - tb5sxo */
+	border-top: 1px solid #cccccc!important;  /* added - tb5sxo */
+}
+
+
+#secondaryNavWrapper{ 
+width: 961px; 
+height: 100px !important; 
+position: relative !important; /* tb5sxo footer fix */
+/*padding-top: 40px !important; */
+/**padding-top: 60px !important; */
+} 
+
+/*
+#footerBottomMenuLine1 #socialMedia .fb-like {
+
+    width: 85px;  /* tb5sxo footer fix */
+    /* float: left; */  /* tb5sxo footer fix */
+/*
+}
+*/
+
+#secondaryNav{ 
+display:block; 
+margin: 0 auto; 
+width:940px; 
+padding-top:7px; 
+text-align: left; 
+} 
+
+.last{ 
+padding-right:0px !important; 
+margin:0 0 0 0 !important; 
+} 
+
+#secondaryNav li{ 
+float:left; 
+display: block; 
+padding-left:10px; 
+min-width: 10px; 
+_width: 10px; 
+_display:inline; 
+white-space: nowrap; 
+height: 17px; 
+z-index: 50001; /* flipup layer bug - global.css #1324 - R13.1 - tb5sxo */
+} 
+#secondaryNav #emailSignUp{ 
+_width: 180px !important; 
+_display: block !important; 
+} 
+
+#secondaryNav a{ 
+display:block; 
+padding-top:3px; 
+text-decoration:none; 
+font-size:11px; 
+}_ 
+
+#secondaryNav a:hover{ 
+text-decoration:none !important; 
+} 
+
+#copyright{ 
+padding-top:2px; 
+margin-left:auto; 
+margin-right:auto; 
+width:415px; 
+font-size:10px; 
+} 
+
+
+/*  footer fix tb5sxo */
+/*
+#footerBottomMenuLine1 {
+    /* background-color: #E3E2D8; */
+/*
+    height: 20px;
+    margin-right: auto;
+    margin-top: 10px;
+    padding: 2px 0 5px 95px;
+    width: 865px;
+}
+*/
+
+/*
+#footerBottomMenuLine2 {
+    float: none;
+    margin-right: auto;
+    margin-top: 10px;
+    padding-left: 30px;
+    width: 960px;
+}
+*/
+
+#footerBottomMenuLine1 #socialMedia .twitter-follow-button {
+    width: 175px !important;
+}
+
+/* #footerBottomMenuLine1 #socialMedia {
+    width: 815px;
+}
+*/
+/*  footer fix tb5sxo */
+
+
+/*
+#footerBottomMenuLine1 { 
+width: 590px; 
+height: 20px; 
+margin-left: auto ; 
+margin-right: auto ; 
+margin-top: 10px; 
+}
+*/ 
+
+#footerBottomMenuLine1 img{ 
+display: inline; 
+float: left; 
+margin-right: 5px; 
+background-color: none !important;
+border: none !important;
+padding: 0 !important;
+} 
+
+#footerBottomMenuLine1 li{ 
+display: inline; 
+} 
+
+#footerBottomMenuLine1 form{ 
+display: inline; 
+float: left; 
+margin-right: 25px; 
+} 
+
+
+/*
+#footerBottomMenuLine2{ 
+width: 690px; 
+margin-top: 30px; 
+margin-left: auto; 
+margin-right: auto; 
+float: none; 
+}
+*/
+
+/*
+#footerBottomMenuLine3{ 
+width: 1000px; 
+float: left; 
+}
+*/
+
+#phoneNumber{ 
+color:#333; 
+} 
+
+/*-----------------------------DropDown Styles-----------------------------*/
+
+.dropDown{ 
+	top: 30px; 
+	background-color: #FFFFFF; 
+	border: 2px solid #DDDDDD; 
+	display: none; 
+	margin: 10px 0;  
+	position: absolute; 
+	z-index: 100; 
+	max-width: 600px;
+	*max-width:510px;
+	} 
+	.shoesDropdown, .salesDropdown { 
+		max-width:375px;
+		/* *max-width: 350px; */}
+
+#mainNav .apparelDropdown {
+	left:61px;
+	}
+#mainNav .petitesDropdown {
+	left: 137px;
+	}
+#mainNav .womanDropdown {
+	left: 218px;
+	}
+#mainNav .womanPetitesDropdown {
+	left: 380px;
+	}
+#mainNav .shoesDropdown {
+	left: 670px;
+	width: 320px;
+	}
+#mainNav .salesDropdown {
+	left: 863px;
+	width: 144px;
+	}
+/*#homePage */.apparelTopArrow, .petitesTopArrow, .womanTopArrow, .womanPetitesTopArrow, .salesTopArrow, .shoesTopArrow{ 
+	position:relative; 
+	top:-9px; 
+	background: url("/images/backgrounds/bg-munubar-arrow_test.png") no-repeat scroll 0 0 transparent; /* Bug 2112 */
+	*background: url("/images/backgrounds/bg-munubar-arrow_test.png") no-repeat scroll 0 0 transparent; /*IE 7*/
+	height:10px; 
+	} 
+	/*#homePage */ .apparelTopArrow, .petitesTopArrow, .womanTopArrow, .womanPetitesTopArrow { left: 225px; *left: 200px; }
+	/*#homePage*/ .shoesTopArrow {left: 140px;}
+	/*#homePage*/ .salesTopArrow {left: 63px;}
+
+#mainNav .dropDown table{
+	margin: 0 15px;
+	padding-bottom:20px;
+	}
+#mainNav .dropDown h3{
+	padding:0 15px!important;
+	width: none!important;
+	}
+#mainNav .dropDown table tbody tr td {
+	max-width: 200px;
+	}	
+#mainNav .dropDown li{ 
+	float:none !important; 
+	line-height:1 !important; 
+	width:100%; 
+	} 
+#mainNav .dropDown li a{ 
+	display:block; 
+	padding:5px 15px; 
+	font-size: 12px !important; 
+	margin: 0 !important;
+	} 	
+#mainNav .dhtmlConceptSlot{
+	width:auto;
+	}
+#mainNav .dhtmlConceptSlot img{
+	margin: 0 auto!important;
+	/*padding-top: 15px!important;*/
+	padding: 10px!important;
+	}
+#mainNav .dhtmlConceptSlot a{
+	margin: 0; }
+/*.dhtmlConceptSlot { 
+margin: 30px 0px 0px 0px !important; 
+} 
+*/
+/*.dhtmlConceptSlot img { 
+margin: 0px !important; 
+padding: 0px !important; 
+} */
+/*-----------------------------END DropDown Styles-----------------------------*/
+
+.promotion{ 
+padding: 5px 10px !important; 
+height: 45px; 
+width: 225px !important; 
+_width: 175px !important; 
+} 
+.promotion li{ 
+padding: 5px !important; 
+} 
+.promotion li strong{ 
+font-weight: bold !important; 
+} 
+.dropUp{ 
+display:none; 
+position:absolute; 
+bottom:24px; 
+left:-9px; 
+padding:5px; 
+z-index:50000; 
+width: 140px; 
+} 
+
+.dropUp li{ 
+float:none !important; 
+line-height:1 !important; 
+width:100%; 
+width: 140px; 
+} 
+
+.dropUp li a{ 
+display:block; 
+color:#FFF !important; 
+padding:5px; 
+} 
+
+
+/*Buttons*/ 
+
+.pcCheckout{ 
+display:none !important; 
+} 
+#sendToFriendButton { 
+display: block; 
+position: absolute; 
+top: 5px; 
+right: 65px; 
+width: 109px; 
+height: 14px; 
+text-indent: -9999px; 
+background: url(/images/icons/SendToFriend.png) 0 0 no-repeat; 
+} 
+
+.button{ 
+display: block; 
+float: left; 
+text-decoration: none !important; 
+min-width: 1px !important; 
+white-space: nowrap !important; 
+text-decoration:none !important; 
+font-family:Arial, Helvetica, sans-serif !important; 
+} 
+
+.button:hover{ 
+text-decoration:none !important; 
+} 
+
+.button input{ 
+cursor:pointer; 
+} 
+
+a.button span { 
+display: block !important; 
+color: #fff !important; 
+} 
+.buttonStyle1 *, 
+.buttonStyle2 *, 
+.buttonStyle3 *, 
+.buttonStyle4 *, 
+.continueShopping *{ 
+cursor:pointer !important; 
+} 
+a.buttonStyle1{ 
+background: transparent url(/images/buttons/buttonStyle1Left.png) no-repeat scroll top left !important; /*R13.1 bug3170 tb6jxr*/
+padding:0px 0px 0px 3px !important; 
+cursor:pointer; 
+} 
+
+a.buttonStyle1 span{ 
+
+
+
+background: transparent url(/images/buttons/buttonStyle1Right.png) no-repeat top right !important; 
+line-height:4px !important; 
+padding: 9px 10px 10px 7px !important; 
+margin:0 0 0 0 !important; 
+font-size:10px !important; 
+} 
+
+a.continueShopping{ 
+background: transparent url(/images/buttons/buttonStyle1Left.png) no-repeat scroll top left !important; 
+padding:0px 0px 0px 3px !important; 
+cursor:pointer; 
+} 
+
+a.buttonStyle2{ 
+background: transparent url(/images/buttons/buttonStyle2Left.png) no-repeat scroll top left !important; 
+height: 23px !important; 
+padding:0 0 0 2px !important; 
+cursor:pointer; 
+font-family: arial; 
+font-size: 10px; 
+} 
+
+a.buttonStyle2 span{ 
+background: transparent url(/images/buttons/buttonStyle2Right.png) no-repeat top right !important; 
+line-height:4px !important; 
+padding: 9px 10px 10px 8px; 
+margin:0 0 0 0 !important; 
+font-size:10px !important; 
+_padding-top:10px; 
+} 
+
+*+html a.buttonStyle2 span{ 
+padding-top:10px !important; 
+} 
+
+a.buttonStyle3{ 
+background: transparent url(/images/buttons/buttonStyle3Left.png) no-repeat scroll top left !important; 
+height: 18px !important; 
+padding:0 0 0 3px !important; 
+cursor:pointer; 
+font-family: arial; 
+font-size: 10px; 
+} 
+
+a.buttonStyle3 span{ 
+background: transparent url(/images/buttons/buttonStyle3Right.png) no-repeat top right !important; 
+line-height:2px !important; 
+padding: 8px 10px 9px 7px !important; 
+margin:0 0 0 0 !important; 
+font-size:10px !important; 
+font-family: arial; 
+} 
+
+a.buttonStyle4{ 
+background: transparent url(/images/buttons/buttonStyle4left.png) no-repeat scroll top left !important; 
+height: 18px !important; 
+padding:0 0 0 3px !important; 
+cursor:pointer; 
+font-family: arial; 
+font-size: 10px; 
+} 
+
+a.buttonStyle4 span{ 
+background: transparent url(/images/buttons/buttonStyle4Right.png) no-repeat top right !important; 
+line-height:2px !important; 
+padding: 8px 10px 9px 7px !important; 
+margin:0 0 0 0 !important; 
+font-size:10px !important; 
+
+font-family: arial; 
+} 
+
+div.buttonStyle1{ 
+float:left; 
+
+
+min-width: 1px !important; 
+background: url(/images/buttons/buttonStyle1Left.png) no-repeat left top !important; 
+padding:0 0 0 3px !important; 
+cursor:pointer; 
+} 
+div.buttonStyle1 input{ 
+padding:4px 10px 8px 7px !important; 
+background: url(/images/buttons/buttonStyle1Right.png) no-repeat right top !important; 
+color:#fff !important; 
+font-size:10px !important; 
+margin:0 0 0 0 !important; 
+} 
+
+div.buttonStyle2{ 
+float:left; 
+min-width: 1px !important; 
+background: url(/images/buttons/buttonStyle2Left.png) no-repeat left top !important; 
+padding:0 0 0px 3px !important; 
+cursor:pointer; 
+} 
+
+div.buttonStyle2 input{ 
+padding:4px 10px 8px 7px !important; 
+background: url(/images/buttons/buttonStyle2Right.png) no-repeat right top !important; 
+color:#fff !important; 
+font-size:10px !important; 
+font-family: arial; 
+} 
+
+/* Bug 2996 for build on 022513 */
+
+#awardsHome div.buttonStyle2 input{
+*padding: 4px 10px 8px 2px !important;	
+}
+
+
+
+
+
+/* Bug 2996 for build on 022513 */
+
+/* Safari Hack 
+
+div.buttonStyle2 input { 
+#background: transparent url(/images/buttons/buttonStyle2Right.png) no-repeat top right !important; 
+#line-height:4px !important; 
+#padding: 10px 0 8px 0!important; 
+#margin:0 0 0 0 !important; 
+#font-size:10px !important; 
+} 
+*/ 
+
+/* Better Safari Hack */ 
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+div.buttonStyle2 input {padding-top:6px !important; } 
+} 
+
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+div.buttonStyle1 input {padding-top:6px !important; } 
+} 
+
+div.buttonStyle3Search{ 
+float:left; 
+min-width: 1px !important; 
+background: url(/images/buttons/buttonStyle3Left.png) no-repeat left top !important; 
+padding:0 0 0 3px !important; 
+} 
+div.buttonStyle3Search input{ 
+padding:3px 6px 9px 6px !important; 
+background: url(/images/buttons/buttonStyle3Right.png) no-repeat right top !important; 
+color:#fff !important; 
+font-size:9px !important; 
+} 
+
+div.buttonStyle3{ 
+float:left; 
+min-width: 1px !important; 
+background: url(/images/buttons/buttonStyle3Left.png) no-repeat left top !important; 
+padding:0 0 0 3px !important; 
+font-family: arial; 
+font-size: 10px; 
+} 
+
+div.buttonStyle3 input{ 
+padding:2px 10px 9px 7px !important; 
+background: url(/images/buttons/buttonStyle3Right.png) no-repeat right top !important; 
+color:#fff !important; 
+font-size:10px !important; 
+font-family: arial; 
+} 
+/* Safari Hack */ 
+/*\*/ 
+html>body*div.buttonStyle3 input { 
+background: transparent url(/images/buttons/buttonStyle3Right.png) no-repeat top right !important; 
+line-height:2px !important; 
+padding: 8px 10px 9px 7px !important; 
+margin:0 0 0 0 !important; 
+font-size:9px !important; 
+} 
+/**/ 
+
+div.buttonStyle4{ 
+float:left; 
+min-width: 1px !important; 
+background: url(/images/buttons/buttonStyle4Left.png) no-repeat left top !important; 
+padding:0 0 0 3px !important; 
+font-family: arial; 
+font-size: 10px; 
+} 
+
+div.buttonStyle4 input{ 
+padding:2px 10px 9px 7px !important; 
+background: url(/images/buttons/buttonStyle4Right.png) no-repeat right top !important; 
+color:#fff !important; 
+font-size:10px !important; 
+font-family: arial; 
+} 
+/* Safari Hack */ 
+/*\*/ 
+html>body*div.buttonStyle4 input { 
+background: transparent url(/images/buttons/buttonStyle4Right.png) no-repeat top right !important; 
+line-height:2px !important; 
+padding: 7px 10px 9px 7px !important; 
+margin:0 0 0 0 !important; 
+font-size:9px !important; 
+} 
+/**/ 
+
+.goButton{ 
+background: url(/images/buttons/grey_arrow.gif) no-repeat transparent !important; 
+width:28px !important; 
+height:20px !important; 
+margin-left:5px !important; 
+display:inline !important; 
+} 
+.searchButton{ 
+width:22px !important; 
+height:17px !important; 
+cursor:pointer; 
+}
+
+.addButton input{ 
+width: 95px !important; 
+} 
+/*End Buttons*/ 
+
+
+/*Directions Tooltip*/ 
+
+#directions{ 
+display:none; 
+position:absolute; 
+width:296px; 
+
+height:224px; 
+background: url(/images/backgrounds/directionsTooltip_br.png) no-repeat; 
+_background: url(/images/backgrounds/directionsTooltip_br_ie.png) no-repeat;<!--Go Back and Actually Make this Image--> 
+z-index:1000000;
+} 
+
+#findPersonal #directions{ 
+background: url(/images/backgrounds/directionsTooltip_bl.png) no-repeat; 
+_background: url(/images/backgrounds/directionsTooltip_bl_ie.png) no-repeat;<!--Go Back and Actually Make this Image--> 
+} 
+
+#directions .closeButton{ 
+display:block; 
+position:absolute; 
+top:3px; 
+right:0px; 
+width:40px; 
+height:20px; 
+cursor:pointer; 
+text-indent:-999999px; 
+} 
+
+#directions fieldset{ 
+width:249px !important; 
+text-align:left !important; 
+padding:20px 0 0 25px !important; 
+} 
+
+#directions label{ 
+display:block !important; 
+width:225px !important; 
+padding:10px 0px 10px 0px !important; 
+position: relative; 
+height: 14px; 
+} 
+#directions label span{ 
+display: block; 
+width: 85px; 
+height: 10px !important; 
+position: absolute; 
+top: 11px; 
+left: 0; 
+} 
+#directions #findState{ 
+position:absolute; 
+top:150px; 
+left:65px; 
+width:93px !important; 
+
+}
+
+
+#directions label input{ 
+/*
+border-color:#C3B88B #E7E7CB #E7E7CB #C3B88B !important; 
+border-style:solid !important; 
+border-width:1px !important;
+*/ 
+font-size:11px !important; 
+margin:5px 0 0 !important; 
+position: absolute; 
+top:4px; 
+left:90px;
+border: 1px solid #cccccc;
+}
+
+
+#directions label select{ 
+font-size:11px !important; 
+width:143px !important; 
+display:block !important; 
+position: absolute; 
+top:8px; 
+left:90px; 
+} 
+
+#directions .button{ 
+position:absolute; 
+top:190px; 
+left:103px; 
+} 
+
+.directionButton{ 
+color:#34718d; 
+cursor:pointer; 
+} 
+
+/*End Directions Tooltip*/ 
+
+
+/* Send To A Friend */ 
+.emailFriend { 
+display:none; 
+position:absolute; 
+width:400px; 
+height:275px; 
+/*background: url(/images/backgrounds/emailFriendTooltip.png) no-repeat; 
+/*_background: url(/images/backgrounds/IEemailFriendTooltip.png) no-repeat;*/ 
+background:#fff; 
+z-index:1000000; 
+border:solid 1px #C3B88B; 
+padding:10px 0 0 20px; 
+} 
+
+.emailFriend .closeButton{ 
+display:block; 
+position:absolute; 
+top:0; 
+right:5px; 
+width:20px; 
+height:20px; 
+cursor:pointer; 
+text-indent:-999999px; 
+} 
+
+.emailFriend fieldset{ 
+padding:0 0 0 0px; 
+float:left; 
+} 
+
+.emailFriend label{ 
+display:block; 
+width:180px; 
+padding:0 0px 10px 0px; 
+float:left; 
+} 
+
+.emailFriend label input{ 
+border-color:#C3B88B #E7E7CB #E7E7CB #C3B88B; 
+border-style:solid; 
+border-width:1px; 
+font-size:11px; 
+margin:5px 0 0; 
+padding:2px 5px; 
+width:150px; 
+margin-right:10px; 
+float:left; 
+} 
+
+.emailFriend .button{ 
+position:absolute; 
+top:190px; 
+left:103px; 
+margin-right:10px; 
+} 
+
+.emailFriendButton{ 
+color:#34718d; 
+cursor:pointer; 
+} 
+
+.emailFriend #emailMessage { 
+height:100px; 
+float:left; 
+border-color:#C3B88B #E7E7CB #E7E7CB #C3B88B; 
+border-style:solid; 
+border-width:1px; 
+width:360px; 
+margin-bottom:10px; 
+margin-top:15px; 
+} 
+
+.emailFriend #emailMessage label { 
+padding-bottom:5px; 
+margin-top:-15px; 
+} 
+
+.emailFriend #emailMessage input { 
+display:block; 
+width:300px; 
+} 
+
+.emailFriend .emailButtons { 
+padding-left:250px; 
+_padding-left:230px; 
+} 
+
+*+html .emailFriend .emailButtons { 
+padding-left:230px; 
+} 
+
+.emailFriend .buttonStyle2 { 
+float:left; 
+margin-right:8px; 
+_margin-right:3px; 
+} 
+
+*+html .emailFriend .buttonStyle2 { 
+margin-right:3px; 
+} 
+
+input#toemail, input#fromemail { 
+margin-top:15px !important; 
+} 
+
+.emailFriend a { 
+width:350px; 
+word-wrap:break-word; 
+} 
+
+#emailMessage input { 
+display:block; 
+} 
+
+#emailMessage input#line1 { 
+margin-top:10px; 
+} 
+/* END Send To A Friend */ 
+
+
+
+
+#quickViewContainer{ 
+position:fixed; 
+_position:absolute; 
+/* top:20%; */
+top: 20px;
+_top:150px; 
+
+} 
+
+
+/*GLOBAL ERROR STYLES*/ 
+.errorStatus{ 
+color:#90251B; 
+} 
+/*END GLOBAL ERROR STYLES*/ 
+
+/* TAB STYLES */ 
+
+/* 
+* jQuery UI screen structure and presentation 
+* This CSS file was generated by ThemeRoller, a Filament Group Project for jQuery UI 
+
+* Author: Scott Jehl, scott@filamentgroup.com, http://www.filamentgroup.com 
+* Visit ThemeRoller.com 
+*/ 
+
+/* 
+* Note: If your ThemeRoller settings have a font size set in ems, your components will scale according to their parent element's font size. 
+* As a rule of thumb, set your body's font size to 62.5% to make 1em = 10px. 
+* body {font-size: 62.5%;} 
+*/ 
+
+/*UI tabs*/ 
+.ui-tabs-nav { 
+/*resets*/margin: 0; padding: 0; border: 0; outline: 0; line-height: 1.3; text-decoration: none; font-size: 100%; list-style: none; 
+font-family: Arial, sans-serif; 
+font-size: 1.1em; 
+float: left; 
+position: static; 
+z-index: 1; 
+/* border-right: 1px solid #d9d4c5; */ 
+bottom: -1px; 
+height: 20px; 
+} 
+.ui-tabs-nav li { 
+/*resets*/margin: 0 1px 0 0; padding: 0; border: 0; outline: 0; line-height: 1.3; text-decoration: none; font-size: 100%; list-style: none; 
+float: left; 
+border-right: none; 
+_display:inline-block; 
+cursor:pointer !important; 
+cursor:hand !important; 
+}
+
+
+.ui-tabs-nav li a { 
+/*resets*/margin: 0; padding: 0; border: 0; outline: 0; line-height: 1.3; text-decoration: none; font-size: 100%; list-style: none; 
+float: left; 
+_width:1%; 
+font-size: 10px; 
+font-weight: normal; 
+text-decoration: none!important; /* adding important for style override - tb5sxo */ 
+color: #928b6f !important; 
+background: url(/images/backgrounds/tab-inactive-right.gif) top right no-repeat; 
+height: 19px; 
+cursor:pointer !important; 
+cursor:hand !important; 
+} 
+
+
+.ui-tabs-nav li a span{ 
+display: block; 
+padding: 4px 35px 2px 35px; /* made adjustment to attribute - site BG change - tb5sxo */ 
+/* background: url(/images/backgrounds/tab-inactive-left.gif) top left no-repeat; */ /*updates at bottom for site background color to white */
+height: 13px; 
+text-align:center; 
+cursor:pointer !important; 
+cursor:hand !important; 
+}
+
+
+/*
+.ui-tabs-nav li.ui-tabs-active a, .ui-tabs-nav li.ui-tabs-active a:hover, 
+.ui-tabs-nav li.ui-tabs-active a:focus, .ui-tabs-nav li.ui-tabs-active a:active { 
+background: url(/images/backgrounds/tab-active-right.gif) top right no-repeat; 
+color: #534741 !important; 
+border-bottom:none; 
+height:20px; 
+}
+*/
+
+
+/* adding important for overriding above style - site BG change - tb5sxo */ 
+.ui-tabs-nav li.ui-tabs-active a, .ui-tabs-nav li.ui-tabs-active a:hover, .ui-tabs-nav li.ui-tabs-active a:focus, .ui-tabs-nav li.ui-tabs-active a:active {
+	background: url(/images/backgrounds/tab-active-right.gif) top right no-repeat;
+	color: #535353 !important;
+	border-bottom: none;
+	height: 20px;
+	text-decoration: none!important;
+}
+
+
+.ui-tabs-nav li.ui-tabs-active a span, .ui-tabs-nav li.ui-tabs-active a:hover span, 
+.ui-tabs-nav li.ui-tabs-active a:focus span, .ui-tabs-nav li.ui-tabs-active a:active span{ 
+	/* background: url(/images/backgrounds/tab-active-left.gif) top left no-repeat; */
+	background-color: #808184!important; /* adding important for overriding above style - site BG change - tb5sxo */
+	color: #ffffff!important; /* adding important for overriding above style - site BG change - tb5sxo */
+} 
+
+
+.ui-tabs-panel { 
+/*resets*/margin: 0; 
+padding: 0; 
+border: 0; 
+outline: 0; 
+line-height: 1.3; 
+text-decoration: none; 
+font-size: 100%; 
+list-style: none;
+/* height: 225px; */ /* new for Bug 1913 */ 
+font-family: Arial, sans-serif; 
+clear:left; 
+/* border: 1px solid #e7e7cc; */ /* updates at bottom for changes for site background color to white */ 
+padding:0; 
+min-width: 0; /* => IE7 trigger hasLayout (while maintaining valid CSS) to prevent margins pushed here from preceding elements */ 
+} 
+* html .ui-tabs-panel { 
+display: inline-block; /* => IE6 trigger hasLayout (while maintaining valid CSS) in IE6 to prevent margins pushed here from preceding elements */ 
+} 
+.ui-tabs-hide { 
+display: none !important/*for accessible hiding: position: absolute; left: -99999999px;*/; 
+} 
+
+
+/*hidden elements*/ 
+.ui-hidden { 
+display: none/*for accessible hiding: position: absolute; left: -99999999px;*/; 
+} 
+.ui-accessible-hidden { 
+position: absolute; left: -99999999px; 
+} 
+
+/*reset styles*/ 
+.ui-reset { 
+/*resets*/margin: 0; padding: 0; border: 0; outline: 0; line-height: 1.3; text-decoration: none; font-size: 100%; list-style: none; 
+} 
+/*clearfix class*/ 
+.ui-clearfix:after { 
+content: "."; 
+display: block; 
+height: 0; 
+clear: both; 
+visibility: hidden; 
+} 
+.ui-clearfix {display: inline-block;} 
+/* Hides from IE-mac \*/ 
+* html .ui-clearfix {height: 1%;} 
+.ui-clearfix {display: block;} 
+/* End hide from IE-mac */ 
+
+/* Note: for resizable styles, use the styles listed above in the dialog section */ 
+
+/* Holly Hack */ 
+#contentWrapper:after, 
+#secondaryNav:after, 
+#secondaryNav form:after, 
+#quickNav form:after, 
+#quickNav ul:after { 
+content: ""; 
+height: 0; 
+visibility: hidden; 
+display: block; 
+clear: both; 
+} 
+* HTML #contentWrapper, 
+* HTML #secondaryNav, 
+* HTML #secondaryNav form { 
+height: 1%; 
+} 
+*+HTML #contentWrapper, 
+*+HTML #secondaryNav, 
+*+HTML #secondaryNav form { 
+
+zoom: 1; 
+} 
+
+
+
+/* Plain Content page without sidebar */ 
+.noSideBar h3{ 
+font-size: 20px; 
+padding: 0 0 10px 0; 
+} 
+.noSideBar h4{ 
+font-size: 16px; 
+padding: 0 0 10px 0; 
+} 
+.noSideBar #contentBottom{ 
+background: none !important; 
+display: none; 
+} 
+
+.noSideBar #contentWrapper{ 
+background: #fff !important; 
+} 
+
+.noSideBar #content{ 
+padding: 20px !important; 
+width: 920px !important; 
+margin: 0 !important; 
+position: static !important; 
+} 
+
+span.backOrdered { 
+color:#c00b38; 
+} 
+
+#headerMarketingTicker { 
+display: inline; 
+float: left; 
+font-size: 14px; 
+font-weight: bold; 
+height: 15px; 
+vertical-align: top; 
+padding-left: 5px; 
+padding-top: 5px; 
+} 
+
+.topMetaNav { 
+float: right; 
+height: 25px; 
+} 
+
+.topSignInMetaNav { 
+float: right; 
+height: 25px; 
+position: relative; 
+right: 55px; 
+} 
+
+.hp_bkgrd { 
+background-color:#FFFFFF; 
+} 
+
+.mainConceptNav { 
+float: right; 
+} 
+
+#homePage #secondaryNavWrapper { 
+	padding-top: 0 !important; 
+	/* margin: 15px 0 auto; */ /* site BG change - tb5sxo */
+	margin-top:	30px; /* site BG change - tb5sxo */
+	margin-right:	auto; /* ie8, ie7 fix - site BG change - tb5sxo */
+	margin-bottom: 0px; /* site BG change - tb5sxo */
+	margin-left: 0px; /* site BG change - tb5sxo */
+} 
+
+#productDetail #secondaryNavWrapper { 
+*padding-top: 20px !important; 
+} 
+
+.navWrapContainer { 
+position: relative; 
+top:40px; 
+height: 55px; 
+} 
+
+.welcomeWrapper {
+float: left;
+}
+
+
+
+/*  pstudley => positioning fix for social media buttons */
+
+#productDetails #socialMedia {
+	float: right;
+	position: relative; 
+	top: 33px; 
+	left: 14px;
+}
+
+/* tb5sxo */
+/*
+#productDetails #socialMedia .fb-like {
+    display: block;
+    float: left;
+}
+*/
+
+/* tb5sxo */
+#productDetails #socialMedia .twitter-share-button {
+    margin-left: -10px;
+}
+
+/*  pstudley */
+
+
+/* Begin here...This is for the My Communications page under MyPreference 11/11/11  */
+
+
+.mycomm-header {
+    color: #666666;
+    font-size: 24px;
+	padding-bottom: 10px !important;
+	
+}
+.mycomm-header-info {
+    color: #666666;
+    font-size: 24px;
+	
+}
+.mycomm-header-CA {
+    color: #666666;
+    font-size: 24px;
+	
+}
+.mycomm-commbox {
+    color: #666666;
+    font-size: 16px;
+}
+.mycomm-altbox {
+    color: #666666;
+    font-size: 14px;
+}
+#quote img {
+float: left;
+margin-top: 50px;
+}
+
+#mycomm-text {
+float: right;
+padding-left: 20px;
+font-size: 16px;
+width:	315px;
+
+}
+
+#book img {
+float: left;
+margin-top: 50px;
+}
+
+#catalog {
+float: left;
+padding-left: 20px;
+font-size: 16px;
+width: 300px;
+}
+
+#mycomm-cabox {
+    background-color: #EEEEEE;
+    float: left;
+    height: 230px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 210px;
+	margin-right: 10px;
+	margin-top: 10px;
+}
+#mycomm-tcbox {
+    background-color: #EEEEEE;
+    float: left;
+    height: 230px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 210px;
+
+	margin-right: 10px;
+}
+#mycomm-facebookbox {
+    background-color: #EEEEEE;
+    color: #3B5998;
+    font-size: 21px;
+    height: 230px;
+    left: 0px;
+    bottom: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top:10px;
+    /*position: absolute;*/
+    width: 210px;
+	display: block;
+	margin-top: 10px;
+}
+#mycomm-smstxtbox {
+    background-color: #EEEEEE;
+    float: right;
+    height: 230px;
+    width: 480px;
+    margin-right: 25px;
+}
+#mycomm-catrec {
+    background-color: #EEEEEE;
+    float: right;
+    height: 230px;
+    margin-right: 27px;
+    padding-left: 10px;
+    width: 468px;
+}
+#mycomm-helprec {
+    background-color: #EEEEEE;
+    float: right;
+    height: 220px;
+    margin-right: 25px;
+    margin-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+   padding-bottom: 10px;
+    width: 460px;
+	
+}
+.mycomm-signupbox {
+    background-color: #666666;
+    color: #ffffff;
+    font-size: 16px;
+    padding: 5px 45px;
+    text-align: left;
+    text-decoration: none;
+}
+
+#clear {
+    clear: both;
+}
+
+#mycomm-look {
+    margin-top: 20px;
+}
+
+#envelope img {
+    margin-top: 50px;
+}
+.mycomm-signupbox a {
+    color: #FFFFFF !important;
+}
+
+
+#envelope {
+    background-color: #EEEEEE;
+    float: left;
+    height: 230px;
+    margin-left: 13px;
+    padding-left: 10px;
+    width: 125px;
+}
+#topEmail {
+    background-color: #EEEEEE;
+    float: left;
+    height: 230px;
+    padding-left: 20px;
+    width: 325px;
+}
+#myCommBillboard {
+    float: left;
+}
+#topEmail a span {
+    background-color: #666666;
+    color: #FFFFFF;
+    font-size: 16px;
+    margin-left: 10px;
+    padding: 5px 20px;
+    text-align: left;
+    text-decoration: none;
+        
+}
+#topEmail span {
+    width: 25px;
+}
+#topEmail p {
+    font-size: 16px;
+    padding-bottom: 25px;
+    padding-top: 5px;
+    width: 320px;
+}
+
+
+#myCommunication #footer {
+    padding-left: 145px;
+}
+
+
+#myCommunication #footer {
+    *padding-left: 0px;
+} /* IE6+7 */
+
+:root #myCommunication #footer {
+    padding-left: 0px \0/IE9; 
+}/* IE9 */
+
+/* Ends here...This is for the My Communications page under MyPreference 11/11/11  */
+
+
+/* tb6pxs Looks edits  */
+
+#outfitDetailPage #container, #outfitOcassionPage #container {
+    margin-top: -10px;
+	*margin-top: 0px;
+}
+
+
+
+/* Bug #2015 -- Begin */
+/* Match the styling of the meta-nav to the original BRD */
+/* global.css */  /* Line#370  */
+#mainContentContainer {
+    background: url("/images/backgrounds/bg-drop-shadow.gif") repeat scroll 0 0 transparent;
+    margin: 0 auto;
+    width: 960px;  /* changed  */
+}
+
+/* global.css */  /* Line#550  */
+#header #innerQuickNav {
+    width: 960px;  /* changed  */
+}
+
+/* global.css */  /* Line#587, /* Line#596  */
+#innerQuickNav {
+    /* float: right !important; 
+    /* left: -215px; */
+    margin: 0px 0px 0px 215px;
+    position: relative;
+    width: 960px;
+	_height: 1%; /* ie hack */
+}
+
+/* global.css */  /* Line#539  */
+#quickNav {
+    /* background: none repeat scroll 0 0 #E3E2D8 !important; */ /* updates at bottom for site background to white */
+    height: 27px;
+    /* left: -211px; */  /* commented out */
+    position: absolute;
+    top: 0 !important;
+    /* width: 1423px; */  /* commented out */
+    z-index: 200;
+}
+
+/* Bug #2015 -- End */
+
+
+/* Bug #2015 Continued -- Views Cleanup Begin */
+/* global.css */
+/* Line#558 */
+.catalogView #header #innerQuickNav {
+    /* left: -232px; */  /* commented out */
+    margin: 0 auto;
+    width: 960px;
+}
+
+/* Line#478 */
+.catalogView #header #quickNav {
+    /* left: -231px; */  /* commented out */
+    top: -10px !important;
+    *top:0 !important;
+}
+
+/* Line#567 */
+#catalogGalleryView #header #innerQuickNav {
+    /* left: -232px; */  /* commented out */
+    margin: 0 auto;
+    width: 960px;
+
+}
+
+/* Line#486 */
+#catalogGalleryView #header #quickNav {
+    /* left: -231px;  commented out */
+    top: -10px !important;
+    *top:0 !important;
+}
+
+/* Line#576 */
+.productDetail #header #innerQuickNav {
+    /* left: -231px;  commented out */
+    margin: 0 auto;
+    width: 960px;
+    /* top:10px\0; tb5sxo positioning fix 111411 MSIE ONLY */
+}
+
+/* Line#499 */
+
+.productDetail #header #quickNav {
+    /* left: -231px; commented out */
+   /* top: -10px !important;*/
+    *top:0 !important;
+}
+
+@media \0screen {
+  .productDetail #header #quickNav {top:0 !important;}
+}
+
+/* Line#588 */
+#shoppingGiftBag #header #innerQuickNav { 
+    margin: 0 auto;
+    width: 960px; 
+    /* left: -232px;  commented out */ 
+}
+
+/* Line#519 */
+#shoppingGiftBag #header #quickNav { 
+	/* left: -223px; */
+    /* left: -232px; */  /* commented out */ 
+	top:-10px !important; 
+	*top:0 !important; 
+}
+
+/* Line#597 */
+#createAccount #header #innerQuickNav { 
+    margin: 0 auto;
+    width: 960px; 
+    /* left: -232px; */  /* commented out */ 
+}
+
+/* Line#532 */
+#createAccount #header #quickNav { 
+    /* left: -231px; */  /* commented out */
+    /* top: -10px !important; */
+	*top:0 !important; 
+}
+
+/* Line#603 */
+#myInformation #header #innerQuickNav { 
+    margin: 0 auto;
+    width: 960px; 
+    /* left: -232px; */  /* commented out */ 
+}
+
+/* Line#539 */
+#myInformation #header #quickNav { 
+    /* left: -231px; */  /* commented out */
+    /* top: -10px !important; */
+	*top:0 !important; 
+}
+
+/* New Rule - Group Select Cleanup */
+#findaStore, #custService, 
+#catalogListView, #styleByAppointment, 
+#awardsHome, #outfitDetailsPage, #custServiceInline, #header #innerQuickNav {
+    margin: 0 auto !important;
+    /* width: 960px !important; */ /* fix artifact in chome */
+}
+
+/* Bug #2015 Continued -- Views Cleanup Ends */
+
+
+/* Bug #2016 -- Begin */
+/* Fix Login and Cart Buttons in the meta nav */
+/* global.css */  /* Line#976 */
+li#signInOut h3 {
+	color: #FFFFFF !important;
+    font-weight: bold;	
+    height: 18px;  /* added */	
+}
+
+/* Line#982 */
+li#signInOut h3.active {
+    background-color: #000000;
+    color: #FFFFFF !important;
+    height: 19px;  /* added */
+}
+
+/* New Rule */
+li#signInOut h3 a {
+    height: 33px;
+    padding: 0 !important;
+    margin-left: -10px;
+    margin-top: -9px;
+    margin-right: -10px;
+    width: 56px;
+}
+/**********************************************/
+/**********************************************/
+/**********************************************/
+/* Line#957 */
+li#signInOut {
+    background: none repeat scroll 0 0 #333333 !important;
+    color: #FFFFFF !important;
+    height: 28px;
+    margin-top: -1px;
+    padding-bottom: 7px;
+}
+
+/* Line#967 */
+li#signInOut a#signIn {
+    color: #FFFFFF !important;
+    display: block !important;
+    font-family: Arial,Helvetica,sans-serif !important;
+    font-size: 12px !important;
+    font-weight: bold;
+    padding: 8px 10px !important;
+}
+/**********************************************/
+/**********************************************/
+/**********************************************/
+/* Line#904 */
+li#shoppingBag h3 {
+    color: #FFFFFF !important;
+    font-weight: bold;
+    height: 18px;  /* added */	
+    margin-top: -3px !important;  /* added */
+}
+/* Line#911 */
+li#shoppingBag h3.active {
+    background-color: #000000;
+    color: #FFFFFF !important;
+    font-weight: bold;
+    height: 18px;  /* added */
+}
+
+/* fixes the link area of bag button */
+/* Line#935 */
+li#shoppingBag h3 a {
+	display: block !important; 
+	color: #FFFFFF !important; 
+	font-family: Arial,Helvetica,sans-serif !important; 
+	font-size: 12px !important; 
+	font-weight: bold; 
+    height: 28px; /* added */
+	margin-top: -5px;
+}
+
+/* Bug #2016 -- End */
+
+/* Phil Studley	order confirmation IE metanav fix */
+/* New Rule */
+#orderConfirmation #header #quickNav {
+	*top: -20px !important;
+}
+/* ********************************************** */
+
+/* Bug#2013 Cleanup width of entire site to 960px-- global -- BEGIN */
+/* *********************************************************** */
+
+/* global.css */  /* Test */
+#footerBottomMenuLine1 {
+	width: 865px;
+	margin: 10px 0px auto;
+
+
+
+
+
+	padding: 2px 0px 0px 82px;
+}
+
+/* global.css */  /* Line#1360 */
+/*
+#footerBottomMenuLine1 {
+	width: 865px;
+	margin: 10px auto;
+	padding: 2px 0px 5px 65px;
+}
+*/
+
+/* global.css */  /* Test */
+#footerBottomMenuLine2 { 
+/* margin: 11px 0px; */ /*This is old, for when "your privacy" was still in footer */ 
+margin: 11px 0 11px 48px; /* footer without "your privacy" */ 
+width: 960px; 
+} 
+
+
+/* global.css */  /* Line#1372 */
+
+/* #footerBottomMenuLine2 {
+    /* float: none; */  /* omit */
+   /* margin: 10px auto; */  /* changed */
+    /* padding-left: 30px; */  /* omit */
+   /* width: 960px;  /* changed */
+/*
+}
+*/
+
+/* global.css */  /* Test */
+#footerBottomMenuLine3 {
+	margin: 30px 0px;
+	width: 960px;
+	text-align: center;
+}
+
+/* global.css */  /* Line#1430 */
+/* #footerBottomMenuLine3 {
+    /* float: left; */  /* omit */
+   /* margin-top: 15px auto;
+    width: 960px;
+}
+*/
+/* 2013 Cleanup width of entire site to 960px -- global -- END */
+/* *********************************************************** */
+
+
+/* Bug 2019 */
+
+body#outfitOcassionPage .navWrapContainer{
+top: 50px;
+}
+
+/* End Bug 2019 */
+
+/* BugFix #2148 */
+/* global.css -- Line#2442
+** desktop
+*/
+/* tb5sxo - spacing between fbLike and twitter on pdp page */
+#productDetails #socialMedia .fb-like {
+    display: block;
+    float: left;
+    margin-right: 50px;  /* added */
+}
+/* End BugFix #2148 */
+
+
+/* Bug#2067 */
+/* quickNavHover Cleanup Begins */
+/*  global.css  */  /* lines#876,998 */
+li#wishlist a:hover { 
+    font-weight: bold !important; 
+    color: #ffffff!important; /* changed from #666 */
+    text-decoration: none!important; 
+}
+/* quickNavHover Cleanup Ends */
+
+/*  global.css  */  /* Added New Rule */
+li#headerstores a:hover { 
+    font-weight: bold !important; 
+    color: #ffffff!important; /* changed from #666 */
+    text-decoration: none!important; 
+}
+/* quickNavHover Cleanup Ends */
+
+/*  global.css  */  /* Added New Rule */
+li#headeremail a:hover { 
+    font-weight: bold !important; 
+    color: #ffffff!important; /* changed from #666 */
+    text-decoration: none!important; 
+}
+/* quickNavHover Cleanup Ends */
+
+/* BugFix #2113 */
+/* global.css -- Line#1305
+** desktop
+*/
+/* tb5sxo - spacing between fbLike and twitter on ECat page in footer*/
+/* changed from .fb-like class */
+#footerBottomMenuLine1 #socialMedia .fb_edge_widget_with_comment {
+    width: 85px; /* tb5sxo footer fix */
+    float: left; /* tb5sxo footer fix */
+	margin-right: 12px;	/* new attr */
+	/* z-index: -1; */
+}
+/* End BugFix #2113 */
+
+
+
+
+/* Chrome test */
+@media screen and (-webkit-min-device-pixel-ratio:0) { .catalogView #header #quickNav{top:0 !important;} }
+/* End Chrome test */
+
+#ftStoreSubmit input {
+background: url("/images/buttons/grey_arrow.gif") no-repeat scroll 0 0 transparent !important;
+display: inline !important;
+float: right;
+*float: left;
+height: 20px !important;
+margin-left: 191px !important;
+margin-top: -20px;
+*margin-top: 0px;
+width: 28px !important;
+*position: relative;
+*right: 185px;
+}
+
+#ftStoreSubmit {
+*width: 40px;
+}
+
+#footerlocation {
+background-color: #FFFFFF;
+border: 1px solid #C3C2B5;
+color: #666666;
+float: left;
+font-size: 10px;
+height: 14px;
+padding: 2px;
+width: 180px;
+}
+
+#productDetails .price strong{
+font-weight: normal;	
+}
+
+.prodLongDesc {
+margin-bottom: 10px;	
+}
+
+/* pdp description bullets too close to image */ 
+
+.prodLongDesc li{ 
+margin-left: 10px; 
+} 
+
+/* end pdp description bullets too close to image */ 
+
+
+* new code added by Mani */ 
+
+/* Email Alignment */ 
+.email-div { 
+width: 320px; 
+margin-top: 10px; 
+} 
+
+.email-div .left{ 
+float: left; 
+} 
+
+.email-div .right{ 
+float: left; 
+margin-left: 10px; 
+} 
+
+.email-div .left #email{ 
+width: 100px; 
+} 
+
+.email-div .right #confirmEmail{ 
+width: 100px; 
+} 
+
+.miniCartForm{ 
+padding-left: 40px; 
+*margin-bottom: 5px; 
+} 
+
+/* end Mani additions */ 
+
+/* worked with Alphonse for login error font color */ 
+
+#loginFormErrors{ 
+
+
+
+
+
+
+
+
+
+
+
+
+color: #BB0B3A; 
+} 
+
+/*end worked with Alphonse for login error font color */ 
+
+/* list view bullets for Bug #2944 */ 
+
+.listViewbullets li { 
+list-style-image: url("/images/m/migration/010913/prod_desc_bullet_sm.gif"); 
+margin-left: 25px; 
+} 
+
+/* end list view bullets for Bug #2944 */ 
+
+/* Bug #2968 */ 
+
+
+
+
+.listViewbullets li p { 
+margin-left: -25px; 
+} 
+
+/* End Bug #2968 */  
+
+.pdpViewbullets li {
+background-image: url("/images/m/migration/010913/prod_desc_bullet_sm.gif");
+background-position: left center;
+background-repeat: no-repeat;
+list-style-type: none;
+margin-left: 25px !important;
+padding-left: 10px;	
+}
+
+/* Bug 3014 for build on 022513 */
+
+#createAccount #signin-module #loginFormErrors {
+    background: none repeat scroll 0 0 #971402;
+    color: white;
+     font-size: 16px;
+     margin-bottom: 2px;
+    margin-left: 0;
+    padding: 5px;
+    width: 258px;
+}
+
+#createAccount #signin-module .formerrorDescription {
+background: none !important;
+color: #971402 !important;	
+}
+
+/* end Bug 3014 for build on 022513 */
+
+/* styles for Credit Card application page scrolling box text from ADS */
+
+#ads-notice, #ads-notice ul, #ads-notice p { 
+text-align: left; 
+padding-left: 10px; 
+} 
+
+#ads-notice strong { 
+font-weight: bolder !important; 
+}  
+
+/* end styles for Credit Card application page scrolling box text from ADS */
+
+/* styles for credit app page for IE */
+
+#tc_app_intro {
+*height: 102px;	
+}
+
+/* end styles for credit app page for IE */
+
+/* style for intro paragraph on credit app page once logged in */
+
+#awardsHome.loyaltyChargeApp #tc_app_intro {
+width: 550px;	
+}
+
+#awardsHome.noLogin #tc_app_intro {
+width: 755px;	
+}
+
+/* end style for intro paragraph on credit app page once logged in */
+
+
+
+/* Begin style for review order messaging right before it goes to order confirmation page */
+/* Adjust Order Processing Popup Message
+*
+** global.css line#3255 
+*
+*/
+
+/*
+@media (max-width: 1024px) {
+    #inProcessMsg.orderInProcessMsg {
+        left: 0px;
+        margin-left: 0px;
+    }
+}
+*/
+
+@media (max-height: 768px) {
+    #inProcessMsg.orderInProcessMsg {
+        top: 20%!important;
+    }
+}
+
+#inProcessMsg.orderInProcessMsg {
+  display: block;
+	background-color: #f1f1f2; /* changed - tb5sxo */
+  width: 360px;
+  height: 255px!important;
+  z-index: 1;
+  position: absolute;
+	border: 6px solid #cccccc; /* changed - tb5sxo */
+	top: 35%!important;
+	top: 33%\9!important;
+  left: 50%;
+  color: #000000;
+	margin: 0px 0px 0px -100px;
+  padding-left: 73px;
+  padding-right: 62px;	
+  padding-top: 125px;
+  font-size: 1.3em;
+  line-height: 1.3;
+  font-weight: 900;
+}
+
+
+
+/* End style for review order messaging right before it goes to order confirmation page */
+
+
+
+/* for ADS scrollbox 06/07/13 */
+
+#disclosurebox .legal-section-heading {
+    border-bottom-width: 2px;
+    font-size: 14pt;
+    font-weight: bold;
+    margin-top: 20px;
+}
+#disclosurebox .legal-section-sub-heading {
+    font-size: 12pt;
+    font-weight: bold;
+}
+#disclosurebox .legal-section-paragraph ul {
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-left: 15px;
+}
+#disclosurebox .legal-section-paragraph p {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+#disclosurebox .rate-table {
+    border: 1px solid #000000;
+    border-collapse: collapse;
+    color: #000000;
+    font-size: 10pt;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    width: 90%;
+}
+#disclosurebox .rate-table tr th {
+    background-color: #000000;
+    border: 1px solid #000000;
+    border-collapse: collapse;
+    color: #FFFFFF;
+    padding: 0.2em;
+    text-align: left;
+    vertical-align: top;
+}
+#disclosurebox .rate-table tr td {
+    border: 1px solid #000000;
+    border-collapse: collapse;
+    padding: 0.2em;
+    text-align: left;
+    vertical-align: top;
+}
+#disclosurebox .rate-table tr.interior1 td {
+    border-top-style: none;
+}
+#disclosurebox .rate-table tr.interior2 td {
+    border-top-style: none;
+}
+#disclosurebox .apr {
+    font-size: 16pt;
+    font-weight: bolder;
+}
+#disclosurebox {
+    font-family: arial,helvetica,sans-serif !important;
+    font-size: 10pt !important;
+}
+
+/* end for ADS scrollbox 06/07/13 */
+
+
+/* 06xx13 changes for site background color to white */
+
+.ui-tabs-panel {
+border: 1px solid #CCCCCC;	
+}
+
+.ui-tabs-nav li a span {
+	background-color: #ffffff!important; /* adding important for overriding inline style - site BG change - tb5sxo */
+	border: 1px solid #cccccc; /* adding attribute */
+	color: #535353!important; /* adding attribute, adding important for overriding inline style - site BG change - tb5sxo */
+}
+
+#tickerCont div {
+    background-color: #F1F1F2 !important;
+}
+#ticker li {
+    background-color: #F1F1F2 !important;
+}
+#ticker .linkCont {
+    background-color: #F1F1F2 !important;
+}
+#tickerDropDown a {
+    background-color: #F1F1F2 !important;
+}
+
+#tickerDropDown a:hover {
+    background-color: #787878 !important;
+}
+
+#ticker a:hover{
+	background-color: #F1F1F2 !important;	
+}
+
+/* #quickNav {
+background: none repeat scroll 0 0 #F1F1F2 !important;	
+}
+*/ /* updates made for 11/2014 */
+
+
+#quickNav li {
+	background: none repeat scroll 0 0 #cccccc;
+	border-right: 1px solid #ffffff;	
+}
+
+/* end 06xx13 changes for site background color to white */
+
+.footerfblink {
+background-image: url(/images/icons/facebook_icon.gif);
+background-position: 0 0;
+background-repeat: no-repeat;
+float:left;
+height:20px;
+*margin-left: -100px;
+}
+.footerfblink span {
+float:left;
+margin:6px 0px 0px 25px; 
+ font-size: 11px;
+}
+
+/* BEGIN Experience Manager template definitions */
+.one-column-page .main-content {
+	width: 100%;
+}
+.two-column-page .side-bar {
+	width: 200px;
+	float: left;
+}
+.two-column-page .main-content {
+	width: 750px;
+	float: right /*left*/;
+}
+/* END Experience Manager template definitions */
+
+/* BEGIN Nav 3.0 */
+.nav-container {
+	/*float: right;*/
+	float: left; /* chg Top Nav 11/2014*/
+	position: relative; /*Top Nav 11/2014*/
+	margin-top: 4px; /*Top Nav 11/2014*/
+	border-top: 1px solid #666666; /*Top Nav 11/2014*/
+	border-bottom: 1px solid #666666; /*Top Nav 11/2014*/
+    width: 960px; /*Top Nav 11/2014*/
+	height: 24px; /*Top Nav 11/2014*/
+}
+.nav-header {
+	text-decoration: none;
+	font-size: 12px !important;
+	font-weight: bold;
+	color: #333333;
+	text-transform: uppercase;
+	text-align: center;
+	height: 30px;
+	cursor: default;
+	font-family: Arial,Helvetica Verdana,sans-serif !important;
+}
+.nav-header a {
+	cursor: pointer;
+	color:#333333;
+}
+
+.nav-header a:hover {
+	text-decoration:none!important;
+}
+.nav-group {
+	float: left;
+	/*width: 79px;*/ /* changed from 83px */
+	width: auto; /* chg Top Nav 11/2014*/
+	/*margin-right: 5px;*/
+	margin-top: 7px;
+	height: 20px;
+	position:relative; /* Top Nav 11/2014*/
+}
+
+
+/* added for Top Nav 11/2014*/
+
+.nav-group:last-child .nav-subnav {
+    left: -172px;
+}
+
+#shoppingGiftBag .nav-group {
+height: 46px;
+}
+
+.clearfix .nav-container .nav-group h3{
+    text-decoration: none;
+	font-size: 12px !important;
+	font-weight: bold;
+	color: #666666;
+	text-transform: uppercase;
+	text-align: center;
+	height: 17px;
+	cursor: default;
+	font-family: Arial,Helvetica Verdana,sans-serif !important;
+}
+
+.nav-container .nav-group {
+	margin-right:26px;
+}
+
+.nav-container .nav-group:last-child {
+    margin-right: 0px !important;
+}
+
+
+
+.clearfix .nav-container .nav-group h3 a{
+	color: #666666;
+	text-decoration:none;
+}
+.clearfix .nav-container .nav-group h3 a:hover{
+	color: #333;
+	text-decoration:none!important;
+}
+.nav-subnav {
+	display: none;
+	border: 2px solid #DDD;
+	border-top:none;
+	background: #FFF;
+	width: 125px;
+	/*margin-left: -22px; removed for top nav 11/2014 */
+	z-index: 10001;
+	/*position: relative;*/
+    position: absolute; /* chg Top Nav 11/2014 */
+	left:1px; /* Top Nav 11/2014 */
+}
+
+#shoppingGiftBag .nav-subnav{
+
+top: 24px;
+}
+
+.nav-subnav.nav-two-column {
+	width: 250px;
+	/*margin-left: /*-87px --> -150px; removed for top nav 11/2014 */
+	overflow: hidden;
+}
+.nav-subnav.nav-two-column ul {
+	width: 125px;
+	float: left;
+}
+.nav-group:hover .nav-subnav {
+	display: block;
+}
+.nav-subnav-header, .nav-subnav-header-clickable {
+	text-decoration: none;
+	font-size: 10px;
+	font-weight: bold;
+	color: #333;
+	text-transform: uppercase;
+	text-align: center;
+}
+.nav-item {
+	margin: 2px;
+	padding: 10px 0;
+	font-size: 12px;
+	text-align: center;
+}
+.nav-item:hover {
+	background: #DDD;
+	cursor: pointer;
+}
+.nav-item a {
+	text-decoration: none !important;
+}
+.nav-subnav-header.nav-item:hover {
+	background: #FFF;
+	cursor: default;
+}
+/* END Nav 3.0 */
+
+/* BEGIN new styles for faceted browse for Release 13.2 */
+
+#faceted-wrapper {
+	display: inline-block;
+	*display: block;
+	line-height: 1em;
+}
+
+#faceted-container-size,
+#faceted-container-color,
+#faceted-container-shoe-size,
+#faceted-container-shoe-width {
+	float: left;
+  margin: 5px;
+}
+
+ul.faceted_dropdown {
+	position: relative;
+	z-index: 1;
+}
+
+ul.faceted_dropdown #MissesSize, ul.faceted_dropdown #PetitesSize, ul.faceted_dropdown #WomanSize, ul.faceted_dropdown #WomanPetitesSize, ul.faceted_dropdown #ShoeSize, ul.faceted_dropdown #ShoeWidth, ul.faceted_dropdown #sizes, ul.faceted_dropdown #Sizes, ul.faceted_dropdown #AccessorySize, ul.faceted_dropdown #saleMissesSize, ul.faceted_dropdown #salePetitesSize, ul.faceted_dropdown #saleWomanSize, ul.faceted_dropdown #saleWomanPetitesSize, ul.faceted_dropdown #saleAccessorySize, ul.faceted_dropdown #outletMissesSize, ul.faceted_dropdown #outletPetitesSize, ul.faceted_dropdown #outletWomanSize, ul.faceted_dropdown #outletWomanPetitesSize, ul.faceted_dropdown #outletAccessorySize {
+	background-color: #666666;
+	background-image: url(/images/backgrounds/arrown_down.png);
+	background-position: 53px 5px;	
+	background-repeat: no-repeat;
+	color: #FFFFFF;
+	font-size: 11px;
+	font-weight: bold;
+	width: 50px;
+}
+
+ul.faceted_dropdown #ShoeSize {
+    background-position: 83px 5px;
+    width: 81px;
+}
+
+ul.faceted_dropdown #MissesColor, ul.faceted_dropdown #PetitesColor, ul.faceted_dropdown #WomanColor, ul.faceted_dropdown #WomanPetitesColor, ul.faceted_dropdown #Color, ul.faceted_dropdown #color, ul.faceted_dropdown #AccessoryColor, ul.faceted_dropdown #saleMissesColor, ul.faceted_dropdown #salePetitesColor, ul.faceted_dropdown #saleWomanColor, ul.faceted_dropdown #saleWomanPetitesColor, ul.faceted_dropdown #saleShoeColor, ul.faceted_dropdown #saleAccessoryColor, ul.faceted_dropdown #outletMissesColor, ul.faceted_dropdown #outletPetitesColor, ul.faceted_dropdown #outletWomanColor, ul.faceted_dropdown #outletWomanPetitesColor, ul.faceted_dropdown #outletShoeColor, ul.faceted_dropdown #outletAccessoryColor {
+  background-color: #666666;
+  background-image: url(/images/backgrounds/arrown_down.png);
+  background-position: 67px 5px;	
+  background-repeat: no-repeat;
+  color: #FFFFFF;
+  font-size: 11px;
+  font-weight: bold;
+  width: 64px;
+}
+
+ul.faceted_dropdown #ShoeWidth {
+    width: 91px;
+    background-position: 95px 5px;
+}
+
+ul.faceted_dropdown a:hover {
+	text-decoration: none !important;
+	background: none repeat scroll 0 0 #666666;
+	color: #FFFFFF;
+}
+
+ul.faceted_dropdown li a {
+	display: block;
+	padding: 4px 8px;
+}
+
+ul.faceted_dropdown li:last-child a {
+ border-right: medium none;
+}
+
+ul.faceted_dropdown ul {
+	left: 0;
+	position: absolute;
+	top: 18px; /* was 100% - changed tb5sxo */
+	visibility: hidden;
+	width: 100px;
+	z-index: 5;
+}
+
+ul.faceted_dropdown ul li {
+	background: none repeat scroll 0 0 #FFFFFF;
+	color: #666666;
+	float: none;
+	font-weight: normal;
+	width: 116px;                      
+}
+
+ul.faceted_dropdown ul li a {
+ width: 100px;
+}
+
+.faceted_dropdown .numResults {
+ padding-left: 5px;
+}
+
+#faceted_clearAll,
+#faceted_totalNumber {
+ padding-top: 4px;
+ 	float: left;
+  margin: 5px;
+}
+
+#faceted_clearAll a {
+	font-size: 11px;
+	text-decoration: underline;
+}
+
+#faceted_totalNumber {
+	/*font-weight: bold;*/
+	font-size: 12px;
+	margin-left:0;
+}
+
+
+
+
+/* SIZE SELECTED */
+ul.faceted_browse_selected #MissesSize, ul.faceted_browse_selected #PetitesSize, ul.faceted_browse_selected #WomanSize, ul.faceted_browse_selected #WomanPetitesSize, ul.faceted_browse_selected #ShoeSize, ul.faceted_browse_selected #ShoeWidth, ul.faceted_browse_selected #sizes {
+	background-position: 114px 5px;
+	width: 114px;
+}
+
+#faceted-container-size ul.faceted_dropdown ul li, #faceted-container-shoe-size ul.faceted_dropdown ul li {
+		width: 130px;
+		margin-top: -1px;
+}
+
+#faceted-container-size ul.faceted_dropdown ul li a, #faceted-container-shoe-size ul.faceted_dropdown ul li a {
+		width: 114px;
+}
+
+
+
+/* COLOR SELECTED */
+ul.faceted_browse_selected #MissesColor, ul.faceted_browse_selected #PetitesColor, ul.faceted_browse_selected #WomanColor, ul.faceted_browse_selected #WomanPetitesColor, ul.faceted_browse_selected #Color {
+	background-position: 128px 5px;
+	width: 128px;
+}
+
+#faceted-container-color ul.faceted_dropdown ul li {
+	width: 144px;
+	margin-top: -1px;
+}
+
+#faceted-container-color ul.faceted_dropdown ul li a {
+	width: 128px;
+}
+
+
+
+/* SHOE WIDTH SELECTED */
+ul.faceted_browse_selected #ShoeWidth {
+	background-position: 158px 5px;
+	width: 158px;
+}
+
+#faceted-container-shoe-width ul.faceted_dropdown ul li {
+	width: 174px;
+	margin-top: -1px;
+}
+
+#faceted-container-shoe-width ul.faceted_dropdown ul li a {
+	width: 158px;
+}
+
+ul.faceted_dropdown_selected li a {
+    background-color: #666666;
+    color: #FFFFFF;
+    cursor: text;
+    display: block;
+    font-size: 11px;
+    font-weight: bold;
+
+
+    padding: 4px 8px;
+    text-decoration: none !important;
+    width: auto;
+}
+ul.faceted_dropdown_selected {
+    height: 10px;
+}
+
+ul#faceteddropdown #checkboxValue {
+display: none;	
+}
+
+/* END new styles for faceted browse for Release 13.2 */
+
+/* Begin new styles for Release 13.3 */
+
+.cartMergeMessage {
+color: red;
+font-weight: bold;
+}
+
+.miniCartSalePrice {
+color: #AD0010 !important;
+font-size: 11px !important;
+font-family: Verdana, Arial, Helvetica, sans-serif !important;
+font-weight: normal !important;
+}
+.miniCartNormalPrice {
+color: #535353 !important;
+font-family: Verdana, Arial, Helvetica, sans-serif !important;
+font-size: 11px !important;
+text-decoration: none !important;
+}
+.miniCartNormalPriceST {
+color: #535353 !important;
+font-family: Verdana, Arial, Helvetica, sans-serif !important;
+font-size: 11px !important;
+text-decoration: line-through !important;
+}
+/* End new styles for Release 13.3 */
+
+#footerBottomMenuLine1{ 
+float:left; 
+margin: 0 0 10px -28px;
+padding-right: 20px;
+}
+/* R14.1 styles */
+/* Added for fomatting new social icons added in footer.jsp */
+#footerBottomMenuLine1 #socialMedia{ float:right; width: 285px;  /* addthis integration style adjustments */
+}
+#footerBottomMenuLine1 #socialMedia a img{margin-left:5px; margin-right:0px; float:none;}
+
+/* End R14.1 styles */
+
+/* Rating and Reviews */
+
+.bv-content-placeholder a.bv-focusable {
+    display: none !important;
+}
+
+
+
+/*Style for Review button*/
+div#container div#contentWrapper div#content div#productContainer div#productDetails div#BVRRContainer div.bv-cleanslate div.bv-content-placeholder a.bv-write-review-label{
+	background: url('/images/backgrounds/reviewBtnBg.gif') repeat scroll 0 0 #eeeeee !important;
+	border: 1px solid #cccccc !important;
+	font-size: 14px !important;
+	margin-left:-5px !important;
+	padding: 15px !important;
+	width: 190px !important;	
+}
+div#container div#contentWrapper div#content div#productContainer div#productDetails div#BVRRContainer div.bv-cleanslate div.bv-content-placeholder a.bv-write-review-label:hover{
+	background: url('/images/backgrounds/reviewBtnBg-2.gif') repeat scroll 0 0 #eeeeee !important;
+}
+
+/* Condition of item in popup form */
+.bv-cleanslate .bv-core-container-186 .bv-submission .bv-fieldsets .bv-rating-helper {
+       font-weight: bold !important;
+}
+
+/* to fix IE 8 Review Button Issue in Bazaar Voice */
+#BVRRContainer .bv-cleanslate .bv-content-list-container .bv-content-placeholder
+{
+    margin-bottom: 35px !important;
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+    margin-top: 0 !important;
+}
+
+/* to hide Reviewer Stats in Bazaar Voice */
+.bv-author-profile .bv-inline-profile .bv-popup-prosnap-userinfo .bv-author-userstats {
+    display: none !important;
+}
+
+
+/*jumping bag fix*/
+#shoppingBag{display:none;}
+
+/* Rating and Reviews bug 963 */
+.bv-secondary-rating-summary-bars-container .bv-rating-ratio .bv-secondary-rating-summary-rating {
+       visibility: hidden !important;
+}
+
+/* Rating and Reviews Moving Stars Down */
+.bv-secondary-rating-summary-stars .bv-rating-ratio .bv-rating-stars {
+    padding-top: 3px !important;
+}
+
+.productGallery ul li {
+_height: 47px !important;
+}
+.productGallery li {
+position: relative;
+float: left;
+margin: 4px 8;
+min-height: 313px;
+_height: 313px;
+width: 233px;
+}
+.productGallery ul li p.wasPrice {
+color: #8f8f8f !important;
+}
+.productGallery ul li p.wasPrice, .productGallery ul li p.salePrice {
+font-size: 11px !important;
+}
+.nowPrice, .itemPrice {
+color: #AE0C35;
+}
+
+
+.productGallery img {
+display: inline;
+}
+.status img {
+margin-bottom: -9px;
+margin-top: 3px;
+}
+
+#toolBar {
+background-color: #fff;
+border: 1px solid #fff;
+color: #666;
+overflow: hidden;
+margin-bottom: 7px;
+margin-top: 5px;
+display: block;
+float: left;
+}
+#toolBar ul {
+border: 0 solid #fff;
+overflow: hidden;
+padding: 3px 0 0;
+}
+#toolBar ul {
+border: 1px solid #dcd6b9;
+height: 19px;
+overflow: hidden;
+padding: 10px;
+_height: 50px;
+}
+
+#atg_store_catSubProdList { 
+clear: both; 
+}
+
+/* START Carousel CSS */
+.ca-container{
+	position:relative;
+	width:100%;
+	height:470px;
+                   clear: both;
+}
+.ca-wrapper{
+	width:100%;
+	height:100%;
+	position:relative;
+}
+.ca-item{
+	position:relative;
+	float:left;
+	width:230px;
+	height:100%;
+	margin-right:10px;
+	text-align:left;
+}
+.ca-more{
+	position: absolute;
+	bottom: 10px;
+	right:0px;
+	padding:4px 15px;
+	font-weight:bold;
+	background: #ccbda2;
+	text-align:left;
+	color: white;
+	font-family: "Georgia","Times New Roman",serif;
+	font-style:italic;
+	text-shadow:1px 1px 1px #897c63;
+}
+.ca-close{
+	position:absolute;
+	top:10px;
+	right:10px;
+	background:#fff url(../images/cross.png) no-repeat center center;
+	width:27px;
+	height:27px;
+	text-indent:-9000px;
+	outline:none;
+	-moz-box-shadow:1px 1px 2px rgba(0,0,0,0.2);
+	-webkit-box-shadow:1px 1px 2px rgba(0,0,0,0.2);
+	box-shadow:1px 1px 2px rgba(0,0,0,0.2);
+	opacity:0.7;
+}
+.ca-close:hover{
+	opacity:1.0;
+}
+.ca-item-main{
+	padding:20px;
+	position:absolute;
+	top:5px;
+	left:5px;
+	right:5px;
+	bottom:5px;
+	background:#fff;
+	overflow:hidden;
+	-moz-box-shadow:1px 1px 2px rgba(0,0,0,0.2);
+	-webkit-box-shadow:1px 1px 2px rgba(0,0,0,0.2);
+	box-shadow:1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.ca-content-wrapper{
+	background:#b0ccc6;
+	position:absolute;
+	width:0px; /* expands to width of the wrapper minus 1 element */
+	height:440px;
+	top:5px;
+	text-align:left;
+	z-index:10000;
+	overflow:hidden;
+}
+.ca-content{
+	width:660px;
+	overflow:hidden;
+}
+.ca-content-text{
+	font-size: 14px;
+	font-style: italic;
+	font-family: "Georgia","Times New Roman",serif;
+	margin:10px 20px;
+	padding:10px 20px;
+	line-height:24px;
+}
+.ca-content-text p{
+	padding-bottom:5px;
+}
+.ca-content h6{
+	margin:25px 20px 0px 35px;
+	font-size:32px;
+	padding-bottom:5px;
+	color:#000;
+	font-family: 'Coustard', sans-serif;
+	color:#60817a;
+	border-bottom:2px solid #99bcb4;
+	text-shadow: 1px 1px 1px #99BCB4;
+}
+.ca-content ul{
+	margin:20px 35px;
+	height:30px;
+}
+.ca-content ul li{
+	float:left;
+	margin:0px 2px;
+}
+.ca-content ul li a{
+	color:#fff;
+	background:#000;
+	padding:3px 6px;
+	font-size:14px;
+	font-family: "Georgia","Times New Roman",serif;
+	font-style:italic;
+}
+.ca-content ul li a:hover{
+	background:#fff;
+	color:#000;
+	text-shadow:none;
+}
+.ca-nav span{
+	width:35px;
+	height:55px;
+	background:transparent url(/images/GalleryCarousel/arrows2-3.png) no-repeat top left;
+	position:absolute;
+	top:28% /*was 50%*/;
+	/*margin-top:-19px;*/
+	left:-10px;
+	text-indent:-9000px;
+	opacity:0.7;
+	cursor:pointer;
+	z-index:100;
+}
+.ca-nav span.ca-nav-next{
+	background-position:top right;
+	left:auto;
+	right:5px;
+}
+.ca-nav span:hover{
+	opacity:1.0;
+}
+.ca-header {
+	width:100%;
+}
+.ca-header h2 {
+	display:inline;
+	float:left;
+}
+.ca-header a {
+	float:right;
+	position: relative;
+	   z-index: 10;
+	   color: #8b0000;
+	   text-decoration: underline;
+	   font-size: 15px;
+}
+/* END Carousel CSS */
+
+em {
+   font-style: italic;
+}
+
+li#welcomeCustomer {
+    background: none;
+}

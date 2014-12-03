@@ -1,0 +1,158 @@
+/* the default rating is placed as a background image in the ul */
+/* use the background position according to the table above to display the required images*/
+.rating{
+                width:110px;
+                height:22px;
+                margin:0 0 0 0;
+                padding:0;
+                list-style:none;
+                clear:both;
+                position:relative;
+}
+/* add these classes to the ul to effect the change to the correct number of stars */
+.nostar {background-position:0 0}
+.onestar {background-position:0 -44px}
+.twostar {background-position:0 -88px}
+.threestar {background-position:0 -132px}
+.fourstar {background-position:0 -176px}
+.fivestar {background-position:0 -220px}
+ul.rating li {
+                cursor: pointer;
+ /*ie5 mac doesn't like it if the list is floated\*/
+                float:left;
+                /* end hide*/
+                text-indent:-999em;
+}
+ul.rating li a {
+                position:absolute;
+                left:0;
+                top:0;
+                width:22px;
+                height:22px;
+                text-decoration:none;
+                z-index: 200;
+}
+ul.rating li.one a {left:0}
+ul.rating li.two a {left:22px;}
+ul.rating li.three a {left:44px;}
+ul.rating li.four a {left:66px;}
+ul.rating li.five a {left:88px;}
+ul.rating li a:hover {
+                z-index:2;
+                width:110px;
+                height:22px;
+                overflow:hidden;
+                left:0;    
+                background: url(http://www.kingwebtools.com/what_she_buys/feedback_system/images/image-matrix-large.png) no-repeat 0 0
+}
+ul.rating li.one a:hover {background-position:0 -44px;}
+ul.rating li.two a:hover {background-position:0 -88px;}
+ul.rating li.three a:hover {background-position:0 -132px}
+ul.rating li.four a:hover {background-position:0 -176px}
+ul.rating li.five a:hover {background-position:0 -220px}
+
+
+.average-review-box {
+	background:#FFFFFF url(http://www.kingwebtools.com/what_she_buys/feedback_system/images/review-summary-bg.gif) repeat-x scroll left bottom;
+	border:1px solid #CCCCCC;
+}
+
+.average-review-box-padding {
+	padding: 1em;
+}
+
+.averagea-review-summary {
+	border-bottom:1px solid #DDDDDD;
+	font-size:15px;
+	font-weight:bold;
+	line-height:22px;
+	padding:0 0 1em;
+	font-family: Arial;
+}
+
+.average-review-text {
+	float: left;
+	padding-left: 5px;
+	line-height: 16px;
+}
+.av-summary-text {
+	float:left;
+	font-weight:bold;
+	margin-right:0.5em;
+}
+
+.av-stars-large {
+	background-repeat:no-repeat;
+	float:left;
+	height:22px;
+	line-height:22px;
+	margin:0 0.25em 0 0;
+	padding:0;
+	position:relative;
+	width:110px;
+}
+
+.av-review-write {
+	margin:1em;
+	overflow:hidden;
+	padding:0;
+}
+
+.review-wrapper {
+	border-bottom:1px solid #CCCCCC;
+	margin:1em 0;
+	padding:0 1em;
+}
+
+.review-subject {
+	margin-bottom: 5px;
+}
+
+.review-signature {
+	margin:1em 0;
+}
+
+.review-comment {
+	margin:1em 0;
+}
+
+#submit_review_form {
+/*	display: none;*/
+}
+
+.field_wrap {
+	background:transparent url(http://www.kingwebtools.com/what_she_buys/feedback_system/images/review-summary-bg.gif) repeat-x scroll left bottom;
+	border:1px solid #DDDDDD;
+	margin:2px 0 12px;
+	padding:8px;
+}
+
+.inputBox {
+	padding:3px 0;
+	width:100%;
+}
+
+.inputBox:focus {
+	background:#EDF7DE none repeat scroll 0 0;
+	border-color:#3365CA;
+}
+
+.review_label {
+	
+}
+
+.review_requiredY {
+	background:transparent url(http://www.kingwebtools.com/what_she_buys/feedback_system/images/required-star.gif) no-repeat scroll left 0.4em;
+	padding-left:10px;
+}
+
+#writereviews {
+	font-family: Arial;
+}
+
+
+.reviewrow	{
+	border-bottom: solid 1px #cccccc;
+	padding-bottom: 5px;
+}
+/* end rating code */

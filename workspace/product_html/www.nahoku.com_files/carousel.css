@@ -1,0 +1,16 @@
+.infiniteCarousel{position:relative}
+* html .infiniteCarousel{float:left}
+.infiniteCarousel .slide-wrap{width:880px;overflow:hidden;top:0}
+* html .infiniteCarousel .slide-wrap{width:880px} 
+@media screen and (-webkit-min-device-pixel-ratio:0){.infiniteCarousel a{float:left}}
+.infiniteCarousel ul a img{-moz-border-radius:5px;-webkit-border-radius:5px;} 
+.infiniteCarousel .slide-wrap ul{width:900px;list-style-image:none;list-style-position:outside;list-style-type:none;margin:0;padding:0;top:0;}
+.infiniteCarousel ul li{display:block;float:left;font-size:11px;} 
+.infiniteCarousel ul li img{-webkit-transition:border-color 400ms;}
+.infiniteCarousel ul:hover li img{border-color:#000;}
+.infiniteCarousel ul:hover li:hover img{border-color:#333;}
+.infiniteCarousel ul li a img{display:block;}
+.infiniteCarousel .forward{background-position:0 0;right:0;} 
+.infiniteCarousel .back{background-position:0 -72px;left:0;} 
+.infiniteCarousel .forward:hover{background-position:0 -36px;} 
+.infiniteCarousel .back:hover{background-position:0 -108px;}

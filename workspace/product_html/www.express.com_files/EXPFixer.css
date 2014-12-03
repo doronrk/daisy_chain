@@ -1,0 +1,184 @@
+/* EXPFixer.css do not remove. */
+
+/* Nav fixes */
+@media only screen and (max-width: 1086px) {
+    #nav-container ul>li:last-child {
+        display: none;
+    }
+}
+@media only screen and (max-width: 1024px) {
+    #toolbar-container .text {
+        display: none !important;
+    }
+/*search and my bag labels*/
+}
+@media only screen and (max-width: 855px) {
+    .main-nav [data-menu="menu-tooltip-cat1670004"] {
+        display: none !important;
+    }
+}
+#menu-tooltip-giftCards ul.four.columns {
+    float: left;
+}
+
+/**Fixes Bloomreach on categories */
+.browse-wrapper #bloomreach-body-content {
+   padding: 0;
+}
+
+/**Fixes Bloomreach wrapping on tablets */
+@media only screen and (min-width: 768px) and (max-width: 999px) {
+    #br3 {
+        clear: both;
+        position: static;
+        display: block !important;
+        visibility: hidden;
+        height: 0px;
+    }
+
+}
+
+/**Fixes Bloomreach wrapping on mobile */
+
+@media only screen and (max-width: 767px) {
+    #br2, #br4 {
+        clear: both;
+        position: static;
+        display: block !important;
+        visibility: hidden;
+        height: 0px;
+    }
+
+}
+
+@media only screen and (max-width : 767px)  {
+    #logo-container {
+        padding-right: 0;
+    }
+}
+
+/* Fixes to correct old global banners to the new specs */
+
+#global-banner.browse-promotion {
+    padding: 0.7rem 0
+}
+#global-banner.browse-promotion .row .twelve {
+    font-size: 1em !important;
+}
+#global-banner.browse-promotion .row > div > div > span:last-child {
+    font-size: 0.8em !important;
+}
+
+@media only screen and (max-width : 767px)  {
+    body#account div.encc #profile-info-section .general-content .bottom-padding span.hide-for-small {
+        display: inherit !important;
+    }
+
+    body#account #profile-info-section .general-content .bottom-padding span.show-for-small {
+        display: none !important;
+    }
+}
+
+/* Checkout Heade Fixes */
+header #checkout-utility #chat {
+    padding-left: 36px;
+}
+
+header #checkout-utility li.hide-for-small {
+    display: inline-block !important;
+}
+#checkout header {
+    padding-bottom: 16px;
+}
+@media only screen and (max-width: 767px) {
+                #checkout header {
+                                padding-bottom: 0;
+                }
+                header #checkout-utility li.hide-for-small {
+                    display: none !important;
+                }
+}
+
+/* PDP Video Styles */
+#product-detail.video-detail .product-detail #express-view-images-list {
+    margin-top: 0px;
+}
+
+.video-detail ul.video-cta-container {
+    margin-top: 60px;
+}
+
+.video-detail ul.video-cta-container li {
+    width: 62px;
+    height: 104px;
+    margin: 0;
+    border: 1px solid #e5e5e5;
+    display: block;
+}
+
+.video-detail ul.video-cta-container a.prod-video-cta {
+                background: url('//www.express.com/cdn/responsive/video/products/play-btn.png') no-repeat;
+                background-size: 44px 44px;
+                width: 44px;
+                height: 44px;
+                margin: 25px auto;
+                display: block;
+                text-indent: -9999px;
+}
+
+/* ensure this is half of width with a negative sign */
+.video-detail .video-modal {
+    margin-left: -176px;
+}
+
+.video-detail .video-modal, .video-detail .video-modal video {
+    width: 352px !important;
+    height: 626px;
+}
+
+/* Mozilla proposal (dash) */
+.video-modal video:full-screen {
+    width:100%;
+    height:100%;
+}
+
+/* W3C proposal (no dash) */
+.video-modal video:fullscreen {
+    width:100%;
+    height:100%;
+}
+
+/* currently working vendor prefixes */
+.video-modal video:-webkit-full-screen, .video-modal video:-moz-full-screen {
+    width:100%;
+    height:100%;
+}
+
+@media only screen and (max-width: 999px) {
+    .product-images-list ul.video-cta-container {
+        margin-top: 0px;
+        position: absolute;
+        right: 15px;
+        top: -15px;
+        z-index: 10;
+    }
+    .product-images-list ul.video-cta-container li {
+        background: none;
+        border: 0;
+        width: 44px;
+        height: 44px;
+    }
+    .product-flyout-container ul.video-cta-container {
+        display: none;
+    }
+}
+
+@media only screen and (min-width : 1000px)  {
+    .product-flyout-container ul.video-cta-container {
+        display: none;
+    }
+}
+
+
+/* homepage email capture */
+.clearfix{overflow:auto;zoom:1}@-webkit-keyframes slideInUp{0%{-webkit-transform:translateY(100%);transform:translateY(100%);visibility:visible}100%{-webkit-transform:translateY(0);transform:translateY(0)}}@keyframes slideInUp{0%{-webkit-transform:translateY(100%);transform:translateY(100%);visibility:visible}100%{-webkit-transform:translateY(0);transform:translateY(0)}}@-webkit-keyframes fadeIn{0%{opacity:0}100%{opacity:1}}@keyframes fadeIn{0%{opacity:0}100%{opacity:1}}@-webkit-keyframes slideOutDown{0%{-webkit-transform:translateY(0);transform:translateY(0)}100%{visibility:hidden;-webkit-transform:translateY(100%);transform:translateY(100%)}}@keyframes slideOutDown{0%{-webkit-transform:translateY(0);transform:translateY(0)}100%{visibility:hidden;-webkit-transform:translateY(100%);transform:translateY(100%)}}body.homepage .slideOutDown{-webkit-animation-name:slideOutDown;animation-name:slideOutDown}body.homepage .fadeIn{-webkit-animation-name:fadeIn;animation-name:fadeIn}body.homepage .slideInUp{-webkit-animation-name:slideInUp;animation-name:slideInUp}body.homepage #email-promotion.animated,body.homepage #email-promotion-success.animated{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}#email-promotion.hidden{display:none !important}#email-promotion{float:none;border-top:none;transition:background .7s;-webkit-transition:background .7s;z-index:1000;padding:0;position:fixed;bottom:0;left:0;right:0;height:80px;background:rgba(0,0,0,0.75)}#email-promotion .close{background:transparent;-webkit-border-radius:50%;border-radius:50%;color:#fff;right:0;top:-15px;text-align:center;display:block;text-shadow:0 -1px 1px rgba(0,0,0,0.6);cursor:pointer;margin-bottom:0;text-decoration:none;width:70px;position:absolute;z-index:1001;height:40px}#email-promotion .close div{-webkit-border-radius:50%;border-radius:50%;font-family:exp-regular,Arial;font-size:21px;right:28px;top:0;padding:3px;display:block;text-shadow:0 -1px 1px rgba(0,0,0,0.6);cursor:pointer;margin-bottom:0;width:30px;position:absolute}#email-promotion .close div span{height:15px;width:30px;border-radius:30px 30px 0 0;-moz-border-radius:30px 30px 0 0;-webkit-border-radius:30px 30px 0 0;background:rgba(0,0,0,0.75);display:block;position:absolute;z-index:-1;top:0;left:0;transition:background .6s;-webkit-transition:background .6s}#email-promotion .close.solid div span{background:rgba(0,0,0,0.9)}#email-promotion #email-promotion-inner{height:100%;text-align:center;position:relative}#email-promotion #email-promotion-inner #email-promotion-content{display:table;margin:0px auto;height:100%}#email-promotion #email-promotion-inner #email-promotion-content #promotion-msg{display:table-cell;vertical-align:middle;color:#fff;text-transform:uppercase;text-align:center;font-weight:800;font-size:18px;font-family:"exp-bold",Arial;padding-right:30px}#email-promotion #email-promotion-inner #email-promotion-content textarea:focus,#email-promotion #email-promotion-inner #email-promotion-content input:focus{outline:0}#email-promotion #email-promotion-inner #email-promotion-content form{padding:0 0 0 10px;display:table-cell;vertical-align:middle; overflow: hidden;}#email-promotion #email-promotion-inner #email-promotion-content form .error-summary-row{display:none !important;}#email-promotion #email-promotion-inner #email-promotion-content #email-input-wrap{float:left;position:relative}#email-promotion #email-promotion-inner #email-promotion-content #email-input-wrap input.error,#email-promotion #email-promotion-inner #email-promotion-content #email-input-wrap #subscribe-email-address-inline.error{border-bottom:1px solid #c60f13;background-color:none}#email-promotion #email-promotion-inner #email-promotion-content #email-input-wrap small.error{display:none !important}#email-promotion #email-promotion-inner #email-promotion-content #email-input-wrap .error-msg.hidden{display:none !important}#email-promotion #email-promotion-inner #email-promotion-content #email-input-wrap .error-msg{color:#c81210;font-family:'exp-light',arial;font-size:12px;position:absolute;bottom:-17px;left:0;text-align:left;-webkit-animation-duration:300ms;animation-duration:300ms;-webkit-animation-fill-mode:both;animation-fill-mode:both}#email-promotion #email-promotion-inner #email-promotion-content #email-input-wrap #subscribe-email-address-inline{width:auto;padding:6px;font-size:16px;border:none;background:transparent;border-bottom:1px solid #fff;text-transform:uppercase;color:#fff;display:block;-webkit-appearance:none;-webkit-border-radius:0}#email-promotion #email-promotion-inner #email-promotion-content #input-email-confirm.hidden{display:none !important}#email-promotion #email-promotion-inner #email-promotion-content #btn-group{color:#fff;text-transform:uppercase;float:left;font-size:12px;font-weight:800;margin-top:8px}#email-promotion #email-promotion-inner #email-promotion-content #btn-group span{margin:0 20px}#email-promotion #email-promotion-inner #email-promotion-content #btn-group input{float:none}#email-promotion #email-promotion-inner #email-promotion-content #btn-group label{float:none;color:#fff;margin:0;font-size:12px}#email-promotion #email-promotion-inner #email-promotion-content #btn-group #radio-m{margin-left:20px}#email-promotion #email-promotion-inner #email-promotion-content #promotion-email-submit{float:left;border-radius:0;border:none;background:#fff;text-transform:uppercase;padding:6px 18px;font-weight:800;margin:5px 0 0 30px;-webkit-appearance:none;-webkit-border-radius:0;font-size:11px;cursor:pointer}#email-promotion #email-promotion-inner #email-promotion-content #email-signup-promotion:hover{background:#000}#email-promotion #email-promotion-inner #email-promotion-content.hidden{display:none !important}#email-promotion #email-promotion-inner #email-promotion-success{color:#fff;font-size:2.5em;margin:8px 8px 0;text-transform:uppercase;display:inline-block;font-weight:800}#email-promotion #email-promotion-inner #email-promotion-success div{font-size:16px;text-transform:initial;font-weight:400;margin-top:2px}#email-promotion #email-promotion-inner #email-promotion-success.hidden{display:none !important}#email-promotion.solid,#email-promotion:hover{background:rgba(0,0,0,0.9)}#email-promotion.solid .close div span,#email-promotion:hover .close div span{background:rgba(0,0,0,0.9)}@media only screen and (max-width: 940px){#email-promotion #email-promotion-inner #email-promotion-content #promotion-msg{padding-right:10px}#email-promotion #email-promotion-inner #email-promotion-content #promotion-msg #offer{display:block}#email-promotion #email-promotion-inner #email-promotion-content #email-input-wrap #subscribe-email-address-inline{width:160px}#email-promotion #email-promotion-inner #email-promotion-content #email-input-wrap #btn-group{margin:8px 15px}#email-promotion #email-promotion-inner #email-promotion-content #email-input-wrap #btn-group span{margin:0 10px}#email-promotion #email-promotion-inner #email-promotion-content #email-input-wrap #btn-group #radio-m{margin-left:15px}#email-promotion #email-promotion-inner #email-promotion-content #email-input-wrap #promotion-email-submit{margin:5px 0 0 5px}}@media only screen and (max-width: 800px){#email-promotion #email-promotion-inner #email-promotion-content #email-input-wrap #subscribe-email-address-inline{width:144px}}@media only screen and (max-width: 767px){#email-promotion{height:60px}#email-promotion #email-promotion-inner #email-promotion-content #promotion-msg{margin-top:0;position:absolute;left:0;right:0;top:0;bottom:0;line-height:60px;text-align:center;font-size:16px;float:none;margin:0;padding:0}#email-promotion #email-promotion-inner #email-promotion-content #promotion-msg #offer{display:inline}#email-promotion #email-promotion-inner #email-promotion-content #promotion-msg div{display:none}#email-promotion #email-promotion-inner #email-promotion-content #promotion-msg.expand{bottom:initial;padding:0}#email-promotion #email-promotion-inner #email-promotion-content form{display:none;padding:0;margin:70px 20px 20px}#email-promotion #email-promotion-inner #email-promotion-content #email-input-wrap{float:none}#email-promotion #email-promotion-inner #email-promotion-content #email-input-wrap #subscribe-email-address-inline{width:100%;float:inherit}#email-promotion #email-promotion-inner #email-promotion-content #btn-group{float:inherit;margin:30px 0}#email-promotion #email-promotion-inner #email-promotion-content #btn-group span{margin:0}#email-promotion #email-promotion-inner #email-promotion-content #btn-group #radio-w,#email-promotion #email-promotion-inner #email-promotion-content #btn-group #radio-m{margin-left:6px}#email-promotion #email-promotion-inner #email-promotion-content #promotion-email-submit{float:inherit;margin:0}#email-promotion #email-promotion-inner #email-promotion-success{margin:28px 20px 0}#email-promotion #email-promotion-inner #email-promotion-success div{margin-top:10px}#email-promotion.expand{height:260px;transition:height .5s;-webkit-transition:height .5s}#email-promotion.transition{transition:height .5s;-webkit-transition:height .5s}#email-promotion.absolute{position:absolute}}html.mobile #email-promotion{height:60px}html.mobile #email-promotion #email-promotion-inner #email-promotion-content #promotion-msg{margin-top:0;position:absolute;left:0;right:0;top:0;bottom:0;line-height:60px;text-align:center;font-size:16px;float:none}html.mobile #email-promotion #email-promotion-inner #email-promotion-content #promotion-msg #offer{display:inline}html.mobile #email-promotion #email-promotion-inner #email-promotion-content #promotion-msg div{display:none}html.mobile #email-promotion #email-promotion-inner #email-promotion-content #promotion-msg.expand{bottom:initial}html.mobile #email-promotion #email-promotion-inner #email-promotion-content form{display:none;padding:0;margin:70px 20px 20px}html.mobile #email-promotion #email-promotion-inner #email-promotion-content form #email-input-wrap{float:none}html.mobile #email-promotion #email-promotion-inner #email-promotion-content form #email-input-wrap #subscribe-email-address-inline{width:100%;float:inherit}html.mobile #email-promotion #email-promotion-inner #email-promotion-content form #btn-group{float:inherit;margin:30px 0}html.mobile #email-promotion #email-promotion-inner #email-promotion-content form #btn-group span{margin:0}html.mobile #email-promotion #email-promotion-inner #email-promotion-content form #btn-group #radio-w,html.mobile #email-promotion #email-promotion-inner #email-promotion-content form #btn-group #radio-m{margin-left:10px}html.mobile #email-promotion #email-promotion-inner #email-promotion-content form #promotion-email-submit{float:inherit;margin:0}html.mobile #email-promotion.expand{height:260px;transition:height .5s;-webkit-transition:height .5s}html.mobile #email-promotion.transition{transition:height .5s;-webkit-transition:height .5s}html.mobile #email-promotion.absolute{position:absolute;height:100%}html.mobile #email-overlay.expand{position:fixed;top:0;left:0;right:0;bottom:0;background:transparent;z-index:31}html.mobile #email-promotion.fix{position:fixed;bottom:0}

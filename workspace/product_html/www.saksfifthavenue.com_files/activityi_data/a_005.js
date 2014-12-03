@@ -1,0 +1,1 @@
+if(document.createElement&&document.getElementsByTagName("head")[0]){var remarketing=document.createElement("SCRIPT");remarketing.src="http://nan.netmng.com/?function=browser_check&vid=euwnskcgevkbo&rand=0.407142394140416&nm_input_data=%22%22";document.getElementsByTagName("head")[0].appendChild(remarketing)}

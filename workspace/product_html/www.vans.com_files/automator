@@ -1,0 +1,66 @@
+if (typeof olapicwidgetLoader == 'undefined'){
+
+	var olapicWidgetSettings = {};
+	var olapicwidgetLoader = true;
+	
+}else{
+	var olapicwidgetLoader = false;
+}
+
+(function(){
+	olapicWidgetSettings.olapic_upload_widget = {
+		galleryId : 2147888585,
+		categoryId : 0,
+		galleryName : "Vans Ramage Beanie (Black)",
+		galleryURL : "http://www.photorank.me/photos/vans/2147888585?fb_ref=g2147888585",
+		customerId : 215916,
+		customerURL : "//www.photorank.me/photos/vans",
+		photos : [],
+		widget : {"id":"1258240538","name":"upload","customer_id":"215916","settings":{"help_link":true,"sources":"[]","custom_fields":"[]","call_to_action":" upload your Image","css":".olapic_widget_container {    font-family: \"Lucida Grande\",\"Lucida Sans Unicode\",Verdana,sans-serif;    font-size: 1em;    letter-spacing: 0.05em;    padding: 10px 10px 2px;}.olapic_widget_container a {    color: #239B9B;    text-decoration: none;}"}},
+		initViewer : false,
+		forceViewerModal : false,
+		forceViewerModalSameTab: false,
+		elementId : "olapic_upload_widget",
+		context : "ecomm",
+		actionName : ".olapic_upload_button",
+		hashtags : [],
+		merged_hashtags : [],
+		siteurl : "//www.photorank.me",
+		ownerdir : "vans",
+		widget_url : "//widgets.photorank.me",
+		ga_Client : "vans",
+
+		popwidth : 710,
+		popheight : 500,
+		fromautomator : 1,
+		tag_based : 1,
+		with_photos : 0,
+		widgetype :  "button",
+		widgetstyle : "normal",
+		vieweraddon : 'viewer2v1',
+		uploaderaddon : 'default',
+
+		olapic_api_url : "//api.photorank.me",
+		olapic_api_key : "50cf838b14048d90154684cbe682d55fe8667992a1acc8dab2e4d195ddd59069",
+		distinct_id: "457c6f08834494c458ea1871d6f32b00",
+		lang : "en_US",
+		ab_testing : false,
+		olapic_u: 0
+	}
+
+	if(olapicwidgetLoader) {
+	
+		//loading requiere with the widget type
+		olapicwidget = document.createElement("script");
+		olapicwidget.type = "text/javascript";
+		olapicwidget.src = "//photorankstatics-a.akamaihd.net/81b03e40475846d5883661ff57b34ece/static/js/commons/require/require-jquery.js?domain=//photorankstatics-a.akamaihd.net/81b03e40475846d5883661ff57b34ece/static/js/";
+		olapicwidget.charset = "UTF-8";
+		olapicwidget.setAttribute('data-requirecontext', '_olapic_');
+		olapicwidget.setAttribute('data-main-olapic', "//photorankstatics-a.akamaihd.net/81b03e40475846d5883661ff57b34ece/static/js/olapic_build.js");
+		olapicwidget.setAttribute('data-elementid', "olapic_upload_widget");
+		olapicwidget.async = true;
+		document.getElementsByTagName("head")[0].appendChild(olapicwidget);
+	
+	}
+
+}());

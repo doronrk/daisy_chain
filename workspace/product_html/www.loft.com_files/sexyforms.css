@@ -1,0 +1,136 @@
+@charset "utf-8";
+
+
+/* <input type="checkbox" /> */
+label.checkbox
+{
+  cursor: pointer;
+  padding-left: 13px;
+  line-height: 9px;
+  margin-bottom: 3px;
+  display: block;
+}
+label.checkbox-on  { background: transparent url(/webassets/loft/en_US/assets/images/buttons/checkbox-bg.png) 0px 0 scroll no-repeat; }
+label.checkbox-off { background: transparent url(/webassets/loft/en_US/assets/images/buttons/checkbox-bg.png) 0px -56px scroll no-repeat; }
+
+label.checkbox input[type="checkbox"]
+{
+  position: absolute !important;
+  left: -100000px !important;
+}
+
+label.checkbox > span {line-height: 9px; vertical-align: top;}
+
+/* <input type="radio" /> */
+label.radio
+{
+  cursor: pointer;
+  padding: 0 9px 0 15px;
+}
+label.radio-on  { background: url(/webassets/loft/en_US/assets/images/bkg/bkg-radiobutton_on.gif) 0 0 no-repeat; }
+label.radio-off { background: url(/webassets/loft/en_US/assets/images/bkg/bkg-radiobutton_off.gif) 0 0 no-repeat; }
+
+
+label.radio-sm {padding-left: 10px; font-size: 9px; line-height: 9px; }
+label.radio-sm > span {vertical-align:middle;padding: 4px;}
+
+
+label.radio input
+{
+  position: absolute;
+  left: -100000px;
+}
+
+/* <select> converted to <ol> */
+div.select-box-container
+{
+  position: relative;
+  display: inline-block;
+  line-height: 16px;
+  overflow: visible;
+  height: 18px;
+  z-index: 1;
+}
+
+div.select-box-container.select-box-container-open {
+	overflow: visible;
+}
+
+div.select-box-container img.select-box-btn {
+	position:absolute;
+	right:-1px;
+	top:1px;
+}
+
+div.select-box-container span {
+	line-height: 20px;
+	display:inline-block;
+	vertical-align:middle;
+	white-space: nowrap;
+}
+
+ol.select-box {
+  border: 1px solid #dfdfdf;
+  background-color: #f5f4f5;
+}
+
+div.select-box-bg {
+  height: 20px;
+  width: 100%;
+  background: #fff url(/webassets/loft/en_US/assets/images/buttons/button-bg.png) 0px 0 repeat-x;
+  cursor: pointer;
+  border: 1px solid #dfdfdf;
+  overflow: hidden;
+}
+
+ol.select-box li
+{
+  white-space: nowrap;
+  cursor: pointer;
+  width: 100%;
+  padding: 0;
+  line-height:20px;
+  margin: 0 !important;
+  background: #fff url(/webassets/loft/en_US/assets/images/buttons/button-bg.png) 0px 0px repeat-x;
+}
+
+div.select-box-bg span {
+    padding: 0 8px;
+}
+
+ol.select-box {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 20px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+  border: 1px solid #dadada;
+  max-height: 200px;
+  overflow: auto;
+  background-color: #f5f4f5;
+}
+
+ol.select-box li:hover
+{
+  background: #dadad9 none;
+}
+
+ol.select-box li span {
+	padding: 0 8px;
+}
+
+ol.select-box li.selected { display: block; }
+ol.select-box li.hover    {
+    background: #ccc;
+}
+
+/* <input type="text" /> */
+.text-box {
+    border: 0 none;
+    height: 20px;
+    line-height: 20px;
+    background: transparent url(../img/shared/bg_textbox.png) top left no-repeat;
+}

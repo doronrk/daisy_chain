@@ -1,0 +1,412 @@
+define([], function(){
+//define(['js!modernizr/modernizr.touch.min.js'], function(MODERNIZR){
+//'js!modernizr/modernizr.touch.min.js'
+	
+	function ZoomBehavior(initialImage, zoomImage, dispatcher, zoomType, handlePinchZoom){
+		this._initialImage = initialImage;
+		this._zoomImage = zoomImage;
+		this._dispatcher = dispatcher;
+		this._handlePinchZoom = handlePinchZoom;
+
+		this._zoomType = zoomType;
+
+		this._clickStartTime = 0;
+		this._lastTapTime = 0;
+		this._state = null;
+		this._initialAsset = null;
+
+		this._isDoubleTap = false;
+
+		this._touchStartX = 0;
+		this._touchStartY = 0;
+
+		this._touchMoveX = 0;
+		this._touchMoveY = 0;
+
+		this._startDistanceX = 0;
+		this._startDistanceY = 0;
+
+		this._scaleDistStart = 0;
+		this._scaleDistMove = 0;
+		this._scaleDist = 0;
+
+		this._gesture = false;
+
+		this._iOSDevice = false;
+	}
+
+	ZoomBehavior.prototype = {
+		zoomInit:function(){
+			if(Modernizr.touch){
+				this.attachAllTouchListeners();
+
+				if ((navigator.userAgent.match(/iPhone/i)) || 
+					(navigator.userAgent.match(/iPod/i)) ||
+					(navigator.userAgent.match(/iPad/i)) )
+				{
+					this._iOSDevice = true;
+				}
+			} else {
+				this.attachAllDesktopListeners();
+			}
+		},
+
+		attachAllDesktopListeners:function(){
+			var self = this;
+			
+			//_initialImage
+			RICHFX.jQuery(this._dispatcher).bind('click', RICHFX.jQuery.proxy(function(eventObj){
+				this.clickHandler(eventObj);
+				return false;
+			},this));
+			
+			RICHFX.jQuery(this._dispatcher).bind('mousedown', RICHFX.jQuery.proxy(function(eventObj){
+				this.mousedownHandler(eventObj);
+				return false;
+			},this));
+		},
+
+		attachAllTouchListeners:function(){
+			//TODO
+			//make touch device stuff happen
+			RICHFX.jQuery(this._initialImage).bind('touchstart', RICHFX.jQuery.proxy(function(eventObj){
+				console.log('ZoomBehaviour caught initial image touch');
+				this.touchstartHandler(eventObj);
+			},this));
+			
+			RICHFX.jQuery(this._initialImage).bind('touchend', RICHFX.jQuery.proxy(function(eventObj){
+				this.touchendHandler(eventObj);
+			},this));
+
+			RICHFX.jQuery(this._zoomImage).bind('touchstart', RICHFX.jQuery.proxy(function(eventObj){
+				console.log('ZoomBehaviour caught zoom image touch');
+				this.touchstartHandler(eventObj);
+			},this));
+			
+			RICHFX.jQuery(this._zoomImage).bind('touchend', RICHFX.jQuery.proxy(function(eventObj){
+				this.touchendHandler(eventObj);
+			},this));
+			
+			if ( this._handlePinchZoom )
+			{
+				// iOS MultiTouch
+				RICHFX.jQuery(this._dispatcher).bind('gesturestart', RICHFX.jQuery.proxy(function(eventObj){
+					eventObj.preventDefault();
+				},this));
+				
+				RICHFX.jQuery(this._dispatcher).bind('gesturechange', RICHFX.jQuery.proxy(function(eventObj){
+					eventObj.preventDefault();
+
+					var currWidth = RICHFX.jQuery(this._zoomImage)[0].getBoundingClientRect().width;
+
+					this._scaleDist = eventObj.originalEvent.scale;
+
+					if ( ( this._iOSDevice && currWidth == 0 ) || 
+						 ( currWidth < this._state.getZoomWidth() && currWidth > this._state.getWidth() ) ||
+						 ( currWidth >= this._state.getZoomWidth() && this._scaleDist < 1 ) ||
+						 ( currWidth <= this._state.getWidth() && this._scaleDist > 1 ) )
+					{
+						this._state.setPinchScale(eventObj.originalEvent.scale);
+					}
+				},this));
+				
+				RICHFX.jQuery(this._dispatcher).bind('gestureend', RICHFX.jQuery.proxy(function(eventObj){
+					eventObj.preventDefault();
+
+					this.pinchEndHandler();
+					
+				},this));	
+			}
+		},
+		
+		clickHandler: function(eventObj){
+				
+			var now = new Date();
+			var currClickTime = now.getMilliseconds() + now.getSeconds()*1000;
+			
+			if ( (currClickTime - this._clickStartTime) < 200 ) 
+			{		
+				this._state.setMousePosition(eventObj.pageX, eventObj.pageY);	
+				RICHFX.jQuery(this._dispatcher).trigger("clicked.zoombehavior");
+			}
+			
+			var initElemID = (this._dispatcher.id + '_initialImage');
+			var zoomElemID = (this._dispatcher.id + '_zoomImage');
+			
+			/*
+			this.outputEventData(this._dispatcher.id);
+			this.outputEventData(initElemID);
+			this.outputEventData(zoomElemID);
+			*/
+		},
+
+		mousedownHandler: function(eventObj) {
+			
+			var now = new Date();
+			this._clickStartTime = now.getMilliseconds() + now.getSeconds()*1000;
+			
+			return false;
+		},
+
+		touchstartHandler: function(eventObj) {
+
+			//eventObj.preventDefault();
+
+			var now = new Date();
+			this._clickStartTime = now.getMilliseconds() + now.getSeconds()*1000;
+
+			var touch = eventObj.originalEvent;
+			this._touchStartX = touch.touches[0].pageX;
+			this._touchStartY = touch.touches[0].pageY;
+
+			RICHFX.jQuery(this._dispatcher).bind('touchmove', RICHFX.jQuery.proxy(function(eventObj){
+				this.touchmoveHandler(eventObj);
+			},this));
+			
+			if ( touch.touches[1] != undefined && this._handlePinchZoom )
+			{				
+				this._state.setPinchStartData(this._touchStartX, this._touchStartY, this._state.getAssetWidth(), this._state.getAssetHeight())
+
+				if ( !this._iOSDevice )
+				{
+					var touchStartX2 = touch.touches[1].pageX;
+					var touchStartY2 = touch.touches[1].pageY;
+
+					var dx = this._touchStartX - touchStartX2; 
+					var dy = this._touchStartY - touchStartY2; 
+					
+					this._scaleDistStart = Math.sqrt(dx*dx + dy*dy);
+
+					this._gesture = true;
+				}
+			}
+			
+		},
+		
+		touchendHandler: function(eventObj) {
+
+			eventObj.preventDefault();
+
+			// check for swipe
+			if ( !this._gesture && this._touchMoveX > 0 && this._state.getZoomLevel() == 0 && this._state.getZoomOnly() ) 
+			{		
+				// If this is a swipe signal prev/next trigger
+				if ( this._touchStartX - this._touchMoveX > 50 )
+				{
+					RICHFX.jQuery(document).trigger('imageCC.nextImage');
+				}
+
+				if( this._touchMoveX - this._touchStartX > 50 )
+				{
+					RICHFX.jQuery(document).trigger('imageCC.prevImage');
+				}
+
+				//reset touchmove regardless
+				this._touchMoveX = 0;				
+			}
+
+			// Check for correct zoom tap
+			var now = new Date();
+			var currClickTime = now.getMilliseconds() + now.getSeconds()*1000;
+
+			var timeSince = currClickTime - this._lastTapTime;
+
+			if ( !this._isDoubleTap && timeSince > 0 && timeSince < 600 )
+			{
+				this._isDoubleTap = true;
+			}
+			else
+			{
+				this._isDoubleTap = false;
+			}
+
+			this._lastTapTime = new Date().getMilliseconds() + now.getSeconds()*1000;
+
+			if ( (this._zoomType == "singleTap" && !this._isDoubleTap) || 
+				 (this._zoomType == "doubleTap" && this._isDoubleTap) ||
+				 (this._zoomType == "doubleTapStart" && this._isDoubleTap && this._state.getZoomLevel() == 0 ) || 
+				 (this._zoomType == "doubleTapStart" && !this._isDoubleTap && this._state.getZoomLevel() > 0 ) ) // !this._isDoubleTap &&
+			{
+				if ( (currClickTime - this._clickStartTime) < 200 ) 
+				{
+					this._state.setMousePosition(this._touchStartX, this._touchStartY);	
+					RICHFX.jQuery(this._dispatcher).trigger("clicked.zoombehavior");
+
+					if (this._zoomType == "doubleTapStart") this._lastTapTime = 0;
+				}
+
+				RICHFX.jQuery(this._dispatcher).unbind('touchmove');
+				
+				if ( this._gesture ) 
+				{
+					this.pinchEndHandler();
+					this._gesture = false;
+				}
+			}
+		},
+		
+		touchmoveHandler: function(eventObj) {
+
+			var touch = eventObj.originalEvent;
+
+			this._touchMoveX = touch.touches[0].pageX;
+			this._touchMoveY = touch.touches[0].pageY;
+
+			if ( touch.touches[1] != undefined || Math.abs(this._touchStartX - this._touchMoveX) > 10 )
+			{
+				eventObj.preventDefault();
+			}
+
+			// invalidate the touch start
+			this._clickStartTime = 0;
+
+			// Handle pinch if necessary
+			if ( touch.touches[1] != undefined && !this._iOSDevice && this._handlePinchZoom )
+			{
+				// Work out scale change
+				var touchMoveX2 = touch.touches[1].pageX;
+				var touchMoveY2 = touch.touches[1].pageY;
+
+				var dx = this._touchMoveX - touchMoveX2; 
+				var dy = this._touchMoveY - touchMoveY2; 
+
+				this._scaleDistMove = Math.sqrt(dx*dx + dy*dy);
+				this._scaleDist = this._scaleDistMove / this._scaleDistStart;
+
+				var currWidth = RICHFX.jQuery(this._zoomImage)[0].getBoundingClientRect().width;
+
+				if ( currWidth == 0 ) currWidth = this._state.getWidth();
+
+				if ( ( currWidth < this._state.getZoomWidth() && currWidth > this._state.getWidth() ) ||
+					 ( currWidth >= this._state.getZoomWidth() && this._scaleDist < 1 ) ||
+					 ( currWidth <= this._state.getWidth() && this._scaleDist > 1 ) )
+				{
+					this._state.setPinchScale(this._scaleDist);	
+				}
+
+				return false;
+			}
+		},
+
+		pinchEndHandler: function() {
+
+			//currWidth = this._scaleDist * this._state.getAssetWidth();
+			//currHeight = this._scaleDist * this._state.getAssetHeight();
+			var currWidth = RICHFX.jQuery(this._zoomImage)[0].getBoundingClientRect().width;
+			var currHeight = RICHFX.jQuery(this._zoomImage)[0].getBoundingClientRect().height;
+
+			currLeft = this._state.getX() - ((currWidth - this._state.getAssetWidth())/2);
+			currTop = this._state.getY() - ((currHeight - this._state.getAssetHeight())/2);
+
+			if ( currWidth > this._state.getZoomWidth() )
+			{
+				currWidth = this._state.getZoomWidth();
+				currHeight = this._state.getZoomHeight();
+			}
+
+			if ( currWidth < this._state.getWidth() )
+			{
+				currWidth = this._state.getWidth();
+				currHeight = this._state.getHeight();
+			}
+
+			console.log('setting zoomLevels - ' + currWidth);
+
+			this._state.checkZoomLevels(currWidth);
+
+			this._state.setAssetWidth(currWidth);
+			this._state.setAssetHeight(currHeight);
+
+			if ( currLeft <  this._state.getMinLeft() )
+			{
+				currLeft = this._state.getMinLeft();
+			}
+
+			if ( currTop <  this._state.getMinTop() )
+			{
+				currTop = this._state.getMinTop();
+			}
+
+			if ( currLeft > 0 )
+			{
+				currLeft = 0;
+			}
+
+			if ( currTop > 0 )
+			{
+				currTop = 0;
+			}
+			
+			this._state.setX(currLeft);
+			this._state.setY(currTop);
+
+			RICHFX.jQuery(this._zoomImage).css({width: currWidth+"px", 
+												height: currHeight+"px", 
+												top: currTop, 
+												left: currLeft, 
+												webkitTransform: "scale(1)"});
+			
+			RICHFX.jQuery(this._dispatcher).trigger('assetstate.positionvf.changed');
+
+			// disable swipe gesture
+			this._touchMoveX = 0;
+
+			var initElemID = (this._dispatcher.id + '_initialImage');
+			var zoomElemID = (this._dispatcher.id + '_zoomImage');
+
+			console.log('Outputing events');
+			/*
+			this.outputEventData(this._dispatcher.id);
+			this.outputEventData(initElemID);
+			this.outputEventData(zoomElemID);
+			*/
+		},
+
+		outputEventData: function(eventElement) {
+			eventsData = RICHFX.jQuery('#'+eventElement).data('events');
+
+			if ( eventsData ) {
+			    for ( var eventType in eventsData ) {
+			        for ( var idx in eventsData[eventType] ) {
+
+			        	var namespace = eventsData[eventType][idx].namespace;
+			        	var eventData = eventsData[eventType][idx].data;
+			        	var namespaceParts = namespace.split('.');
+
+			        	var bindType = "";
+
+			        	// reverse namespace to get orgininal value
+			        	for ( var i = (namespaceParts.length - 1); i >= 0; i-- ) {
+
+			        		if ( bindType == "" ) {
+			        			bindType = namespaceParts[i];
+			        		} else {
+			        			bindType = bindType + '.' + namespaceParts[i];
+			        		}
+	        			}	
+
+			        	bindType = eventType + '.' + bindType;
+
+			            console.log(eventElement + ' data - bindtype: ' + bindType + ', handler: ' + eventsData[eventType][idx].handler);
+			        }
+			    }
+			}
+		},
+		
+		setState: function(assetState) {
+			this._state = assetState;
+		},
+		
+		setInitialAsset: function(initialAsset) {
+			this._initialAsset = initialAsset;
+		},
+		
+		setTouchSettings: function(enablePinchZoom, touchZoomType) {
+			this._handlePinchZoom = enablePinchZoom;
+			this._zoomType = touchZoomType;
+		}
+
+	}
+
+	return ZoomBehavior;
+});

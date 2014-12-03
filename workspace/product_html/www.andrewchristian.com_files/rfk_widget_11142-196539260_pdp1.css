@@ -1,0 +1,525 @@
+.rfk-rw {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-drag: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    user-select: none;
+    position: relative;
+    clear: both;
+    margin: 5px 5px 5px 5px;
+    /*padding: 5px 5px 5px 5px;*/
+    max-height: 900px;
+    max-width: 1000px;
+    border: 1px #aaa none;
+    border-radius: 5px;
+    box-shadow: 0 0 0 #888;
+    top: 30px;
+    overflow:hidden;
+    height: 395px;
+}
+
+.rfk-rw .rfk_header {
+  /*
+    display: block;
+    max-height: 40px;
+    margin: 0 5px 0 5px;
+    padding: 0 5px 5px 5px;
+    line-height: 1;
+    font-family: Verdana,sans-serif;
+    color: #333;
+    font-weight: 700;
+    font-size: 18px;
+    text-decoration: none;
+    text-transform: none;
+    text-align: center;
+    border: 1px #aaa none;
+    border-radius: 5px;
+    box-shadow: 0 0 0 #888;
+    background-color: #fff;
+    margin: 0;
+    /*padding: 10px 50px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 24px;
+    background: #DDD;
+    text-transform: uppercase;
+    border-radius: 9px;*/
+    color: #fff;
+    font-weight: 400;
+    font-size: 32px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    background: #000;
+    font-family: 'HelveticaNeueLTstdCnbold', 'texgyreheroscnbold';
+    padding: 0 21px 0 17px;
+    line-height: 45px;
+    text-transform:uppercase
+}
+
+.rfk-rw .rfk_table {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    overflow: hidden;
+}
+
+.rfk-rw .rfk_wrapper {
+    display: table-cell;
+}
+
+.rfk-rw .rfk_divul {
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+}
+
+.rfk-rw .rfk_divul .rfk_products {
+    -webkit-padding-start: 0;
+    -moz-padding-start: 0;
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.rfk-rw .rfk_divul .rfk_products .rfk_product {
+    /*border:1px #ddd solid;
+    /*border-left:none;*/
+}
+
+
+.rfk-rw .rfk_prev {
+    display: table-cell;
+    width: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAXCAIAAACNlFiOAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1NUVEM0Y3QzNFMjA2ODExODA4M0ZFNzc5RTMzMzVFNSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo0MTNFODcxRkY5QjAxMUUyQUVDMEMyQTcwMDE3MTQyNCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo0MTNFODcxRUY5QjAxMUUyQUVDMEMyQTcwMDE3MTQyNCIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NTRDQzE0RUM1NDIwNjgxMTgyMkFEREQ0OUEzNUJBQjgiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NTVFRDNGN0MzRTIwNjgxMTgwODNGRTc3OUUzMzM1RTUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7LYB3pAAABsklEQVR42nyU646CMBSEtxW8xNUERVHf/9WMLKAxMYJX8KPHrdiV7Q+tZeacmeFUVVXVV8s6n89ZluV5Dqbb7U4mk/F47LWhL5cL6PV6fTqd+NnpdNgMBgOvrfZ2u4VA7X6/z2dZlrS6Xq8fCFQCCqEoCqWUPVdmuYTb7bbb7dI0pYkgOKQDkoIgwIlqmgYUxzEEDNja9/sd3HQ6XS6XvV7vRUDJj1kgtNZCYA8IaBiGvu/XwoQAOkkSlGALtJTgked5URTN53OaPJ1win2gKHF0kw9QpNdKfhUqSm42G5SwwZlACZHIF4sFSmjSTEUfj8fD4UA4tjCflAzNctA1wZq2TeWk+QbeCN9mIQYZQMWDJIYxUnIItWlU8RjTCJOIKrPEBjMngb4IfMGhHuPgxIoZgoJDYnL49DQcDsGBgIY24aCNcaI5m9lsJgG8jQaPifivNspHZtUT4FwgJHEH0GaDlonEBgOyWq20E4I8QDe52YjYw2F2SO/DfZC3hhP6MLbNDFj649uRQDFKw9IsaATDT912pyVQrgF6QI9GI0xDUP/8a8iV2u/3dGAa4HDyEGAAi9NY1o8Q+XIAAAAASUVORK5CYII=");
+    background-position: 0 140px;
+}
+
+.rfk-rw .rfk_next {
+    display: table-cell;
+    width: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAXCAIAAACNlFiOAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1NUVEM0Y3QzNFMjA2ODExODA4M0ZFNzc5RTMzMzVFNSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo0MTgxRkIzQ0Y5QjAxMUUyQUVDMEMyQTcwMDE3MTQyNCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo0MTgxRkIzQkY5QjAxMUUyQUVDMEMyQTcwMDE3MTQyNCIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NTRDQzE0RUM1NDIwNjgxMTgyMkFEREQ0OUEzNUJBQjgiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NTVFRDNGN0MzRTIwNjgxMTgwODNGRTc3OUUzMzM1RTUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5W+sqmAAABt0lEQVR42nyT6ZKCMBCENyFeqCWI4vH+j6ZlqVhsleIt7gezFSOLO3+UZKanu2ei8jz/LuN2uymler3eaDRqNBpfH8Kcz+flcpmm6fP55Lvb7WqtoygyxtQXXC6X0+nEted5fN/v981mQ6sgCJrN5t8Crcpwj47HIzW73e56vdYUdDqdwWAADcTwLcWHw2G73cJTDt1QUAdytVpxDR8qORU9rVZrPB5PJhNXj5I7pCdJsl6voSFiRA92zedzyqweLT/tdjsqgwyBgBvAj8cDPWBh+lsHoUEftMIe6yw3Ap0MBzhw9YucUlzAGAL0AVsOCfENkRzqigmkUgAYpK1vBNr2+z0T059WwFK1Xgu9agHO4BUygLQyaIUB/X7f9/23hSEpKYMyMVdQGQiih8Mhh68C+JEKNg7aUdhshGFRsXxygY9kY4U7OJjwn2yss4MrCoAkFewKExwjO45jd20NSYvFggLBsxcQIHs2m7mHxWpkWQYZJmKxgQAyLqOSXXQAuHDXcRDvZBHqHxAm8CxFoniCxOl0yp/agWq40pq3X7QzRnbp04P+3Vaw2RPEYEsYhv9kEz8CDABHMjzSNMHUlgAAAABJRU5ErkJggg==");
+    background-position: 14px 140px;
+}
+
+.rfk-rw .rfk_prev:hover {
+    cursor: pointer;
+}
+
+.rfk-rw .rfk_next:hover {
+    cursor: pointer;
+}
+
+.rfk-rw .rfk_pager {
+    display: none;
+}
+
+.rfk-rw .rfk_pager:hover {
+    cursor: pointer;
+}
+
+.rfk-rw .rfk_page_info {
+    display: none;
+}
+
+.rfk-rw .rfk_product {
+    overflow: hidden;
+    height: 325px;
+    width: 208px;
+    background-color: transparent;
+    display: inline-block;
+    /*padding: 10px 0 15px;
+    float: left;*/
+    /*padding: 15px 15px 15px 10px;*/
+    margin-bottom:20px;
+    margin-left:2px;
+    margin-right:2px;
+    position: relative;
+
+}
+
+.rfk-rw .rfk_product .rfk_pimage {
+    border: solid 6px #ccc;
+    width: 196px;
+  /*  height: 210px;*/
+    margin: auto;
+    background: white;
+}
+
+.rfk-rw .rfk_product .rfk_pimage .rfk_image {
+    vertical-align: middle;
+    max-height: 100%;
+    max-width: 100%;
+    border: 1px #aaa;
+    margin: auto;
+    display: block;
+}
+
+.rfk-rw .rfk_product .rfk_rating {
+    margin: 0 5px 5px 5px;
+    padding: 0 5px 5px 5px;
+  /*  border: 1px #aaa solid;
+    border-radius: 5px;*/
+    width: 85px;
+    height: 16px;
+    background: url("http://www.midwestsports.com/images/art/star-ratings-sprite.png") 0 0 no-repeat;
+    background-position: 0 0;
+    margin: auto;
+}
+
+.rfk-rw .rfk_product .rfk_review {
+    display: none;
+}
+
+.rfk-rw .rfk_product .rfk_brand {
+    display:none;
+    margin: 0 5px 5px 5px;
+    padding: 0 5px 5px 5px;
+    line-height: 1;
+    font-family: "Sans-Serif";
+    color: #333;
+    font-weight: normal;
+    font-size: 13px;
+    text-decoration: none;
+    text-transform: none;
+    text-align: center;
+    border: 1px #aaa solid;
+    border-radius: 5px;
+    box-shadow: 0 0 0 #888;
+    background-color: #fff;
+}
+
+.rfk-rw .rfk_product .rfk_brand img {
+    display: none;
+}
+
+.rfk-rw .rfk_product .rfk_name {
+background: #4c4c4c;
+height: 40px;
+width: 140px;
+color: #ffffff;
+padding: 3px 0 0 10px;
+-webkit-column-width: 150px; /* Chrome, Safari, Opera */
+-moz-column-width: 150px; /* Firefox */
+column-width: 150px;
+font-family: 'HelveticaNeueLTstdCnregular', 'texgyreheroscnregular';
+font-size:15px;
+padding-right:10px;
+}
+
+
+.rfk-rw .rfk_product .rfk_name:hover {
+    color:#23A5D9;
+}
+
+
+.rfk-rw .rfk_product .rfk_add2cart {
+    text-align: center;
+}
+
+.rfk-rw .rfk_product .rfk_add2cart .productcart {
+    background-color: #fff;
+    color: #333;
+}
+
+.rfk-rw .rfk_product .rfk_add2cart .productcart:hover {
+    cursor: pointer;
+}
+
+.rfk-rw .rfk_product .rfk_swatches:hover {
+    display: none;
+}
+
+.rfk-rw .rfk_product .rfk_swatches:hover .rfk_swatch {
+    height: 30px;
+    width: 30px;
+    border: 1px #aaa none;
+    border-radius: 5px;
+    box-shadow: 0 0 0 #888;
+}
+
+.rfk-rw .rfk_product .rfk_price {
+    background: #4c4c4c;
+    height: 40px;
+    width: 53px;
+    color: white;
+    display: inline-block;
+    font-size: 13px;
+    font-family: 'HelveticaNeueLTstdCnregular', 'texgyreheroscnregular';
+    font-weight: 400;
+    text-transform: uppercase;
+    vertical-align: bottom;
+    cursor: pointer;
+    padding-top: 3px;
+    position: relative;
+    top: -43px;
+    left: 155px;
+}
+
+.rfk-rw .rfk_product .rfk_price .original-price {
+    display: inline-block;
+    line-height: 1;
+    font-family: "";
+    color: white;
+    font-weight: bold;
+    font-size: 13px;
+    text-decoration: none;
+    text-transform: none;
+    text-align: center;
+    border: 1px #aaa none;
+    border-radius: 5px;
+    box-shadow: 0 0 0 #888;
+    font-size: 16px;
+
+}
+
+.rfk-rw .rfk_product .rfk_price .final-price {
+    display: none;
+}
+
+.rfk-rw .rfk_product .rfk_price .rfk_price_range.original-price {
+    display: none;
+}
+
+.rfk-rw .rfk_product .rfk_price .rfk_fprice_range.final-price {
+    display: none;
+}
+
+.rfk-rw .rfk_product.rfkf_price_range .rfk_price .original-price {
+    display: none;
+}
+
+.rfk-rw .rfk_product.rfkf_price_range .rfk_price .rfk_price_range.original-price {
+    display: inline-block;
+    margin: 0 5px 5px 5px;
+    line-height: 1;
+    font-family: "Sans-Serif";
+    color: #333;
+    font-weight: normal;
+    font-size: 15px;
+    text-decoration: none;
+    text-transform: none;
+    text-align: center;
+    border: 1px #aaa solid;
+    border-radius: 5px;
+    box-shadow: 0 0 0 #888;
+}
+
+.rfk-rw .rfk_product.rfk_discounted .rfk_price .original-price {
+    display: inline-block;
+    margin: 0 5px 5px 5px;
+    line-height: 1;
+    font-family: "";
+    color: white;
+    font-weight: bold;
+    font-size: 13px;
+    text-decoration: line-through;
+    text-transform: none;
+    text-align: center;
+    border: 1px #aaa none;
+    border-radius: 5px;
+    box-shadow: 0 0 0 #888;
+}
+
+.rfk-rw .rfk_product.rfk_discounted .rfk_price .final-price {
+    display: inline-block;
+    font-size: 13px;
+    font-family: 'HelveticaNeueLTstdCnregular', 'texgyreheroscnregular';
+    font-weight: 400;
+    text-transform: uppercase;
+    vertical-align: bottom;
+    cursor: pointer;
+    line-height: 1;
+    margin-right: 8px;
+    font-family: inherit;
+    color: #f54348;
+    font-weight: bold;
+    font-size: 16px;
+    text-transform: none;
+    text-align: center;
+}
+
+.rfk-rw .rfk_product.rfk_discounted .rfk_price .rfk_price_range.original-price {
+    display: none;
+}
+
+.rfk-rw .rfk_product.rfk_discounted .rfk_price .rfk_price_range.final-price {
+    display: none;
+}
+
+/*
+.rfk-rw .rfk_product.rfk_discounted .rfk_price .final-price:before {
+    content: "SALE: ";
+}
+*/
+
+.rfk-rw .rfk_product.rfk_discounted.rfkf_fprice_range .rfk_price .original-price {
+    display: none;
+}
+
+.rfk-rw .rfk_product.rfk_discounted.rfkf_fprice_range .rfk_price .final-price {
+    display: none;
+}
+
+.rfk-rw .rfk_product.rfk_discounted.rfkf_fprice_range .rfk_price .rfk_price_range.original-price {
+    display: inline-block;
+    margin: 0 5px 5px 5px;
+    line-height: 1;
+    font-family: "Sans-Serif";
+    color: #333;
+    font-weight: normal;
+    font-size: 13px;
+    text-decoration: none;
+    text-transform: none;
+    text-align: center;
+    border: 1px #aaa solid;
+    border-radius: 5px;
+    box-shadow: 0 0 0 #888;
+}
+
+.rfk-rw .rfk_product.rfk_discounted.rfkf_fprice_range .rfk_price .rfk_price_range.final-price {
+    display: inline-block;
+    line-height: 1;
+    font-family: "Sans-Serif";
+    color: #333;
+    font-weight: normal;
+    font-size: 13px;
+    text-decoration: none;
+    text-transform: none;
+    text-align: center;
+    border: 1px #aaa solid;
+    border-radius: 5px;
+    box-shadow: 0 0 0 #888;
+}
+
+.rfk-rw .rfk_product .rfk_more,.rfk-rw .rfk_product[data-a2c_id=""] .rfk_add2cart {
+    display: none;
+}
+
+.rfk-rw .rfk_product[data-a2c_id=""] .rfk_more {
+    display: none;
+    margin: 0 5px 5px 5px;
+    padding: 0 5px 5px 5px;
+    line-height: 1;
+    font-family: "Sans-Serif";
+    color: #333;
+    font-weight: normal;
+    font-size: 13px;
+    text-decoration: none;
+    text-transform: none;
+    text-align: center;
+    border: 1px #aaa none;
+    border-radius: 5px;
+    box-shadow: 0 0 0 #888;
+    background-color: green;
+}
+
+.rfk-rw .rfk_product[data-a2c_id=""] .rfk_more:hover {
+    cursor: pointer;
+}
+
+/*NEW UI FROM RG */
+
+
+.rfk-rw .rfk_product .rfk_caption{
+  height: 25px;
+  position: relative;
+  top: -43px;
+  background: #4c4c4c;
+/*  margin-left: 2px;
+  margin-right: 2px;*/
+  color:white;
+  font-family: 'HelveticaNeueLTstdCnregular', 'texgyreheroscnregular';
+  padding: 3px 0 0 10px;
+  padding-right:10px;
+}
+
+.rfk-rw .rfk_product .rfk_caption .rfk_caption_line{
+  border-top: 1px solid white;
+  padding-top:5px;
+}
+
+.rfk-rw .rfk_product .rfk_overlay{
+  overflow:hidden;
+  height: 44px;
+}
+
+
+
+.rfk-rw .rfk_product .rfk_overlay:hover {
+    -webkit-animation: myfirst 1s; /* Chrome, Safari, Opera*/
+    animation: myfirst 1s;
+    -webkit-animation-fill-mode: forwards;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes myfirst {
+    from {height: 44px;}
+    to {height: 74px;}
+}
+
+/* Standard syntax */
+@keyframes myfirst {
+    from {height: 44px;}
+    to {height: 74px;}
+}
+
+
+.rfk-rw .rfk_product .rfk_promo_img[flags=New]{
+  background: url('http://www.andrewchristian.com/skin/frontend/enterprise/andrewchristian/images/new.png');
+  height: 87px;
+  width: 87px;
+  position: absolute;
+  left: 115px;
+}
+
+.rfk-rw .rfk_product .rfk_promo_img{
+  background: url('http://www.andrewchristian.com/skin/frontend/enterprise/andrewchristian/images/tag_bg.png');
+  height: 87px;
+  width: 87px;
+  position: absolute;
+  left: 115px;
+}
+
+.rfk-rw .rfk_product .rfk_promo_img[flags=""]{
+  display:none;
+  /*
+  background: url('http://www.andrewchristian.com/skin/frontend/enterprise/andrewchristian/images/tag_bg.png');
+  height: 87px;
+  width: 87px;
+  position: absolute;
+  left: 131px;
+  */
+}
+
+
+.rfk-rw .rfk_product .rfk_promo{
+  display: block;
+  color: #fff;
+  font-family: 'HelveticaNeueLTstdCnbold','texgyreheroscnbold';
+  font-size: 21px;
+  text-transform: uppercase;
+  transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  position: absolute;
+  left: 131px;
+  top: 22px;
+/*  width: 100%;*/
+  text-align: center;
+
+}
+
+.rfk-rw .rfk_product .rfk_promo[flags=New]{
+  display:none;
+}
+
+.rfk-rw .rfk_product .rfk_promo[flags=""]{
+  display:none;
+}

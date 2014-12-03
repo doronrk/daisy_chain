@@ -1,0 +1,215 @@
+/* Custom CSS Document for SiteLINK7 Basic Template
+~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*/
+
+/*--------------------------------------------------
+   Reset styles
+--------------------------------------------------*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote /*,th,td*/ { margin:0; padding:0; }
+table { border-collapse:collapse; border-spacing:0; }
+fieldset,img { border:0; }
+address,caption,cite,code,dfn,em,strong,th,var { font-style:normal; font-weight:normal; }
+ol,ul { list-style:none; }
+caption,th { text-align:left; }
+q:before,q:after { content:''; }
+abbr,acronym { border:0; }
+
+/*-------------------------------------------------- 
+	Globals
+--------------------------------------------------*/
+body {font-family: Arial, Helvetica, sans-serif;}
+h1 {margin: 0 0 5px 0; padding: 0;}
+h2 {font-weight: normal; font-size: 18px; color: #484848; margin: 0 0 15px 0; padding: 0;}
+h3 {font-weight: normal; font-size: 14px; color: #003861; margin: 0 0 7px 0; padding: 0;}
+h4 {font-weight: normal; font-size: 14px; color: #484848; margin: 0 0 10px 0; padding: 0;}
+h5 {font-weight: bold; font-size: 12px; color: #003861; margin: 0; padding: 0;} 
+h6 {font-weight: bold; font-size: 12px; color: #484848; margin: 0; padding: 0;}
+p {margin: 0 0 15px 0; padding: 0;}
+em {font-style: italic;}
+strong {font-weight: bold;}
+input,select {font-family: Arial, Helvetica, sans-serif; font-size: 11px; }
+hr {height: 1px; color: #cfcfcf; background-color: #cfcfcf;}
+textarea {font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #000;}
+.table-layout-fixed {table-layout: fixed;}
+
+/*-------------------------------------------------- 
+	Structure
+--------------------------------------------------*/
+#container {width: 980px; margin: 0 auto;}
+	#header {width: 100%; height: auto; float: left; margin: 0 auto; position: relative; }
+	#topnav {width: 100%; height: 30px; float: left; margin: 0 auto;  }
+	#main {width: 100%; float: left; margin: 0 auto; padding: 0; overflow: hidden;}
+		.sidenavbg {padding: 20px 0 0 0;}
+			#sidebar, #rightsidebar {float: left;}
+		.pagenavbg {padding: 0px 0 0 0;}
+			#page-content {padding: 0 5px 5px 5px;}
+	#footer {width: 100%; margin: 0 auto; height: auto; float: left; padding-bottom: 20px; }
+		#bottomlinks {width: 100%; margin: 0 auto; height: auto; float: left; padding-bottom: 30px;}
+	
+
+/*-------------------------------------------------- 
+	Buttons
+--------------------------------------------------*/
+.button-group {width: 100%; text-align: center; margin-top: 24px; vertical-align:middle;}
+.button-group .button {float: none; display: inline; vertical-align:middle;  }
+.button-group .button a, .button-group .button input {margin: 0 5px; display:inline-block; vertical-align:middle;}
+
+/*-------------------------------------------------- 
+	Header
+--------------------------------------------------*/
+#header .divlogo {height: auto; overflow: hidden; float: left; width: 670px;}
+#header .divlogo .logo-wrap {width: 100%;}
+#header .divlogo .logo-wrap .logo-img {max-height: 161px; max-width: 670px;}
+#header .divlogo .logo-wrap .logo-img img {max-width: 670px; max-height: 161px;}
+
+#header .divheadercontent {float: left; width: 310px; height: auto; min-height: 100px;}
+#header .divheadercontent .divrightarea {width: 310px; float: left; height: auto;}
+
+#header .divheadercontent .divrightarea ul.cartnav {list-style: none; margin: 11px 13px 0 0; padding: 0 5px; float: right; height: 24px; line-height: 21px; }
+#header .divheadercontent .divrightarea ul.cartnav li {float: left; }
+#header .divheadercontent .divrightarea ul.cartnav li a {font-style: italic;}
+#header .divheadercontent .divrightarea ul.cartnav li.shopcart {margin-left: 5px; margin-right: 25px;}
+#header .divheadercontent .divrightarea ul.cartnav li.shopcart a img {margin-top: 4px;}
+#header .divheadercontent .divrightarea ul.cartnav li.divide {margin: 0 13px;}
+
+#header .divheadercontent .divrightarea ul.welcome {list-style: none; list-style: none; margin: 0 13px 0 0; padding: 0 5px; clear: right; float: right; height: 24px; line-height: 21px; }
+#header .divheadercontent .divrightarea ul.welcome li {float: left;}
+#header .divheadercontent .divrightarea ul.welcome li a {font-style: italic;}
+#header .divheadercontent .divrightarea ul.welcome li.divide {margin: 0 13px;}
+
+#header .divheadercontent .divsearch {width: 294px; float: left; position: absolute; bottom: 0; right: 0;}
+#header .divheadercontent .divsearch ul.search-wrap {float: right; height: 24px; list-style: none; margin: 0 10px 14px 0; padding: 0; background: #fff url(../images/search-bg.gif) repeat-x; }
+#header .divheadercontent .divsearch ul.search-wrap li {float: left; height: 24px;}
+#header .divheadercontent .divsearch ul.search-wrap li.searchbox {}
+#header .divheadercontent .divsearch ul.search-wrap li.searchbox input {width: 158px; border: 0 none; padding: 0 5px; background: transparent; line-height: 24px; height: 24px; border-left: 1px solid #c2c2c2; }
+
+
+/*-------------------------------------------------- 
+	Top Nav
+--------------------------------------------------*/
+#topnav ul.topnavmenu {list-style: none; margin: 0; padding: 0; text-align: center;}
+#topnav ul.topnavmenu li {display: inline; float: none; line-height: 30px;}
+#topnav ul.topnavmenu li.divide {margin: 0 30px;}
+#topnav ul.topnavmenu li a {text-transform: uppercase;}
+
+/*-------------------------------------------------- 
+	Sidebar
+--------------------------------------------------*/
+#sidebar .sidenavheader {text-align: left; padding: 7px 20px;}
+
+#sidebar ul.sidenavmenu {margin: 0; padding: 0 0 16px 0; list-style: none; width: 100%; }
+#sidebar ul.sidenavmenu li {padding: 0; margin: 0;}
+#sidebar ul.sidenavmenu li a {padding: 10px 0 0 20px; display: block;}
+#sidebar ul.account-info {margin: 0; padding: 8px 0 17px 0; list-style: none; border-top: 1px solid #cfcfcf;}
+#sidebar ul.account-info li {padding: 0; margin: 0;}
+#sidebar ul.account-info li a {padding: 10px 0 0 20px; display: block;}
+
+#sidebar .join-mailing {background: #003861 url(../images/mailing-list-bg.gif) repeat-x; height: 86px; width: 100%; margin-bottom: 23px;}
+#sidebar .join-mailing h2 {padding: 19px 0 5px 12px; margin: 0;}
+#sidebar .join-mailing ul.mailing-wrap {margin: 0; padding: 0; list-style:none; height: 24px; }
+#sidebar .join-mailing ul.mailing-wrap li {float: left; height: 24px;}
+#sidebar .join-mailing ul.mailing-wrap li.inputbox {margin-left: 12px; border-left: 1px solid #c2c2c2; width: 142px;}
+#sidebar .join-mailing ul.mailing-wrap li.inputbox input {font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #888888; width: 132px; border: 0 none; padding: 0 5px; background: transparent; line-height: 24px; height: 24px; }
+
+/*Right side nav */
+#rightsidebar .sidenavheader {text-align: left; padding: 7px 20px;}
+#rightsidebar .best-seller-wrap {padding: 10px 10px 10px 20px;}
+
+/*-------------------------------------------------- 
+	Footer
+--------------------------------------------------*/
+#footer .copyright {float: left; margin: 30px 0 15px 17px; }
+#footer p {margin: 0 20px 15px 20px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #484848; font-weight: normal; }
+#footer ol {list-style: decimal; margin: 12px 0; padding: 0 0 0 40px; }
+#footer li {color: #484848; font-size: 11px;}
+#footer ul {list-style: disc; margin: 12px 0; padding: 0 0 0 40px; }
+
+/* Bottomlinks */
+#footer #bottomlinks ul {list-style: none; margin: 0; padding: 0;}
+#footer #bottomlinks ul li {line-height: 18px;}
+#footer #bottomlinks ul li.header {text-transform: uppercase;}
+#footer #bottomlinks ul.column-1 {width: 153px; float:left; margin: 27px 0 0 37px;}
+#footer #bottomlinks ul.column-2 {width: 97px; float:left; margin: 27px 0 0 10px;}
+#footer #bottomlinks ul.column-3 {width: 134px; float:left; margin: 27px 0 0 10px;}
+#footer #bottomlinks .powered-by {float: right; margin: 31px 38px 0 0; }
+
+/*-------------------------------------------------- 
+	Page Content Styles
+--------------------------------------------------*/
+
+/* Home Page */
+#page-content.default { }
+#page-content.default .main-img {margin-bottom: 23px;}
+#page-content.default h1 {text-transform: uppercase;}
+.rc-promo {float: left; margin: 20px 0 0 0; border-top: 1px solid #cfcfcf; padding: 20px 0 0 0;}
+
+/* Static pages */
+#page-content.static {}
+#page-content.static ol {list-style: decimal; margin: 12px 0; padding: 0 0 0 40px; }
+#page-content.static li {color: #484848; font-size: 12px;}
+#page-content.static ul {list-style: disc; margin: 12px 0; padding: 0 0 0 40px; }
+#page-content.static p {font-size: 12px; color: #484848;}
+#page-content.static h1 {margin: 0 0 15px 0; padding: 0;}
+#page-content.static h2 {font-weight: normal; font-size: 18px; color: #484848; margin: 0 0 15px 0; padding: 0;}
+#page-content.static h3 {font-weight: bold; font-size: 14px; color: #003861; margin: 0 0 10px 0; padding: 0;}
+#page-content.static h4 {font-weight: bold; font-size: 14px; color: #484848; margin: 0 0 10px 0; padding: 0;}
+#page-content.static h5 {font-weight: bold; font-size: 12px; color: #003861; margin: 0; padding: 0;}
+#page-content.static h6 {font-weight: bold; font-size: 12px; color: #484848; margin: 0; padding: 0;}
+
+/* All pages */
+#page-content td.split-col {padding: 0!important;}
+#page-content td.nopadding {padding: 0!important;}
+#page-content .TopNavRow2Text {padding: 7px 10px; text-align:left;}
+#page-content .THHeader {padding: 8px 5px 7px 5px;}
+#page-content input.smalltextblk, #page-content select.smalltextblk {font-size: 11px;}
+#page-content input.txtboxlong, #page-content textarea.txtboxlong {width: 358px;}
+#page-content .smalltextupper {text-transform: uppercase; font-size: 12px;}
+#page-content .tab-style-header {background:url("images/tab-bg.gif") repeat-x; overflow:hidden; border: 1px solid #cfcfcf; height: 27px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; line-height: 27px; color: #003861; text-transform:uppercase; padding: 0 14px;}
+#page-content .tab-style-header .smalltextblk {line-height: 25px; text-transform:none;}
+
+/* Breadcrumbs */
+#page-content .breadcrumbs {text-align: left; color: #484848; font-size: 11px; font-family:Arial, Helvetica, sans-serif; font-weight: normal; height: 20px; line-height: 20px; padding-bottom:10px; }
+#page-content .breadcrumbs .breadcrumb-divide {}
+#page-content .breadcrumbs a {text-decoration: underline; color: #484848; font-size: 11px; font-family:Arial, Helvetica, sans-serif; font-weight: normal; }
+#page-content .breadcrumbs a:hover {text-decoration: none;}
+
+/* Tabs */
+#page-content .tab-container {background: #fff; }
+#page-content ul.tabs {list-style: none; position:relative; height: 27px; margin: 0; padding: 0; background:url("../images/tab-bg.gif") repeat-x; overflow:hidden; border: 1px solid #cfcfcf;}
+#page-content ul.tabs li {display:inline; height: 27px; line-height: 27px;}
+#page-content ul.tabs li a  {height: 27px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight:normal; position:relative; padding:0 14px; margin: 0 -4px 0 0; color:#888888; text-decoration:none; text-transform:uppercase; line-height: 27px; display: inline-block; background: url(../images/tabs-divide-bg.gif) repeat-y left top;  }
+#page-content ul.tabs li a#tab1 {background: none;}
+#page-content ul.tabs li a:hover, #page-content ul.tabs li a.tab-active {color: #003861;} 
+#page-content .tab-panes { margin: 20px 3px 3px 3px;}
+#page-content ul .tabb  {height: 27px; width:100px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight:normal;  position:relative; padding:0; margin: 0; color:#888888; text-decoration:none; text-align: left;}
+
+
+/* Reviews */
+.reviewtext, a.prodlink {font-size: 11px; color: #484848; }
+
+/*-------------------------------------------------- 
+	Product Detail Page
+--------------------------------------------------*/
+#page-content.prodinfopage .prodinfocell .THHeader {padding: 10px;}
+#page-content.prodinfopage .prodinfocell .innerprodcell {padding: 10px; border: 1px solid #ebebeb;}
+#page-content.prodinfopage .prodinfocell .innerprodcell .tdRow1Color td {padding: 0 10px;}
+img.cross-sell-img {border: 1px solid #ebebeb; margin: 3px 0; max-width: 125px;}
+td.cross-sell-bg {background: #ffffff; padding: 15px; }
+img.ProdInfoImage {max-width: 95%;}
+
+/*-------------------------------------------------- 
+	Product Listing Page 
+--------------------------------------------------*/
+#pagelinks { font-size: 11px; margin-left: 30px; line-height:17px; }
+#pagelinks a { background-color: #cfcfcf; padding: 0 5px; text-decoration: none; border: 1px solid #000; }
+#pagelinks a:hover { background-color: #fff; }
+#pagelinks a.arrowleft { background: url(images/larrow.gif) no-repeat 0 center; display: inline-block; height:10px; border: none; }
+#pagelinks a.arrowright { background: url(images/rarrow.gif) no-repeat 0 center; display: inline-block; height:10px; border: none; }
+#pagelinks a.previous, #pagelinks a.next { font-weight: bold; background: transparent; border: none; }
+
+#page-content img.prodlistimg {border: 1px solid #ebebeb; margin: 3px 0; max-width: 125px;}
+#page-content .grid td {padding: 0;}
+#page-content .grid input {margin: 3px 0;}
+
+/* site */
+.prodthumb {display: table; table-layout: fixed; max-width:125px;}
+.prodthumbcell {width:125px;}

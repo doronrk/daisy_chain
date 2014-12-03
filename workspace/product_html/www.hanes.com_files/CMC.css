@@ -1,0 +1,406 @@
+/*
+ *-----------------------------------------------------------------
+ * Licensed Materials - Property of IBM
+ *
+ * WebSphere Commerce
+ *
+ * (C) Copyright IBM Corp. 2011 All Rights Reserved.
+ *
+ * US Government Users Restricted Rights - Use, duplication or
+ * disclosure restricted by GSA ADP Schedule Contract with
+ * IBM Corp.
+ *-----------------------------------------------------------------
+ */
+
+
+/* -----------------------------------------------------------------------------*/
+/* ESPOT INFO POPUP
+/* -----------------------------------------------------------------------------*/
+
+.genericESpot {
+
+}
+
+.searchResultSpot {
+	position: relative;
+}
+
+.ESpotInfo {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: 23px;
+	height: 23px;
+	display: none;
+	z-index: 9998;
+}
+
+.ESpotInfoIcon {
+	width: 23px;
+	height: 23px;
+	background-image: url('../images/cmc/info_icon.gif');
+}
+
+.ESpotInfo_popup {
+	position:relative;
+	z-index: 9999 !important;
+}
+
+.ESpotInfo_popup .dijitDialogTitleBar {
+	display: none;
+}
+
+.ESpotInfo_popup .dijitDialogPaneContent {
+	overflow: hidden;
+}
+
+.ESpotInfo_popup_main_div {
+	display:none;
+}
+
+.ESpotInfo_popup .top_left{
+	background-image: url('../images/cmc/storepreview_top_left.png');
+	background-repeat:no-repeat;
+	height:10px;
+	width:9px;
+	float:left;
+}
+
+.ESpotInfo_popup .top_right{
+	background-image: url('../images/cmc/storepreview_top_right.png');
+	background-repeat:no-repeat;	
+	background-position:right;
+	padding-left:9px;
+	*padding-left:0px;
+	height:10px;
+	width:783px;
+}
+
+.ESpotInfo_popup .header{
+	background-image: url('../images/cmc/storepreview_background.png');
+	background-repeat:repeat-y;
+	height: 40px;
+	vertical-align: top;
+	width:792px;
+}
+
+.ESpotInfo_popup .title{
+	float: left;
+	font-size: 11pt;
+	color: #ffffff;
+	text-align: top;
+	margin-left: 9px;
+	text-decoration:none;
+}
+
+.ESpotInfo_popup .close .icon {
+	float: right;
+	margin-top: 8px;
+	margin-right: 13px;
+	width: 12px;
+	height: 14px;
+	background-image: url('../images/cmc/storepreview_window_close_icon.png');
+}
+
+.ESpotInfo_popup .close .icon:hover {
+	float: right;
+	margin-top: 8px;
+	margin-right: 13px;
+	width: 12px;
+	height: 14px;
+	background-image: url('../images/cmc/storepreview_window_close_icon_hover.png');
+}
+
+.ESpotInfo_popup .close .icon:active{
+	float: right;
+	margin-top: 8px;
+	margin-right: 13px;
+	width: 12px;
+	height: 14px;
+	background-image: url('../images/cmc/storepreview_window_close_icon_press.png');
+}
+
+.ESpotInfo_popup .whitespace_background {
+	width: 792px;
+	float: left;
+	background-image: url('../images/cmc/storepreview_whitespace_bg.png');
+	margin: 0px;
+	padding: 0px;
+}
+
+	.ESpotInfo_popup .whitespace_background .content_container {
+		width: 740px;
+		float: left;
+		padding: 18px 0px 18px 0px;
+		margin-right: 26px;
+		margin-left: 26px;
+		text-align: left;
+		position: relative;
+	}
+
+	.ESpotInfo_popup .whitespace_background .scrollbar {
+		width: 759px;
+		padding: 18px 0px 0px 18px;
+		margin-right: 26px;
+		margin-left: 6px;
+		overflow: auto; 
+		height: 400px;
+		float: left;
+	}
+
+		.ESpotInfo_popup .whitespace_background .content_container .heading {
+			font-size: 12pt;
+			color: #002775;
+		}
+
+		.ESpotInfo_popup .whitespace_background .content_container .sub_heading {
+			font-size: 10pt;
+		}
+
+.ESpotInfo_popup .summary {
+		width: 732px;
+		border: 1px solid #9aabcb;
+		position: relative;
+		padding-left: 6px;
+		font-size: 11px;
+		float: left;
+		margin-bottom: 15px;
+		padding-bottom: 4px;
+		padding-top: 4px;
+	}
+
+.ESpotInfo_popup .data_table_container {
+	float: left;
+	width: 738px;
+	border: 1px solid #9aabcb;
+	position: relative;
+	z-index: inherit;
+	margin-bottom: 8px;
+}
+
+.ESpotInfo_popup .data_table_container a{
+	text-decoration: none;
+}
+
+.ESpotInfo_popup .data_table_container .header_row {
+	width: 738px;
+	height: 19px;
+	border-bottom: 1px solid #9aabcb;
+	background-image: url('../images/cmc/storepreview_datatable_header_bg.png');
+	background-repeat: repeat-x;
+}
+
+	.ESpotInfo_popup .data_table_container .header_row .name_column {
+		width: 40%;
+		border-right: 1px solid #9aabcb;
+		height: 100%;
+		line-height: 19px;
+		padding-left: 5px;
+		font-size: 11px;
+		float: left;
+	}
+	
+	.ESpotInfo_popup .data_table_container .header_row .priority_column {
+		width: 8%;
+		border-right: 1px solid #9aabcb;
+		height: 100%;
+		line-height: 19px;
+		padding-left: 5px;
+		font-size: 11px;
+		float: left;
+	}
+	
+	.ESpotInfo_popup .data_table_container .header_row .startdate_column {
+		width: 24%;
+		border-right: 1px solid #9aabcb;
+		height: 100%;
+		line-height: 19px;
+		padding-left: 5px;
+		font-size: 11px;
+		float: left;
+	}
+	
+	.ESpotInfo_popup .data_table_container .header_row .enddate_column {
+		width: 24%;
+		height: 100%;
+		line-height: 19px;
+		padding-left: 5px;
+		font-size: 11px;
+		float: left;
+	}
+	
+.ESpotInfo_popup .data_table_container .row {
+	width: 738px;
+	border-bottom: 1px solid #afb1b3;
+	position: relative;
+	float: left;
+}
+
+.ESpotInfo_popup .data_table_container .row:hover {
+	width: 738px;
+	border-bottom: 1px solid #afb1b3;
+	position: relative;
+	float: left;
+	background-color:#ffe284;
+}
+
+.ESpotInfo_popup .data_table_container .expanded {
+	background-color: #d4e9ff;
+}
+
+.ESpotInfo_popup .data_table_container .row_full_data {
+	width: 714px;
+	border-bottom: 1px solid #afb1b3;
+	float: left;
+	padding: 12px;
+	word-wrap: break-word;
+}
+
+.ESpotInfo_popup .data_table_container .row_full_data ul, .ESpotInfo_popup .summary ul {
+	padding: 0px;
+	margin: 0px 0px 0px 15px;
+	list-style-image: url("../images/cmc/storepreview_bullet.png")
+}
+
+	.ESpotInfo_popup .data_table_container .row .name_column {
+		width: 40%;
+		line-height: 23px;
+		padding-left: 6px;
+		font-size: 11px;
+		float: left;
+	}
+	
+	.ESpotInfo_popup .data_table_container .row .priority_column {
+		width: 8%;
+		line-height: 23px;
+		padding-left: 6px;
+		font-size: 11px;
+		float: left;
+	}
+	
+	.ESpotInfo_popup .data_table_container .row .startdate_column {
+		width: 24%;
+		line-height: 23px;
+		padding-left: 6px;
+		font-size: 11px;
+		float: left;
+	}
+	
+	.ESpotInfo_popup .data_table_container .row .enddate_column {
+		width: 24%;
+		line-height: 23px;
+		padding-left: 6px;
+		font-size: 11px;
+		float: left;
+	}
+	
+	.ESpotInfo_popup .data_table_container .row .data_column .checkmark {
+		width: 13px;
+		height: 13px;
+		background-image: url('../images/cmc/storepreview_datacontainer_check.gif');
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 4px;
+	}
+
+.ESpotInfo_popup .unopened {
+	z-index: inherit;
+	position: absolute;
+	left: -12px;
+	top: 6px;
+	background-image: url('../images/cmc/storepreview_unopened_arrow.png');
+	width: 9px;
+	height: 9px;
+}
+
+.ESpotInfo_popup .opened {
+	z-index: inherit;
+	position: absolute;
+	left: -13px;
+	top: 6px;
+	background-image: url('../images/cmc/storepreview_opened_arrow.png');
+	width: 9px;
+	height: 9px;
+}
+
+.ESpotInfo_popup .pagination_container {
+	height: 19px;
+	width: 774px;
+	background-image: url('../images/cmc/storepreview_pagination_bg.png');
+	float: left;
+	margin-left: 9px;
+	border-top: 1px solid #c2cad7;
+	border-bottom: 1px solid #9aabcb;
+}	
+
+.ESpotInfo_popup .pagination {
+	height: 19px;
+	line-height: 19px;
+	float: right;
+}
+
+.ESpotInfo_popup .pagination .link {
+color: #3059ca;
+}
+
+.ESpotInfo_popup .pagination .previous {
+	background-image: url('../images/cmc/storepreview_arrow_previous.png');
+	width: 10px;
+	height: 17px;
+	float: left;
+	margin-top: 2px;
+	margin-right: 5px;
+}
+
+.ESpotInfo_popup .pagination .previous:hover {
+	background-image: url('../images/cmc/storepreview_arrow_previous_hover.png');
+	width: 10px;
+	height: 17px;
+	float: left;
+	margin-top: 2px;
+	margin-right: 5px;
+}
+
+.ESpotInfo_popup .pagination .next {
+	background-image: url('../images/cmc/storepreview_arrow_next.png');
+	width: 10px;
+	height: 17px;
+	float: left;
+	margin-top: 2px;
+	margin-left: 5px;
+	margin-right: 17px;
+}
+
+.ESpotInfo_popup .pagination .next:hover {
+	background-image: url('../images/cmc/storepreview_arrow_next_hover.png');
+	width: 10px;
+	height: 17px;
+	float: left;
+	margin-top: 2px;
+	margin-left: 5px;
+	margin-right: 17px;
+}
+
+.ESpotInfo_popup .footer {
+	height: 14px;
+	width: 792px;
+}
+
+.ESpotInfo_popup .footer .bot_left
+{
+	background-image: url('../images/cmc/storepreview_bottom_left.png');
+	background-repeat:no-repeat;
+	height:7px;
+	width:9px;
+	float:right;
+}
+
+.ESpotInfo_popup .footer .bot_right
+{
+	background-image: url('../images/cmc/storepreview_bottom_right.png');
+	background-repeat:no-repeat;
+	background-position:right;
+	height:7px;
+	width:783px;
+	float:right;
+}

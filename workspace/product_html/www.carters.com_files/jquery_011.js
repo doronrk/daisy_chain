@@ -1,0 +1,1 @@
+(function(a,b){a(document).ready(function(){if(a.ui&&a.ui.dialog){a.ui.dialog.overlay.events=a.map("focus,keydown,keypress".split(","),function(c){return c+".dialog-overlay"}).join(" ")}})}(jQuery));

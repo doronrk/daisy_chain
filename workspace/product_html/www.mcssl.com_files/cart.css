@@ -1,0 +1,257 @@
+﻿/* wrapper div for the cart */
+div.wrapper-main {margin:0 auto;padding:0; width:auto}
+
+div.wrapper-main #page-body {clear:both;padding:4px 1px 15px 1px;position:relative;}
+div.wrapper-main #page-body div.secure-text {background:transparent url(/SecureCart/images/icon-padlock.gif) 0 0 no-repeat;font-size:10px;font-weight:normal;margin:4px 21px 0 0;padding:2px 0 5px 20px;position:absolute;top:0;right:0;}
+
+/* Page section headings */
+div.wrapper-main .h2 {background:#fff url(/SecureCart/images/fieldset_bg.gif) 0 100% repeat-x;clear:both;display:block;font-size:15px;font-weight:bold;height:18px;margin:0 0 5px 0;padding:5px 20px 30px 20px;text-align:left;}
+
+/* messages */
+.info, .confirm, .warning, .alert {border-style:solid;border-width:1px;color:#000;font-weight:bold;margin:0 0 15px 0;padding:6px 10px;text-align:left;}
+.info ul, .confirm ul, .warning ul, .alert ul {font-weight:normal;list-style:none;margin:0;padding:0;}
+.info li, .confirm li, .warning li, .alert li {list-style:none;padding:4px 0 4px 22px;}
+.info {background:#f8fafc;border-color:#3892d2;}
+.info li {background:url(/SecureCart/images/icon-info.gif) 0 4px no-repeat;}
+.confirm {background:#dfd;border-color:#9f9;}
+.confirm li {background:url(/SecureCart/images/icon-confirm.gif) 0 4px no-repeat;}
+.warning {background:#fff6bf;border-color:#ffd324;}
+.warning li {background:url(/SecureCart/images/icon-alert.gif) 0 4px no-repeat;}
+.alert {background:#fee;border-color:Red;color:Red;}
+.alert li {background:url(/SecureCart/images/icon-warning.gif) 0 4px no-repeat;}
+
+div.wrapper-main .small {font-size:10px}
+
+div.wrapper-main div.disclaimer {clear:both;color:#999;font-size:10px;margin:10px 0 15px;text-align:justify}
+div.wrapper-main div.disclaimer.high-visibility {color:Black;font-size:12pt}
+div.wrapper-main div.disclaimer .checkbox {display:inline;margin:0}
+div.wrapper-main div.disclaimer .checkbox label {font-size:12pt;font-weight:bold}
+div.wrapper-main div.disclaimer p { margin-top:5px; }
+div.wrapper-main div.disclaimer ul {margin:15px 0 0;padding-left:30px}
+
+/* layout */
+div.wrapper-main div.left {float:left;}
+div.wrapper-main div.right {float:right;}
+div.wrapper-main div.clear {clear:both;display:block;height:1px;}
+div.wrapper-main div.clear hr {display:none;}
+
+/* forms */
+div.wrapper-main form {margin:0;padding:0;}
+div.wrapper-main form fieldset {background:transparent url(/SecureCart/images/fieldset_bg.gif) 0 8px repeat-x;border:0;clear:both;display:block;margin:0 0 30px 0;padding-top:10px;}
+div.wrapper-main form fieldset legend {font-size:15px;font-weight:bold;padding-bottom:15px}
+div.wrapper-main form fieldset legend:first-letter {text-decoration:underline;} /* not supported in Mozilla Firefox */
+
+div.wrapper-main form fieldset.no-legend {background:none;margin:0;padding-top:0;}
+div.wrapper-main form fieldset.no-legend legend {visibility:hidden;padding:0;}
+
+div.wrapper-main form label {display:block;float:left;width:100px;padding:0;margin:3px 0 0;text-align:right;}
+
+div.wrapper-main input, div.wrapper-main select, div.wrapper-main textarea {border:solid 1px #666;border-right:solid 1px #ccc;border-bottom:solid 1px #ccc;font-size:12px;vertical-align:middle;}
+div.wrapper-main input.image {border:none;padding:0} /* input.image is input[type="image"] */
+div.wrapper-main input.text, div.wrapper-main select, div.wrapper-main textarea {margin:3px 0 0 10px;padding:2px;width:170px;} /* input.text is input[type="text"] */
+div.wrapper-main input[type="radio"], input[type="checkbox"] {border:none !important;}
+div.wrapper-main select {width:176px;}
+div.wrapper-main select.expanding {width:auto;}
+div.wrapper-main textarea {overflow:auto;width:auto;}
+
+div.wrapper-main form .checkbox {display:block;margin:3px 0 0 125px;}
+div.wrapper-main form .checkbox label {display:inline;float:none;font-size:10px;margin:0 0 0 5px;}
+div.wrapper-main form .checkbox input {border:none;}
+
+div.wrapper-main form .required {font-weight:bold;}
+
+div.wrapper-main form br {clear:left;}
+
+div.wrapper-main span.slash {font-weight:bold;margin:3px 0 0 5px;}
+div.wrapper-main input.inline {margin-left:5px;}
+
+/* done adding div.wrapper-main to here */
+
+/* validation */
+div.wrapper-main .required {font-weight:bold;}
+div.wrapper-main .error-bullet {vertical-align:middle;}
+
+/* cart-contents */
+#cart-contents {margin-bottom:0;}
+#cart-contents legend {padding-bottom:22px}
+#cart-contents .cart-gridview {width:100%;margin:0;border:0;border-collapse:collapse;border-spacing:0;}
+#cart-contents .cart-gridview .cell-quantity {width:10%;text-align:center;white-space:nowrap;}
+.cart-gridview .cell-thumbnail {width:60px;text-align:center;padding-left:0;padding-right:0;}
+.cart-gridview .cell-thumbnail div.gallery {padding: 0;float:none;clear:none;}
+#cart-contents .cart-gridview .cell-product {width:60%;text-align:left;}
+#cart-contents .cart-gridview .cell-product label {display: inline;float: none;margin-left: 5px;}
+#cart-contents .cart-gridview .cell-product label, input[type="radio"], input[type="checkbox"] { vertical-align: middle;border: none;}
+#cart-contents .cart-gridview .cell-price {width:10%;text-align:right;white-space:nowrap;}
+#cart-contents .cart-gridview .cell-total {width:10%;text-align:right;white-space:nowrap;}
+#cart-contents .cart-gridview .cell-remove { width:10%;text-align:center;}
+#cart-contents .cart-gridview .cell-message {width:100%;text-align:left;padding:0;margin:0;}
+#cart-contents .cart-gridview .add-another {margin:1px 5px 0 1px; float:left; }
+#cart-contents .cart-gridview th {font-weight:bold;font-size:13px;background:url(/SecureCart/images/divide-line.gif) 0 100% repeat-x;text-align:left;padding:0 8px 15px 8px;}
+#cart-contents .cart-gridview td {padding:8px;vertical-align:top;}
+#cart-contents .cart-gridview .free {color:green;font-weight:bold;}
+#cart-contents .cart-gridview .item-title {font-weight:bold;float:left;clear:both;overflow:hidden;}
+#cart-contents .cart-gridview .item-title .supplier-shipped-indicator {margin-left:5px;}
+#cart-contents .cart-gridview .item-description {font-weight:normal;float:left;clear:both;width:100%;}
+#cart-contents .cart-gridview .product-option {background:url(/SecureCart/images/icon-product-option.gif) 8px 50% no-repeat;padding:5px 5px 5px 30px;}
+#cart-contents .cart-gridview .product-option-input {padding-left: 40px;}
+#cart-contents .cart-gridview .product-option-multiline td {padding-left: 30px;}
+#cart-contents .cart-gridview .cart-summary {border-top:solid 2px #999;padding:0 0 10px 0;width:auto;}
+#cart-contents .cart-gridview .cart-summary .coupons {float:left;}
+#cart-contents .cart-gridview .cart-summary .calculations {float:right;}
+#cart-contents .cart-gridview tr.alt, #cart-contents .cart-gridview tr.alt td {background-color:#f2f2f2;}
+
+#quantityBreakLink {background:url(/SecureCart/images/message-quant-discounts.jpg) no-repeat;color:#000;font-size:11px;height:30px;margin-top:5px;padding:4px 0 0 50px;}
+#cart-contents .cart-gridview #supplier-ship-msg {margin-top:0;font-size:11px;height:32px;padding-left:50px;line-height:2.75;background:url("/SecureCart/images/message-direct-ship.jpg") no-repeat scroll 0 0 transparent;}
+#cart-contents .cart-gridview .row-item  + .cart-msg-row div#supplier-ship-msg {margin-top:5px;}
+
+div.wrapper-main input.input-quantity {text-align:center;margin:0;padding:2px;width:25px;}
+
+div.wrapper-main .cart-gridview .calculations-hack {background:transparent url(/SecureCart/images/calculations_bg.gif) 0 -1px repeat-x;border-top:solid 2px #999;}
+
+/* coupon-entry */
+div.wrapper-main .coupons {text-align:left;margin-top:10px;width:214px; margin-left: 30px;}
+div.wrapper-main .coupons ul.applied {color:#3d8d08;font-size:11px;font-style:italic;list-style:none;margin:0;padding:0;}
+div.wrapper-main .coupons ul.applied li {background:transparent url(/SecureCart/images/small_check.gif) 0 2px no-repeat;margin-top:5px;padding-left:17px;}
+div.wrapper-main .coupons ul.applied li a.remove {color:#777;font-size:10px;padding-left:5px;}
+div.wrapper-main .coupons label {display:block;float:none;font-size:10px;width:auto;text-align:left;}
+div.wrapper-main .coupons input.text {margin-left:0;width:100px;}
+div.wrapper-main .coupons .apply {margin-top:3px}
+/* cart-summary */
+div.wrapper-main .calculations {background:transparent url(/SecureCart/images/calculations_bg.gif) 0 -1px repeat-x;border-left:1px solid #ccc;padding-top:2%;width:44%;}
+div.wrapper-main .calculations table {border:0;border-collapse:collapse;border-spacing:0;margin-left:auto;margin-right:6px; text-align:right;}
+div.wrapper-main .calculations table td {border-bottom:solid 1px #ccc;padding:2px 0 2px 15px;text-align:right;}
+div.wrapper-main .calculations table tr.total td {border-bottom:0; font-size:16px;font-weight:bold;padding-top:6px;}
+div.wrapper-main .calculations table tr.discounts td {color:#3d8d08;font-weight:bold;}
+div.wrapper-main .calculations .note {color:#666;display:block;font-size:10px;font-style:italic;text-align:right;}
+
+/* 3rd-party checkout options */
+div.wrapper-main .payment-gateways {clear:both;margin-top:10px;padding:0;text-align:right;}
+div.wrapper-main .payment-gateways div {border:solid 1px #ccc;padding:8px;}
+
+/* upsell-panel */
+div.wrapper-main .upsell {background:#fff url(/SecureCart/images/featured_bg.gif) 0 -1px repeat-x;border-top:solid 1px #ccc;clear:both;margin:15px 0 30px 0;padding:8px 15px;}
+div.wrapper-main .upsell h2 {color:#666;font-size:12px;font-style:italic;font-weight:normal;margin:0;padding:5px 0 5px 5px;}
+div.wrapper-main .upsell table {border:0;border-collapse:collapse;border-spacing:0;margin:0;padding:0;}
+div.wrapper-main .upsell table td {margin:0;padding:5px;vertical-align:top;width:145px;}
+div.wrapper-main .upsell .product-thumb {vertical-align:middle;}
+div.wrapper-main .upsell .product-thumb img {background:#fff;border:solid 1px #ccc !important;}
+div.wrapper-main .upsell .product-details {font-size:11px;font-weight:bold;width:145px;word-wrap:break-word; overflow: hidden;}
+div.wrapper-main .upsell .product-details a {outline-style:none;}
+div.wrapper-main .upsell .product-details span {display:block;margin-bottom:2px;}
+div.wrapper-main .upsell .product-details div.price {margin-top:2px;}
+div.wrapper-main .upsell .product-details span.reduced {font-weight:normal;text-decoration:line-through;line-height:1;}
+div.wrapper-main .upsell .product-details span.sale {color:#d00;line-height:1;padding-bottom:2px;}
+
+/* billing-address */
+div.wrapper-main #billing-address div.left {min-width:321px;}
+div.wrapper-main #billing-address p {padding:0 0 15px 15px;}
+div.wrapper-main #billing-address div.email-privacy {display:block;margin:3px 0 0 125px;}
+div.wrapper-main #billing-address div.email-privacy a {font-size:10px;background:transparent url(/SecureCart/images/icon-mail.gif) 0 50% no-repeat;padding:0 0 0 19px;}
+div.wrapper-main .options {margin:10px 0 10px 10px; text-align:right; width:160px;float: right;}
+div.wrapper-main .options img {margin-top:15px;}
+
+/* default-checkout overrides */
+div.wrapper-main .final-summary {margin:0 0 10px 224px;padding:0;}
+div.wrapper-main .summary{ float: right; margin:20px 0 10px 20px; padding:0; width:180px; }
+div.wrapper-main .summary .coupons, div.wrapper-main .final-summary .coupons {margin-top:20px;width:auto;}
+div.wrapper-main .summary .calculations, div.wrapper-main .final-summary .calculations {border-left:0;border-top:solid 1px #ccc;padding:6px 5px 0 0;width:145px;margin-left: 30px;}
+div.wrapper-main .summary .calculations table, div.wrapper-main .final-summary .calculations table {margin-right:0;}
+div.wrapper-main .coupons label {display:block;}
+
+/* shipping-address */
+div.wrapper-main #shipping-address .alt-ship-address {margin:0;}
+div.wrapper-main #shipping-address .alt-ship-address label {font-size:100%;margin:0;}
+
+/* shipping-method */
+div.wrapper-main #shipping-address select.shipping-method {margin:10px 0 1px 0;width:auto}
+div.wrapper-main #shipping-address .refresh {margin:10px 0 1px 0}
+div.wrapper-main #shipping-address .checkbox {margin-left:0;}
+
+/* payment-tabs */
+#payment-tabs input.text {width:140px;} 
+#payment-tabs div.left {margin-left:5px;}
+#payment-tabs .tab-button {border:0;cursor:pointer;height:26px;margin:0 0 0 3px;padding:0;}
+#payment-tabs .offsite, #payment-tabs .credit_card {width:118px;background:url(/SecureCart/images/payment-tab-cc-off.gif) top no-repeat;}
+#payment-tabs .offsite:hover, #payment-tabs .offsite:focus, #payment-tabs .credit_card:hover, #payment-tabs .credit_card:focus {background:url(/SecureCart/images/payment-tab-cc-ovr.gif) top no-repeat;}
+#payment-tabs .offsite-active, #payment-tabs .credit_card-active {width:118px;background:url(/SecureCart/images/payment-tab-cc-on.gif) top no-repeat;}
+#payment-tabs .echeck {width:101px;background:url(/SecureCart/images/payment-tab-ec-off.gif) top no-repeat;}
+#payment-tabs .echeck:hover, #payment-tabs .echeck:focus {background:url(/SecureCart/images/payment-tab-ec-ovr.gif) top no-repeat;}
+#payment-tabs .echeck-active {width:101px;background:url(/SecureCart/images/payment-tab-ec-on.gif) top no-repeat;}
+#payment-tabs .debit_card {width:114px;background:url(/SecureCart/images/payment-tab-dc-off.gif) top no-repeat;}
+#payment-tabs .debit_card:hover, #payment-tabs .debit_card:focus {background:url(/SecureCart/images/payment-tab-dc-ovr.gif) top no-repeat;}
+#payment-tabs .debit_card-active {width:114px;background:url(/SecureCart/images/payment-tab-dc-on.gif) top no-repeat;}
+#payment-tabs .debit-card-instructions {padding-left:300px;font-size:11px;}
+#payment-tabs .paypal {width:127px;background:url(/SecureCart/images/payment-tab-pp-off.gif) top no-repeat;}
+#payment-tabs .paypal:hover, #payment-tabs .paypal:focus {background:url(/SecureCart/images/payment-tab-pp-ovr.gif) top no-repeat;}
+#payment-tabs .paypal-active {width:127px;background:url(/SecureCart/images/payment-tab-pp-on.gif) top no-repeat;}
+#payment-tabs .interac {width:127px;background:url(../SecureCart/images/payment-tab-ic-off.gif) top no-repeat;}
+#payment-tabs .interac:hover, #payment-tabs .interac:focus {background:url(../SecureCart/images/payment-tab-ic-ovr.gif) top no-repeat;}
+#payment-tabs .interac-active {width:127px;background:url(../SecureCart/images/payment-tab-ic-on.gif) top no-repeat;}
+#payment-tabs span.small {margin-left:5px;}
+#payment-tabs a.cvv2-info {font-size:10px;margin-left:5px;}
+#payment-tab-container {background:#fff url(/SecureCart/images/payment-panel-bg.gif) bottom repeat-x;border:solid 1px #ccc;margin:-1px 0 0 0;padding:15px;}
+
+
+div.wrapper-main #security-image {margin:5px 0 0 0;}
+div.wrapper-main #security-image .security-image-output {border:solid 1px #ccc !important;margin-right:15px;}
+div.wrapper-main #security-image input.text {margin-left:0;}
+div.wrapper-main #security-image input.image {margin-top:2px}
+
+div.wrapper-main #custom-fields { padding-bottom: 1px; }
+div.wrapper-main #custom-fields label {width:200px; word-wrap: break-word;}
+div.wrapper-main #comments textarea {margin-left:0;width:98.9%;}
+
+div.wrapper-main .actions {clear:both;display:block;margin:0 auto 0 auto;padding:5px 0 10px 0;text-align:right;}
+div.wrapper-main .actions input {padding:0;}
+
+/* 3D-Secure */
+div.wrapper-main .secure-3d-frame {text-align:center;margin:0 auto;}
+div.wrapper-main #payment-tabs .secure-3d {margin:0;padding:0;width:240px;}
+div.wrapper-main #payment-tabs .secure-3d p {color:#666;font-size:11px;line-height:13px;margin:15px 0;padding:0;text-align:justify;}
+
+/* digital-download */
+div.wrapper-main #download-file {margin-bottom:0;padding-bottom:15px;}
+div.wrapper-main #download-file ul.download-links {margin:0;padding:0 0 15px 0;list-style-type:none;}
+div.wrapper-main #download-file ul.download-links li {border-bottom:solid 2px #eee;background:#fff url(/SecureCart/images/icon-download.gif) 15px 8px no-repeat;display:block;margin:0 0 5px 0;padding:12px 5px 12px 17px;}
+div.wrapper-main #download-file ul.download-links li h3 {margin:0;padding:0 0 6px 30px;font-size:14px;}
+div.wrapper-main #download-file ul.download-links li div.credentials {padding:0 0 0 32px;}
+div.wrapper-main #download-file ul.download-links li .status {margin:0;padding:0 0 6px 30px;}
+div.wrapper-main #download-file ul.download-links .expire  {border-bottom:solid 2px #eee;background:#fff url(/SecureCart/images/icon-delete.png) 15px 8px no-repeat;display:block;margin:0 0 5px 0;padding:12px 5px 12px 17px;}
+
+div.wrapper-main #thank-you div.left div {margin-bottom: 15px;}
+
+/* error page */
+div.wrapper-main #browser_detect h2 {font-size:15px !important;}
+div.wrapper-main #browser_detect p.disclaimer{border-top:solid 1px #999999;padding:0;}
+
+/* ASP pages */
+div.wrapper-main fieldset#ar label {display:inline;float:none;}
+
+/* ensure proper left/right padding on page elements */
+div.wrapper-main form fieldset, .actions, .disclaimer, #secure-3d, .final-summary {padding-left:5px;padding-right:5px;}
+div.wrapper-main #error, #download-confirm, #download-expired, #ipn-check, #secure-3d {padding-top:20px;}
+
+/* 1-Click Upsells Thanks page and controls */
+div.wrapper-main .thanks-order-wrapper{position:relative; float:left; left:0.00%; width:100.00%; border-width:1px; border-style:solid; border-color:Gray;}
+div.wrapper-main .thanks-order-left-column{position:relative; float:left; left:0%; width:74%;}
+div.wrapper-main .thanks-order-right-column{position:relative; float:right; right:0%; width:26%; text-align:center;}
+div.wrapper-main .thanks-order-addressWrapper{position:relative; float:left; left:0.00%; width:98.00%;}
+div.wrapper-main .thanks-order-billingAddress{position:relative; float:left; left:0%; width:48%; padding:4px; overflow:hidden;}
+div.wrapper-main .thanks-order-shippingAddress{position:relative; float:right; right:0%; width:48%; padding:4px;	overflow:hidden;}
+
+/* trust badge */
+div.wrapper-main .trust-badge {text-align:right;}
+
+/* MasterPass */
+div.master-pass { display: inline-block;}
+div.master-pass .divider { width: 12em;text-align: center;padding-top: 10px; font-weight: bold;}
+div.master-pass .divider hr {margin-left:auto;margin-right:auto;width:1.5em;margin-top: 6px;}
+div.master-pass .divider .left {float:left;}
+div.master-pass .divider .right {float:right;}
+
+/* custom fields */
+div.wrapper-main .custom-field-list td *{vertical-align:middle;}
+div.wrapper-main .custom-field-list td label{margin:0;}
+div.wrapper-main .custom-field-list label{text-align:left;width:auto;float:none;}
+div.wrapper-main .custom-field-list input[type="checkbox"], 
+div.wrapper-main .custom-field-list input[type="radio"]{clear:left;float:left;margin-left:10px;}

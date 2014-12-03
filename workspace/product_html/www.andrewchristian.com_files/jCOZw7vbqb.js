@@ -1,0 +1,1 @@
+try{_ffLoyalty.addWidgetConfig({"callback":"addWidgetConfig","secure":true,"new_path":"/widget/social_share/jCOZw7vbqb/new","aid":116,"wid":"jCOZw7vbqb","height":600,"banner_url":"https://d3aa0ztdn3oibi.cloudfront.net/merchant/f91b598c41616ecf045e0a77c0241a92.jpg","active":true,"width":520});}catch(e){}

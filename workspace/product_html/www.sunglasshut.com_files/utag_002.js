@@ -1,0 +1,11 @@
+//tealium universal tag - utag.198 ut4.0.201402141716, Copyright 2014 Tealium.com Inc. All Rights Reserved.
+if(typeof utag.ut=="undefined"){utag.ut={};}
+utag.ut.libloader2=function(o,a,b,c,l){a=document;b=a.createElement('script');b.language='javascript';b.type='text/javascript';b.src=o.src;if(o.id){b.id=o.id};if(typeof o.cb=='function'){b.hFlag=0;b.onreadystatechange=function(){if((this.readyState=='complete'||this.readyState=='loaded')&&!b.hFlag){b.hFlag=1;o.cb()}};b.onload=function(){if(!b.hFlag){b.hFlag=1;o.cb()}}}
+l=o.loc||'head';c=a.getElementsByTagName(l)[0];if(c){if(l=='script'){c.parentNode.insertBefore(b,c);}else{c.appendChild(b)}
+utag.DB("Attach to "+l+": "+o.src)}}
+try{(function(id,loader,u){try{u=utag.o[loader].sender[id]={}}catch(e){u=utag.sender[id]};u.ev={'view':1};u.qsp_delim="&";u.kvp_delim="=";u.divid="";u.classname="pdp-share"
+u.campaignid="kvqwd8PuMo";u.base_url="//api.curalate.com/js/curalate.min.js";u.data={};u.map={"product_img_url":"dataimageurl","_cprod":"datasku","dom.url":"dataurl"};u.extend=[];u.send=function(a,b,c,d,e,f){if(u.ev[a]||typeof u.ev.all!="undefined"){c=[];for(d in utag.loader.GV(u.map)){if(typeof b[d]!="undefined"&&b[d]!=""){e=u.map[d].split(",");for(f=0;f<e.length;f++){u.data[e[f]]=b[d]}}}
+u.data.campaignid=u.campaignid||u.data.campaignid;u.data.datasku=u.data.datasku||b._csku;f='<div class="curalate-super-pin" ';f+='data-campaign-id="'+((typeof u.data.campaignid!="undefined")?u.data.campaignid:"")+'" ';f+='data-url="'+((typeof u.data.dataurl!="undefined")?u.data.dataurl:"")+'" ';f+='data-image-url="'+((typeof u.data.dataimageurl!="undefined")?u.data.dataimageurl:"")+'" ';f+='data-description="'+((typeof u.data.datadescription!="undefined")?u.data.datadescription:"")+'" ';f+='datasku="'+((typeof u.data.datasku!="")?u.data.datasku:"undefined")+'"  /></div>';if(u.divid){e=document.getElementById(u.divid);}else{e=document.getElementsByClassName(u.classname)[0];}
+d=document.createElement('li');d.innerHTML=f;d.style.padding="4px 0px 0px 0px";e.appendChild(d);u.curalate_callback=function(){Curalate.canvas.init()}
+utag.ut.libloader2({src:u.base_url,cb:u.curalate_callback});}}
+try{utag.o[loader].loader.LOAD(id)}catch(e){utag.loader.LOAD(id)}})('198','luxottica.sunglasshutnew');}catch(e){}

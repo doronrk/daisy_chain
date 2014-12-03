@@ -1,0 +1,1 @@
+var gtm=gtm||{};gtm.dataLayer;gtm.initMetrics=function(){try{gtm.dataLayer=dataLayer}catch(a){}};gtm.trackEvent=function(a){gtm.dataLayer.push(a)};zm.listeners.push({initView:gtm.initMetrics,trackEvent:gtm.trackEvent});

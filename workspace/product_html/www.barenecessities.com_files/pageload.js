@@ -1,0 +1,1 @@
+Needle.setUpdateTimer(300000,false);Needle.mps=300000;Needle.in_session=false;Needle.vid="cd2-8a19e";Needle.cws="width=485,height=525";Needle.pgid=0;Needle.vdata={"pv":"false"};Needle.np="N190d14175864283383cd2001111783366fc783366fc783366fc00000000000000000783366fc110000000000000";Needle.setCookie("needlepin",Needle.np,15552000);

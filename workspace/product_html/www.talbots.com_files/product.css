@@ -1,0 +1,4212 @@
+/* BackUp of product.css  as of 11.14.11 */
+/***********************************************/
+@charset "UTF-8";
+/* CSS Document */
+.landingPage #logo{
+    background:url(/images/backgrounds/talbots_header_white.png) no-repeat;
+    _background-image:none !important;
+}
+
+.landingPage #talbotsHeader{
+    _height:1%;
+    wootfilter:progid:DXImageTransform.Microsoft
+    t.AlphaImageLoader(src="/images/backgrounds/talbots_header_white.png" ,sizingMethod=crop);
+}
+.warning {
+    color:#9A3432;
+}
+.size{
+    font-size:8px;
+}
+
+#toolBar UL#toolleft {float:left; }
+
+/*  added width tb5sxo 100912 -- Bug#2544  */
+#toolBar UL#toolright {
+	float:right; 
+	width: 310px; 
+}
+
+/* R13.1 - 3117# or 3201# - product.css - tb5sxo */
+#listView #toolBar UL#toolright {
+float: right;
+width: auto;
+height: 30px; /* added */
+}
+
+
+#catalogFilter{
+    position:relative;
+    padding:9px 15px 0 19px;
+}
+
+.seeAll{
+    color:#6a5d1d !important;
+}
+
+#sizes{
+    overflow:hidden;
+    width:153px;
+    margin-bottom:14px;
+}
+
+#sizes li{
+    float:left;
+    text-align:center;
+    width:35px;
+    height:16px;
+    padding:0px;
+    background-color:white;
+    border:1px solid #c3b88c;
+    margin-right:1px;
+    margin-top:1px;
+    line-height:14px;
+}
+
+#prices li{
+    float:left;
+    text-align:center;
+    width:85px;
+    height:16px;
+    padding:0px;
+    background-color:white;
+    border:1px solid #c3b88c;
+    margin-right:1px;
+    margin-left:3px;
+    margin-top:1px;
+    line-height:14px;
+    font-size:12px;
+}
+
+#prices li a{
+    font-size:12px;
+}
+
+#sizes li a{
+    font-size:9px;
+}
+
+
+
+
+#colors{
+    overflow:hidden;
+    width:165px;
+}
+
+#colors li{
+    float:left;
+    margin-right:0px;
+    margin-top:0px;
+    padding:0px;
+    height:13px !important;
+    width:23px !important;
+    overflow:hidden;
+}
+
+
+
+#colors li a{
+    display:block;
+    text-indent:-99999px;
+    width:21px;
+    height:11px;
+    border:1px solid #F4F3E5;
+}
+
+#colors #red{
+    background-color:#990000;
+}
+
+#colors #orange{
+    background-color:#cc6600;
+}
+
+#colors #yellow{
+    background-color:#ffcc33;
+}
+
+#colors #green{
+    background-color:#006633;
+}
+
+#colors #blue{
+    background-color:#336666;
+}
+
+#colors #navyBlue{
+    background-color:#003366;
+}
+
+#colors #purple{
+    background-color:#330066;
+}
+
+#colors #black{
+    background-color:#000000;
+}
+
+#colors #gray{
+    background-color:#999999;
+}
+
+#colors #white{
+    background-color:#fff;
+}
+
+#colors #beige{
+    background-color:#cccc99;
+}
+
+#colors #brown{
+    background-color:#483a07;
+}
+
+.clear{
+    display:block;
+    float:right;
+    margin-top:14px;
+    padding-bottom:4px;
+    color:#9e9573 !important;
+}
+
+#content{
+   /* float:left; */
+    float: right; /* changed from float:left; for bug 2024 */
+    width:750px; /* changed from 730px for white site background color */
+    padding: 10px 0 6px; /* changed from 10px 10px 6px 0px for white site background color */
+    /*margin-left:10px;*/
+    background-color: #fff;
+    position:relative;
+    _position:static;
+    _clear:none !important;
+}
+#content h2 {
+    color:#333333;
+    font-family:"Times New Roman";
+    font-size:21px;
+    font-weight:normal;
+    padding:1px 0px 0px 5px;
+    margin: 0;
+}
+
+.landingPage #footer{
+    position:relative;
+    bottom:-50px;
+    width:1000px;
+}
+
+
+
+#breadcrumbs{
+    position:absolute;
+    left:20px;
+/*    top:10px; removed by alphonse*/
+    text-transform: capitalize;
+}
+#listView #breadcrumbs{
+    /*left: 10px;*/
+}
+#breadcrumbs li{
+    float:left;
+    color:#52443f;
+    margin-right:4px;
+
+}
+#breadcrumbs li:last-child a h2{
+   color: #333333;
+   padding-right: 2px;
+}
+#breadcrumbs li a h2{
+    position:relative;
+    text-decoration:none;
+    color:#948881;
+    top:-1px;
+    padding:0;
+    left:6px;
+	/* margin:  -12px 0px 0px 0px\0 !important;
+	margin-top: 0px\9 !important; */
+}
+
+.Capitalizefirst{
+	text-transform:lowercase;
+}
+
+.Capitalizefirst:first-letter{
+	text-transform:capitalize;
+}
+
+#breadcrumbs li h2{
+    position:relative;
+    left:10px;
+    top:-1px;
+    padding: 0;  
+    font-family:Arial;
+    font-size:11px;
+	margin: 0;
+	/* tb5sxo [alignment fix] :: 11.15.11 MSIE 8,7 ONLY*/
+    margin: 12px 0px 0px 0px\0; 
+    /* color:#948881; */
+}
+
+:root #breadcrumbs li h2{
+margin-top: 0px\9;
+}
+
+#content{
+    position: relative;
+    _height:1%;
+}
+#catalogPage{
+    margin: 50px 24px 0 18px;
+
+}
+.recommended{
+    border-right:none;
+    border-left:none;
+}
+#recommendationsPDP {
+    height: 235px;
+}
+#recommendationsPDP h3 {
+    font-family: "Times New Roman",Times,serif;
+    font-size: 17px;
+    padding: 4px 3px 5px;
+}
+
+/* CATALOG STYLES*/
+
+#heroHeader{
+    width:auto;
+    height:220px;
+    overflow: hidden;
+}
+
+#toolBar{
+    background-color:#f4f3e5;
+    border:1px solid #f4f3e5;
+    overflow:hidden;
+/*    margin: 10px 0;*/
+    color:#7f7862;
+	/*padding-bottom:10px;*/
+	display:block;
+	float:left;
+}
+#toolBar ul{
+    border:1px solid #dcd6b9;
+    height:19px;
+    overflow:hidden;
+    padding: 10px;
+    _height: 50px;
+}
+#toolBar li{
+    float:left;
+}
+
+#toolBar li a{
+    display:block;
+    color:#333;
+    text-decoration:none;
+    padding: 5px 0px;
+    margin: 0;
+    height: 11px;
+    font-size: 10px;
+    min-width: 1px;
+    _width: 1px;
+    white-space: nowrap;
+}
+
+#toolBar #viewText{
+    display:block;
+    color:#666666;
+    text-decoration:none;
+    padding: 6px 2px;
+    margin: 0;
+    height: 11px;
+    font-size: 12px;
+    min-width: 1px;
+    white-space: nowrap;
+	font-family: inherit;
+}
+
+#toolBar .viewAll{
+    padding-left: 20px;
+    padding-right: 5px;
+}
+
+#toolBar #viewAll a{
+    width:50px;
+    font-size:11px;
+    padding-top: 6px;
+}
+
+#outfitOcassionPage #toolBar #viewAll a{
+padding-top: 8px;
+}
+
+#toolBar #galleryBtn{
+    width:15px;
+   /* background: url(/images/icons/galleryView.gif) 0 4px no-repeat;removed by alphonse*/
+    padding-left: 3px;
+}
+#toolBar #listBtn{
+    width:15px;
+   /* background: url(/images/icons/listView.gif) 0 6px no-repeat;removed by alphonse*/
+    padding-left: 1px;
+}
+/* Added By Paravat 07/01/09 */
+#toolBar #listBtnActive{
+    width:15px;
+    /*background: url(/images/icons/listViewActive.gif) 0 6px no-repeat;removed by alphonse */
+    padding-left: 3px;
+}
+#toolBar #galleryBtnActive{
+    width:20px;
+    /*background: url(/images/icons/galleryViewActive.gif) 0 4px no-repeat; removed by alphonse*/
+    padding-left: 3px;
+	font-size:12px;
+}
+/* //Added By Paravat 07/01/09 // */
+
+#toolBar #sortBy{
+    width: 150px;
+    text-align: right;
+	padding-right: 5px;
+	padding-top:1px;
+	visibility: hidden; /* Lisa G request 11/01/13 */
+}
+#toolBar select{
+    width:145px;
+}
+#toolBar #page{
+   /* width: 130px;*/
+    padding: 0 3px;
+}
+
+
+/* Added for R13.1 - requested by Gopal - 052313 - tb5sxo */
+/* commenting this out per phill - R13.2 - 073113 */
+/*
+#toolBar #listBtnActive, #toolBar #galleryBtnActive, #toolBar #listBtn {
+	padding-top: 5px!important;
+}
+*/
+
+/* #511 */
+/* Added for R13.2 - added body.galleryView - 073113 - tb5sxo */
+body.galleryView #toolBar #listBtnActive, body.galleryView #toolBar #galleryBtnActive, body.galleryView #toolBar #listBtn {
+	padding-top: 5px!important;
+}
+
+
+#toolBar #page ul{
+    border: none;
+    /*width:154px;*/
+    height: 19px;
+    padding: 0;
+}
+#toolBar #page ul li{
+    padding: 0;
+}
+#toolBar #page ul li span{
+    display:block;
+}
+
+#toolBar #page strong{
+    display: none;
+}
+
+#toolBar .pageNum{
+    padding: 6px 2px;
+    min-width:1px;
+    _width:1px !important;
+    white-space:nowrap;
+}
+
+#outfitOcassionPage #toolBar .pageNum{
+margin-top: 1px;
+} 
+
+#toolBar .selected{
+    text-decoration: underline;
+}
+#toolBar .rightArrow{
+    padding: 5px 2px;
+    width:8px !important;
+}
+
+#toolBar .leftArrow{
+    padding: 5px 2px;
+    width:8px !important;
+}
+/* Catalog CSS List View Page */
+
+
+
+/* site BG changes - tb5sxo */
+#productListView li.productListItem{
+	border: 1px solid #cccccc; /* changed - tb5sxo */
+	margin-bottom: 5px;
+	padding: 15px;
+	position: relative;
+	padding: 15px 140px 5px 151px;
+	_padding:20px 120px 5px 155px;
+	min-height: 160px;
+	_height: 170px;
+	clear: both;
+}
+
+
+
+#productListView li.productListItem p{
+    _width:375px !important;
+}
+#outfitDetailPage #productListView li.productListItem p{
+    _width: 300px !important;
+ }
+#productListView li.adBanner{
+    height: 30px;
+    margin-bottom: 5px;
+    clear: both;
+}
+#productListView li.productListItem img.thumb{
+    position: absolute;
+    top:15px;
+    left:15px;
+}
+#productListView li.productListItem img.thumbOutfitDetail{
+    position: absolute;
+    top:15px;
+    left:5px;
+    _left:5px;
+}
+
+#productListView h3{
+    font-family: "Times New Roman", Times, serif;
+    font-size: 17px;
+    padding-bottom: 4px;
+    margin-right: 140px;
+}
+#productListView .pricing{
+    margin-bottom: 10px;
+}
+#productListView p{
+    padding-bottom: 5px;
+    line-height: 1.3em;
+}
+#productListView p a{
+    color: #34718d;
+    display: inline-block;
+    padding-left: 5px;
+}
+#productListView em.productSku{
+    margin-bottom: 10px;
+}
+
+#reviews .selected{
+    border-bottom:1px solid #000;
+}
+#reviews p.rating{
+    margin:20px 0px;
+    color:#9a9a9a;
+}
+#reviews p.rating a{
+padding:0px 2px;
+color:#9a9a9a;
+text-decoration:underline;
+}
+#productListView img.loadingImage{
+    position: absolute;
+    top: 130px;
+    left: 150px;
+}
+#productListView .ratingsAndReviews{
+    position: absolute;
+    top: 13px;
+    right: 150px;
+    width: 135px;
+}
+#productListView .ratingsAndReviews h5{
+    color: #a69a69;
+    float: left;
+    font-size: 10px;
+    line-height:1.1;
+}
+#productListView .ratingsAndReviews img{
+    float: right;
+}
+
+
+
+/* site BG changes - tb5sxo */
+#productListView .itemDetails{
+	position: absolute;
+	top: 0;
+	right: 0px;
+	width: 106px;
+	padding: 25px 15px;
+	_padding: 5px;
+	border-left: 1px solid #cccccc; /* changed - tb5sxo */
+	height: 88%;
+	background: none;
+}
+
+
+#productListView .itemDetails strong{
+	font-weight: bold;
+	margin-bottom: 5px;
+	/* margin-top: -6px; */   /* removIing this - tb5sxo */
+}
+
+
+#productListView .itemDetails ul{
+    padding: 18px 0;
+    font-size:10px;
+}
+#productListView .sizeAndAvailability{
+    padding: 10px 0 0 0;
+}
+#productListView .sizeAndAvailability:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+#productListView .sizeAndAvailability {
+    display: inline-block;
+}
+html[xmlns] #productListView .sizeAndAvailability {
+    display: block;
+}
+* html #productListView .sizeAndAvailability {
+    height: 1%;
+}
+#productListView .sizeType{
+    /*float: left;*/
+    position: relative;
+    padding-bottom: 10px;
+}
+#productListView .productQuanity{
+    /*float: left;*/
+    position: static;
+    padding-bottom: 10px;
+
+}
+#productListView .productSizes{
+    width: 364px;
+    float: left;
+    position: static;
+    padding-bottom: 10px;
+}
+#productListView .productSizes strong{
+    clear:both;
+}
+#productListView .productColors{
+    float: left;
+    position: static;
+    padding-bottom: 10px;
+width: 364px;
+}
+
+#productListView .saleColors{
+    float: left;
+    position: static;
+    padding-bottom: 10px;
+width: 364px;
+}
+
+/*outfit gallery */
+
+
+#outfitGallery{
+    padding:0;
+    overflow: hidden;
+    width: 947px; /*actual width of the container is 961px, but tricking it to avoid wrapping. */
+    _width: 951px; /*ie6 only */
+	margin-left:auto; /*center. */
+	margin-right:auto;
+}
+
+
+#outfitGallery ul:after, #editContainer:after{
+    content: "";
+    height: 0;
+    visibility: hidden;
+    display: block;
+    clear: both;
+    }
+* HTML #outfitGallery ul {
+    height: 1%;
+    }
+*+HTML #outfitGallery ul {
+    zoom: 1;
+    }
+
+#outfitGallery ul
+{
+	margin-left:-1px;
+}
+	
+#outfitGallery li{
+    position: relative;
+    float:left;
+	/*padding-left:8px; /*left pad 8px (315 X 3 + 8px would push the image off to the right, so the previous -8px offset positioning is added to compensate, along with the extra 8px width added prev. */
+    margin: 0px 1px 1px 0px;
+    height: 420px;
+    _height: 420px;
+    width: 315px;
+	background-color:inherit;
+}
+#outfitGallery li.last{
+    margin:0;
+}
+#outfitGallery .adBanner{
+    padding: 0 10px 10px 0;
+    clear: both;
+}
+#outfitGallery a.product{
+    position: absolute;
+    top: 0;
+    left:0;
+    height: 300px;
+    width: 314px;
+    z-index: 5000;
+}
+#outfitGallery a.product{
+    _height:280px !important;
+}
+#outfitGallery li .onSale{
+    color:#cc3333;
+}
+#outfitGallery li .onSale del{
+    text-decoration:line-through;
+    color:#333;
+    padding-right: 5px;
+}
+#outfitGallery h3{
+    color:#8e827a;
+}
+
+
+
+
+
+/* Catalog CSS Gallery Page */
+
+
+.productGallery{
+    padding:0;
+    color:#535353;
+    overflow: hidden;
+    width: 735px;
+    display:inline;
+
+}
+.productGallery ul li{
+_height:47px !important;
+}
+/* Holly Hack */
+.productGallery ul li h4{
+    padding: 4px 0;
+	margin-top: 21px; /* added for color swatches under img 9/2014 */
+}
+.productGallery ul li img.thumb{
+    width: 237px;
+    _width: 233px;
+    height:313px;
+}
+
+
+
+/* JF 04/30/2014 made some of these elements more generic to support the carousel view (which doesn't use li elements */
+
+.productGallery  p.wasPrice,
+.productGallery  p.salePrice{
+    font-size: 11px !important;
+}
+.productGallery p.wasPrice{
+
+
+
+
+    color: #8f8f8f !important;
+}
+
+/* */
+
+.productGallery ul:after, #editContainer:after{
+    content: "";
+    height: 0;
+    visibility: hidden;
+    display: block;
+
+    clear: both;
+    }
+
+/* JF 05/01/2014 li formatting to make the infinite scroll append correctly to an existing ul */
+.productGallery li{
+	display:inline-block;
+    position: relative;
+    float:left;
+    margin: 4px 0 4px 19px;
+    min-height: 313px;
+    height: 445px;
+    width: 236px;
+	vertical-align:top;
+	}
+/*	
+.productGallery li:nth-child(2){
+	padding: 4px 18px;
+	}
+	*.productGallery>ul>li+li{
+		margin: 4px 18px;
+		}
+	*.productGallery>ul>li+li+li{
+		margin: 4px 0
+		}
+.productGallery li:nth-child(even){
+    padding-left:5px;
+	padding-right:4px;
+}
+.productGallery li.last{
+    margin:0;
+}
+*/
+
+
+.productGallery .adBanner{
+    padding: 0 10px 10px 0;
+    clear: both;
+}
+.productGallery a.product{
+    position: absolute;
+    top: 0;
+    left:0;
+    height: 300px;
+    width: 314px;
+    z-index: 5000;
+}
+.productGallery a.product{
+    _height:280px !important;
+}
+.productGallery li .onSale{
+    color:#cc3333;
+}
+.productGallery li .onSale del{
+    text-decoration:line-through;
+    color:#333;
+    padding-right: 5px;
+}
+.productGallery h3{
+    color:#8e827a;
+}
+
+.quickViewBtn{
+    scroll 0 0;
+    display:none;
+	/*display:inline;*/
+    height:23px;
+    left:73px;
+    position:absolute;
+    text-indent:-99999px;
+    top:145px;
+    width:88px;
+    z-index:9000;
+    /*background: url(/images/backgrounds/quick_gallery.png) 0 0 no-repeat; */
+	/*background: url('./images/quick_gallery.png') 0 0 no-repeat;*/
+	background: url(http://static.talbots.com/images/backgrounds/quick_gallery.png) 0 0 no-repeat;
+}
+#quickViewContainer{
+    width: 710px;
+    z-index: 15000;
+    left: 50%;
+    display: none;
+}
+
+#quickViewContainer .modalContent {
+background:transparent url(/images/backgrounds/lg-modal-top_close.png) no-repeat scroll 0 0;
+_background:transparent url(/images/backgrounds/lg-modal-top_close.gif) no-repeat scroll 0 0;
+}
+
+#quickViewContainer .modalContent{
+    padding: 20px 35px 35px 20px;
+    font-size: 11px;
+
+}
+#quickViewContainer .modalContent:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+#quickViewContainer .modalContent{
+    display: inline-block;
+    padding-bottom:10px;
+    text-align:left;
+    padding-top: 10px;
+    _position: relative;
+}
+html[xmlns] #quickViewContainer .modalContent{
+    display: block;
+		background-color: #ffffff;  /* tb5sxo - bugfix #3533 */
+}
+* html #quickViewContainer .modalContent{
+    height: 383px;
+}
+#quickGalleryHero{
+
+}
+#galleryProductDetails p{
+    line-height: 1.2em;
+    padding: 0 0 5px 0;
+}
+#quickGalleryClose{
+    display: block;
+    position: absolute;
+    top: 0px;
+    _top: 0px;
+    right: 8px;
+    _right: 15px;
+    width: 65px;
+    height: 22px;
+    text-indent: -9999px;
+    z-index: 50000;
+    background: url(/images/clear.gif);
+}
+
+*+html #quickGalleryClose {
+    display: block;
+    position: absolute;
+    top: 0;
+}
+
+#quickViewContainer #quickGalleryHero{
+    margin-right: 10px;
+    position: absolute;
+    top: 14px;
+    _top: 10px;
+    left:8px;
+}
+*+html #quickViewContainer #quickGalleryHero{
+    top:13px;
+}
+#quickViewContainer h3{
+    font-family: "Times New Roman", Times, serif;
+    font-size: 17px;
+    padding-bottom: 3px;
+    width: 300px;
+}
+#quickViewContainer .price{
+    padding: 3px 0;
+}
+#quickViewContainer .ratingsAndReviews{
+    padding: 5px 0 0 0;
+}
+#quickViewContainer .ratingsAndReviews h5{
+    font-size: 10px;
+    color: #c3b88c;
+    float: left;
+    width: 75px;
+}
+#galleryProductDetails{
+    position: relative;
+    left: 293px;
+    top: 6px;
+    _top: 0;
+    width: 370px;
+    min-height: 383px;
+}
+#galleryProductDetails:after {
+    content: ".";
+    display: block;
+    clear: both;
+
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+#galleryProductDetails{
+    display: inline-block;
+    position: relative;
+    padding-bottom:10px;
+    z-index: 100;
+    background: transparent;
+}
+html[xmlns] #galleryProductDetails{
+    display: block;
+}
+* html #galleryProductDetails{
+    height: 1%;
+}
+#galleryProductDetails .emphasis{
+    color: #34718d;
+}
+#quickViewContainer .itemDetails{
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    height: 60px;
+    width: 363px;
+}
+#quickViewContainer img.loadingImage{
+    position: absolute;
+    top: 200px;
+    left: 150px;
+}
+#quickViewContainer #productAvailability{
+    border: 1px solid #cccccc; /* was #deddba, now #cccccc - Site BG Change - tb5sxo */
+    width: 363px;
+    min-height: 267px;
+    _height: 267px;
+    margin-top: 7px;
+}
+#quickViewContainer #productAvailability .overviewContainer{
+    min-height: 205px;
+    background-color: #fff;
+    padding-bottom: 60px;
+    position: relative;
+}
+.overviewContainer .saleMessage{
+    color: #9A3432 !important;
+    width: auto !important;
+}
+#productOverview .overviewContainer .saleMessage{
+    padding:10px 10px 0 10px !important;
+    width: 436px !important;
+}
+#quickViewContainer .overviewContainer .saleMessage{
+    padding:10px 10px 0 10px !important;
+}
+#quickViewContainer #productAvailability .sizeAndAvailability:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+#quickViewContainer #productAvailability .sizeAndAvailability{
+    display: inline-block;
+    padding-bottom:10px;
+    height:227px;
+    overflow:auto;
+}
+html[xmlns] #quickViewContainer #productAvailability .sizeAndAvailability {
+    display: block;
+    min-height:197px;
+}
+* html #quickViewContainer #productAvailability .sizeAndAvailability {
+    display: block;
+    height: 197px;
+}
+#quickViewContainer .productActions{
+    width: 110px;
+    top: 0px;
+    left: 10px;
+    height: 50px;
+    position: absolute;
+}
+
+
+/* site BG changes - tb5sxo */
+#quickViewContainer .productActions li{
+	padding: 5px 7px;
+	border-bottom: 1px solid #cccccc; /* change to #cccccc for style override */
+	font-size: 10px;
+}
+
+
+#quickViewContainer .productActions li.findInStore{
+    font-weight: bold;
+}
+#quickViewContainer .productActions li.last{
+    border: none;
+}
+#quickViewContainer .itemPrice{
+    display:block;
+    font-size:12px;
+    position:absolute;
+    right:35px;
+    text-align:right;
+    top:2px;
+    width:100px;
+}
+#quickViewContainer .salePrice {
+    color:#AE0C35;
+    display:block;
+    font-size:12px;
+    position:absolute;
+    right:35px;
+    text-align:right;
+    top:2px;
+    width:118px;
+}
+
+#quickViewContainer .finalSale {
+    color:#AE0C35;
+    display:block;
+    font-size:12px;
+    position:absolute;
+    right:35px;
+    text-align:right;
+    top:14px;
+    width:118px;
+    text-decoration: underline;
+}
+
+#quickViewContainer .savePrice {
+    color:#AE0C35;
+    display:block;
+    font-size:12px;
+    position:absolute;
+    right:5px;
+    top:2px;
+    width:58px;
+}
+#quickViewContainer .normalPrice {
+    display:block;
+    font-size:12px;
+    position:absolute;
+    right:100px;
+    text-align:right;
+    text-decoration:line-through;
+    top:2px;
+    width:50px;
+    font-weight:normal;
+}
+
+#quickViewContainer .itemDetails .button{
+    position: absolute;
+    bottom: 3px;
+    right: 10px;
+}
+
+
+    /* GALLERY MODAL POPUP STYLES */
+        /* jqModal base Styling courtesy of;
+            Brice Burgess <bhb@iceburg.net> */
+
+        /* The Window's CSS z-index value is respected (takes priority). If none is supplied,
+            the Window's z-index value will be set to 3000 by default (via jqModal.js). */
+
+        .jqmWindow {
+            display: none;
+            position: absolute;
+            top: 17%;
+            left: 50%;
+            z-index: 15000;
+            margin-left: -300px;
+            width: 600px;
+            color: #333;
+            padding: 12px;
+        }
+
+
+        /* Background iframe styling for IE6. Prevents ActiveX bleed-through (<select> form elements, etc.) */
+        * iframe.jqm {position:absolute;top:0;left:0;z-index:-1;
+            width: expression(this.parentNode.offsetWidth+'px');
+            height: expression(this.parentNode.offsetHeight+'px');
+        }
+
+        /* Fixed posistioning emulation for IE6
+             Star selector used to hide definition from browsers other than IE6
+             For valid CSS, use a conditional include instead */
+        * html .jqmWindow {
+             position: absolute;
+             top: expression((document.documentElement.scrollTop || document.body.scrollTop) + Math.round(17 * (document.documentElement.offsetHeight || document.body.clientHeight) / 100) + 'px');
+        }
+    /* END GALLERY MODAL POPUP STYLES */
+
+
+
+/* PRODUCT DETAILS PAGE */
+.productDetail #contentWrapper{
+    background: #fff;
+    /*margin:10px 20px;*/
+    padding: 0;
+}
+.productDetail #content{
+    width: auto;
+    margin: 0;
+    padding: 0;
+    float: none;
+}
+
+#productDetail #content{
+    _background-color:transparent;
+}
+
+
+
+.productDetail #contentBottom{
+    display: none;
+}
+
+#galleryModule{
+    width: 290px;
+    float: left;
+   /* background-color: #f4f3e5; */  /* updates below for changes for site background color to white  */
+}
+
+/* for zoom window */
+.MagicZoomBigImageCont {
+	border:1px solid #000;
+	left: 290px!important;
+	height: 300px!important;
+	width: 400px!important;
+}
+
+.MagicZoomHeader {
+    -x-system-font:none;
+    background:#000 none repeat scroll 0 0;
+    color:#FFFFFF;
+    font-family:Tahoma,Verdana,Arial,sans-serif;
+    font-size:10px;
+    font-size-adjust:none;
+    font-stretch:normal;
+    font-style:normal;
+    font-variant:normal;
+    font-weight:normal;
+    line-height:normal;
+    text-align:center !important;
+}
+.MagicZoomPup {
+    background:#FFFFFF none repeat scroll 0 0;
+    border:1px solid #AAAAAA;
+    cursor:  crosshair;
+}
+.MagicZoomLoading {
+    background:#FFFFFF none repeat scroll 0 0;
+    border:1px solid #CCCCCC;
+    color:#444444;
+    display:none;
+    opacity:0.8;
+    padding:3px !important;
+    text-align:center;
+    width: 100px;
+    white-space: nowrap;
+
+}
+.MagicZoomLoading img {
+    margin:3px 0 0 42px !important;
+    display: block;
+    width: 16px;
+    height: 16px;
+}
+#galleryModule #heroContainer{
+    width: 290px;
+    height: 383px;
+    position:relative;
+    display:block;
+    z-index: 5000 !important;
+	cursor: none;
+}
+#galleryModule #medHero{
+    width: 290px;
+    height: 383px;
+    border-bottom: 1px solid #fff;
+}
+
+#galleryModule .MagicZoomBigImageCont{
+    z-index: 10000 !important;
+}
+
+#galleryModule .MagicZoomPup{
+    z-index: 10000 !important;
+}
+
+#galleryModule #gActions{
+    border-bottom: 1px solid #fff;
+    height: 20px;
+    background: url(/images/backgrounds/bg-gallery-action-bar.gif) 0 0 no-repeat;
+}
+
+#galleryModule  #gActions li{
+    float: left;
+    width: 100%;
+    height: 20px;
+
+
+}
+#galleryModule #gActions li a{
+    /* display: block; */
+	display: none;
+    height: 20px;
+    text-indent: -9999px;
+
+}
+#galleryModule #gActions li span{
+    display: none;
+}
+
+
+#galleryModule h4{
+	font-size: 11px;
+	color: #535353; /* was color #807a64 - site BG change - tb5sxo */
+	/* padding: 10px 5px; */ /* updates at bottom for site background color to white */
+	margin:0;
+	clear: both;
+}
+
+
+#galleryModule .gallery{
+    clear: both;
+    padding: 0 5px;
+}
+
+
+#galleryModule .gallery li{
+	width: 54px;
+	height:64px;
+	border: 1px solid #cccccc!important; /* adding important for overriding inline style - site BG change - tb5sxo */
+	float:left;
+	margin:0 1px 10px 0;
+}
+
+
+#galleryModule .gallery li.current{
+    border: 1px solid #000;
+}
+#galleryModule .gallery li a{
+    width: 52px;
+    height:62px;
+    display: block;
+    border: 1px solid #f4f3e5;
+}
+#galleryModule .gallery li a img{
+    width: 52px;
+    height:62px;
+}
+
+.prodLongDesc li{
+   margin-left:12px;
+}
+
+.prodLongDesc ul{
+margin-left:12px;
+list-style: disc;
+}
+
+#productDetails{
+    float: right;
+    width: 620px;
+}
+#productDetails:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+#productDetails{
+    display: inline-block;
+}
+html[xmlns] #productDetails {
+    display: block;
+}
+* html #productDetails {
+    height: 1%;
+}
+
+
+/* updated for the site BG color Change project - tb5sxo */
+#productContainer {
+	padding: 37px 20px 20px 0px; /* left was 20px */
+}
+
+
+#prevProduct{
+    position:absolute;
+    top: 46px;
+    right: 62px;
+    width: 83px;
+    height: 10px;
+    background: url(/images/backgrounds/previousButton.gif) 0 0 no-repeat;
+    text-indent: -9999px;
+}
+#nextProduct{
+    position:absolute;
+    top: 46px;
+    right: 20px;
+    width: 51px;
+    height: 10px;
+    background: url(/images/backgrounds/nextButton.gif) 0 0 no-repeat;
+    text-indent: -9999px;
+}
+.productDetail #productDetails h1{
+    font-size: 21px;
+    font-family:"Times New Roman", Times, serif;
+	font-weight: normal;
+    float: left;
+    padding: 0 10px 7px 0;
+    min-width: 15px;
+    _width: 1px;
+    _white-space: nowrap;
+}
+#eGiftCard #productDetails h2{
+    font-size: 21px;
+    font-family:"Times New Roman", Times, serif;
+    float: left;
+    padding: 0 10px 7px 0;
+    min-width: 15px;
+    display:block;
+    width:90px;
+    _margin-top:20px !important;
+}
+body.giftCard img.promo{
+    position: absolute;
+    top: 35px;
+    right:20px;
+}
+.productDetail #productDetails span.status{
+    display: block;
+    font-size: 12px;
+    height: 10px;
+    padding-top: 7px;
+    _margin-top:0px !important;
+}
+.productDetail .price{
+    clear:left;
+    padding-bottom: 14px;
+}
+
+.productDetail #productDetails p{
+    width: 380px;
+    margin-bottom: 5px;
+    line-height: 1.2em;
+}
+.productDetail #productDetails p.warning{
+    padding: 5px 0;
+    margin-bottom: 0px;
+    line-height: 10px;
+    font-weight: bold;
+}
+#catalogGalleryView p.inventoryWarning{
+    padding: 15px 0 0 219px;
+    margin-bottom: 0px;
+    line-height: 10px;
+    font-weight: bold;
+    font-size: 11px;
+    color:#9A3432;
+}
+#listView p.inventoryWarning{
+    padding: 5px 0 0 219px;
+    margin-bottom: 0px;
+    line-height: 10px;
+    font-weight: bold;
+    font-size: 11px;
+    color:#9A3432;
+}
+#productDetails ul#prodDetailsList {
+    margin-top: 10px;
+    list-style: inside;
+    list-style-type: disc !important;
+    line-height: 8px;
+}
+#productDetails ul#prodDetailsList li {
+    margin-bottom: 10px;
+}
+
+em.productSku{
+    color: #999;
+
+
+}
+#eGiftCard em.productSku{
+    color: #999;
+    clear:both;
+    display:block;
+}
+#productOverview{
+    min-height: 225px;
+    _height: 225px;
+    position: relative;
+}
+img.loadingImage{
+    top: 25px;
+    left: 100px;
+    position: absolute;
+}
+#productInfo{
+    clear: both;
+    padding: 15px 0;
+    min-height: 225px;
+    _height: 225px;
+
+}
+.productDetail .ratingsAndReviews{
+    position: absolute;
+    top: 75px;
+    right: 20px;
+    width: 180px;
+}
+.productDetail .ratingsAndReviews h5{
+    font-weight: bold;
+    padding-bottom: 8px;
+    color: #7f7862;
+}
+.productDetail .ratingsAndReviews img{
+    float: left;
+    margin-right: 10px;
+}
+.productDetail .ratingsAndReviews .reviewCount{
+    color: #999;
+    font-size: 10px;
+}
+.socialCTA{
+    height: 11px;
+    padding: 5px 0;
+    font-size:10px;
+}
+.socialCTA li{
+    float: left;
+    min-width: 10px;
+    _width: 10px;
+    height: 10px;
+    padding-right: 10px;
+}
+.socialCTA li a{
+    text-decoration: underline;
+    padding: 0;
+    color: #666;
+    white-space:nowrap;
+}
+.socialCTA li.last{
+    border-left: 1px solid #666;
+    padding-left: 10px;
+    padding-right: 0px;
+}
+
+#productDetails .overviewContainer{
+    position: relative;
+    min-height: 225px;
+    _height: 225px;
+
+    padding-bottom: 10px;
+}
+
+#productDetails .descriptionContainer{
+    min-height: 200px;
+    _height: 200px;
+    padding: 15px;
+}
+
+.productDetail #productDetails .descriptionContainer p{
+    width: auto;
+}
+
+#productDetails .itemDetails{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 118px;
+    padding:15px 20px;
+    height: 205px; /* changed to 205px for site BG change project */
+    font-size: 10px;
+    /* z-index: 10; */  /* BugFix 3315 - tb5sxo */
+}
+#productDetails ul.productActions{
+    padding: 50px 0 20px 0;
+}
+
+
+/* GLOBAL PRODUCT SERVICE STYLES */
+
+/* commenting out .itemDetails for changes to site background color to white below
+ 
+.itemDetails{
+    background-color: #f4f3e5;
+}
+*/
+
+.itemDetails span.odCheckbox{
+    display: none;
+}
+.itemPrice{
+    display: block;
+    font-size:12px;
+}
+
+.itemDetails .itemPrice{
+	font-weight: normal;
+}
+
+.normalPrice{
+    text-decoration:line-through;
+    display: block;
+    font-size:12px;
+}
+.salePrice{
+    color:#ae0c35;
+    display: block;
+    font-size:12px;
+}
+
+.finalSale{
+    color:#ae0c35;
+    display: block;
+    font-size:12px;
+    font-weight:bold;
+    text-decoration: underline;
+}
+
+
+
+.disabled{
+    opacity: .5;
+}
+
+
+
+/* site BG changes - tb5sxo */
+ul.productActions li{
+	padding: 4px 6px;
+	border-bottom: 1px dotted #cccccc; /* changed - tb5sxo */
+}
+
+
+
+ul.productActions li.last{
+    border-bottom:none;
+}
+ul.productActions li.findInStore{
+    font-weight: bold;
+}
+.sizeAndAvailability{
+    padding: 0 10px;
+    position: relative;
+    min-height:215px;
+    _height: 215px;
+}
+.sizeAndAvailability label{
+    cursor: pointer;
+    display: block;
+    font-size:10px;;
+}
+.sizeAndAvailability strong{
+    /* color: #7f7862; */ /* updates at bottom for site background color to white */
+    font-weight: bold;
+    padding-bottom: 3px;
+    display: block;
+    clear: left;
+    padding-top: 5px;
+}
+.sizeAndAvailability strong span{
+    color: #333;
+    font-weight: normal;
+}
+.sizeAndAvailability .sizeType{
+    width: 282px;
+    /*float:left;*/
+    position: relative;
+    overflow:hidden;
+    padding-bottom: 10px;
+
+}
+.sizeType ul li input{
+    display: none;
+}
+.sizeAndAvailability .sizingChart{
+    position: absolute;
+    left: 169px;
+    top: 5px;
+    padding:0;
+    text-decoration: underline;
+    font-size: 12px;
+}
+.sizeAndAvailability .sizeType ul{
+    padding: 0;
+
+}
+.sizeAndAvailability .sizeType li{
+    float: left;
+    padding: 2px 5px;
+    /* border:1px solid #c3b88c; */ /* updates at bottom for site background to white */
+    margin-right: 1px;
+    font-size: 10px;
+}
+
+/* updates at bottom for site background to white */
+/*
+.sizeAndAvailability .sizeType li.active{
+    background-color: #c3b88c;
+    color: #fff;
+}
+*/
+
+
+.fabricType {
+    clear: both;
+    width:380px;
+}
+#quickView .fabricType{
+    width:auto;
+}
+.fabricType ul li input{
+    display: none;
+}
+.sizeAndAvailability .fabricType ul{
+    padding: 0;
+
+}
+
+
+
+.sizeAndAvailability .fabricType li{
+    float: left;
+    padding: 2px 5px;
+    border:1px solid #cccccc;
+    margin-right: 1px;
+    font-size: 10px;
+    margin-bottom: 1px;
+}
+.sizeAndAvailability .fabricType li.active{
+    background-color: #808184;
+    color: #fff;
+}
+
+
+#otherAmmount {
+    color:#000 !important
+}
+
+.sizeAndAvailability li.na{
+    opacity: .5;
+}
+.productSizes{
+    width: 225px;
+    float: left;
+    clear:left;
+    padding-top: 10px;
+}
+
+#productDetail .productSizes{
+    width: 395px;
+}
+
+
+.productSizes ul li{
+	width: 32px;
+	/* border: 1px solid #c3b88c; */ /* updates at bottom for site background color to white */
+	text-align: center;
+	padding: 2px 0;
+	float:left;
+	margin: 0 1px 1px 0;
+	font-size: 9px;
+	text-transform:uppercase;
+	color: #535353!important; /* was #928b6f - adding important for style override */
+}
+
+
+/* updates at bottom for site background color to white */
+/* 
+.productSizes ul li.active{
+    background-color: #c3b88c;
+    color: #fff;
+
+}
+*/
+
+.productSizes ul li input{
+    display: none;
+}
+.productQuanity{
+    width: 60px;
+    float:left;
+    padding-top: 10px;
+}
+
+
+/* for site bg changes - tb5sxo */
+.productQuanity select{
+	background: #ffffff;
+	width: 52px;
+	border: 1px solid #cccccc; /* adding for style BG changes */
+	font-size: 11px;
+}
+
+
+.productColors{
+    float: left;
+    clear:left;
+    width: 285px;
+    padding-top: 10px;
+}
+#productDetail .productColors{
+    width: 385px !important;
+}
+.productColors ul li{
+    width: 27px;
+    border: 1px solid #fff;
+    padding: 1px;
+    height: 23px;
+    float:left;
+    margin: 0 1px 1px 0;
+    overflow: hidden;
+
+}
+.productColors ul li img,
+.saleColors ul li img{
+    width: 27px !important;
+    height: 23px !important;
+}
+.productColors ul li label{
+    width: 27px;
+    height: 23px;
+    display: block;
+    text-indent: -9999px;
+    overflow: hidden;
+}
+.productColors ul li input{
+    display:none;
+}
+.productColors ul li.active{
+    border: 1px solid #000;
+}
+.saleColors{
+    float: left;
+    clear:left;
+    width: 285px;
+    padding-top: 10px;
+}
+#productDetail .saleColors{
+    width: 385px !important;
+}
+.saleColors ul li{
+
+    width: 27px;
+    border: 1px solid #fff;
+    padding: 1px;
+    height: 23px;
+    float:left;
+    margin: 0 1px 1px 0;
+}
+.saleColors ul li label{
+    width: 27px;
+    height: 23px;
+    display: block;
+    text-indent: -9999px;
+    overflow: hidden;
+}
+.saleColors ul li input{
+    display:none;
+}
+.saleColors ul li.active{
+    border: 1px solid #000;
+}
+.cancelButton{
+    display: none;
+}
+
+.buttonPosition .cancelButton {
+    display: block;
+}
+
+li.activeColor{
+    border:1px solid #000 !important;
+}
+
+/* END GLOBAL PRODUCT SERVICE STYLES*/
+
+/* GIFT CARD styles */
+
+.giftCard .sizeAndAvailability .giftDenomination {
+    height: 30px;
+    padding-top: 14px;
+}
+.giftCard .sizeAndAvailability .giftDenomination ul{
+    padding: 0;
+}
+
+
+
+.giftCard .sizeAndAvailability .giftDenomination li {
+	float: left;
+	padding: 2px 5px;
+	border: 1px solid #cccccc;
+	margin-right: 1px;
+	font-size: 10px;
+	background-color: #ffffff;   /* added - tb5sxo */
+}
+
+
+
+.giftCard .sizeAndAvailability .giftDenomination li input{
+    display: none;
+}
+
+
+
+.giftCard .sizeAndAvailability .giftDenomination li.active{
+    background-color: #808184;
+    color: #ffffff;
+}
+
+
+
+.giftCard #otherAmmount{
+    border: none;
+    width: 150px;
+    padding-left: 10px;
+    position: relative;
+}
+.giftCard #otherAmmount.active{
+    background-color: #fff;
+}
+.giftCard #otherAmmount label{
+    display: inline;
+    position: relative;
+    padding-left: 20px;
+    float:left;
+}
+.giftCard #otherAmmount input{
+    display: inline;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 11px;
+}
+
+
+.giftCard #otherAmmount #cardAmmount{
+	position: absolute;
+	width: 65px;
+	top: 0;
+	left: 50px;
+	margin-left: 10px;
+	border: 1px solid #cccccc;
+	padding: 1px;
+}
+
+
+.giftCard #otherAmmount .ammountError{
+    position: absolute;
+    top: 20px;
+    left: 0;
+    color: red;
+}
+.giftCard .cardDesigns{
+    float: left;
+    clear:left;
+    width: 344px;
+    padding-top: 10px;
+}
+.giftCard .cardDesigns p{
+    padding-top:10px;
+}
+.giftCard .cardDesigns ul li{
+    width: 53px;
+    border: 1px solid #fff;
+    padding: 0;
+    height: 35px;
+    float:left;
+
+    margin: 0 3px 3px 0;
+}
+.giftCard .cardDesigns ul li label{
+    width: 53px;
+    height: 35px;
+    display: block;
+    text-indent: -9999px;
+    overflow: hidden;
+}
+.giftCard .cardDesigns ul li input{
+    display:none;
+}
+.giftCard .cardDesigns ul li.active{
+    border: 1px solid #000;
+}
+#eGiftCard #printButton {
+_right:30px !important;
+}
+#eGiftCard #productDetails .overviewContainer{
+    position: relative;
+    min-height: 225px;
+    _height: 250px;
+    overflow: hidden;
+    padding-bottom: 10px;
+}
+#eGiftCard #productInfo{
+    /*clear: both;
+    padding: 15px 0;
+    min-height: 225px;*/
+    _height: 225px;
+    _left:-65px !important;
+    _top:-125px !important;
+}
+#eGiftCard .ui-tabs-nav li a span{
+    _width:50px !important;
+}
+
+
+#eGiftCard #giftMessage{
+	position:absolute;
+	top:152px;
+	left:167px;
+	width:150px;
+	border: 1px solid #cccccc;
+}
+
+
+#giftCardPhysical #messageExplaination{
+    padding:15px;
+}
+
+
+#giftMessage{
+	width:150px;
+	/* border: 1px solid #cccccc; */
+	margin:5px 0 5px 15px;
+}
+
+
+#giftMessage label{
+    display:block;
+    margin-top: -14px;
+}
+
+#giftMessage input{
+    display:block;
+    border:none !important;
+}
+
+
+.giftCard fieldset#contactInfo{
+    padding: 10px;
+}
+.giftCard fieldset#contactInfo label{
+    display: block;
+    padding: 2px 0;
+    width: 140px;
+}
+
+
+.giftCard fieldset#contactInfo input{
+	display: block;
+	padding: 2px 0;
+	width: 140px;
+	border: 1px solid #cccccc;
+}
+
+
+.giftCard fieldset#contactInfo label{
+    width: 210px;
+}
+
+.giftCard #confirmationText{
+    margin:10px;
+}
+
+
+#giftCardPhysical .productQuanity{
+	padding-top:10px;
+	padding-left: 25px;  /* added - tb5sxo */
+}
+
+
+#eGiftCard .productQuanity{
+    position:absolute;
+    top:4px;
+    left:324px;
+}
+
+.giftCard .itemDetails{
+    height:100% !important;
+}
+
+.giftCard .itemDetails .button{
+    position:absolute;
+    bottom:40px;
+}
+
+.giftCard #galleryModule{
+    min-height:385px !important;
+}
+
+/*#giftCardPhysical #galleryModule{background:url(/images/fpo/fpo_giftCardFlashPiece.jpg) no-repeat;}
+END GIFT CARD */
+
+
+#recomendations h3{
+    font-family: "Times New Roman", Times, serif;
+    font-size: 17px;
+    padding: 0 0 3px 0;
+}
+#recomendations .tab ul{
+    padding: 18px 18px 13px 18px;
+}
+#recomendations .tab ul:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+#recomendations .tab ul{
+    display: inline-block;
+}
+html[xmlns] #recomendations .tab ul {
+    display: block;
+}
+* html #recomendations .tab ul {
+    height: 1%;
+}
+#recomendations .tab ul li{
+    float: left;
+    margin-right: 30px;
+}
+#recomendations .tab ul li.last{
+    margin-right: 0px;
+}
+#recomendations .tab ul li strong{
+    display: block;
+    font-size: 11px;
+}
+#prodReviews{
+    clear: both;
+    position: relative;
+}
+#prodReviews h3{
+    font-family: "Times New Roman", Times, serif;
+    font-size: 17px;
+    padding: 10px 0;
+}
+#reviewOverview{
+    float: left;
+    width: 260px;
+    height: 62px;
+    padding-right: 20px;
+}
+#reviewOverview h4{
+    font-weight: bold;
+    padding: 0 0 4px 0;
+}
+#reviewOverview p{
+    padding-bottom: 1em;
+}
+#reviewOverview a{
+    color: #34718d;
+}
+#fitOverview{
+    width: 200px;
+    float:left;
+    height: 62px;
+}
+#fitOverview h4{
+    color: #7f7862;
+    padding: 0 0 10px 0;
+    font-weight: bold;
+}
+#ratingOverview{
+    float: left;
+    width: 200px;
+    height: 62px;
+}
+#ratingOverview h4{
+    color: #7f7862;
+    padding: 0 0 10px 0;
+    font-weight: bold;
+}
+#reviews{
+    clear: both;
+    position: relative;
+}
+#reviews select{
+    position: absolute;
+    top: -45px;
+    left: 768px;
+    width: 150px;
+}
+#reviews .btnWriteReview{
+    display: block;
+    width: 75px;
+    position: absolute;
+    top: -15px;
+    color: #928b6f;
+    right: 0;
+    text-decoration: underline;
+}
+#prodReviews table{
+    clear: both;
+    margin-top: 15px;
+
+
+
+
+    background: url(/images/backgrounds/table-header-bg.gif) 0 0 repeat-x;
+}
+#prodReviews #rt_postedBy{
+    width: 230px;
+}
+#prodReviews #rt_ratings{
+    width: 230px;
+}
+#prodReviews #rt_response{
+    width: 460px;
+}
+#prodReviews #rt_response #commentNav{
+    width:154px;
+    margin-top:-10px;
+    float:right;
+    _height:1%;
+}
+
+#prodReviews #rt_response #commentNav strong{
+    display: inline;
+}
+#prodReviews #rt_response #commentNav ul{
+    display: inline;
+}
+#prodReviews #rt_response #commentNav ul li{
+    display: inline;
+    padding: 0 2px;
+}
+#prodReviews #rt_response #commentNav ul li.current a{
+    color: #ae0c35;
+}
+#prodReviews table thead th{
+    padding: 7px 10px;
+    height: 11px;
+    font-size: 10px;
+
+}
+#prodReviews table tbody tr td{
+    border-bottom: 1px solid #dedcce;
+}
+#prodReviews table tbody tr.last td{
+    border-bottom: none;
+
+}
+#prodReviews table tbody td{
+    padding:15px 10px;
+    color: #333;
+    vertical-align: top;
+
+}
+#prodReviews table tbody td li{
+    padding-bottom: 6px;
+}
+#prodReviews table tbody td .ratingDetail{
+    font-size: 10px;
+    color: #999;
+}
+#prodReviews table strong{
+    color:# 7f7862;
+}
+#prodReviews table td.t_rating h6{
+    padding-bottom: 8px;
+    clear: both;
+    color: #7f7862;
+}
+#prodReviews table td.t_rating h6 span{
+    color: #333;
+}
+#prodReviews table td.t_rating img{
+    float: left;
+    margin: 0 10px 15px 0;
+}
+#prodReviews table td.t_comments h6{
+    font-weight: bold;
+    margin-bottom: 10px;
+    float: left;
+    width: 280px;
+}
+#prodReviews table td.t_comments span.date{
+    margin-bottom: 10px;
+    float: right;
+    width: 150px;
+    text-align: right;
+    color: #999;
+}
+#prodReviews table blockquote{
+    clear: both;
+}
+/* END PRODUCT DETAILS PAGE */
+
+
+
+/* Styles for Catalog - Find A Store Popup page [Pooja - Start] */
+
+body.findInStore{
+    background-image:none !important;
+    background-color:#fff;
+}
+
+.catalog h2 {
+/*    font-family:'Times New Roman', Times, serif;*/
+    font-size: 21px;
+    /*font-weight: normal;*/
+    margin-bottom: 0px;
+    color: #333;
+}
+.catalog h3 {
+    font-family:'Times New Roman', Times, serif;
+    font-size: 18px;
+    font-weight: normal;
+    color: #333;
+}
+.catalog p {
+    line-height: 13px;
+}
+.catalog strong {
+    font-weight: bold;
+}
+
+
+#findContainer {
+    background: #fff;
+    width: 520px;
+    padding: 15px 20px;
+    margin: 0 auto;
+    font-size: 11px;
+    position: relative;
+}
+
+
+#findContainer #itemDetails {
+    border-bottom: 1px solid #cccccc;
+    overflow: hidden;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+
+#findContainer #itemDetails img {
+    float: left;
+    margin-right: 5px;
+}
+#findContainer #itemDetails img#productImage {
+    float: left;
+    margin-right: 20px;
+}
+#findContainer .price {
+    float: right;
+}
+#findContainer #priceRange {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 11px;
+}
+#findContainer .productSku {
+    color: #999;
+    font-size: 11px;
+    display: block;
+    margin: 10px 0;
+}
+#findContainer .colorName {
+    font-size: 11px;
+    color:#666666;
+    display: block;
+    padding: 5px 0;
+    margin-bottom: 10px;
+}
+#findContainer .sizing {
+    display: block;
+    font-size: 11px;
+    color:#666;
+    display: block;
+}
+
+#findContainer table {
+    background: none repeat scroll 0 0 #F1F1F2;
+    border: 1px solid #CCCCCC;
+    margin: 10px 0; width: 100%;
+    padding: 5px;
+    font-weight: normal;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#styleByAppointment #findContainer table {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 3px solid #CCCCCC;
+    font-family: Arial,Helvetica,sans-serif;
+    font-weight: normal;
+    margin: 10px 0;
+    padding: 5px;
+    width: 100%;
+}
+
+#findContainer thead th {
+    color: #535353;
+    padding: 0 5px 5px 5px;
+    font-size:10px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #cccccc;
+}
+#findContainer tbody td {
+    padding: 8px 5px;
+    border-bottom: 1px solid #cccccc;
+    vertical-align: middle;
+}
+#findContainer tbody .last td {
+    border-bottom: none;
+}
+#findContainer tbody td a.actionable {
+    color:#34728b;
+
+}
+#findContainer tfoot td {
+    padding: 8px 5px;
+    vertical-align: middle;
+}
+#findContainer tfoot td a {
+    color:#535353;
+    text-decoration:underline;
+    font-size: 10px;
+}
+#findContainer .overviewContainer:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+#findContainer .overviewContainer {
+    display: inline-block;
+}
+
+html[xmlns] #findContainer .overviewContainer {
+
+    display: block;
+}
+
+* html #findContainer .overviewContainer {
+
+    height: 1%;
+}
+#findContainer .itemDetails{
+    position: relative;
+    _height:220px;
+}
+#findContainer .itemDetails .salePrice{
+    position:absolute;
+    width: 100px;
+    height: 20px;
+    overflow: hidden;
+    top:25px;
+    right: 10px;
+    color:#AE0C35;
+}
+
+
+#findContainer .itemDetails .itemPrice{
+    position:absolute;
+    width: 100px;
+    height: 20px;
+    overflow: hidden;
+    top:25px;
+	left: 340px!important; /* change right to left - R13.1 - tb5sxo - #2 word doc from collebra/selene */
+	left: 10px\9;
+}
+
+
+#findContainer .itemDetails .normalPrice{
+    position:absolute;
+    width: 100px;
+    height: 20px;
+    overflow: hidden;
+    top:0px;
+    right: 10px;
+    text-decoration: line-through;
+    font-weight: normal;
+
+}
+#findContainer .itemDetails .productActions{
+    position:absolute;
+    width: 100px;
+    height: 150px;
+    overflow: hidden;
+    top:50px;
+    right: 10px;
+}
+.location #findContainer .itemDetails .productActions{
+    display:none;
+}
+#findContainer #productAvailability{
+    min-height: 275px;
+    _height: 275px;
+    position: relative;
+}
+#findContainer .loadingImage{
+    position: absolute;
+    top: 100px;
+    left 50px !important;
+    margin-left: 50px;
+}
+#searchPagination{
+    padding: 15px 0 5px 0;
+}
+
+#searchPagination li{
+    float:left;
+    padding-right:3px;
+    font-weight: bold;
+}
+
+#searchPagination .selectedPage{
+    text-decoration:underline;
+}
+
+/* Styles for Catalog - Find A Store Popup page [Pooja - End] */
+
+
+
+/* Styles for Catalog - Find A Store Popup page [Deb - Start] */
+#findPersonal #findContainer form fieldset ul{
+    line-height:12px;
+}
+#findPersonal form fieldset ul .phoneNo {
+    margin-top:10px;
+}
+#findPersonal #findContainer form fieldset label {
+    float:left;
+    margin-right:10px;
+    margin-bottom:10px;
+
+
+}
+
+
+#findPersonal #findContainer form fieldset label input{
+	display:block;
+	margin:3px 0 0 0;
+	border: 1px solid #cccccc;
+	padding:2px 3px;
+}
+
+
+#findPersonal form fieldset label input#emailAddress,
+#findPersonal form fieldset label input#confirmEmail{
+    width:180px;
+}
+#findPersonal form fieldset label.clearBoth {
+    display: block;
+    clear: both;
+    float: none;
+}
+#findPersonal tbody td {
+    vertical-align: top;
+}
+#findPersonal tbody td.locationAddress{
+    width:140px;
+}
+#findPersonal tbody td .buttonStyle2 {
+    float:right;
+}
+/* Styles for Catalog - Find A Store Popup page [Deb - End] */
+
+/* Style for Catalog -  Enter Loacation Popup Page [Pravat - Starts] */
+#genericContent { float:left; width:68%; height:140px; border-right:1px solid #e7e7cb;}
+#genericContent p {margin:10px 0 0 0;}
+
+
+#findEnter #search{
+    width:500px;
+    padding:10px;
+    background: none repeat scroll 0 0 #F1F1F2 !important;
+    border: 1px solid #CCCCCC !important;
+    margin:0 auto;
+    float: none;
+}
+
+
+#findEnter #enterLocation fieldset p{
+    padding-top:10px;
+}
+#findEnter #findContainer .productSku {
+    margin: 5px 0px 0px 0px;
+}
+
+#findEnter .normalPrice{
+    text-decoration:none;
+}
+
+#findEnter #findContainer p a.moreDetail {
+    color:#34718d;
+}
+
+#findEnter .sizeAndAvailability li a{
+color:#928b6f;
+}
+
+#findEnter .sizeAndAvailability .sizeType li a.active{
+color:#FFFFFF;
+}
+
+#findEnter #search form fieldset label em{
+	color: #535353 !important;
+}
+
+#findEnter #search h3{
+    border-bottom: 1px solid #CCCCCC !important;
+    color: #535353 !important;
+    font-family:Arial,Helvetica,sans-serif !important;
+    font-size:10px !important;
+    margin:0 !important;
+    padding:0 0 2px !important;
+    text-transform:uppercase !important;
+}
+
+#findEnter #search form{
+    margin-left:12px;
+}
+
+#findEnter #search fieldset label input, #findEnter #search fieldset label select{
+    border: 1px solid #CCCCCC !important;
+    color:#535353;
+    font-size:11px;
+    padding:2px 0px;
+    margin:10px 5px 0px 5px ;
+    width:150px;
+}
+
+#findEnter #search fieldset label select{
+    padding:0;
+}
+#findEnter #search fieldset label select.state{
+    width:55px;
+}
+
+#findEnter #search fieldset label input.zip{
+    width:100px;
+}
+#findEnter #search fieldset div.buttonStyle2{
+    float:right;
+    margin-right:12px;
+    margin-right:5px !important;
+}
+
+#findEnter #search .clearBoth{
+    clear:both;
+    display:block;
+    float:none;
+}
+
+#sizeAndAvailability{
+    padding:0px;
+}
+
+#genericContent .color{
+    overflow:hidden;
+    margin-top:7px;
+}
+
+#genericContent .size{
+    font-size:11px;
+    padding: 0;
+}
+
+#genericContent .color span{
+    display:block;
+    margin-top:6px;
+}
+
+#genericContent .sizeAndAvailability  ul.colorBox li{
+    float: left;
+    display: block;
+    width:25px;
+    height:21px;
+    margin-right:2px;
+    border:1px solid #999999;
+    position:relative;
+    top:0px;
+}
+
+#genericContent .sizeAndAvailability  ul.colorBox li a{
+    display: block;
+    width:25px;
+    height:21px;
+    text-indent:-99999px;
+}
+
+#genericContent .sizeAndAvailability  li#brown{
+    background:#6b5d1e;
+    overflow: hidden;
+}
+
+#genericContent .sizeAndAvailability  li#black{
+    background:#FFF;
+    overflow: hidden;
+    border:1px solid #000;
+    width:27px;
+    height:23px;
+    margin-bottom:1px;
+}
+
+#genericContent .sizeAndAvailability  li span#blackBg{
+    background:#000000;
+    display:block;
+    width:25px;
+    height:21px;
+    margin:1px;
+}
+
+#findEnter .sizeAndAvailability{
+    padding: 0px;
+    position: relative;
+}
+
+#findEnter #itemDetails {
+    border-bottom:none;
+}
+
+#findEnter .productSizes, #findEnter .sizeAndAvailability .sizeType{
+    left:0px;
+}
+
+#findEnter .sizeAndAvailability .sizingChart{
+    position: absolute;
+    left: 150px;
+    top: 0;
+    padding:;
+    text-decoration: underline;
+    font-size: 10px;
+    width:80px;
+}
+
+/* Style for Catalog -  Enter Loacation Popup Page [Pravat - Ends] */
+
+
+
+/*Outfit Landing Page [Mark]========================================*/
+
+#outfitLandingPage #content{
+    padding:0px;
+    width:750px;
+}
+
+
+#outfitLandingPage #contentInner{
+    background:#f4f3e5;
+    margin:5px 5px 0px 5px;
+    padding-bottom:50px;
+}
+
+#outfitLandingPage #content h2 {
+    font-size:36px;
+    font-family:"Times New Roman", Times, serif;
+    color:#6a5d1d;
+    padding-left:36px;
+}
+#outfitLandingPage #content p {
+    font-size:15px;
+    font-family:"Times New Roman", Times, serif;
+    line-height:1.2;
+    letter-spacing:1px;
+    color:#333;
+    padding:15px 0 37px 135px;
+}
+
+#outfitLandingPage #sideScroll{
+    width:740px;
+    height:350px;
+    overflow-x:auto;
+    overflow-y:hidden;
+}
+
+#outfitLandingPage #fashions {
+    top:50px;
+    width:2460px;
+}
+#outfitLandingPage #fashions li {
+    text-align:center;
+    float:left;
+    margin-right:5px;
+}
+
+#outfitLandingPage #fashions li img{
+    padding-bottom:10px;
+}
+
+#outfitLandingPage #fashions li a{
+    text-decoration:none;
+    font-size:14px;
+    color:#6a5d1d;
+}
+
+/*End Outfit Landing Page [Mark]========================================*/
+
+
+
+/*Outfit Secondary Landing Page [Mark]========================================*/
+
+.outfit {
+    display:block;
+}
+
+.outfit img{
+    padding:1px;
+}
+
+.outfit img:hover{
+    border:1px solid #695842 !important;
+}
+
+#outfitOcassionPage #content img{
+    display:inline;
+	padding-bottom:0px;
+}
+
+#outfitOcassionPage #content{
+    padding:0px 0 0 0px !important; 
+    width:961px !important;
+	background-color: transparent;
+	margin-left:0px;
+	margin-top: 15px; /* added for Bug 2019 */
+}
+
+#outfitOcassionPage #toolBar .rightArrow{
+	background:#F4F3E5 url(/images/buttons/rightarrow.png) no-repeat scroll right center !important;
+	padding: 4px 0px 5px 2px;
+}
+
+#outfitOcassionPage #toolBar .leftArrow{
+	background:#FFFFFF url(/images/buttons/leftarrow.png) no-repeat scroll right center !important;
+	padding: 3.5px 2px 5px;
+	
+}
+
+#outfitOcassionPage #toolBar .leftArrow:hover {
+
+	text-decoration:none !important
+	
+}
+
+#outfitOcassionPage #toolBar .rightArrow:hover {
+	text-decoration:none !important
+	
+}
+
+
+#outfitOcassionPage #toolBar a{
+text-decoration:none !important;
+}
+
+#outfitOcassionPage #toolright a{
+	color: #666666;
+}
+
+
+
+#outfitOcassionPage #toolright a:hover{
+	color: #000000 !important;
+	text-decoration:underline !important;
+}
+
+
+
+#outfitOcassionPage #toolrightcont {
+	float: right;
+	/* padding-top:10px; */
+	margin-top: 13px;
+	margin-right: 30px; /* added for Bug 2019 */
+}
+
+#outfitOcassionPage UL#toolcenter
+{
+		padding-top:13px !important;
+		height:auto !important;
+}
+
+#outfitOcassionPage #toolcenter a{
+	color: #666666;
+}
+
+#outfitOcassionPage #toolBar #page{
+    width: 100px; !important;
+	
+}
+
+#outfitOcassionPage #toolBar #page ul{
+    width:auto;
+	float:right;
+	margin-top:auto;
+	margin-bottom:auto;
+	vertical-align:middle;
+}
+
+#outfitOcassionPage #toolBar #paging{
+	padding: 8px 3px 5px 6px;
+	font-size: 10px;
+	color:#666666;
+}
+
+#outfitOcassionPage #toolBar .selected{
+
+	color:#000000;
+	margin-top: 1px;
+}
+
+#outfitOcassionPage #toolBar .selected{
+	color:#000000;
+}
+li#pagedivider{
+	padding-top: 7px;
+}
+
+
+/*
+#toolBar UL#toolcenter {
+float:right;
+padding-right:395px;
+}
+*/
+
+#outfitOcassionPage #contentInner{
+    position:relative;
+    background:#f7f7ed;
+    width:100%;
+    height:555px;
+}
+
+#outfitOcassionPage #contentWrapper {
+background:url("") repeat-y scroll 0 0 transparent;
+display:block;
+/*margin-bottom:10px; commented out 9/18/13 by tb6jxr, makes footer misalign on Looks Page*/
+margin-top:0px;
+}
+
+#outfitOcassionPage #content p{
+    width:330px;
+    padding-left:15px;
+}
+
+#outfitOcassionPage #outfits{
+    width:400px;
+    padding-left:15px;
+}
+
+#outfitOcassionPage #outfits li{
+    float:left;
+    height:110px;
+    overflow:hidden;
+    padding:9px 10px 0 0;
+
+    width:82px;
+}
+
+#outfitOcassionPage #outfits li img{
+    width:78px;
+    height:106px;
+    cursor:pointer;
+    border:1px solid #f5f4e7;
+}
+
+#outfitOcassionPage #shopThisOutfit #selectedOutfit{
+    position:absolute;
+    bottom:17px;
+    right:5px;
+    border:1px solid #d4d4a9;
+    width: 350px;
+    height: 465px;
+}
+
+#outfitOcassionPage #content h2{
+    padding-left:15px;
+}
+
+#outfitOcassionPage #shopThisOutfitLink{
+
+
+
+
+    background:url(/images/buttons/shopOutfitButton.png) no-repeat;
+    width:128px;
+    height:23px;
+    position:absolute;
+    top:350px;
+    right:120px;
+    text-indent:-9999px;
+	left: 98px;
+}
+
+/* Changes for Bug 2019 
+#outfitOcassionPage #catName
+	{
+	font-family: Sans-Serif;
+	color:#818285;
+	font-size:26px;
+	padding-right:24px;
+	top:7px;
+	float:left;
+	margin:0 0 0 0 !important;
+	border:0 0 0 0 !important;
+	padding:0 0 0 0 !important;
+	}
+*/
+
+#outfitOcassionPage .selectedOutfit{
+    border:1px solid #695842 !important;
+}
+
+#outfitOcassionPage #shopThisOutfit #loadingIcon{
+    position:absolute;
+    top:250px;
+    right:150px;
+    display:block;
+    z-index:o;
+}
+
+#outfitOcassionPage #toolBar {
+	overflow:visible;
+	background:#FFFFFF !important; /* used to be #F4F3E5 */
+	margin-left: 7px; 
+	margin-right: 7px;
+	margin-top:0px;
+	margin-bottom:0px;
+	border:0px solid #F4F3E5 !important;
+	width: 947px; /* added for Bug 2019 */
+}
+
+#outfitOcassionPage #toolleft {
+	overflow:visible;
+	float:left;
+}
+
+#outfitOcassionPage #toolleft li#toolleft{
+	margin-top: 13px; /* used to be 7.5px. Edits for Bug 2019 */
+}
+
+#outfitOcassionPage #toolBar ul {
+border:0px;
+margin-bottom: 20px; /*used to be no margin-bottom */
+}
+/*End Outfit Secondary Landing Page [Mark]========================================*/
+
+
+/*Outfit Detail Page [Mark]========================================*/
+
+span.odCheckbox{
+    display:block;
+    font-weight:bold;
+}
+
+span.odCheckbox input{
+    vertical-align:bottom;
+}
+
+#outfitDetailPage #content h2{
+    margin-bottom:10px;
+}
+
+#outfitDetailPage .outfitScroller {
+    position:absolute;
+    padding-top: 20px;
+    top:5px;
+    right:15px;
+    width:240px;
+    height:900px;
+}
+
+#outfitDetailPage #outfitScroller ul li a {
+    font-size:10px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight:bold;
+    width:60px;
+}
+
+#outfitDetailPage #outfitScroller a:hover{
+    text-decoration:none !important;
+
+}
+
+#outfitDetailPage #outfitScroller ul li{
+    z-index:50000;
+}
+
+#outfitDetailPage #outfitScroller ul li img {
+    display:none;
+}
+#outfitDetailPage /*#pre.proviousOutfit */#previousOutfit {
+    position:absolute;
+    top:3px;
+    left:104px;
+/*  right:72px;*/
+    width:70px;
+
+}
+#outfitDetailPage #nextOutfit {
+    position:absolute;
+    top:3px;
+    right:7px;
+    width:50px;
+}
+#outfitDetailPage .itemDetails label{
+    display: block;
+}
+#outfitDetailPage .itemDetails ul, #outfitDetailPage .itemDetails .button {
+    display:none !important;
+}
+#outfitDetailPage #productListView li.productListItem {
+    padding-left:92px;
+
+}
+#outfitDetailPage .productListItem h3 {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:12px;
+    font-weight:bold;
+}
+#outfitDetailPage #productListView {
+    width:460px;
+}
+
+#outfitDetailPage #productListView .itemDetails {
+    border-left:none;
+    padding:0;
+    position:absolute;
+    width:50px;
+    top:45px;
+    left:390px;
+    font-size:11px !important;
+    text-align:right;
+		background: none !important; /* new style */   
+}
+
+#outfitDetailPage .normalPrice,
+#outfitDetailPage .salePrice,
+#outfitDetailPage .salePrice{
+    font-size:11px !important;
+}
+#outfitDetailPage #productListView .productSizes{
+    width:230px;
+}
+#outfitDetailPage #productListView .productQuanity {
+    position:absolute;
+    top:66px;
+    left:230px;
+}
+#outfitDetailPage #productListView .sizingChart {
+    left:173px;
+    top:8px;
+}
+
+
+#outfitDetailPage #productListView ul.itemList {
+	width:460px !important;
+	overflow:hidden;
+	border: 1px solid #CCCCCC;
+	padding:0 5px 0 5px;
+}
+
+
+#outfitDetailPage #productListView li.productListItem {
+    padding-right:90px;
+    _width: 280px !important;
+    _height: 350px;
+    margin-bottom:0px;
+    border:none;
+    border-bottom:1px solid #cccccc;
+    _border-bottom: none;
+}
+
+
+#outfitDetailPage #productListView li.productListItem .outfitDetailContent{
+
+
+}
+#outfitDetailPage #productListView .ratingsAndReviews {
+    right:9px;
+    top:15px;
+}
+#outfitDetailPage #productListView .pricing {
+    margin-bottom:0px;
+}
+#outfitDetailPage .itemDetails label {
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight:bold;
+}
+#outfitDetailPage .itemDetails label input {
+    vertical-align:bottom;
+    margin-left:5px;
+}
+
+#outfitDetailHeader, #outfitDetailFooter {
+	position:relative;
+	height:53px;
+	width:470px;
+	background: none repeat scroll 0 0 #F1F1F2;
+	overflow:hidden;
+	border: 1px solid #CCCCCC;
+	top: 10px; /* for Bug 1912 */
+}
+
+#outfitDetailFooter {
+	border: 1px solid #CCCCCC !important;	
+}
+
+#outfitDetailHeader .buttonStyle2, #outfitDetailFooter .buttonStyle2 {
+    position:absolute;
+    right:10px;
+    top:15px;
+}
+#outfitDetailHeader .buttonStyle1, #outfitDetailFooter .buttonStyle1 {
+    position:absolute;
+    right:120px;
+    top:21px; /* used to be 15px tb6pxs */
+}
+#outfitDetailHeader p, #outfitDetailFooter p {
+    position:absolute;
+    top:18px;
+    left:25px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight:bold;
+}
+
+
+#outfitDetailPage li.lastItem{
+    border-bottom:none !important;
+}
+
+#outfitDetailPage a.buttonStyle1 {
+	background: none !important;	
+}
+
+/*End Outfit Detail Page [Mark]========================================*/
+
+
+/*Search Results Page [Mark]========================================*/
+
+#searchPage #content{
+    padding-top:13px;
+}
+
+#searchPage #content h2{
+    padding:0 0 11px 0;
+}
+
+
+
+#searchPage #searchBar {
+    position:relative;
+    width:726px;
+    height:23px;
+    background:#f4f3e5;
+    border:1px solid #dcd6b9;
+    padding-top:7px;
+}
+
+#searchPage #searchBox {
+    border-top:1px solid #c3b88c;
+    border-right:1px solid #e7e7cc;
+    border-bottom:1px solid #e7e7cc;
+    border-left:1px solid #c3b88c;
+    padding:1px;
+    float:left;
+    margin: 0 5px;
+}
+
+#searchPage #searchBar label input {
+    vertical-align:bottom;
+}
+#searchPage #searchBar label {
+    padding-left:10px;
+    color:#000;
+}
+
+#searchPage #content h4{
+    margin-top:20px;
+}
+
+#searchPage #relatedInformation ul li{
+    clear:left;
+}
+
+#searchPage h4{
+    padding-bottom:4px;
+    color:#928b6f;
+    border-bottom:1px solid #e7e3d1;
+    /* margin-bottom:6px;
+    *margin-top:15px; */
+	/* added for item # 1789 on tracker */ display: none;
+}
+
+#searchPage #relatedInformation{
+    line-height:1.7;
+	/* added for item # 1789 on tracker */ display: none;
+}
+
+#searchPage #totalMatches{
+    margin-top:3px;
+    margin-bottom:15px;
+    font-style:italic;
+}
+
+#searchPage #nowShowing{
+    position:absolute;
+    top:93px;
+    right:120px;
+}
+
+#searchPage #pageSelector{
+    position:absolute;
+    top:82px;
+    right:15px;
+}
+
+#searchPage #pageSelector li{
+    float:left;
+    padding-right:4px;
+}
+
+#searchPage .onPage{
+    color:#993333;
+    text-decoration:underline;
+}
+
+#searchPage #searchTips p{
+    margin:10px 0 0 0;
+    width:310px;
+}
+
+#searchPage #searchTips img{
+    margin:15px 0 15px 0;
+}
+
+#searchPage #searchTips a{
+    color:#32728d;
+}
+
+#searchPage #searchTips #initialTips{
+    float:left;
+}
+
+#searchPage #searchTips #moreTips{
+    margin-left:40px;
+    float:left;
+}
+
+#searchPage #toolBarSearch {
+    width:395px;
+    height:20px;
+}
+
+#searchPage #toolBarSearch fieldset {
+    float:left;
+}
+
+#searchPage #toolBar li#sortBy {
+    text-align:left;
+    width:150px;
+	visibility: hidden; /* Lisa G request 11/01/13 */
+}
+
+#searchPage #toolBar #page ul{
+    border: none;
+    width:120px;
+    height: 19px;
+    padding: 0;
+}
+
+/*End Search Results Page [Mark]========================================*/
+
+
+/*Sale Page [Mark]========================================*/
+
+
+
+#salePage #outletHeader{
+    background:transparent url(/images/buttons/shopOutlet.png) no-repeat scroll 0 0;
+    display:block;
+    height:0;
+    overflow:hidden;
+    padding-top:27px;
+    width:155px;
+}
+
+#salePage #sizes{
+    width:155px;
+}
+
+#salePage #sizes li{
+    width:74px;
+}
+#outletPage #sizes li{
+    width:70px;
+
+}
+*html #outletPage #content /*for IE6*/ {
+    padding: 25px 0px 10px 5px;
+    margin: 0;
+}
+
+/*Catalog Landing Page [Mark]========================================*/
+#landingPage #landingPad{
+    position:relative;
+    background:url(/images/backgrounds/bg_landing.png) no-repeat;
+    width:739px;
+    height:544px;
+    margin:5px 5px 0 5px;
+}
+
+#landingPage #landingPad a{
+    display:block;
+    position:absolute;
+}
+
+#landingPage #landingPad #templateSlot{
+    display:block;
+    position:absolute;
+}
+
+#landingPage #content{
+    padding:0;
+}
+/*End Catalog Landing Page [Mark]========================================*/
+
+
+/* GLOBAL ERROR MESSAGE CSS */
+.errorInput {
+
+    /*background: url(/images/icons/icn_error.gif)  no-repeat;*/
+    padding: 0 10px 0 0 !important;
+    position: relative !important;
+    color:#BB0B3A;
+}
+
+
+.errorInput input,
+.errorInput select,
+.errorInput textarea{
+    border: 1px solid #bb0b3a !important;
+}
+.errorInput img.errorFlag {
+    position: absolute !important;
+    /*top: 15px;
+    right: 0;*/
+}
+.errorDescription {
+    color: #bb0b3a;
+    margin: 5px 0;
+    display: none;
+}
+.serverSideErrors, .serverSideErrors ul{
+    display: block !important;
+}
+.errorDescription p{
+    margin:0;
+    padding: 0;
+}
+.errorDescription ul{
+    margin-bottom: 25px;
+}
+.errorDescription ul li{
+    padding: 2px 0px;
+    list-style: disc;
+    margin-left: 15px;
+}
+.errorDescription .errorInput {
+    background: none;
+}
+/* END GLOBAL ERROR MESSAGE CSS */
+
+/* Catalog Landing Alternate */
+.landing.catalogAlternate#custService #sideBarHeader {
+    background:transparent url(/images/headers/sidebarHeader.png) no-repeat scroll 0 0;
+}
+
+.landing.catalogAlternate#custService #content {
+    height:375px;
+}
+
+.landing.catalogAlternate#custService #contactLinks ul li#module3 {
+    padding:0px;
+    width:228px;
+}
+
+.landing.catalogAlternate#custService #contactLinks.catalogAlternate {
+    margin-left:215px;
+    _margin-left:108px;
+}
+
+.landing.catalogAlternate#custService #content {
+    padding-top:8px;
+    margin-bottom:8px;
+}
+
+
+.landing.catalogAlternate#custService #content a {
+    display:block;
+    width:730px;
+    height:380px;
+}
+
+/* END Catalog Landing Alternate */
+
+
+
+
+
+/* Product Details Page Send to Friend*/
+.emailFriend {
+	background: #FFFFFF none repeat scroll 0 0;
+	border: 1px solid #cccccc;
+	display: none;
+	height: 275px;
+	left: 50%;
+	margin: -135px 0 0 -160px;
+	_margin: -225px 0 0 -250px;
+	padding: 10px 0 0 20px;
+
+	position: fixed;
+	_position: absolute;
+	top: 50%;
+	width: 400px;
+	z-index: 9000;
+}
+
+
+.emailFriend .closeButton{
+    display:block;
+    position:absolute;
+    top:4px;
+    right:5px;
+    width:58px;
+    height:14px;
+    cursor:pointer;
+    text-indent:-999999px;
+    background: url(/images/icons/icon-close.gif) 0 0 no-repeat;
+}
+
+.emailFriend form{
+    clear: left;
+}
+
+.emailFriend fieldset{
+    padding:0 0 0 0px;
+    float:left;
+}
+
+.emailFriend label{
+
+    display:block;
+    width:180px;
+    padding:0 0px 10px 0px;
+    float:left;
+}
+
+
+.emailFriend label input{
+	font-size: 11px;
+	margin: 5px 0 0;
+	padding: 2px 5px;
+	width: 150px;
+	margin-right: 10px;
+	float: left;
+	border: 1px solid #cccccc;
+}
+
+
+.emailFriend .button{
+    position:absolute;
+    top:190px;
+    left:103px;
+    margin-right:10px;
+}
+
+.emailFriendButton{
+    color:#34718d;
+    cursor:pointer;
+}
+
+.emailFriend #emailMessage {
+    height:70px;
+    float:left;
+    border-color:#C3B88B #E7E7CB #E7E7CB #C3B88B;
+    border-style:solid;
+    border-width:0px;
+    width:360px;
+    margin-bottom:10px;
+    padding: 0;
+}
+
+.emailFriend #emailMessageLabel{
+
+}
+
+.emailFriend #emailMessage input {
+    display:block;
+    width:300px;
+    margin: 0 10px !important;
+}
+
+.emailFriend .emailButtons {
+    float:left;
+    clear:left;
+    width:180px;
+    _width: 230px;
+    padding-left:195px;
+    _padding-left: 135px;
+
+}
+
+.emailFriend .buttonStyle2 {
+    margin-right:10px;
+}
+
+input#toemail, input#fromemail {
+    margin-top:15px !important;
+}
+
+.emailFriend a {
+    width:350px;
+    word-wrap:break-word;
+}
+
+#emailMessage input {
+    display:block;
+}
+
+#emailMessage input#line1 {
+    margin-top:10px;
+}
+/* END Product Details Page Send to Friend*/
+
+
+/* Location find in store */
+.location #productAvailability .sizeAndAvailability{
+    width:380px;
+    float:left;
+    padding:0 0 0 20px;
+    /*border-right:1px solid #ccc;*/
+    min-height:200px;
+}
+
+.location img.locationImage {
+    float:left;
+}
+
+.location #search {
+    float:left;
+
+    clear:left;
+}
+
+.location #productAvailability li.productActions, .location #sendToFriendButtonPDP, .location .findPopup,  .location .wishlistTrigger, .location .addButton, .location .addToWishList.last, .location .findInStore {
+    display:none;
+}
+
+.location #productAvailability li.productActions .itemPrice, .location .itemDetails {
+    display:block;
+    background:transparent;
+}
+
+.location #productAvailability li.productActions .itemPrice {
+    position:relative;
+    top:50px;
+}
+
+.location #search {
+    margin-top:30px ;
+}
+
+#cs-recslot {text-align:left; padding:0; font:12px Arial, sans-serif;}
+#cs-recslot .cs-header-text {font: bold 17px Arial, sans-serif; color:#000;}
+#cs-recslot .cs-rec {float:left; width:125px; text-align:center; padding:3px; margin:0 5px 0 0;}
+#cs-recslot img {width:100px; padding:3px; border:0;}
+#cs-recslot a {color:#000; text-decoration:none; margin:5px;}
+#cs-recslot a:hover {color:#999;}
+#cs-recslot a span {display:block; clear:both;}
+#cs-recslot .cs-price {margin:0; padding:0; padding-top:3px; font-weight:bold;}
+#cs-recslot a:hover .cs-price {color: #000;}
+
+/* END Location find in store */
+/* Custom Styles for Products on the outfit detail pages */
+
+#recommended {
+    padding-bottom: 20px; /* used to be 10px. Changed for Bug 1913 */
+}
+#recommended .tab ul{
+    padding: 15px 0px !important;
+}
+#recommended .cs-rec{
+    display: block;
+    float: left;
+    width : 121px;
+    height: 200px;
+    padding: 0 15px !important;
+    overflow: none;
+}
+#recommended .cs-rec a{
+    display: block;
+    width : 121px;
+    height: 180px;
+}
+#recommended .cs-rec a img{
+    display: block;
+    width : 121px;
+    height: 160px;
+}
+#recommended .cs-rec a span{
+    display: block;
+}
+
+.modalContent .closeButton{
+            display:block;
+            position:absolute;
+            top:4px;
+            right:5px;
+            width:58px;
+            height:14px;
+            cursor:pointer;
+            text-indent:-999999px;
+            background: url(/images/icons/icon-close.gif) 0 0 no-repeat;
+}
+
+DIV.itemOverlay
+{
+	position:absolute;
+	left:0;
+	top:0;
+	background-color:black;
+	width:315px;
+	height:420px;
+	display:none;
+	z-index:8999;
+
+
+	
+}
+
+/* drop down menu styles oufit-looks page*/
+
+div#ddlcontainer
+{
+	overflow:visible;
+	float:left;
+	margin-left:10px;
+	padding-top:-3px;
+	height:auto;
+	height: 24px; margin-top:-1px
+}	
+
+
+
+#ddl
+{	margin: 0;
+	padding: 0;
+	position:relative;
+	z-index:99;
+	}
+
+	ul#ddl 
+	{
+		/*drop down border color */
+		border-left:1px solid #D1D3CE  !important;
+		border-right:1px solid #D1D3CE  !important;
+		border-top: 1px solid #D1D3CE  !important;
+		border-bottom: 1px solid #D1D3CE  !important;
+		width:183px !important;
+		overflow:visible !important;
+		height:20px;padding-top:3px;
+		background-color: #FFFFFF; /* fix for Bug 2019 */
+	}
+
+	html>body ul#ddl  /*ie hack- ie will ignore this, and this will superceed the width specified prev on other browsers*/
+	{
+		/*drop down width for non-ie browsers */
+		width:auto !important;
+		height:20px;
+		padding-top:3px;margin-top:0px;
+
+	}
+	*+html ul#ddl
+	{
+		height:20px !important;
+		padding-top:2px;margin-top:0px;
+	}
+	
+	#ddl li
+	{	float: left;
+		list-style: none;
+		position:relative;
+		z-index:99;
+		font-family:Arial,Helvetica,sans-serif;
+		text-transform:uppercase;
+		font-w
+		}
+
+	#ddl li a
+	{	
+		text-decoration: none !important;
+		width: 130px !important;
+		color: #0000 !important;
+
+		white-space: nowrap !important;
+		padding-left:5px !important;
+		padding-top: 3px !important;
+		font-size:10px !important;
+		cursor: pointer !important;
+		height:100% !important;
+		margin-right:1px;
+		background:#F4F3E5 url(/images/buttons/ddlarrow.png) no-repeat scroll right center;
+					filter:alpha(opacity=90);
+			-moz-opacity:0.9;
+			-khtml-opacity: 0.9;
+			opacity: 0.9;
+		background-size:auto;
+		background-position:98% 45%;
+
+		}
+	*+html #ddl li a /*ie settings */ 
+	{
+    font-size:10px !important;                                 
+	padding-top:4px !important;
+	background-position:98% 40%;
+
+	}
+
+	#ddl li a#hdr
+	{
+		margin-top:1.5px;
+	}
+	#ddl li div#dropdown
+		{
+			visibility: hidden;
+			/*drop down border color */
+			border-left:1px solid #D1D3CE  !important;
+			border-bottom: 1px solid #D1D3CE  !important;
+			border-right:1px solid #D1D3CE  !important;
+
+			
+		}
+	#ddl li a:hover
+	{	background: #f7f4eb
+		text-decoration:none;
+	}
+		
+		#ddl li ul
+		{	margin: 0;
+			padding: 0;
+			border:0px !important;
+			position:absolute;
+			overflow:visible;
+			text-decoration:none;
+			width:inherit !important;
+			height:8px !important;
+			left:-1px;
+			}
+		
+			#ddl li ul li
+			{	float: none;
+				display: inline;
+				z-index: 99;
+				text-decoration:none;
+				height:100%;
+				}
+			
+			#ddl li ul li a
+			{	
+				background: #FFFFFF; /* used to be #F4F3E5 */
+				color: #000
+				text-decoration:none;
+				height:100% !important;
+				}
+			
+			#ddl li ul li a:hover
+			{	
+			background: #DFC8B5;
+			font-weight:900 !important;
+			color: #000 !important;
+			font-family: 'Arial', Gadget, sans-serif !important;
+			text-decoration:none !important;
+			cursor: pointer !important;
+			}
+
+                           #outfitDetailPage #breadcrumbs{
+                               z-index:1;
+							   top: 2px; /* for Bug 1912 */
+                           }
+
+
+/* edits for bug 2019 */
+.outfitGallery #contentWrapper{
+top: 35px;
+}
+
+#toolBar UL#toolcenter {
+
+display: none;
+}
+
+#outfitOcassionPage #catName{
+	font-family: Sans-Serif;
+	color:#333333; /* used to be #818285 */
+	font-size:17px; /* used to be 26px */
+	font-weight: bold;
+	padding-right:24px;
+	/* top:7px; */
+	float:left;
+	/* margin-top:0 0 0 0 !important; */
+	margin-top: 3px;
+	margin-left: 20px;
+	border:0 0 0 0 !important;
+	padding:0 0 0 0 !important;
+	}
+		
+
+/* end edits for bug 2019 */
+
+/* new for Bug 1913 */
+
+#recommended #clothes{
+margin-top: 5px;
+}
+
+
+
+/* end Bug 1913 */
+
+
+/*  new for Bug 2479 */
+.prodLongDesc ul {
+    list-style: disc outside none;
+    margin-left: 12px;
+}
+
+/*  end Bug 2479 */
+
+/* Bug 2907 */
+
+#heroContainer img {
+padding: 0 !important;
+}
+
+/* end Bug 2907 */
+
+
+
+
+/* ********************************************* */
+/* Updates for R13.1 build going live on 5/23/13 */
+
+#toolBar #galleryBtn {
+padding-right: 5px;	
+}
+
+#toolBar #listBtn {
+padding-right: 3px;	
+}
+
+#toolBar li a.liststyle, #toolBar li a.gridInactivestyle {
+line-height:15px; 
+color:#666666;
+}
+
+#toolBar li a.gridstyle,  #toolBar li a.listActivestyle {
+line-height:15px; 
+color:#CCCCCC;
+}
+
+#toolBar li a#gridActiveIcon, #toolBar li a.gridstyle, #toolBar li#listBtnActive a, #toolBar li a.listActivestyle {
+cursor:default;
+}
+
+#toolBar li a.gridstyle:hover, #toolBar li a.listActivestyle:hover {
+text-decoration: none !important;
+}
+
+#toolBar #galleryBtn{
+padding-right: 5px;	
+}
+
+#toolBar #listBtn{
+padding-right: 3px;
+margin-top: -5px!important; /* R13.1 Bug#3284 tb5sxo 052413 */
+}
+
+/*  R13.2 - tb5sxo - 073113 */
+body#listView #toolBar #listBtn { margin-top: 5px!important; }
+
+
+#toolBar #listBtnActive{
+	width:15px;
+	/* background: url(/images/icons/listViewActive.gif) 0 6px no-repeat;removed by alphonse */
+	/* padding-left: 3px; */
+	/* padding: 0px 5px; */  /* Updated for R13.1 build going live on 5/23/13 */
+	padding: 5px 5px 0px 5px;  /* Fix Bug #3444 - tb5sxo */
+}
+
+.moreColorsViewBtn a {
+    background: url("/images/backgrounds/morecolor_dgray.png") no-repeat scroll 0 0 transparent;
+    cursor: pointer;
+    height: 16px;
+		/* left: 0px; */ /* R13.1 - tb5sxo - #2 word doc from collebra/selene */
+    position: absolute;
+    text-indent: -99999px;
+    top: 297px;
+    width: 88px;
+    /* z-index: 9000; */
+}
+
+#recomendations {
+    /* border: 1px solid #E7E7CC; */ /* updates at bottom for changes for site background color to white  */
+    /*height: 235px; Commented by Lokeswar to remove height to make it auto adjustable height */
+	float: left;
+	margin-top: 25px;
+	margin-bottom: 20px;
+}
+
+#recomendations h3 {
+    font-family: "Times New Roman",Times,serif;
+    font-size: 17px;
+    padding: 4px 3px 5px;
+}
+
+.reg-pdp-item {
+    display: block;
+    float: left;
+    height: 180px;
+    padding: 0 15px;
+    width: 121px;
+}
+
+.reg-pdp-item img{
+    height: 160px;
+    width: 121px;
+}
+
+#quickViewContainer .modalContent{
+display: block;
+}
+
+#bottom_searchresults {
+    left: 535px; /* tb5sxo changed from 565px to 535px */
+    position: relative;
+}
+
+#bottom_pageSelector {
+    left: 675px;
+    position: relative;
+    top: -23px;
+}
+
+/* End updates for R13.1 build going live on 5/23/13 */
+/* ********************************************* */
+
+
+/* 06xx13 updates for site background color to white */
+
+.itemDetails {
+	background-color: #F1F1F2!important;
+	/* border-left: 1px solid #CCCCCC; */ /* removed for quickview bug - tb5sxo */
+	/* border-bottom: 1px solid #CCCCCC; */ /* removed for quickview bug - tb5sxo */
+	/* height: 205px !important; */ /* removed for quickview bug - tb5sxo */
+}
+
+#recomendations {
+    border: medium none; 
+}
+
+#galleryModule{
+    background: none repeat scroll 0 0 transparent;
+}
+
+.sizeAndAvailability .sizeType li.active, .productSizes ul li.active{
+	background-color: #808184; /* changed from #f1f1f2 - tb5sxo */
+	color: #ffffff!important; /* was #666666 - adding important for style override - tb5sxo */
+}
+
+.sizeAndAvailability .sizeType li, .productSizes ul li{
+	border: 1px solid #CCCCCC;	
+}
+
+.sizeAndAvailability strong{
+	color: #535353;	
+}
+
+#galleryModule h4{
+	padding: 10px 1px;	
+}
+
+#regpdplist{
+	position: relative;
+	right: 9px;	
+}
+
+#galleryAlts{
+	position: relative;
+	right: 4px;	
+}
+
+/* end 06xx13 updates for site background color to white */
+
+/* Updates for Bug 3175 Find A Store distance  */
+/*
+#findSelect table td strong {
+    display: none;
+}
+*/
+/* End updates for Bug 3175  */
+
+/* Testing Find In Store verbiage changes through background images etc */ 
+
+#findSelect form#StoreListDroplet p { 
+background-image: url(/images/FindInStore/step1.jpg); 
+color: #FFFFFF; 
+height: 28px; 
+text-indent: -9999px; 
+} 
+
+#findPersonal p:nth-child(1) { 
+background-image: url(/images/FindInStore/step2.jpg); 
+color: #FFFFFF; 
+height: 35px; 
+text-indent: -9999px; 
+} 
+
+#findConfirmFinish p:nth-child(1) { 
+background-image: url(/images/FindInStore/step3.jpg); 
+color: #FFFFFF; 
+height: 63px; 
+text-indent: -9999px; 
+} 
+#findConfirmFinish p:nth-child(2) { 
+display: none; 
+} 
+
+#findContainer .itemDetails .normalPrice, #findContainer .itemDetails .salePrice { 
+right: -35px; 
+} 
+
+/***************************************************/
+/* JF 05/01/2014 add ins as part of Endeca upgrade*/
+/**************************************************/
+
+.category-product-img {position:relative;}
+.swatches{
+	position:absolute;
+	max-height:100px;
+	overflow-y:hidden;
+	overflow-x:hidden;
+	text-align:right;
+	bottom:-19px; /* changed from 22px for color swatch und img 9/2014 */
+	left:-8px;    /* added for color swatch 9/2014*/
+	right:6px;
+	max-width:206px;
+	height:auto;
+	padding:0px 6px;
+	background-color: rgba(255, 255, 255, 0.6);
+}
+.category-product-img .swatches .swatch-container{
+}
+.category-product-img .swatches a.button{
+	padding:10px;
+	border:solid #ccc 1px;
+	margin:3px;
+	line-height:1em;
+	background-position: -2px -2px;
+}
+.category-product-img .swatches a.button.active{padding:9px;border:solid #000000 2px;margin:3px;line-height:1em;}
+.category-product-img .swatches a.button.active[data-color-group=Black]{border-color: #999;}
+
+.category-product-img .swatches a.hide{display:none}
+.category-product-img .swatches .more-colors{
+	text-transform:uppercase;
+	font-size:13px;
+	font-weight:bold;
+	color:#666;
+	line-height: 28px;
+}
+.category-product-img .swatches .swatch-container a.more-colors{margin-left:7px}
+/*.category-product-img .swatches .swatch-container a:first-child{margin-left:7px}
+.category-product-img .swatches .swatch-container a:last-child{margin-right:7px}
+.category-product-img .swatches .swatch-container a:first-child.active{margin-left:5px}
+.category-product-img .swatches .swatch-container a:last-child.active{margin-right:5px}*/
+li.category-product{border:solid #ccc 1px;border-right:none;margin-bottom:0;padding:0}li.category-product:last-child{border-right:solid #ccc 1px!important}
+.hidden {display:none!important;}
+.ratingStars{color: #8b0000!important;overflow:hidden;display:inline-block}
+.ratingLine{vertical-align:top;font-size:11px!important}
+.ratingContainer{
+	width: auto/*44px*/;
+	width:\0;
+	display:inline-block
+	}
+
+li.navColorSwatch{
+	display:inline-block;
+    position: relative;
+    float:left;
+    height: 21px;
+    width: 22px;
+	vertical-align:top;
+	margin:2px;
+	}
+li.navColorSwatch a{font-size:10px!important}
+.navColorSwatchList{display:inline-block;width:75%;}
+
+li.navSizeSwatch{
+	display:inline-block;
+    position: relative;
+    float:left;
+    height: 21px;
+    width: 22px;
+	vertical-align:top;
+	margin:2px;
+	}
+li.navSizeSwatch a{font-size:10px!important}
+.navSizeSwatchList{display:inline-block;width:65%;}
+
+td.navSizeSwatch{
+    height: 30px;
+    width: 30px;
+	vertical-align:middle;
+	text-align:center;
+	border:solid #ccc 1px;
+	padding:3px;
+	}
+
+td.navSizeSwatch.active{
+    height: 30px;
+    width: 30px;
+	vertical-align:middle;
+	text-align:center;
+	border:solid #000000 2px;
+	padding:2px;
+}
+	
+/*td.navSizeSwatch a{text-decoration: none !important;display:inline-block;width:100%;height:100%}*/
+td.navSizeSwatch a{text-decoration: none !important; padding-top:10px; padding-bottom:12px; padding-left:8px;padding-right:8px;}
+
+table.navSizeSwatchTable{
+	border-collapse: separate; 
+	border-spacing: 5px; 
+}
+
+.productTile:hover  .quickViewBtn{
+	display: block;
+}
+.quickViewBtn{
+	display:none;
+}
+
+
+.facet_5_star:  {
+
+}
+.facet_4_star:  {
+
+}
+.facet_3_star:  {
+
+}
+.facet_2_star:  {
+
+}
+.facet_1_star:  {
+
+}
+
+.prodLongDesc strong {
+    font-weight: bold;
+}
+
+.saleColors strong {
+    color: red;
+}

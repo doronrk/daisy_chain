@@ -1,0 +1,283 @@
+
+/* ********************************************************************** */
+/*     GENERAL      */
+/* ********************************************************************** */
+body { color: #0F0F0F !important; background-color: #FFF; overflow-y: scroll; } /* Default font color for entire site */
+
+
+/* ********************************************************************** */
+/*     BACKGROUND     */
+/* ********************************************************************** */
+.main-container { background-color: transparent !important; }
+.header-container  { background-color: transparent !important; }
+.white-container { background-color: #FFF; background-image: none; margin: 0px; padding: 0px; width: 1010px;}  /* Middle content area with faded gray edges */
+.wrapper, .light .wrapper { background: #0F0F0F url(images/af-background.png) repeat; }
+
+
+/* ********************************************************************** */
+/*     BODY      */
+/* ********************************************************************** */
+.white-container { background-image: none; }
+.main-shadow { background-image: none; width: 1010px; }
+
+
+/* ********************************************************************** */
+/*     HEADER AREA      */
+/* ********************************************************************** */
+/* Header Links  */
+header .links {  }
+header .links li a { font-size:0.95em; }
+header .links li a:hover { text-decoration: underline; }
+
+/* Message Bar - celebrity_content_banner  */
+.additional_links { height: auto; line-height: normal; }
+.additional_links a { padding: 0; }
+
+
+
+/* Shopping Cart Icons */	
+header .cart-top .summary { background-image: url(images/icon_cart.png); background-position: right 0px; } /* Shopping cart icon in header area */
+.products-grid .btn-cart { background-image: url(images/icon_cart-category.png); } /* Add to Cart button on category pages – grid view*/
+.products-list .btn-cart { background-image: url(images/icon_cart-category.png); } /* Add to Cart button on category pages – list view*/
+.product-view button.btn-cart span span { background-image: url(images/icon_cart-itemdetails.png); } /* Add to Cart button on item detail pages */
+.slider-container .jcarousel-list .btn-cart { background-image: url(images/icon_cart-category.png); } /* Add to Cart button on New Slider on Home Page */
+
+
+/* Social Media Icons */	
+.copyright .social-icons { text-align: center; }
+
+
+
+
+/* ********************************************************************** */
+/*     NAVIGATION BAR      */
+/* ********************************************************************** */
+.menu-container { background-color: transparent; border: none;  }
+
+#nav div.sub-wrapper { margin: 40px 0px 0px 0px; }
+
+/* Top-Level Nav */
+#nav > li > a { border: 0px; padding: 0px 20px; margin: 0; font-size:1.8em; line-height:40px; font-weight:bold; text-transform: uppercase; color: #FFF !important;  }
+#nav > li > a:hover, 
+#nav > li.active > a:hover { color: #908fb4 !important; border: 0px; padding: 0px 20px; text-decoration: none; background-color: transparent !important; margin: 0; }
+#nav > li.active > a { color: #908fb4 !important; border: 0px; background-color: transparent !important; padding: 0px 20px; margin: 0; }
+
+/* Dropdowns */
+#nav ul li a:hover { background-color: #908fb4; }
+li.menu-category-description { border-left: 1px solid #242424; width: 530px; }
+.menu-category-description { min-height: 200px; }
+.menu-category-description img { width: 530px; height: 200px; border: 1px solid #797979; }
+#nav ul li,
+#nav > li > div.sub-wrapper > ul > li {  width: 180px; }
+
+/* Search Box  */
+#search { color: #ededed; }
+#search_mini_form { margin: 0px 0; }
+#search_mini_form .form-search { padding: 3px 10px; background-color: #444444; border: 1px solid #797979;} 
+#search_mini_form .form-search button { top: 0px; right: 0; height: 27px; }
+#search_mini_form .form-search button:hover {  }
+   
+
+
+/* ********************************************************************** */
+/*     HOME PAGE      */
+/* ********************************************************************** */
+.cms-index-index .main { background-color: transparent; width: 1010px; padding: 0; margin: 0; }
+.cms-index-index .footer-container { padding: 100px 0px 50px; margin: -100px 0px 0px; }
+
+/* Slideshow on home page */
+#slideshow { width: 1010px !important; height: 600px !important; margin-bottom: 0px; -moz-box-sizing: content-box; box-sizing: content-box; }   /* Home page slideshow */ 	
+.slideshow { width: 1010px !important; height: 600px !important; }
+.slideshow ul li { width: 1010px !important; height: 600px !important; }
+.slideshow ul li strong { top: 500px; background-color: rgba(0,0,0,0.5); width: 970px; text-align: center; color: #FFF !important; text-shadow: #000 0.1em 0.1em 0.2em; } /* Slideshow title */ 
+.slide-nav { top: 300px; margin-left: 0px;}
+#next { height: 50px; width: 20px; background-image: url(images/arrow-next.png); margin-left: 970px; background-color: transparent !important;}
+#prev { height: 50px; width: 20px; background-image: url(images/arrow-prev.png); margin-left: 0px; background-color: transparent !important;}
+#next:hover { background-color: transparent !important; background-image: url(images/arrow-next-on.png);  }
+#prev:hover { background-color: transparent !important; background-image: url(images/arrow-prev-on.png);  }
+#slide-timeline { top: 0px; } /* Slideshow timeline scrolling bar */ 
+	
+	
+
+/* ********************************************************************** */
+/*     MAIN CONTENT AREA      */
+/* ********************************************************************** */
+
+
+
+/* ********************************************************************** */
+/*     LEFT NAVIGATION AREA      */
+/* ********************************************************************** */
+
+/* Specify maximum height and scrollbar properties of the filter boxes in the left navigation */
+DL#narrow-by-list { 
+	background-color: transparent;
+}
+DL#narrow-by-list ol { 
+	background-color: transparent;
+	max-height: 150px;
+	overflow: auto;
+	border: 1px solid #ededed;
+	border-top: 0px;
+}
+DL#narrow-by-list ol li { 
+	background-color: transparent;
+}
+.block-layered-nav dt {
+	border: 1px solid #ededed;
+	background-color: #f7f6f6;
+	padding: 3px;
+	margin: 0px;
+	text-align: center;
+	font-size: 11px;
+text-transform: uppercase;
+}
+.block .block-content li {
+	border-color: #FFF;
+}
+.block .block-content .actions {
+	margin-bottom: 10px;
+}
+
+
+
+/* ********************************************************************** */
+/*     CATGORY PAGE     */
+/* ********************************************************************** */
+.availability.out-of-stock span { color: #c169aa; }
+.products-grid .product-data { padding-top:10px; }
+
+.catalog-category-view .category-description { margin: 0px 0px 20px; }
+
+
+
+/* ********************************************************************** */
+/*     ITEM DETAIL PAGES      */
+/* ********************************************************************** */
+.product-tabs-content .data-table td { padding-top: 18px; } /* Align text on Additional Info tab */
+.product-view .product-shop .product-options-bottom .price-box { display: none; } /* Remove second price display on gridded items on item detail pages */
+
+/* Item Details */
+.add-to-box { margin-top: 10px; } /*  Add to Wish List, Add to Compare, Email Friend links */
+.product-view .add-to-links li { display: inline; padding-right: 10px; } /*  Add to Wish List, Add to Compare, Email Friend links */
+.product-view h1 { margin-bottom: 10px; } /*  Item name at top of page */
+.product-view .product-shop .product-options-bottom .price-box { display: none; } /* Remove second price display on gridded items (WIT# 76466) */
+
+/* New/Sale Items */	
+.product-image .new-label, 
+.product-image .sale-label {background-image:url(images/new_sale.png); } 
+
+/*     PayPal logo under Buy button      */
+.add-to-cart .paypal-logo .paypal-or { margin: 5px; }
+.product-view .add-to-cart .paypal-logo {  padding-top: 10px; text-align: center; }
+
+
+/* Tabbed Item Details */	
+.product-tabs li { margin-right: 4px; border-color: #444444; background-color: #444444 !important; }
+.product-tabs a {	background-color: #908fb4; color: #FFF; }
+.product-tabs a:hover {	background-color: #0F0F0F; color: #FFF; }
+.product-tabs-content { background-color: #FFF; border-color: #0F0F0F; }
+.product-tabs li.active { border-bottom-color: #FFF; }
+.product-tabs-content .data-table td { padding-top: 18px; } /* Align text on Additional Info tab */
+.product-tabs li.active a { background-color: #FFF; color: #0F0F0F;  }
+.product-tabs li.active a:hover { background-color: #FFF; color: #908fb4;  }
+
+
+/* ********************************************************************** */
+/*     CART PAGE     */
+/* ********************************************************************** */
+
+
+
+
+/* ********************************************************************** */
+/*     FOOTER AREA      */
+/* ********************************************************************** */
+
+/* Footer Links */	
+footer { text-align: center; }
+footer ul.links { float: none; margin: 10px auto 20px; font-size: 13px; }
+footer a:hover { color: #0F0F0F; text-decoration: none; }
+footer a { font-weight: bold; }
+.simple footer .links li:first-child { padding-left: 0px; }
+
+.footer-brands { background-color: transparent; text-align: center; border: none;  }
+
+/* Newsletter */
+footer .footer-subscribe .subscribe-input { background-color: #444444; }
+
+/* Copyright */	
+footer address { margin-left: 0px; margin-top:10px; font-size: 10px; clear: both; text-align: center; border-top: 1px solid #8988ab; padding-top:5px; }
+
+/* Social Media Icons */
+.copyright .social-icons .social-icon {
+    display: inline-block;
+    float: none;
+    margin: 0px 5px 30px 0px;
+    background-color: rgba(0, 0, 0, 0.05) !important;
+    border-radius: 3px;
+}
+.social-icons a:hover {
+    background-color: #CCC;
+    background-position: 0px -40px;
+    opacity: 1;
+}
+.social-icon a:hover {
+    background-color: #444;
+    background-position: 0px -40px !important;
+}
+.social-icon a {
+    transition: all 0.2s ease 0s;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    text-indent: -9999px;
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+}
+.social-icon {
+    display: inline-block;
+    margin: 0px 5px 5px 0px;
+    background-color: #8988ab !important;
+    border-radius: 2px;
+    overflow: hidden;
+    width: 40px;
+    height: 40px;
+}
+.social-facebook a { background: url('images/facebook.png') no-repeat scroll 0px 0px transparent; }
+.social-facebook a:hover { background-color: #3B5998; }
+.social-googleplus a { background: url('images/googleplus.png') no-repeat scroll 0px 0px transparent; }
+.social-googleplus a:hover { background-color: #D94A39; }
+.social-twitter a { background: url('images/twitter.png') no-repeat scroll 0px 0px transparent; }
+.social-twitter a:hover { background-color: #48C4D2; }
+.social-instagram a { background: url('images/instagram.png') no-repeat scroll 0px 0px transparent; }
+.social-instagram a:hover { background-color: #517FA4; }
+
+
+
+
+
+
+
+/* ********************************************************************** */
+/*     MISCELLANEOUS      */
+/* ********************************************************************** */
+.special-price { color: #39af6b; } /* Color of sale price */
+
+
+.page-title { text-align: center; }
+.page-title h1 { background-color: #908FB4; box-shadow: 0px 0px 0px 3px #908FB4; color: #0F0F0F; border: 4px solid #0F0F0F;font-size: 70px; font-weight: normal; text-align: center; display: inline-block; padding: 10px; margin-bottom: 20px; line-height: 1; }
+/* h1 { color: #0F0F0F; border: 4px solid #0F0F0F;font-size: 80px; display: inline-block; padding: 10px; margin-bottom: 20px;
+line-height: 1; }*/
+
+
+
+
+/*     Fix Short Description Field Line Height       */
+.product-view .short-description { line-height: 1em; }
+
+/*     Customer Service Page       */
+.cms-page-view .col-main ul li { list-style: none inside none; }
+
+
+.fieldset .legend { font-weight: bold; font-family: Arial, sans-serif; }

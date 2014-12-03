@@ -1,0 +1,886 @@
+/*
+Copyright (c) 2008, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.net/yui/license.txt
+version: 2.5.2
+*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym {border:0;font-variant:normal;}sup {vertical-align:text-top;}sub {vertical-align:text-bottom;}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}input,textarea,select{*font-size:100%;}legend{color:#000;}body {font:13px/1.231 Arial, Helvetica, sans-serif;*font-size:small;*font:x-small;}table {font-size:inherit;font:100%;}pre,code,kbd,samp,tt{font-family:monospace;*font-size:108%;line-height:100%;}
+body{text-align:center;}#ft{clear:both;}#doc,#doc2,#doc3,#doc4,.yui-t1,.yui-t2,.yui-t3,.yui-t4,.yui-t5,.yui-t6,.yui-t7{margin:auto;text-align:left;width:57.69em;*width:56.25em;min-width:750px;}#doc2{width:73.8462em;*width:72em;}#doc3{margin:auto 10px;width:auto;}#doc4{width:74.923em;*width:73.05em;}.yui-b{position:relative;}.yui-b{_position:static;}#yui-main .yui-b{position:static;}#yui-main{width:100%;}.yui-t1 #yui-main,.yui-t2 #yui-main,.yui-t3 #yui-main{float:right;margin-left:-25em;}.yui-t4 #yui-main,.yui-t5 #yui-main,.yui-t6 #yui-main{float:left;margin-right:-25em;}.yui-t1 .yui-b{float:left;width:12.30769em;*width:12.00em;}.yui-t1 #yui-main .yui-b{margin-left:13.30769em;*margin-left:13.05em;}.yui-t2 .yui-b{float:left;width:13.8461em;*width:13.50em;}.yui-t2 #yui-main .yui-b{margin-left:14.8461em;*margin-left:14.55em;}.yui-t3 .yui-b{float:left;width:23.0769em;*width:22.50em;}.yui-t3 #yui-main .yui-b{margin-left:24.0769em;*margin-left:23.62em;}.yui-t4 .yui-b{float:right;width:13.8456em;*width:13.50em;}.yui-t4 #yui-main .yui-b{margin-right:14.8456em;*margin-right:14.55em;}.yui-t5 .yui-b{float:right;width:18.4615em;*width:18.00em;}.yui-t5 #yui-main .yui-b{margin-right:19.4615em;*margin-right:19.125em;}.yui-t6 .yui-b{float:right;width:23.0769em;*width:22.50em;}.yui-t6 #yui-main .yui-b{margin-right:24.0769em;*margin-right:23.62em;}.yui-t7 #yui-main .yui-b{display:block;margin:0 0 1em 0;}#yui-main .yui-b{float:none;width:auto;}.yui-gb .yui-u,.yui-g .yui-gb .yui-u,.yui-gb .yui-g,.yui-gb .yui-gb,.yui-gb .yui-gc,.yui-gb .yui-gd,.yui-gb .yui-ge,.yui-gb .yui-gf,.yui-gc .yui-u,.yui-gc .yui-g,.yui-gd .yui-u{float:left;}.yui-g .yui-u,.yui-g .yui-g,.yui-g .yui-gb,.yui-g .yui-gc,.yui-g .yui-gd,.yui-g .yui-ge,.yui-g .yui-gf,.yui-gc .yui-u,.yui-gd .yui-g,.yui-g .yui-gc .yui-u,.yui-ge .yui-u,.yui-ge .yui-g,.yui-gf .yui-g,.yui-gf .yui-u{float:right;}.yui-g div.first,.yui-gb div.first,.yui-gc div.first,.yui-gd div.first,.yui-ge div.first,.yui-gf div.first,.yui-g .yui-gc div.first,.yui-g .yui-ge div.first,.yui-gc div.first div.first{float:left;}.yui-g .yui-u,.yui-g .yui-g,.yui-g .yui-gb,.yui-g .yui-gc,.yui-g .yui-gd,.yui-g .yui-ge,.yui-g .yui-gf{width:49.1%;}.yui-gb .yui-u,.yui-g .yui-gb .yui-u,.yui-gb .yui-g,.yui-gb .yui-gb,.yui-gb .yui-gc,.yui-gb .yui-gd,.yui-gb .yui-ge,.yui-gb .yui-gf,.yui-gc .yui-u,.yui-gc .yui-g,.yui-gd .yui-u{width:32%;margin-left:1.99%;}.yui-gb .yui-u{*margin-left:1.9%;*width:31.9%;}.yui-gc div.first,.yui-gd .yui-u{width:66%;}.yui-gd div.first{width:32%;}.yui-ge div.first,.yui-gf .yui-u{width:74.2%;}.yui-ge .yui-u,.yui-gf div.first{width:24%;}.yui-g .yui-gb div.first,.yui-gb div.first,.yui-gc div.first,.yui-gd div.first{margin-left:0;}.yui-g .yui-g .yui-u,.yui-gb .yui-g .yui-u,.yui-gc .yui-g .yui-u,.yui-gd .yui-g .yui-u,.yui-ge .yui-g .yui-u,.yui-gf .yui-g .yui-u{width:49%;*width:48.1%;*margin-left:0;}.yui-g .yui-gb div.first,.yui-gb .yui-gb div.first{*margin-right:0;*width:32%;_width:31.7%;}.yui-g .yui-gc div.first,.yui-gd .yui-g{width:66%;}.yui-gb .yui-g div.first{*margin-right:4%;_margin-right:1.3%;}.yui-gb .yui-gc div.first,.yui-gb .yui-gd div.first{*margin-right:0;}.yui-gb .yui-gb .yui-u,.yui-gb .yui-gc .yui-u{*margin-left:1.8%;_margin-left:4%;}.yui-g .yui-gb .yui-u{_margin-left:1.0%;}.yui-gb .yui-gd .yui-u{*width:66%;_width:61.2%;}.yui-gb .yui-gd div.first{*width:31%;_width:29.5%;}.yui-g .yui-gc .yui-u,.yui-gb .yui-gc .yui-u{width:32%;_float:right;margin-right:0;_margin-left:0;}.yui-gb .yui-gc div.first{width:66%;*float:left;*margin-left:0;}.yui-gb .yui-ge .yui-u,.yui-gb .yui-gf .yui-u{margin:0;}.yui-gb .yui-gb .yui-u{_margin-left:.7%;}.yui-gb .yui-g div.first,.yui-gb .yui-gb div.first{*margin-left:0;}.yui-gc .yui-g .yui-u,.yui-gd .yui-g .yui-u{*width:48.1%;*margin-left:0;}s .yui-gb .yui-gd div.first{width:32%;}.yui-g .yui-gd div.first{_width:29.9%;}.yui-ge .yui-g{width:24%;}.yui-gf .yui-g{width:74.2%;}.yui-gb .yui-ge div.yui-u,.yui-gb .yui-gf div.yui-u{float:right;}.yui-gb .yui-ge div.first,.yui-gb .yui-gf div.first{float:left;}.yui-gb .yui-ge .yui-u,.yui-gb .yui-gf div.first{*width:24%;_width:20%;}.yui-gb .yui-ge div.first,.yui-gb .yui-gf .yui-u{*width:73.5%;_width:65.5%;}.yui-ge div.first .yui-gd .yui-u{width:65%;}.yui-ge div.first .yui-gd div.first{width:32%;}#bd:after,.yui-g:after,.yui-gb:after,.yui-gc:after,.yui-gd:after,.yui-ge:after,.yui-gf:after{content:".";display:block;height:0;clear:both;visibility:hidden;}#bd,.yui-g,.yui-gb,.yui-gc,.yui-gd,.yui-ge,.yui-gf{zoom:1;}
+
+/*--- Base Styles ---*/
+h1 {font-size:138.5%; }h2 {font-size:123.1%;}h3 {font-size:108%;}h1,h2,h3 {margin:1em 0;}h1,h2,h3,h4,h5,h6,strong {font-weight:bold; }blockquote,ul,ol,dl {margin:1em;}ol,ul,dl {margin-left:2em;}ol li {list-style: decimal outside;}ul li {list-style: disc outside;}dl dd {margin-left:1em;}p{margin-bottom:1em;}
+/*--- End Base Styles ---*/
+
+/* FRAMEWORK STYLES */
+div#scATCwrapper{position:absolute;background-color:#000;opacity:.75;filter:alpha(opacity=75);z-index:20000;}div#scATCmsg{position:absolute;background-color:#fff;border:solid 1px #000;text-align:center;z-index:20001;width:400px;padding:16px;font:normal 13px/1.2 Arial, Helvetica, sans-serif;}body.scATCtemplate1 div#scATCwrapper{display:none;}body.scATCtemplate1 div#scATCmsg img{margin-right:4px;vertical-align:middle;}body.scATCtemplate1 div#scATCmsg{background-color:#CE1700;color:#fff;border:solid 1px #fff;width:auto;top:2px;left:2px;padding:2px 8px;}body.scATCinProgress form input,body.scATCinProgress form select{opacity:.25;filter:alpha(opacity=25);}select.scHideSelect{visibility:hidden;}iframe#scCookieTestFrame,iframe#scFrameWorkFrame,iframe#scHddnIFrame{overflow:hidden;height:0;width:0;border:none;}
+
+/* Default Yahoo! Style Variables */
+a{color:#84aa09;}
+a:hover{color:#84aa09;text-decoration:underline}
+body{color:#0d447c; background:#fdfede url(http://ep.yimg.com/ca/I/beltoutlet_2270_259845987) no-repeat top center;}
+em{color:#e05c1d;background-color:#ffffff;}
+.pagebanner, h3.ystore-cross-sell-title, h1#searchpageHeader{margin:0;padding:0;padding:5px 0px 12px;color:#0e4178;font-size:14px;font-family:Arial, Helvetica, sans-serif;margin:8px 0px; border-bottom: 1px #E8E8E8 solid;}
+
+#yui-main .yui-g{padding:0 7px 10px 0;}
+#custom-doc{width:994px;}
+.yui-t2 .yui-b {width:15.0769em;*width:14.7135em;padding-left:10px;padding-top:10px;}
+.yui-t2 #yui-main .yui-b{margin-left:0px;padding-left:10px;padding-top:10px;}
+
+/* ************** Default Header Styles ****************** */
+#hd{position:relative;height:203px;background:url(http://ep.yimg.com/ca/I/beltoutlet_2267_225814321) no-repeat left bottom;z-index: 9000;}
+
+.logo{position:absolute;left:30px;top:32px;}
+.logo a{text-decoration:none;color:#0a4378;font-family:Arial, Helvetica, sans-serif;font-size:36px;}
+
+.hd-fb-code{position:absolute; top:73px; left:285px;}
+
+.searcharea p{margin:0;padding:0;}
+#query{border:none;background:none;color:#898a8c;padding:2px;position:absolute;left:617px;top:75px;font-size:11px;width:250px; font-style: italic;}
+#searchsubmit{position:absolute;right:34px;top:71px;}
+
+.headerlinks{position:absolute;right:22px;top:15px;margin:0;padding:0;width:550px;height:15px;overflow:hidden;}
+.headerlinks li{display:block;float:left;border-left:solid 1px #1c4b75;xbackground:#ffffff url() no-repeat 0 0; /* used as needed */font-size:11px;margin-right:5px;}
+.headerlinks li:hover{xbackground:#ffffff; /* used as needed */}
+.headerlinks li:first-child{border-left:none;}
+.headerlinks li a{color:#ffffff;text-decoration:none;padding:6px 8px 6px 13px;font-size:11px;}
+.headerlinks li a:hover,.headerlinks li:hover a{color:#ffffff;text-decoration:underline;}
+
+.shopbtn, #yfc_mini{ position:absolute; right:32px; top:15px;}
+#yfc_mini {z-index: 1000;}
+
+.headhtml{position:absolute;left:366px;top:15px;color:#0e4379;font-size:12px;font-family:Arial, Helvetica, sans-serif;text-align:right;}
+.phonetext {position:absolute;left:657px;top:15px;color:#0e4379;font-size:12px;font-family:Arial, Helvetica, sans-serif;text-align:right;}
+
+/* ************** Body (#bd) Default Styles ****************** */
+#bd{padding: 0 3px 23px; width: 988px;}
+.bdinner{background: #ffffff; float:left;width: 986px; border: 1px #E7E3C8 solid;}
+
+/* ******************* Left Column Styles *********************** */
+.blnhtml, .alnhtml{color:#0d447c;padding:10px 5px;text-align:center;font-size:11px;}
+.alnhtml{padding-top:0px;}
+
+
+
+
+.headercats{position:absolute;left:3px;top:153px;z-index: 9000;}
+
+#navcontainer{padding:0px;}
+#navcontainer ul#normal, ul#cNav{margin:0px;padding:0px;}
+#navcontainer ul#normal li, ul#cNav li {list-style-type:none;position:relative;z-index:9000;display:block;float:left;xpadding: 0 34px;padding-bottom: 16px;}
+#navcontainer ul#normal li a, ul#cNav li a{display:block;font-weight:bold;color:#ffffff;font-size:11px; text-decoration:none; padding-left:34px; padding-right:34px;border-left: 1px solid #1c4b75;}
+#navcontainer ul#normal li:first-child a, ul#cNav li:first-child a{border-left:none;}
+#navcontainer ul#normal li ul{display:none;}
+
+/* Start Cascading Styles */
+ul#cNav li ul{
+	display:none;
+	position:absolute;
+	z-index:9000;
+	top:30px;
+	left:0px;
+	width:173px;
+	margin:0px;
+	padding:0px 0 17px 0px;
+	background: url(/lib/beltoutlet/menu-bot.png) no-repeat bottom left;
+}
+
+ul#cNav li ul li{list-style-type:none; background: url(/lib/beltoutlet/menu-repeat-bg.png) repeat-y top left;width:133px; border:none; padding:6px 20px 6px 20px;}
+ul#cNav li ul li:first-child{padding-top:11px;}
+
+ul#cNav li ul li a,ul#cNav li:hover ul li a, ul#cNav li.hasNav:hover ul li a{
+	display:block;
+	padding:0px;
+	font:bold 11px Arial, Helvetica, sans-serif;
+	color:#0c4474;
+	text-decoration:none;
+	outline:none;
+	border: none;
+}
+
+ul#cNav li ul li a:hover,ul#cNav li:hover ul li a:hover{
+	text-decoration:underline;
+}
+
+#navcontainer ul#normal li ul{
+	display:none;
+}
+
+
+/*
+.headercats a{display:block;float:left; padding:0px 30px; font-weight:bold;color:#ffffff;font-size:11px; text-decoration:none; border-left: 1px solid #1c4b75;}
+.headercats a:hover{color:#ffffff;text-decoration:underline;}
+.headercats a:first-child{border-left:none;}
+
+#navcontainer{padding:0px;}
+#navcontainer ul#normal, ul#cNav{margin:0px;padding:0px;}
+#navcontainer ul#normal li, ul#cNav li {list-style-type:none;position:relative;z-index:1000;display:block;}
+#navcontainer ul#normal li.title, ul#cNav li.title {z-index: 100; margin: 0;}
+#navcontainer ul#normal li.title a, ul#cNav li.title a {padding: 12px 0 0; border: none; text-align: left; margin: 0;}
+#navcontainer ul#normal li:hover, #navcontainer ul#normal li.sfhover, ul#cNav li:hover, ul#cNav li.sfhover{}
+#navcontainer ul#normal li a, ul#cNav li a{display:block;padding:8px 10px 8px 16px;font-size:12px;color:#116089;text-decoration:none;outline:none; margin: 0 3px; position: relative; z-index: 100; line-height: normal;}
+*:first-child+html #navcontainer ul#normal li a {padding-bottom: 7px;}
+*:first-child+html ul#cNav li a {padding-bottom: 7px;}
+#navcontainer ul#normal li a:hover,#navcontainer ul#normal li:hover a, ul#cNav li a:hover, ul#cNav li:hover a{color:#1e5283; font-weight: bold; text-decoration: none;}
+#navcontainer ul#normal li.hasNav a:hover,#navcontainer ul#normal li.hasNav:hover a, ul#cNav li.hasNav a:hover, ul#cNav li.hasNav:hover a  {padding:7px 10px 7px 16px; border: 1px #e0e0e0 solid; border-right: none;}
+#navcontainer ul#normal li.title:hover a, #navcontainer ul#normal li.title a:hover, ul#cNav li.title:hover a, ul#cNav li.title a:hover {padding: 12px 0 0;}
+*:first-child+html #navcontainer ul#normal li.hasNav a:hover {padding-bottom: 6px;}
+*:first-child+html #navcontainer ul#normal li.hasNav:hover a {padding-bottom: 6px;}
+*:first-child+html ul#cNav li.hasNav a:hover {padding-bottom: 6px;}
+*:first-child+html ul#cNav li.hasNav:hover a {padding-bottom: 6px;}
+#navcontainer ul#normal li ul{display:none;}
+
+*/
+
+/* ************** Footer Styles ****************** */
+#ft{color:#ffffff;font-size:11px;background: #0b3766 url(http://ep.yimg.com/ca/I/beltoutlet_2270_260497682) repeat-x 0 0;}
+#ft-inner {width: 966px; margin: 0 auto; padding: 0 14px;}
+
+.footerlinks {display:block;text-align:left; width: 285px; padding-left: 13px; float: left; margin-bottom: 24px;}
+.footerlinks.storeinfo {width: 247px;}
+.footerlinks .title, .mailinglist .title, .store-hours .title, .bottom-footer .title {font-size: 14px; font-weight: bold; padding: 18px 0; text-transform: uppercase;}
+.footerlinks ul {margin: 0; padding: 25px 0 0; float: left; width: 285px;}
+.footerlinks.storeinfo ul {width: 247px;}
+.footerlinks ul li{display:block;font-size:11px; float: left; width: 48%; padding:0 0 8px;}
+.footerlinks.storeinfo ul li {float: none; width: 100%;}
+.footerlinks ul li a{color:#ffffff;text-decoration:none;}
+.footerlinks ul li a:hover,.footerlinks li:hover a{text-decoration:underline;}
+
+.mailinglist{float: right; width: 408px; text-align: left;}
+.mailinglistinner{font-size:11px;color:#116089;padding:25px 0 0;}
+.mailinglistinner .newsdesc {padding-bottom: 20px; color:#ffffff;}
+.mailinglistinner form{margin:0;padding:3px 3px 3px 33px; background: #fff url(/lib/beltoutlet/envelope-icon.png) no-repeat 9px 50%; width: 256px; float: left;}
+.mailinglistinner .newsprivacy {float: left; padding: 9px 0 0 14px;}
+.mailinglistinner .newsprivacy a {color:#ffffff; text-decoration:underline;}
+.mailinglistinner .newsprivacy a:hover {text-decoration: none;}
+
+.mailinglist-coupons{
+	width:233px;
+	height:132px;
+	xpadding-bottom: 24px;
+}
+
+.mailinglist-coupons #newsletter-email2{
+	background: url(/lib/beltoutlet/mailing-bg.jpg) no-repeat top left;
+	font-size:11px;
+	color:#898a8c;
+	border:none;
+	padding: 9px 5px 8px 35px;
+    width: 110px;
+}
+
+.mailinglistinner2{
+	padding-left: 7px;
+    padding-top: 90px;
+}
+
+#newsletter-email{padding:4px 2px 2px;margin-right:2px;width:184px;vertical-align:middle;border:1px #fff solid;font-size:11px;color:#898a8c;}
+#newsletter-go{vertical-align:top;}
+
+.rightBanners a img{
+	padding-bottom:2px;
+}
+
+.store-hours, .bottom-footer {width: 966px; clear: both; background: url(/lib/beltoutlet/footersep.gif) repeat-x 0 0; padding: 16px 13px 32px; text-align: left;}
+.store-hours .title {padding-bottom: 22px;}
+.store-hours .text {color:#ffffff; font-size:11px; line-height: 16px;}
+.store-hours .text ul {margin: 0; padding: 0; float: left; width: 966px;}
+.store-hours .text ul li {float: left; padding-bottom: 6px; width: 70%; list-style: none; margin: 0;}
+.store-hours .text ul li.left {width: 30%;}
+.store-hours .text ul li a {text-decoration: underline; color:#ffffff;}
+.store-hours .text ul li a:hover {text-decoration: none;}
+
+#badge {float: left; text-align: left; width: 650px;}
+#badge img {vertical-align: middle; margin-right: 10px;}
+
+.credits{text-align:right;float: right;font-size:10px;color:#ffffff;padding-top:11px;}
+.credits a{color:#ffffff;text-decoration:none;}
+
+/* ************** Home page styles ****************** */	
+.homeTop {width: 968px; float: left;}
+.homeTop .welcomeImage{text-align:center; width: 734px; float: left; background:#F2F2F2; padding-bottom:36px; border-bottom:1px solid #DDDDDD;}
+.homeTop .rightBanners {width: 233px; float: right;}
+/*
+.homeTop .rightBanners td {height: 75px; vertical-align: middle; text-align: center; background: url(/lib/beltoutlet/home-banner-bg.png) no-repeat top left;}
+.homeTop .rightBanners td img {margin-top: -6px;}
+*/
+
+.homeBot{
+	clear:both;
+	line-height:35px;
+	margin:0 auto;
+	text-align:center;
+	background: url(/lib/beltoutlet/icon-sep.gif) no-repeat 16px 55px;
+}
+
+.homeBot img{
+	padding:8px;
+}
+
+#specials, #categories, #cross-sell, #ys_relatedItems {margin-bottom: 20px;}
+
+/* -- Welcome Image as Background, change as needed
+div.homepageLayout div.welcomeImage div.introtext{padding: 10px;height: 250px;overflow: hidden;}
+*/
+
+.homepageLayout .caption{color:#0a4275;font-size:12px; padding: 0 12px 20px; line-height: 16px;}
+#categories #contents-table td.itemcell{padding:5px;border:solid 1px #9a9990;}
+#categories #contents-table td.imgCell{vertical-align:middle; border: 1px #E8E8E8 solid; border-bottom: none; background: #F8F8F8; padding: 3px 3px 0;}
+#categories #contents-table td.imgCell .imgDiv {background: #fff; border: 1px #F0F0F0 solid;}
+#categories #contents-table td.infoCell {border: 1px #E8E8E8 solid; border-top: none; background: #F8F8F8;}
+#categories #contents-table ul{margin-left:0;}
+#categories #contents-table ul li{list-style-type:none;display:block;padding:2px 0 2px 15px;background:url(http://ep.yimg.com/ca/I/beltoutlet_2270_534846342) no-repeat 5px center;}
+#categories #contents-table ul li a{color:#ffffff;}
+#categories #contents-table div.name a{font-size:13px;	}
+
+/* ************** Default Contents Table ****************** */	
+#contents-table td, td.ystore-cross-sell-cell {text-align:center;font-size:11px;}
+td.ystore-cross-sell-cell {width: 33%; padding: 0 10px;}
+#contents-table td.imgCell, img.ystore-cross-sell-product-image {vertical-align: middle; padding: 10px 0;}
+#contents-table td.infoCell {border: 1px #E8E8E8 solid; padding: 3px;}
+#contents-table .horizontalSpacer{xbackground:url(/lib/beltoutlet/dot.gif) repeat-x center;height:12px}
+#contents-table .verticalSpacer{xbackground:url(/lib/beltoutlet/dot.gif) repeat-y center;}
+#contents-table div#abstract{padding:5px 0px;}
+#contents-table div.name, h4.ystore-cross-sell-product-name {background: #F3F1F2; padding: 5px; font-size: 12px; font-weight: bold;}
+#contents-table div.name a, h4.ystore-cross-sell-product-name a {text-decoration:none; color: #0C4379;}
+#contents-table div.name a:hover, h4.ystore-cross-sell-product-name a:hover {text-decoration: underline;}
+#contents-table div.prices {padding: 7px 0 5px;}
+#contents-table td.itemcell{padding:5px;}
+#contents-table td{vertical-align:top;}
+
+h4.ystore-cross-sell-product-name {background: none;}
+
+#contents-table div.sale-price,#contents-table div.saleprice,#contents-table div.sale-price-bold{color:#b50000;font-weight:bold; display: inline; font-size: 12px;}
+#contents-table div.price{color:#545454;text-decoration:line-through; font-size: 11px; display: inline; padding-right: 9px; border-right: 1px #DBE4EB solid; margin-right: 9px;}
+#contents-table div.price-bold{color:#545454;font-weight:bold; font-size: 12px;}
+
+p.ystore-cross-sell-product-price, p.ystore-cross-sell-product-reg-price {color:#545454; font-size: 11px; text-align: center;}
+p.ystore-cross-sell-product-sale-price, p.ystore-cross-sell-product-price.ys_promo {color:#b50000; font-weight:bold; font-size: 12px; text-align: center;}
+
+/* ************** Default Breadcrumbs ******************* */
+.scBreadcrumbs{color:#0d447c;font-size:10px;padding:8px 0 0 0px;}
+.scBreadcrumbs a {color:#0d447c; text-decoration: underline; background: url(/lib/beltoutlet/breadcrumbs-sep.gif) no-repeat 100% 50%; padding-right: 8px; margin-right: 7px;}
+.scBreadcrumbs a:hover {text-decoration: none;}
+
+/* ************** Default Section Page ****************** */	
+.sectinfo{color:#0d447c;font-size:11px;padding-bottom:10px;}
+.sectinfo img{float:left;margin:0 10px 5px 0;}
+	
+
+/* ************** Default Item Page ****************** */	
+.iteminfocont{float:left;width:100%; padding: 35px 0 20px;}
+.itemimg{float:left;width:500px;text-align:center;}
+.iteminfo{float:right;width:413px;padding-right:22px;}
+
+.iteminfo .pagebanner {border-bottom: none; padding-bottom: 5px; margin-top: 0;}
+
+#product-info-table{width:100%; margin-bottom: 10px;}
+#product-info-table th, #product-info-table td{border-top:solid 1px #f2f2f2;font-size:12px;color:#0d447c;padding:6px 0px; background: #f8f8f8;}
+#product-info-table td.add-to-cart{background-color:#fdfede;}
+#product-info-table th, td.quantity-cell {padding: 6px 5px 6px 16px;width:82px;text-align:left;font-weight:bold; border-top: 1px #efefef solid; background: #f4f4f4;}
+#product-info-table td {padding-left: 25px;}
+#product-info-table tr.price th,#product-info-table tr.price td{text-decoration:none;}
+#product-info-table tr.sale-price td{color:#b50000; font-weight: bold;}
+#product-info-table tr.price td,#product-info-table tr.price td{color:#545454;text-decoration:none;}
+#product-info-table td.add-to-cart{padding:3px 0px;text-align:right;border-bottom:none;padding-right:10px;}
+#product-info-table select{font:normal 11px Arial, Helvetica, sans-serif;width:185px;}
+#product-info-table input{font:normal 11px Arial, Helvetica, sans-serif;	}
+#pitYouSaveBx{font-weight:normal; margin-left: 12px;}
+
+td.quantity-cell {border-top: none;}
+td.add-to-cart {font-size:12px;color:#0d447c;padding:6px 0px; padding-left: 25px; background: #f8f8f8; font-weight: bold;}
+td.add-to-cart input {vertical-align: middle;}
+td.add-to-cart input#quantity-box {width: 28px; padding: 2px 5px; border: 1px #C5C5C5 solid; margin-right: 20px; text-align: right; font-family: Tahoma, Arial, Helvetica, sans-serif; font-size: 11px; font-weight: normal;}
+
+#itemcaption{font-size:11px;color:#0d447c;}
+
+h3.ystore-cross-sell-title {height: 14px; background: url(/lib/beltoutlet/cross-sell-title.png) no-repeat 12px 5px; text-indent: -1200em;}
+
+.yinset{padding:3px;}
+
+/* ************** Site Map Styles ****************** */	
+.sitemap-header, .sitemap-1, .sitemap-2 { font-weight: bold; } .sitemap-header, .sitemap-1, .sitemap-2, .sitemap-3, .sitemap-4 { display: block; } .sitemap-1, .sitemap-2, .sitemap-3, .sitemap-4 { color: #84aa09; }.sitemap-header {font-size: 1.4em;padding-top: 25px;}.sitemap-1 {font-size: 13px;padding-left: 25px;}.sitemap-2 {font-size: 12px;padding-left: 50px;}.sitemap-3 {font-size: 11px;	padding-left: 75px;}.sitemap-4 {font-size: 10px;padding-left: 100px;}
+/*--- End Sitemap Styles ---*/
+
+/* ************** Related Item Styles ****************** */	
+#seo-related-links{margin-bottom: 20px;}#seo-related-links:after {clear: both;content: ".";display: block;height: 0;visibility: hidden;}
+#seo-related-links h3 {text-align: left; margin:0; padding:0; padding-top:15px; padding-bottom:8px;}#seo-related-links ul {margin:0; padding: 12px 0 0 13px;list-style: none;}#seo-related-links ul.seo-links li {width: 43%;float: left;display: inline;background:url(http://ep.yimg.com/ca/I/beltoutlet_2270_534846342) no-repeat 5px center;margin:0; padding: 4px 0;}#seo-related-links ul.seo-links li a {text-decoration: none;padding-left: 15px;display: block; _width: 100%; font-size:12px; color: #0d447c;}#seo-related-links ul.seo-links li a:hover {text-decoration: underline;}
+/*--- End Related Items Styles ---*/
+
+/* ************** Default Info Page ****************** */
+#info-div{padding-top:8px;font-size:11px;color:#0d447c;}
+
+/* ************** Microformats Styles ****************** */
+
+.hproduct{overflow:hidden;height:0;width:0;border:none;	}
+
+/* fixes item body ul spacing */
+.inner-bg-col ul {margin:0; padding:0;}
+/* expands the drag area */
+#fc-panel_h {padding:10px;}
+/* the top of the page text colors cart closed */
+.minicart_c1 #sub_total_mini {color:#000000;}
+.minicart_c1 #total_items_mini {color:#000000;}
+.minicart_c1 #show_mini {color:#000000;}
+.minicart_c1 #close_btn {color:#000000;}
+/* the top of the page text colors cart open */
+.minicart_c1.minicart_c2 #sub_total_mini {color:#000;}
+.minicart_c1.minicart_c2 #total_items_mini {color:#000;}
+.minicart_c1.minicart_c2 #show_mini {color:#000;}
+.minicart_c1.minicart_c2 #close_btn {color:#000;}
+.yui-skin-sam #yfc_fullco #close_btn {color:#000;}
+/* toggles for items/calculator/coupons inactive - active */
+
+.smb-mc .mini_msg {position: absolute; top: 0; right: 0; background: url(http://ep.yimg.com/ca/I/beltoutlet_2270_534846406) no-repeat top left; width: 95px; height: 14px; margin-top: 6px; text-indent: -1200em;}
+.smb-mc .minicart_c2 .mini_msg {background: none;}
+#yfc_minicart {background: url(/lib/beltoutlet/carticon.png) no-repeat 195px 0;}
+.smb-mc .mini_item_count, .smb-mc .mini_subtotal {margin-top: 20px; font-size: 11px; font-weight: bold;}
+.smb-mc .mini_align {width: 0px !important;}
+.smb-mc .mini_subtotal {margin-left: 5px !important;}
+
+#yfc_minicart.minicart_c2 {background: #0C4475;}
+.smb-fc #yfc_close_btn {color: #fff !important;}
+.smb-fc #yfc_close_btn:hover {border-color: #fff;}
+
+/* End Cascading Styles */
+
+/* ------------------------------------------------------------------------
+	This you can edit.
+------------------------------------------------------------------------- */
+
+	div.light_rounded .pp_top .pp_left { background: url(/lib/beltoutlet/ctelrsprite.png) -88px -53px no-repeat; } /* Top left corner */
+	div.light_rounded .pp_top .pp_middle { background: #fff; } /* Top pattern/color */
+	div.light_rounded .pp_top .pp_right { background: url(/lib/beltoutlet/ctelrsprite.png) -110px -53px no-repeat; } /* Top right corner */
+	
+	div.light_rounded .pp_content { background-color: #fff; } /* Content background */
+	div.light_rounded .pp_content a.pp_next:hover { background: url(/lib/beltoutlet/ctebtnnext.png) center right  no-repeat; cursor: pointer; } /* Next button */
+	div.light_rounded .pp_content a.pp_previous:hover { background: url(/lib/beltoutlet/ctebtnprevious.png) center left no-repeat; cursor: pointer; } /* Previous button */
+	div.light_rounded .pp_content a.pp_expand { background: url(/lib/beltoutlet/ctelrsprite.png) -31px -26px no-repeat; cursor: pointer; } /* Expand button */
+	div.light_rounded .pp_content a.pp_expand:hover { background: url(/lib/beltoutlet/ctelrsprite.png) -31px -47px no-repeat; cursor: pointer; } /* Expand button hover */
+	div.light_rounded .pp_content a.pp_contract { background: url(/lib/beltoutlet/ctelrsprite.png) 0 -26px no-repeat; cursor: pointer; } /* Contract button */
+	div.light_rounded .pp_content a.pp_contract:hover { background: url(/lib/beltoutlet/ctelrsprite.png) 0 -47px no-repeat; cursor: pointer; } /* Contract button hover */
+	div.light_rounded .pp_content a.pp_close { width: 75px; height: 22px; background: url(/lib/beltoutlet/ctelrsprite.png) -1px -1px no-repeat; cursor: pointer; } /* Close button */
+
+	div.light_rounded .pp_content .pp_details .pp_nav a.pp_arrow_previous { background: url(/lib/beltoutlet/ctelrsprite.png) 0 -71px no-repeat; } /* The previous arrow in the bottom nav */
+		div.light_rounded .pp_content .pp_details .pp_nav a.pp_arrow_previous.disabled { background-position: 0 -87px; cursor: default; }
+	div.light_rounded .pp_content .pp_details .pp_nav a.pp_arrow_next { background: url(/lib/beltoutlet/ctelrsprite.png) -22px -71px no-repeat; } /* The next arrow in the bottom nav */
+		div.light_rounded .pp_content .pp_details .pp_nav a.pp_arrow_next.disabled { background-position: -22px -87px; cursor: default; }
+
+	div.light_rounded .pp_bottom .pp_left { background: url(/lib/beltoutlet/ctelrsprite.png) -88px -80px no-repeat; } /* Bottom left corner */
+	div.light_rounded .pp_bottom .pp_middle { background: #fff; } /* Bottom pattern/color */
+	div.light_rounded .pp_bottom .pp_right { background: url(/lib/beltoutlet/ctelrsprite.png) -110px -80px no-repeat; } /* Bottom right corner */
+
+	div.light_rounded .pp_loaderIcon { background: url(/lib/beltoutlet/ctelrloader.gif) center center no-repeat; } /* Loader icon */
+	
+	/* ----------------------------------
+		Dark Rounded Theme
+	----------------------------------- */
+	
+	div.dark_rounded .pp_top .pp_left { background: url(/lib/beltoutlet/ctedrsprite.png) -88px -53px no-repeat; } /* Top left corner */
+	div.dark_rounded .pp_top .pp_middle { background: url(/lib/beltoutlet/ctedrpattern.png) top left repeat; } /* Top pattern/color */
+	div.dark_rounded .pp_top .pp_right { background: url(/lib/beltoutlet/ctedrsprite.png) -110px -53px no-repeat; } /* Top right corner */
+	
+	div.dark_rounded .pp_content { background: url(/lib/beltoutlet/ctedrpattern.png) top left repeat; } /* Content background */
+	div.dark_rounded .pp_content a.pp_next:hover { background: url(/lib/beltoutlet/ctebtnnext.png) center right  no-repeat; cursor: pointer; } /* Next button */
+	div.dark_rounded .pp_content a.pp_previous:hover { background: url(/lib/beltoutlet/ctebtnprevious.png) center left no-repeat; cursor: pointer; } /* Previous button */
+	div.dark_rounded .pp_content a.pp_expand { background: url(/lib/beltoutlet/ctedrsprite.png) -31px -26px no-repeat; cursor: pointer; } /* Expand button */
+	div.dark_rounded .pp_content a.pp_expand:hover { background: url(/lib/beltoutlet/ctedrsprite.png) -31px -47px no-repeat; cursor: pointer; } /* Expand button hover */
+	div.dark_rounded .pp_content a.pp_contract { background: url(/lib/beltoutlet/ctedrsprite.png) 0 -26px no-repeat; cursor: pointer; } /* Contract button */
+	div.dark_rounded .pp_content a.pp_contract:hover { background: url(/lib/beltoutlet/ctedrsprite.png) 0 -47px no-repeat; cursor: pointer; } /* Contract button hover */
+	div.dark_rounded .pp_content a.pp_close { width: 75px; height: 22px; background: url(/lib/beltoutlet/ctedrsprite.png) -1px -1px no-repeat; cursor: pointer; } /* Close button */
+	div.dark_rounded .currentTextHolder { color: #c4c4c4; }
+	div.dark_rounded  p.pp_description { color: #fff; }
+
+	div.dark_rounded .pp_content .pp_details .pp_nav a.pp_arrow_previous { background: url(/lib/beltoutlet/ctedrsprite.png) 0 -71px no-repeat; } /* The previous arrow in the bottom nav */
+		div.dark_rounded .pp_content .pp_details .pp_nav a.pp_arrow_previous.disabled { background-position: 0 -87px; cursor: default; }
+	div.dark_rounded .pp_content .pp_details .pp_nav a.pp_arrow_next { background: url(/lib/beltoutlet/ctedrsprite.png) -22px -71px no-repeat; } /* The next arrow in the bottom nav */
+		div.dark_rounded .pp_content .pp_details .pp_nav a.pp_arrow_next.disabled { background-position: -22px -87px; cursor: default; }
+
+	div.dark_rounded .pp_bottom .pp_left { background: url(/lib/beltoutlet/ctedrsprite.png) -88px -80px no-repeat; } /* Bottom left corner */
+	div.dark_rounded .pp_bottom .pp_middle { background: url(/lib/beltoutlet/ctedrpattern.png) top left repeat; } /* Bottom pattern/color */
+	div.dark_rounded .pp_bottom .pp_right { background: url(/lib/beltoutlet/ctedrsprite.png) -110px -80px no-repeat; } /* Bottom right corner */
+
+	div.dark_rounded .pp_loaderIcon { background: url(/lib/beltoutlet/ctedrloader.gif) center center no-repeat; } /* Loader icon */
+	
+	
+	/* ----------------------------------
+		Dark Square Theme
+	----------------------------------- */
+	
+	div.dark_square .pp_top .pp_left ,
+	div.dark_square .pp_top .pp_middle,
+	div.dark_square .pp_top .pp_right,
+	div.dark_square .pp_bottom .pp_left,
+	div.dark_square .pp_bottom .pp_middle,
+	div.dark_square .pp_bottom .pp_right,
+	div.dark_square .pp_content,div.dark_square .blah { background: url(/lib/beltoutlet/ctedspattern.png) top left repeat; }
+	div.dark_square .currentTextHolder { color: #c4c4c4; }
+	div.dark_square  p.pp_description { color: #fff; }
+	div.dark_square .pp_loaderIcon { background: url(/lib/beltoutlet/ctedrloader.gif) center center no-repeat; } /* Loader icon */
+	
+	div.dark_square .pp_content a.pp_expand { background: url(/lib/beltoutlet/ctedssprite.png) -31px -26px no-repeat; cursor: pointer; } /* Expand button */
+	div.dark_square .pp_content a.pp_expand:hover { background: url(/lib/beltoutlet/ctedssprite.png) -31px -47px no-repeat; cursor: pointer; } /* Expand button hover */
+	div.dark_square .pp_content a.pp_contract { background: url(/lib/beltoutlet/ctedssprite.png) 0 -26px no-repeat; cursor: pointer; } /* Contract button */
+	div.dark_square .pp_content a.pp_contract:hover { background: url(/lib/beltoutlet/ctedssprite.png) 0 -47px no-repeat; cursor: pointer; } /* Contract button hover */
+	div.dark_square .pp_content a.pp_close { width: 75px; height: 22px; background: url(/lib/beltoutlet/ctedssprite.png) -1px -1px no-repeat; cursor: pointer; } /* Close button */
+	
+	div.dark_square .pp_content .pp_details .pp_nav a.pp_arrow_previous { background: url(/lib/beltoutlet/ctedssprite.png) 0 -71px no-repeat; } /* The previous arrow in the bottom nav */
+		div.dark_square .pp_content .pp_details .pp_nav a.pp_arrow_previous.disabled { background-position: 0 -87px; cursor: default; }
+	div.dark_square .pp_content .pp_details .pp_nav a.pp_arrow_next { background: url(/lib/beltoutlet/ctedssprite.png) -22px -71px no-repeat; } /* The next arrow in the bottom nav */
+		div.dark_square .pp_content .pp_details .pp_nav a.pp_arrow_next.disabled { background-position: -22px -87px; cursor: default; }
+	
+	div.dark_square .pp_content a.pp_next:hover { background: url(/lib/beltoutlet/ctebtnnext.png) center right  no-repeat; cursor: pointer; } /* Next button */
+	div.dark_square .pp_content a.pp_previous:hover { background: url(/lib/beltoutlet/ctebtnprevious.png) center left no-repeat; cursor: pointer; } /* Previous button */
+
+
+	/* ----------------------------------
+		Light Square Theme
+	----------------------------------- */
+	
+	div.light_square .pp_top .pp_left ,
+	div.light_square .pp_top .pp_middle,
+	div.light_square .pp_top .pp_right,
+	div.light_square .pp_bottom .pp_left,
+	div.light_square .pp_bottom .pp_middle,
+	div.light_square .pp_bottom .pp_right,
+	div.light_square .pp_content { background: #fff; }
+	
+	div.light_square .pp_content a.pp_expand { background: url(/lib/beltoutlet/ctelssprite.png) -31px -26px no-repeat; cursor: pointer; } /* Expand button */
+	div.light_square .pp_content a.pp_expand:hover { background: url(/lib/beltoutlet/ctelssprite.png) -31px -47px no-repeat; cursor: pointer; } /* Expand button hover */
+	div.light_square .pp_content a.pp_contract { background: url(/lib/beltoutlet/ctelssprite.png) 0 -26px no-repeat; cursor: pointer; } /* Contract button */
+	div.light_square .pp_content a.pp_contract:hover { background: url(/lib/beltoutlet/ctelssprite.png) 0 -47px no-repeat; cursor: pointer; } /* Contract button hover */
+	div.light_square .pp_content a.pp_close { width: 75px; height: 22px; background: url(/lib/beltoutlet/ctelssprite.png) -1px -1px no-repeat; cursor: pointer; } /* Close button */
+	
+	div.light_square .pp_content .pp_details .pp_nav a.pp_arrow_previous { background: url(/lib/beltoutlet/ctelssprite.png) 0 -71px no-repeat; } /* The previous arrow in the bottom nav */
+		div.light_square .pp_content .pp_details .pp_nav a.pp_arrow_previous.disabled { background-position: 0 -87px; cursor: default; }
+	div.light_square .pp_content .pp_details .pp_nav a.pp_arrow_next { background: url(/lib/beltoutlet/ctelssprite.png) -22px -71px no-repeat; } /* The next arrow in the bottom nav */
+		div.light_square .pp_content .pp_details .pp_nav a.pp_arrow_next.disabled { background-position: -22px -87px; cursor: default; }
+	
+	div.light_square .pp_content a.pp_next:hover { background: url(/lib/beltoutlet/ctebtnnext.png) center right  no-repeat; cursor: pointer; } /* Next button */
+	div.light_square .pp_content a.pp_previous:hover { background: url(/lib/beltoutlet/ctebtnprevious.png) center left no-repeat; cursor: pointer; } /* Previous button */
+
+
+/* ------------------------------------------------------------------------
+	DO NOT CHANGE
+------------------------------------------------------------------------- */
+
+	div.pp_pic_holder a:focus { outline:none; }
+	
+	
+	div.cteinsets{
+		background: #000;
+		position: absolute; top: 0; left: 0;
+		z-index: 9500;
+		color:#000;
+		font-size:20px;
+	}
+
+	div.pp_overlay {
+		background: #000;
+		position: absolute; top: 0; left: 0;
+		z-index: 9500;
+		width: 100%;
+	}
+	
+	div.pp_pic_holder {
+		position: absolute; z-index: 10000;
+		width: 100px;
+	}
+		
+		div.pp_pic_holder .pp_top {
+			position: relative;
+			height: 20px;
+		}
+			* html div.pp_pic_holder .pp_top { padding: 0 20px; }
+		
+			div.pp_pic_holder .pp_top .pp_left {
+				position: absolute;
+				left: 0;
+				width: 20px; height: 20px;
+			}
+			div.pp_pic_holder .pp_top .pp_middle {
+				position: absolute;
+				left: 20px; right: 20px;
+				height: 20px;
+			}
+				* html div.pp_pic_holder .pp_top .pp_middle { position: static; left: 0; }
+			
+			div.pp_pic_holder .pp_top .pp_right {
+				position: absolute;
+				top: 0; left: auto; right: 0;
+				width: 20px; height: 20px;
+			}
+		
+		div.pp_pic_holder .pp_content {
+			position: relative;
+			text-align: left;
+			width: 100%; height: 40px;
+		}
+		
+			div.pp_pic_holder .pp_content .pp_details {
+				display: none;
+				margin: 10px 15px 2px 20px;
+			}
+				div.pp_pic_holder .pp_content .pp_details p.pp_description { display: none; float: left; margin: 0; }
+				
+				div.pp_pic_holder .pp_content .pp_details .pp_nav {
+					float: left;
+					margin: 3px 0 0 0;
+				}
+				
+					div.pp_pic_holder .pp_content .pp_details .pp_nav p { float: left; margin: 2px 4px; }
+				
+					div.pp_pic_holder .pp_content .pp_details .pp_nav a.pp_arrow_previous,
+					div.pp_pic_holder .pp_content .pp_details .pp_nav a.pp_arrow_next {
+						float: left;
+						display: block;
+						width: 14px; height: 15px;
+						overflow: hidden;
+						text-indent: -10000px;
+						margin-top: 3px;
+					}
+		
+		div.pp_pic_holder .pp_content div.pp_hoverContainer {
+			position: absolute; z-index: 2000;
+			top: 0; left: 0;
+			width: 100%;
+		}
+		
+		div.pp_pic_holder .pp_content a.pp_next {
+			display: block; float: right;
+			text-indent: -10000px;
+			width: 49%; height: 100%;
+			background: url(/lib/beltoutlet/ctebtnnext.png) 10000px 10000px no-repeat;
+		}
+			
+		div.pp_pic_holder .pp_content a.pp_previous {
+			display: block; float: left;
+			text-indent: -10000px;
+			width: 49%; height: 100%;
+			background: url(/lib/beltoutlet/ctebtnnext.png) 10000px 10000px no-repeat;
+		}
+		
+		div.pp_pic_holder .pp_content a.pp_expand,
+		div.pp_pic_holder .pp_content a.pp_contract {
+			position: absolute; z-index: 20000;
+			top: 10px; right: 30px;
+			cursor: pointer;
+			display: none;
+			text-indent: -10000px;
+			width: 20px; height: 20px;	
+		}
+			
+		div.pp_pic_holder .pp_content a.pp_close {
+			float: right;
+			display: block;
+			text-indent: -10000px;
+		}
+		
+		div.pp_pic_holder .pp_bottom {
+			position: relative;
+			height: 20px;
+		}
+			* html div.pp_pic_holder .pp_bottom { padding: 0 20px; }
+			
+			div.pp_pic_holder .pp_bottom .pp_left {
+				position: absolute;
+				left: 0;
+				width: 20px; height: 20px;
+			}
+			div.pp_pic_holder .pp_bottom .pp_middle {
+				position: absolute;
+				left: 20px; right: 20px;
+				height: 20px;
+			}
+				* html div.pp_pic_holder .pp_bottom .pp_middle { position: static; left: 0; }
+				
+			div.pp_pic_holder .pp_bottom .pp_right {
+				position: absolute;
+				top: 0; left: auto; right: 0;
+				width: 20px; height: 20px;
+			}
+		
+		div.pp_pic_holder .pp_loaderIcon {
+			display: none;
+			position: absolute;
+			top: 50%; left: 50%;
+			margin: -12px 0 0 -12px;
+			width: 24px; height: 24px;
+		}
+		
+		div.pp_pic_holder #pp_full_res { display: block; margin: 0 auto; width: 100%; text-align: center; }
+		div.pp_pic_holder #pp_full_res object,
+		div.pp_pic_holder #pp_full_res embed { visibility: hidden; }
+	
+		div.ppt {
+			display: none;
+			position: absolute;
+			top: 0; left: 0;
+			z-index: 9999;
+			color: #fff;
+			font-size: 17px;
+		}
+
+/* ------------------------------------------------------------------------
+	Miscellaneous
+------------------------------------------------------------------------- */
+
+	.clearfix:after {
+	    content: "."; 
+	    display: block; 
+	    height: 0; 
+	    clear: both; 
+	    visibility: hidden;
+	}
+
+	.clearfix {display: inline-block;}
+
+	/* Hides from IE-mac \*/
+	* html .clearfix {height: 1%;}
+	.clearfix {display: block;}
+	/* End hide from IE-mac */
+	
+	.scinsets{
+		margin:5px 0px;
+		padding:0px 10px;
+		font-size:11px;
+		color:#fff;
+		text-align:center;
+	}
+		.scinsets img{
+			margin:2px;	
+		}
+		
+		div.dark_rounded .scinsets img:hover,div.dark_square .scinsets img:hover{
+			border:solid 2px #fff;
+			margin:0;
+		}
+		
+		div.light_rounded .scinsets img:hover,div.light_square .scinsets img:hover{
+			border:solid 2px #000;
+			margin:0;
+		}
+		
+	div.light_rounded .statuscont, div.light_square .statuscont{
+		font-size:11px;
+		padding:10px 20px;
+		text-align:left;
+		color:#000;
+		padding-right:0px;
+	}
+	
+	div.dark_square .statuscont, div.dark_rounded .statuscont{
+		font-size:11px;
+		padding:10px 20px;
+		text-align:left;
+		color:#fff;
+		padding-right:0px;
+	}
+	
+	
+	#scPage-insets .scMainImgLnk {
+		display:none;
+	}
+	#scPage-insets img {margin: 5px;}
+	
+/* tabbed details */
+.tabinfomain {width:966px; margin:15px 0 30px;}
+.tabbtns {display:none; width: 960px; background: url(/lib/beltoutlet/tabsbg.gif) repeat-x top left; float: left; padding: 6px 0 0 6px; height: 38px;}
+.tabbtns div {float:left; padding:0 0 0 15px; margin:0 1px 0 0; height:38px;}
+.tabbtns div a {font-family:Arial, Helvetica, sans-serif; font-size:14px; color:#fff; text-decoration:none; text-align:center; display:block; padding:9px 15px 0 0; outline: none; font-weight: bold; text-transform: uppercase; height: 29px;}
+.tabbtns div.tabcontactive {background: #fff;}
+.tabbtns div a.tabactive {color:#133362;}
+.tabinfo {padding: 15px 13px; clear:both; border:1px solid #E8E8E8; border-top: none; font-size: 12px;}
+.scfeaturestatus {background:url(scSStopLoading.gif) no-repeat center center; height:25px;}
+
+/*Multi Add Styles*/
+div.sc-ma-items {text-align: right; padding-bottom: 10px;}
+
+.sc-ma-product-table {text-align: left; clear: both; width: 100%;}
+.sc-ma-product-table th, .sc-ma-product-table td {font-size: 12px; padding: 10px 0;}
+.sc-ma-product-table td td {background: none; padding: 2px 0;}
+.sc-ma-product-table td th {background: none; font-weight: normal; padding: 2px 6px 2px 0; vertical-align: middle;}
+
+td.hSep {background: url(/lib/beltoutlet/hsep.gif) repeat-x 0 50%; font-size: 0; line-height: 0; padding: 0;}
+
+td.qty-cell {width: 118px; text-align: center;}
+td.qty-cell input {margin: 4px; vertical-align: middle;}
+
+td.img-cell {text-align: center; width: 164px; border-right: 1px #e9e9e9 solid;}
+td.img-cell, td.qty-cell, td.price-cell {vertical-align: middle;}
+
+td.info-cell {text-align: left; padding: 0 10px; border-right: 1px #e9e9e9 solid;}
+td.info-cell .name * {font-weight: bold; color: #0B427A;}
+td.info-cell .name {padding-bottom: 4px;}
+td.info-cell .name a {text-decoration: none;}
+td.info-cell .name a:hover {text-decoration: underline;}
+td.info-cell .abstract {font-size: 11px; padding-bottom: 6px;}
+
+td.price-cell {width: 153px; text-align: center; border-right: 1px #e9e9e9 solid; padding: 0 10px;}
+td.price-cell div.price {font-size: 11px; color: #545454;}
+td.price-cell div.price-bold {color: #545454; font-weight: bold;}
+td.price-cell div.sale-price, td.price-cell div.sale-price-bold {font-weight: bold; color: #b50000;}
+
+.sc-ma-product-table input, .sc-ma-product-table select {font-size: 10px;}
+
+div.sc-ma-atc-bttn {text-align: right;}
+
+#contactusform td {padding: 5px;}
+#contactusform td p {text-align: right;}
+
+#scProductReviewsHeader{
+	background-color:#F2EFF1;
+	color:#0D447C;
+	font-size:14px;
+	font-weight:bold;
+	margin-bottom:6px;
+	padding:8px 5px;
+	text-align:left;
+}
+.scSeoReviews{
+	display:none;
+}
+.scProductReviewsFrame{
+	margin-bottom:10px;
+}
+
+#scReviewsPInfoAvgRating{
+	margin:5px 0;
+}
+
+
+/*LEAVE THIS*/
+#scProductReviewsHeader{
+	display:none;
+}
+/*LEAVE THIS*/
+
+
+/* sequence banner */
+.scSequenceBanner {width:734px; height:379px; position:relative; font-family:Arial, Helvetica, sans-serif; }
+.scSequenceBannerMain {position:relative;}
+.scSequenceBannerMain div {position:absolute; top:0; left:0;}
+.scSequenceButtons { height:12px; position:absolute; z-index:100;}
+/* graphical button background */
+a.scSButton {cursor:pointer; display:block; float:left; width:12px; padding:0px; background:url(/lib/beltoutlet/seq-btn-off.jpg) no-repeat right 0; margin:0 2px 0px 0; text-indent:-99999px;}
+a.scSButton:hover {background:url(/lib/beltoutlet/seq-btn-on.jpg) no-repeat 0 0;}
+a.scSBon, a.scSBon:hover {background:url(/lib/beltoutlet/seq-btn-on.jpg) no-repeat center 0;text-indent:-99999px;}
+/*
+.scSequencePause {position:absolute; width:72px; height:20px; z-index:100; background:url(/lib/beltoutlet/scSBPause.png) no-repeat 0 0;}
+*/
+
+#ysch #doc{
+	width:100% !important;
+}
+
+.clear {clear:both;}
+
+#scPaging 
+{
+	width: 750px;
+	float:right;
+	font-family: Arial, Helvetica, sans-serif; font-size:11px;
+}
+
+.scpname{
+	background: none repeat scroll 0 0 #F3F1F2;
+    margin-bottom: 5px;
+    padding: 5px;
+}
+
+#scPaging .gridContents table {width:100%; padding:0; margin:0; border-collapse:collapse;}
+#scPaging .gridContents table td.scpimgcell {text-align:center; padding:3px; }
+#scPaging .gridContents table td.scpinfocell {text-align:center; font-family:Arial, Helvetica, sans-serif; font-size:11px; padding:3px; vertical-align:top; border: 1px solid #E8E8E8;}
+#scPaging .gridContents table td.scpinfocell form {padding:3px 0;}
+#scPaging .gridContents table td a {display:block; color:#0C4379; font-size:12px; font-weight:bold; font-family: Arial, Helvetica, sans-serif; text-decoration:none;}
+#scPaging .gridContents table td a:hover {text-decoration:underline;}
+#scPaging .gridContents table td img {border:0;}
+#scPaging .gridContents table td .scpregprice {display:inline; text-decoration:line-through; font:normal 11px Arial, Helvetica, sans-serif; color:#545454; border-right: 1px solid #DBE4EB;padding-right: 5px;}
+#scPaging .gridContents table td .scpregpriceonly {display:block; text-decoration:none;font:normal 11px Arial, Helvetica, sans-serif; color:#545454;}
+#scPaging .gridContents table td .scpregpriceonly.price {text-decoration:none;}
+#scPaging .gridContents table td .scpsaleprice {display:inline; color:#B50000; padding:3px 0 0 5px; font-size:12px; font-weight:bold;}
+#scPaging .gridContents table td div.scpkeyicon {padding:5px 0 0 0;}
+
+#scPaging .listContents table {width:100%;}
+#scPaging .listContents table td {text-align:left; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; padding:4px 0;}
+#scPaging .listContents table td a {display:block; color:#0C4379; font-size:12px; font-weight:bold; font-family: Arial, Helvetica, sans-serif;}
+#scPaging .listContents table td img {border:0;}
+#scPaging .listContents table td form {padding:5px 0;}
+#scPaging .listContents table td div.scpimg {float:left; width:215px; text-align:center;}
+#scPaging .listContents table td div.scpinfo {float:left; padding:0 10px 0 0;width: 620px;}
+#scPaging .listContents table td div.scpbrand {font-size:11px; color:#444;}
+#scPaging .listContents table td div.scpratings {padding:3px 0;}
+#scPaging .listContents table td div.scpabstract {padding:4px 0;}
+#scPaging .listContents table td div.scpatc {float:left; width:120px;}
+#scPaging .listContents table td .scpregprice {display:block; text-decoration:line-through;}
+#scPaging .listContents table td .scpregpriceonly {display:block; text-decoration:none;}
+#scPaging .listContents table td .price {text-decoration:none;}
+#scPaging .listContents table td .scpsaleprice {display:block; color:#FF0000; padding:3px 0 0 0; font-size:13px;}
+
+#scPaging .productReviews {	background-repeat:no-repeat}
+
+.scpControls {xbackground:#DDF1F8 url(pagingctrlbg.jpg) repeat-x scroll 0 0; border:1px solid #E8E8E8; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; color:#0E4178; }
+.scpControls a {color:#0E4178;padding: 0 3px;}
+.scpControls a.asc {background:transparent url(scparrows.png) no-repeat right 3px; xpadding-right:10px;}
+.scpControls a.desc {background:transparent url(scparrows.png) no-repeat right bottom; xpadding-right:10px;}
+.scpCtrlLeft {float:left; width:25%; text-align:left; padding:25px 0 15px 10px;}
+.scpCtrlCenter {float:left; width:48%; text-align:center; padding:10px 0;}
+.scpCtrlRight {float:left; width:25%; text-align:right; padding:25px 0 10px;}
+#scpContents {clear:both; padding:5px 0;}
+.scpSort span {padding-right:5px; font-weight:bold;}
+.scpagingSort {float:left; padding:30px 10px;}
+.scpagingViews {float:right; width:200px; padding:10px 10px; text-align:center;}
+.scpagingViews a {margin:0 2px 5px 0; color:#5CBFDF;}
+.scpaginglist {padding:8px 13px 9px 30px; float:left; display:block; background:url(pagingbtns.png) no-repeat -18px -12px;}
+.scpaginggrid {padding:8px 9px 9px 30px; float:left; display:block; background:url(pagingbtns.png) no-repeat -194px -12px;}
+.scpagingPages {float:left; width:475px; text-align:center; padding:25px 0;}
+.scpagingPages a {color:#5CBFDF;}
+.scpagingNumbers {padding:5px 0;}
+.scpNumbers {padding-top:3px;}
+.scpNumbers .prefix {padding-right:3px;}
+.scpItemsPerPage {padding-top:3px; display:none;}
+.scpItemsPerPage a{text-decoration:none;}
+.scpItemsPerPage a.selected {font-weight:bold; color:#545454; text-decoration:underline;}
+.scpPages a {padding:0 2px;}
+.scpPages a.selected {font-weight:bold; color:#545454;}
+.scpDataMode a {padding:0 3px;}
+.scpDataMode a.selected {font-weight:bold; color:#545454;}
+.scpagingNumbers strong {font-weight:normal;}
+
+#scpFilter { font-family: Arial, Helvetica, sans-serif; font-size:12px; color:#0E4178; padding:5px; float:left; border:1px solid #E8E8E8; width:185px;margin:0 0 5px 5px;}
+#scpFilter .prefix {font-weight:bold; display:block; padding:0 0 5px;margin: 0 !important; font-size:13px;}
+.scpFilter {float:left;padding:4px;}
+.scpFilter .prefix {font-weight:bold; display:block; padding:0 0 5px; margin: 0 !important}
+.scpFilter ul {margin:0; padding:0;}
+.scpFilter ul li {list-style:none; padding:1px 25px 1px 0px;}
+.scpFilter ul li input {vertical-align:middle;margin:0 3px;}
+
+.scpMoreFilterLine {
+display:none;
+}	
+
+.gridVerticalSpacer {background:url(scpspacer.gif) repeat-y center 0;}
+.gridHorizontalSpacer {background:url(scpspacer.gif) repeat-x 0 center;}
+.listHorizontalSpacer {background:url(scpspacer.gif) repeat-x 0 center;}
+
+
+tr.lastSpacer {display:none;}
+.scpquantity {width:25px;text-align:center;}
+
+.scpNavigateToPage {width:75px;}
+
+
+.refine-title {
+    background: url("http://beltoutlet.ecomm-search.com/bg.png") repeat scroll 0 0 transparent;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    height: 40px;
+    margin-top: 5px;
+    padding-top: 10px;
+    text-align: center;
+    text-transform: uppercase;
+	width: 177px;
+}
+
+.order-button { display: block; }
+.pdAddToFavs { margin-top: 12px; margin-bottom: 13px; }

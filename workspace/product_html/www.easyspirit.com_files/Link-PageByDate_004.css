@@ -1,0 +1,499 @@
+
+
+
+body {text-align:center; color:#999999;}
+body map, body area, body a, body a:link, body a:visited, body a:active {border:0 none; outline:0 none transparent;}
+body.naked {background-color:#fff;}
+div, span, td, th {font-family:Arial, Helvetica, sans-serif; font-size:8pt;}
+img {border:0;}
+a:hover {color:#333333;}
+.textBox {border:1px solid #CDCDCD; font-family:Arial, Helvetica, sans-serif; font-size:10px; padding-left:2px;}
+.shellInput {height: 14px;}
+#topSearch .shellInput {height: 24px; font-size:14px;}
+.checkBox {width:15px; height:15px; background:transparent; border:0;}
+fieldset {border:none; margin:0; padding:0;}
+select.textBox {padding-top:0; padding-bottom:0;}
+select {font-family:Arial, Helvetica, sans-serif; font-size:14px;}
+select option {padding-left:5px;}
+.formFieldErrorMsg, #GCERROR, #PINERROR {color:#FF6633;}
+.errorFields {border:1px solid #FF6633;}
+#shell {background-color:#ffffff; margin-left:auto; margin-right:auto; text-align:left; width:980px; padding:0 0 10px 0;}
+#header {background-color:#ffffff; width:980px; padding:0 0 20px 0;}
+#headerInterior {width: 980px; /* padding:0 40px 11px 40px; */ float:left;}
+#content {background-color:#ffffff; width:980px; padding:0;}
+#footer {background-color:#ffffff; border-top-color:#999999; border-top-style:solid; border-top-width:1px; clear:both; width:980px; padding:15px 0 30px;}
+#header #mainHeaderUI {float:left;  width:396px; overflow:hidden;height:34px;border-bottom:1px solid;}
+#header #mainHeaderRight, #header #mainHeaderLogo {float:left; overflow:hidden;}
+#header #mainHeaderLogo {clear:both; width:396px;}
+#header #mainHeaderRight {width: 584px;float: right;}
+#header #shoppingBag, #account {float:right;}
+#header #account, #shoppingBag {margin-top:8px; font-weight:700;}
+#header #account, #account a {font-weight:700; text-decoration:none;}
+#header #account {width:500px; height:26px; overflow:hidden;}
+#header #account #urAccount, #header #account #signIn, #header #account #seperator {float:right; margin-top:5px; color:#999999;}
+#header #account #seperator {padding-right:4px; padding-left:4px;}
+#header #shoppingBag .itemCount {margin-top:9px; color:#ff6633;}
+#header #shoppingBag a.itemCount {text-decoration:none;}
+#header #shoppingBag {}
+#header #shoppingBag #bagIcon {margin-left:5px;}
+#header #shoppingBag #checkoutIcon {margin:1px 0 0 10px;}
+#header #topNavNew {float:left; clear:both; width:940px; padding:12px 0 11px 40px; background-color:#999999; height:17px;}
+#header #topNavNew .divider {float:left; padding:2px 7px;}
+#header #topNavNew .topNavEle {float:left; border-bottom:solid 1px #999999;}
+#header #topNavNew .topNavElesecondary {float:left; text-decoration:none; font-size:10pt; color:#ffffff; clear:both; margin-bottom:7px; z-index:990; display:inline; white-space:nowrap;}
+#header #topNavNew .topNavEleHolder {position:relative; float:left; z-index:899;}
+#shell #header #topNavNew .gifts {float:right;}
+#header #topNavNew .thetopnavdropdownbox {display:none; position:absolute; float:left; top:21px; left:-8px; padding:14px 0 0 15px; width:137px; background-color:#999999;}
+#header #topNavNew .topNavEle:hover, #header #topNavNew .current {float:left; border-bottom:solid 1px #ffffff;}
+#header #topSearch { float: left; padding-top: 22px; padding-left: 25px;border-top:1px solid;}
+#header #topSearch table {margin-top:5px;}
+#header #topNavNew .topNavGifts {float:left; border-bottom:solid 1px #999999; height:27px; margin-top:-3px; background-image:url(http://demandware.edgesuite.net/aaca_prd/on/demandware.static/Sites-easyspirit-Site/Sites-easyspirit-Library/default/v1417583707284/CSS/fall2012/gifts.gif); background-repeat:no-repeat;}
+#header #topNavNew .topNavGifts img {height:23px; width:37px;}
+#header #topNavNew .topNavGifts img:hover {float:left; border-bottom:solid 1px #ffffff;}
+#header #topNavNew .e360 a.e360link {border:none; float:left; margin-top:-8px; height:36px; width:56px; background-image:url(http://demandware.edgesuite.net/aaca_prd/on/demandware.static/Sites-easyspirit-Site/Sites-easyspirit-Library/default/v1417583707284/CSS/fall2012/2013.06.11/e360.gif); background-repeat:no-repeat;}
+#header #topNavNew .e360 a.e360link:hover {background-image:url(http://demandware.edgesuite.net/aaca_prd/on/demandware.static/Sites-easyspirit-Site/Sites-easyspirit-Library/default/v1417583707284/CSS/fall2012/2013.06.11/e360_over.gif); background-repeat:no-repeat; border:none; text-decoration:none;}
+#header #topNavNew .e360 a.e360link img {display:none;}
+#header #topNavNew .e360 .thetopnavdropdownbox {top:24px;}
+
+#header #topNavNew .explore a.explorelink {border:none; float:left; margin-top:-9px; height:36px; width:97px; background-image:url(http://demandware.edgesuite.net/aaca_prd/on/demandware.static/Sites-easyspirit-Site/Sites-easyspirit-Library/default/v1417583707284/CSS/fall2013/explore.gif); background-repeat:no-repeat;}
+#header #topNavNew .explore a.explorelink:hover {background-image:url(http://demandware.edgesuite.net/aaca_prd/on/demandware.static/Sites-easyspirit-Site/Sites-easyspirit-Library/default/v1417583707284/CSS/fall2013/explore_over.gif); background-repeat:no-repeat; border:none; text-decoration:none;}
+#header #topNavNew .explore a.explorelink img {display:none;}
+#header #topNavNew .antigravity a.antigravitylink {border:none; float:left; margin-top:-9px; height:36px; width:74px; background-image:url(http://demandware.edgesuite.net/aaca_prd/on/demandware.static/Sites-easyspirit-Site/Sites-easyspirit-Library/default/v1417583707284/CSS/fall2013/antigravity.gif); background-repeat:no-repeat;}
+#header #topNavNew .antigravity a.antigravitylink:hover {background-image:url(http://demandware.edgesuite.net/aaca_prd/on/demandware.static/Sites-easyspirit-Site/Sites-easyspirit-Library/default/v1417583707284/CSS/fall2013/antigravity_over.gif); background-repeat:no-repeat; border:none; text-decoration:none;}
+#header #topNavNew .antigravity a.antigravitylink img {display:none;}
+#header #topNavNew .sale a.salelink {background-color:#FE6634; background-image:url(http://demandware.edgesuite.net/aaca_prd/on/demandware.static/Sites-easyspirit-Site/Sites-easyspirit-Library/default/v1417583707284/CSS/fall2013/sales.gif); background-repeat:no-repeat; background-position:center -2px; background-repeat:no-repeat; border:none; float:left; height:40px; margin-top:-12px; overflow:hidden; width:90px;}
+#header #topNavNew .sale a.salelink:hover {background-image:url(http://demandware.edgesuite.net/aaca_prd/on/demandware.static/Sites-easyspirit-Site/Sites-easyspirit-Library/default/v1417583707284/CSS/fall2013/sales_over.gif); background-repeat:no-repeat; border:none; text-decoration:none;}
+#header #topNavNew .sale a.salelink img {display:none;}
+#header #topNavNew .gifts a.giftslink {background-image:url(http://demandware.edgesuite.net/aaca_prd/on/demandware.static/Sites-easyspirit-Site/Sites-easyspirit-Library/default/v1417583707284/CSS/fall2013/2013.11.11/gifts.gif); background-repeat:no-repeat; background-position:0 -2px; background-repeat:no-repeat; border:none; float:left; height:40px; margin-top:-12px; overflow:hidden; width:136px;}
+#header #topNavNew .gifta a.giftslink:hover {background-image:url(http://demandware.edgesuite.net/aaca_prd/on/demandware.static/Sites-easyspirit-Site/Sites-easyspirit-Library/default/v1417583707284/CSS/fall2013/2013.11.11/gifts_over.gif); background-repeat:no-repeat; border:none; text-decoration:none;}
+#header #topNavNew .gifts a.giftslink img {display:none;}
+.catGraphics {float:left; margin-left:-15px;}
+#header #topNavNew #shoesdropdown {width:128px;}
+#header #topNavNew #bootsdropdown {width:181px;}
+#header #topNavNew #collectionsdropdown {width:129px;}
+#header #topNavNew #athleticdropdown {width:129px;}
+#header #topNavNew #saledropdown {left:0; width:128px; border:none;}
+#header #topNavNew #liveitdropdown {width:129px;}
+#header #topNavNew #giftsdropdown {left:-14px; width:136px;}
+#header #topNavNew #sandalsdropdown {width:127px;}
+#header #topNavNew .holidayspotlight, #header #topNavNew .gifting {border:none; margin-top:-3px; padding-bottom:3px; text-align:center; width:109px;}
+
+#footer #optIn {float:left; padding-top:9px; width:100%;}
+#footer #dwfrm_optin {width:100%;}
+#footer #optIn a, #footer #optIn a:link, #footer #optIn a:visited, #footer #optIn a:active {color:#999999; text-decoration:none;}
+#footer #footerNav {float:left; padding:0; width:542px;}
+#footer #footerNavTop {float:left; padding:0 0 0 60px; width:375px;}
+#footerNavTop, #footerNav, #seoFooter {background-color:#ffffff; width:920px; padding:10px 30px; display:block; float:left; font-size:9px; font-weight:700;}
+#footerNav a:link, #footerNav a:visited, #footerNav a:hover, #footerNav a:active {color:#81ABC7; text-decoration:none; }
+#footerNavTop a:link, #footerNavTop a:visited, #footerNavTop a:hover, #footerNavTop a:active {color:#81ABC7; text-decoration:none; }
+#footerNav #eLogo {background-image:url(http://demandware.edgesuite.net/aaca_prd/on/demandware.static/Sites-easyspirit-Site/Sites-easyspirit-Library/default/v1417583707284/CSS/footer/e_logo.gif); background-repeat:no-repeat; background-position:center; display:block; float:left; height:50px; width:39px; display:none;}
+#cs_links_cont a:link, #cs_links_cont a:visited, #cs_links_cont a:hover, #cs_links_cont a:active {font-size:10px; color:#999999; text-decoration:none; font-size:10px;}
+#footer .dividerLine {padding:0 5px;}
+#seoFooter a {color:#000000;}
+#seoFooter .link {text-decoration:none; font-size:10px;}
+#footer #emailBtn {margin-left:-3px;}
+#footer .optin_label {color:#FF6633; font-size:9pt; padding:7px 0; text-transform:uppercase;}
+#footer #copyRight {color:#000000; float:left; font-weight:normal; text-align:center; width:100%;}
+#footer #seocontent {float:left; padding-top:10px; width:100%;}
+#footer #orderby {border-bottom-color:#999999; border-bottom-style:dashed; border-bottom-width:1px; color:#FF6633; float:left; font-size:9pt; padding-bottom: 22px;}
+#footer .footernav1 {float:left; padding-left:85px; width:185px;}
+#footer .footernav11 {float:left; width:100%;}
+#footer .footernavHeader {color:#FF6633; text-transform:uppercase; float:left; width:100%;}
+#footer .footernavContent {float:left; width:100%;}
+#footer .footernavContent a {color:#999999; float:left; line-height:12pt; width:100%;}
+#footer .footernav12 {float:left; width:100%;}
+#footer .footernav12 .footernavHeader {border-top-color:#999999; border-top-style:dashed; border-top-width:1px; margin-top:7px; padding-top:7px; width:125px;}
+#footer .footernav2 {border-left:1px dashed #999999; border-right:1px dashed #999999; float:left; height:150px; padding-left:85px; width:185px;}
+
+#leftNav a {color:#666666;}
+#leftNav a:hover, #leftNav a.selected {color:#FF6633;}
+#leftNav {float:left; width:150px; padding:0 0 0 40px;}
+#leftNav #dynamicMess {padding-bottom:5px;}
+#leftNav #advSearchLink a, #leftNav .level0 a, #leftNav .contentasset .levelStatic a {text-decoration:none; font-size:10pt;}
+#leftNav .contentasset .levelStatic {margin-left:-15px;}
+#leftNav .contentasset .levelStatic a:hover {}
+#leftNav .contentasset a {float:left; font-size:10pt; margin-top:5px; text-decoration:none; width:150px;}
+#leftNav .lookbookLink a {font-size:10pt; text-decoration:none; margin-left:0px;}
+#leftNav .level1 a {text-decoration:none; font-size:10pt;}
+#leftNav .level2 a {text-decoration:none; background-image:url(http://demandware.edgesuite.net/aaca_prd/on/demandware.static/Sites-easyspirit-Site/Sites-easyspirit-Library/default/v1417583707284/images/blAr.gif); background-repeat:no-repeat; padding-left:10px; background-position:0 3px;}
+#leftNav .level2 a:hover, #leftNav .level2 a.selected {background-image:url(http://demandware.edgesuite.net/aaca_prd/on/demandware.static/Sites-easyspirit-Site/Sites-easyspirit-Library/default/v1417583707284/images/orAr.gif); background-repeat:no-repeat; padding-left:10px; background-position:0 3px;}
+#leftNav #forceLevel1 .level0 a {text-decoration:none; margin-left:15px;}
+#leftNav #forceLevel1 {text-decoration:none; font-size:10pt; color:#666666;}
+
+#leftNav #advSearchLink {display:none;}
+#leftNav #navlist div.level0 {margin-left:0;}
+#leftNav #navlist div.level1 {margin-left:10px;}
+#leftNav #navlist div.level2 {margin-left:15px;}
+#leftNav #navlist .first {padding-top:2px;}
+#leftNav #navlist .last {padding-bottom:7px;}
+#advSearchLink {display:none;}
+
+#contHeader {width:980px; float:left;}
+#noSite {background:#FFFFFF none repeat scroll 0; float:left; padding:130px 300px 150px;}
+td.cellTL {width:8px; height:8px; background-image:url(http://demandware.edgesuite.net/aaca_prd/on/demandware.static/Sites-easyspirit-Site/Sites-easyspirit-Library/default/v1417583707284/CSS/productDetail/pop_crnr_topLeft.gif); background-repeat:no-repeat; border-width:0;}
+td.cellT {background-color:#ffffff; border-top:solid #9F9F9F 1px;}
+td.cellTR {width:8px; height:8px; background-image:url(http://demandware.edgesuite.net/aaca_prd/on/demandware.static/Sites-easyspirit-Site/Sites-easyspirit-Library/default/v1417583707284/CSS/productDetail/pop_crnr_topRight.gif); background-repeat:no-repeat; border-width:0;}
+td.cellC {background-color:#ffffff; border-left:solid #9F9F9F 1px; border-right:solid #9F9F9F 1px;}
+td.cellBL {width:8px; height:8px; background-image:url(http://demandware.edgesuite.net/aaca_prd/on/demandware.static/Sites-easyspirit-Site/Sites-easyspirit-Library/default/v1417583707284/CSS/productDetail/pop_crnr_btmLeft.gif); background-repeat:no-repeat; border-width:0;}
+td.cellB {background-color:#ffffff; border-bottom:solid #9F9F9F 1px;}
+td.cellBR {width:8px; height:8px; background-image:url(http://demandware.edgesuite.net/aaca_prd/on/demandware.static/Sites-easyspirit-Site/Sites-easyspirit-Library/default/v1417583707284/CSS/productDetail/pop_crnr_btmRight.gif); background-repeat:no-repeat; border-width:0;}
+td.cellTLShadow {width:11px; height:11px; background-image:url(http://demandware.edgesuite.net/aaca_prd/on/demandware.static/Sites-easyspirit-Site/Sites-easyspirit-Library/default/v1417583707284/CSS/productDetail/pop_crnr_topLeft_shadow.gif); background-repeat:no-repeat;}
+td.cellTShadow {background-image:url(http://demandware.edgesuite.net/aaca_prd/on/demandware.static/Sites-easyspirit-Site/Sites-easyspirit-Library/default/v1417583707284/CSS/productDetail/pop_hLine_shadowTop.gif); background-position:top; background-repeat:repeat-x; background-color:#111111;}
+td.cellTRShadow {width:11px; height:11px; background-image:url(http://demandware.edgesuite.net/aaca_prd/on/demandware.static/Sites-easyspirit-Site/Sites-easyspirit-Library/default/v1417583707284/CSS/productDetail/pop_crnr_topRight_shadow.gif); background-repeat:no-repeat;}
+td.cellLShadow {background-image:url(http://demandware.edgesuite.net/aaca_prd/on/demandware.static/Sites-easyspirit-Site/Sites-easyspirit-Library/default/v1417583707284/CSS/productDetail/pop_vLine_shadowLeft.gif); background-position:left; background-repeat:repeat-y; background-color:#111111;}
+td.cellCShadow {background-color:#111111;}
+td.cellRShadow {background-image:url(http://demandware.edgesuite.net/aaca_prd/on/demandware.static/Sites-easyspirit-Site/Sites-easyspirit-Library/default/v1417583707284/CSS/productDetail/pop_vLine_shadowRight.gif); background-position:right; background-repeat:repeat-y; background-color:#111111;}
+td.cellBLShadow {width:11px; height:11px; background-image:url(http://demandware.edgesuite.net/aaca_prd/on/demandware.static/Sites-easyspirit-Site/Sites-easyspirit-Library/default/v1417583707284/CSS/productDetail/pop_crnr_btmLeft_shadow.gif); background-repeat:no-repeat;}
+td.cellBShadow {background-image:url(http://demandware.edgesuite.net/aaca_prd/on/demandware.static/Sites-easyspirit-Site/Sites-easyspirit-Library/default/v1417583707284/CSS/productDetail/pop_hLine_shadowBtm.gif); background-position:bottom; background-repeat:repeat-x; background-color:#111111;}
+td.cellBRShadow {width:11px; height:11px; background-image:url(http://demandware.edgesuite.net/aaca_prd/on/demandware.static/Sites-easyspirit-Site/Sites-easyspirit-Library/default/v1417583707284/CSS/productDetail/pop_crnr_btmRight_shadow.gif); background-repeat:no-repeat;}
+#topSearch {position:relative;}
+#topSearch .over {background-color:#eeeeee;}
+#topSearch .term {width:100%; color:#999999; font-size:10px;}
+#topSearch .suggestItem {cursor:pointer; border-bottom:1px dotted #BCBCBC; margin:0 2px;}
+#topSearch #search_suggest {z-index:999; visibility:hidden; text-align:left; width:122px; position:absolute; top:22px; left:44px; overflow:hidden; background-color:#ffffff; border-bottom:solid 1px #CDCDCD; border-left:solid 1px #CDCDCD; border-right:solid 1px #CDCDCD;}
+*, ul#topNavBar li.category, ul#topNavBar li.rolloverReplacement {margin:0; padding:0;}
+#cookietest, #topSearch .hitcount {display:none;}
+#header, #content, #header #logo, #topNav, #topSearch, #header #shoppingBag * {float:left;}
+ul#topNavBar li#size a.current, ul#topNavBar li#size a.current:link, ul#topNavBar li#size a.current:visited, ul#topNavBar li#size a.current:hover, ul#topNavBar li#size a.current:active {background-image:url(http://demandware.edgesuite.net/aaca_prd/on/demandware.static/Sites-easyspirit-Site/Sites-easyspirit-Library/default/v1417583707284/CSS/header/top_nav/nav_links/2011.05.25/shopBySizeOn.gif);}
+ul#topNavBar li#shoes a.current, ul#topNavBar li#shoes a.current:link, ul#topNavBar li#shoes a.current:visited, ul#topNavBar li#shoes a.current:hover, ul#topNavBar li#shoes a.current:active {background-image:url(http://demandware.edgesuite.net/aaca_prd/on/demandware.static/Sites-easyspirit-Site/Sites-easyspirit-Library/default/v1417583707284/CSS/header/top_nav/nav_links/2011.05.25/shoesOn.gif);}
+ul#topNavBar li#sandals a.current, ul#topNavBar li#sandals a.current:link, ul#topNavBar li#sandals a.current:visited, ul#topNavBar li#sandals a.current:hover, ul#topNavBar li#sandals a.current:active {background-image:url(http://demandware.edgesuite.net/aaca_prd/on/demandware.static/Sites-easyspirit-Site/Sites-easyspirit-Library/default/v1417583707284/CSS/header/top_nav/nav_links/2011.05.25/sandalsOn.gif);}
+
+ul#topNavBar li#accessories a.current, ul#topNavBar li#accessories a.current:link, ul#topNavBar li#accessories a.current:visited, ul#topNavBar li#accessories a.current:hover, ul#topNavBar li#accessories a.current:active {background-image:url(http://demandware.edgesuite.net/aaca_prd/on/demandware.static/Sites-easyspirit-Site/Sites-easyspirit-Library/default/v1417583707284/CSS/header/top_nav/nav_links/2011.05.25/accessoriesOn.gif);}
+ul#topNavBar li#antigravity a.current, ul#topNavBar li#antigravity a.current:link, ul#topNavBar li#antigravity a.current:visited, ul#topNavBar li#antigravity a.current:hover, ul#topNavBar li#antigravity a.current:active {background-image:url(http://demandware.edgesuite.net/aaca_prd/on/demandware.static/Sites-easyspirit-Site/Sites-easyspirit-Library/default/v1417583707284/CSS/header/top_nav/nav_links/2011.05.25/antiGravityOn.gif);}
+ul#topNavBar li#sale a.current, ul#topNavBar li#sale a.current:link, ul#topNavBar li#sale a.current:visited, ul#topNavBar li#sale a.current:hover, ul#topNavBar li#sale a.current:active {background-image:url(http://demandware.edgesuite.net/aaca_prd/on/demandware.static/Sites-easyspirit-Site/Sites-easyspirit-Library/default/v1417583707284/CSS/header/top_nav/nav_links/2011.05.25/saleOn.gif);}
+ul#topNavBar li#athletic a.current, ul#topNavBar li#athletic a.current:link, ul#topNavBar li#athletic a.current:visited, ul#topNavBar li#athletic a.current:hover, ul#topNavBar li#athletic a.current:active {background-image:url(http://demandware.edgesuite.net/aaca_prd/on/demandware.static/Sites-easyspirit-Site/Sites-easyspirit-Library/default/v1417583707284/CSS/header/top_nav/nav_links/2011.08.09/athletic_on.gif);}
+ul#boots li#boots a.current, ul#topNavBar li#boots a.current:link, ul#topNavBar li#boots a.current:visited, ul#topNavBar li#boots a.current:hover, ul#topNavBar li#boots a.current:active {background-image:url(http://demandware.edgesuite.net/aaca_prd/on/demandware.static/Sites-easyspirit-Site/Sites-easyspirit-Library/default/v1417583707284/CSS/header/top_nav/nav_links/2011.08.09/boots_on.gif);}
+ul#sandals li#sandals a.current, ul#topNavBar li#sandals a.current:link, ul#topNavBar li#sandals a.current:visited, ul#topNavBar li#sandals a.current:hover, ul#topNavBar li#sandals a.current:active {background-image:url(http://demandware.edgesuite.net/aaca_prd/on/demandware.static/Sites-easyspirit-Site/Sites-easyspirit-Library/default/v1417583707284/images/header/top_nav/ss14/sandals_on.gif);}
+a.current:active {}
+ul#topNavBar li#about a.current, ul#topNavBar li#about a.current:link, ul#topNavBar li#about a.current:visited, ul#topNavBar li#about a.current:hover, ul#topNavBar li#about a.current:active {background-image:url(http://demandware.edgesuite.net/aaca_prd/on/demandware.static/Sites-easyspirit-Site/Sites-easyspirit-Library/default/v1417583707284/CSS/header/top_nav/nav_links/2011.05.25/aboutOn.gif);}
+ul#topNavBar li.category a, ul#topNavBar li.rolloverReplacement a {margin-left:0; margin-right:0; padding-top:0; height:auto;}
+#query {width: 199px;background-image: url(http://demandware.edgesuite.net/aaca_prd/on/demandware.static/Sites-easyspirit-Site/Sites-easyspirit-Library/default/v1417583707284/CSS/footer/bg_optin.gif);background-repeat: no-repeat;color:#666666;padding-left:30px;}
+#footer #optInEmail {width:229px; height:24px; color:#666666; border:solid 1px #ececec; border-right-color-value:#999999; text-align:center; background-image:url(http://demandware.edgesuite.net/aaca_prd/on/demandware.static/Sites-easyspirit-Site/Sites-easyspirit-Library/default/v1417583707284/CSS/footer/bg_optin.gif); background-repeat:no-repeat; bacground-position:0 0;}
+#leftNav #advSearchLink a:hover, #leftNav .level0 a:hover, #leftNav #advSearchLink a.selected, #leftNav .level0 a.selected {color:#ff6633;}
+#leftNav .level1 a:hover, #leftNav .level1 a.selected {color:#ff6633;}
+a, a:link, a:visited, a:active, #leftNav .contentasset .levelStatic a, #leftNav .contentasset .levelStatic a:link, #leftNav .contentasset .levelStatic a:visited, #leftNav .contentasset .levelStatic a:active {color:#999999;}
+#cookietest, #topSearch .hitcount, #tcalShade {display:none;}
+.InvodoViewerLink {float:left; display:none;}
+#pdVideo {float:left;}
+.ctaContainer {text-align:left}
+
+#productRegularPriceCO {}
+#productNewTextAndPriceCO {color:#FF6633;}
+#productOldTextAndPriceCO {text-decoration:line-through;}
+.finalSaleText {color:#FF6633; float:left; padding-top:5px; width:100%; font-size:10px;}
+.crosssellproductname {float:left; width:100%; font-size:9pt; color:#000000;}
+#cartControls #selectableInfo #colorsBlock #colorChipsLabel .currentColor, #cartControls #selectableInfo #widthsBlock #widthsLabel .currentWidth, #cartControls #selectableInfo #sizesBlock #sizesLabel .currentSize {color:#FF6633;}
+#colorChipsLabel .choiceText {width:100%}
+
+#pdqvHolder {clear:both; float:left; height:0; position:absolute; top:0; left:0; z-index:999;}
+#centered {width:736px;}
+#pdqv {width:801px; position:absolute; top:133px; background-color:#ffffff; float:left; z-index:99; border:solid 4px #cccccc; display:none; padding-bottom:20px;}
+
+#availProdSkuHolder {width:225px; float:left; height:50px; overflow:hidden;}
+#availProdSkuHeader {font-weight:bold; width:247px; float:left; font-size:11px;}
+.availProdSkuText {width:247px; float:left; padding-top:3px;}
+
+#productGraphics #zoomImgHolder {float:left; font-size:0; padding:0; width:481px;}
+#productGraphics #zoomImgHolder2 {float:left; height:473px; overflow:hidden; position:relative; width:473px; border:4px solid #eeeeee;}
+#productGraphics #zoomImg {position:absolute; cursor:move;}
+#productGraphics #zoomHolder {float:right; height:18px; padding:0; text-align:right;}
+#productGraphics #zoomTools {}
+#productGraphics #enlargeZoom {float:right; padding:0;}
+
+.PDPPriceArea {float:left; height:50px; width:225px; padding-top:4px;}
+#itemInfo .percentageOff {float:left; font-size:9pt;}
+.percentageOff {color:#FF6633; text-transform:capitalize;}
+.InvodoViewerLink {border:solid 1px #d8d8d8;}
+
+#productGraphics, #productGraphics #zoomImgHolder, #productGraphics #zoomImgHolder2, #zoomImg {z-index:1;}
+#productGraphics {float:left; padding-bottom:30px; position:relative; width:100%;}
+#productGraphics #productImage {border:1px solid #cccccc; float:left; font-size:0; padding:0; width:100%;}
+#productGraphics #zoomImgHolder {}
+#productGraphics #enlarge {float:left; line-height:11px; padding:0;}
+#productGraphics #enlarge span {cursor:pointer;}
+
+#productGraphics #viewsMenu {float:left; width:100%; padding-top:3px;}
+#productGraphics #viewsMenu span {cursor:pointer; float:left;}
+#productGraphics #viewsMenu .dividerBar {cursor:default; padding-right:7px; padding-left:4px;}
+#productGraphics #viewsMenu #Left span {display:none;}
+#productGraphics #viewsMenu #heading {display:none;}
+#productGraphics #viewsMenu #main {display:none;}
+.imageTypeSelector {float:left; border:solid 1px #d8d8d8;}
+.viewsMenu .selected {border:solid 1px #ff6633;}
+#altViewsText {float:left; padding-top:5px; text-transform:uppercase; width:100%;}
+#zoomStuff {float:right; padding-right:1px; position:absolute; right:0; top:0; z-index:999;}
+#zoomInHolder, #zoomOutHolder {float:left;}
+#zlResetHolder, #zoomResetHolder {display:none;}
+
+#cartControls {float:left; padding-top:10px;}
+#cartControls #selectableInfo {float:left;}
+#cartControls .pickerArea {width:214px; padding:9px 0 5px 9px; overflow:hidden; border:solid 1px #cccccc;}
+#cartControls #selectableInfo #colorsBlock, #cartControls #selectableInfo #widthsBlock, #cartControls #selectableInfo #sizesBlock {float:left; width:100%; padding-bottom:10px;}
+#cartControls #selectableInfo #widthsBlock #widths, #cartControls #selectableInfo #sizesBlock #sizes, #cartControls #selectableInfo #colorsBlock #colorChips {padding-left:0px; float:left; width:214px;}
+#cartControls #selectableInfo #colorsBlock #colorChips span {float:left; padding:0 4px 4px 0;}
+#cartControls #selectableInfo #colorsBlock #colorChips span img {cursor:pointer; padding:1px;}
+#cartControls #selectableInfo #sizesBlock #sizes span, #cartControls #selectableInfo #widthsBlock #widths span {margin:0 4px 4px 0; float:left; cursor:pointer; height:14px; padding:1px 2px 0 2px; text-align:center; vertical-align:middle; width:25px; overflow:hidden; overflow:hidden;}
+
+#cartControls #selectableInfo #colorsBlock #colorChipsLabel div, #cartControls #selectableInfo #widthsBlock #widthsLabel div, #cartControls #selectableInfo #sizesBlock #sizesLabel div {float:left; color:#000000;}
+#cartControls #selectableInfo #colorsBlock #colorChipsLabel, #cartControls #selectableInfo #widthsBlock #widthsLabel, #cartControls #selectableInfo #sizesBlock #sizesLabel {}
+.choiceText {text-transform:capitalize;}
+#cartControls #selectableInfo #colorsBlock #colorChipsLabel .currentColor, #cartControls #selectableInfo #widthsBlock #widthsLabel .currentWidth, #cartControls #selectableInfo #sizesBlock #sizesLabel .currentSize {color:#ff6633; white-space:nowrap; background-color:#ffffff; z-index:101;}
+#cartControls #selectableInfo #colorsBlock #colorChipsLabel .currentColor {clear:both;}
+#cartControls #selectableInfo #widthsBlock #widthsLabel .currentWidth, #cartControls #selectableInfo #sizesBlock #sizesLabel .currentSize {padding-left:5px;}
+#cartControls #selectableInfo #colorsBlock #colorChipsLabel #unavailableColor, #cartControls #selectableInfo #widthsBlock #widthsLabel #unavailableWidth, #cartControls #selectableInfo #sizesBlock #sizesLabel #unavailableSize {color:red; font-weight:bold; white-space:nowrap; background-color:#ffffff; z-index:101; width:20px; display:none;}
+#cartControls #selectableInfo #colorsBlock #colorChipsLabel .errColor, #cartControls #selectableInfo #widthsBlock #widthsLabel .errWidth, #cartControls #selectableInfo #sizesBlock #sizesLabel .errSize {display:none; padding-left:5px;}
+.controlSeperator {height:0; line-height:0; font-size:0; margin:0; padding:0; width:214px;}
+#cartControls #errorText2 {float:left; clear:both; margin-top:0px; margin-bottom:15px;}
+
+#cartControls #addToCart {float:left; width:225px; padding-top:18px;}
+#cartControls #ckoutcShopBtns #checkoutBtn {padding-left:10px;}
+#cartControls #addToCart img {cursor:pointer; float:left;}
+#cartControls #ckoutcShopBtns {float:left; clear:both; width:240px; padding-top:10px;}
+#cartControls #ckoutcShopBtns img {cursor:pointer;}
+.locErrText {font-size:8pt; font-weight:bold;}
+/* cart button states classes */
+.CARTchip, .CARTwidth, .CARTsize, .available {background-color:#ffffff; border:1px solid #e8e8e8; color:#333333;}
+.notAvailable {background-color:#ffffff; border:1px dashed #666666; color:#666666;}
+.selectedButton {background-color:#ff6633; border:1px solid #ff6633; color:#ffffff;}
+.selectedColorButton {border:1px solid #ff6633; color:#ff6633;}
+/* end cart button states */
+#cartControlDivider {margin-right:0px; margin-left:2px; background:transparent url(http://demandware.edgesuite.net/aaca_prd/on/demandware.static/Sites-easyspirit-Site/Sites-easyspirit-Library/default/v1417583707284/CSS/productDetail/border_line.gif) repeat-x scroll center; clear:both; width:265px; height:30px;}
+
+#itemInfo {float:left; width:225px;}
+#itemInfo #productLineName {display:none; padding-bottom:5px; font-weight:bold; color:#000000;}
+#itemInfo .name {font-weight:bold; font-size:11pt; color:#000000; text-transform:uppercase; width:225px; float:left;}
+.onSale {color:#999999; float:left; font-size:9pt; font-weight:bold; padding-right:2px; padding-top:2px;}
+.notSale {font-weight:bold; font-size:10pt; color:#000000; float:left;}
+#itemInfo .salePrice {color:#FF6633; float:left; font-size:10pt; font-weight:bold; width:100%; padding:0 0 4px 0;}
+#itemInfo .hiddenSalePrice {display:none;}
+#itemInfo #desc {color:#000000; clear:both;}
+#itemInfo .productSale {display:inline;}
+#itemInfo .productListPrice {color:#000000; font-size:10pt; font-weight:bold;}
+#itemInfo .productSaleText {color:#ff6633; font-size:10pt; font-weight:bold;}
+.productSaleText {color:#FF6633; font-size:9pt;}
+.productSalePrice {color:#FF6633; font-size:9pt; padding-left:3px; display:block; clear:both;}
+.productListPrice {font-size:9pt;}
+.productOldText {font-size:9pt;}
+
+.productPromotion {clear:both; width:100%; font-size:8pt; line-height:9pt; font-weight:bold; height:11px; overflow:hidden; margin-bottom:5px; color:#ff6633; text-transform:uppercase;}
+#promotionsSpan {float:left; width:225px; height:0; font-size:0; line-height:0; padding-top:5px;}
+
+.locErrText {clear:both; font-weight:bold; padding-top:10px;}
+.unavailableMsg {background-color:#ffffff; color:#ff6633; font-size:11px; font-weight:bold; left:0; position:relative; top:-13px; z-index:101; width:225px; display:none;}
+#messgingHolder {float:left; height:40px; width:225px;}
+#messgingHolder .errTitle, #messgingHolder #theError {font-size:11px; font-weight:bold; font-style:italic; width:247px;}
+
+
+#quickViewClose {padding-right:8px; padding-top:8px; text-align:right; width:793px; padding-bottom:3px;}
+#qvCloseLink {}
+#quickViewLeft {width:481px; margin-left:26px; margin-right:17px; float:left;}
+#quickViewImgHolder {width:280px; border:solid 1px #cccccc; float:left; height:280px; overflow:hidden;}
+
+#quickViewRight {width:225px; float:left; padding-left:10px; padding-bottom:10px; padding-right:21px;}
+.qvdesc {float:left; width:100%; text-align:justify; padding-bottom:10px;}
+#fabricGlossary {display:none; border-right:1px solid #999999; float:left; padding-right:10px;}
+#fitGuide {display:none; float:left; padding-left:10px;}
+#productDetails #detailItems span {background-image:url(http://demandware.edgesuite.net/aaca_prd/on/demandware.static/Sites-easyspirit-Site/Sites-easyspirit-Library/default/v1417583707284/CSS/bullet1.gif); background-position:0 14px; background-repeat:no-repeat; float:left; padding:5px 0 0 10px; width:45%;}
+#shareThisLink {float:left; width:100%;}
+.displayNameAndPrice {float:left; width:225px;}
+.promotionsSpan {float:left;}
+#pNameHOne {font-size:11pt; line-height:18px;}
+.pNameHOne {font-size:11pt; line-height:18px;}
+.nofirstaltview {margin-left:3px;}
+#optInTable td {vertical-align:top;}
+#shell #evShopBag {display:none;}
+
+#evShopBag {position:absolute; right:8px; top:70px; z-index:209; display:none;}
+#evShopBagShadow {position:absolute; z-index:109; opacity:0.3; filter:Alpha(Opacity=30); display:none;}
+#tblShopBag, #tblShopBagShadow {border-collapse:collapse;}
+#evShopBag td.cellT, #evShopBag td.cellB {width:426px;}
+
+#popUps {text-align:center; width:100%; border:solid 0px red; height:0px; position:absolute; top:0px; left:0px;}
+
+#evShopBagWidget {background:#ffffff; margin-left:auto; margin-right:auto; text-align:left; width:980px; border:solid 0px blue; height:0px; position:relative;}
+
+#internalMiniBag {background-image:url(http://demandware.edgesuite.net/aaca_prd/on/demandware.static/Sites-easyspirit-Site/Sites-easyspirit-Library/default/v1417583707284/images/productDetail/ShoppingBag_bg2.gif); background-position:10px 7px; background-repeat:no-repeat; width:426px;}
+#internalMiniBag #shopBagHeaderHolder {height:26px; width:100%;}
+#internalMiniBag #shopBagClose {float:right; padding:10px 10px 0 0;}
+#internalMiniBag #ShopBagContent {float:left; padding:10px; text-align:left; width:420px;}
+#internalMiniBag #shopBagProdName {clear:both; font-size:11px; font-weight:bold; color:#000000;}
+#internalMiniBag #shopBagProdNameValue {color:#000000; font-weight:bold; padding-bottom:3px;}
+
+#internalMiniBag #shopBagAction {color:#ff6633; float:left; font-size:11px; font-weight:bold; padding-bottom:10px;}
+#internalMiniBag #shopBagTotalQty {color:#ff6633; float:left; padding-left:3px; padding-bottom:10px; text-decoration:underline; width:180px; font-size:11px; font-weight:bold;}
+#internalMiniBag #shopBagTotalQty a, #internalMiniBag #shopBagTotalQty a:link, #internalMiniBag #shopBagTotalQty a:visited, #internalMiniBag #shopBagTotalQty a:active {color:#ff6633; font-size:11px; font-weight:bold; text-decoration:underline;}
+#internalMiniBag #shopBagTotalQtyValue {font-size:11px; font-weight:bold; color:#ff6633; text-decoration:underline;}
+
+#internalMiniBag #addedItemDetail {float:left; padding:10px 0; width:420px;}
+#internalMiniBag #shopBagImageHolder {float:left; width:70px; height:70px;}
+#internalMiniBag #shopBagImageHolder img {border:0px solid #EFE7DA; padding-top:10px;}
+
+#internalMiniBag #shopBagItem, #internalMiniBag #shopBagColor, #internalMiniBag #shopBagSize, #internalMiniBag #shopBagQty {float:left; padding:8px 5px;}
+
+#internalMiniBag #shopBagItem {width:133px;}
+#internalMiniBag #shopBagColor {width:95px;}
+#internalMiniBag #shopBagSize {width:45px;}
+#internalMiniBag #shopBagQty {width:20px;}
+
+#internalMiniBag #shopBagItemHeading, #internalMiniBag #shopBagColorHeading, #internalMiniBag #shopBagSizeHeading, #internalMiniBag #shopBagQtyHeading {color:#000000; font-size:11px; font-weight:bold;}
+#internalMiniBag #shopBagItemValue, #internalMiniBag #shopBagColorValue, #internalMiniBag #shopBagSizeValue, #internalMiniBag #shopBagQtyValue {font-size:11px; color:#ff6633;}
+
+#internalMiniBag #shopBagCheckout {float:right; width:100%;}
+#internalMiniBag #shopBagCheckout div {float:right; padding-left:10px; padding-top:6px;}
+
+.miniCartDividerBottom {background-color:#cccccc; height:1px; font-size:0; padding:0; margin:0; line-height:0; float:left; width:100%;}
+.miniCartDividerTop {background-color:#cccccc; height:1px; font-size:0; padding:0; margin:0; line-height:0; float:left; width:100%;}
+
+#miniSubTotal {width:420px; text-align:right; float:left; font-size:11px; font-weight:bold; padding:5px 0; color:#000000;}
+#evShopBag #shopBagCheckout #subTotalDetail {float:left; padding-left:0; width:112px; line-height:12px; font-size:9px;}
+#internalMiniBag #shopBagMessage {color:#ff6633; float:left; padding-left:5px; width:325px; font-size:10px;}
+#internalMiniBag #mini_addToCloset {display:none;}
+
+.miniCartDividerBottom {background-color:#cccccc; height:1px; font-size:0; padding:0; margin:0; line-height:0; float:left; width:100%;}
+.miniCartDividerTop {background-color:#cccccc; height:1px; font-size:0; padding:0; margin:0; line-height:0; float:left; width:100%;}
+
+#vabacktotop {cursor:pointer; float:left; width:37px; height:38px; overflow:hidden; position:fixed; right:40px; bottom:0; visibility:hidden; z-index:9999;}
+#shell #content .qvLinkA {font-weight:bold; text-decoration:underline;}
+
+#shell #dynamicMess {display:none;}
+.notfirst {padding-left:10px}
+#shell #contentZoomLargeHolder {width:980px;}
+#shell #seoFooter {border-top:solid #000000 7px; margin-top:15px; padding-top:10px;}
+
+#shell #content .BVMEPageHeader {background-color:#FF6633; border-radius:0; padding-left:40px;}
+#shell #content .BVPageHeader {position:relative; left:-40px; width:980px; ;}
+#shell #content .BV {padding:0 40px;}
+#shell #content .BVFieldLabel, #shell #content .BVFieldRequired .BVFieldLabel {color:#999999;}
+#shell #bazaarVoiceRate {width:225px; overflow:hidden;}
+#jagGrayBG {position:absolute; top:0; left:0; z-index:90; background-color:#000000;}
+.descShipDate {clear:both; width:200px; display:none; float:left; padding:10px 0;}
+.shipwithprice {float:left; font-size:9pt; padding-top:2px;}
+.overAllRatingText {float:left; font-size:11px; font-weight:bold; padding-right:6px;}
+.overAllRating {float:left;}
+.backToProductLinkA {text-decoration:none;}
+.backToProductLinkA:hover {text-decoration:underline;}
+#shopBagProdName .preorder {text-transformation:uppercase; color:#FF6633;}
+.nameinprint {float:left; padding-right:6px; color:#000000; font-size:10pt; font-weight:bold;}
+#addToWishlistButton, .evPrintOpenHandle {display:none;}
+.preorderCarttext {display:none;}
+a#cartControlsFitGuide { display:none;}
+#sr_pdp {width:224px; overflow:hidden; float:left; padding:10px 0;}
+
+#tblShipInfo, #tblShipInfoShadow {width:700px; border-collapse:collapse;}
+#evShipInfo td.cellT, #evShipInfo td.cellB {width:684px;}
+
+#shipInfoHeaderHolder {height:45px;}
+#shipInfoHeader {padding:10px 0px 0px 25px; float:left;}
+#shipInfoHeaderText {font-size:9pt; font-weight:bold; padding:0px 0px 10px 25px; text-align:left; color:#666666;}
+#shipInfoClose {float:right; padding:10px 12px 0px 0px;}
+#shipInfoMain {padding:5px 20px 14px 25px; float:left; text-align:left; color:#666666;}
+#evShipInfo .headerInfo, #contMain .headerInfo {font-weight:bold; padding:5px 0px;}
+#evShipInfo .shipInfo, #contMain .shipInfo {padding:5px 0px 5px 35px;}
+#evShipInfo .shipNote, #contMain .shipNote {padding:5px 0px 5px 0px; }
+#evShipInfo #shipOptions, #contMain #shipOptions {padding:5px 0px;}
+#tblShipOptions {width:100%; border-collapse:collapse; border-bottom:solid 1px #cccccc; border-right:solid 1px #cccccc;}
+#tblShipOptions td {border-top:solid 1px #cccccc; border-left:solid 1px #cccccc; padding:10px 22px; color:#000000;}
+#tblShipOptions th {border-top:solid 1px #999999; border-left:solid 1px #999999; padding:5px 22px; background-color:#999999; color:#ffffff;}
+#tblShipOptions th span {font-weight:normal;}
+#tblShipOptions th.centeredCell {text-align:center;}
+#tblShipOptions th.greyedCell {color:#cccccc;}
+#tblShipOptions td.greyedCell {color:#999999;}
+#tblShipOptions td.leftCell {text-align:left;}
+#evShipInfo .red {color:#ff6633;}
+#shipInfoBtnHolder {padding-top:15px;}
+
+#countrySelectWidget {color:#453135; float:right; font-size:10px; margin-top:9px; padding-top:4px; width:100px; z-index:990;}
+#countrySelectWidget a {color:#453135;}
+#countrySelectWidget a:hover {text-decoration:underline;}
+.countrySelectHolder {}
+#countrySelectHolder {float:left;}
+#currentCountry {float:left;}
+#countriesDD {float:left; width:50%;}
+#countriesDD a {}
+.countrySelectLabel {color:#999999; cursor:pointer; float:left; font-weight:bold; padding-right:5px; text-decoration:none;}
+.countryHeadSpan {padding-right:8px; text-transform:none;}
+.countryFlagSpan {padding:1px 0;}
+.countryNameSpan {padding-left:2px;}
+#selectedCountry {float:left; width:100%; padding-bottom:10px;}
+#countriesDD img {float:left; padding-right:5px;}
+#countryLabelHolder {float:left; width:100%; padding-bottom:10px;}
+.currencySelectHolder {display:none;}
+#currencySelectHolder {background-color:#ffffff; border:1px solid #999999; float:left; left:174px; padding:15px; position:absolute; top:67px; width:600px; z-index:999;}
+#currencySelectHolder a {color:#453135; float:left; padding-top:3px;}
+#currencySelectContent .countrySelectLabel {font-size:12px; padding-right:5px; text-transform:none;}
+#countrySelectWidget #currencySelectContent .countryNameSpan {text-transform:uppercase;}
+#currenciesDD {float:left; width:50%;}
+#currencySelectContent {float:left; width:100%; padding-bottom:10px;}
+.currencySelectLabel {color:#ff6633; float:left; font-weight:bold; width:100%; padding-bottom:10px; font-size:12px; text-transform:none;}
+#selectedCurrency {float:left; width:100%; padding-bottom:10px;}
+#currencyCloseHolder {}
+#currencyCloseHolder #currencyClose {float:right; width:43px;}
+#currencyHeader {float:left; font-size:12px; padding-bottom:15px; text-transform:none; width:545px;}
+#shell #header #account {width:400px;}
+#countrySelectHolder .countrySelectLabel {}
+#currencyHeader p {float:left; font-weight:bold; padding-bottom:5px; text-transform:uppercase; width:100%;}
+#currencyHeader div {float:left; width:100%;}
+#countrySelectWidget option {background-repeat:no-repeat; padding:2px 0; float:left; height:12px;}
+#countrySelectWidget #country option {padding-left:25px;}
+#countrySelectWidget #buttonHolder {float:left; padding:20px 0 14px; width:100%;}
+#countrySelectWidget #button1Holder {float:left;}
+#countrySelectWidget #button2Holder {float:left; padding-left:39px;}
+#countrySelectWidget #buttonHolder a {background-color:#ff6633; color:#ffffff; float:left; padding:4px 0; text-align:center; text-decoration:none; text-transform:uppercase; width:261px;}
+#countrySelectWidget label {float:left; width:100%; font-size:10px;}
+#countrySelectWidget #currencyFooter {float:left; font-size:12px; width:100%; text-transform:none;}
+#countrySelectWidget #currencyFooter a {float:none; text-decoration:underline;}
+#countrySelectWidget select {background-color:#ffffff; background-image:none !important; border:1px solid #999999; color:#000000 !important; width:205px;}
+#shell #header {position:relative; z-index:900;}
+#quickViewBottom {display:none;}
+#shell #header #shoppingBag {}
+#header #mainHeaderRight #seperator {color:#FF6633; float:right; margin-top:12px; padding:0 4px;}
+#shell #header #account #seperator {margin-top:5px;}
+#header #account, #account a {color:#999999;}
+#shell #header #account #seperator, #shell #header #mainHeaderRight #seperator {color:#999999;}
+#countryLabelHolder span, .currencySelectLabel span {color:#ff6633; text-transform:uppercase;}
+
+.recentWrapper{float:left;background-color:#ffffff;width:100%;margin:20px 0 0 0; display: none;}
+.recentHeaderr{float:left;width:100%;padding:4px 0;}
+.SimpleProductCell{float:left;width:100%;}
+.imageContainerWrapperr{padding:6px 0;float:left;}
+.prdDetailsWrapperr{float:left;width:100%;padding:4px 0;}
+#shell .BVFieldCancel .BVButton {background-image:url(http://demandware.edgesuite.net/aaca_prd/on/demandware.static/Sites-easyspirit-Site/Sites-easyspirit-Library/default/v1417583707284/images/productDetail/buttonCancel.gif); background-repeat:no-repeat; background-position:0 0;}
+#shell .BVFieldPreview .BVButton {background-image:url(http://demandware.edgesuite.net/aaca_prd/on/demandware.static/Sites-easyspirit-Site/Sites-easyspirit-Library/default/v1417583707284/images/productDetail/buttonPreview.gif); background-repeat:no-repeat; background-position:1px 0;}
+#shell .BVFieldSubmit .BVButton {background-image:url(http://demandware.edgesuite.net/aaca_prd/on/demandware.static/Sites-easyspirit-Site/Sites-easyspirit-Library/default/v1417583707284/images/productDetail/buttonSubmit.gif); background-repeat:no-repeat; background-position:1px 0;}
+.BVButton {
+	-moz-box-shadow:3px 3px 2px #dddddd;
+	-webkit-box-shadow:3px 3px 2px #dddddd;
+	box-shadow:3px 3px 2px #dddddd; /* For IE 8 */
+	filter:progid:DXImageTransform.Microsoft.Shadow(Strength = 2, Direction = 135, Color = '#dddddd');
+	-ms-filter:"progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=135, Color='#dddddd')"; /* For IE 5.5 - 7 */
+}
+.shadow1 {
+	-moz-box-shadow:-3px 3px 2px #dddddd;
+	-webkit-box-shadow:-3px 3px 2px #dddddd;
+	box-shadow:-3px 3px 2px #dddddd; /* For IE 8 */
+	filter:progid:DXImageTransform.Microsoft.Shadow(Strength = 2, Direction = 135, Color = '#dddddd');
+	-ms-filter:"progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=135, Color='#dddddd')"; /* For IE 5.5 - 7 */
+}
+.shadow2 {
+	-moz-box-shadow:-3px 3px 2px #999999;
+	-webkit-box-shadow:-3px 3px 2px #999999;
+	box-shadow:-3px 3px 2px #999999; /* For IE 8 */
+	filter:progid:DXImageTransform.Microsoft.Shadow(Strength = 2, Direction = 135, Color = '#999999');
+	-ms-filter:"progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=135, Color='#999999')"; /* For IE 5.5 - 7 */
+}
+#shoppingBagMain {
+float: left;
+padding-top: 20px;
+border-top:1px solid;
+}
+#shoppingBagMain .shopSearchSpacer {
+height: 45px;
+float: left;
+width: 15px;
+border-right: 1px dashed;
+margin-right: 14px;
+}
+.headerLeftContainer{float:left;}
+#omnitureTracking.omnitureTracking.boxx {display: none;}
+body ._SRD .srd_iconline .srd_logo{float: none !important;}
+body ._SRD .srd_iconline .srd_msg{padding-left: 0 !important}

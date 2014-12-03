@@ -1,0 +1,61 @@
+<html webdriver="true" lang="en-US"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<div id="mf_div"></div>
+	<script type="text/javascript">
+		var _mf_tag = 
+		{
+			"init": function()
+			{
+				var id = 'mf_div';
+				var mID = window.location.pathname.split('/')[2];
+				var type = 'pos';
+				if(window.location.search.match(/orderNumber=[^&\?]+/))
+					type = 'neg';
+				var iframe = '<iframe src="//tags.mediaforge.com/pix/' + mID + '?type=' + type + '"></iframe>';
+				this.inner_html(id, iframe);
+				this.set_timeout(3000);
+			},
+			"create_element": function(doc, def, parent)
+			{
+				var el = null;
+				if(typeof doc.createElementNS != "undefined")
+					el = doc.createElementNS('http://www.w3.org/1999/xhtml', def[0]);
+				else if(typeof doc.createElement != "undefined")
+					el = doc.createElement(def[0]);
+
+				if(!el)
+					return false;
+
+				for(var i = 1; i < def.length; i++)
+					el.setAttribute(def[i++], def[i]);
+
+				if(parent)
+					parent.appendChild(el);
+
+				return el;
+			},
+			"inner_html": function(id, html)
+			{
+				document.getElementById(id).innerHTML = html;
+			},
+			"set_timeout": function(t)
+			{
+				this.timeout = setTimeout('timeout_mf()', t ? t : 5000);
+			}
+		};
+		
+		function timeout_mf()
+		{
+			var t = _mf_tag.timeout;
+			if(t) _mf_tag.inner_html('mf_div', '');
+		}
+		
+		_mf_tag.init();
+	</script>
+
+
+</body></html>

@@ -1,0 +1,6 @@
+//tealium universal tag - utag.1053 ut4.0.201410271903, Copyright 2014 Tealium.com Inc. All Rights Reserved.
+try{(function(id,loader,u){try{u=utag.o[loader].sender[id]={}}catch(e){u=utag.sender[id]};u.ev={'view':1};u.qsp_delim="&";u.kvp_delim="=";u.ts="";u.cid="";u.mid="ninewest";u.base_url="//www.rkdms.com/order.gif?mid="+u.mid+"&";u.map={};u.extend=[];u.send=function(a,b,c,d,e,f){if(u.ev[a]||typeof u.ev.all!="undefined"){c=[];for(d in utag.loader.GV(u.map)){if(typeof b[d]!="undefined"&&b[d]!=""){e=u.map[d].split(",");for(f=0;f<e.length;f++){u[e[f]]=b[d];}}}
+if(u.ts==""){var f=new Date();d=f.getMonth()+1;if(d<10){d='0'+d};e=f.getDate();if(e<10){e='0'+e};u.ts=''+f.getFullYear()+d+e+f.getHours()+''+f.getMinutes()+''+f.getSeconds();}
+if(u.cid==""){u.cid=b["cp.utag_main_ses_id"];}
+if(b._corder){for(d=0;d<b._csku.length;d++){e=[];e.push("oid="+b._corder);e.push("lid="+(d+1));e.push("cid="+u.cid);e.push("iid="+b._csku[d]);e.push("icent="+b._cprice[d].replace(".",""));e.push("iqty="+b._cquan[d]);e.push("iname="+b._cprodname[d]);e.push("ts="+u.ts);u.img=new Image();u.img.src=u.base_url+e.join(u.qsp_delim);}}}}
+try{utag.o[loader].loader.LOAD(id)}catch(e){utag.loader.LOAD(id)}})('1053','thejonesgroup.ninewest');}catch(e){}

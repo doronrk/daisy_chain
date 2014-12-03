@@ -1,0 +1,212 @@
+@CHARSET "UTF-8";
+
+.showcase .big, .showcase .overlay .tint, .overlay {
+	width: 320px;
+	height: 418px;
+}
+
+.showcase .small {
+	height:60px;
+}
+
+.showcase .overlay .tint{
+	background-color: #DEDEDE;
+	position: absolute;
+}
+
+.showcase .inzone {
+	height: 75px;
+	width: 75px;
+	border: 2px solid #AB2328;
+	position: relative;
+	overflow: hidden;
+	z-index: 20;
+	visibility: hidden;
+}
+
+.showcase .big {
+	position: absolute;
+}
+
+.showcase .overlay {
+	overflow: hidden;
+}
+
+.showcase .zoomArea {
+    height:1893px;
+    width: 1450px;
+	position: relative;
+}
+
+.showcase .zoom {
+	position: absolute;
+	left: 335px !important;
+	z-index: 100;
+	overflow: hidden;
+	visibility: hidden;
+    height: 342px;
+    width: 342px;
+    display:inline;
+    border: 2px solid #AB2328;
+}
+
+.showcase .selected {
+	border: 2px solid #FF5291;
+}
+
+.showcase .carousel_next {
+	width:7px;
+	overflow: hidden;
+	float: left;
+    margin-left: 2px;
+    margin-right: 0px;
+    padding-top: 30px;
+}
+
+.showcase .carousel_next a, .showcase .carousel_back a {
+    margin:0px;
+}
+
+.showcase .carousel_back {
+    width:7px;
+    overflow: hidden;
+    float: left;
+    margin-right: 2px;
+    margin-left: 0px;
+    padding-top: 30px;
+}
+
+.showcase #cont_thumbs {
+	height: 94px;
+    top: 0px !important;
+    margin-top: 5px;
+    width: 320px !important;
+}
+
+.showcase .rolltext {
+    color: #522C1B;
+    text-align:center;
+    height:15px;
+    margin:5px;
+    display:none;
+}
+
+/* Fix for IE6*/
+.showcase .zoomIframe {
+	width: 1050px;
+	height: 1370px;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+}
+
+/* Carousel */
+.showcase .yui-carousel {
+    visibility: hidden;
+    overflow: hidden;
+    text-align: left;
+    zoom: 1;
+}
+
+.showcase .yui-carousel.yui-carousel-visible {
+    visibility: visible;
+}
+
+.showcase .yui-carousel-content {
+    overflow: hidden;
+    text-align: center;
+    width: 320px !important;
+}
+
+.showcase .yui-carousel-element li {
+    list-style: none;
+    margin-right: 3px;
+    overflow: hidden;
+    padding: 0;
+    float:left;
+    text-align: center;
+    height: 92px;
+    width: 70px;
+    outline-style:none;
+}
+
+/*this is just to make sure the img thumb has right size*/
+.showcase .yui-carousel-element li img{
+    height: 92px;
+    width: 70px;
+}
+
+.showcase .yui-carousel-vertical .yui-carousel-element li {
+    display: block;
+    float: none;    
+}
+
+.showcase .yui-log .carousel {
+    background: #f2e866;
+}
+
+.showcase .yui-carousel-nav {
+    display:none;
+}
+
+.showcase .yui-carousel-nav:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.showcase .yui-carousel-button-focus {
+    /*outline: 1px dotted #000;*/
+}
+
+.showcase .yui-carousel-min-width {
+    min-width: 115px;
+}
+
+.showcase .yui-carousel-element {
+    overflow: hidden;
+   /* position: relative;*/
+    margin: 0 auto;
+    padding: 0;
+    text-align: left; 
+    margin: 0;
+    height:94px !important;
+}
+
+.showcase .yui-carousel-horizontal .yui-carousel-element {
+    width: 320000px;
+}
+
+.showcase .yui-carousel-vertical .yui-carousel-element {
+    height: 320000px;
+}
+
+.showcase .yui-skin-sam .yui-carousel-nav select {
+    position: static;
+}
+
+.showcase .yui-carousel .yui-carousel-item-selected {
+    border: 2px solid #AB2328;
+    height: 88px;
+    width: 66px;
+    margin-right: 3px;
+}
+.showcase .yui-carousel .yui-carousel-item-selected img{
+    height: 88px;
+    width: 66px;
+    cursor:pointer;
+}
+
+.showcase .yui-carousel-element li img {
+    cursor:pointer;
+}
+
+.showcase .yui-carousel .yui-carousel-pager-item {
+	display: none;
+}
+
+.showcase .yui-hidden {
+    display:none;
+}

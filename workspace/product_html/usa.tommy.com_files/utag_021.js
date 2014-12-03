@@ -1,0 +1,7 @@
+//tealium universal tag - utag.60 ut4.0.201402141656, Copyright 2014 Tealium.com Inc. All Rights Reserved.
+try{(function(id,loader,u){try{u=utag.o[loader].sender[id]={}}catch(e){u=utag.sender[id]};u.ev={'view':1};u.qsp_delim="&";u.kvp_delim="=";u.pid="40000412";u.base_url="//tracking.searchmarketing.com/";u.map={};u.extend=[];u.send=function(a,b,c,d,e,f,g){if(u.ev[a]||typeof u.ev.all!="undefined"){c=[];g=[];for(d in utag.loader.GV(u.map)){if(typeof b[d]!="undefined"&&b[d]!=""){e=u.map[d].split(",");for(f=0;f<e.length;f++){if(e[f]=="SMCID"){u.pid=b[d]}else if(e[f]=="OrderID"){u.OrderID=b[d]}else{g.push(e[f]+u.kvp_delim+encodeURIComponent(b[d]))}}}}
+c.push("SMCID="+u.pid);if(g.length>0){c.push(g.join(u.qsp_delim))};u.OrderID=(u.OrderID?u.OrderID:(b._corder?b._corder:""));if(u.OrderID!=""){window._caq=window._caq||[];var products=[];var order_id=u.OrderID;var currency_code=b._ccountry;var o_val=b._csubtotal.replace("$","");for(d=0;d<b._cquan.length;d++){products.push({Sku:b._cprod[d],UnitPrice:b._cprice[d],Quantity:b._cquan[d]});}
+window._caq.push(["Order",{OrderId:order_id,Revenue:o_val,CurrencyCode:currency_code,Products:products}]);}else{window._caq=window._caq||[];}
+var ca=document.createElement("script");ca.type="text/javascript";ca.async=true;ca.id="_casrc";ca.src="//t.channeladvisor.com/v2/"+u.pid+".js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ca,s);}}
+try{utag.o[loader].loader.LOAD(id)}
+catch(e){utag.loader.LOAD(id)}})('60','pvh.tommyna');}catch(e){}

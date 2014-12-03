@@ -1,0 +1,721 @@
+
+@media all
+{
+
+/*
+	 EGC-Styles:
+	author:Hannes Gruber
+	
+*/
+	
+ /* -------------------------------------------------------------------
+  EGC - Anpassungen
+------------------------------------------------------------------ */
+ 
+#gift-widecol{
+	position:relative;
+	/*left:50%;*/
+	width: 622px;
+	/*margin-left:-311px;*/
+	padding-left: 175px;
+}
+	
+
+	
+/* standardstyles fullsizecolumn */
+#gift-widecol .sh-out{
+	background: #FFF url(../../../img/basics/sh_widecol_top.gif) right top no-repeat;
+	/* width needed for ie6 */
+	width: 622px;
+	padding-top: 6px;
+	margin-bottom: 8px;
+}
+	
+#gift-widecol .sh-in{
+	background: transparent url(../../../img/basics/sh_widecol_bottom.gif) left bottom no-repeat;
+	padding: 0 8px 10px 8px;
+	/* width needed for ie6 */
+	width: 622px;
+	voice-family: "\"}\""; /* start bmh */
+	voice-family: inherit;
+	width: 605px;
+}
+	
+html>body #gift-widecol .sh-in {
+	width: 605px; /* end bmh */
+}
+	
+	
+/* -------------------------------------------------------------------
+	= EGC - Anpassungen giftcard-signin
+ ------------------------------------------------------------------ */
+ 
+#giftcard-signin {
+	margin: 2.2em 15px 1px 15px;
+	background-color: #FFF;
+	height: auto !important;
+	min-height:322px;				/* this style has a different value for IE7 in hacks/ie7.css */
+	height: 328px;					/* this style has a different value for IE6 in hacks/ie56.css */
+	
+}
+#giftcard-signin p{line-height: 1.3em;}
+
+#giftcard-signin form {
+	margin-bottom: 15px;
+}
+
+#giftcard-signin .groupbox {
+	margin-bottom: 1em;
+	padding-bottom:40px;
+	position:relative;
+}
+
+#giftcard-signin .sub-body {
+	margin-top: 0.4em;
+	margin-bottom: 0.0em;
+	padding-bottom:0px;
+}
+
+#giftcard-signin input.text {
+	border-color:#ADADAD rgb(215, 215, 215) rgb(215, 215, 215) rgb(173, 173, 173);
+	border-style:solid;
+	border-width:1px;
+	height:17px;
+	margin-top:6px;
+	width:190px;
+}
+
+#giftcard-signin .imgbutton {
+	margin:4px 6px 6px auto;
+	float:right;
+}
+
+
+
+#giftcard-signin div.sub-error {
+	color: #DD5D5E;
+	padding: 0px 0px 12px 0px;
+	font-weight: bold;
+	width:410px;
+	margin: 0px auto 0px 0px;
+	line-height: 1.4em;
+}
+
+#giftcard-signin div.sub-error a {
+	font-weight: normal;
+}
+
+	#giftcard-signin .groupbox-sync {
+		margin-top:30px;
+	}
+
+	#giftcard-signin .groupbox-sync form {
+		padding:14px 10px 0;
+	}
+	
+	#giftcard-signin .groupbox-sync #textlink_ilostmypassword {
+		margin:10px 0;
+		display:block;
+	}
+	
+		#giftcard-signin .groupbox-sync form ul {
+			margin:0;
+			padding-left:15px;
+			line-height:1.3em;
+		}
+		
+			#giftcard-signin .groupbox-sync form ul li{
+				
+			}
+		
+		#giftcard-signin .groupbox-sync form div.clearfix {
+			margin:12px 0 5px;
+		}
+		
+		#giftcard-signin .groupbox-sync form #scs-login {
+			float:left;
+		}
+		
+		#giftcard-signin .groupbox-sync form #scs-label {
+			width:290px;
+			float:right;
+		}
+
+		#giftcard-signin .groupbox-sync form #scs1 {
+			width:90px;
+			margin-right:5px;
+		}
+		
+		#giftcard-signin .groupbox-sync form #scs2 {
+			width:105px;
+		}
+		
+		#giftcard-signin .groupbox-sync form .scsval {
+			width: 30px;
+			margin-right:5px;
+		}
+/* -------------------------------------------------------------------
+	= EGC - Anpassungen giftcard-progress
+ ------------------------------------------------------------------ */
+
+#giftcard-progress{
+	list-style: none;
+	height: 27px;
+	margin: 1px 0 0 1px;
+}
+
+#giftcard-progress li{
+	list-style: none;
+	float: left;
+	display: block;
+	height: 27px;
+	overflow: hidden;
+}
+
+#giftcard-progress li em{
+	display: block;
+	padding-top: 27px;
+	overflow: hidden;
+	background-position: left top;
+	background-repeat: no-repeat;
+}
+
+/* width of elements noted in langspecific.css */
+
+#giftcard-progress li.sub-01 em{ background-image: url(../../../img/shop/giftcardactivation/giftcard_activation.jpg); }
+#giftcard-progress li.sub-02 em{ background-image: url(../../../img/shop/giftcardactivation/giftcard_confirmation.jpg); }
+#giftcard-progress li.sub-05 em{ background-image: url(../../../img/shop/giftcardactivation/giftcard_check_sign.jpg); }
+
+#giftcard-progress.sub-step01 li.sub-01 em,
+#giftcard-progress.sub-step02 li.sub-02 em,
+#giftcard-progress.sub-step03 li.sub-03 em,
+#giftcard-progress.sub-step04 li.sub-04 em,
+#giftcard-progress.sub-step05 li.sub-05 em{
+	background-position: left -27px;
+}
+
+#giftcard-progress.sub-step02 li.sub-01 em,
+#giftcard-progress.sub-step03 li.sub-02 em,
+#giftcard-progress.sub-step04 li.sub-03 em,
+#giftcard-progress.sub-step05 li.sub-02 em,
+#giftcard-progress.sub-step05 li.sub-04 em{
+	background-position: left -54px;
+}
+
+#giftcard-progress.sub-step03 li.sub-01 em,
+#giftcard-progress.sub-step04 li.sub-01 em,
+#giftcard-progress.sub-step04 li.sub-02 em,
+#giftcard-progress.sub-step05 li.sub-01 em,
+#giftcard-progress.sub-step05 li.sub-03 em{
+	background-position: left -81px;
+}
+
+/* -------------------------------------------------------------------
+	=  EGC - AnpassungenGiftcard-progress
+ ------------------------------------------------------------------ */
+
+/* width summed up has to be 742 */
+#giftcard-progress li.sub-01 { width: 269px; }
+#giftcard-progress li.sub-02 { width: 269px; }
+#giftcard-progress li.sub-03 { width: 168px; }
+#giftcard-progress li.sub-04 { width: 169px; }
+#giftcard-progress li.sub-05 { width: 66px; }
+		
+	
+/* -------------------------------------------------------------------
+	= EGC - Anpassungenegc-giftcard text
+ ------------------------------------------------------------------ */
+
+#giftcard-signin .sub-img{
+	position: relative;
+}
+
+#giftcard-signin .sub-msg{
+	position: absolute; left: 320px; top: 110px; width: 250px; height: 90px; font-size:15px; font-weight:700; color: #ffffff;
+}
+
+#giftcard-signin .sub-amount{
+	position: absolute; left: 250px; top: 185px; width: 300px; height: 35px; text-align: right; color:#999; font-size:30px; font-weight:bold; color: #ffffff;
+}
+
+#giftcard-signin .sub-code{
+	position: absolute; left: 140px; top: 240px; width: 300px; height: 30px; text-align: right; font-size:13px; font-weight:700; color: #ffffff;
+}
+
+#giftcard-signin .sub-pin{
+	position: absolute; left: 470px; top: 240px; width: 270px; height: 15px; font-size: 13px; font-weight:700; color: #ffffff;
+}
+
+#giftcard-signin .sub-buttons .sub-lft {	float: left;	}
+#giftcard-signin .sub-buttons .sub-rgt {	float: right;	}
+	
+	
+#giftcard-signin .sub-content{
+	margin-left:5px;
+}
+	
+#giftcard-signin .sub-content label {
+		display:inline;
+		font-weight:normal;
+		margin-right:40px;
+	}
+				
+/* -------------------------------------------------------------------
+	= Balance Checker
+ ------------------------------------------------------------------ */
+
+.grid-balance {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.grid-balance th {
+	background-color:#E0E0E0;
+	border-right:1px solid #FFFFFF;
+	color:#6A6A6A;
+	padding:4px 8px;
+}
+
+
+.grid-balance td {
+	border-bottom:1px solid #E0E0E0;
+	border-right:1px solid #E0E0E0;
+	line-height:1.4em;
+	padding:6px 8px;
+	vertical-align:top;
+}
+
+.grid-balance .ordernum {
+	border-left:1px solid #E0E0E0;
+	width: 105px;
+}
+
+.grid-balance .balancedate {
+	width:80px;
+	border-left:1px solid #E0E0E0;
+}
+	
+.grid-balance .balancereamount {
+	width:80px;
+	height:40px;
+	border-left:1px solid #E0E0E0;
+	background-color:#fbfcfc;
+	vertical-align: middle;
+}
+.grid-balance .balanceremaining {
+	font-weight: bold;
+	height:40px;
+	background-color:#fbfcfc;
+	vertical-align: middle;
+}	
+	
+.grid-balance .balanceamount {
+	font-weight: bold;
+}
+.grid-balance .balancetransaction {
+	width:80px;
+}
+	
+.grid-balance .balancenumber {
+	width:80px;
+}
+	
+.grid-balance .balancestatus {
+	font-weight: bold;
+}
+	
+
+	
+.grid-balance .orderprice {
+	text-align:right;
+	width:140px;
+}
+
+.grid-balance th.orderprice {
+	border-right:1px solid #e0e0e0;
+}
+
+.grid-balance a, .grid-balance a:link {
+	text-decoration:underline;
+}
+.entercode {
+	margin-left:0px;
+}
+	
+.entercode img {
+	margin:0 0 0 0 ;
+}
+	
+.entercode p {
+	margin-top:1px;
+	margin-left:5px;
+	padding:0 0 0 0;
+	line-heigth: 1.0em;
+}
+	
+.grid-balancecard {
+	width: 600px;
+	margin-bottom: 20px;
+}
+
+
+
+.grid-balancecard td {
+	border-bottom:1px solid #E0E0E0;
+	border-right:1px solid #E0E0E0;
+	line-height:1.4em;
+	padding:6px 8px;
+	vertical-align:top;
+	background-color:#fbfcfc;
+	font-weight: normal;
+}
+
+.grid-balance .ordernum {
+	border-left:1px solid #E0E0E0;
+	width: 105px;
+	background-color:#fbfcfc;
+}
+
+.grid-balancecard .balancelabel {
+	width:80px;
+	border-left:1px solid #E0E0E0;
+	background-color:#fbfcfc;
+}
+	
+.grid-balancecard .balancecontent {
+	font-weight: bold;
+	background-color:#fbfcfc;
+}
+
+.grid-balancecard .balancelabeltop {
+	width:80px;
+	border-top:1px solid #E0E0E0;
+	border-left:1px solid #E0E0E0;
+	border-bottom:1px solid #E0E0E0;
+	line-height:1.4em;
+	padding:6px 8px;
+	background-color:#fbfcfc;
+	
+	
+}
+	
+.grid-balancecard .balancecontenttop {
+	font-weight: bold;
+	border-top:1px solid #E0E0E0;
+	border-bottom:1px solid #E0E0E0;
+	border-right:1px solid #E0E0E0;
+	line-height:1.4em;
+	padding:6px 8px;
+	background-color:#fbfcfc;
+}
+		
+	
+	
+	
+/* -------------------------------------------------------------------
+	=Checkout  postion of the delete button 
+------------------------------------------------------------------ */	
+table.grid-bag td .sub-egc-delete{ 
+	float: right; 
+	padding-right: 48px;
+	}
+	
+/* -------------------------------------------------------------------
+	=egc preview ajax
+------------------------------------------------------------------ */	
+
+/*#giftcard-signin .sub-buttons .sub-lft {	float: left;	}
+#giftcard-signin .sub-buttons .sub-rgt {	float: right;	}*/
+	
+	
+#giftcard-signin .sub-content-egc{
+	padding-top:10px;
+	padding-bottom:10px;
+	margin-left:58px;
+}
+	
+
+#giftcard-signin .sub-img-egc{
+	position: relative;
+	padding-bottom:45px;
+	padding-top:1px;
+	padding-left:60px;
+}
+	
+#giftcard-signin .sub-step1-mask2{
+	position: absolute; left: 60px; top: 1px; width: 205px; height: 250px; text-align: left; color:#5c5c5c; font-size:11px; font-weight:600; z-index:3;
+}	
+	
+#giftcard-signin .sub-amount-egc{
+	position: absolute; left: 58px; top: 290px; width: 300px; height: 40px; text-align: left; color:#777; font-size:17px; font-weight:bold; 
+}
+
+#giftcard-signin .sub-amount-egc-title{
+	position: absolute; left: 58px; top: 270px; width: 200px; height: 23px; text-align: left; color:#666; font-size:11px; font-weight:600; 
+}
+
+#giftcard-signin .sub-greeting-egc-title{
+	position: absolute; left: 200px; top: 270px; width: 250px; height: 23px; text-align: left; font-size:11px; font-weight:600; color: #666;
+}
+
+#giftcard-signin .sub-greeting-egc{
+	position: absolute; left: 200px; top: 285px; text-align: left; width: 240px; height: 12px; font-size: 10px; color: #666;
+}
+	
+/* -------------------------------------------------------------------
+	=egc overview 1
+------------------------------------------------------------------ */	
+
+/*#giftcard-signin .sub-buttons .sub-lft {	float: left;	}
+#giftcard-signin .sub-buttons .sub-rgt {	float: right;	}*/
+	
+	
+#giftcard-signin .sub-content-step1{
+	padding-top:0px;
+	padding-bottom:0px;
+	margin-left:9px;
+}
+	
+
+#giftcard-signin .sub-img-step1{
+	position: relative;
+	padding-bottom:20px;
+	padding-top:1px;
+}
+	
+#giftcard-signin .sub-step1-mask{
+	position: absolute; left: 0px; top: 1px; width: 205px; height: 250px; text-align: left; color:#5c5c5c; font-size:11px; font-weight:600; z-index:3;
+}
+
+
+	
+#giftcard-signin .sub-step1-amount-bg{
+	position: absolute; left: 380px; top: 2px; width: 205px; height: 250px; text-align: left; color:#5c5c5c; font-size:11px; font-weight:600; z-index:1;
+}
+#giftcard-signin .sub-step1-amount-title{
+	position: absolute; left: 390px; top: 15px; width: 300px; height: 40px; text-align: left; color:#5c5c5c; font-size:11px; font-weight:600; z-index:2;
+}
+	
+#giftcard-signin .sub-step1-amount-value{
+	position: absolute; left: 390px; top: 30px; width: 300px; height: 40px; text-align: left; color:#777; font-size:18px; font-weight:600; z-index:2;
+}	
+
+#giftcard-signin .sub-step1-code-title{
+	position: absolute; left: 390px; top: 60px; width: 300px; height: 40px; text-align: left; color:#5c5c5c; font-size:11px; font-weight:600; z-index:2; 
+}
+
+#giftcard-signin .sub-step1-code-value{
+	position: absolute; left: 390px; top: 75px; width: 300px; height: 40px; text-align: left; color:#777; font-size:12px; font-weight:600; z-index:2; 
+}
+	
+#giftcard-signin .sub-step1-pin-title{
+	position: absolute; left: 390px; top: 105px; width: 300px; height: 40px; text-align: left; color:#5c5c5c; font-size:11px; font-weight:600; z-index:2; 
+}
+#giftcard-signin .sub-step1-pin-value{
+	position: absolute; left: 390px; top: 120px; width: 300px; height: 40px; text-align: left; color:#777; font-size:12px; font-weight:600; z-index:2; 
+}
+		
+#giftcard-signin .sub-step1-greeting-title{
+	position: absolute; left: 390px; top: 145px; width: 300px; height: 40px; text-align: left; color:#5c5c5c; font-size:11px; font-weight:600; z-index:2;  
+}
+
+#giftcard-signin .sub-step1-greeting-text{
+	position: absolute; left: 390px; top: 160px; width: 190px; height: 40px; text-align: left; color:#777; font-size:10px; font-weight:500; z-index:2;  
+}
+	
+#giftcard-signin .sub-content-step1 label {
+		display:inline;
+		font-weight:bold;
+		margin-right:40px;
+	}
+	
+
+}
+
+/* EGC Activation reachOUT.com - Begin */
+#gift-widecol {
+	font-family: "NewsGothicBT",Arial,sans-serif;
+	padding: 65px 0 0 0;
+	width: 622px;		
+}
+
+#gift-widecol.redeeminfo {
+	width: 660px;
+}
+
+#gift-widecol.redeeminfo img {
+	margin: 10px 0 40px 0;
+}
+
+#gift-widecol #egcsteps-01, #gift-widecol #egcsteps-02 {
+	border-bottom: 1px solid #888888;
+    border-top: 1px solid #888888;
+    cursor: default;
+    font-family: "NewsGothicBdCnBT","Arial Narrow",Arial,sans-serif;
+    height: 38px;
+    letter-spacing: 0.02em;
+    margin-bottom: 30px;
+    padding: 1px 0;
+    width: 100%;
+}
+
+#gift-widecol #egcsteps-01 li, #gift-widecol #egcsteps-02 li {
+    background: url("../../../img/basics/bg_checkout.jpg") no-repeat scroll 100% 0 #dde1dd;
+    display: block;
+    float: left;
+    font-size: 16px;
+    height: 38px;
+    line-height: 38px;
+    overflow: hidden;
+    padding-left: 8px;
+    position: relative;
+    text-transform: uppercase;
+    width: 275px;
+}
+
+#gift-widecol #egcsteps-01 li.sub-01 {
+    background-color: #595959;
+    background-position: 100% -76px;
+    color: #faf9f5;
+}
+
+#gift-widecol #egcsteps-01 li.sub-03 {
+    background: url("../../../img/basics/icons.png") no-repeat scroll 16px -3207px #dde1dd;
+    height: 38px;
+    text-indent: -10000px;
+    width: 48px;
+}
+
+#gift-widecol #egcsteps-02 li.sub-02 {
+	background-position: 100% -38px;    
+}
+
+#gift-widecol #egcsteps-02 li.sub-03 {
+	background-color: #595959;
+    background-image: url("../../../img/basics/icons.png");
+    background-position: 16px -3307px;
+    color: #faf9f5;
+    height: 38px;
+    text-indent: -10000px;
+    width: 47px;
+}
+
+#gift-widecol .sub-buttons .btn-process,
+#gift-widecol .sub-buttons .btn-stdbig {
+	height: 28px;
+}
+
+#gift-widecol a.download {
+	background: #2c5b80;
+}
+
+#gift-widecol a.download:hover,
+#gift-widecol a.download:active,
+#gift-widecol a.download:focus {
+	background: #1f425c;
+}
+
+#gift-widecol .sub-step1-mask {
+	left: 0px;
+	position: absolute;
+	top: 137px;
+	width: 374px;
+	z-index: 3;
+}
+
+#gift-widecol .sub-step1-cardinformations {
+	background: #f1f1f1;
+	font-size: 11px;
+	height: 224px;	
+	overflow: hidden;
+	padding: 13px;
+	right: 0px;
+	top: 137px;
+	width: 205px;
+	position: absolute;
+}
+
+#gift-widecol .sub-step1-cardinformations .text-scrollbox {
+	height: 224px;
+	line-height: 16px;
+}
+
+#gift-widecol .sub-step1-greeting-text {
+	font-size: 11px;
+}
+
+#gift-widecol .sub-step1-cardinformations-row {
+	margin: 0 0 5px 0;
+}
+
+#gift-widecol .sub-step1-cardinformations-row.last {
+	margin: 0px;
+}
+
+#gift-widecol .sub-step1-cardinformations strong {
+	font-family: "NewsGothicBTBold",Arial,sans-serif;
+    font-weight: normal;
+    font-size: 13px;
+    letter-spacing: 0.02em;
+    line-height: 150%;    
+}
+
+#gift-widecol .sub-step1-amount-value {
+	font-size: 16px;
+	font-weight: bold;
+}
+
+#gift-widecol .sub-step1-code-value, #gift-widecol .sub-step1-pin-value {
+	font-weight: bold;	
+}
+
+#gift-widecol p {
+    font-family: "NewsGothicBT",Arial,sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.03em;
+    line-height: 150%;
+}
+
+#gift-widecol .sub-submit {
+	margin: 5px 0 20px 0;
+}
+
+#gift-widecol .sub-buttons.sub-submit {
+	text-align: right;
+}
+
+#gift-widecol form.std .klickbox-row {
+    padding-left: 0px;
+}
+
+#gift-widecol .sub-content-step1.first {
+	padding: 0px 0 0 0;
+}
+
+#gift-widecol .sub-content-step1 p {
+	padding: 0 0 18px 0;
+}
+
+#gift-widecol .sub-content-step1.first p {
+	padding: 0;
+}
+
+#gift-widecol fieldset {
+	padding: 0px;
+}
+
+#gift-widecol p+p {
+	margin: 10px 0 0 0;
+}
+/* EGC Activation reachOUT.com - End */
+
+/* EGC Preview Basket reachOUT.com - Begin */
+#giftcard-signin.basket-preview {
+	height: 435px!important;
+}
+#giftcard-signin.basket-preview .sub-greeting-egc {
+	height: auto;
+	min-height: 12px;
+	max-height: 100px;
+}
+/* EGC Preview Basket reachOUT.com - End */

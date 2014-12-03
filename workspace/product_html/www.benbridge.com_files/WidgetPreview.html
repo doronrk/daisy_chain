@@ -1,0 +1,431 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html webdriver="true" xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+   <script src="WidgetPreview_data/widget-data.js" type="text/javascript"></script>
+   <script src="WidgetPreview_data/jquery-latest.js" type="text/javascript"></script>
+   <script src="WidgetPreview_data/jquery.js" type="text/javascript"></script>
+   <title>
+	Widget preview
+</title></head>
+<body>
+    <form method="post" action="WidgetPreview.aspx?sid=9cAZMwa2&amp;servername=e.benbridge.com&amp;piwikuserid=0&amp;UserId=%5bUserId%5d&amp;url=http%3a%2f%2fwww.benbridge.com%2fshop%2fCouture-Collection-Diamond-Ring-18K-11374899.html&amp;ck=false" id="form1">
+<div class="aspNetHidden">
+<input name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTg0ODIyMDU5MmRkkPkgF9eu3ekmb8Ay0SzxySossfFGGkijND9Qp2GKztg=" type="hidden">
+</div>
+
+<div class="aspNetHidden">
+
+	<input name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="223489C3" type="hidden">
+</div>
+    <div style="display: block;" id="mainWidget"><script id="WidgetTemplate" type="x-jquery-tmpl">
+    <style type="text/css">
+        {{html CSS}}
+        div.social > img {cursor:pointer; margin-right:8px;}
+        #blocker
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: .2;
+            filter: Alpha(Opacity=20);
+            background-color: #000;
+            z-index: 1000;
+            -webkit-border-radius: 10px; 
+        }
+        #bockerDiv
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('http://${ServerName}/TmSubscribe.net/Images/ajax-loader.gif') no-repeat center center transparent;
+            z-index: 1001;
+        }
+    </style>
+    <div class="widget">
+        <div class="header"> {{html TitleText}} </div>
+       
+        <div class="main" id="mainWidgetContent">
+            {{if (SocialSignUpLocation && (SocialSignUpLocation == 1)) }}  
+                {{tmpl "#SocialSignupOptions"}}
+            {{/if}}
+            {{each PollWidgets}} 
+            {{if ((PollWidgetType > 0 && PollWidgetType < 6)|| (PollWidgetType == 10)) }}  
+                {{if (HideQuestion && HideQuestion == 0) }}  
+                    <div class="question" id="dvq${PollId}">
+                    {{html PollQuestion}}
+                    {{if (IsRequired) }}  
+                        <span style="color:red">*</span>
+                    {{/if}} 
+                    </div>
+                {{/if}} 
+           {{/if}} 
+           
+            {{if (PollWidgetType == 1) }}  
+                <div class="answers"  pollid="${PollId}" PollType="${PollWidgetType}" Validate="${IsRequired}" id="dva${PollId}" >
+                    {{each PollAnswers}}  
+                        <input type="radio" name="rb${PollId}" value="${PollAnswerId}" />  {{html Choice}}  <br/>  
+                    {{/each}} 
+                </div>
+            {{/if}} 
+
+
+            {{if (PollWidgetType == 2) }}  
+                <div class="answers" pollid="${PollId}" PollType="${PollWidgetType}" Validate="${IsRequired}" id="dva${PollId}">
+                {{each PollAnswers}}  
+                    {{if (Prechecked == "true") }}
+                        <input type="checkbox" name="cb${PollId}" value="${PollAnswerId}" checked="checked"  />  ${Choice} <br/>  
+                    {{else}}
+                        <input type="checkbox" name="cb${PollId}" value="${PollAnswerId}"   />  {{html Choice}}  <br/>  
+                    {{/if}}
+                {{/each}} 
+                </div>
+            {{/if}} 
+
+            {{if (PollWidgetType == 3) }}  
+                <div class="answers" pollid="${PollId}" PollType="${PollWidgetType}" Validate="${IsRequired}" id="dva${PollId}">
+                <select name="sl${PollId}"> 
+                    <option value="0"> --Select-- </option>  
+                    {{each PollAnswers}}  
+                        <option value="${PollAnswerId}"> {{html Choice}} </option>  
+                    {{/each}} 
+                </select> 
+                </div>
+            {{/if}} 
+
+
+            {{if (PollWidgetType == 4) }}  
+                <div class="answers" pollid="${PollId}" PollType="${PollWidgetType}" Validate="${IsRequired}" id="dva${PollId}">
+                    <textarea name="ta${PollId}"  ></textarea>  
+                </div>
+            {{/if}} 
+
+
+            {{if (PollWidgetType == 5) }}  
+                <div class="profile">
+                {{each PollAnswers}} 
+                    <div class="question" id="dvq${PollAnswerId}">
+                        ${Choice}
+                        {{if (IsRequired) }}  
+                            <span style="color:red">*</span>
+                        {{/if}}
+                    </div> 
+                    {{if (FieldType == "select") }}  
+                        <div class="answers" pollid="${PollId}" pollanswerid="${PollAnswerId}" PollType="${PollWidgetType}" Validate="${IsRequired}" id="dva${PollAnswerId}">
+                        <select name="sl${PollAnswerId}"> 
+                            <option value="0"> --Select-- </option>  
+                            {{each OptionsForChoices}}  
+                                <option value="${Key}" ${IsSelected}> ${Value}</option>  
+                            {{/each}} 
+                        </select> 
+                        </div>
+                    {{/if}} 
+
+                    {{if (FieldType == "textbox") }}  
+                        
+                        <div class="answers" pollid="${PollId}" pollanswerid="${PollAnswerId}" PollType="${PollWidgetType}" Validate="${IsRequired}" id="dva${PollAnswerId}">
+                            <input type="text" name="tb${PollAnswerId}" question="${Choice}" placeholder="${Choice}" value="${UserChoice}" /> 
+                        </div>
+                          
+                    {{/if}} 
+                    {{if (FieldType == "longdate")  }}  
+                        
+                        <div class="answers" pollid="${PollId}" pollanswerid="${PollAnswerId}" PollType="${PollWidgetType}" Validate="${IsRequired}" id="dva${PollAnswerId}">
+                            <input type="text" name="tb${PollAnswerId}" question="${Choice}" value="${UserChoice}" />  <i>MM/DD/YYYY</i>
+                        </div>
+                          
+                    {{/if}} 
+                     {{if (FieldType == "password") }}  
+                        
+                        <div class="answers" pollid="${PollId}" pollanswerid="${PollAnswerId}" PollType="${PollWidgetType}" Validate="${IsRequired}" id="dva${PollAnswerId}" >
+                            <input type="password" name="tb${PollAnswerId}"  Validate="${IsRequired}" value="${UserChoice}"/>  
+                        </div>
+                        
+                    {{/if}} 
+
+                    {{if (FieldType == "checkbox") }}  
+                       
+                            <div class="answers" pollid="${PollId}" pollanswerid="${PollAnswerId}" PollType="${PollWidgetType}" Validate="${IsRequired}" id="dva${PollAnswerId}">
+                            {{each OptionsForChoices}}  
+                                <input type="checkbox" name="cb${PollId}_${PollAnswerId}" value="${Key}" ${IsSelected} />${Value}</br> 
+                            {{/each}} 
+                            </div>
+                    {{/if}} 
+
+                    {{if (FieldType == "radio") }}  
+                        
+                            <div class="answers" pollid="${PollId}" pollanswerid="${PollAnswerId}" PollType="${PollWidgetType}" Validate="${IsRequired}" id="dva${PollAnswerId}">
+                            {{each OptionsForChoices}}  
+                                <input type="radio" name="rb${PollId}_${PollAnswerId}" value="${Key}" ${IsSelected} />${Value}</br> 
+                            {{/each}} 
+                            </div>
+                    {{/if}} 
+
+                    {{if (FieldType == "shortdate") }} 
+                        
+                            <div class="answers" pollid="${PollId}" pollanswerid="${PollAnswerId}" PollType="${PollWidgetType}" Validate="${IsRequired}" id="dva${PollAnswerId}">
+                            <select name="sl${PollAnswerId}_1"> 
+                                <option value="0">Month</option>  
+                                {{each OptionsForChoices}}  
+                                    <option value="${Key}" ${IsSelected}> ${Value}</option>  
+                                {{/each}} 
+                            </select> 
+                            <select name="sl${PollAnswerId}_2"> 
+                                {{each days}}  
+                                    {{if ($value == UserChoice) }}
+                                        <option value="${$value}" selected> ${$index}</option>  
+                                    {{else}}
+                                        <option value="${$value}"> ${$index}</option>  
+                                    {{/if}}
+                                {{/each}} 
+                            </select> 
+                            </div>
+                       <br/>
+                    {{/if}} 
+
+                {{/each}} 
+                </div>
+            {{/if}}
+
+            {{if (PollWidgetType == 10) }}  
+                <div class="answers" id="ffwdTxtAreaMain${PollId}">
+                  <div id="ffdLbl${PollId}">
+                    <label ID="lblTitle">
+                      ${PollAnswers[0].Choice}
+                    </label>
+                  </div>
+                  <div class="addressbook-widget">
+                    <div id="dva${PollId}" class="addressbook-input" pollanswerid="${PollAnswers[0].PollAnswerId}" pollid="${PollId}" PollType="${PollWidgetType}" Validate="${IsRequired}">
+                      <textarea id="AddressBookEntry">
+                      </textarea>
+                    </div>
+                    <div class="addressbook-importers">
+                      <div class="answers">
+                          ${PollAnswers[1].Choice}
+                      </div>
+                      <div>
+                        <div class="yahoo-importer" id="csYahoo">
+                          <a id="source-yahoo" href="#" onclick="return cloudsponge.launch('yahoo');">
+                            <img alt="Yahoo" height="28" src="../TmSubscribe.net/images/yahoo.png" width="28" />
+                          </a>
+                        </div>
+                        <div class="gmail-importer" id="csGmail">
+                          <a id="source-gmail" href="#" onclick="return cloudsponge.launch('gmail');">
+                            <img alt="Gmail" height="28" src="../TmSubscribe.net/images/google.png" width="28" />
+                          </a>
+                        </div>
+                        <div class="msn-importer" id="csLive">
+                          <a id="source-windowslive" href="#" onclick="return cloudsponge.launch('windowslive');">
+                            <img alt="Windows Live" height="28" src="../TmSubscribe.net/images/msn.png" width="28" />
+                          </a>
+                        </div>
+                        <div class="aol-importer" id="csAOL">
+                          <a id="source-aol" href="#" onclick="return cloudsponge.launch('aol');">
+                            <img alt="Aol" height="28" src="../TmSubscribe.net/images/aol.png" width="28" />
+                          </a>
+                        </div>
+                        <div class="plaxo-importer" id="csPlaxo">
+                          <a id="source-plaxo" href="#" onclick="return cloudsponge.launch('plaxo');">
+                            <img alt="Plaxo" height="28" src="../TmSubscribe.net/images/plaxo_button.png" width="28" />
+                          </a>
+                        </div>
+                        <div class="outlook-importer" id="csOutlook">
+                          <a id="source-outlook" href="#" onclick="return cloudsponge.launch('outlook');">
+                            <img alt="Microsoft Outlook" height="28" src="../TmSubscribe.net/images/microsoft.png" width="28" />
+                          </a>
+                        </div>
+                        <div class="mac-importer" id="csApple">
+                          <a id="source-addressbook" href="#" onclick="return cloudsponge.launch('addressbook');">
+                            <img alt="Mac Address Book" height="28" src="../TmSubscribe.net/images/apple.png" width="28" />
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            {{/if}} 
+            {{/each}}
+            {{if  (SocialSignUpLocation && (SocialSignUpLocation == 2)) }}  
+               {{tmpl "#SocialSignupOptions"}}
+            {{/if}} 
+            <div id="subscribeButton">
+            <input type="button" value="${SubscribeButtonText}"  id="btnTmSignup" onclick="SubmitForm(this);" />
+            </div>
+           
+            <input type="hidden" value="${SurveyID}" id="hdWidgetSurveyId" />
+        </div>
+        <div id="WidgetSubmitWaitMessage" style="padding:10px;"></div>
+        <div class="footer">{{html FooterText}}</div> 
+    </div> 
+    <div id="blocker" style="display:none">
+    </div>
+    <div id="bockerDiv" style="display:none">
+    </div>
+    <input type="text" id="txtwidget${SurveyID}" style="display:none" />
+</script>
+<script id="SocialSignupOptions" type="x-jquery-tmpl">
+        <div class="social" >${SocialSignUpText} <br/><br/>
+            {{if IsFbSignup == 1 }}
+                <img src="http://${ServerName}/TmSubscribe.net/Images/sn/widget_facebook.png" title="Login with Facebook" alt="Facebook" width=140  height=61  class="Facebook" onclick="OpenSocialSignin('FB');" />
+             {{/if}}
+             {{if IsTwSignUp == 1 }}
+                <img src="http://${ServerName}/TmSubscribe.net/Images/sn/w_twitter_btn.png" title="Login with Twitter" alt="Twitter" onclick="OpenSocialSignin('TW');" width=140  height=61  class="Twitter" />
+             {{/if}}
+             {{if IsLISignUp == 1 }}
+                <img src="http://${ServerName}/TmSubscribe.net/Images/sn/widget_linkedin.png" title="Login with LinkedIn" alt="LinkedIn" onclick="OpenSocialSignin('LI');" width=140  height=61  class="LinkedIn" />
+             {{/if}} 
+        </div>
+</script>
+<style type="text/css">         .widget {
+    overflow: hidden;
+    background: #fff;
+    margin: -8px;
+}
+
+#dva3199 {position:relative;top:0px;left:0px;}
+
+.header {
+    display: inline-block;
+    margin: 0 20px 0 10px;
+    padding: 12px 0;
+	position:relative;
+	float:left;
+}
+
+.profile {padding-bottom:0px;}
+
+.question {display:none;}
+
+input[type=text],
+.answers input[type=text],
+.answers input[type=password] {
+    outline: none;
+    height:32px;
+    font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height:32px;
+    color: #000;
+    background: #ffffff;
+    float: left;
+    z-index: 1;
+    position: relative;
+    width: 180px;
+    margin: 0;
+    padding: 0 10px 0 9px;
+    border-radius: 8px 0 0 8px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-right: 0 none;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+}
+
+#subscribeButton {margin-bottom: 0px;}
+
+#btnTmSignup {
+    outline: none;
+    font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #b3a2ce;
+    height:32px;
+    font-size: 14px;
+    line-height:32px;
+    font-weight: 300;
+    color: #fff;
+    cursor: pointer;
+    z-index: 5;
+    position: relative;
+    padding: 0 16px;
+    margin: 0px;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    border: 0 none;
+    border-radius: 0 8px 8px 0;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+}
+
+#btnTmSignup:hover {
+    background-color: #cccccc;
+}
+
+#subscribeButton input {
+
+}
+
+#subscribeButton input:disabled {}
+#subscribeButton :hover{
+    background-color: #9b5ba5;
+}
+
+#mainWidgetContent {
+    display: inline-block;
+    width: 280px;
+}
+
+.main {
+    margin: 0;
+    padding: 16px 0;
+    font-size:14px;
+    font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color:#aaa;
+float:left;
+}
+
+.footer {display:none;}
+
+.social {background-color: #F0F0F0; font-size: 16px; margin:5px; padding:6px 10px;}
+
+.error {
+    font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    color: #a00000;
+    background: #FFBABA;
+}
+
+#WidgetSubmitWaitMessage.error {
+    padding: 2px 8px !important;
+    display: inline-block;
+    position: absolute;
+    top: 50px;
+    left: 200px;
+}
+#blocker {width:0 !important;height:0 !important;-webkit-border-radius: 0 !important;top: 0 !important;
+            left: 0; display:none;}
+
+#WidgetSubmitWaitMessage {
+    padding: 0 !important;
+}
+
+#bockerDiv {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+
+         div.social > img {cursor:pointer; margin-right:8px;}         #blocker         {             position: absolute;             top: 0;             left: 0;             width: 100%;             height: 100%;             opacity: .2;             filter: Alpha(Opacity=20);             background-color: #000;             z-index: 1000;             -webkit-border-radius: 10px;          }         #bockerDiv         {             position: absolute;             top: 0;             left: 0;             width: 100%;             height: 100%;             background: url('http://e.benbridge.com/TmSubscribe.net/Images/ajax-loader.gif') no-repeat center center transparent;             z-index: 1001;         }     </style>     <div class="widget">         <div class="header"> <span style="display:block; font-family: 'Open Sans', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: bold; color: #555; line-height:20px; text-align:center;">Add sparkle to your inbox</span>
+
+<span style="display:block; font-family: 'Open Sans', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; font-weight: normal; color: #555; line-height:20px; font-style:italic; text-align:center;">Sign up for Ben Bridge email</span> </div>                 <div class="main" id="mainWidgetContent">                                                                                  <div class="question" id="dvq954">                     Email                                           </div>
+                                                                        
+                                                                  <div class="profile">                                       <div class="question" id="dvq3239">                         Email                                                        <span style="color:red">*</span>                                              </div>                                                                                                 <div class="answers" pollid="954" pollanswerid="3239" polltype="5" validate="true" id="dva3239">                             <input name="tb3239" question="Email" placeholder="Email" type="text">                          </div>
+                                                                        
+                                                                        
+                                                       </div>                                                                    <div id="subscribeButton">             <input value="Join" id="btnTmSignup" onclick="SubmitForm(this);" type="button">             </div>                         <input value="418" id="hdWidgetSurveyId" type="hidden">         </div>         <div id="WidgetSubmitWaitMessage" style="padding:10px;"></div>         <div class="footer"></div>      </div>      <div id="blocker" style="display:none">     </div>     <div id="bockerDiv" style="display:none">     </div>     <input id="txtwidget418" style="display:none" type="text"></div>
+    <script type="text/javascript">
+      LoadAndBuildSurvey('9cAZMwa2', 'mainWidget', 'e.benbridge.com','0','[UserId]','http://www.benbridge.com/shop/Couture-Collection-Diamond-Ring-18K-11374899.html','false');
+    </script>
+    </form>
+    
+
+
+
+</body></html>

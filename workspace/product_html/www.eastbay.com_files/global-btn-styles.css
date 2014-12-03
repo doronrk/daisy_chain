@@ -1,0 +1,414 @@
+﻿@charset "UTF-8";
+
+/* --- Start Default Button Styles --- */
+.button {
+    font:bold 14px/14px Arial, Helvetica, sans-serif;
+    background:#cccccc;
+    color:#000;
+    border:#999999 solid 1px;
+    text-decoration:none;
+    padding:0 15px;
+    height:44px;
+    /*min-width:153px;*/
+    width:auto;
+    line-height:44px;
+    display:inline-block;
+    cursor:pointer;
+    text-align:center;
+    text-transform:uppercase;
+}
+.cta_button {
+    background:#41403e;
+    color:#fff;
+    border:#000 solid 1px;
+}
+/* --- End Default Button Styles --- */
+
+/* --- Start Default English Button Content --- */
+.en button[type="submit"]:before {content:"Submit";}
+.en [data-btntype="submit"]:before {content:"Submit";}
+.en [data-btntype="edit"]:before {content:"Edit";}
+.en [type="submit"][data-btntype="continue"]:before {content:"Continue";}
+.en [data-btntype="continue"]:before {content:"Continue";}
+.en [data-btntype="back"]:before {content:"Back";}
+.en [data-btntype="delete"]:before {content:"Delete";}
+.en [data-btntype="quickview"]:before {content:"Quick View";}
+.en [data-btntype="tel"]:before {content:attr(data-telnum);}
+/* --- End Default English Button Content --- */
+
+/* --- Start Default French Button Content --- */
+.fr button[type="submit"]:before {content:"Soumettre";}
+.fr [data-btntype="submit"]:before {content:"Soumettre";}
+.fr [data-btntype="edit"]:before {content:"Modifier";}
+.fr [type="submit"][data-btntype="continue"]:before {content:"Continuer";}
+.fr [data-btntype="continue"]:before {content:"Continuer";}
+.fr [data-btntype="back"]:before {content:"Arrière";}
+.fr [data-btntype="delete"]:before {content:"Effacer";}
+.fr [data-btntype="quickview"]:before {content:"Aperçu rapide";}
+.fr [data-btntype="tel"]:before {content:attr(data-telnum);}
+/* --- End Default French Button Content --- */
+
+/* --- START SPECIFIC ENGLISH BUTTON CONTENT --- */
+.en button[type="submit"][data-btnname*="_LogIn"]:before, .en button[type="submit"][data-btnname*="_login"]:before {content:"Log In";}
+.en [data-btnname*="_LogIn"]:before, .en [data-btnname*="_login"]:before {content:"Log In";}
+.en [data-btnname*="_create"]:before {content:"Create";}
+.en button[type="submit"][data-btnname*="_OrderStatus"]:before {content:"View Order Status";}
+.en [data-btnname*="_OrderStatus"]:before {content:"View Order Status";}
+.en [data-btnname*="_go"]:before {content:"Go";}
+.en [data-btnname*="_joinClub"]:before {content:"Join Club";}
+.en [data-btnname*="_gotowishlist"]:before {content:"Go To Wish List";}
+.en [data-btnname*="_add"]:before {content:"Add";}
+.en [data-btnname*="_addNewAddress"]:before {content:"Add New Address";}
+.en [data-btnname*="_print"]:before {content:"Print";}
+.en [data-btnname*="_myCreditCards"]:before {content:"Add Credit Card";}
+.en button[type="submit"][data-btnname*="_save"]:before {content:"Save";}
+.en [data-btnname*="_save"]:before {content:"Save";}
+.en [data-btnname*="_share"]:before {content:"Share";}
+.en [data-btnname*="_selectAll"]:before {content:"Select All";}
+.en [data-btnname*="_addAllSelectedToCart"]:before {content:"Add All Selected To Cart";}
+.en [data-btnname*="_addToCart"]:before {content:"Add To Cart";}
+.en button[type="submit"][data-btnname*="_addToCart"]:before {content:"Add To Cart";}
+.en button[data-btnname*="_delete"]:before {content:"Delete";}
+.en [data-btnname*="_delete"]:before {content:"Delete";}
+.en [data-btnname*="_deleteAllSelected"]:before {content:"Delete All Selected";}
+.en [data-btnname*="_createNewWishlist"]:before {content:"Create New Wish List";}
+.en button[type="submit"][data-btnname*="_search"]:before {content:"Search";}
+.en [data-btnname*="_search"]:before {content:"Search";}
+.en [data-btnname*="_wishlistHelp"]:before {content:"Wish List Help";}
+.en button[type="submit"][data-btnname*="_updateCart"]:before {content:"Update Cart";}
+.en [data-btnname*="_updateCart"]:before {content:"Update Cart";}
+.en [data-btnname*="_moreInfo"]:before {content:"More Info";}
+.en [data-btnname*="_continueShopping"]:before {content:"Continue Shopping";}
+.en [data-btnname*="_viewFullCart"]:before {content:"View Full Cart";}
+.en [data-btnname*="_checkout"]:before {content:"Checkout";}
+.en [data-btnname*="_calculate"]:before {content:"Calculate";}
+.en button[type="submit"][data-btnname*="_continueAsGuest"]:before {content:"Continue";}
+.en [data-btnname*="_continueAsGuest"]:before {content:"Continue";}
+.en [data-btnname*="_editCart"]:before {content:"Edit Cart";}
+.en button[type="submit"][data-btnname*="_editBillingAddress"]:before {content:"Edit";}
+.en [data-btnname*="_editBillingAddress"]:before {content:"Edit";}
+.en button[type="submit"][data-btnname*="_editShippingAddress"]:before {content:"Edit";}
+.en [data-btnname*="_editShippingAddress"]:before {content:"Edit";}
+.en .button[type="submit"][data-btnname*="_submitOrder"]:before {content:"Submit Order";}
+.en [data-btnname*="_submitOrder"]:before {content:"Submit Order";}
+.en [data-btnname*="_cancel"]:before {content:"Cancel";}
+.en [data-btnname*="_updateOffer"]:before {content:"Update Offer";}
+.en [data-btnname*="_continueShopping"]:before {content:"Continue Shopping";}
+.en [data-btnname*="_viewCart"]:before {content:"View Cart";}
+.en [data-btnname*="_addItemToOffer"]:before {content:"Add Item To Offer";}
+.en .button[type="submit"][data-btnname*="_shoeSizeGo"]:before {content:"Go";}
+.en [data-btnname*="_shoeSizeGo"]:before {content:"Go";}
+.en .button[type="submit"][data-btnname*="_clothingSizeGo"]:before {content:"Go";}
+.en [data-btnname*="_clothingSizeGo"]:before {content:"Go";}
+.en [data-btnname*="_signUp"]:before {content:"Sign Up";}
+.en [data-btnname*="_addToWishlist"]:before {content:"Add To Wish List";}
+.en button[type="submit"][data-btnname*="_editShippingMethod"]:before {content:"Edit";}
+.en [data-btnname*="_editShippingMethod"]:before {content:"Edit";}
+.en button[type="submit"][data-btnname*="_editPayMethod"]:before {content:"Edit";}
+.en [data-btnname*="_editPayMethod"]:before {content:"Edit";}
+.en [data-btnname="search_narrowResults"]:before {content:"Narrow Results";}
+.en [data-btnname="search_breadcrumbX"]:before {content:"X";}
+.en [data-btnname="searchFilter_apply"]:before {content:"Apply";}
+.en [data-btnname="searchFilter_clearAll"]:before {content:"Clear All";}
+.en [data-btnname="searchFilter_clearX"]:before {content:"x";}
+.en button[type="submit"][data-btnname*="_continue"]:before {content:"Continue";}
+.en [data-btnname="addressBook_makeDefaultShipping"]:before {content:"Make Default Shipping";}
+.en [data-btnname="addressBook_makeDefaultBilling"]:before {content:"Make Default Billing";}
+.en [data-btnname*="_requestQuote"]:before {content:"Request Quote";}
+.en [data-btnname*="_Print"]:before {content:"Print";}
+.en button[type="submit"][data-btnname="editLogin_submit"]:before {content:"Save";}
+.en [data-btntype="submit"][data-btnname="creditCardsEdit_submit"]:before {content:"Save";}
+.en button[type="submit"][data-btnname="myStores_submit"]:before {content:"Find Stores";}
+.en [data-btnname="wishlist_deleteSelected"]:before {content:"Delete Selected";}
+.en [data-btnname="wishlist_addSelectedToCart"]:before {content:"Add Selected to Cart";}
+.en button[type="submit"][data-btnname*="_close"]:before {content:"Close";}
+.en [data-btnname*="_close"]:before {content:"Close";}
+.en button[type="submit"][data-btnname="cart_findStores"]:before {content:"Find Stores";}
+.en [data-btnname="creditCards_makeDefaultCard"]:before {content:"Make Default Card";}
+.en button[type="submit"][data-btnname*="_signIn"]:before {content:"Log In";}
+.en [data-btnname*="_signIn"]:before {content:"Log In";}
+.en [data-btnname*="_editProfile"]:before {content:"Edit Profile";}
+.en [data-btnname*="_editFieldTesterProfile"]:before {content:"Edit Field Tester Profile";}
+.en button[type="submit"][data-btnname*="_addToQuote"]:before {content:"Add To Quote";}
+.en [data-btnname*="_addToQuote"]:before {content:"Add To Quote";}
+.en [data-btnname*="_continueSearching"]:before {content:"Continue Searching";}
+.en [data-btnname*="_seeYourQuote"]:before {content:"See Your Quote";}
+.en button[type="submit"][data-btnname*="_updateQuote"]:before {content:"Update Quote";}
+.en [data-btnname*="_updateQuote"]:before {content:"Update Quote";}
+.en [data-btnname*="_addEntireListToCart"]:before {content:"Add Entire List To Cart";}
+.en [data-btnname="orderHistory_continue"]:before {content:"Next";}
+.en [data-btnname="orderHistory_back"]:before {content:"Previous";}
+.en [data-btnname="myAccount_createFieldTesterProfile"]:before {content:"Create Field Tester Profile";}
+.en [data-btnname*="_mapIt"]:before {content:"Map It";}
+.en button[type="submit"][data-btnname*="_findStores"]:before {content:"Find Stores";}
+.en button[type="submit"][data-btnname*="_checkSize"]:before {content:"Check Size";}
+.en button[type="submit"][data-btnname*="_pickupHere"]:before {content:"Pickup Here";}
+.en button[type="submit"][data-btnname="isa_close"].button:before {content:"Cancel";}
+.en [data-btnname="friendsWishlist_searchAgain"]:before {content:"Search Again";}
+.en [data-btnname="friendsWishlist_back"]:before {content:"Back";}
+.en button[type="submit"][data-btnname="createAccount_next"]:before {content:"Continue";}
+.en [data-btnname*="_backToProduct"]:before {content:"Back To Product";}
+.en button[type="submit"][data-btnname*="_addItemToOffer"]:before {content:"Add Item To Offer";}
+.en button[type="submit"][data-btnname*="_updateOffer"]:before {content:"Update Offer";}
+.en [data-btntype="back"][data-btnname="search_back"]:before {content:"Previous";}
+.en [data-btntype="continue"][data-btnname="search_next"]:before {content:"Next";}
+.en [data-btnname="creditCards_addCreditCard"]:before {content:"Add Credit Card";}
+.en [data-btnname="creditCardsEdit_back"]:before {content:"Cancel";}
+.en [data-btnname="deleteAddress_back"]:before {content:"Cancel";}
+.en button[type="submit"][data-btnname="addNewAddressDuplicate_back"]:before {content:"Back";}
+.en button[type="submit"][data-btnname="myAccountLogin_continue"]:before {content:"Log In";}
+.en button[type="submit"][data-btntype="continue"][data-btnname="editLogin_continue"]:before {content:"Save";}
+.en [data-btnname="loginOverlay_view"]:before {content:"View";}
+.en [data-btnname="cart_findInStore"]:before {content:"Find In Store";}
+.en [data-btnname*="_checkStoreAvailability"]:before {content:"Find In Store";}
+.en [data-btnname="checkout_checkoutAsGuest"]:before {content:"Checkout As Guest";}
+.en [data-btnname="checkout_pickupInStoreInstead"]:before {content:"Pickup Instore Instead";}
+.en [data-btnname*="_changeStore"]:before {content:"Change Store";}
+.en [data-btnname*="_shipToHomeInstead"]:before {content:"Ship to Home Instead";}
+.en button[data-btnname="checkout_promoCodeApply"]:before {content:"Apply";}
+.en button[data-btnname="checkout_billAddressAlternateEdit"]:before {content:"Edit";}
+.en button[data-btnname="checkout_shipAddressAlternateEdit"]:before {content:"Edit";}
+.en button[type="submit"][data-btnname="checkout_continueAsGuest"]:before {content:"Checkout As Guest";}
+.en button[data-btnname="creditCards_cancel"]:before {content:"Cancel";}
+.en button[data-btnname="creditCards_continue"]:before {content:"Continue";}
+.en [data-btntype="hyperlink"][data-btnname="reviews_back"]:before {content:"Back";}
+.en [data-btntype="hyperlink"][data-btnname="reviews_previous"]:before {content:"Previous";}
+.en [data-btntype="hyperlink"][data-btnname="reviews_next"]:before {content:"Next";}
+.en button[type="submit"][data-btnname="checkout_differentShipAddressAlternateEdit"]:before {content:"Edit";}
+.en button[type="submit"][data-btnname="vip_next"]:before {content:"Next";}
+.en button[type="submit"][data-btnname="checkout_yesSameDay"]:before {content:"Yes, I want my items today!";}
+/* --- END SPECIFIC ENGLISH BUTTON CONTENT --- */
+
+/* --- START SPECIFIC FRENCH BUTTON CONTENT --- */
+.fr button[type="submit"][data-btnname*="_LogIn"]:before, .fr button[type="submit"][data-btnname*="_login"]:before {content:"Se Connecter";}
+.fr [data-btnname*="_LogIn"]:before, .fr [data-btnname*="_login"]:before {content:"Se Connecter";}
+.fr [data-btnname*="_create"]:before {content:"Créer";}
+.fr button[type="submit"][data-btnname*="_OrderStatus"]:before {content:"Statut de la Commande";}
+.fr [data-btnname*="_OrderStatus"]:before {content:"Statut de la Commande";}
+.fr [data-btnname*="_go"]:before {content:"Aller";}
+.fr [data-btnname*="_joinClub"]:before {content:"Abonnez-vous au Club";}
+.fr [data-btnname*="_gotowishlist"]:before {content:"Aller à la Liste de Souhaits";}
+.fr [data-btnname*="_add"]:before {content:"Ajouter";}
+.fr [data-btnname*="_addNewAddress"]:before {content:"Ajouter une Nouvelle Adresse";}
+.fr [data-btnname*="_print"]:before {content:"Imprimer";}
+.fr [data-btnname*="_myCreditCards"]:before {content:"Ajouter une Carte de Crédit";}
+.fr button[type="submit"][data-btnname*="_save"]:before {content:"Sauvegarder";}
+.fr [data-btnname*="_save"]:before {content:"Sauvegarder";}
+.fr [data-btnname*="_share"]:before {content:"Partager";}
+.fr [data-btnname*="_selectAll"]:before {content:"Sélectionner Tout";}
+.fr [data-btnname*="_addAllSelectedToCart"]:before {content:"Ajouter Vos Sélections au Panier";}
+.fr [data-btnname*="_addToCart"]:before {content:"Ajouter au Panier";}
+.fr button[type="submit"][data-btnname*="_addToCart"]:before {content:"Ajouter au Panier";}
+.fr button[data-btnname*="_delete"]:before {content:"Effacer";}
+.fr [data-btnname*="_delete"]:before {content:"Effacer";}
+.fr [data-btnname*="_deleteAllSelected"]:before {content:"Supprimer Tous Sélectionnés";}
+.fr [data-btnname*="_createNewWishlist"]:before {content:"Créer une Nouvelle Liste de Souhaits";}
+.fr button[type="submit"][data-btnname*="_search"]:before {content:"Recherche";}
+.fr [data-btnname*="_search"]:before {content:"Recherche";}
+.fr [data-btnname*="_wishlistHelp"]:before {content:"Aide Pour la Liste de Souhaits";}
+.fr button[type="submit"][data-btnname*="_updateCart"]:before {content:"Mise à Jour du Panier";}
+.fr [data-btnname*="_updateCart"]:before {content:"Mise à Jour du Panier";}
+.fr [data-btnname*="_moreInfo"]:before {content:"Plus d'Info";}
+.fr [data-btnname*="_continueShopping"]:before {content:"Continuer Vos Achats";}
+.fr [data-btnname*="_viewFullCart"]:before {content:"Voir Votre Panier En Entier";}
+.fr [data-btnname*="_checkout"]:before {content:"Caisse";}
+.fr [data-btnname*="_calculate"]:before {content:"Calculer";}
+.fr button[type="submit"][data-btnname*="_continueAsGuest"]:before {content:"Continuer";}
+.fr [data-btnname*="_continueAsGuest"]:before {content:"Continuer";}
+.fr [data-btnname*="_editCart"]:before {content:"Modifier Votre Panier";}
+.fr button[type="submit"][data-btnname*="_editBillingAddress"]:before {content:"Modifier";}
+.fr [data-btnname*="_editBillingAddress"]:before {content:"Modifier";}
+.fr button[type="submit"][data-btnname*="_editShippingAddress"]:before {content:"Modifier";}
+.fr [data-btnname*="_editShippingAddress"]:before {content:"Modifier";}
+.fr .button[type="submit"][data-btnname*="_submitOrder"]:before {content:"Soumettre Votre Commande";}
+.fr [data-btnname*="_submitOrder"]:before {content:"Soumettre Votre Commande";}
+.fr [data-btnname*="_cancel"]:before {content:"Annuler";}
+.fr [data-btnname*="_updateOffer"]:before {content:"Mise à Jour de l'Offre";}
+.fr [data-btnname*="_continueShopping"]:before {content:"Continuer Vos Achats";}
+.fr [data-btnname*="_viewCart"]:before {content:"Voir Panier";}
+.fr [data-btnname*="_addItemToOffer"]:before {content:"Ajouter l'Article à l'Offre";}
+.fr .button[type="submit"][data-btnname*="_shoeSizeGo"]:before {content:"Aller";}
+.fr [data-btnname*="_shoeSizeGo"]:before {content:"Aller";}
+.fr .button[type="submit"][data-btnname*="_clothingSizeGo"]:before {content:"Aller";}
+.fr [data-btnname*="_clothingSizeGo"]:before {content:"Aller";}
+.fr [data-btnname*="_signUp"]:before {content:"S'Inscrire";}
+.fr [data-btnname*="_addToWishlist"]:before {content:"Ajouter à la Liste de Souhaits";}
+.fr button[type="submit"][data-btnname*="_editShippingMethod"]:before {content:"Modifier";}
+.fr [data-btnname*="_editShippingMethod"]:before {content:"Modifier";}
+.fr button[type="submit"][data-btnname*="_editPayMethod"]:before {content:"Modifier";}
+.fr [data-btnname*="_editPayMethod"]:before {content:"Modifier";}
+.fr [data-btnname="search_narrowResults"]:before {content:"Réduire les Résultats";}
+.fr [data-btnname="search_breadcrumbX"]:before {content:"X";}
+.fr [data-btnname="searchFilter_apply"]:before {content:"Appliquer";}
+.fr [data-btnname="searchFilter_clearAll"]:before {content:"Effacer tout";}
+.fr [data-btnname="searchFilter_clearX"]:before {content:"X";}
+.fr button[type="submit"][data-btnname*="_continue"]:before {content:"Continuer";}
+.fr [data-btnname="addressBook_makeDefaultShipping"]:before {content:"Faire l'expédition de Défaut";}
+.fr [data-btnname="addressBook_makeDefaultBilling"]:before {content:"Faire la Facturation par Défaut";}
+.fr [data-btnname*="_requestQuote"]:before {content:"Demande de Devis";}
+.fr [data-btnname*="_Print"]:before {content:"Imprimer";}
+.fr button[type="submit"][data-btnname="editLogin_submit"]:before {content:"Sauvegarder";}
+.fr [data-btntype="submit"][data-btnname="creditCardsEdit_submit"]:before {content:"Sauvegarder";}
+.fr button[type="submit"][data-btnname="myStores_submit"]:before {content:"Trouver des Magasins";}
+.fr [data-btnname="wishlist_deleteSelected"]:before {content:"Supprimer la Sélection";}
+.fr [data-btnname="wishlist_addSelectedToCart"]:before {content:"Ajouter la sélection au panier";}
+.fr button[type="submit"][data-btnname*="_close"]:before {content:"Fermer";}
+.fr [data-btnname*="_close"]:before {content:"Fermer";}
+.fr button[type="submit"][data-btnname="cart_findStores"]:before {content:"Trouver des Magasins";}
+.fr [data-btnname="creditCards_makeDefaultCard"]:before {content:"Faire défaut carte";}
+.fr button[type="submit"][data-btnname*="_signIn"]:before {content:"Se Connecter";}
+.fr [data-btnname*="_signIn"]:before {content:"Se Connecter";}
+.fr [data-btnname*="_editProfile"]:before {content:"Modifier Mon Profil";}
+.fr [data-btnname*="_editFieldTesterProfile"]:before {content:"champ de saisie profil de testeur";}
+.fr button[type="submit"][data-btnname*="_addToQuote"]:before {content:"Ajouter au Devis";}
+.fr [data-btnname*="_addToQuote"]:before {content:"Ajouter au Devis";}
+.fr [data-btnname*="_continueSearching"]:before {content:"Poursuivre Votre Recherche";}
+.fr [data-btnname*="_seeYourQuote"]:before {content:"Voir Votre Devis";}
+.fr button[type="submit"][data-btnname*="_updateQuote"]:before {content:"Mise à Jour de votre Devis";}
+.fr [data-btnname*="_updateQuote"]:before {content:"Mise à Jour de votre Devis";}
+.fr [data-btnname*="_addEntireListToCart"]:before {content:"Ajouter la Liste au Panier";}
+.fr [data-btnname="orderHistory_continue"]:before {content:"Suivant";}
+.fr [data-btnname="orderHistory_back"]:before {content:"Précédent";}
+.fr [data-btnname="myAccount_createFieldTesterProfile"]:before {content:"Créer un profil de Field Tester";}
+.fr [data-btnname*="_mapIt"]:before {content:"Trouver Sur la Carte";}
+.fr button[type="submit"][data-btnname*="_findStores"]:before {content:"Localisateur de Magasin";}
+.fr button[type="submit"][data-btnname*="_checkSize"]:before {content:"Vérifier la Taille";}
+.fr button[type="submit"][data-btnname*="_pickupHere"]:before {content:"Récupérer ici";}
+.fr button[type="submit"][data-btnname="isa_close"].button:before {content:"Annuler";}
+.fr [data-btnname="friendsWishlist_searchAgain"]:before {content:"Nouvelle Recherche";}
+.fr [data-btnname="friendsWishlist_back"]:before {content:"Arrière";}
+.fr button[type="submit"][data-btnname="createAccount_next"]:before {content:"Continuer";}
+.fr [data-btnname*="_backToProduct"]:before {content:"Retour à l'Article";}
+.fr button[type="submit"][data-btnname*="_addItemToOffer"]:before {content:"Ajouter l'Article à l'Offre";}
+.fr button[type="submit"][data-btnname*="_updateOffer"]:before {content:"Mise à Jour de l'Offre";}
+.fr [data-btntype="back"][data-btnname="search_back"]:before {content:"Précédent";}
+.fr [data-btntype="continue"][data-btnname="search_next"]:before {content:"Suivant";}
+.fr [data-btnname="creditCards_addCreditCard"]:before {content:"Ajouter une carte de crédit";}
+.fr [data-btnname="creditCardsEdit_back"]:before {content:"Arrière";}
+.fr [data-btnname="deleteAddress_back"]:before {content:"Arrière";}
+.fr button[type="submit"][data-btnname="addNewAddressDuplicate_back"]:before {content:"Arrière";}
+.fr button[type="submit"][data-btnname="myAccountLogin_continue"]:before {content:"Suivant";}
+.fr button[type="submit"][data-btntype="continue"][data-btnname="editLogin_continue"]:before {content:"Suivant";}
+.fr [data-btnname="loginOverlay_view"]:before {content:"Voir";}
+.fr [data-btnname="cart_findInStore"]:before {content:"Trouver en Magasin";}
+.fr [data-btnname*="_checkStoreAvailability"]:before {content:"Trouver en Magasin";}
+.fr [data-btnname="checkout_checkoutAsGuest"]:before {content:"la caisse en tant qu'invité";}
+.fr [data-btnname="checkout_pickupInStoreInstead"]:before {content:"En magasin ramassage lieu"}
+.fr [data-btnname*="_changeStore"]:before {content:"Changer de magasin";}
+.fr [data-btnname*="_shipToHomeInstead"]:before {content:"Expédition à la maison plutôt";}
+.fr button[data-btnname="checkout_promoCodeApply"]:before {content:"Appliquer";}
+.fr button[data-btnname="checkout_billAddressAlternateEdit"]:before {content:"Modifier";}
+.fr button[data-btnname="checkout_shipAddressAlternateEdit"]:before {content:"Modifier";}
+.fr button[type="submit"][data-btnname="checkout_continueAsGuest"]:before {content:"la caisse en tant qu'invité";}
+.fr button[data-btnname="creditCards_cancel"]:before {content:"Annuler";}
+.fr button[data-btnname="creditCards_continue"]:before {content:"Continuer";}
+.fr [data-btntype="hyperlink"][data-btnname="reviews_back"]:before {content:"Arrière";}
+.fr [data-btntype="hyperlink"][data-btnname="reviews_previous"]:before {content:"Précédent";}
+.fr [data-btntype="hyperlink"][data-btnname="reviews_next"]:before {content:"Suivant";}
+.fr button[type="submit"][data-btnname="checkout_differentShipAddressAlternateEdit"]:before {content:"Modifier";}
+.fr button[type="submit"][data-btnname="vip_next"]:before {content:"Suivant";}
+.fr button[type="submit"][data-btnname="checkout_yesSameDay"]:before {content:"Yes, I want my items today!";}
+/* --- END SPECIFIC FRENCH BUTTON CONTENT --- */
+
+/* --- Start Dynamic Update English Button Content --- */
+.en .processing[data-btnname]:before {
+    content : 'Processing...';
+}
+/* --- END Dynamic Update English Button Content --- */
+
+/* --- Start Dynamic Update French Button Content --- */
+.fr .processing[data-btnname]:before {
+    content : 'En Traitement';
+}
+/* --- End Dynamic Update French Button Content --- */
+
+/* --- Start Cart Remove Button Override --- */
+.button[data-btnname="cart_remove"]{
+    margin: 0 5px 0 0 !important;
+}
+/* --- End Cart Remove Button Override --- */
+
+/* --- START PayPal button style override --- */
+.button[data-btnname="checkout_paypal"] {
+    border:none !important;
+    box-shadow:none !important;
+    width:142px;
+    height:27px;
+    float:left;
+}
+.en .button[data-btnname="checkout_paypal"], .en .button[data-btnname="checkout_paypal"]:hover, .en .button[data-btnname="checkout_paypal"]:active {
+    background:url('/ns/common/images/PP_Buttons_CheckOut-ECS_142x27.png') center 0 no-repeat !important;
+}
+.fr .button[data-btnname="checkout_paypal"], .fr .button[data-btnname="checkout_paypal"]:hover, .fr .button[data-btnname="checkout_paypal"]:active {
+    background:url('/ns/common/images/PP_Buttons_CheckOut_142x27_FRENCH_Sunrise.png') center 0 no-repeat !important;
+    height:46px;
+}
+.button[data-btnname="cart_paypal"] {
+    border:none !important;
+    box-shadow:none !important;
+    width:142px;
+    height:27px;
+    float:left;
+}
+.en .button[data-btnname="cart_paypal"], .en .button[data-btnname="cart_paypal"]:hover, .en .button[data-btnname="cart_paypal"]:active {
+    background:url('/ns/common/images/PP_Buttons_CheckOut-ECS_142x27.png') center 0 no-repeat !important;
+}
+.fr .button[data-btnname="cart_paypal"], .fr .button[data-btnname="cart_paypal"]:hover, .fr .button[data-btnname="cart_paypal"]:active {
+    background:url('/ns/common/images/PP_Buttons_CheckOut_142x27_FRENCH_Sunrise.png') center 0 no-repeat !important;
+    height:46px;
+}
+[data-logoname="paypal"] {
+	display: inline-block;
+	width: 69px;
+	height: 24px;
+	background: URL('/images/common/paypal/sunrise-69-24.png') no-repeat 0 0 transparent;	
+}
+/* --- END PayPal button style override --- */
+
+/* --- START Mini-Cart button style overrides --- */
+.en [data-btnname*="minicart_viewFullCart"]:before {content:"View Full Cart & Checkout" !important;}
+.fr [data-btnname*="minicart_viewFullCart"]:before {content:"Voir Votre Panier En Entier Et Caisse" !important;}
+.button[data-btnname*="minicart_viewFullCart"]{
+    width: 225px !important;
+    margin: 5px 0 5px 0;
+}
+.button[data-btnname*="minicart_continueShopping"]{
+    width: 225px !important;
+    margin: 5px 0 5px 0;
+}
+.button[data-btnname*="minicart_checkout"]{
+    display: none !important;
+    visibility: hidden;
+}
+/* --- END Mini-Cart button style overrides --- */
+
+/* --- START Mobile CVV Border on Error ---*/
+#orderReviewStoredCCCVV_error.red ~ #orderReviewPaneStoredCCCVV_container>input{
+    border: 2px solid red !important; 
+}
+/* --- END Mobile CVV Border on Error ---*/
+
+/* --- START Mobile Gift Card Add More Button --- */
+.en #giftCards_content a[data-btnname="checkout_addMore"]:before{
+    content: "Add More";
+}
+.fr #giftCards_content a[data-btnname="checkout_addMore"]:before{
+    content: "Ajouter d'autres";
+}
+#giftCards_content a[data-btnname="checkout_addMore"]{
+    padding:0 15px !important;
+}
+/* --- END Mobile Gift Card Add More Button --- */
+
+/* --- START Quickview Overrides --- */
+#quickviewPDP .product_description_div{
+    height: 125px !important;
+}
+#quickviewPDP .otherStyles{
+    height: 100px !important;
+    overflow: auto !important;
+}
+#quickviewPDP .quickview_oldPrice {
+    float: right;
+}
+/* --- END Quickview Overrides --- */

@@ -1,0 +1,2 @@
+window.pageViewer.check(1,2);
+_bcvmf.floatButton({x:0.0,y:0.0,dl:1,dt:0,px:0.0,py:50.0,fix:true,img:'http://images.boldchat.com/images/clear.gif',type:'chat',bdid:'4332861841112675445',cwdid:'4391713005972301570',id:'4332861841112675445',width:640,height:480,embed:false,sl:56,st:0,si:1000});

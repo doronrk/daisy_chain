@@ -1,0 +1,1 @@
+monetate.r4("1272417378-0",[{"args":[1417586932],"op":"sst"},{"args":[{"txt":"minc,3,auto,true,bold,true,","iwidth":100,"iheight":40,"ref":"60/9533.gif","loc":"predSrch"}],"op":"db"}]);

@@ -1,0 +1,835 @@
+﻿/*!************************************************************************
+*
+* ADOBE SYSTEMS INCORPORATED
+*  Copyright 2013 Adobe Systems Incorporated
+*  All Rights Reserved.
+*
+* NOTICE:  Adobe permits you to use, modify, and distribute this file in 
+* accordance with the terms of the Adobe license agreement accompanying it. 
+* If you have received this file from a source other than Adobe, then your 
+* use, modification, or distribution of it requires the prior written 
+* permission of Adobe.
+**************************************************************************/
+
+/*
+	CSS for desktop systems goes here.
+	This section is always processed by the web browser, both for desktop systems and touch devices. Touch-specific
+	CSS rules should be defined in the sections below.
+*/
+
+.s7mixedmediaviewer .s7container {
+	width: 371px;
+	height: 600px;
+}
+
+.s7mixedmediaviewer .s7tooltip {
+	-moz-border-radius: 3px 3px 3px 3px;
+	-webkit-border-radius: 3px 3px 3px 3px;
+	border-radius: 3px 3px 3px 3px;
+	border-color:#999999;
+	background-color: #000000;
+	color: #FFFFFF;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;
+}
+
+.s7mixedmediaviewer .s7zoomview {
+	position: absolute;	
+	top: 0px;
+	left: 0px;
+	z-index:1;
+	width: 400px;
+	height: 500px;
+	margin: 0;
+	padding: 0;
+}
+
+.s7mixedmediaviewer .s7toolbarcontainer {
+	background-color: darkgrey;
+	z-index:2;
+}
+/**
+ * Buttons component  
+ */
+ 
+ /*** ZoomInButton ***/
+
+.s7mixedmediaviewer .s7zoominbutton  {
+	position:absolute;
+	bottom: 20px;
+	left: 20px;
+	width:28px;
+	height:28px;
+	background-size:contain;
+	z-index:1;
+ }
+.s7mixedmediaviewer .s7zoominbutton[state='up'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ZoomInButton_light_up.png); }
+.s7mixedmediaviewer .s7zoominbutton[state='over'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ZoomInButton_light_over.png); }
+.s7mixedmediaviewer .s7zoominbutton[state='down'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ZoomInButton_light_down.png); }
+.s7mixedmediaviewer .s7zoominbutton[state='disabled'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ZoomInButton_light_disabled.png); }
+ 
+  /*** ZoomOutButton ***/
+
+.s7mixedmediaviewer .s7zoomoutbutton{
+	position:absolute;
+	bottom: 20px;
+	left: 50px;	
+	width:28px;
+	height:28px;
+	background-size:contain;
+	z-index:1;
+ }
+.s7mixedmediaviewer .s7zoomoutbutton[state='up'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ZoomOutButton_light_up.png); }
+.s7mixedmediaviewer .s7zoomoutbutton[state='over'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ZoomOutButton_light_over.png); }
+.s7mixedmediaviewer .s7zoomoutbutton[state='down'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ZoomOutButton_light_down.png); }
+.s7mixedmediaviewer .s7zoomoutbutton[state='disabled'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ZoomOutButton_light_disabled.png); }
+ 
+  /*** ZoomResetButton ***/
+
+.s7mixedmediaviewer .s7zoomresetbutton {
+	position:absolute;
+	bottom: 20px;
+	left: 80px;
+	width:28px;
+	height:28px;
+	background-size:contain;
+	z-index:1;
+ }
+.s7mixedmediaviewer .s7zoomresetbutton[state='up'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ZoomResetButton_light_up.png); }
+.s7mixedmediaviewer .s7zoomresetbutton[state='over'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ZoomResetButton_light_over.png); }
+.s7mixedmediaviewer .s7zoomresetbutton[state='down'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ZoomResetButton_light_down.png); }
+.s7mixedmediaviewer .s7zoomresetbutton[state='disabled'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ZoomResetButton_light_disabled.png); }
+ 
+	/*** IconEffect***/
+.s7mixedmediaviewer .s7spinview .s7iconeffect{
+	width:100px;
+	height:100px;
+	background-size:contain;
+ }
+.s7mixedmediaviewer .s7spinview .s7iconeffect[state='spin_1D'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/IconEffect_spin_up.png); }
+.s7mixedmediaviewer .s7spinview .s7iconeffect[state='spin_2D'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/IconEffect_spin3d_up.png); }
+
+  /*** SpinButtons ***/
+.s7mixedmediaviewer .s7spinbuttons {
+	left:50%;
+	width:84px;
+	margin:-42px;
+ }
+  /*** SpinLeftButton ***/
+
+.s7mixedmediaviewer .s7spinbuttons .s7panleftbutton {
+	position:absolute;
+	left: 0px;
+	top:0px;
+	width:28px;
+	height:28px;
+	background-size:contain;
+	z-index:1;
+ }
+.s7mixedmediaviewer .s7spinbuttons .s7panleftbutton[state='up'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/LeftButton_dark_up.png); }
+.s7mixedmediaviewer .s7spinbuttons .s7panleftbutton[state='over'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/LeftButton_dark_over.png); }
+.s7mixedmediaviewer .s7spinbuttons .s7panleftbutton[state='down'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/LeftButton_dark_down.png); }
+.s7mixedmediaviewer .s7spinbuttons .s7panlefttbutton[state='disabled'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/LeftButton_dark_disabled.png); }
+ 
+  /*** SpinRightButton ***/
+
+.s7mixedmediaviewer .s7spinbuttons .s7panrightbutton {
+	position:absolute;
+	right: 0px;
+	top:0px;
+	width:28px;
+	height:28px;
+	background-size:contain;
+	z-index:1;
+ }
+.s7mixedmediaviewer .s7spinbuttons .s7panrightbutton[state='up'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/RightButton_dark_up.png); }
+.s7mixedmediaviewer .s7spinbuttons .s7panrightbutton[state='over'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/RightButton_dark_over.png); }
+.s7mixedmediaviewer .s7spinbuttons .s7panrightbutton[state='down'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/RightButton_dark_down.png); }
+.s7mixedmediaviewer .s7spinbuttons .s7panrightbutton[state='disabled'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/RightButton_dark_disabled.png); }
+ 
+   /*** FullScreenButton ***/
+
+.s7mixedmediaviewer .s7fullscreenbutton{
+	position:absolute;
+	bottom: 20px;
+	right: 20px;
+	width:28px;
+	height:28px;
+	background-size:contain;
+	z-index:1;
+ }
+.s7mixedmediaviewer .s7fullscreenbutton[selected='true'][state='up'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/MinScreenButton_light_up.png); }
+.s7mixedmediaviewer .s7fullscreenbutton[selected='true'][state='over'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/MinScreenButton_light_over.png); }
+.s7mixedmediaviewer .s7fullscreenbutton[selected='true'][state='down'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/MinScreenButton_light_down.png); }
+.s7mixedmediaviewer .s7fullscreenbutton[selected='true'][state='disabled'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/MinScreenButton_light_disabled.png); }
+.s7mixedmediaviewer .s7fullscreenbutton[selected='false'][state='up'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/FullScreenButton_light_up.png); }
+.s7mixedmediaviewer .s7fullscreenbutton[selected='false'][state='over'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/FullScreenButton_light_over.png); }
+.s7mixedmediaviewer .s7fullscreenbutton[selected='false'][state='down'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/FullScreenButton_light_down.png); }
+.s7mixedmediaviewer .s7fullscreenbutton[selected='false'][state='disabled'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/FullScreenButton_light_disabled.png); }
+	
+	/*** CloseButton ***/
+
+.s7mixedmediaviewer .s7closebutton{
+	position:absolute;
+	top: 20px;
+	right: 20px;
+	width:28px;
+	height:28px;
+	background-size:contain;
+	z-index:1;
+ }
+.s7mixedmediaviewer .s7closebutton[state='up'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/CloseButton_light_up.png); }
+.s7mixedmediaviewer .s7closebutton[state='over'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/CloseButton_light_over.png); }
+.s7mixedmediaviewer .s7closebutton[state='down'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/CloseButton_light_down.png); }
+.s7mixedmediaviewer .s7closebutton[state='disabled'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/CloseButton_light_disabled.png); }	
+
+/**
+ * ColorSwatches component  
+ */
+ .s7mixedmediaviewer .s7colorswatches .s7swatches {
+	position:absolute;
+	bottom: 0px;
+	left: 0px; 
+	height: 44px;
+	width: 280px;
+	background: transparent; 
+	z-index:1;
+}
+.s7mixedmediaviewer .s7colorswatches .s7swatches .s7thumb { 
+	width: 28px;
+	height: 28px;
+	background-color : #ffffff;
+	border: 1px solid #dddddd;
+}
+.s7mixedmediaviewer .s7colorswatches .s7swatches .s7thumb[state="default"] {
+	border: 1px solid #dddddd;
+}
+.s7mixedmediaviewer .s7colorswatches .s7swatches .s7thumb[state="selected"] {
+	border: 1px solid #666666;
+}
+/**
+ * ColorSwatches scroll left button  
+ */
+.s7mixedmediaviewer .s7colorswatches .s7swatches .s7scrollleftbutton {
+	background-size: auto;
+	width: 28px;
+	height: 28px;
+}
+.s7mixedmediaviewer .s7colorswatches .s7swatches .s7scrollleftbutton[state="up"]{ background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ScrollLeftButton_light_up.png); }
+.s7mixedmediaviewer .s7colorswatches .s7swatches .s7scrollleftbutton[state="over"]{ background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ScrollLeftButton_light_over.png);}
+.s7mixedmediaviewer .s7colorswatches .s7swatches .s7scrollleftbutton[state="down"]{ background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ScrollLeftButton_light_down.png); }
+.s7mixedmediaviewer .s7colorswatches .s7swatches .s7scrollleftbutton[state="disabled"]{ background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ScrollLeftButton_light_disabled.png); }
+
+/**
+ * ColorSwatches scroll right button  
+ */
+.s7mixedmediaviewer .s7colorswatches .s7swatches .s7scrollrightbutton {
+	background-size: auto;
+	width: 28px;
+	height: 28px;
+}
+.s7mixedmediaviewer .s7colorswatches .s7swatches .s7scrollrightbutton[state="up"]{ background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ScrollRightButton_light_up.png); }
+.s7mixedmediaviewer .s7colorswatches .s7swatches .s7scrollrightbutton[state="over"]{ background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ScrollRightButton_light_over.png); }
+.s7mixedmediaviewer .s7colorswatches .s7swatches .s7scrollrightbutton[state="down"]{ background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ScrollRightButton_light_down.png); }
+.s7mixedmediaviewer .s7colorswatches .s7swatches .s7scrollrightbutton[state="disabled"]{ background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ScrollRightButton_light_disabled.png); }
+
+.s7mixedmediaviewer .s7colorswatches .s7swatches .s7thumbcell{
+	margin: 4px;
+}
+
+/**
+ * Swatches component  
+ */
+ .s7mixedmediaviewer .s7swatches {
+	position:absolute;
+	bottom: 0px;
+	left: 0px; 
+	height: 100px;
+	background: transparent; 
+	z-index:1;
+}
+.s7mixedmediaviewer .s7swatches .s7thumb { 
+	width: 55px;
+	height: 74px;
+	background-color : #ffffff;
+	border: 1px solid #dddddd;
+}
+.s7mixedmediaviewer .s7swatches .s7thumb[state="default"] {
+	border: 1px solid #dddddd;
+}
+.s7mixedmediaviewer .s7swatches .s7thumb[state="selected"] {
+	border: 1px solid #666666;
+}
+
+/**
+ * Swatches scroll left button  
+ */
+.s7mixedmediaviewer .s7swatches .s7scrollleftbutton {
+	background-size: auto;
+	width: 56px;
+	height: 56px;
+}
+.s7mixedmediaviewer .s7swatches .s7scrollleftbutton[state="up"]{ background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ScrollLeftButton_light_up.png); }
+.s7mixedmediaviewer .s7swatches .s7scrollleftbutton[state="over"]{ background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ScrollLeftButton_light_over.png);}
+.s7mixedmediaviewer .s7swatches .s7scrollleftbutton[state="down"]{ background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ScrollLeftButton_light_down.png); }
+.s7mixedmediaviewer .s7swatches .s7scrollleftbutton[state="disabled"]{ background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ScrollLeftButton_light_disabled.png); }
+
+/**
+ * Swatches scroll right button  
+ */
+.s7mixedmediaviewer .s7swatches .s7scrollrightbutton {
+	background-size: auto;
+	width: 56px;
+	height: 56px;
+}
+.s7mixedmediaviewer .s7swatches .s7scrollrightbutton[state="up"]{ background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ScrollRightButton_light_up.png); }
+.s7mixedmediaviewer .s7swatches .s7scrollrightbutton[state="over"]{ background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ScrollRightButton_light_over.png); }
+.s7mixedmediaviewer .s7swatches .s7scrollrightbutton[state="down"]{ background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ScrollRightButton_light_down.png); }
+.s7mixedmediaviewer .s7swatches .s7scrollrightbutton[state="disabled"]{ background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ScrollRightButton_light_disabled.png); }
+
+.s7mixedmediaviewer .s7swatches .s7thumb .s7thumboverlay[type="image"] {
+}
+.s7mixedmediaviewer .s7swatches .s7thumb .s7thumboverlay[type="swatchset"] {
+	background-image: url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ThumbOverlaySwatchSet.png); 
+}
+.s7mixedmediaviewer .s7swatches .s7thumb .s7thumboverlay[type="spinset"] {
+	background-image: url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ThumbOverlaySpinSet.png); 
+}
+.s7mixedmediaviewer .s7swatches .s7thumb .s7thumboverlay[type="video"] {
+	background-image: url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ThumbOverlayVideo.png); 
+}
+
+/*Video*/
+.s7mixedmediaviewer .s7videoplayer {
+	position: absolute;	
+	top: 0px;
+	left: 0px;
+	width: 600px;
+	height: 400px;
+}
+
+/* positioning VideoControlBar and its children components */
+
+.s7mixedmediaviewer .s7controlbar {
+	position: absolute;
+	bottom: 0px;
+	left: 0;
+	width: 100%;
+	height: 36px;
+	background-color: rgb(0, 0, 0);/*whithout alpha*/
+	background-color: rgba(0, 0, 0, 0.75);
+}
+
+/*** PLAY PAUSE BUTTON ***/
+
+.s7mixedmediaviewer .s7controlbar .s7playpausebutton {
+	position:absolute;
+	top:4px;
+	left:4px;
+	width:28px;
+	height:28px;
+	background-size:contain;
+	background-repeat:no-repeat;
+	background-position:center;
+ }
+.s7mixedmediaviewer .s7controlbar .s7playpausebutton[selected='true'][state='up'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/PlayButton_up.png); }
+.s7mixedmediaviewer .s7controlbar .s7playpausebutton[selected='true'][state='over'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/PlayButton_over.png); }
+.s7mixedmediaviewer .s7controlbar .s7playpausebutton[selected='true'][state='down'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/PlayButton_down.png); }
+.s7mixedmediaviewer .s7controlbar .s7playpausebutton[selected='true'][state='disabled'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/PlayButton_disabled.png); }
+.s7mixedmediaviewer .s7controlbar .s7playpausebutton[selected='false'][state='up'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/PauseButton_up.png); }
+.s7mixedmediaviewer .s7controlbar .s7playpausebutton[selected='false'][state='over'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/PauseButton_over.png); }
+.s7mixedmediaviewer .s7controlbar .s7playpausebutton[selected='false'][state='down'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/PauseButton_down.png); }
+.s7mixedmediaviewer .s7controlbar .s7playpausebutton[selected='false'][state='disabled'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/PauseButton_disabled.png); }
+ 
+/*** VIDEO SCRUBBER ***/
+
+.s7mixedmediaviewer .s7controlbar .s7videoscrubber  {
+	position:absolute;
+	top:14px;
+	left:40px;
+	width:340px;
+	height:8px;
+ }
+.s7mixedmediaviewer .s7controlbar .s7videoscrubber .s7videotime {
+	position:absolute;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:10px;
+	width:58px;
+	/*height:29px; Make the height taller than the image so it floats above the scrubber knob by a few px*/
+	height:35px;
+	padding:0px;
+	background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/VideoScrubberTime.png);
+	background-size:contain;
+	background-repeat:no-repeat;
+	background-position:top;
+	align:center;
+	text-align:center;
+	vertical-align:middle;
+	line-height:24px;		/* centers the text vertically in the bubble */
+	color:#ffffff;
+ }
+.s7mixedmediaviewer .s7controlbar .s7videoscrubber .s7track {
+	position:absolute;
+	top:0px;
+	left:0px;
+	height:8px;
+	background-color:#555555;
+ }
+.s7mixedmediaviewer .s7controlbar .s7videoscrubber .s7trackloaded {
+	position:absolute;
+	top:0px;
+	left:0px;
+	height:8px;
+	background-color:#666666;
+ }
+.s7mixedmediaviewer .s7controlbar .s7videoscrubber .s7trackplayed {
+	position:absolute;
+	top:0px;
+	left:0px;
+	height:8px;
+	background-color:#999999;
+ }
+.s7mixedmediaviewer .s7controlbar .s7videoscrubber .s7knob {
+	position:absolute;
+	width:14px;
+	height:24px;
+	top:-8px;
+	left:-3px;
+	background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/VideoScrubberKnob.png);
+}
+ 
+ /*** VIDEO TIME ***/
+ 
+.s7mixedmediaviewer .s7controlbar .s7videotime {
+	position:absolute;
+	top:8px;
+	right:68px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:10px;
+	color:#999999;
+	line-height: normal;		
+	/* Need to add an explicit width to enable scrubber resizing due to getComputedStyle not working in IE8 (IE uses currentStyle, which returns "auto" and breaks our layout math) */
+	/* Info on this hack here: http://webdesignerwall.com/tutorials/css-specific-for-internet-explorer */
+	width:60px\9;
+}
+
+/*** MUTABLE VOLUME CONTROL ***/
+
+.s7mixedmediaviewer .s7controlbar .s7mutablevolume {
+	position:absolute;
+	top:4px;
+	right:35px;
+	width:30px;
+	height:28px;
+ }
+.s7mixedmediaviewer .s7controlbar .s7mutablevolume .s7mutebutton {
+	position:absolute;
+	background-size:contain;
+	background-repeat:no-repeat;
+	background-position:center;
+ }
+.s7mixedmediaviewer .s7controlbar .s7mutablevolume .s7mutebutton[selected='true'][state='up'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/VolumeMute_up.png); }
+.s7mixedmediaviewer .s7controlbar .s7mutablevolume .s7mutebutton[selected='true'][state='over'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/VolumeMute_over.png); }
+.s7mixedmediaviewer .s7controlbar .s7mutablevolume .s7mutebutton[selected='true'][state='down'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/VolumeMute_down.png); }
+.s7mixedmediaviewer .s7controlbar .s7mutablevolume .s7mutebutton[selected='true'][state='disabled'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/VolumeMute_disabled.png); }
+.s7mixedmediaviewer .s7controlbar .s7mutablevolume .s7mutebutton[selected='false'][state='up'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/VolumeFull_up.png); }
+.s7mixedmediaviewer .s7controlbar .s7mutablevolume .s7mutebutton[selected='false'][state='over'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/VolumeFull_over.png); }
+.s7mixedmediaviewer .s7controlbar .s7mutablevolume .s7mutebutton[selected='false'][state='down'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/VolumeFull_down.png); }
+.s7mixedmediaviewer .s7controlbar .s7mutablevolume .s7mutebutton[selected='false'][state='disabled'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/VolumeFull_disabled.png); }
+
+.s7mixedmediaviewer .s7controlbar .s7mutablevolume .s7verticalvolume {
+	position:absolute;
+	width:30px;
+	height:83px;
+	left:0px;
+	background-color:#dddddd;
+ }
+.s7mixedmediaviewer .s7controlbar .s7mutablevolume .s7verticalvolume .s7track {
+	position:absolute;
+	top:11px;
+	left:11px;
+	width:8px;
+	height:61px;
+	background-color:#666666;
+ }
+.s7mixedmediaviewer .s7controlbar .s7mutablevolume .s7verticalvolume .s7filledtrack {
+	position:absolute;
+	/*top:11px;
+	left:11px;
+	*/width:8px;
+	height:61px;
+	background-color:#ababab;
+ }
+.s7mixedmediaviewer .s7controlbar .s7mutablevolume .s7verticalvolume .s7knob {
+	position:absolute;
+	width:14px;
+	height:8px;
+	top:11px;
+	left:8px;
+	background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/VolumeKnob.png);
+ }	
+
+/*** FULL SCREEN BUTTON ***/
+
+.s7mixedmediaviewer .s7controlbar .s7fullscreenbutton {
+	position:absolute;
+	top:4px;
+	right:5px;
+	width:28px;
+	height:28px;
+	background-size:contain;
+	background-repeat:no-repeat;
+	background-position:center;
+ }
+.s7mixedmediaviewer .s7controlbar .s7fullscreenbutton[selected='true'][state='up'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/MinScreenButton_up.png); }
+.s7mixedmediaviewer .s7controlbar .s7fullscreenbutton[selected='true'][state='over'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/MinScreenButton_over.png); }
+.s7mixedmediaviewer .s7controlbar .s7fullscreenbutton[selected='true'][state='down'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/MinScreenButton_down.png); }
+.s7mixedmediaviewer .s7controlbar .s7fullscreenbutton[selected='true'][state='disabled'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/MinScreenButton_disabled.png); }
+.s7mixedmediaviewer .s7controlbar .s7fullscreenbutton[selected='false'][state='up'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/FullScreenButton_up.png); }
+.s7mixedmediaviewer .s7controlbar .s7fullscreenbutton[selected='false'][state='over'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/FullScreenButton_over.png); }
+.s7mixedmediaviewer .s7controlbar .s7fullscreenbutton[selected='false'][state='down'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/FullScreenButton_down.png); }
+.s7mixedmediaviewer .s7controlbar .s7fullscreenbutton[selected='false'][state='disabled'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/FullScreenButton_disabled.png); }
+ 
+ /*** VIDEO PLAYER ***/
+ 
+.s7mixedmediaviewer .s7videoplayer .s7iconeffect {
+	width:80px;
+	height:80px;
+	background-size:contain;
+	background-repeat:no-repeat;
+	background-position:center;
+	background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/IconEffect_play_up.png);
+ }
+
+	/*Tablet*/
+@media only screen and (max-device-width:13.5in) and (max-device-height:13.5in) and (max-device-width:799px),
+	   only screen and (max-device-width:13.5in) and (max-device-height:13.5in) and (max-device-height:799px)
+{
+	/*
+		CSS for tablets with normal resolution screens goes here.
+		This section is processed for both normal and high-rsolution tablets, also by all mobile phones. So rules specific to
+		high-resolution devices and/or mobile phones should be defined in the sections below.
+	*/
+	.s7mixedmediaviewer .s7zoominbutton  {
+		left: 20px;
+		width:56px;
+		height:56px;
+	 }
+	.s7mixedmediaviewer .s7zoominbutton[state='up'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ZoomInButton_light_up_touch.png); }
+	.s7mixedmediaviewer .s7zoominbutton[state='over'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ZoomInButton_light_over_touch.png); }
+	.s7mixedmediaviewer .s7zoominbutton[state='down'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ZoomInButton_light_down_touch.png); }
+	.s7mixedmediaviewer .s7zoominbutton[state='disabled'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ZoomInButton_light_disabled_touch.png); }
+	 
+	.s7mixedmediaviewer .s7zoomoutbutton{
+		left: 77px;	
+		width:56px;
+		height:56px;
+	 }
+	.s7mixedmediaviewer .s7zoomoutbutton[state='up'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ZoomOutButton_light_up_touch.png); }
+	.s7mixedmediaviewer .s7zoomoutbutton[state='over'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ZoomOutButton_light_over_touch.png); }
+	.s7mixedmediaviewer .s7zoomoutbutton[state='down'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ZoomOutButton_light_down_touch.png); }
+	.s7mixedmediaviewer .s7zoomoutbutton[state='disabled'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ZoomOutButton_light_disabled_touch.png); }
+	 
+	.s7mixedmediaviewer .s7zoomresetbutton {
+		left: 135px;
+		width:56px;
+		height:56px;
+	 }
+	.s7mixedmediaviewer .s7zoomresetbutton[state='up'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ZoomResetButton_light_up_touch.png); }
+	.s7mixedmediaviewer .s7zoomresetbutton[state='over'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ZoomResetButton_light_over_touch.png); }
+	.s7mixedmediaviewer .s7zoomresetbutton[state='down'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ZoomResetButton_light_down_touch.png); }
+	.s7mixedmediaviewer .s7zoomresetbutton[state='disabled'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ZoomResetButton_light_disabled_touch.png); }
+	 
+	.s7mixedmediaviewer .s7fullscreenbutton{
+		right: 20px;
+		width:56px;
+		height:56px;
+	 }
+	.s7mixedmediaviewer .s7fullscreenbutton[selected='true'][state='up'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/MinScreenButton_light_up_touch.png); }
+	.s7mixedmediaviewer .s7fullscreenbutton[selected='true'][state='over'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/MinScreenButton_light_over_touch.png); }
+	.s7mixedmediaviewer .s7fullscreenbutton[selected='true'][state='down'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/MinScreenButton_light_down_touch.png); }
+	.s7mixedmediaviewer .s7fullscreenbutton[selected='true'][state='disabled'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/MinScreenButton_light_disabled_touch.png); }
+	.s7mixedmediaviewer .s7fullscreenbutton[selected='false'][state='up'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/FullScreenButton_light_up_touch.png); }
+	.s7mixedmediaviewer .s7fullscreenbutton[selected='false'][state='over'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/FullScreenButton_light_over_touch.png); }
+	.s7mixedmediaviewer .s7fullscreenbutton[selected='false'][state='down'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/FullScreenButton_light_down_touch.png); }
+	.s7mixedmediaviewer .s7fullscreenbutton[selected='false'][state='disabled'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/FullScreenButton_light_disabled_touch.png); }
+	 
+	.s7mixedmediaviewer .s7closebutton{
+		position:absolute;
+		top: 20px;
+		right: 20px;	
+		width:56px;
+		height:56px;
+	 }
+	.s7mixedmediaviewer .s7closebutton[state='up'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/CloseButton_light_up_touch.png); }
+	.s7mixedmediaviewer .s7closebutton[state='over'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/CloseButton_light_over_touch.png); }
+	.s7mixedmediaviewer .s7closebutton[state='down'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/CloseButton_light_down_touch.png); }
+	.s7mixedmediaviewer .s7closebutton[state='disabled'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/CloseButton_light_disabled_touch.png); }
+}
+
+@media only screen and (max-device-width:13.5in) and (max-device-height:13.5in) and (max-device-width:799px) and (-webkit-min-device-pixel-ratio:1.5),
+	   only screen and (max-device-width:13.5in) and (max-device-height:13.5in) and (max-device-height:799px) and (-webkit-min-device-pixel-ratio:1.5)	
+{
+	/*
+		CSS for tablet with high resolution screens goes here.
+		This section is processed by high-rsolution tablets, also by high resolution mobile phones. So rules specific to
+		high-resolution mobile phones should be defined in the sections below.
+	*/
+	.s7mixedmediaviewer .s7closebutton{
+		position:absolute;
+		top: 20px;
+		right: 20px;	
+	}
+	.s7mixedmediaviewer .s7zoominbutton[state='up'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ZoomInButton_light_up_touch_2x.png); }
+	.s7mixedmediaviewer .s7zoominbutton[state='over'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ZoomInButton_light_over_touch_2x.png); }
+	.s7mixedmediaviewer .s7zoominbutton[state='down'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ZoomInButton_light_down_touch_2x.png); }
+	.s7mixedmediaviewer .s7zoominbutton[state='disabled'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ZoomInButton_light_disabled_touch_2x.png); }
+
+	.s7mixedmediaviewer .s7zoomoutbutton[state='up'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ZoomOutButton_light_up_touch_2x.png); }
+	.s7mixedmediaviewer .s7zoomoutbutton[state='over'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ZoomOutButton_light_over_touch_2x.png); }
+	.s7mixedmediaviewer .s7zoomoutbutton[state='down'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ZoomOutButton_light_down_touch_2x.png); }
+	.s7mixedmediaviewer .s7zoomoutbutton[state='disabled'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ZoomOutButton_light_disabled_touch_2x.png); }
+	 
+	.s7mixedmediaviewer .s7zoomresetbutton[state='up'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ZoomResetButton_light_up_touch_2x.png); }
+	.s7mixedmediaviewer .s7zoomresetbutton[state='over'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ZoomResetButton_light_over_touch_2x.png); }
+	.s7mixedmediaviewer .s7zoomresetbutton[state='down'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ZoomResetButton_light_down_touch_2x.png); }
+	.s7mixedmediaviewer .s7zoomresetbutton[state='disabled'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ZoomResetButton_light_disabled_touch_2x.png); }
+	 
+	.s7mixedmediaviewer .s7fullscreenbutton[selected='true'][state='up'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/MinScreenButton_light_up_touch_2x.png); }
+	.s7mixedmediaviewer .s7fullscreenbutton[selected='true'][state='over'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/MinScreenButton_light_over_touch_2x.png); }
+	.s7mixedmediaviewer .s7fullscreenbutton[selected='true'][state='down'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/MinScreenButton_light_down_touch_2x.png); }
+	.s7mixedmediaviewer .s7fullscreenbutton[selected='true'][state='disabled'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/MinScreenButton_light_disabled_touch_2x.png); }
+	.s7mixedmediaviewer .s7fullscreenbutton[selected='false'][state='up'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/FullScreenButton_light_up_touch_2x.png); }
+	.s7mixedmediaviewer .s7fullscreenbutton[selected='false'][state='over'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/FullScreenButton_light_over_touch_2x.png); }
+	.s7mixedmediaviewer .s7fullscreenbutton[selected='false'][state='down'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/FullScreenButton_light_down_touch_2x.png); }
+	.s7mixedmediaviewer .s7fullscreenbutton[selected='false'][state='disabled'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/FullScreenButton_light_disabled_touch_2x.png); }
+	 
+	.s7mixedmediaviewer .s7closebutton[state='up'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/CloseButton_light_up_touch_2x.png); }
+	.s7mixedmediaviewer .s7closebutton[state='over'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/CloseButton_light_over_touch_2x.png); }
+	.s7mixedmediaviewer .s7closebutton[state='down'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/CloseButton_light_down_touch_2x.png); }
+	.s7mixedmediaviewer .s7closebutton[state='disabled'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/CloseButton_light_disabled_touch_2x.png); }
+
+		/*** IconEffect***/
+	.s7mixedmediaviewer .s7spinview .s7iconeffect[state='spin_1D'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/IconEffect_spin_up_touch_2x.png); }
+	.s7mixedmediaviewer .s7spinview .s7iconeffect[state='spin_2D'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/IconEffect_spin3d_up_touch_2x.png); }		
+	.s7mixedmediaviewer .s7videoplayer .s7iconeffect {background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/IconEffect_play_up.png); }
+}
+	/* Smartphones */
+@media only screen and (max-device-width:9in) and (max-device-height:9in)
+{
+	/*
+		CSS for mobile phones with normal resolution screens goes here.
+		This section is processed for both normal and high-rsolution mobile phones. So rules specific to
+		high-resolution mobile phones should be defined in the sections below.
+	*/
+	.s7mixedmediaviewer .s7zoominbutton  {
+		visibility:hidden;
+	 }
+	 
+	.s7mixedmediaviewer .s7zoomoutbutton{
+		visibility:hidden;
+	 }	
+	 
+	.s7mixedmediaviewer .s7fullscreenbutton{
+		visibility:hidden;
+	 }
+	 
+	.s7mixedmediaviewer .s7zoomresetbutton {
+		left:50%;
+		width:56px;
+		height:56px;
+		margin-left: -28px;
+		bottom: 0px;
+	 }
+	.s7mixedmediaviewer .s7zoomresetbutton[state='up'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ZoomResetButton_light_up_touch.png); }
+	.s7mixedmediaviewer .s7zoomresetbutton[state='over'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ZoomResetButton_light_over_touch.png); }
+	.s7mixedmediaviewer .s7zoomresetbutton[state='down'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ZoomResetButton_light_down_touch.png); }
+	.s7mixedmediaviewer .s7zoomresetbutton[state='disabled'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ZoomResetButton_light_disabled_touch.png); }
+	
+	.s7mixedmediaviewer .s7closebutton{
+		width:56px;
+		height:56px;
+		top: 20px;
+		right: 20px;		
+	 }
+	.s7mixedmediaviewer .s7closebutton[state='up'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/CloseButton_light_up_touch.png); }
+	.s7mixedmediaviewer .s7closebutton[state='over'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/CloseButton_light_over_touch.png); }
+	.s7mixedmediaviewer .s7closebutton[state='down'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/CloseButton_light_down_touch.png); }
+	.s7mixedmediaviewer .s7closebutton[state='disabled'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/CloseButton_light_disabled_touch.png); }
+	
+	.s7mixedmediaviewer .s7spinbuttons .s7panleftbutton {
+		visibility:hidden;
+	 }
+	.s7mixedmediaviewer .s7spinbuttons .s7panrightbutton {
+		visibility:hidden;
+	}
+
+	/**
+	 * ColorSwatches component  
+	 */
+	 .s7mixedmediaviewer .s7colorswatches .s7swatches {
+		position:absolute;
+		bottom: 0px;
+		left: 0px; 
+		height: 68px;
+		width: 140px;
+		background: transparent; 
+		z-index:1;
+	}
+	.s7mixedmediaviewer .s7colorswatches .s7swatches .s7thumb { 
+		width: 10px;
+		height: 10px;
+		background-color: #ffffff;
+		border: 1px solid #dddddd;
+	}
+	.s7mixedmediaviewer .s7colorswatches .s7swatches .s7thumb[state="default"] {
+		border: 1px solid #dddddd;
+	}
+	.s7mixedmediaviewer .s7colorswatches .s7swatches .s7thumb[state="selected"] {
+		border: 1px solid #666666;
+	}
+	/**
+	 * ColorSwatches scroll left button  
+	 */
+	.s7mixedmediaviewer .s7colorswatches .s7swatches .s7scrollleftbutton {
+		background-size: auto;
+		width: 10px;
+		height: 10px;
+	}
+	.s7mixedmediaviewer .s7colorswatches .s7swatches .s7scrollleftbutton[state="up"]{ background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ScrollLeftButton_dark_up.png); }
+	.s7mixedmediaviewer .s7colorswatches .s7swatches .s7scrollleftbutton[state="over"]{ background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ScrollLeftButton_dark_over.png);}
+	.s7mixedmediaviewer .s7colorswatches .s7swatches .s7scrollleftbutton[state="down"]{ background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ScrollLeftButton_dark_down.png); }
+	.s7mixedmediaviewer .s7colorswatches .s7swatches .s7scrollleftbutton[state="disabled"]{ background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ScrollLeftButton_dark_disabled.png); }
+
+	/**
+	 * ColorSwatches scroll right button  
+	 */
+	.s7mixedmediaviewer .s7colorswatches .s7swatches .s7scrollrightbutton {
+		background-size: auto;
+		width: 10px;
+		height: 10px;
+	}
+	.s7mixedmediaviewer .s7colorswatches .s7swatches .s7scrollrightbutton[state="up"]{ background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ScrollRightButton_dark_up.png); }
+	.s7mixedmediaviewer .s7colorswatches .s7swatches .s7scrollrightbutton[state="over"]{ background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ScrollRightButton_dark_over.png); }
+	.s7mixedmediaviewer .s7colorswatches .s7swatches .s7scrollrightbutton[state="down"]{ background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ScrollRightButton_dark_down.png); }
+	.s7mixedmediaviewer .s7colorswatches .s7swatches .s7scrollrightbutton[state="disabled"]{ background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ScrollRightButton_dark_disabled.png); }
+
+	.s7mixedmediaviewer .s7colorswatches .s7swatches .s7thumbcell{
+		margin: 10px;
+	}
+		/*** IconEffect***/
+	.s7mixedmediaviewer .s7spinview .s7iconeffect[state='spin_1D'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/IconEffect_spin_up_touch.png); }
+	.s7mixedmediaviewer .s7spinview .s7iconeffect[state='spin_2D'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/IconEffect_spin3d_up_touch.png); }		
+	.s7mixedmediaviewer .s7videoplayer .s7iconeffect {background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/IconEffect_play_up.png); }
+}
+
+	/*for phones with 2 pixel ratio, includes special case for Samsung Galaxy SIII */
+@media only screen and (max-device-width:9in) and (max-device-height:9in) and (-webkit-min-device-pixel-ratio: 1.5),
+		only screen and (device-width:720px) and (device-height:1280px) and (-webkit-device-pixel-ratio: 2),
+		only screen and (device-width:1280px) and (device-height:720px) and (-webkit-device-pixel-ratio: 2)
+{
+	/*
+		CSS for mobile phones with high resolution screens goes here.
+		This section is processed for only both high-rsolution mobile phones.
+	*/
+	.s7mixedmediaviewer .s7zoominbutton  {
+		visibility:hidden;
+	 }
+	 
+	.s7mixedmediaviewer .s7zoomoutbutton{
+		visibility:hidden;
+	 }	
+	 
+	.s7mixedmediaviewer .s7fullscreenbutton{
+		visibility:hidden;
+	 }
+
+	.s7mixedmediaviewer .s7zoomresetbutton {
+		left:50%;
+		width:56px;
+		height:56px;
+		margin-left: -28px;
+		bottom: 0px;
+	 }
+	.s7mixedmediaviewer .s7zoomresetbutton[state='up'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ZoomResetButton_light_up_touch_2x.png); }
+	.s7mixedmediaviewer .s7zoomresetbutton[state='over'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ZoomResetButton_light_over_touch_2x.png); }
+	.s7mixedmediaviewer .s7zoomresetbutton[state='down'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ZoomResetButton_light_down_touch_2x.png); }
+	.s7mixedmediaviewer .s7zoomresetbutton[state='disabled'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ZoomResetButton_light_disabled_touch_2x.png); }
+	
+	.s7mixedmediaviewer .s7closebutton{
+		width:56px;
+		height:56px;
+		top: 20px;
+		right: 20px;		
+	 }
+	.s7mixedmediaviewer .s7closebutton[state='up'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/CloseButton_light_up_touch_2x.png); }
+	.s7mixedmediaviewer .s7closebutton[state='over'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/CloseButton_light_over_touch_2x.png); }
+	.s7mixedmediaviewer .s7closebutton[state='down'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/CloseButton_light_down_touch_2x.png); }
+	.s7mixedmediaviewer .s7closebutton[state='disabled'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/CloseButton_light_disabled_touch_2x.png); }
+
+	.s7mixedmediaviewer .s7spinbuttons .s7panleftbutton {
+		visibility:hidden;
+	 }
+	.s7mixedmediaviewer .s7spinbuttons .s7panrightbutton {
+		visibility:hidden;
+	}
+
+	/**
+	 * ColorSwatches component  
+	 */
+	 .s7mixedmediaviewer .s7colorswatches .s7swatches {
+		position:absolute;
+		bottom: 0px;
+		left: 0px; 
+		height: 68px;
+		width: 140px;
+		background: transparent; 
+		z-index:1;
+	}
+	.s7mixedmediaviewer .s7colorswatches .s7swatches .s7thumb { 
+		width: 10px;
+		height: 10px;
+		background-color: rgb(68, 68, 68);
+		border: 1px solid #dddddd;
+	}
+	.s7mixedmediaviewer .s7colorswatches .s7swatches .s7thumb[state="default"] {
+		border: 1px solid #dddddd;
+	}
+	.s7mixedmediaviewer .s7colorswatches .s7swatches .s7thumb[state="selected"] {
+		border: 1px solid #666666;
+	}
+	/**
+	 * ColorSwatches scroll left button  
+	 */
+	.s7mixedmediaviewer .s7colorswatches .s7swatches .s7scrollleftbutton {
+		background-size: auto;
+		width: 10px;
+		height: 10px;
+	}
+	.s7mixedmediaviewer .s7colorswatches .s7swatches .s7scrollleftbutton[state="up"]{ background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ScrollLeftButton_dark_up.png); }
+	.s7mixedmediaviewer .s7colorswatches .s7swatches .s7scrollleftbutton[state="over"]{ background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ScrollLeftButton_dark_over.png);}
+	.s7mixedmediaviewer .s7colorswatches .s7swatches .s7scrollleftbutton[state="down"]{ background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ScrollLeftButton_dark_down.png); }
+	.s7mixedmediaviewer .s7colorswatches .s7swatches .s7scrollleftbutton[state="disabled"]{ background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ScrollLeftButton_dark_disabled.png); }
+
+	/**
+	 * ColorSwatches scroll right button  
+	 */
+	.s7mixedmediaviewer .s7colorswatches .s7swatches .s7scrollrightbutton {
+		background-size: auto;
+		width: 10px;
+		height: 10px;
+	}
+	.s7mixedmediaviewer .s7colorswatches .s7swatches .s7scrollrightbutton[state="up"]{ background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ScrollRightButton_dark_up.png); }
+	.s7mixedmediaviewer .s7colorswatches .s7swatches .s7scrollrightbutton[state="over"]{ background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ScrollRightButton_dark_over.png); }
+	.s7mixedmediaviewer .s7colorswatches .s7swatches .s7scrollrightbutton[state="down"]{ background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ScrollRightButton_dark_down.png); }
+	.s7mixedmediaviewer .s7colorswatches .s7swatches .s7scrollrightbutton[state="disabled"]{ background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/ScrollRightButton_dark_disabled.png); }
+
+	.s7mixedmediaviewer .s7colorswatches .s7swatches .s7thumbcell{
+		margin: 10px;
+	}
+
+	/*** IconEffect***/
+	.s7mixedmediaviewer .s7spinview .s7iconeffect[state='spin_1D'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/IconEffect_spin_up_touch_2x.png); }
+	.s7mixedmediaviewer .s7spinview .s7iconeffect[state='spin_2D'] { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/IconEffect_spin3d_up_touch_2x.png); }		
+	.s7mixedmediaviewer .s7videoplayer .s7iconeffect { background-image:url(http://s7d5.scene7.com/s7viewers/html5/images/v2/IconEffect_play_up_touch_2x.png); }
+}

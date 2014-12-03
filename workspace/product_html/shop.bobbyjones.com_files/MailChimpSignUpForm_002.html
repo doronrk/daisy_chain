@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html webdriver="true"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+        <title>Bobby Jones Sign Up Form</title>
+
+        <style type="text/css">
+            body {
+                margin: 0;
+            }
+        </style>
+
+        <script src="MailChimpSignUpForm_data/jquery-1.js"></script>
+        <script src="MailChimpSignUpForm_data/jquery-migrate-1.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('#mc_embed_signup .button').click(function () {
+
+                    // See: https://www.google.com/search?q=close+shadowbox
+                    // See: http://stackoverflow.com/questions/16795053/on-click-close-shadowbox-and-scroll-to-parent-div
+                    // See: http://shadowbox.1309102.n2.nabble.com/Close-Window-td2982848.html
+
+                    setTimeout(function () {
+                        window.parent.Shadowbox.close();
+                    }, 0);
+
+                });
+            });
+        </script>
+
+    </head>
+    <body>
+
+        <!-- Begin MailChimp Signup Form -->
+        <div id="mc_embed_signup" style="width: 330px; background-color: #ececec; height: 245px; padding: 30px; font-size: 14px;">
+
+            <p style="font-family: arial,helvetica neue,helvetica,sans-serif">
+                <span style="font-family: trebuchet ms,lucida grande,lucida sans unicode,lucida sans,tahoma,sans-serif"><span style="font-size: 14px">
+                    Leave your email and you’ll be the first to hear about exclusive offers, new products and events from <span style="color: #163461">Bobby Jones.
+                </span></span></span>
+            </p>
+
+            <p style="color: #163461">
+                <span style="font-family: trebuchet ms,lucida grande,lucida sans unicode,lucida sans,tahoma,sans-serif"><span style="font-size: 14px">
+                    You’ll also get a 25% OFF welcome offer on your next purchase.
+                </span></span>
+            </p>
+
+            <form action="//bobbyjones.us8.list-manage.com/subscribe/post?u=6aec106d36339181400655eda&amp;id=34e1bf2d8f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
+                <div class="mc-field-group">
+                    <label for="mce-EMAIL" style="font-family: trebuchet ms,lucida grande,lucida sans unicode,lucida sans,tahoma,sans-serif; font-size: 14px">
+                        Email Address  <span class="asterisk">*</span>
+                    </label>
+                    <input name="EMAIL" class="required email" id="mce-EMAIL" type="email">
+                </div>
+                <div id="mce-responses" class="clear">
+                    <div class="response" id="mce-error-response" style="display: none"></div>
+                    <div class="response" id="mce-success-response" style="display: none"></div>
+                </div>
+                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                <div style="position: absolute; left: -5000px;">
+                    <input name="b_6aec106d36339181400655eda_34e1bf2d8f" tabindex="-1" type="text">
+                </div>
+                <div class="clear">
+                    <input value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" style="background-color: #234630; color: #FFFFFF; padding: 5px 23px; margin: 10px 20px 0px 0; float: right; border: none; width: 135px" type="submit">
+                </div>
+                <p style="float: left; font-size: 12px; padding: 0 10px 0 0">
+                    *offer valid for first-time registrants only and applies to regular priced items only.
+                   <a href="http://www.bobbyjones.com/legalprivacy/" target="_self">Privacy Policy</a>
+                </p>
+            </form>
+        </div>
+        <!--End mc_embed_signup-->
+
+    
+
+</body></html>

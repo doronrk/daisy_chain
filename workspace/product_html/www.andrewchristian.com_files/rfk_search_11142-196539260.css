@@ -1,0 +1,724 @@
+/*CSS*/
+/* GOPHERSPORT - rfk_sb */
+.rfk_search_container {
+    display: none;
+    z-index: 2147483647;
+    padding: 0;
+    margin: 0;
+    margin-top: -3px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-drag: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    user-select: none;
+    position: relative;
+    clear: both;
+    margin: auto;
+    /*background-color: #fff;*/
+    max-width: 1100px;
+    border: #B51217 1px none;
+    font-family: Arial,Helvetica,sans-serif
+
+}
+
+.rfk_search_container.rfk_visible {
+    display: block;
+}
+
+
+.rfk_search_container a,.rfk_search_container a:active,.rfk_search_container a:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+.rfk_search_container .rfk_results ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+}
+
+.rfk_search_container ul li {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: pre-wrap;
+}
+
+.rfk_search_container .rfk_left_pane {
+    float: right !important;
+    width:200px;
+    height: auto;
+    /*border: 1px solid #CCC;*/
+    border-top: 0;
+    background-color: #fff;
+    /*
+    background-repeat: repeat-x;
+    background-image: -khtml-gradient(linear,left top,left bottom,from(#fff),to(#eee));
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#fff 0),to(#eee 100%));
+    background-image: -webkit-linear-gradient(top,#fff 0,#eee 100%);
+    background-image: -moz-linear-gradient(top,#fff 0,#eee 100%);
+    background-image: -ms-linear-gradient(top,#fff 0,#eee 100%);
+    background-image: -o-linear-gradient(top,#fff 0,#eee 100%);
+    background-image: linear-gradient(top,#fff 0,#eee 100%);
+    -pie-background: linear-gradient(top,#fff 0,#eee 100%);
+    */
+    position:relative;
+
+
+
+}
+
+.rfk_search_container .rfk_results {
+    border: 1px #ddd solid;
+    background-color: #fff;
+    width: 660px;
+    overflow: hidden;
+    float: left !important;
+    /*
+    -webkit-box-shadow: 10px 10px 2px 0 rgba(0,0,0,.5);
+    -moz-box-shadow: 10px 10px 2px 0 rgba(0,0,0,.5);
+    box-shadow: 10px 10px 2px 0 rgba(0,0,0,.5);
+    */
+    -webkit-box-shadow: 0 0 5px 2px rgba(0,0,0,.5);
+    -moz-box-shadow: 0 0 5px 2px rgba(0,0,0,.5);
+    box-shadow: 0 0 5px 2px rgba(0,0,0,.5);
+    font-family: Verdana,sans-serif;
+    color:#000;
+    font-weight:700;
+    line-height: 16px;
+    font-size: 11px;
+    /*border-radius: 15px;*/
+    border-radius: 9px;
+    border-top-right-radius: 0;
+    /*
+
+    */
+}
+
+.rfk_search_container .rfk_suggestions {
+    clear: both;
+    font-family: inherit;
+    color: #000;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: left;
+    margin: 0 auto;
+    width: 200px;
+    -webkit-box-shadow: 0 1px 1px 2px rgba(0,0,0,.5);
+    -moz- box-shadow: 0 1px 1px 2px rgba(0,0,0,.5);
+    box-shadow: 0 1px 1px 1px rgba(0,0,0,.5);
+
+}
+
+.rfk_search_container .rfk_suggestions>ul>li.rfk_title {
+    cursor: default;
+    width: 100%;
+    font-family: 'HelveticaNeueLTstdCnbold','texgyreheroscnbold';
+}
+
+.rfk_search_container .rfk_suggestions>ul>li.rfk_title>ul>li {
+
+    font-family: inherit
+    color:#444;
+    font-weight: 400;
+    font-size: 13px;
+    text-decoration: none;
+    text-transform: none;
+    text-align: left;
+    cursor: pointer;
+  /*  margin: 0 -40px;*/
+    padding: 5px 11px;
+    display: block;
+    width:160px;
+    font-family: 'HelveticaNeueLTstdCnregular', 'texgyreheroscnregular';
+    color:black;
+    border-bottom: 1px solid #a1a1a1;
+    margin: auto;
+}
+
+.rfk_search_container .rfk_suggestions>ul>li.rfk_title>ul>li.rfk_highlight
+/*,.rfk_search_container .rfk_suggestions>ul>li.rfk_title>ul>li.rfk_selected */{
+    background-color:#23a5d9;
+    -webkit-box-shadow: #999 1px 6px 10px -6px inset;
+    -moz-box-shadow: #999 1px 6px 10px -6px inset;
+    -ms-box-shadow: #999 1px 6px 10px -6px inset;
+    -o-box-shadow: #999 1px 6px 10px -6px inset;
+    box-shadow: #999 1px 6px 10px -6px inset;
+    color: #fff;
+}
+
+.rfk_search_container .rfk_message {
+    clear: both;
+    line-height: 2;
+    margin: auto 3px;
+    margin-top: 3px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding-left:15px;
+    font-family: 'HelveticaNeueLTstdCnbold','texgyreheroscnbold';
+    vertical-align:middle;
+    border-radius: 9px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.rfk_search_container .rfk_message .rfk_msg_noresult {
+    font-family: 'HelveticaNeueLTstdCnbold','texgyreheroscnbold';
+    color: #444;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: none;
+    text-align: left;
+    font-weight: 700;
+    /*margin: 8px 15px -4px;*/
+}
+
+.rfk_search_container .rfk_message .rfk_msg_results {
+
+    color: #282828;
+    background: transparent;
+    height: 40px;
+    width: inherit;
+    border-spacing: 2px;
+    letter-spacing: 0.8px;
+    font-family: 'HelveticaNeueLTstdCnbold','texgyreheroscnbold';
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 20px;
+    text-align:left;
+}
+
+.rfk_search_container .rfk_facets {
+    clear: both;
+    background-color: #fff;
+    font-family: inherit;
+    color:#444;
+    font-weight: 700;
+    font-size: 12px;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: left;
+    margin: auto 18px;
+}
+
+.rfk_search_container .rfk_facets>ul {
+    display: inline-block;
+}
+
+.rfk_search_container .rfk_facets>ul>li.rfk_title {
+    vertical-align: top;
+    font-size: 13px;
+    display: inline-block;
+    margin: 0 2px;
+    color: #444;
+    margin-top: 4px;
+}
+
+.rfk_search_container .rfk_facets>ul>li.rfk_title.rfk_highlight,.rfk_search_container .rfk_facets>ul>li.rfk_title.rfk_selected {
+    color: #000;
+    background-color: #fff;
+}
+
+.rfk_search_container .rfk_facets>ul>li.rfk_title>ul>li {
+    display: inline-block;
+    cursor: pointer;
+    line-height: 1;
+    border: #000 1px none;
+    background-color: #fff;
+    font-family: inherit;
+    color: #444;
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none;
+    text-transform: none;
+    text-align: left;
+    padding: 0 5px;
+}
+
+.rfk_search_container .rfk_facets>ul>li.rfk_title>ul>li.rfk_highlight,.rfk_search_container .rfk_facets>ul>li.rfk_title>ul>li.rfk_selected {
+    background-color: #fff;
+    color: #000;
+}
+
+.rfk_search_container .rfk_facets>ul>li.rfk_title>ul>li input[type=checkbox] {
+    margin: 0 5px;
+}
+
+.rfk_search_container .rfk_products {
+    margin-top: 5px;
+    clear: both;
+    margin: auto;
+    overflow: hidden;
+    max-height: 514px;
+    /*padding: 0px 13px 0;*/
+    font: 12px/1 Arial, Helvetica, 'Liberation Sans', FreeSans, sans-serif;
+}
+
+.rfk_search_container .rfk_products .rfk_product {
+  /*
+    float:left;
+    display:inline-block;
+    width:130px;
+    height:185px;
+    text-align:left;
+    margin-right: 9px;
+    margin-left: 9px;;
+    margin-bottom:10px;
+    margin-top:10px;
+    letter-spacing: default;
+    text-shadow: none;
+    text-decoration: none; */
+
+    overflow: hidden;
+    height: 213px;
+    width: 142px;
+    background-color: transparent;
+    border: 1px #aaa;
+    display: inline-block;
+    /*padding: 10px 0 15px;
+    float: left;*/
+    /*padding: 15px 15px 15px 10px;*/
+    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right:5px;
+    position:relative;
+
+}
+
+
+
+.rfk_search_container .rfk_products .rfk_product a .rfk_pimage {
+  /*
+    margin: auto;
+    overflow: hidden;
+    padding: 0;
+    max-width: 100%;
+    height: 110px;
+    line-height:110px; */
+    border:solid 6px #ccc;
+    width: 130px;
+    /*height: 130px;*/
+    background: white;
+
+}
+
+.rfk_search_container .rfk_products .rfk_product a .rfk_pimage img {
+  /*
+    vertical-align: middle;
+    max-width: 100%;
+    border: #000 1px none;
+    */
+    vertical-align: middle;
+    max-height: 100%;
+    max-width: 100%;
+    border: 1px #aaa;
+    margin: auto;
+    display: block;
+
+}
+
+
+
+.rfk_search_container .rfk_products .rfk_product a .rfk_price {
+  /*
+    text-align:center;
+    font-style:normal;
+    color: #B51217;
+    font-size: 10pt;
+    font-weight: bold;
+    */
+    color: white;
+    display: inline-block;
+    font-size: 13px;
+    font-family: 'HelveticaNeueLTstdCnregular', 'texgyreheroscnregular';
+    font-weight: 400;
+    text-transform: uppercase;
+    vertical-align: bottom;
+    cursor: pointer;
+    float: left;
+    width:100%;
+    background:#4c4c4c;
+    /*padding-left: 10px;*/
+    padding-top: 5px;
+    text-align: right;
+    width: 52px;
+    height: 40px;
+    -webkit-column-width: 52px;
+    -moz-column-width: 52px;
+    column-width: 52px;
+}
+
+.rfk_search_container .rfk_products .rfk_product a .rfk_price.rfk_discounted{
+    text-align:right;
+    padding-right: 10px;
+    width: 42px;
+    padding-left: 0px;
+}
+
+
+.rfk_search_container .rfk_products .rfk_product a .rfk_price .final-price {
+    display: none;
+}
+
+.rfk_search_container .rfk_products .rfk_product a .rfk_price.rfk_discounted .original-price {
+    color: #999;
+    text-decoration:line-through;
+    display:inline-block;
+    padding-right:0px;
+    font-weight: normal;
+}
+
+
+.rfk_search_container .rfk_products .rfk_product a .rfk_price.rfk_discounted .final-price {
+    display: inline;
+    color: #FB012F;
+    font-weight:bold;
+    font-size: 15px;
+}
+
+
+.rfk_search_container .rfk_products .rfk_product a .rfk_price.rfk_discounted .final-price:before{
+  content: ' ';
+}
+
+
+.rfk_search_container .rfk_products .rfk_product a .rfk_name {
+    /*text-shadow: -1px -1px 0 #fff,1px -1px 0 #fff,-1px 1px 0 #fff,1px 1px 0 #fff;*/
+    display: block;
+    height: 40px;
+    text-align:left;
+    overflow:hidden;
+    color: #ffffff;
+    font-weight:bold;
+    font-size: 10px;
+    background: #4c4c4c;
+    font-family:'HelveticaNeueLTstdCnregular', 'texgyreheroscnregular';
+    color: #ffffff;
+    font-size: 12px;
+    width: 85px;
+    float: left;
+    -webkit-column-width: 85px;
+    -moz-column-width: 85px;
+    column-width: 85px;
+    padding-left: 5px;
+    padding-top: 5px;
+
+}
+
+.rfk_search_container .rfk_products .rfk_product a .rfk_name:hover {
+    text-decoration:underline;
+}
+
+
+
+.rfk_search_container .rfk_open_search_page {
+    clear: both;
+    font-family: inherit;
+    color:#444;
+    font-weight: 700;
+    font-size: 12px;
+    text-decoration: none;
+    text-transform: none;
+    text-align: left;
+}
+
+.rfk_ajax_load .rfk-ajax-load {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-position: 0 4%;
+    margin-left: 590px;
+    background-repeat: no-repeat;
+    background-color: rgba(0,0,0,0);
+    background-image: url(data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==);
+}
+
+.rfk_search_container .rfk_suggestions>ul>li.rfk_title>ul>li strong {
+    /*color: #039;*/
+    color:inherit;
+    font-weight: bold;
+}
+
+
+.rfk_search_container .rfk_suggestions>ul>li.rfk_title>ul>li.rfk_highlight strong {
+    color:inherit;
+    font-weight: bold;
+
+}
+
+.rfk_search_container .rfk_more{
+  margin-left: 3px;
+  margin-right: 3px;
+  margin-bottom: 10px;
+
+}
+
+.rfk_search_container .rfk_results .rfk_more .rfk_open_search_page {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 5px;
+    margin-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: relative;
+    top: -5px;
+    background: #23a5d9;
+    font-family:'HelveticaNeueLTstdCnbold','texgyreheroscnbold';
+    border-radius:5px;
+}
+
+.rfk_search_container .rfk_results .rfk_more .rfk_open_search_page:hover{
+    background: #1c84ad;
+}
+
+.rfk_left_pane ul.rfk_list.list.search_suggestions {
+    display: block;
+    position: relative;
+    left: -10px;
+}
+
+/*
+.rfk_search_container .rfk_results .rfk_more div {
+    text-align: center;
+    padding: 5px;
+    background:#ddd;
+    padding-top: 18px;
+    border-radius: 9px;
+    border-top-right-radius:0px;
+    border-top-left-radius:0px;
+}
+*/
+/*
+.rfk_search_container .rfk_results .rfk_more div:hover {
+    cursor:pointer;
+    text-decoration:underline;
+}
+*/
+
+ul.suggestion.search_suggestions.navigation {
+    -webkit-padding-start: 0;
+    overflow:hidden;
+
+}
+
+.rfk_initial .rfk_more,.rfk_tplenp .rfk_more {
+    display: none;
+}
+
+.rfk_search_container .rfk_brand{
+    text-align:center;
+    display:block;
+    width: 90px;
+    height: 16px;
+    margin: auto;
+}
+
+.rfk_search_container .rfk_brand img{
+    width: 90px;
+    height: 16px;
+}
+
+.rfk_search_container .original-price{
+    display:block;
+    padding-right: 10px;
+    font-weight: bold;
+}
+
+ul.suggestion.search_suggestions.navigation .rfk_title{
+    padding-left:10px;
+    color: #4c4c4c;
+}
+
+.rfk_search_container .rfk_product .rfk_promo_img[flags=New]{
+  background: url('http://www.andrewchristian.com/skin/frontend/enterprise/andrewchristian/images/new.png');
+  height: 87px;
+  width: 74px;
+  position: absolute;
+  left: 62px;
+}
+
+.rfk_search_container .rfk_product .rfk_promo_img{
+  background: url('http://www.andrewchristian.com/skin/frontend/enterprise/andrewchristian/images/tag_bg.png');
+  height: 87px;
+  width: 74px;
+  position: absolute;
+  left: 62px;
+}
+
+.rfk_search_container .rfk_product .rfk_promo_img[flags=""]{
+  display:none;
+  /*
+  background: url('http://www.andrewchristian.com/skin/frontend/enterprise/andrewchristian/images/tag_bg.png');
+  height: 87px;
+  width: 87px;
+  position: absolute;
+  left: 131px;
+  */
+}
+
+
+.rfk_search_container .rfk_product .rfk_promo{
+  display: block;
+  color: #fff;
+  font-family: 'HelveticaNeueLTstdCnbold','texgyreheroscnbold';
+  font-size: 15px;
+  text-transform: uppercase;
+  transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  position: absolute;
+  left: 39px;
+  top: 25px;
+  width: 100%;
+  text-align: center;
+
+}
+
+.rfk_search_container .rfk_product .rfk_promo[flags=New]{
+  display:none;
+}
+
+.rfk_search_container .rfk_product .rfk_promo[flags=""]{
+  display:none;
+}
+
+
+
+/* CSS RESET */
+    /**
+    * YUI 3.5.0 - reset.css (http://developer.yahoo.com/yui/3/cssreset/)
+    * http://cssreset.com
+    * Copyright 2012 Yahoo! Inc. All rights reserved.
+    * http://yuilibrary.com/license/
+    */
+    /*
+    TODO will need to remove settings on HTML since we can't namespace it.
+    TODO with the prefix, should I group by selector or property for weight savings?
+    */
+    html{
+    /*
+    color:#000;
+    background:#FFF;
+    */
+    }
+    /*
+    TODO remove settings on BODY since we can't namespace it.
+    */
+    /*
+    TODO test putting a class on HEAD.
+    - Fails on FF.
+    */
+    .rfk_search_container body,
+    .rfk_search_container div,
+    .rfk_search_container dl,
+    .rfk_search_container dt,
+    .rfk_search_container dd,
+    .rfk_search_container ul,
+    .rfk_search_container ol,
+    .rfk_search_container li,
+    .rfk_search_container h1,
+    .rfk_search_container h2,
+    .rfk_search_container h3,
+    .rfk_search_container h4,
+    .rfk_search_container h5,
+    .rfk_search_container h6,
+    .rfk_search_container pre,
+    .rfk_search_container code,
+    .rfk_search_container form,
+    .rfk_search_container fieldset,
+    .rfk_search_container legend,
+    .rfk_search_container input,
+    .rfk_search_container textarea,
+    .rfk_search_container p,
+    .rfk_search_container blockquote,
+    .rfk_search_container th,
+    .rfk_search_container td {
+    margin:0;
+    padding:0;
+    }
+    .rfk_search_container table {
+    border-collapse:collapse;
+    border-spacing:0;
+    }
+    .rfk_search_container fieldset,
+    .rfk_search_container img {
+    border:0;
+    }
+    /*
+    TODO think about hanlding inheritence differently, maybe letting IE6 fail a bit...
+    */
+    .rfk_search_container address,
+    .rfk_search_container caption,
+    .rfk_search_container cite,
+    .rfk_search_container code,
+    .rfk_search_container dfn,
+    .rfk_search_container em,
+    .rfk_search_container strong,
+    .rfk_search_container th,
+    .rfk_search_container var {
+    font-style:normal;
+    font-weight:normal;
+    }
+
+    .rfk_search_container ol,
+    .rfk_search_container ul {
+    list-style:none;
+    }
+
+    .rfk_search_container caption,
+    .rfk_search_container th {
+    text-align:left;
+    }
+    .rfk_search_container h1,
+    .rfk_search_container h2,
+    .rfk_search_container h3,
+    .rfk_search_container h4,
+    .rfk_search_container h5,
+    .rfk_search_container h6 {
+    font-size:100%;
+    font-weight:normal;
+    }
+    .rfk_search_container q:before,
+    .rfk_search_container q:after {
+    content:'';
+    }
+    .rfk_search_container abbr,
+    .rfk_search_container acronym {
+    border:0;
+    font-variant:normal;
+    }
+    /* to preserve line-height and selector appearance */
+    .rfk_search_container sup {
+    vertical-align:text-top;
+    }
+    .rfk_search_container sub {
+    vertical-align:text-bottom;
+    }
+    .rfk_search_container input,
+    .rfk_search_container textarea,
+    .rfk_search_container select {
+    font-family:inherit;
+    font-size:inherit;
+    font-weight:inherit;
+    }
+    /*to enable resizing for IE*/
+    .rfk_search_container input,
+    .rfk_search_container textarea,
+    .rfk_search_container select {
+    *font-size:100%;
+    }
+    /*because legend doesn't inherit in IE */
+    .rfk_search_container legend {
+    color:#000;
+    }
+    /* YUI CSS Detection Stamp */
+    #yui3-css-stamp.cssreset { display: none; }

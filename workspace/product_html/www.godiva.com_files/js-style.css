@@ -1,0 +1,108 @@
+.loader {position:absolute;left:0;top:0;width:100%;height:100%;}
+.loader-bg {position:absolute;width:100%;height:100%;background-color:#fff;opacity:0.7;}
+.loader-indicator {z-index:100;position:absolute;left:50%;top:50%;width:64px;height:64px;background:url("../images/loading-small.gif") no-repeat;}
+
+.product-image:hover #quickviewbutton {display:block;}
+
+/* SEARCH SUGGESTION
+--------------------------------------------------------------------------------------- */
+#suggestions {background: #fff; color: #333; cursor:pointer; padding: 0px; display: none; position: absolute; top: 42px; right: 0px; width: 320px; z-index:8184; -webkit-box-shadow: -3px 1px 3px rgba(50, 31, 26, .15); box-shadow: -3px 1px 3px rgba(50, 31, 26, .15); }
+#suggestions div:hover {background: #d4b75f; color: #333;}
+#suggestions div.suggestionterm {display: none; }
+#suggestions div span.hits {float: right;line-height: 1.8em;text-align: right;margin-left: 3px;}
+
+#suggestions h3 { display: none; }
+
+.productDetails { background: #fff; border-bottom: 1px solid #dad5d4; padding: 14px 20px; }
+.productDetails .col1 { width: 50px; float: left; }
+.productDetails .col1 img { width: 100%; }
+.productDetails .col2 { width: 200px; float: left; padding: 8px 10px; }
+#suggestions .productDetails .col2 h3 { display: block; font-size: 1em; font-family: AdobeCaslonProRegular, serif; text-transform: none; color: #472d27; margin: 0px 0px 5px 0px;}
+
+#suggestions .productDetails .col2 h3 a { color: #472d27; }
+
+#suggestions .productDetails .col2 .product-price { font-size: 1.083em; font-family: GillSans, sans-serif; }
+
+.searchSuggestViewall { background: #d4b75f; border-top: 1px solid #b89b54; padding: 8px 0px; text-align: center; }
+.searchSuggestViewall a { color: #472d27; font-size: 1.083em; font-family: GillSans, sans-serif; }
+
+.mini-cart-product {position:relative;}
+
+/*
+.mini-cart-toggler {
+	background: url(../images/minicart_expanded.png) repeat scroll 0 0 transparent;
+	cursor: pointer;
+	height: 13px;
+	left: 5px;
+	position: absolute;
+	top: 10px;
+	width: 13px;
+}
+
+div.collapsed .mini-cart-toggler {
+	background: url(../images/minicart_collapsed.png) repeat scroll 0 0 transparent; 
+	
+}
+
+*/
+
+div.collapsed .mini-cart-image {
+	display:none; 	
+}
+
+/* quick view */
+/* ---------------------------------------------------------------------------------------*/
+.ui-dialog-content .pdp-main { min-width: 980px;}
+.ui-dialog-content .product-col-1{padding:0 14px 0 0;width:420px;}
+.ui-dialog-content .product-col-1 .product-image {max-width: 100%;}
+.ui-dialog-content .product-col-2{padding: 20px 0;width:558px;}
+.ui-dialog-content .product-add-to-cart { /*position: relative;*/}
+.ui-dialog-content .product-add-to-cart a.full-details-link { /*position: absolute;left: 246px;top: 66%;*/}
+.ui-dialog-content .pdp-main .product-set-list {border:1px solid #d9d9d9;height: 500px;overflow:auto;}
+.ui-dialog-content .pdp-main .product-set-list .product-set-item {margin:1em 0;}
+.ui-dialog-content .pdp-main .product-set-list .product-set-image {width: 25%;}
+.ui-dialog-content .pdp-main .product-set-list .product-set-details {width:75%;}
+.ui-dialog-content .pdp-main .product-set-list .product-name {margin:0;}
+.ui-dialog-content .pdp-main .product-set-list .block-add-to-cart .price {font-size:1.5em;padding: 0.4em 0 0;width: 130px;}
+.ui-dialog-content .pdp-main a.full-details-link {
+	font-size:1.3em; display: inline;
+	padding: 0 18px 0 0;
+	background: url("../images/readall-arrow.png") no-repeat right 3px;
+	color: #a38d50;
+	text-transform: uppercase;
+
+}
+
+
+.zoomPad{position:relative;float:left;z-index:99;cursor:crosshair;width:100%;}
+.zoomPreload{-moz-opacity:0.8;opacity:0.8;filter:alpha(opacity = 80);color:#333;font-size:12px;font-family:Tahoma;text-decoration:none;border:1px solid #CCC;background-color:white;padding:8px;text-align:center;background-image:url(../images/zoomloader.gif);background-repeat:no-repeat;background-position:43px 30px;z-index:110;width:90px;height:43px;position:absolute;top:0px;left:0px;*width:100px;*height:49px;}
+.zoomPup{overflow:hidden;background-color:#FFF;-moz-opacity:0.6;opacity:0.6;filter:alpha(opacity = 60);z-index:120;position:absolute;border:1px solid #CCC;z-index:101;cursor:crosshair;}
+.zoomOverlay{position:absolute;left:0px;top:0px;background:#FFF;/*opacity:0.5;*/z-index:5000;width:100%;height:100%;display:none;z-index:101;}
+.zoomWindow{position:absolute;left:0% !important ;top:0px !important;background:#FFF;z-index:6000;height:auto;z-index:10000;z-index:110;}
+.zoomWrapper{position:relative;border:1px solid #999;z-index:110;}
+.zoomWrapperTitle{display: none !important;background:#999;color:#FFF;height:18px;line-height:18px;width:100%;overflow:hidden;text-align:center;font-size:10px;position:absolute;top:0px;left:0px;z-index:120;-moz-opacity:0.6;opacity:0.6;filter:alpha(opacity = 60);}
+.zoomWrapperImage{display:block;position:relative;overflow:hidden;z-index:110;}
+.zoomWrapperImage img{border:0px;display:block;position:absolute;z-index:101;}
+.zoomIframe{z-index:-1;filter:alpha(opacity=0);-moz-opacity:0.80;opacity:0.80;position:absolute;display:block;}
+
+/* homepage assets
+--------------------------------------------------------------------------------------- */
+/*.homepage-slides {height: 550px;}
+#homepage-slider .jcarousel-item {max-width:100%;}
+#homepage-slider .jcarousel-control {}
+#homepage-slider .jcarousel-control a {background: none repeat scroll 0 0 #E0E0E0;border:1px solid #cccccc;display: block;float: left;height: 15px;margin: 0 3px;text-indent: -999em; width: 6px;}
+#homepage-slider .jcarousel-control a.active {background-color:#666666;}
+
+.home-bottom-left,
+.home-bottom-center,
+.home-bottom-right {clear:none;float:left;width: 33%;}
+
+.home-bottom-right .jcarousel-clip {height: 282px; overflow:hidden;}
+.home-bottom-right .vertical-carousel li {height: 282px;float:none; width:300px;}
+.home-bottom-right .product-tile {min-height: 0;}
+.home-bottom-right .jcarousel-prev {background:url('../images/interface/icon-vertical-carousel-prev.png') left top no-repeat;cursor:pointer;height:12px;position:absolute;bottom:0;right:0;width:52px;z-index:999;}
+.home-bottom-right .jcarousel-next {background:url('../images/interface/icon-vertical-carousel-next.png') left top no-repeat;cursor:pointer;height:12px;position:absolute;bottom:20px;right:0;width:52px;z-index:999;}
+.home-bottom-right .jcarousel-prev-disabled, .home-bottom-right .jcarousel-next-disabled {display:none !important;}
+
+button.select {display:none}
+*/

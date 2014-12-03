@@ -1,0 +1,1 @@
+(typeof(eluminate7300) == 'function') && eluminate7300();

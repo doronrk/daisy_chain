@@ -1,0 +1,31 @@
+<html webdriver="true"><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+		<script type="text/javascript" src="adtruth_data/prefs.js"></script>
+	</head>
+	<body>
+		<input name="user_prefs" id="user_prefs" value="TF1;015;;;;;;;;;;;;;;;;;;;;;;Mozilla;Netscape;5.0%20%28Macintosh%29;20100101;undefined;true;Intel%20Mac%20OS%20X%2010.10;true;MacIntel;undefined;Mozilla/5.0%20%28Macintosh%3B%20Intel%20Mac%20OS%20X%2010.10%3B%20rv%3A33.0%29%20Gecko/20100101%20Firefox/33.0;en-US;undefined;a2.fetchback.com;undefined;undefined;undefined;undefined;true;false;1417585308885;-5;6/7/2005%2C%209%3A33%3A44%20PM;1440;900;;15.0;7.7.3;;;;12;300;240;12/3/2014%2C%2012%3A41%3A48%20AM;24;1440;873;0;23;;;;;;Shockwave%20Flash%7CShockwave%20Flash%2015.0%20r0;;;;QuickTime%20Plug-in%207.7.3%7CThe%20QuickTime%20Plugin%20allows%20you%20to%20view%20a%20wide%20variety%20of%20multimedia%20content%20in%20web%20pages.%20For%20more%20information%2C%20visit%20the%20%3CA%20HREF%3Dhttp%3A//www.apple.com/quicktime%3EQuickTime%3C/A%3E%20Web%20site.;;;;;Silverlight%20Plug-In%7C5.1.20913.0;;;;0;" type="hidden">
+		<script type="text/javascript">
+			var xmlhttp;
+			if (window.XMLHttpRequest) {
+				// code for IE7+, Firefox, Chrome, Opera, Safari
+  				xmlhttp=new XMLHttpRequest();
+  			}
+			else {
+				// code for IE6, IE5
+  				xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  			}
+
+ 			xmlhttp.open("POST","at",true);
+			xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+
+			fortyone.collect('user_prefs');
+		    var formValue = "user_prefs=" + encodeURIComponent(document.getElementById('user_prefs').value);
+		    var params = window.location.search;
+		    if (params) {
+			    formValue = formValue + "&params=" + encodeURIComponent(params.substr(1));
+		    }
+	
+	    	xmlhttp.send(formValue);
+		</script>
+	
+</body></html>

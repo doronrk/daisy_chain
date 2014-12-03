@@ -1,0 +1,268 @@
+/* CSS Document */
+/*
+
+Description: CSS for Ferragamo (September 2013)
+	Aggiustamento agli stili per adattamento alla struttura dello store Aurora
+	in seguito al Restyling richiesto
+Version: 1.0
+Author: Augelli Cristiana
+*/
+/*_______________________________ Fonts Area _______________________________________________*/
+@import url("//fast.fonts.net/t/1.css?apiType=css&projectid=a0143215-41c5-4611-924f-254bd9ce9247");
+@font-face{
+font-family:"News Gothic MT W01 Bold";
+src: url("../../../fonts/r_13/1dd2c283-40a4-490b-a0d7-ef417dac4d66.eot?#iefix");
+src: local('☺'), url("../../../fonts/r_13/1dd2c283-40a4-490b-a0d7-ef417dac4d66.eot?#iefix") format("eot"),
+	url("../../../fonts/r_13/7100c084-fc4c-46d8-b4e5-ddddc8a5ef96.woff") format("woff"),
+	url("../../../fonts/r_13/8abe9396-51db-4d9e-a3e2-71f057051ec6.ttf") format("truetype"),
+	url("../../../fonts/r_13/9937da80-c9ad-405a-b7ad-ed7552fbc86a.svg#9937da80-c9ad-405a-b7ad-ed7552fbc86a") format("svg");
+}
+@font-face{
+font-family:"NewsGothicMTW01-BoldCon";
+src: url("../../../fonts/r_13/edb34540-2d21-40f6-93da-9009522b2efe.eot?#iefix");
+src: local('☺'), url("../../../fonts/r_13/edb34540-2d21-40f6-93da-9009522b2efe.eot?#iefix") format("eot"),
+url("../../../fonts/r_13/9bc5b6ea-eca9-436d-8dd4-81ffc50a2b6c.woff") format("woff"),
+url("../../../fonts/r_13/9c14ba46-4622-4564-819b-9fb1fc5a96f9.ttf") format("truetype"),
+url("../../../fonts/r_13/1490226b-5713-4496-8b3a-3e118d4f8b27.svg#1490226b-5713-4496-8b3a-3e118d4f8b27") format("svg");
+}
+@font-face{
+font-family:"NewsGothicMTW01-BoldIta";
+src: url("../../../fonts/r_13/a71dcf3d-91d5-4b67-ad95-ba45e25b28f5.eot?#iefix");
+src: local('☺'), url("../../../fonts/r_13/a71dcf3d-91d5-4b67-ad95-ba45e25b28f5.eot?#iefix") format("eot"),
+url("../../../fonts/r_13/d664aa3b-f4dc-406d-b408-2a5ee084baaa.woff") format("woff"),
+url("../../../fonts/r_13/a1fc2674-ef44-4d2e-9d4b-09a91300605c.ttf") format("truetype"),
+url("../../../fonts/r_13/b3a4469c-29b6-4c2e-94dc-839a00dccec6.svg#b3a4469c-29b6-4c2e-94dc-839a00dccec6") format("svg");
+}
+@font-face{
+font-family:"NewsGothicMTW01-Condens";
+src: url("../../../fonts/r_13/433ff4b6-2fc7-496a-84d2-745196f0ea97.eot?#iefix");
+src: local('☺'), url("../../../fonts/r_13/433ff4b6-2fc7-496a-84d2-745196f0ea97.eot?#iefix") format("eot"),
+url("../../../fonts/r_13/8b9240f4-15ca-46ac-94fb-bc6600c1560e.woff") format("woff"),
+url("../../../fonts/r_13/40ae0693-1573-4fec-8990-e66a786f3594.ttf") format("truetype"),
+url("../../../fonts/r_13/cb504e6a-14b8-4286-b772-09f1531fe6ba.svg#cb504e6a-14b8-4286-b772-09f1531fe6ba") format("svg");
+}
+@font-face{
+font-family:"NewsGothicMTW01-Italic";
+src: url("../../../fonts/r_13/40243557-c5f5-4171-8307-6e27b16a7903.eot?#iefix");
+src: local('☺'), url("../../../fonts/r_13/40243557-c5f5-4171-8307-6e27b16a7903.eot?#iefix") format("eot"),
+url("../../../fonts/r_13/e7f852ae-faae-439e-8f52-357252dca129.woff") format("woff"),
+url("../../../fonts/r_13/a5ba7c6f-70f7-4464-846a-63f92185389d.ttf") format("truetype"),
+url("../../../fonts/r_13/834ad741-1578-4b46-9d25-347cf313964f.svg#834ad741-1578-4b46-9d25-347cf313964f") format("svg");
+}
+@font-face{
+font-family:"News Gothic MT W01";
+src: url("../../../fonts/r_13/37d9e911-0350-4505-a092-d4bb68731be9.eot?#iefix");
+src: local('☺'), url("../../../fonts/r_13/37d9e911-0350-4505-a092-d4bb68731be9.eot?#iefix") format("eot"),
+url("../../../fonts/r_13/df9b49fd-a69d-4b3c-9502-e148796c36ba.woff") format("woff"),
+url("../../../fonts/r_13/2547c32b-e98b-487e-b645-8f51db8ae92f.ttf") format("truetype"),
+url("../../../fonts/r_13/a5f40cdb-c908-4500-81c7-a7e69f01df8c.svg#a5f40cdb-c908-4500-81c7-a7e69f01df8c") format("svg");
+}
+@font-face{
+font-family:"MonotypeNewsGothicW10";
+src: url("../../../fonts/r_13/109ca7ad-ea6f-4bdd-9ac2-d8f55861579b.eot?#iefix");
+src: local('☺'), url("../../../fonts/r_13/109ca7ad-ea6f-4bdd-9ac2-d8f55861579b.eot?#iefix") format("eot"),
+url("../../../fonts/r_13/584b1100-d07c-416b-8933-71d70a5250d7.woff") format("woff"),
+url("../../../fonts/r_13/c74d8ee5-40d4-4730-8b01-264bf91b15d5.ttf") format("truetype"),
+url("../../../fonts/r_13/278b8d6e-d40b-4daf-8c0a-0fffeb779d8e.svg#278b8d6e-d40b-4daf-8c0a-0fffeb779d8e") format("svg");
+}
+@font-face{
+font-family:"MonotypeNewsGothicW10-B 884463";
+src: url("../../../fonts/r_13/d26497ee-f837-42dd-bfa3-dbcb60849e90.eot?#iefix");
+src: local('☺'), url("../../../fonts/r_13/d26497ee-f837-42dd-bfa3-dbcb60849e90.eot?#iefix") format("eot"),
+url("../../../fonts/r_13/564e322a-52c1-4259-8bad-98b5572652ef.woff") format("woff"),
+url("../../../fonts/r_13/d133fc59-300b-4957-bf04-273799c310f9.ttf") format("truetype"),
+url("../../../fonts/r_13/8899b18c-2867-4c55-bbd4-33046fe95dd9.svg#8899b18c-2867-4c55-bbd4-33046fe95dd9") format("svg");
+}
+@font-face{
+font-family:"MonotypeNewsGothicW10-B 884466";
+src: url("../../../fonts/r_13/12d1298b-397e-4fd2-8138-37a6248e22be.eot?#iefix");
+src: local('☺'), url("../../../fonts/r_13/12d1298b-397e-4fd2-8138-37a6248e22be.eot?#iefix") format("eot"),
+url("../../../fonts/r_13/d9965d43-17fe-4b48-bfa5-a6dcd01d7678.woff") format("woff"),
+url("../../../fonts/r_13/2451a45a-9728-4ad9-8e30-1403941204a6.ttf") format("truetype"),
+url("../../../fonts/r_13/3afab4fb-3c8f-40b7-9ebb-377150d9f542.svg#3afab4fb-3c8f-40b7-9ebb-377150d9f542") format("svg");
+}
+@font-face{
+font-family:"MonotypeNewsGothicW10-I";
+src: url("../../../fonts/r_13/fdfcb5e3-c367-42b1-9356-01ebd07779ca.eot?#iefix");
+src: local('☺'), url("../../../fonts/r_13/fdfcb5e3-c367-42b1-9356-01ebd07779ca.eot?#iefix") format("eot"),
+url("../../../fonts/r_13/10a6e90d-30c9-4c28-aca8-33c9ef75cb7c.woff") format("woff"),
+url("../../../fonts/r_13/afa309d6-293c-4f49-9492-d4ad4e4d5240.ttf") format("truetype"),
+url("../../../fonts/r_13/13bd298d-d76b-46b1-97f9-ded3d71abdee.svg#13bd298d-d76b-46b1-97f9-ded3d71abdee") format("svg");
+}
+@font-face{
+font-family:"MonotypeNewsGothicW15";
+src: url("../../../fonts/r_13/aa82e0df-543b-4bef-8633-93bdf2678fb9.eot?#iefix");
+src: local('☺'), url("../../../fonts/r_13/aa82e0df-543b-4bef-8633-93bdf2678fb9.eot?#iefix") format("eot"),
+url("../../../fonts/r_13/b855062c-b4f3-48cb-8434-1f73b5f8fd12.woff") format("woff"),
+url("../../../fonts/r_13/4c3cf7c3-f68d-43c4-b3f5-acc5a003074e.ttf") format("truetype"),
+url("../../../fonts/r_13/02b11928-8d32-4d65-8bea-14c8b9ebc154.svg#02b11928-8d32-4d65-8bea-14c8b9ebc154") format("svg");
+}
+@font-face{
+font-family:"MonotypeNewsGothicW15-B 884541";
+src: url("../../../fonts/r_13/bc01e6cb-b53b-4dce-8965-f76b101ff92b.eot?#iefix");
+src: local('☺'), url("../../../fonts/r_13/bc01e6cb-b53b-4dce-8965-f76b101ff92b.eot?#iefix") format("eot"),
+url("../../../fonts/r_13/4eecd649-f85d-410c-94fe-f6e951d6e193.woff") format("woff"),
+url("../../../fonts/r_13/4209ea4a-d936-481e-ad55-7358b68a337b.ttf") format("truetype"),
+url("../../../fonts/r_13/795d0b1a-9b09-4af4-b5c6-0b076ebe6689.svg#795d0b1a-9b09-4af4-b5c6-0b076ebe6689") format("svg");
+}
+@font-face{
+font-family:"MonotypeNewsGothicW15-B 884544";
+src: url("../../../fonts/r_13/501bca68-bbee-4bda-b781-d9eaa74f5a57.eot?#iefix");
+src: local('☺'), url("../../../fonts/r_13/501bca68-bbee-4bda-b781-d9eaa74f5a57.eot?#iefix") format("eot"),
+url("../../../fonts/r_13/f2fe85b8-9def-434e-b5fd-50a92ca02767.woff") format("woff"),
+url("../../../fonts/r_13/0116e26a-ca97-4b59-837e-2e8ddbbbf468.ttf") format("truetype"),
+url("../../../fonts/r_13/a887780f-071e-4e1d-ae39-2fd2903aec00.svg#a887780f-071e-4e1d-ae39-2fd2903aec00") format("svg");
+}
+@font-face{
+font-family:"MonotypeNewsGothicW15-I";
+src: url("../../../fonts/r_13/e80fe311-2db8-488a-930f-a1825f026f3a.eot?#iefix");
+src: local('☺'), url("../../../fonts/r_13/e80fe311-2db8-488a-930f-a1825f026f3a.eot?#iefix") format("eot"),
+url("../../../fonts/r_13/2366783d-bf74-4f35-a79c-076b3860bcad.woff") format("woff"),
+url("../../../fonts/r_13/5867f346-a1c1-4812-bdc9-625a647d2e4d.ttf") format("truetype"),
+url("../../../fonts/r_13/772250f5-23bb-4678-8c2e-2eaaad82ab4f.svg#772250f5-23bb-4678-8c2e-2eaaad82ab4f") format("svg");
+}
+
+/*______________ Content Area _________________________*/
+
+body {
+  font-family: "News Gothic MT W01";
+}
+
+.frg_grid_row:after{
+	clear: none;
+}
+
+.frg_restyled_page figure figcaption {
+    background: url(../../../images/Custom/r_13/bg_darker_overlay.png) repeat;
+    color: #FFFFFF;
+}
+
+/*______________ Message Area ____________________________*/
+#MessageArea {
+	display:none;
+}
+
+.frg_big_win .frg13_popup_title{
+	font-size: 24px;
+    line-height: 24px;
+    padding-top: 40px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/*_________________________ Header widget MYSHOP________________________________________*/
+#aurora_wdg_site_logo h1, #aurora_wdg_site_logo h1 a, #aurora_wdg_site_logo h1 img{
+	display: inline;
+} 
+
+.frg_user{
+	width: 20%;
+}
+
+#frg_user_menu ul li{
+	text-transform: capitalize;
+}
+
+#widget_miniwishlist, #widget_minishopcart{
+	display: inline;
+}
+
+#Wishlist{
+	display: inline;
+}
+
+.frg_goto_cart, .frg_goto_wishlist{
+	float: right;
+	margin: none;
+}
+
+.frg_goto_cart{
+  background: transparent url(../../../images/Custom/r_13/sprite_elements1.png) no-repeat right -661px;
+}
+
+.frg_goto_wishlist {
+  background: transparent url(../../../images/Custom/r_13/sprite_elements1.png) no-repeat right -616px;
+}
+ 
+/*_________________________ Search Form Area ________________________________________*/  
+
+#CatalogSearchForm input#SimpleSearchForm_SearchTerm {
+  background: #2a2c35 url(../../../images/Custom/r_13/sprite_elements1.png) no-repeat 101% -787px;  
+} 
+
+/*_________________________ Footer Social Icon________________________________________*/
+.frg_ico_instagram,.frg_ico_twitter,.frg_ico_tumblr, .frg_ico_pinterest, .frg_ico_youtube, .frg_ico_facebook, .frg_ico_google, .frg_ico_vimeo{
+	background-color: transparent;
+	background-image: url(../../../images/Custom/r_13/sprite_elements1.png);
+	background-repeat: no-repeat;
+}
+
+.frg_ico_instagram{
+	background: url(../../../images/Custom/r_13/sprite_elements1.png) repeat scroll -890px -450px transparent;
+}
+
+/*_________________________ Menu Area ________________________________________*/
+.frg_span_8_menu {
+    clear: right;
+    float: left;
+    margin-left: 0.87719%;
+    margin-right: 0;
+    overflow: hidden;
+	width: 61.372%
+}
+
+.frg_user {
+    margin-bottom: 9px;
+}
+
+/*_________________________ Footer Area ________________________________________*/  
+
+.frg_colFooter{
+	width: 17%;
+}
+
+.frg_socialFooter{
+	float: right;
+}
+
+/*_________________________ Product Page ________________________________________*/
+
+.frg13_ProductPage #frg_wrapper.frg_restyled_page {
+    -moz-box-sizing: border-box;
+    margin: 0 auto;
+    overflow: hidden !important;
+    padding: 0 10px;
+}
+
+.frg13_product_slider .frg13_slider_previous, .frg13_product_slider .frg13_slider_next {
+	 background: url("../../../images/Custom/r_13/freccia_03.png") no-repeat scroll center 41% rgba(0, 0, 0, 0);
+	 border: medium none;
+	 cursor: pointer;
+	 height: 100%;
+	 left: -8px;
+	 padding: 0;
+	 position: absolute !important;
+	 width: 30px;
+	 z-index: 3;
+}
+ 
+.frg13_product_slider .frg13_slider_next {
+	 background: url("../../../images/Custom/r_13/freccia_02.png") no-repeat scroll center 41% rgba(0, 0, 0, 0);
+	 left: auto;
+	 right: 3px;
+}
+
+/*_________________________ Category Page ________________________________________*/
+.frg13_more{
+	background-color: #FFFFFF;
+    color: #000000;
+    font-size: 16px;
+    padding: 30px 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+/* Richiesto commento da vangogh
+.frg13_CategoryPage .frg_span_8 {
+	width: 66.3717%;
+}
+*/

@@ -1,0 +1,60 @@
+div.adistk-hp {
+  moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+.adistk-hp-wrapper {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.adistk-hp {
+  cursor: pointer;
+  box-sizing: content-box;
+}
+
+.adistk-hp {
+  position: absolute;
+  top: -14px;
+  left: -14px;
+  width: 14px;
+  height: 14px;
+  background-color: #000;
+  border: 7px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 15px #000;
+  /* HOVER OFF */
+  transition: width 0.2s 0.1s, height 0.2s 0.1s, top 0.2s 0.1s, left 0.2s 0.1s, z-index 0s 0.1s, background-color 0s 0.2s;
+}
+.adistk-hp .adistk-hpimg {
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  border-radius: 50%;
+  border: none;
+  /* HOVER OFF */
+  z-index: 0;
+  transition: width 0.2s 0.1s, height 0.2s 0.1s, top 0.2s 0.1s, left 0.2s 0.1s;
+}
+.adistk-hp:hover {
+  width: 116px;
+  height: 116px;
+  top: -65px;
+  left: -65px;
+  background-color: #fff;
+  z-index: 1;
+  /* HOVER ON */
+  transition: width 0.3s 0.2s, height 0.3s 0.2s, top 0.3s 0.2s, left 0.3s 0.2s, background-color 0.1s 0.2s;
+}
+.adistk-hp:hover .adistk-hpimg {
+  width: 110px;
+  height: 110px;
+  top: 3px;
+  left: 3px;
+  z-index: 2;
+  /* HOVER ON */
+  transition: width 0.3s 0.2s, height 0.3s 0.2s;
+}

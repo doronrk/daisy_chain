@@ -1,0 +1,730 @@
+/* @author zacharyfolk@zumiez.com */
+body {background-color: #fff}
+header {
+    float: left;
+    position: relative;
+    width: 100%;
+    margin-bottom: 45px;
+}
+#pre_header_zone, #header_top_zone, #header_bottom_zone {
+    float: left;
+    position: relative;
+    width: 100%;
+}
+#header_top_zone {
+    background-color: #2d2d2d;
+    padding: 7px 0 0 0;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+#header_top_zone nav, #header_stash_zone p {
+    font-family:'Oswald', sans-serif;
+}
+#header_top_zone nav ul#primary-nav {
+    float: left;
+}
+#header_top_zone nav ul#primary-nav li {
+    float: left;
+    margin: 0px 30px 0 0;
+    text-transform: uppercase;
+    padding: 0 0 5px;
+    /*for hover border */
+}
+#header_top_zone nav ul#primary-nav li:hover {
+    border-bottom: 3px #dd5900 solid;
+}
+/* Default first link as active */
+#header_top_zone nav ul#primary-nav li:first-child {
+    border-bottom: 3px #dd5900 solid;
+}
+#header_top_zone a {
+    color: #fff;
+}
+
+.fixed_center {
+    margin: 0 auto;
+    width: 960px;
+}
+#logo {
+    float: left;
+    margin: 36px 0 0 0;
+    width: 240px;
+}
+.envMessage {
+    background: #D0DBCB;
+    border: 1px solid #234C10;
+    float: left;
+    margin: -37px 0 0 6px;
+    padding: 4px 16px;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    width: 195px;
+}
+header #header_stash_zone {
+    float: left;
+    font-family:'Oswald', sans-serif;
+    margin: 0px 0 0 0px;
+    width: 125px;
+}
+#header_stash_zone img {
+    float: left;
+    margin: 0px 7px 0 0;
+}
+/* Customer links with My Account Dropdown */
+#header_top_zone ul.customer-links {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 9px;
+    letter-spacing: .03em;
+    line-height: 20px;
+    float: right;
+    height: 24px;
+}
+#header_top_zone ul.customer-links li {
+    float: left;
+    height: 30px;
+}
+#header_top_zone ul.customer-links li a:after {
+    color: #fff;
+    content:"|";
+    padding: 0 10px;
+}
+#header_top_zone ul.customer-links li ul#myaccount-sublinks li a:after, #header_top_zone ul.customer-links li.last a:after,#header_top_zone ul.customer-links li ul#giftcard-sublinks li a:after  {
+    content: none;
+}
+#header_top_zone ul.customer-links ul li a {
+    display: block;
+}
+#header_top_zone ul.customer-links li a:hover {
+    color: #ff8c00;
+}
+
+#header_top_zone ul.customer-links .radiussearch-selected-store {
+    color: #fff;
+}
+
+#header_top_zone ul.customer-links .radiussearch-selected-store a {
+    color: #fff;
+    font-size: 9px;
+    text-transform: lowercase;
+    font-style: italic;
+}
+
+#header_top_zone ul.customer-links .radiussearch-selected-store a:after {
+    font-size: 10px;
+}
+
+#header_top_zone ul.customer-links .radiussearch-selected-store .store-name {
+  color: #ff8c00;
+  font-size: 10px;
+  text-transform: uppercase;
+  font-style: normal;
+}
+
+#header_top_zone ul.customer-links .radiussearch-selected-store .store-name:hover {
+    color: #fff;
+}
+
+#header_top_zone ul.customer-links .radiussearch-selected-store a.store-name:after {
+    content:"";
+    padding: 0 0px;
+}
+
+
+#header_top_zone ul.customer-links ul {
+    background-color: #2d2d2d;
+    padding: 10px;
+    position:absolute;
+    left:-9999px;
+    top:-9999px;
+}
+#header_top_zone ul.customer-links li:hover, #header_top_zone ul.customer-links li.mobile-click-myaccount {
+    position: relative;
+}
+#header_top_zone ul.customer-links li:hover ul, #header_top_zone ul.customer-links li.mobile-click-myaccount ul {
+    left: -15px;
+    top: 23px;
+    width: 170px;
+}
+#header_top_zone ul.customer-links li:hover ul li, #header_top_zone ul.customer-links li.mobile-click-myaccount ul li {
+    height: 18px;
+}
+#header_top_zone ul.customer-links li:hover ul li a, #header_top_zone ul.customer-links li.mobile-click-myaccount ul li a {
+    height:18px;
+    display:block;
+    width:170px;
+    line-height:18px;
+    text-indent:5px;
+}
+
+
+#header_top_zone ul.customer-links li.last {
+    border: none;
+    padding: 0;
+}
+#header_middle_zone {
+    background: #fafafa;
+    display: block;
+    float: left;
+    height: 99px;
+    width: 100%;
+}
+
+
+#header_bottom_zone {
+    background-color: #3d3d3d;
+    position: relative;
+    z-index: 20;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+#header_bottom_zone a:link, #header_bottom_zone a:visited {
+    color: #e0bd00;
+}
+#header_bottom_zone a:hover {
+    color: #F9F0BF;
+}
+#header_bottom_zone p {
+    width:960px;
+    margin: 0 auto;
+    padding-top: 7px;
+    padding-bottom: 5px;
+}
+/******* SEARCH ******/
+#search_box_container {
+    float: left;
+    margin: 13px 0 0 474px;
+}
+#headerSearchBar {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    float: right;
+    height: 30px;
+}
+.headerSearchBox {
+    color: #818181;
+    font-size: 11px;
+    padding: .5em 1em .5em .3em;
+    width: 200px;
+    border: none;
+    line-height: 1.5em;
+    text-indent: 5px;
+}
+.headerSearchIcon {
+    margin-right: 6px;
+}
+#headerSearchBar input:focus {
+    outline: 0;
+}
+.headerSearchButton {
+    height: 20px;
+    width:36px;
+}
+/******* CATEGORY NAV *****/
+#categoryNav {
+    display: block;
+    float: left;
+    font-family:'Oswald', sans-serif;
+    margin: 22px 0px 0 40px;
+    text-transform: uppercase;
+    width: 675px;
+    font-size: 14px;
+    letter-spacing: 0.03em;
+}
+#categoryNav ul {
+    float: right;
+}
+#categoryNav ul li {
+    cursor: pointer;
+    float: left;
+    padding: 0 0 13px 30px;
+}
+/* need padding instead of margin to keep active state on menu */
+#categoryNav ul:first-child li:last-child:before { content : "| ";}
+#categoryNav ul:first-child li:last-child a {margin-left: 10px; color: #bd1a13}
+/* hide outlet nav by default */
+#categoryNav ul:last-child {
+    display: none
+}
+/* hide zumiez nav */
+body.cms-outlet #categoryNav ul:first-child, body.categorypath-outlet-html #categoryNav ul:first-child, body.categorypath-outlet-shoes-html #categoryNav ul:first-child, body.categorypath-outlet-clothing-html #categoryNav ul:first-child, body.categorypath-outlet-accessories-html #categoryNav ul:first-child, body.categorypath-outlet-skate-html #categoryNav ul:first-child, body.categorypath-outlet-snow-html #categoryNav ul:first-child {
+    display: none
+}
+/* show outlet */
+body.cms-outlet #categoryNav ul:last-child, body.categorypath-outlet-html #categoryNav ul:last-child, body.categorypath-outlet-shoes-html #categoryNav ul:last-child, body.categorypath-outlet-clothing-html #categoryNav ul:last-child, body.categorypath-outlet-accessories-html #categoryNav ul:last-child, body.categorypath-outlet-skate-html #categoryNav ul:last-child, body.categorypath-outlet-snow-html #categoryNav ul:last-child {
+    display: block
+}
+/* remove top nav underline */
+body.cms-outlet #header_top_zone nav ul#primary-nav li:first-child, body.categorypath-outlet-html #header_top_zone nav ul#primary-nav li:first-child, body.categorypath-outlet-shoes-html #header_top_zone nav ul#primary-nav li:first-child, body.categorypath-outlet-clothing-html #header_top_zone nav ul#primary-nav li:first-child, body.categorypath-outlet-accessories-html #header_top_zone nav ul#primary-nav li:first-child, body.categorypath-outlet-skate-html #header_top_zone nav ul#primary-nav li:first-child, body.categorypath-outlet-snow-html #header_top_zone nav ul#primary-nav li:first-child {
+    border: none
+}
+/* underline outlet top nav  */
+body.cms-outlet #header_top_zone nav ul#primary-nav li:last-child, body.categorypath-outlet-html #header_top_zone nav ul#primary-nav li:last-child, body.categorypath-outlet-shoes-html #header_top_zone nav ul#primary-nav li:last-child, body.categorypath-outlet-clothing-html #header_top_zone nav ul#primary-nav li:last-child, body.categorypath-outlet-accessories-html #header_top_zone nav ul#primary-nav li:last-child, body.categorypath-outlet-skate-html #header_top_zone nav ul#primary-nav li:last-child, body.categorypath-outlet-snow-html #header_top_zone nav ul#primary-nav li:last-child {
+    border-bottom: 4px #e05c00 solid
+}
+#categoryNav ul li a {padding-bottom: 9px;}
+#categoryNav ul li a:link, #categoryNav ul li a:visited {
+    color: #424242;
+}
+#categoryNav ul li.current a, #categoryNav ul li a:hover {
+    color: #dd5900;
+}
+#categoryNav ul li a:hover, #categoryNav ul li.current a, #categoryNav ul li a.activeMenuLink {
+    border-bottom: 4px solid #dd5900;
+    padding-bottom: 9px;
+}
+
+/******** MEGAMENU *********/
+
+#post_header_container{
+    position: absolute;
+    top: 131px;
+    width: 100%;
+    display: block;
+}
+
+#header_dropdown_zone {
+    background-color: #f1f1f1;
+    border-bottom: 15px solid #8b8b8b;
+    float: left;
+    padding: 10px 0;
+    width: 100%;
+    position: relative;
+    top: 0px;
+    z-index: 9000;
+}
+
+#header_dropdown_zone div div {
+    display:none;
+    float: left;
+}
+#header_dropdown_zone div div.activeMenu {
+    display:block;
+}
+ul.megaColumns {
+    float: left;
+    width: 100%;
+    margin-bottom: 15px;
+}
+ul.megaColumns h3 {
+    float: left;
+    font-size: 15px;
+    font-family:'Oswald', sans-serif;
+    margin: 15px 0 5px;
+    text-transform: uppercase;
+}
+ul.megaColumns h3, ul.megaColumns h3 a {
+    color: #424242
+}
+ul.megaColumns li ul li a:link, ul.megaColumns li ul li a:visited {
+    color: #8b8b8b
+}
+ul.megaColumns li {
+    float: left;
+    margin: 4px 0;
+    width: 192px;
+}
+ul.megaColumns li ul li a:hover, ul.megaColumns span.widget a.current {
+    color: #dd5900;
+}
+ul.megaColumns li ul li img {margin-top: 15px}
+/* LOGOS */
+
+ul.brandList {
+    display: inline-block;
+    margin: 0 0 20px 0;
+}
+
+#mega-brands ul.brandList li {
+    margin: 20px 10px 0 20px
+}
+
+ul.brandList h3 {
+    float: left;
+    font-size: 15px;
+    font-family:'Oswald', sans-serif;
+    margin: 5px 0 20px;
+    text-transform: uppercase;
+    color: #424242;
+    width: 100%;
+}
+ul.brandList li {
+    float: left;
+    margin: 0 20px 0 0;
+}
+
+ul.brandList li a {
+    background-image: url('//static.zumiez.com/skin/frontend/delorum/default/images/mega-menu-logoline-sprite-4740x60-3.png');
+    display: block;
+    height: 50px;
+    width: 50px;
+    border: 3px solid #000;
+    list-style: none;
+    text-indent: -9999px;
+}
+ul.brandList li a:link, ul.brandList li a:visited {
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity=60);
+    -moz-opacity: 0.6;
+    -khtml-opacity: 0.6;
+    opacity: 0.6;
+}
+ul.brandList li a:hover {
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity=80);
+    -moz-opacity: 0.8;
+    -khtml-opacity: 0.8;
+    opacity: 0.8;
+}
+
+.megaColumns img {
+    margin: 18px 0 0 0;
+}
+.megaColumns h3 a {
+    display: inline-block;
+    padding-right: 20px;
+    background: url('//static.zumiez.com/skin/frontend/delorum/default/images/mega-menu-arrow-sprite-10x40.png') right top no-repeat;
+}
+.megaColumns h3 a:hover {
+    color: #dd5900;
+    background-position: right -20px;
+}
+.megaColumns h3 span {
+    font-size: 12px;
+}
+ul.brandList li a {
+    background-image: url('//static.zumiez.com/skin/frontend/delorum/default/images/mega-menu-logoline-sprite-4560x60-3.png');
+}
+
+.adidas {
+    background-position: -2px -5px
+}
+.aperture {
+    background-position: -4262px -5px;
+}
+.arbor {
+    background-position: -63px -5px;
+}
+.beats-by-dre {
+    background-position: -182px -4px;
+}
+.billabong {
+    background-position: -242px -4px;
+}
+.blackscale {
+    background-position: -304px -5px;
+}
+.bones {
+    background-position: -3543px -5px;
+}
+.brixton {
+    background-position: -363px -5px;
+}
+.burton {
+    background-position: -3662px -4px;
+}
+.crooks-and-castles {
+    background-position: -481px -5px;
+}
+
+.damsel {
+    background-position: -4563px -5px;
+}
+
+.d-and-y {
+    background-position: -3842px -5px;
+}
+.dakine {
+    background-position: -542px -4px;
+}
+.dc {
+    background-position: -605px -5px;
+}
+.diamond-supply {
+    background-position: -721px -5px;
+}
+.dgk {
+    background-position: -663px -4px;
+}
+.dusters-cruisers {
+    background-position: -3899px -5px;
+}
+.dvs {
+    background-position: -4500px -5px;
+}
+.electric {
+    background-position: -4322px -5px;
+}
+.emerica {
+    background-position: -784px -4px;
+}
+.empyre {
+    background-position: -843px -4px;
+}
+.freeworld {
+    background-position: -3480px -5px;
+}
+.g-shock {
+    background-position: -904px -5px;
+}
+.girl {
+    background-position: -962px -5px;
+}
+.glamour-kills {
+    background-position: -1019px -5px;
+}
+.globe {
+    background-position: -1083px -5px;
+}
+.gopro {
+    background-position: -3785px -5px;
+}
+.huf {
+    background-position: -1262px -4px;
+}
+.imaginary-foundation {
+    background-position: -1322px -4px;
+}
+.jac-vanek {
+    background-position: -4623px -5px;
+}
+.lakai {
+    background-position: -1443px -5px;
+}
+.levis {
+    background-position: -4442px -5px;
+}
+.lib-tech {
+    background-position: -4382px -5px;
+}
+.lrg {
+    background-position: -1564px -3px;
+}
+.malibu {
+    background-position: -4684px -4px;
+}
+.married-to-the-mob {
+    background-position: -1621px -4px;
+}
+.mercer {
+    background-position: -3425px -5px;
+}
+.metal-mulisha {
+    background-position: -4020px -5px;
+}
+.mitchell-and-ness {
+    background-position: -1682px -4px;
+}
+.neff {
+    background-position: -1741px -5px;
+}
+.nike {
+    background-position: -3959px -4px;
+}
+.nike-sb {
+    background-position: -1802px -3px;
+}
+.nixon {
+    background-position: -1862px -5px;
+}
+.obey {
+    background-position: -1983px -5px;
+}
+.odd-future {
+    background-position: -2043px -5px;
+}
+.osiris {
+    background-position: -2102px -5px;
+}
+.penny {
+    background-position: -2164px -3px;
+}
+.plan-b {
+    background-position: -2220px -5px;
+}
+.popular-demand {
+    background-position: -2282px -5px;
+}
+.primitive-clothing {
+    background-position: -2346px -4px;
+}
+.rvca {
+    background-position: -2582px -5px;
+}
+.santa-cruz {
+    background-position: -2643px -5px;
+}
+.sector-9 {
+    background-position: -2701px -5px;
+}
+.spitfire-wheels {
+    background-position: -2822px -3px;
+}
+.stussy {
+    background-position: -2884px -5px;
+}
+.supra {
+    background-position: -2943px -4px;
+}
+.the-hundreds {
+    background-position: -3003px -5px;
+}
+.thirty-two {
+    background-position: -3719px -5px;
+}
+.thunder {
+    background-position: -3604px -4px;
+}
+.trukfit {
+    background-position: -3122px -5px;
+}
+.toms {
+    background-position: -3063px -4px;
+}
+.undefeated {
+    background-position: -3184px -4px;
+}
+.union-bindings {
+    background-position: -4082px -5px;
+}
+.vans {
+    background-position: -3242px -5px;
+}
+.volcom {
+    background-position: -3302px -5px;
+}
+.von-zipper {
+    background-position: -4202px -5px;
+}
+.zine {
+    background-position: -3363px -5px;
+}
+
+
+
+/******** FOOTER *********/
+#pre-footer {
+    width: 100%;
+    float: left;
+    background: #dfdfdf;
+    padding: 50px 0;
+}
+#pre-footer h3{
+    color: #4d4d4d;
+    font-size: 24px;
+    font-family: 'Open Sans', sans-serif;
+    padding: 0 0 5px;
+    text-transform: uppercase;
+}
+#pre-footer li {
+    float: left;
+    margin-right: 20px;
+}
+#pre-footer li:last-child {
+    margin-right: 0px;
+}
+
+/*hides footer banner on shop fronts */
+body.cms-home #pre-footer, body.category-womens #pre-footer, body.category-shoes #pre-footer, body.category-mens #pre-footer, body.category-boys #pre-footer, body.category-skate #pre-footer, body.category-accessories #pre-footer, body.category-snow #pre-footer, body.category-pro #pre-footer, body.category-sale #pre-footer, body.cms-outlet #pre-footer,body.cms-deals #pre-footer, body.cms-holiday-gift-guide #pre-footer {
+    display: none;
+}
+
+footer {float:left;width:100%}
+#footer_top_zone {
+    background-color: #4c4c4c;
+    float: left;
+    text-align: center;
+    width: 100%;
+}
+#footer_middle_zone {
+    background: #fff;
+    float: left;
+    width: 100%;
+}
+#footer_bottom_zone {
+    background: #fff;
+    float: left;
+    padding: 20px 0 150px;
+    width: 100%;
+}
+
+.footer_logo {
+    padding: 22px 0 15px;
+}
+.footer_column {
+    float: left;
+    width: 25%;
+}
+.footer_column h3 {
+    color: #4d4d4d;
+    font-size: 24px;
+    font-family:'Oswald', sans-serif;
+    padding: 32px 0 13px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.footer_column ul {
+    font-size: 12px;
+}
+.footer_column li {
+    margin: 10px 0;
+    text-align: center
+}
+.footer_column li a:link, .footer_column li a:visited {
+    color: #848484
+}
+.footer_column li a:hover {
+    color: #df5c02;
+}
+.footer_bottom_right {
+    float: right;
+    width: 740px;
+}
+
+/* TOP SEARCH */
+a.topSearch {
+}
+ul.topsearch-sublinks {
+    background-color: #fff;
+    border: 5px solid #e7e7e7;
+    float: left;
+    width: 370px;
+    padding: 10px 20px;
+    position:absolute;
+    left:-9999px;
+    top:-9999px;
+}
+li.topSearches {
+    height: 20px
+}
+li.topSearches:hover {
+    position: relative;
+}
+li.topSearches:hover ul {
+    top: 20px;
+    left: 80px;
+}
+ul.topsearch-sublinks li {
+    float: left;
+    margin: 4px 0;
+    text-align: left;
+    width: 150px;
+}
+
+/* SOCIAL LINKS */
+#social_footer li {
+    float: left;
+    margin: 0 20px 0 0;
+}
+#social_footer li:last-child { margin: 6px 0 0;}
+
+small.copyright {
+    line-height: 30px;
+}
+
+/* override */
+.main{margin-bottom: 50px}

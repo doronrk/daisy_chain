@@ -1,0 +1,978 @@
+/* images */
+/* fontstacks*/
+/* colors */
+/* borders */
+body #popup-overlay {
+  background: rgba(255, 255, 255, 0.9);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 1001;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+}
+body #popup-overlay.detail-overlay {
+  display: none;
+}
+body #popups {
+  z-index: 1002;
+}
+body #popups.detail-popup {
+  display: none;
+}
+body #popups,
+body #product-detail {
+  position: relative;
+}
+body #popups *,
+body #product-detail * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body #popups .popup,
+body #product-detail .popup,
+body #popups .product,
+body #product-detail .product {
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  margin-left: -303px;
+}
+body #popups .popup .enter-email,
+body #product-detail .popup .enter-email,
+body #popups .product .enter-email,
+body #product-detail .product .enter-email {
+  margin: 50px 0;
+  background: #fff;
+  border: 5px solid #000000;
+  height: 386px;
+  width: 606px;
+  float: left;
+  position: relative;
+  padding: 25px 75px;
+  text-align: center;
+}
+body #popups .popup .enter-email .signup .form,
+body #product-detail .popup .enter-email .signup .form,
+body #popups .product .enter-email .signup .form,
+body #product-detail .product .enter-email .signup .form {
+  margin-top: 15px;
+}
+body #popups .popup .enter-email .reenter,
+body #product-detail .popup .enter-email .reenter,
+body #popups .product .enter-email .reenter,
+body #product-detail .product .enter-email .reenter,
+body #popups .popup .enter-email .success,
+body #product-detail .popup .enter-email .success,
+body #popups .product .enter-email .success,
+body #product-detail .product .enter-email .success {
+  display: none;
+}
+body #popups .popup .enter-email .success,
+body #product-detail .popup .enter-email .success,
+body #popups .product .enter-email .success,
+body #product-detail .product .enter-email .success {
+  padding: 105px 60px 130px;
+}
+body #popups .popup.sold-out,
+body #product-detail .popup.sold-out,
+body #popups .product.sold-out,
+body #product-detail .product.sold-out {
+  background: #fff;
+  border: 5px solid #000000;
+  width: 564px;
+  margin-left: -282px;
+  height: auto;
+  padding: 35px;
+}
+body #popups .popup .quickview,
+body #product-detail .popup .quickview,
+body #popups .product .quickview,
+body #product-detail .product .quickview,
+body #popups .popup .product-detail,
+body #product-detail .popup .product-detail,
+body #popups .product .product-detail,
+body #product-detail .product .product-detail {
+  background: #fff;
+  display: none;
+  width: auto;
+  height: auto;
+  float: left;
+  border: 5px solid #000000;
+  padding: 30px 30px 15px;
+  max-width: 781px;
+}
+body #popups .popup .quickview .left-col,
+body #product-detail .popup .quickview .left-col,
+body #popups .product .quickview .left-col,
+body #product-detail .product .quickview .left-col,
+body #popups .popup .product-detail .left-col,
+body #product-detail .popup .product-detail .left-col,
+body #popups .product .product-detail .left-col,
+body #product-detail .product .product-detail .left-col {
+  float: left;
+  width: 60%;
+}
+body #popups .popup .quickview .left-col .gallery,
+body #product-detail .popup .quickview .left-col .gallery,
+body #popups .product .quickview .left-col .gallery,
+body #product-detail .product .quickview .left-col .gallery,
+body #popups .popup .product-detail .left-col .gallery,
+body #product-detail .popup .product-detail .left-col .gallery,
+body #popups .product .product-detail .left-col .gallery,
+body #product-detail .product .product-detail .left-col .gallery {
+  float: left;
+  position: relative;
+  padding: 20px 0;
+  margin-right: 10px;
+}
+body #popups .popup .quickview .left-col .gallery ul li,
+body #product-detail .popup .quickview .left-col .gallery ul li,
+body #popups .product .quickview .left-col .gallery ul li,
+body #product-detail .product .quickview .left-col .gallery ul li,
+body #popups .popup .product-detail .left-col .gallery ul li,
+body #product-detail .popup .product-detail .left-col .gallery ul li,
+body #popups .product .product-detail .left-col .gallery ul li,
+body #product-detail .product .product-detail .left-col .gallery ul li {
+  list-style: none;
+  margin-bottom: 5px;
+}
+body #popups .popup .quickview .left-col .gallery ul li img,
+body #product-detail .popup .quickview .left-col .gallery ul li img,
+body #popups .product .quickview .left-col .gallery ul li img,
+body #product-detail .product .quickview .left-col .gallery ul li img,
+body #popups .popup .product-detail .left-col .gallery ul li img,
+body #product-detail .popup .product-detail .left-col .gallery ul li img,
+body #popups .product .product-detail .left-col .gallery ul li img,
+body #product-detail .product .product-detail .left-col .gallery ul li img {
+  width: 69px;
+  height: 100px;
+}
+body #popups .popup .quickview .left-col .gallery span.up,
+body #product-detail .popup .quickview .left-col .gallery span.up,
+body #popups .product .quickview .left-col .gallery span.up,
+body #product-detail .product .quickview .left-col .gallery span.up,
+body #popups .popup .product-detail .left-col .gallery span.up,
+body #product-detail .popup .product-detail .left-col .gallery span.up,
+body #popups .product .product-detail .left-col .gallery span.up,
+body #product-detail .product .product-detail .left-col .gallery span.up,
+body #popups .popup .quickview .left-col .gallery span.down,
+body #product-detail .popup .quickview .left-col .gallery span.down,
+body #popups .product .quickview .left-col .gallery span.down,
+body #product-detail .product .quickview .left-col .gallery span.down,
+body #popups .popup .product-detail .left-col .gallery span.down,
+body #product-detail .popup .product-detail .left-col .gallery span.down,
+body #popups .product .product-detail .left-col .gallery span.down,
+body #product-detail .product .product-detail .left-col .gallery span.down {
+  position: absolute;
+  left: 50%;
+  margin-left: -7.5px;
+  cursor: pointer;
+}
+body #popups .popup .quickview .left-col .gallery span.up,
+body #product-detail .popup .quickview .left-col .gallery span.up,
+body #popups .product .quickview .left-col .gallery span.up,
+body #product-detail .product .quickview .left-col .gallery span.up,
+body #popups .popup .product-detail .left-col .gallery span.up,
+body #product-detail .popup .product-detail .left-col .gallery span.up,
+body #popups .product .product-detail .left-col .gallery span.up,
+body #product-detail .product .product-detail .left-col .gallery span.up {
+  top: 0;
+}
+body #popups .popup .quickview .left-col .gallery span.down,
+body #product-detail .popup .quickview .left-col .gallery span.down,
+body #popups .product .quickview .left-col .gallery span.down,
+body #product-detail .product .quickview .left-col .gallery span.down,
+body #popups .popup .product-detail .left-col .gallery span.down,
+body #product-detail .popup .product-detail .left-col .gallery span.down,
+body #popups .product .product-detail .left-col .gallery span.down,
+body #product-detail .product .product-detail .left-col .gallery span.down {
+  bottom: 0;
+}
+body #popups .popup .quickview .left-col .share,
+body #product-detail .popup .quickview .left-col .share,
+body #popups .product .quickview .left-col .share,
+body #product-detail .product .quickview .left-col .share,
+body #popups .popup .product-detail .left-col .share,
+body #product-detail .popup .product-detail .left-col .share,
+body #popups .product .product-detail .left-col .share,
+body #product-detail .product .product-detail .left-col .share {
+  float: right;
+  margin: 20px 60px;
+}
+body #popups .popup .quickview .right-col,
+body #product-detail .popup .quickview .right-col,
+body #popups .product .quickview .right-col,
+body #product-detail .product .quickview .right-col,
+body #popups .popup .product-detail .right-col,
+body #product-detail .popup .product-detail .right-col,
+body #popups .product .product-detail .right-col,
+body #product-detail .product .product-detail .right-col {
+  float: left;
+  width: 40%;
+}
+body #popups .popup .quickview .right-col h1,
+body #product-detail .popup .quickview .right-col h1,
+body #popups .product .quickview .right-col h1,
+body #product-detail .product .quickview .right-col h1,
+body #popups .popup .product-detail .right-col h1,
+body #product-detail .popup .product-detail .right-col h1,
+body #popups .product .product-detail .right-col h1,
+body #product-detail .product .product-detail .right-col h1 {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 23px;
+  text-transform: capitalize;
+  padding: 5px 0;
+}
+body #popups .popup .quickview .right-col h2,
+body #product-detail .popup .quickview .right-col h2,
+body #popups .product .quickview .right-col h2,
+body #product-detail .product .quickview .right-col h2,
+body #popups .popup .product-detail .right-col h2,
+body #product-detail .popup .product-detail .right-col h2,
+body #popups .product .product-detail .right-col h2,
+body #product-detail .product .product-detail .right-col h2 {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0 0 5px;
+}
+body #popups .popup .quickview .right-col .price,
+body #product-detail .popup .quickview .right-col .price,
+body #popups .product .quickview .right-col .price,
+body #product-detail .product .quickview .right-col .price,
+body #popups .popup .product-detail .right-col .price,
+body #product-detail .popup .product-detail .right-col .price,
+body #popups .product .product-detail .right-col .price,
+body #product-detail .product .product-detail .right-col .price {
+  display: block;
+}
+body #popups .popup .quickview .right-col ul.colors,
+body #product-detail .popup .quickview .right-col ul.colors,
+body #popups .product .quickview .right-col ul.colors,
+body #product-detail .product .quickview .right-col ul.colors,
+body #popups .popup .product-detail .right-col ul.colors,
+body #product-detail .popup .product-detail .right-col ul.colors,
+body #popups .product .product-detail .right-col ul.colors,
+body #product-detail .product .product-detail .right-col ul.colors {
+  float: left;
+  width: 100%;
+  margin: 15px 0;
+}
+body #popups .popup .quickview .right-col ul.colors li,
+body #product-detail .popup .quickview .right-col ul.colors li,
+body #popups .product .quickview .right-col ul.colors li,
+body #product-detail .product .quickview .right-col ul.colors li,
+body #popups .popup .product-detail .right-col ul.colors li,
+body #product-detail .popup .product-detail .right-col ul.colors li,
+body #popups .product .product-detail .right-col ul.colors li,
+body #product-detail .product .product-detail .right-col ul.colors li {
+  float: left;
+  padding: 2px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+body #popups .popup .quickview .right-col ul.colors li.active,
+body #product-detail .popup .quickview .right-col ul.colors li.active,
+body #popups .product .quickview .right-col ul.colors li.active,
+body #product-detail .product .quickview .right-col ul.colors li.active,
+body #popups .popup .product-detail .right-col ul.colors li.active,
+body #product-detail .popup .product-detail .right-col ul.colors li.active,
+body #popups .product .product-detail .right-col ul.colors li.active,
+body #product-detail .product .product-detail .right-col ul.colors li.active {
+  border: 2px solid #cacaca;
+  border-radius: 3px;
+  padding: 0;
+}
+body #popups .popup .quickview .right-col ul.colors li span,
+body #product-detail .popup .quickview .right-col ul.colors li span,
+body #popups .product .quickview .right-col ul.colors li span,
+body #product-detail .product .quickview .right-col ul.colors li span,
+body #popups .popup .product-detail .right-col ul.colors li span,
+body #product-detail .popup .product-detail .right-col ul.colors li span,
+body #popups .product .product-detail .right-col ul.colors li span,
+body #product-detail .product .product-detail .right-col ul.colors li span {
+  font-size: 0;
+}
+body #popups .popup .quickview .right-col .chosen-container,
+body #product-detail .popup .quickview .right-col .chosen-container,
+body #popups .product .quickview .right-col .chosen-container,
+body #product-detail .product .quickview .right-col .chosen-container,
+body #popups .popup .product-detail .right-col .chosen-container,
+body #product-detail .popup .product-detail .right-col .chosen-container,
+body #popups .product .product-detail .right-col .chosen-container,
+body #product-detail .product .product-detail .right-col .chosen-container {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 13px;
+  zoom: 1;
+  *display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  background: url(../images/styles/down-arrow.png) no-repeat;
+}
+body #popups .popup .quickview .right-col .chosen-container.size,
+body #product-detail .popup .quickview .right-col .chosen-container.size,
+body #popups .product .quickview .right-col .chosen-container.size,
+body #product-detail .product .quickview .right-col .chosen-container.size,
+body #popups .popup .product-detail .right-col .chosen-container.size,
+body #product-detail .popup .product-detail .right-col .chosen-container.size,
+body #popups .product .product-detail .right-col .chosen-container.size,
+body #product-detail .product .product-detail .right-col .chosen-container.size {
+  width: 195px !important;
+  background-position: 175px center;
+}
+body #popups .popup .quickview .right-col .chosen-container.qty,
+body #product-detail .popup .quickview .right-col .chosen-container.qty,
+body #popups .product .quickview .right-col .chosen-container.qty,
+body #product-detail .product .quickview .right-col .chosen-container.qty,
+body #popups .popup .product-detail .right-col .chosen-container.qty,
+body #product-detail .popup .product-detail .right-col .chosen-container.qty,
+body #popups .product .product-detail .right-col .chosen-container.qty,
+body #product-detail .product .product-detail .right-col .chosen-container.qty {
+  width: 70px !important;
+  background-position: 50px center;
+}
+body #popups .popup .quickview .right-col .chosen-container.quantity,
+body #product-detail .popup .quickview .right-col .chosen-container.quantity,
+body #popups .product .quickview .right-col .chosen-container.quantity,
+body #product-detail .product .quickview .right-col .chosen-container.quantity,
+body #popups .popup .product-detail .right-col .chosen-container.quantity,
+body #product-detail .popup .product-detail .right-col .chosen-container.quantity,
+body #popups .product .product-detail .right-col .chosen-container.quantity,
+body #product-detail .product .product-detail .right-col .chosen-container.quantity {
+  width: 70px !important;
+  background-position: 50px center;
+}
+body #popups .popup .quickview .right-col .chosen-container .chosen-drop,
+body #product-detail .popup .quickview .right-col .chosen-container .chosen-drop,
+body #popups .product .quickview .right-col .chosen-container .chosen-drop,
+body #product-detail .product .quickview .right-col .chosen-container .chosen-drop,
+body #popups .popup .product-detail .right-col .chosen-container .chosen-drop,
+body #product-detail .popup .product-detail .right-col .chosen-container .chosen-drop,
+body #popups .product .product-detail .right-col .chosen-container .chosen-drop,
+body #product-detail .product .product-detail .right-col .chosen-container .chosen-drop {
+  position: absolute;
+  top: 100%;
+  left: -9999px;
+  z-index: 1010;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid #aaa;
+  border-top: 0;
+  background: #fff;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);
+}
+body #popups .popup .quickview .right-col .chosen-container.chosen-with-drop .chosen-drop,
+body #product-detail .popup .quickview .right-col .chosen-container.chosen-with-drop .chosen-drop,
+body #popups .product .quickview .right-col .chosen-container.chosen-with-drop .chosen-drop,
+body #product-detail .product .quickview .right-col .chosen-container.chosen-with-drop .chosen-drop,
+body #popups .popup .product-detail .right-col .chosen-container.chosen-with-drop .chosen-drop,
+body #product-detail .popup .product-detail .right-col .chosen-container.chosen-with-drop .chosen-drop,
+body #popups .product .product-detail .right-col .chosen-container.chosen-with-drop .chosen-drop,
+body #product-detail .product .product-detail .right-col .chosen-container.chosen-with-drop .chosen-drop {
+  left: 0;
+}
+body #popups .popup .quickview .right-col .chosen-container a,
+body #product-detail .popup .quickview .right-col .chosen-container a,
+body #popups .product .quickview .right-col .chosen-container a,
+body #product-detail .product .quickview .right-col .chosen-container a,
+body #popups .popup .product-detail .right-col .chosen-container a,
+body #product-detail .popup .product-detail .right-col .chosen-container a,
+body #popups .product .product-detail .right-col .chosen-container a,
+body #product-detail .product .product-detail .right-col .chosen-container a {
+  cursor: pointer;
+}
+body #popups .popup .quickview .right-col .chosen-container .chosen-results,
+body #product-detail .popup .quickview .right-col .chosen-container .chosen-results,
+body #popups .product .quickview .right-col .chosen-container .chosen-results,
+body #product-detail .product .quickview .right-col .chosen-container .chosen-results,
+body #popups .popup .product-detail .right-col .chosen-container .chosen-results,
+body #product-detail .popup .product-detail .right-col .chosen-container .chosen-results,
+body #popups .product .product-detail .right-col .chosen-container .chosen-results,
+body #product-detail .product .product-detail .right-col .chosen-container .chosen-results {
+  position: relative;
+  overflow: hidden;
+  margin: 0 4px 4px 0;
+  padding: 0 0 0 4px;
+  max-height: 525px;
+  -webkit-overflow-scrolling: touch;
+}
+body #popups .popup .quickview .right-col .chosen-container .chosen-results li,
+body #product-detail .popup .quickview .right-col .chosen-container .chosen-results li,
+body #popups .product .quickview .right-col .chosen-container .chosen-results li,
+body #product-detail .product .quickview .right-col .chosen-container .chosen-results li,
+body #popups .popup .product-detail .right-col .chosen-container .chosen-results li,
+body #product-detail .popup .product-detail .right-col .chosen-container .chosen-results li,
+body #popups .product .product-detail .right-col .chosen-container .chosen-results li,
+body #product-detail .product .product-detail .right-col .chosen-container .chosen-results li {
+  display: none;
+  margin: 0;
+  padding: 5px 6px;
+  list-style: none;
+  line-height: 15px;
+  -webkit-touch-callout: none;
+}
+body #popups .popup .quickview .right-col .chosen-container .chosen-results li.active-result,
+body #product-detail .popup .quickview .right-col .chosen-container .chosen-results li.active-result,
+body #popups .product .quickview .right-col .chosen-container .chosen-results li.active-result,
+body #product-detail .product .quickview .right-col .chosen-container .chosen-results li.active-result,
+body #popups .popup .product-detail .right-col .chosen-container .chosen-results li.active-result,
+body #product-detail .popup .product-detail .right-col .chosen-container .chosen-results li.active-result,
+body #popups .product .product-detail .right-col .chosen-container .chosen-results li.active-result,
+body #product-detail .product .product-detail .right-col .chosen-container .chosen-results li.active-result {
+  display: list-item;
+  cursor: pointer;
+}
+body #popups .popup .quickview .right-col .chosen-container-single .chosen-single,
+body #product-detail .popup .quickview .right-col .chosen-container-single .chosen-single,
+body #popups .product .quickview .right-col .chosen-container-single .chosen-single,
+body #product-detail .product .quickview .right-col .chosen-container-single .chosen-single,
+body #popups .popup .product-detail .right-col .chosen-container-single .chosen-single,
+body #product-detail .popup .product-detail .right-col .chosen-container-single .chosen-single,
+body #popups .product .product-detail .right-col .chosen-container-single .chosen-single,
+body #product-detail .product .product-detail .right-col .chosen-container-single .chosen-single {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  padding: 0 0 0 8px;
+  height: 30px;
+  border: 1px solid #aaa;
+  background-clip: padding-box;
+  color: #444;
+  text-decoration: none;
+  white-space: nowrap;
+  line-height: 30px;
+}
+body #popups .popup .quickview .right-col .chosen-container-single .chosen-single span,
+body #product-detail .popup .quickview .right-col .chosen-container-single .chosen-single span,
+body #popups .product .quickview .right-col .chosen-container-single .chosen-single span,
+body #product-detail .product .quickview .right-col .chosen-container-single .chosen-single span,
+body #popups .popup .product-detail .right-col .chosen-container-single .chosen-single span,
+body #product-detail .popup .product-detail .right-col .chosen-container-single .chosen-single span,
+body #popups .product .product-detail .right-col .chosen-container-single .chosen-single span,
+body #product-detail .product .product-detail .right-col .chosen-container-single .chosen-single span {
+  display: block;
+  overflow: hidden;
+  margin-right: 26px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+body #popups .popup .quickview .right-col .chosen-container-single .chosen-drop,
+body #product-detail .popup .quickview .right-col .chosen-container-single .chosen-drop,
+body #popups .product .quickview .right-col .chosen-container-single .chosen-drop,
+body #product-detail .product .quickview .right-col .chosen-container-single .chosen-drop,
+body #popups .popup .product-detail .right-col .chosen-container-single .chosen-drop,
+body #product-detail .popup .product-detail .right-col .chosen-container-single .chosen-drop,
+body #popups .product .product-detail .right-col .chosen-container-single .chosen-drop,
+body #product-detail .product .product-detail .right-col .chosen-container-single .chosen-drop {
+  margin-top: -1px;
+}
+body #popups .popup .quickview .right-col .chosen-container-single .chosen-search,
+body #product-detail .popup .quickview .right-col .chosen-container-single .chosen-search,
+body #popups .product .quickview .right-col .chosen-container-single .chosen-search,
+body #product-detail .product .quickview .right-col .chosen-container-single .chosen-search,
+body #popups .popup .product-detail .right-col .chosen-container-single .chosen-search,
+body #product-detail .popup .product-detail .right-col .chosen-container-single .chosen-search,
+body #popups .product .product-detail .right-col .chosen-container-single .chosen-search,
+body #product-detail .product .product-detail .right-col .chosen-container-single .chosen-search {
+  display: none;
+}
+body #popups .popup .quickview .right-col .sold-out,
+body #product-detail .popup .quickview .right-col .sold-out,
+body #popups .product .quickview .right-col .sold-out,
+body #product-detail .product .quickview .right-col .sold-out,
+body #popups .popup .product-detail .right-col .sold-out,
+body #product-detail .popup .product-detail .right-col .sold-out,
+body #popups .product .product-detail .right-col .sold-out,
+body #product-detail .product .product-detail .right-col .sold-out {
+  clear: left;
+  margin: 10px 0 5px;
+  float: left;
+  width: 100%;
+  font-size: 12px;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+body #popups .popup .quickview .right-col select,
+body #product-detail .popup .quickview .right-col select,
+body #popups .product .quickview .right-col select,
+body #product-detail .product .quickview .right-col select,
+body #popups .popup .product-detail .right-col select,
+body #product-detail .popup .product-detail .right-col select,
+body #popups .product .product-detail .right-col select,
+body #product-detail .product .product-detail .right-col select {
+  display: none;
+}
+body #popups .popup .quickview .right-col .message,
+body #product-detail .popup .quickview .right-col .message,
+body #popups .product .quickview .right-col .message,
+body #product-detail .product .quickview .right-col .message,
+body #popups .popup .product-detail .right-col .message,
+body #product-detail .popup .product-detail .right-col .message,
+body #popups .product .product-detail .right-col .message,
+body #product-detail .product .product-detail .right-col .message {
+  font-family: Georgia, Times, "Times New Roman", serif;
+  font-size: 13px;
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: 1px;
+  line-height: 20px;
+  margin: 10px 0;
+  color: red;
+}
+body #popups .popup .quickview .right-col .please-select,
+body #product-detail .popup .quickview .right-col .please-select,
+body #popups .product .quickview .right-col .please-select,
+body #product-detail .product .quickview .right-col .please-select,
+body #popups .popup .product-detail .right-col .please-select,
+body #product-detail .popup .product-detail .right-col .please-select,
+body #popups .product .product-detail .right-col .please-select,
+body #product-detail .product .product-detail .right-col .please-select {
+  display: none;
+  color: red;
+  font-size: 13px;
+  margin: 15px 0 10px;
+  float: left;
+  width: 100%;
+}
+body #popups .popup .quickview .right-col .reviews,
+body #product-detail .popup .quickview .right-col .reviews,
+body #popups .product .quickview .right-col .reviews,
+body #product-detail .product .quickview .right-col .reviews,
+body #popups .popup .product-detail .right-col .reviews,
+body #product-detail .popup .product-detail .right-col .reviews,
+body #popups .product .product-detail .right-col .reviews,
+body #product-detail .product .product-detail .right-col .reviews {
+  margin-top: 20px;
+}
+body #popups .popup .quickview .right-col .please-enter,
+body #product-detail .popup .quickview .right-col .please-enter,
+body #popups .product .quickview .right-col .please-enter,
+body #product-detail .product .quickview .right-col .please-enter,
+body #popups .popup .product-detail .right-col .please-enter,
+body #product-detail .popup .product-detail .right-col .please-enter,
+body #popups .product .product-detail .right-col .please-enter,
+body #product-detail .product .product-detail .right-col .please-enter {
+  font-size: 14px;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  line-height: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-top: 15px;
+}
+body #popups .popup .quickview .right-col .input-wrap,
+body #product-detail .popup .quickview .right-col .input-wrap,
+body #popups .product .quickview .right-col .input-wrap,
+body #product-detail .product .quickview .right-col .input-wrap,
+body #popups .popup .product-detail .right-col .input-wrap,
+body #product-detail .popup .product-detail .right-col .input-wrap,
+body #popups .product .product-detail .right-col .input-wrap,
+body #product-detail .product .product-detail .right-col .input-wrap {
+  width: 248px;
+  height: 33px;
+  margin: 20px 0;
+  font-size: 13px;
+}
+body #popups .popup .quickview .right-col .input-wrap .checkbox-text,
+body #product-detail .popup .quickview .right-col .input-wrap .checkbox-text,
+body #popups .product .quickview .right-col .input-wrap .checkbox-text,
+body #product-detail .product .quickview .right-col .input-wrap .checkbox-text,
+body #popups .popup .product-detail .right-col .input-wrap .checkbox-text,
+body #product-detail .popup .product-detail .right-col .input-wrap .checkbox-text,
+body #popups .product .product-detail .right-col .input-wrap .checkbox-text,
+body #product-detail .product .product-detail .right-col .input-wrap .checkbox-text {
+  white-space: normal;
+}
+body #popups .popup .quickview .right-col .terms,
+body #product-detail .popup .quickview .right-col .terms,
+body #popups .product .quickview .right-col .terms,
+body #product-detail .product .quickview .right-col .terms,
+body #popups .popup .product-detail .right-col .terms,
+body #product-detail .popup .product-detail .right-col .terms,
+body #popups .product .product-detail .right-col .terms,
+body #product-detail .product .product-detail .right-col .terms {
+  font-size: 11px;
+  color: #616161;
+}
+body #popups .popup .close,
+body #product-detail .popup .close,
+body #popups .product .close,
+body #product-detail .product .close {
+  cursor: pointer;
+  position: absolute;
+  right: 25px;
+  top: 23px;
+}
+body #popups .popup .message,
+body #product-detail .popup .message,
+body #popups .product .message,
+body #product-detail .product .message {
+  font-family: Georgia, Times, "Times New Roman", serif;
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 15px;
+  margin: 10px 0 20px;
+  line-height: 30px;
+}
+body #popups .popup .input-wrap,
+body #product-detail .popup .input-wrap,
+body #popups .product .input-wrap,
+body #product-detail .product .input-wrap {
+  width: 320px;
+  height: 41px;
+  margin: 0 auto 25px;
+}
+body #popups .popup .input-wrap input,
+body #product-detail .popup .input-wrap input,
+body #popups .product .input-wrap input,
+body #product-detail .product .input-wrap input {
+  outline: none;
+  height: 100%;
+}
+body #popups .popup .input-wrap input.input-email,
+body #product-detail .popup .input-wrap input.input-email,
+body #popups .product .input-wrap input.input-email,
+body #product-detail .product .input-wrap input.input-email {
+  border: 1px solid #b4b4b4;
+  border-right: 0;
+  float: left;
+  font-family: arial;
+  font-size: 14px;
+  background: none;
+  padding: 10px 15px;
+  width: 70%;
+}
+body #popups .popup .input-wrap input.input-email::-webkit-input-placeholder,
+body #product-detail .popup .input-wrap input.input-email::-webkit-input-placeholder,
+body #popups .product .input-wrap input.input-email::-webkit-input-placeholder,
+body #product-detail .product .input-wrap input.input-email::-webkit-input-placeholder {
+  color: #000;
+}
+body #popups .popup .input-wrap input.input-email:-moz-placeholder,
+body #product-detail .popup .input-wrap input.input-email:-moz-placeholder,
+body #popups .product .input-wrap input.input-email:-moz-placeholder,
+body #product-detail .product .input-wrap input.input-email:-moz-placeholder {
+  color: #000;
+}
+body #popups .popup .input-wrap input.input-email::-moz-placeholder,
+body #product-detail .popup .input-wrap input.input-email::-moz-placeholder,
+body #popups .product .input-wrap input.input-email::-moz-placeholder,
+body #product-detail .product .input-wrap input.input-email::-moz-placeholder {
+  color: #000;
+}
+body #popups .popup .input-wrap input.input-email:-ms-input-placeholder,
+body #product-detail .popup .input-wrap input.input-email:-ms-input-placeholder,
+body #popups .product .input-wrap input.input-email:-ms-input-placeholder,
+body #product-detail .product .input-wrap input.input-email:-ms-input-placeholder {
+  color: #000;
+}
+body #popups .popup .input-wrap input.input-email.re-enter::-webkit-input-placeholder,
+body #product-detail .popup .input-wrap input.input-email.re-enter::-webkit-input-placeholder,
+body #popups .product .input-wrap input.input-email.re-enter::-webkit-input-placeholder,
+body #product-detail .product .input-wrap input.input-email.re-enter::-webkit-input-placeholder {
+  color: red;
+}
+body #popups .popup .input-wrap input.input-email.re-enter:-moz-placeholder,
+body #product-detail .popup .input-wrap input.input-email.re-enter:-moz-placeholder,
+body #popups .product .input-wrap input.input-email.re-enter:-moz-placeholder,
+body #product-detail .product .input-wrap input.input-email.re-enter:-moz-placeholder {
+  color: red;
+}
+body #popups .popup .input-wrap input.input-email.re-enter::-moz-placeholder,
+body #product-detail .popup .input-wrap input.input-email.re-enter::-moz-placeholder,
+body #popups .product .input-wrap input.input-email.re-enter::-moz-placeholder,
+body #product-detail .product .input-wrap input.input-email.re-enter::-moz-placeholder {
+  color: red;
+}
+body #popups .popup .input-wrap input.input-email.re-enter:-ms-input-placeholder,
+body #product-detail .popup .input-wrap input.input-email.re-enter:-ms-input-placeholder,
+body #popups .product .input-wrap input.input-email.re-enter:-ms-input-placeholder,
+body #product-detail .product .input-wrap input.input-email.re-enter:-ms-input-placeholder {
+  color: red;
+}
+body #popups .popup .input-wrap input.enter,
+body #product-detail .popup .input-wrap input.enter,
+body #popups .product .input-wrap input.enter,
+body #product-detail .product .input-wrap input.enter {
+  background: #fa4f47;
+  float: right;
+  width: 30%;
+  font-size: 12px;
+  border: 0;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  letter-spacing: 2px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+body #popups .popup .input-wrap input.enter_oos,
+body #product-detail .popup .input-wrap input.enter_oos,
+body #popups .product .input-wrap input.enter_oos,
+body #product-detail .product .input-wrap input.enter_oos {
+  background: #fa4f47;
+  float: right;
+  width: 30%;
+  font-size: 12px;
+  border: 0;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  letter-spacing: 2px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+body #popups .popup .input-wrap span,
+body #product-detail .popup .input-wrap span,
+body #popups .product .input-wrap span,
+body #product-detail .product .input-wrap span {
+  float: right;
+  width: 10%;
+}
+body #popups .popup .input-wrap span img,
+body #product-detail .popup .input-wrap span img,
+body #popups .product .input-wrap span img,
+body #product-detail .product .input-wrap span img {
+  cursor: pointer;
+  padding: 5px 0;
+}
+body #popups .popup .input-wrap .checkbox-wrap,
+body #product-detail .popup .input-wrap .checkbox-wrap,
+body #popups .product .input-wrap .checkbox-wrap,
+body #product-detail .product .input-wrap .checkbox-wrap {
+  float: left;
+  width: 100%;
+  margin: 20px 0 55px;
+}
+body #popups .popup .input-wrap .checkbox-wrap .checkboxOption,
+body #product-detail .popup .input-wrap .checkbox-wrap .checkboxOption,
+body #popups .product .input-wrap .checkbox-wrap .checkboxOption,
+body #product-detail .product .input-wrap .checkbox-wrap .checkboxOption {
+  position: relative;
+  float: left;
+  width: 13px;
+  height: 13px;
+}
+body #popups .popup .input-wrap .checkbox-wrap .checkboxOption input,
+body #product-detail .popup .input-wrap .checkbox-wrap .checkboxOption input,
+body #popups .product .input-wrap .checkbox-wrap .checkboxOption input,
+body #product-detail .product .input-wrap .checkbox-wrap .checkboxOption input,
+body #popups .popup .input-wrap .checkbox-wrap .checkboxOption span,
+body #product-detail .popup .input-wrap .checkbox-wrap .checkboxOption span,
+body #popups .product .input-wrap .checkbox-wrap .checkboxOption span,
+body #product-detail .product .input-wrap .checkbox-wrap .checkboxOption span {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+body #popups .popup .input-wrap .checkbox-wrap .checkboxOption input,
+body #product-detail .popup .input-wrap .checkbox-wrap .checkboxOption input,
+body #popups .product .input-wrap .checkbox-wrap .checkboxOption input,
+body #product-detail .product .input-wrap .checkbox-wrap .checkboxOption input {
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+body #popups .popup .input-wrap .checkbox-wrap .checkboxOption span,
+body #product-detail .popup .input-wrap .checkbox-wrap .checkboxOption span,
+body #popups .product .input-wrap .checkbox-wrap .checkboxOption span,
+body #product-detail .product .input-wrap .checkbox-wrap .checkboxOption span {
+  background: #fff;
+  border: 1px solid #b4b4b4;
+  width: 100%;
+  height: 100%;
+}
+body #popups .popup .input-wrap .checkbox-wrap .checkboxOption input[type=checkbox]:checked + span,
+body #product-detail .popup .input-wrap .checkbox-wrap .checkboxOption input[type=checkbox]:checked + span,
+body #popups .product .input-wrap .checkbox-wrap .checkboxOption input[type=checkbox]:checked + span,
+body #product-detail .product .input-wrap .checkbox-wrap .checkboxOption input[type=checkbox]:checked + span {
+  background: url(../images/styles/checkmark.png) no-repeat 0 0;
+}
+body #popups .popup .input-wrap .checkbox-wrap .checkbox-text,
+body #product-detail .popup .input-wrap .checkbox-wrap .checkbox-text,
+body #popups .product .input-wrap .checkbox-wrap .checkbox-text,
+body #product-detail .product .input-wrap .checkbox-wrap .checkbox-text {
+  float: left;
+  font-size: 12px;
+  margin-left: 10px;
+  width: 90%;
+  color: #535353;
+  text-align: left;
+  white-space: nowrap;
+}
+body #popups .popup .terms,
+body #product-detail .popup .terms,
+body #popups .product .terms,
+body #product-detail .product .terms {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 11px;
+  color: #7d7d7d;
+  clear: left;
+}
+body #popups .popup .terms a,
+body #product-detail .popup .terms a,
+body #popups .product .terms a,
+body #product-detail .product .terms a {
+  color: #7d7d7d;
+  text-decoration: underline;
+}
+body #popups .popup .button,
+body #product-detail .popup .button,
+body #popups .product .button,
+body #product-detail .product .button {
+  color: #000;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  font-size: 12px;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  letter-spacing: 1px;
+  border: 0;
+  margin: 25px 0 0;
+  float: right;
+  font-weight: 700;
+  text-decoration: underline;
+}
+body #popups .popup.email-success,
+body #product-detail .popup.email-success,
+body #popups .product.email-success,
+body #product-detail .product.email-success {
+  background: #fff;
+  width: 532px;
+  height: 276px;
+  margin-left: -266px;
+}
+body #popups .popup.email-success.sold-out,
+body #product-detail .popup.email-success.sold-out,
+body #popups .product.email-success.sold-out,
+body #product-detail .product.email-success.sold-out {
+  background: #fff;
+  border: 5px solid #000000;
+  width: 446px;
+  height: 203px;
+  margin-left: -223px;
+}
+body .ItemImageOOS {
+  position: relative;
+}
+body .ItemImageOOS .sold-out {
+  background: #000;
+  position: absolute;
+  bottom: -1px;
+  text-align: center;
+  width: 252px;
+  color: #fff;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 5px 0;
+  line-height: 20px;
+  cursor: pointer;
+  opacity: 0.75;
+}
+body .ItemImageOOS .sold-out em {
+  font-family: "Arial Narrow", Arial, sans-serif;
+  font-style: normal;
+  font-size: 16.5px;
+  font-weight: normal;
+  color: #fff;
+  letter-spacing: 3px;
+}
+body #product-detail {
+  margin: 25px 0;
+}
+body #product-detail .product {
+  position: static;
+  margin: auto;
+}
+body #product-detail .product .product-detail {
+  display: block !important;
+  border: 0;
+  padding: inherit;
+  max-width: inherit;
+}
+body #product-detail .product .product-detail .left-col {
+  width: 45%;
+}
+body #product-detail .product .product-detail .right-col {
+  width: 55%;
+}
+body #product-detail .product .product-detail .right-col #prdt_overview {
+  float: left;
+}
+body #product-detail .product .product-detail .right-col .inner-left {
+  float: left;
+}
+body #product-detail .product .product-detail .right-col .inner-left h1 {
+  font-size: 20px;
+  margin-bottom: 0;
+}
+body #product-detail .product .product-detail .right-col .inner-left .price {
+  font-weight: 700;
+  font-size: 18px;
+}
+body #product-detail .product .product-detail .right-col .inner-left .chosen-container.size {
+  width: 206px !important;
+  background-position: 185px center;
+  margin-right: 5px;
+}
+body #product-detail .product .product-detail .right-col .inner-left .chosen-container.quantity {
+  width: 93px !important;
+  background-position: 74px center;
+}
+body #product-detail .product .product-detail .right-col .inner-left .add-actions {
+  margin: 20px 0 15px;
+}
+body #product-detail .product .product-detail .right-col .inner-left .add-actions span {
+  background: #fa4f47;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  color: #fff;
+  padding: 10px 30px;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1px;
+  margin-right: 10px;
+}
+body #product-detail .product .product-detail .right-col .inner-left .simpleTabs {
+  padding: 0;
+  margin: 15px 0;
+}
+body #product-detail .product .product-detail .right-col .inner-left .simpleTabs ul.simpleTabsNavigation li {
+  padding: 0;
+}
+body #product-detail .product .product-detail .right-col .inner-left .simpleTabs ul.simpleTabsNavigation li a {
+  padding: 10px 30px;
+  font-size: 13px;
+  z-index: 0;
+}
+body #product-detail .product .product-detail .right-col .inner-left .simpleTabs ul.simpleTabsNavigation li a.current {
+  z-index: 2;
+  position: relative;
+  padding-bottom: 9px;
+}
+body #product-detail .product .product-detail .right-col .inner-left .simpleTabs .simpleTabsContent {
+  margin-top: 5px;
+  position: relative;
+  z-index: 1;
+  background: #fff;
+}
+body #product-detail .product .product-detail .right-col .inner-left .simpleTabs .simpleTabsContent span {
+  padding: 30px;
+  margin: 0;
+}
+body #product-detail .product .product-detail .right-col .inner-right {
+  float: right;
+}

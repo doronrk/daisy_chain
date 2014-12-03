@@ -1,0 +1,1004 @@
+
+
+/* @group return */
+/****** SCREEN Styles for Returns on the Web ******/
+/* CREATED 3/16/07 - ms */
+
+.right { text-align:right; }
+.left { text-align:left; }
+.center { text-align:center; }
+.dkRed { color:#933; }
+
+
+.PrTxt { display: none; } /***** Text between this span class will only be displayed on printout.  Used on Steps 3a/3b and maybe elsewhere.. ******/
+
+/* ROW Header */
+.acct-hdr-Return {
+	/**background: url(/App_Themes/Default/images/profile/acct-hdr-return.gif) no-repeat bottom left; width:161px; height:16px; margin:7px 0 0 10px;**/ }
+
+.acct-hdr-Return h3 {
+	color:#543019;
+	font-family: "Trebuchet MS",Verdana,Arial,Helvetica,sans-serif;
+	font-size:24px;
+	font-size-adjust:none;
+	font-stretch:normal;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:24px;
+	margin:0pt;
+	padding:10px 0pt 0pt 10px;
+}
+	
+
+#ROW-slashReturns { display:block; height:200px; }
+
+/******* Title/Header Text ******/
+.ROW-hdrTxt {  /* wrapper */
+	font-family: Arial, Helvetica, sans-serif;
+	width:526px;
+	z-index:2;
+	padding-bottom:5px;
+	float:left; }
+.orange { color:#F90 !important; }
+.ROW-hdrTxt h1.ROW-hdrTxt-StepNum {  /* "Step X of X */ 
+	font-size: 20px;
+	font-family: "Trebuchet MS",Verdana,Arial,Helvetica,sans-serif;
+	font-weight: bold;
+	color: #a16733;
+	padding-right: 14px;
+	float:left;
+	margin:0; }
+.ROW-hdrTxt h2.ROW-hdrTxt-StepTitle {  /* Step name */
+	font-size: 20px;
+	font-family: "Trebuchet MS",Verdana,Arial,Helvetica,sans-serif;
+	color: #a16733;
+	font-weight:normal;
+	float:left;
+	margin:0;
+	width:auto; }
+	
+/****** Step Boxes ******/
+.stepBoxes {  /* wrapper */
+	position:relative; width:520px; height:40px; z-index:1; margin-bottom:15px; float:left; }
+.stepBoxes a:link { text-decoration:none !important; cursor:pointer; }
+.stepBoxes a:visited { text-decoration:none !important; cursor:pointer; }
+.stepBoxes a:hover { text-decoration:underline !important; cursor:pointer; }
+.stepON {  /* Active step BOX */
+	font-family: "Trebuchet MS",Verdana,Arial,Helvetica,sans-serif;
+	width:115px; border: 1px solid #ccc; border-width: 1px 0 1px 1px; background: #f6efe8; float:left; padding: 3px 0 1px 9px; height:44px;}
+.stepON-3 {  /* Active step BOX */
+	font-family: "Trebuchet MS",Verdana,Arial,Helvetica,sans-serif;
+	width:115px; border: 1px solid #ccc; background: #f6efe8; float:left; padding: 3px 0 1px 9px; height:44px;}
+.stepON-Num {  /* Active step NUMBER */
+	font-family: "Trebuchet MS",Verdana,Arial,Helvetica,sans-serif;
+	font-size: 24px;
+	font-weight: bold;
+	color: #a16733;
+	position:relative;
+	float:left;
+	padding-right:5px; }
+.stepON-Desc {  /* Active step DESCRIPTION */
+	font-family: "Trebuchet MS",Verdana,Arial,Helvetica,sans-serif;
+	font-size:11px;
+	line-height: 1.1em;
+	color: #a16733;
+	position:relative;
+	float:left;
+	width:70px;
+	margin-top:4px; }
+.stepOFF {  /* Inactive step BOX */
+	 width:115px; height:44px; border: 1px solid #ccc; border-width: 1px 0 1px 1px; background: #FFF; float:left; padding: 3px 0 1px 9px; }
+.stepOFF-3 {  /* Inactive step BOX */
+	 width:115px; height:44px; border: 1px solid #76BEE3; background: #FFF; float:left; padding: 3px 0 1px 9px; }
+.stepOFF-Num {  /* Inactive step NUMBER */
+	font-family: "Trebuchet MS",Verdana,Arial,Helvetica,sans-serif;
+	font-size: 24px;
+	font-weight: bold;
+	color: #a16733;
+	position:relative;
+	float:left;
+	padding-right:5px; }
+.stepOFF-Desc {  /* Inactive step DESCRIPTION */
+	font-family: "Trebuchet MS",Verdana,Arial,Helvetica,sans-serif;
+	font-size: 11px;
+	line-height: 1.1em;
+	color: #a16733;
+	position:relative;
+	float:left;
+	width:70px;
+	margin-top:4px; }
+.stepOFF-3xDesc {  /* Inactive step DESC for Steps 3a & 3b */
+	font-family: "Trebuchet MS",Verdana,Arial,Helvetica,sans-serif;
+	font-size: 11px;
+	line-height: 1.1em;
+	color: #a16733;
+	position:relative;
+	float:left;
+	width:60px;
+	margin-top:4px; }
+.stepON-3xDesc {  /* Active step DESC for Steps 3a & 3b */
+	font-family: "Trebuchet MS",Verdana,Arial,Helvetica,sans-serif;
+	font-size: 11px;
+	line-height: 1.1em;
+	color: #a16733;
+	position:relative;
+	float:left;
+	width:60px;
+	margin-top:4px; }
+.stepRtBrdr { border-right: 1px solid #ccc; }  /* Right border for last box */
+
+
+/****** MISC TEXT STYLES ******/
+.txt_instrx {  /* Step 1 Instructions txt */
+	font-family: Arial, Helvetica, sans-serif;
+	position:relative; width:525px; z-index:3; float:left; margin-bottom:12px; }
+.rtrnStaticTxt {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:11px;
+	color: #036;
+	padding:0;
+	margin:0; }
+.rtrnStaticTxt-grey {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:inherit;
+	color: #999;
+	padding:0;
+	margin:0;
+	font-weight:normal !important; }
+
+/****** BUTTONS ******/
+.btn_ProceedtoStep2 {
+	background:url(/App_Themes/Default/images/returns/btn_proceedto2.gif) no-repeat;
+	float:left;
+	width:152px;
+	height:23px;
+	cursor:pointer;
+	border:0;
+	margin:10px 0 0 2px;
+	/*padding-bottom:7px;*/
+	clear:both;
+}
+.btn_ProceedtoStep3 {
+	background:url(/App_Themes/Default/images/returns/btn_proceedto3.gif) no-repeat;
+	float:left;
+	width:152px;
+	height:22px;
+	cursor:pointer;
+	border:0;
+	margin:15px 0 0 2px;
+	clear:both;
+}
+.btn_ProceedtoStep3b {
+	background:url(/App_Themes/Default/images/returns/btn_proceedto3b.gif) no-repeat;
+	float:left;
+	width:149px;
+	height:19px;
+	cursor:pointer;
+	border:0;
+	margin:10px 0 0 0;
+	clear:both;
+}
+.btn_completeReturn {
+	background:url(/App_Themes/Default/images/returns/btn_completeReturn.gif) left bottom no-repeat;
+	float:left;
+	width:176px;
+	height:19px;
+	cursor:pointer;
+	border:0;
+	margin:5px 0 0 0;
+	clear:both;
+}
+.btn_proceedtoConf {
+	background:url(/App_Themes/Default/images/returns/btn_proceedtoConf.gif) left bottom no-repeat;
+	float:left;
+	width:186px;
+	height:19px;
+	cursor:pointer;
+	border:0;
+	margin:5px 0 0 0;
+	clear:both;
+}
+.btn_PrintPage {
+	background:url(/App_Themes/Default/images/returns/btn_clicktoprint.gif) left top no-repeat;
+	position:relative;
+	float:left;
+	width:225px;
+	height:30px;
+	cursor:pointer;
+	border:0;
+	margin:10px 0 0 0;
+	clear:both;
+}
+.btn_back2AcctHm {
+	background:url(/App_Themes/Default/images/returns/btn_back2AcctHm.gif) left bottom no-repeat;
+	float:left;
+	width:200px;
+	height:19px;
+	cursor:pointer;
+	border:0;
+	margin:5px 0 0 0;
+	clear:both;
+}
+.btn_Reprint {
+	background:url(/App_Themes/Default/images/returns/btn_reprint.gif) left top no-repeat; width:219px; height:29px; cursor:pointer;
+	margin:5px 0 0 0; }
+
+/****** ORDER LIST - TABLE ******/
+.ordTable {  /* General table style */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #57575b;
+	border-bottom: 1px solid #95979b;
+	width:505px;
+	position:relative;
+	z-index:30;
+	background:#FFF;
+	float:left; }
+.ordTable_numHdr {  /* Order Number header */
+	font-family: "Trebuchet MS",Verdana,Arial,Helvetica,sans-serif;
+	border-right:1px dotted #FFF;
+	padding-left:6px;
+	background: #611e00 url(/App_Themes/Default/images/returns/wht_arrow_down.gif) 95% no-repeat;
+	height:20px;
+	color:#FFF; font-weight:bold;
+}
+.ordTable_regHdr {  /* Regular blue header */
+	font-family: "Trebuchet MS",Verdana,Arial,Helvetica,sans-serif;
+	text-align: center;
+	background: #611e00 url(/App_Themes/Default/images/returns/wht_arrow_down.gif) 95% no-repeat;
+	height:20px;
+	color:#FFF; font-weight:bold;
+}
+
+.rtBor_white { border-right: 1px dotted #FFF; }
+
+.expandLink_view { /**background:url(/App_Themes/Default/images/returns/plus_box.gif) left no-repeat; width:150px; **/}
+.expandLink_view a {  /* [+] select items... */
+	font-family: Arial, Helvetica, sans-serif;
+	color:#F60 !important;
+	font-size:11px;
+	padding-left:15px;
+	text-decoration:underline !important; }
+.expandLink_hide a {  /* [-] select items... */
+	font-family: Arial, Helvetica, sans-serif;
+	color:#F60 !important;
+	font-size:11px;
+	/**background:url(/App_Themes/Default/images/returns/minus_box.gif) left no-repeat;**/
+	padding-left:15px;
+	text-decoration:underline !important; }
+
+
+.ordTable_numTD {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:11px;
+	color: #57575b;
+	padding:6px 0 6px 6px;
+	border-top: 1px solid #97979b;
+	border-right:1px dotted #97979b;
+	/*width:300px;*/
+}
+
+.ordTable_midTD {  /* "Date Ordered" and "Order Total" cells */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:11px;
+	color:#57575b;
+	text-align:center;
+	padding:6px 0 6px 0;
+	border-top: 1px solid #97979b;
+	border-right:1px dotted #97979b;
+	width:125px !important;
+}
+.ordTable_midTD FONT { font-size:11px !important; }
+
+.ordTable_rightTD {  /* "Order Status" cells */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:11px;
+	color:#57575b;
+	text-align:center;
+	padding:6px 0 6px 0;
+	border-top: 1px solid #97979b;
+	width:105px !important;
+}
+
+.ordDisplay_open { font-family: Arial, Helvetica, sans-serif; padding:6px; }
+.ordDisplay_open h4 { font-family: Arial, Helvetica, sans-serif; font-weight:bold; font-size:11px; margin:0; }
+
+
+/****** STEP 1 -- ITEMS TABLE ******/
+.itmListTable {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color:#000;
+	border:1px solid #95979b;
+	border-width:1px 0 0 1px;
+	width:450px !important;
+	z-index:300;
+	position:relative; float:left;
+}
+.itmListTable TH { display:none !important; }
+.liteBlueBar {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: inherit;
+	background-color:#bebebe;
+	padding:6px 0 6px 10px;
+	border:1px solid #95979b;
+	border-width:0 1px 1px 0;
+}
+.medBlueBar {
+	font-family: Arial, Helvetica, sans-serif;
+	background-color:#bebebe;
+	padding:2px 0 2px 6px;
+	border:1px solid #95979b;
+	border-width:0 1px 1px 0;
+}
+.medBlueBar input { float:left; }
+.medBlueBar p { font-family: Arial, Helvetica, sans-serif; float:left; margin:3px 0 0 0; padding-left:5px; }
+.proceedNote { position:relative; float:left; clear:left; width:450px; padding:5px 0 0 5px; margin:0; }
+.exchangeNote {
+	background:url(/App_Themes/Default/images/returns/exchNoteBG.gif) repeat-x; width:470px; height:100px; padding:6px; margin:0; position:relative; float:left; clear:left; }
+
+/****** Blue Table for individual item details ******/
+.itmTable {
+	width:540px;
+	background:#fff url(/App_Themes/Default/images/returns/itmView_bg.gif) repeat-x;
+	font-family:Arial, Helvetica, sans-serif !important;
+	font-size:11px;
+	color: #57575b !important;
+	border-right:1px solid #97979b !important; }
+.itmTable td { font-family:Arial, Helvetica, sans-serif !important; vertical-align:top;background-color: #ffffff; }
+.itmTable_imgTD { width:100px; border:1px solid #8DC6DE; border-width:0 1px 1px 0; padding:5px 0 5px 6px; }
+.itmTable_imgTD input { float:left; margin-top:30px; }
+.itmTable_imgTD div { float:left; padding-left:5px; margin:0; text-align:center; }
+.itmTable_col2 {
+	vertical-align:top;
+	width:50px;
+	height:35px;
+	border:1px solid #8DC6DE;
+	border-width:0 1px 1px 0;
+	padding:7px 0 5px 10px;
+	margin:0;
+	align:center;
+}
+.itmTable_col3 {
+	vertical-align:top;
+	width:73px;
+	border:1px solid #8DC6DE;
+	border-width:0 1px 1px 0;
+	padding:7px 0 5px 10px;
+	margin:0;
+}
+.itmTable_col456 { vertical-align:top; text-align:center; width:65px; border:1px solid #8DC6DE; border-width:0 1px 1px 0; padding:7px 0 5px 0 !important; }
+.itmTable_col456 select { font-size:10px; font-weight:bold; margin-top:3px; }
+.itmTable_col2row2 { vertical-align:top; height:50px; border:1px solid #8DC6DE; border-width:0 1px 1px 0; padding:2px 0 5px 10px;  }
+.itmTable_col3row2 { vertical-align:top; border:1px solid #8DC6DE; border-width:0 1px 1px 0; padding:2px 0 5px 10px;  }
+.itmTable h4 { font-size:11px; padding:0; margin:0; }
+
+
+/****** Grey Table for individual item details ******/
+
+.itmTableGrey {
+	font-family:Arial, Helvetica, sans-serif !important;
+	background:#F9F9F9 url(/App_Themes/Default/images/returns/itmView_bg_grey.gif) repeat-x;
+	font-size:11px;
+	width:488px;
+	border:1px solid #CCC;
+	color:#666666;
+}
+/* Step 3a Grey Table */
+.iTG_blkTxt { color:#000 !important; }
+.itmTableGrey .itmTable td { font-family:Arial, Helvetica, sans-serif !important; font-size:inherit; }
+.itmTableGrey .itmTable_imgTD { width:100px; border:1px solid #CCC; border-width:0 1px 1px 0; padding:5px 0 5px 6px; }
+.itmTableGrey .itmTable_imgTD input { float:left; margin-top:30px; }
+.itmTableGrey .itmTable_imgTD div { float:left; padding-left:25px; margin:0; text-align:center; }
+.itmTableGrey .itmTable_col2 { border:1px solid #CCC; border-width:0 1px 0 0; }
+.itmTableGrey .itmTable_col3 { border:1px solid #CCC; border-width:0 1px 0 0; }
+.itmTableGrey .itmTable_col4 { border:1px solid #CCC !important; border-width:0 1px 1px 0; }
+.itmTableGrey .itmTable_col56 { vertical-align:top; border:1px solid #CCC; border-width:0 1px 1px 0; text-align:center; width:65px; padding:10px 0 5px 0; font-size:inherit; }
+.itmTableGrey .itmTable_col2row2 { vertical-align:top; border:1px solid #CCC; border-width:0 1px 1px 0; height:50px; padding:2px 0 5px 10px; font-size:inherit; }
+.itmTableGrey .itmTable_col3row2 { vertical-align:top; border:1px solid #CCC; border-width:0 1px 1px 0; padding:2px 0 5px 10px; font-size:inherit; }
+.itmTableGrey .dkRed { font-family:Arial, Helvetica, sans-serif !important; font-weight:bold; font-size:inherit; color:#933; }
+.itmTableGrey .grey7 { font-family:Arial, Helvetica, sans-serif !important; font-size:inherit; color:#777; }
+.itmTableGrey h4 { font-size:11px; padding:0; margin:0; }
+.rtrnIDgreybar { background:#EAEAEA; padding:6px 0 6px 10px; border:1px solid #CCC; border-width:0 1px 1px 0; }
+
+/* Step 1 Greyed-out table */
+.itmTableGrey_imgTD { width:100px; padding:5px 0 5px 6px; }
+.itmTableGrey_imgTD input { float:left; margin-top:30px; }
+.itmTableGrey_imgTD div { float:left; padding-left:25px; margin:0; text-align:center; }
+.itmTableGrey_col2 { vertical-align:top; width:125px; height:35px; padding:10px 0 5px 10px; font-size:inherit; margin:0; }
+.itmTableGrey_col3 { vertical-align:top; width:70px; padding:10px 0 5px 10px; font-size:inherit; }
+.itmTableGrey_col4 { vertical-align:top; text-align:left; width:95px; padding:10px 0 5px 0; font-size:inherit; }
+.itmTableGrey_col56 { vertical-align:top; text-align:center; width:65px; padding:10px 0 5px 0; font-size:inherit; }
+.itmTableGrey_col2row2 { vertical-align:top; height:50px; padding:2px 0 5px 10px; font-size:inherit; }
+.itmTableGrey_col3row2 { vertical-align:top; padding:2px 0 5px 10px; font-size:inherit; }
+.dkRed { font-family:Arial, Helvetica, sans-serif !important; font-weight:normal; font-size:inherit; color:#933; }
+.grey7 { font-family:Arial, Helvetica, sans-serif !important; font-size:inherit; color:#777; }
+
+
+
+
+/******** STATUS DEFINITIONS TABLE AT THE BOTTOM OF THE PAGE *********/
+.statusDef {
+	font-family: "Trebuchet MS",Verdana,Arial,Helvetica,sans-serif; font-size:11px; color:#a16733; width:500px; position:relative; float:left; margin:15px 0 0 5px; width:525px; }
+.statusDef TD { vertical-align:top; }
+
+
+/****** STEP 2 -- PACKING SLIP MAILING ADDRESS ******/
+#addrBox { margin: 0 auto 15px 80px; color: #000; font-size: 11px; width: 430px;}
+#addrBox TD { padding: 0 5px; vertical-align: top;}
+#addrBox SPAN {line-height: 12px; margin:0; padding: 0; height: auto;}
+	
+
+/****** RECEIVED ITEM AS A GIFT ******/
+.identifyOrder { margin: 15px 0 120px 20px; color: #000; }
+.identifyOrder TD { padding: 5px 0; }
+
+/*
+@media print {
+.DIV_NoPrint{display:none;visibility: hidden;}
+.headerContainer{display:none;visibility: hidden;}
+.footerTopMargin{display:none;visibility: hidden;}
+}
+*/
+
+
+/*printing style sheets*/
+/****** PRINT Styles for Returns on the Web ******/
+/****** Removes left nav, "step" boxes, backgrounds, top header tab, help link, buttons ******/
+.onlyprint{display:none;}
+
+h2.hdr_blueInstrux {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:16px;
+	color:#57575b;
+	font-weight:bold;
+	position:relative;
+	float:left;
+	margin:10px 0 5px 0;
+	clear: both;
+}
+
+.blue_instrux {
+	 font-family: Arial, Helvetica, sans-serif;
+	 font-size: 11px;
+	 color: #57575b;
+	 width: 500px;
+	 position: relative;
+	 float: left;
+	 padding: 8px 0 15px 10px;
+	 border:1px solid #97979b;
+	 background: #f1efed;
+	 clear: both; }
+.blue_instrux ol { /*position:relative; float:left; */ margin:0; padding:3px 0 0 23px; }
+.blue_instrux li { list-style-type:decimal; clear:both; padding-bottom:10px; }
+
+.packingSlip-wrap { position:relative; float:left; padding:15px; width:480px; /*background:#FFF;*/ }
+.packingSlip { font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#000; position:relative; float:left; border:0; width:; }
+.packingSlip h1{ font-family:Arial, Helvetica, sans-serif; font-size:2.1em; }
+.packingSlip h2 { color:#000 !important; width:460px !important; padding:15px 0 0 0 !important; margin:0 !important; font-size:16px; font-weight:bold; }
+
+.whiteBox {  /* Step 2 - white container box around address form and Reason for Return */
+	width:499px;
+	position:relative;
+	float:left;
+	padding:5px 0 10px 10px;
+	border:1px solid #76BEE3;
+	background:#FFF; }
+	
+.errorBox {
+	background-color:#FFF7CC; width:350px; position:relative; float:left; left:0px; margin:0 0 0 0;
+	font-size:11px; color:#000; display:block; }
+
+@media print {
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:12pt !important;
+	color:#000 !important;
+
+}
+h2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:1.0em;
+	color:#000 !important;
+	font-weight:bold;
+	position:relative;
+	float:left;
+	margin:5px 0 8px 0;
+	z-index:3;
+	width:580px;
+}
+h2.hdr_blueInstrux { 
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:1.0em;
+	color:#000;
+	font-weight:bold;
+	position:relative;
+	float:left;
+	margin:0px 0 5px 0;
+}
+h3 { display:none; }
+
+form, input { font-family:Arial, Helvetica, sans-serif !important; }
+
+.ScTxt { display: none; } /***** Text between this span class will not be displayed on printout.  Used on Steps 3a/3b and maybe elsewhere.. ******/
+
+/****** LEFT NAV Styles ******/
+.acctLeftNav {
+	display:none; }
+.leftNavTD { display:none; }
+.acctHdr_leftNav_MyAcct {
+	display:none; }
+
+/******* Container divs ******/
+#mainContainer { 
+	width:626px;
+	color:#000 !important;
+	font-family: Arial, Helvetica, sans-serif;
+	position:relative;
+	height:auto; 
+	background-color:#FFF;
+	float:left; }
+#contentWrap {
+	font-family: Arial, Helvetica, sans-serif;
+	background-color:#FFF; /*width:605px;*/ width:100%; position:relative; float:left; padding:8px 0 20px 21px; }
+#contentWrap a:link { color:#000; text-decoration:underline; }
+#contentWrap a:visited { color:#000; text-decoration:underline; }
+#contentWrap a:hover { color:#008AFF; text-decoration:underline; }
+
+
+/******* Top Header Bar ******/
+.Hdr { display:none; }
+
+/******* Title/Header Text ******/
+.hdrTxt {  /* wrapper */
+	position:relative; 
+	width:570px; 
+	z-index:2; 
+	padding-bottom:5px;
+	float:left; }
+.orange { color:#000 !important; }
+#stepXofX { font-size:12pt !important; color:black; } /**** Shrinks this header text for print version ****/
+#stepXofX h1 { font-weight:normal !important; font-size:12pt !important; }
+
+.hdrTxt h1 {  /* "Step X of X */ 
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13pt;
+	padding-right: 14px;
+	float:left;
+	margin:0;
+	color: #57575b }
+.hdrTxt h2 {  /* Step name */
+	font-family: Arial, Helvetica, sans-serif;
+	color: #000;
+	font-weight:normal;
+	float:left;
+	margin:0;
+	width:auto; }
+
+
+/****** Click for help btn & link ******/
+#help {
+	display:none; }
+
+/****** Step Boxes ******/
+.stepBoxes {  /* wrapper */
+	display: none; }
+
+/****** MISC TEXT STYLES ******/
+.txt_instrx {  /* Step 1 Instructions txt */
+	font-family: Arial, Helvetica, sans-serif;
+	position:relative; width:580px; z-index:3; float:left; margin-bottom:12px; }
+.rtrnStaticTxt {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:0.7em;
+	color: #000;
+	padding:0;
+	margin:0; }
+.rtrnStaticTxt-grey {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:inherit;
+	color: #999;
+	padding:0;
+	margin:0;
+	font-weight:normal !important; }
+
+/****** BUTTONS ******/
+#btn_ProceedtoStep2, #btn_ProceedtoStep3, #btn_ProceedtoStep3b, #btn_completeReturn, #btn_proceedtoConf, #btn_PrintPage, #btn_Reprint {
+	display:none; }
+	
+/****** ORDER LIST - TABLE ******/
+.ordTable {  /* General table style */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 0.7em;
+	color: #000;
+	border-bottom: 1px solid #000; 
+	width:580px; 
+	position:relative; 
+	z-index:30; 
+	background:#FFF; 
+	float:left; }
+.ordTable_numHdr {  /* Order Number header */
+	font-family: Arial, Helvetica, sans-serif;
+	width:165px; 
+	border-right:1px dotted #FFF; 
+	padding-left:6px;
+	background: #FFF;
+	height:20px;
+}
+.ordTable_numHdr a { font-family: Arial, Helvetica, sans-serif; color:#000 !important; font-weight:bold; font-size:inherit; width:100%; text-decoration:underline !important;}
+.ordTable_regHdr {  /* Regular blue header */
+	font-family: Arial, Helvetica, sans-serif;
+	width:134px;
+	text-align: center;
+	background: #FFF;
+	height:20px;
+}
+.ordTable_regHdr a { 
+	font-family: Arial, Helvetica, sans-serif; 
+	color:#000; 
+	font-weight:bold; 
+	font-size:inherit; 
+	text-align:center; 
+	text-decoration:underline !important; }
+.rtBor_white { border-right: 1px dotted #FFF; }
+
+.expandLink_view { background:url(../../bdimages/account_images/plus_box.gif) left no-repeat; }
+.expandLink_view a {  /* [+] select items... */
+	font-family: Arial, Helvetica, sans-serif; 
+	color:#F60 !important; 
+	font-size:inherit; 
+	padding-left:15px; 
+	text-decoration:underline !important; }
+.expandLink_hide a {  /* [-] select items... */
+	font-family: Arial, Helvetica, sans-serif; 
+	color:#F60 !important; 
+	font-size:inherit; 
+	background:url(../../bdimages/account_images/minus_box.gif) left no-repeat; 
+	padding-left:15px; 
+	text-decoration:underline !important; }
+	
+.ordTable_numTD {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:inherit;
+	color: #000;
+	padding:6px; 
+	border-top: 1px solid #000; 
+	border-right:1px dotted #4E7BA8;
+}
+
+.ordTable_midTD {  /* "Date Ordered" and "Order Total" cells */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:inherit;
+	color:#000;
+	text-align:center; 
+	padding:6px; 
+	border-top: 1px solid #000; 
+	border-right:1px dotted #000;
+}
+
+.ordTable_rightTD {  /* "Order Status" cells */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:inherit;
+	color:#000;
+	text-align:center; 
+	padding:6px; 
+	border-top: 1px solid #000; 
+}
+
+.ordDisplay_open { font-family: Arial, Helvetica, sans-serif; padding:6px; }
+.ordDisplay_open h4 { font-family: Arial, Helvetica, sans-serif; font-weight:bold; font-size:1.0em; margin:0; }
+
+
+/****** STEP 1 -- ITEMS TABLE ******/
+.itmListTable { 
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1.0em;
+	color:#000;
+	border:1px solid #999; 
+	border-width:1px 0 0 1px; 
+	width:100%;
+	z-index:300;
+}
+.liteBlueBar { 
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: inherit;
+	background-color:#F2FBFF;
+	padding:6px 0 6px 10px; 
+	border:1px solid #999; 
+	border-width:0 1px 1px 0;
+}
+.medBlueBar {
+	font-family: Arial, Helvetica, sans-serif;
+	background-color:#DDF0FB;
+	padding:2px 0 2px 6px; 
+	border:1px solid #999; 
+	border-width:0 1px 1px 0;
+}
+.medBlueBar input { float:left; }
+.medBlueBar p { font-family: Arial, Helvetica, sans-serif; float:left; margin:3px 0 0 0; padding-left:5px; }
+.proceedNote { position:relative; float:left; clear:left; width:550px; padding:5px 0 0 5px; }
+
+/****** Blue Table for individual item details ******/
+.itmTable { 
+	width:540px; 
+	background:#fff url(../../bdimages/account_images/itmView_bg.gif) repeat-x;
+	font-family:Arial, Helvetica, sans-serif !important;
+	font-size:100%;
+	color: #000 !important; }
+.itmTable td { font-family:Arial, Helvetica, sans-serif !important; font-size:inherit; }
+.itmTable_imgTD { width:100px; border:1px solid #999; border-width:0 1px 1px 0; padding:5px 0 5px 6px; }
+.itmTable_imgTD input { float:left; margin-top:30px; }
+.itmTable_imgTD div { float:left; padding-left:5px; margin:0; text-align:center; }
+.itmTable_col2 {
+	vertical-align:top; 
+	width:136px; 
+	height:35px; 
+	border:1px solid #999; 
+	border-width:0 1px 0 0; 
+	padding:10px 0 5px 10px; 
+	margin:0;
+}
+.itmTable_col3 {
+	vertical-align:top; 
+	width:73px; 
+	border:1px solid #999; 
+	border-width:0 1px 0 0; 
+	padding:10px 0 5px 10px; 
+	margin:0;
+}
+.itmTable_col456 { vertical-align:top; text-align:center; width:65px; border:1px solid #999; border-width:0 1px 1px 0; padding:10px 0 5px 0; }
+.itmTable_col456 select { font-size:10px; font-weight:bold; color:#000; margin-top:3px; }
+.itmTable_col2row2 { vertical-align:top; height:50px; border:1px solid #999; border-width:0 1px 1px 0; padding:2px 0 5px 10px;  }
+.itmTable_col3row2 { vertical-align:top; border:1px solid #999; border-width:0 1px 1px 0; padding:2px 0 5px 10px;  }
+.itmTable h4 { font-size:1.0em; padding:0; margin:0; }
+
+
+/****** Grey Table for individual item details ******/
+
+.itmTableGrey {
+	font-family:Arial, Helvetica, sans-serif !important;
+	background:#F9F9F9 url(../../bdimages/account_images/itmView_bg_grey.gif) repeat-x;
+	font-size:100%;
+	width:100%;
+	border:1px solid #CCC; 
+	color:#666666;
+}
+/* Step 3a Grey Table */
+.iTG_blkTxt { color:#000 !important; }
+.itmTableGrey .itmTable td { font-family:Arial, Helvetica, sans-serif !important; font-size:inherit; }
+.itmTableGrey .itmTable_imgTD { width:100px; border:1px solid #CCC; border-width:0 1px 1px 0; padding:5px 0 5px 6px; }
+.itmTableGrey .itmTable_imgTD input { float:left; margin-top:30px; }
+.itmTableGrey .itmTable_imgTD div { float:left; padding-left:25px; margin:0; text-align:center; }
+.itmTableGrey .itmTable_col2 { border:1px solid #CCC; border-width:0 1px 0 0; }
+.itmTableGrey .itmTable_col3 { border:1px solid #CCC; border-width:0 1px 0 0; }
+.itmTableGrey .itmTable_col4 { border:1px solid #CCC !important; border-width:0 1px 1px 0; }
+.itmTableGrey .itmTable_col56 { vertical-align:top; border:1px solid #CCC; border-width:0 1px 1px 0; text-align:center; width:65px; padding:10px 0 5px 0; font-size:inherit; }
+.itmTableGrey .itmTable_col2row2 { vertical-align:top; border:1px solid #CCC; border-width:0 1px 1px 0; height:50px; padding:2px 0 5px 10px; font-size:inherit; }
+.itmTableGrey .itmTable_col3row2 { vertical-align:top; border:1px solid #CCC; border-width:0 1px 1px 0; padding:2px 0 5px 10px; font-size:inherit; }
+.itmTableGrey .dkRed { font-family:Arial, Helvetica, sans-serif !important; font-weight:bold; font-size:inherit; color:#933; }
+.itmTableGrey .grey7 { font-family:Arial, Helvetica, sans-serif !important; font-size:inherit; color:#777; }
+.itmTableGrey h4 { font-size:1.0em; padding:0; margin:0; }
+.rtrnIDgreybar { background:#EAEAEA; padding:6px 0 6px 10px; border:1px solid #CCC; border-width:0 1px 1px 0; }
+
+/* Step 1 Greyed-out table */ 
+.itmTableGrey_imgTD { width:100px; padding:5px 0 5px 6px; }
+.itmTableGrey_imgTD input { float:left; margin-top:30px; }
+.itmTableGrey_imgTD div { float:left; padding-left:25px; margin:0; text-align:center; }
+.itmTableGrey_col2 { vertical-align:top; width:125px; height:35px; padding:10px 0 5px 10px; font-size:inherit; margin:0; }
+.itmTableGrey_col3 { vertical-align:top; width:70px; padding:10px 0 5px 10px; font-size:inherit; }
+.itmTableGrey_col4 { vertical-align:top; text-align:left; width:95px; padding:10px 0 5px 0; font-size:inherit; }
+.itmTableGrey_col56 { vertical-align:top; text-align:center; width:65px; padding:10px 0 5px 0; font-size:inherit; }
+.itmTableGrey_col2row2 { vertical-align:top; height:50px; padding:2px 0 5px 10px; font-size:inherit; }
+.itmTableGrey_col3row2 { vertical-align:top; padding:2px 0 5px 10px; font-size:inherit; }
+.dkRed { font-family:Arial, Helvetica, sans-serif !important; font-weight:normal; font-size:inherit; color:#933; }
+.grey7 { font-family:Arial, Helvetica, sans-serif !important; font-size:inherit; color:#777; }
+
+/****** STEP 2 ******/
+.retItmBlueTop { font-family:Arial, Helvetica, sans-serif !important; font-size:0.75em; color:#000; position:relative; width:590px; height:35px; z-index:1; margin-bottom:0; float:left; border: 1px solid #999; border-width: 0 1px 0 1px; }
+.retItmBlueTop h4 { font-family:Arial, Helvetica, sans-serif !important; font-size:1.0em; margin:0 6px 0 0; padding:0; position:relative; display:inline; }
+.retItmBlueTop td { padding:5px 8px 5px 8px; border: 1px solid #999; border-width: 1px 0 0 0; }
+
+/*.retItmBlueBox  ***OLD***{ font-family:Arial, Helvetica, sans-serif !important; font-size:0.7em; color:#000; position:relative; width:590px; height:40px; z-index:1; margin-bottom:15px; float:left; }*/
+.retItmBlueBox { font-family:Arial, Helvetica, sans-serif !important; font-size:0.7em; color:#000; position:relative; width:590px; height:40px; z-index:1; margin-bottom:15px; float:left; border: 1px solid #999; border-width: 0 1px 1px 0; }
+.retItmBlueBox div { font-family:Arial, Helvetica, sans-serif !important; font-size:inherit; height:100%; border: 1px solid #999; border-width: 1px 0 1px 1px; float:left; padding: 5px 9px 1px 9px; }
+.retItmBlueBox h4 { font-family:Arial, Helvetica, sans-serif !important; font-size:1.0em; margin:0 0 3px 0; }
+.retItmBlueBox td { padding:5px 8px 5px 8px; border: 1px solid #999; border-width: 1px 0 0 1px; }
+.bg_medBlue { background-color:#BBE8FF; }
+.bg_ltBlue { background-color:#D2EFFF; }
+.bg_ltBlue2 { background-color:#E2F5FF; }
+#rIBB_OrderNum { text-align:left; width:170px; color:#000; }
+.rIBB_ItemNum { vertical-align:top; }
+.rIBB_Brand { padding:5px 2px 1px 9px !important; }
+.rIBB_ItemName { border-left:0px !important; width:140px; }
+.rIBB_RefAmt { text-align:center; }
+.rIBB_Quantity { text-align:center; }
+
+.slctLabel_wrap { position:relative; float:left; }
+#USPSwrap { display:none; }
+.UPS_logo { background:url(../../bdimages/account_images/UPS_logo.gif) left no-repeat; width:38px; height:48px; float:left; position:relative; }
+.USPS_logo { background:url(../../bdimages/account_images/USPS_logo.gif) 0px 4px no-repeat; width:39px; height:40px; float:left; position:relative; }
+.slctLabel_content { 
+	font-family:Arial, Helvetica, sans-serif; 
+	font-size:0.7em; 
+	color:#000; 
+	position:relative; 
+	float:left; 
+	width:530px; 
+	z-index:1;
+	padding:0 0 0px 10px; } 
+
+.labelOption {  /* Step 2 - select a label option */
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:inherit;
+	position:relative;
+	float:left;
+	padding-bottom:10px;
+	z-index:2;
+}
+.labelOption_radio { position:relative; float:left; margin:-3px 5px 0 0; padding:0; vertical-align:top; }
+.labelOption p { position:relative; float:left; width:490px; margin:0; padding:0; }
+#preferUSPS p { padding-left:45px; }
+
+.whiteBox {  /* Step 2 - white container box around address form and Reason for Return */
+	width:575px; 
+	position:relative; 
+	float:left; 
+	padding:5px 0 10px 10px; 
+	border:1px solid #999; 
+	background:#FFF; }
+
+#UPS_addr_wrap, #USPS_addr_wrap {  /* Step 2 - container div to be shown when user selects mail label option */
+	 font-family:Arial, Helvetica, sans-serif; font-size:0.7em; position:relative; float:left; padding:0 0 10px 0; display:none; }
+	 
+/* Step 2 - "Send label to" list */
+#sendLabelTo { position:relative; float:left; padding-bottom:3px; }  
+#sendLabelTo span { font-family:Arial, Helvetica, sans-serif !important; font-size:inherit; position:relative; float:left; font-weight:bold; color:#000; padding:0 5px 0 0; }
+#sendLabelTo ul { font-family:Arial, Helvetica, sans-serif !important; font-size:inherit; position:relative; float:left; list-style:none; padding:0; margin:0; }
+#sendLabelTo li { font-family:Arial, Helvetica, sans-serif !important; display:block; height:17px; }
+#sendLabelTo p { font-family:Arial, Helvetica, sans-serif !important; font-size:inherit; color:#000; position:relative; float:left; margin:0; padding:0; }
+
+/* Step 2 - Address table */
+#addrBox { font-family: Arial, Helvetica, sans-serif !important; font-size:1em; color:#000; width:100%; }
+#addrBox td { font-family:Arial, Helvetica, sans-serif !important; font-weight:bold; font-size:1.0em; }
+#addrBox input { font-family:Arial, Helvetica, sans-serif !important; font-weight:normal; font-size:1.0em; }
+
+/* Step 2 - "Reason for your return" box */
+#rtrnReason { font-family:Arial, Helvetica, sans-serif !important; color:#000; }
+#rtrnReason span { font-family:Arial, Helvetica, sans-serif !important; font-weight:bold; }
+#rtrnReason_list { font-family:Arial, Helvetica, sans-serif !important; font-size:0.7em; position:relative; float:left; width:300px; }
+#rtrnReason_list p { font-family:Arial, Helvetica, sans-serif; }
+#rtrnReason_list ul { font-family:Arial, Helvetica, sans-serif !important; list-style:none; margin:5px 0 0 0; padding:0; }
+#rtrnReason_list li { font-family:Arial, Helvetica, sans-serif !important; display:block; height:7px; }
+#rtrnReason_comment { font-family:Arial, Helvetica, sans-serif !important; font-size:0.7em; position:relative; float:left; width:250px; }
+
+/* Step 3 a/b - Blue box instructions */
+.blue_instrux {
+	 font-family:Arial, Helvetica, sans-serif; 
+	 font-size:11pt; color:#000; width:580px; position:relative; float:left; padding:8px 0 5px 10px;border:1px solid black;  
+	 /*background:#F5FBFD;*/ }
+.blue_instrux ol { margin:0; padding:3px 0 0 23px; }
+.blue_instrux li { list-style-type:decimal; clear:both; padding-bottom:5px; }
+#findShipLink { text-decoration:none !important; }
+
+/* Step 3 a/b - CUT ALONG THE DOTTED LINE */
+.cutHere { position:relative; float:left; margin:10px 0 10px 3px; }
+
+/* Step 3a - Packing Slip styles */
+.packingSlip-wrap { position:relative; float:left; padding:15px; width:560px; background:#FFF; }
+.packingSlip { font-family:Arial, Helvetica, sans-serif; font-size:0.7em; color:#000; position:relative; float:left; border:0; width:; }
+.packingSlip h1 { font-family:Arial, Helvetica, sans-serif; font-size:2.1em; }
+.packingSlip h2 { color:#000 !important; width:530px !important; padding:15px 0 0 0 !important; margin:0 !important; font-size:1.3em; font-weight:bold; }
+.barcodeTable { width:100%; font-weight:bold; color:#000; height:100px; }
+.barcode { padding-left:30px; }
+.barcode img { position:relative; float:left; }
+.step3_itmListTable { 
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1.0em;
+	color:#000;
+	border:1px solid #999; 
+	border-width:1px 0 0 1px; 
+	width:550px;
+	z-index:300; }
+.step3_itmListTable td.liteBlueBar { 
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: inherit;
+	background-color:#F7F7F7;
+	padding:6px 0 6px 10px; 
+	border:1px solid #999; 
+	border-width:0 1px 1px 0; }
+.step3_itmListTable td.medBlueBar {
+	font-family: Arial, Helvetica, sans-serif;
+	background-color:#E9E9E9;
+	padding:2px 0 2px 6px; 
+	border:1px solid #999; 
+	border-width:0 1px 1px 0; }
+.step3_itmListTable td.medBlueBar input { float:left; }
+.step3_itmListTable td.medBlueBar p { font-family: Arial, Helvetica, sans-serif; float:left; margin:3px 0 0 0; padding-left:5px; }
+.step3_itmListTable .itmTableGrey { background:#F7F7F7 !important; }
+
+/* Step 3b - Return Label styles */
+.labelTable { position:relative; float:left; width:100%; text-align:left; }
+
+/* Step 3 Confirmation page */
+.confirmDiv { padding:10px 0 20px 0; position:relative; float:left; }
+.mailConfirm_shoeTblWrap { font-size:0.7em; position:relative; float:left; width:580px; }
+
+
+/* CONFIRMATION List */ 
+ul#arrowList {
+	margin:0;
+	padding-left:16px;
+	list-style-image: url(../../bdimages/account_images/bullet_arrow_blue.gif);
+}
+ul#arrowList li { height:1.7em; }
+
+/* Step 3 a/b - Do not Print */
+.DIV_NoPrint{display:none;}
+
+/* Black&White SDC Logo */ 
+.BWlogo { 
+	width:290px; 
+	height:70px; 
+	margin-bottom:10px;
+	position:relative;
+	float:left;
+	display:block; }
+
+/* rIBB Grey */
+.rIBBgrey { font-family:Arial, Helvetica, sans-serif !important; font-size:1.0em; color:#000; position:relative; height:40px; z-index:1; margin-bottom:15px; float:left; border: 1px solid #BBB; border-width: 0 1px 1px 0; }
+.rIBBgrey div { font-family:Arial, Helvetica, sans-serif !important; font-size:inherit; height:100%; border: 1px solid #BBB; border-width: 1px 0 1px 1px; float:left; padding: 5px 9px 1px 9px; }
+.rIBBgrey h4 { font-family:Arial, Helvetica, sans-serif !important; font-size:1.0em; margin:0 0 3px 0; }
+.rIBBgrey td { padding:5px 7px 5px 7px; border: 1px solid #BBB; border-width: 1px 0 0 1px;  }
+.rIBBgrey #rIBB_OrderNum { text-align:left; font-size:1.1em; padding-left:15px; color:#000; }
+.rIBBgrey .rIBB_ItemNum { vertical-align:top; text-align:center; }
+.rIBBgrey .rIBB_Brand { padding:5px 2px 1px 9px !important; }
+.rIBBgrey .rIBB_ItemName { /*border-left:0px !important;*/ width:110px; line-height:1.2em; }
+.rIBBgrey .rIBB_ItemName h4 { font-family:Arial, Helvetica, sans-serif; margin:0; font-size:1.0em; }
+.rIBBgrey .rIBB_Price { text-align:center; width:60px; }
+.rIBBgrey .rIBB_Quantity { text-align:center; }
+.rIBBgrey .rIBB_Reason { text-align:center;  }
+.rIBBgrey .rIBB_ColorSize { width:60px; line-height:1.2em;  }
+.rIBBgrey .rIBB_ColorSize h4 { font-family:Arial, Helvetica, sans-serif; margin:0; font-size:1.0em;   }
+.rIBBgrey #rIBB_totalRow td { color:#000; font-weight:bold; }
+
+.right { text-align:right; }
+.left { text-align:left; }
+.center { text-align:center; }
+
+
+.Page3Logos { display:none; }
+.NoPrint { display:none;}
+
+
+
+.Reprint_OurAddress { font-size: 9pt }
+.Reprint_PageBreak { page-break-before:always; }
+.Reprint_Instructions_UPS { height:540px; font-family:Arial, Helvetica, sans-serif; }
+.Reprint_Instructions_USPS { height:550px; font-family:Arial, Helvetica, sans-serif; }
+.Reprint_Address{ padding: 0 0 0 100px; page-break-after:always; font-size: 10pt }
+.Reprint_PageBreakBefore { page-break-before: always; }
+
+.PrTxt { display: inline; }
+
+/* EXCHANGE Item box on Confirmation Page  --- Added 4/28/06 - ms */
+.exchItmBlueBox { font-family:Arial, Helvetica, sans-serif !important; font-size:0.7em; color:#000; position:relative; width:590px; height:40px; z-index:1; margin-bottom:10px; float:left; border: 1px solid #999; border-width: 0 1px 1px 0; }
+.exchItmBlueBox h4 { font-family:Arial, Helvetica, sans-serif !important; font-size:1.0em; margin:0 0 3px 0; }
+.exchItmBlueBox td { padding:5px 7px 5px 7px; border: 1px solid #999; border-width: 1px 0 0 1px; }
+.eIBB_SizeWidth { text-align:center; background-color:#fff; width:70px; }
+.eIBB_Quantity { text-align:center; background-color:#fff; width:65px; }
+
+.trackingNum .rtrnStaticTxt { float:left; display:inline; }
+
+.headerContainer{display:none;}
+.footerTopMargin{display:none;}
+
+.onlyprint{display:inline;
+}
+
+#FormLetter
+{
+	display:none;
+}
+
+/* @end */

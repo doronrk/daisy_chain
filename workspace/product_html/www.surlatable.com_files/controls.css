@@ -1,0 +1,457 @@
+/*
+	Name:		HTML Control Styles
+	File:		control.css
+	Purpose:	Provide a standard look to html controls, like input text, text areas,
+				radio buttons, and drop down lists.
+	
+	structures:	<input class="text" type="text" />
+
+				<textarea class="text" />
+
+				<input class="password" type="password" />
+
+				<select class="dropdown">
+					<option>Blue</option>
+					<option>Red</option>
+					<option>Green</option>
+				</select>	
+
+*/
+input, textarea, select
+{
+	font-family: Verdana, Arial, Tahoma, Helvetica, Sans-Serif;
+	color: #444444 /* charcoal */;
+}
+input.text, input.password, textarea.textarea
+{
+	border: solid 1px #ABABAB /* lite gray */;
+	margin-right: 6px;
+}
+
+input.radio, input.checkbox
+{
+	border: none;
+	margin-right: 6px;
+}
+
+select.dropdown, select.select
+{
+	border: solid 1px #ABABAB /* lite gray */;
+	margin-right: 6px;
+	color: #444444 /* charcoal */;
+}
+/* ****************************************************
+		Watermarking
+		- Works with jqwatermark.js
+   **************************************************** */
+input.inactive
+{
+	color: #AAAAAA /* pale gray or border gray */;
+}
+
+/* ****************************************************
+		Buttons - Regular
+   **************************************************** */
+/*
+		Example HTML
+		<a class="button" href="#"><span>Xxxxxx</span></a>
+		or
+		<a class="button reverse" href="#"><span>Xxxxxx</span></a>
+		or
+		<a class="buttonalt" href="#"><span>Xxxxxx</span></a>
+		or
+		<a class="buttonsmall" href="#"><span>Xxxxxx</span></a>
+*/
+a.mycollections
+{
+	color: #5C2946 /* eggplant */;
+	float: left;
+	display: block;
+	background: url(images/orange_button_left.gif) no-repeat left top;
+	margin: 100;
+	padding-left: 4px;
+	text-decoration: none;
+	border: none;
+
+}
+a.mycollections span
+{
+	color: #5C2946 /* eggplant */;
+	float: left;
+	display: block;
+	height: 23px;
+	font-size: 11px;
+	font-weight: bold;
+	line-height: 23px;
+	padding-left: 6px;
+	padding-right: 28px;
+	background: url(images/orange_button_right.gif) no-repeat right top;
+}
+a.mycollections:hover
+{
+	border: none;
+	text-decoration: underline;
+}
+a.mycollections:hover span
+{
+	text-decoration: underline;
+}
+a.button
+{
+	float: left;
+	display: block;
+	background: url(images/orange_button_left.gif) no-repeat left top;
+	margin: 0;
+	padding-left: 4px;
+	text-decoration: none;
+	border: none;
+
+}
+a.button span
+{
+	float: left;
+	display: block;
+	height: 23px;
+	font-size: 11px;
+	font-weight: bold;
+	line-height: 23px;
+	padding-left: 6px;
+	padding-right: 28px;
+	background: url(images/orange_button_right.gif) no-repeat right top;
+}
+a.button.reverse span
+{
+	background: url(images/o_action_button_right.gif) no-repeat right top;
+}
+a.button.reverse
+{
+	color: White;
+	background: url(images/o_action_button_left.gif) no-repeat left top;
+}
+a.button:hover
+{
+	border: none;
+	text-decoration: underline;
+}
+a.button:hover span
+{
+	text-decoration: underline;
+}
+a.button.giftreg
+{
+	color: White;
+	background: url(images/small_bttn_green_left.gif) no-repeat left top;
+}
+a.button.giftreg span
+{
+	background: url(images/small_bttn_green_right.gif) no-repeat right top;
+	white-space: nowrap;
+}
+/* ****************************************************
+		Button - Small (primary)
+   **************************************************** */
+a.buttonsmall
+{
+	float: left;
+	display: inline;
+	font: bold 11px Verdana, Arial, Tahoma, Helvetica, Sans-Serif;
+	color: #444444;
+	margin: 0;
+	padding: 0 0 0 4px;
+	border: none;
+	background: url(images/small_orange_btn_left.gif) no-repeat left top;
+}
+a.buttonsmall.reverse
+{
+	color: White;
+	background: url(images/small_gold_btn_left.jpg) no-repeat left top;
+}
+a.buttonsmall.alt,
+a.buttonsmall.silver
+
+{
+	background: url(images/small_silver_btn_left.jpg) no-repeat left top;
+}
+a.buttonsmall.reversealt,
+a.buttonsmall.silver.reverse
+{
+	color: White;
+	background: url(images/small_silver_btn_left.jpg) no-repeat left top;
+}
+a.buttonsmall span
+{
+	float: left;
+	padding: 0 20px 0 2px;
+	height: 19px;
+	line-height: 19px;
+	background: url(images/small_orange_btn_right.gif) no-repeat right top;
+	text-decoration: none;
+}
+a.buttonsmall.alt span,
+a.buttonsmall.silver span
+{
+	background: url(images/small_silver_btn_right_k.jpg) no-repeat right top;
+}
+a.buttonsmall.reverse span
+{
+	background: url(images/small_gold_btn_right_w.jpg) no-repeat right top;
+}
+a.buttonsmall.silver.reverse span,
+a.buttonsmall.reversealt span
+{
+	background: url(images/small_silver_btn_right_w.jpg) no-repeat right top;
+}
+a.buttonsmall:hover
+{
+	border: none;
+	text-decoration: underline;
+}
+a.buttonsmall:hover span
+{
+	text-decoration: underline;
+}
+/* ****************************************************
+		Button Alt - Regular (secondary)
+   **************************************************** */
+a.buttonalt
+{
+	float: left;
+	display: inline;
+	color: white;
+	background: url(images/grey_button_left.gif) no-repeat left top;
+	margin: 0;
+	padding: 0 0 0 4px;
+	text-decoration: none;
+	border: none;
+	line-height: 23px;
+	font-size: 11px;
+	font-weight: bold;
+}
+a.buttonalt.reverse
+{
+	color: #444444 /* charcole */;
+}
+a.buttonalt span
+{
+	float: left;
+	background: url(images/grey_button_right.gif) no-repeat right top;
+	padding: 0 28px 0 6px;
+}
+a.buttonalt:hover
+{
+	border: none;
+	text-decoration: underline;
+}
+a.buttonalt:hover span
+{
+	text-decoration: underline;
+}
+/* ****************************************************
+		Buttons - Large 33 pixels high
+   **************************************************** */
+/*
+		Example HTML
+		<a class="buttonlarge giftreg" href="#"><span>Xxxxxx</span></a>
+*/
+a.buttonlarge
+{
+	float: left;
+	display: inline;
+	font: bold 17px Verdana, Arial, Tahoma, Helvetica, Sans-Serif;
+	color: white;
+	margin: 0 24px 0 0;
+	padding-left: 8px;
+	border: none;
+	background: url(images/large_bttn_green_left.gif) no-repeat left top;
+}
+a.buttonlarge.giftreg
+{
+	color: White;
+}
+a.buttonlarge span
+{
+	float: left;
+	padding: 0 42px 0 12px;
+	height: 33px;
+	line-height: 32px;
+	background: url(images/large_bttn_green_right.gif) no-repeat right top;
+	text-decoration: none;
+}
+a.buttonlarge:hover
+{
+	border: none;
+	text-decoration: underline;
+}
+a.buttonlarge:hover span
+{
+	text-decoration: underline;
+}
+/* ****************************************************
+		Button Quick View
+   **************************************************** */
+a.buttonqv
+{
+	display: block;
+	font: bold 11px verdana, arial, tahoma, sans-serif;
+	line-height: 26px;
+	height: 26px;
+	color: #444444 /* charcoal */;
+	background: url(images/quick_view_btn.gif) no-repeat top left;
+	text-decoration: none;
+	border: none;
+	width: 90px;
+	padding-left: 10px;
+}
+a.buttonqv span
+{
+	display: block;
+}
+a.buttonqv:hover
+{
+	border: none;
+	text-decoration: underline;
+}
+.prompt
+{
+	clear: both;
+	display: block;
+	font-size: .90em;
+	color: #999999 /* pale gray */;
+}
+/* ****************************************************
+		Button Boxes
+   **************************************************** */
+.buttonBar
+{
+    position: relative;
+    margin-bottom: 6px;
+}
+.buttonBar.last
+{
+    margin-bottom: 16px;
+}
+.buttonBar.right
+{
+    float: right;
+    clear: right;
+}
+.buttonBar.two
+{
+    width: 211px;
+}
+.buttonBar.three
+{
+	width: 320px;
+}
+a.buttonBox
+{
+    float: left;
+    display: block;
+    width: 102px;
+    height: 142px;
+    padding: 8px 0 0 0;
+    margin: 0;
+    background: url(/images/homepage/HP_new_button_top.gif) no-repeat top left;
+    text-decoration: none;
+    border: none;
+}
+.buttonBar a.buttonBox
+{
+    margin: 0 7px 0 0;
+}
+.buttonBar a.buttonBox.last
+{
+    margin: 0;
+}
+a.buttonBox>span
+{
+    font-size: 11px;
+    line-height: 12px;
+    text-transform: uppercase;
+    text-align: center;
+    float: left;
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: 102px;
+    height: 142px;
+    background: url(/images/homepage/HP_new_button_btm.gif) no-repeat bottom right;
+}
+a.buttonBox.reverse span
+{
+    color: #ffffff;
+}
+a.buttonBox span img
+{
+    width: 84px;
+    height: 100px;
+    margin-bottom: 8px;
+    border: solid 1px #aaaaaa;
+    display: block;
+}
+a.buttonBox .imagery
+{
+    display: block;
+    margin-bottom: 8px;
+}
+a.buttonBox .imagery img,
+a.buttonBox span span img
+
+{
+	display: inline;
+	margin-bottom: 0px;
+}
+a.buttonBox span.first
+{
+    background: none;
+    padding: 0px;
+    height: auto;
+}
+a.buttonBox span.second
+{
+    background: none;
+    padding: 0px;
+    height: auto;
+}
+a.buttonBox span.first.arrow,
+a.buttonBox span.second.arrow
+{
+    margin-left: 12px;
+    width: 90px;
+}
+a.buttonBox span.second:before
+{
+    content: <br/>;
+}
+a.buttonBox span.arrow:after
+{
+    content: "\a0\bb";
+    text-decoration: none;
+}
+a.buttonBox:hover
+{
+    border: none;
+    text-decoration: underline;
+}
+a.buttonBox:hover span.arrow
+{
+    text-decoration: none;
+}
+a.buttonBox:hover span.first, 
+a.buttonBox:hover span.second,
+a.buttonBox:hover span.first.arrow, 
+a.buttonBox:hover span.second.arrow
+{
+    text-decoration: underline;
+}
+a.buttonBox.imageonly:hover,
+a.buttonBox.imageonly:hover span,
+a.buttonBox.imageonly:hover span.first, 
+a.buttonBox.imageonly:hover span.second,
+a.buttonBox:hover span.arrow:after,
+a.buttonBox:hover span.first.arrow:after,
+a.buttonBox:hover span.second.arrow:after
+{
+    text-decoration: none;
+}
+

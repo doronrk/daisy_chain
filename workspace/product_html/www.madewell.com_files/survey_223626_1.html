@@ -1,0 +1,970 @@
+<!-- //
+
+var BIZRATE = {};
+(function () {
+    var bizrate, Base64;
+    var cdnPath = (("https:" == document.location.protocol) ? 'https://images.bizrate.com/s2static/us/eval/9ed15b8d' : 'http://images.bizrate.com/s2static/us/eval/9ed15b8d');
+	var logoPath= (("https:" == document.location.protocol) ? '' : '');
+
+    bizrate = {
+
+        config: {
+            modalWidth: 28,
+            modalHeight: 22,
+            popupWidth: 22,
+            popupHeight: 20
+        },
+
+        params: {
+            modalX: null,
+            modalY: null,
+            modalZIndex: 1000000,
+            br_frequency: null,
+            br_size: null,
+            br_pos_y: null,
+            br_pos_x: null,
+            br_data: null
+        },
+
+        tplVars: {
+        	mid: 223626,
+        	type: 1,
+            altImageText: 'Tell Us What You Think!',
+            surveyUrl: 'https://survey.bizrate.com/SE/?SID=SV_6hbNpmKpgsax3j7&br=14175859362332577601102020302004845&sessionId=620232024390165136&rid=1417586259310203597&mid=223626&merchantName=Madewell&flow=104&rf_code=sur&browserAndVersion=unknown&browserType=unknown&osAndVersion=unknown&q217p=null&C1p=2&ff_flow=10',
+            touchpointURL:'https://eval.bizrate.com/inviteLog?id=223626&product_id=7&flow=104&respondentId=1417586259310203597',
+            inviteImageUrl: 'https://images.bizrate.com/eval/survey/invite_template/non-buyer/223626.jpg',
+            merchantLogoUrl: ((logoPath === '') ? '' : (logoPath + 223626 +'.gif')),
+            buttonImageUrl:'',
+            transparentImageUrl: cdnPath + '/images/transparent.gif',
+            inviteWidth: '400',
+            inviteHeight: '245',
+            closeWindowText: '[Close]',
+            inviteImageUrlNoLogo: '',
+            addBizrateLogoLinkFlag: 0,
+        },
+
+		escapeString:function (mString) {
+			return mString.replace(/'/g, "&#39;").replace(/"/g, "&quot;");
+		},
+
+        loadScript: function (url, callback) {
+            var sc;
+            sc = document.createElement('script');
+            sc.type = 'text/javascript';
+            if (callback !== undefined) {
+                if (sc.readyState) {
+                    sc.onreadystatechange = function() {
+                        if (sc.readyState == 'loaded' ||
+                              sc.readyState == 'complete') {
+                            sc.onreadystatechange = null;
+                            callback();
+                        }
+                    };
+                }
+                else {
+                    sc.onload = function() {
+                        callback();
+                    };
+                }
+            }
+            sc.src = url;
+            document.getElementsByTagName("head")[0].appendChild(sc);
+            return true;
+        },
+
+        setParams: function () {
+	    	var safeMerchantName = this.escapeString("Madewell");
+            if (window.br_pos_x !== undefined &&
+                    window.br_pos_y !== undefined) {
+                bizrate.params.br_pos_x = window.parseInt(window.br_pos_x, 10);
+                bizrate.params.br_pos_y = window.parseInt(window.br_pos_y, 10);
+            }
+
+            if (window.br_data !== undefined && window.br_data !== null) {
+                bizrate.params.br_data = window.br_data;
+            }
+
+            if (window.br_size !== undefined && window.br_size !== null) {
+                bizrate.params.br_size = window.br_size;
+            }
+
+            if (window.br_frequency !== undefined && window.br_frequency !== null) {
+                bizrate.params.br_frequency = window.br_frequency;
+            }
+
+            if (window.br_percentage !== undefined && window.br_percentage !== null) {
+                bizrate.params.br_percentage = window.br_percentage;
+            }
+
+            if (typeof(bizrate.tplVars.type) != 'undefined' && bizrate.tplVars.type > 0 && bizrate.tplVars.type <= 3) {
+                this.inviteTypes = new Array('none', 'visitor', 'cart', 'pos');
+            } else {
+                return false;
+            }
+            this.type = bizrate.tplVars.type;
+
+            this.dhtml = 1;
+            this.frequency = (typeof(bizrate.params.br_frequency) != 'undefined' && bizrate.params.br_frequency != null && !isNaN(bizrate.params.br_frequency)) ? bizrate.params.br_frequency : 30;
+            this.percentage = (typeof(bizrate.params.br_percentage) != 'undefined' && bizrate.params.br_percentage != null && !isNaN(bizrate.params.br_percentage) && (bizrate.params.br_percentage <= 100) && (bizrate.params.br_percentage >= 0)) ? bizrate.params.br_percentage : 100;
+            this.random = Math.round(Math.random() * 99);
+
+            this.invited = new Array();
+            this.invited['visitor'] = this.getCookie('invited_visitor');
+            this.invited['cart'] = this.getCookie('invited_cart');
+
+            this.blocked = new Array();
+            this.blocked['visitor'] = this.getCookie('blocked_visitor');
+            this.blocked['cart'] = this.getCookie('blocked_cart');
+
+            if (typeof(br_domain) != 'undefined') {
+                this.domain = br_domain;
+            } else {
+                this.domain = '.' + document.location.hostname.replace(/^www\./,'');
+            }
+
+            this.bizrateDomain = 'bizrate.com';
+            this.URLParameters = '';
+            this.imageParameters = '';
+
+            if (typeof(bizrate.params.br_data) != 'undefined') {
+            	for (var key in bizrate.params.br_data) {
+                    	if(key.indexOf('Q')==0){
+                     		this.URLParameters += '&' + key + '=' + escape(String(bizrate.params.br_data[key]).replace(/\x26/g,"%26").replace(/\x23/g,"%23").replace(/\x2B/g,"%2B"));
+                    	}
+            	}
+            }
+            if (typeof(br_title) != 'undefined') {
+                this.pageTitle = br_title;
+            } else {
+                this.pageTitle = 'Tell Us What You Think!';
+            }
+
+            this.width = bizrate.tplVars.inviteWidth;
+            this.height = bizrate.tplVars.inviteHeight;
+            this.closeY = bizrate.tplVars.inviteHeight*0.86;
+
+            this.surveyURL = bizrate.tplVars.surveyUrl;
+
+            if (typeof(bizrate.params.br_pos_x) != 'undefined' && bizrate.params.br_pos_x != null && !isNaN(bizrate.params.br_pos_x)) {
+                this.posX = bizrate.params.br_pos_x;
+                this.winX = bizrate.params.br_pos_x;
+            } else {
+                // default to 50, 50
+                this.posX = 50;
+                this.winX = 50;
+            }
+            if (typeof(bizrate.params.br_pos_y) != 'undefined' && bizrate.params.br_pos_y != null && !isNaN(bizrate.params.br_pos_y)) {
+                this.posY = bizrate.params.br_pos_y;
+                this.winY = bizrate.params.br_pos_y;
+            } else {
+                // default to 50, 50
+                this.posY = 50;
+                this.winY = 50;
+            }
+            if (bizrate.tplVars.type == 2) {
+                this.URLParameters += '&sc=1';
+            }
+
+            this.winW = (15+this.width);
+            this.winH = (15+this.height);
+            this.windowParameters = 'width=' + this.winW + ',height=' + this.winH + ',top=' + this.winY + ',left=' + this.winX + ',screenY=' + this.winY + ',screenX=' + this.winX + ',directories=0,status=0,toolbar=0,location=0,menubar=0,resizable=0,scrollbars=0';
+
+            return true;
+        },
+        getWidth:function() {
+            return (self.innerWidth != null)? self.innerWidth : (document.documentElement && document.documentElement.clientWidth)? document.documentElement.clientWidth : (document.body != null)? document.body.clientWidth : 640;
+        },
+        getHeight:function() {
+            return (self.innerHeight != null)? self.innerHeight : (document.documentElement && document.documentElement.clientHeight)? document.documentElement.clientHeight : (document.body != null)? document.body.clientHeight : 480;
+        },
+        getLeft:function() {
+            return (document.all)? window.screenLeft : window.screenX;
+        },
+        getTop:function() {
+            return (document.all)? window.screenTop : window.screenY;
+        },
+        getCookie:function(name) {
+            var name_mid = name + "_" + bizrate.tplVars.mid + "=";
+            var cookies = document.cookie;
+            if (cookies.length > 0) {
+                var start = cookies.indexOf(name_mid);
+                if (start != -1) {
+                    start += name_mid.length;
+                    end = cookies.indexOf(";", start);
+                    if (end == -1){ end = cookies.length; }
+                    return unescape(cookies.substring(start, end));
+                }
+            }
+        },
+        setCookie:function(name, value, expires) {
+            var name_mid = name + "_" + bizrate.tplVars.mid;
+            var expiration = new Date();
+            if (expires) { expires = expires * 1000 * 60 * 60 * 24; } // Expiration in days
+            expiration.setTime(expiration.getTime() + expires);
+            document.cookie = name_mid + "=" + escape(value) + ";path=/;domain=" + this.domain + ';' + ((expires == null) ? "" : ";expires= " + expiration.toGMTString());
+        },
+
+        getPitchType: function() {
+            if (bizrate.tplVars.type == 1) {
+                return 22;
+            } else if (bizrate.tplVars.type == 2) {
+                return 32;
+            }
+            return 21;
+        },
+
+        init: function () {
+
+            bizrate.setParams();
+            var showInvite = false;
+            if (this.random < this.percentage) {
+                // Honor percentage but ignore frequency for POS inline invites
+                if ((bizrate.tplVars.type == 1 && !this.invited['visitor'] && !this.blocked['visitor'] && !this.invited['cart']) ||
+                    (bizrate.tplVars.type == 2 && !this.invited['cart'] && !this.blocked['cart'] && !this.invited['visitor'])) {
+                    showInvite = true;
+                }
+
+                var ready = function (f) {document.body ? f() : setTimeout(function () { ready(f); }, 100);};
+                ready(function () {
+                    if (showInvite) {
+                        bizrate.start();
+                    }
+
+                    return true;
+                });
+            }
+            return true;
+        },
+
+        start: function () {
+            this.displayInviteModal();
+        },
+
+
+        mapHash: function (arr, callback) {
+            var i, out;
+            out = [];
+            for (i in arr) {
+                if (arr.hasOwnProperty(i)) {
+                    out.push(callback(arr[i], i));
+                }
+            }
+            return out;
+        },
+
+        getObjectSize: function (obj) {
+            var size, key;
+            size = 0;
+            for (key in obj) {
+                if (obj.hasOwnProperty(key)) {
+                    size++;
+                }
+            }
+            return size;
+        },
+
+        buildRawParams: function (pString) {
+            var params, i, _i, kv, out;
+            out = {};
+            params = pString.split(/[&\?]+/g);
+            for (i = 0, _i = params.length; i < _i; i++) {
+                if (params[i].length > 0) {
+                    kv = params[i].split('=');
+                    if (kv.length > 1) {
+                        out[kv[0]] = kv[1];
+                    }
+                    else {
+                        out[kv[0]] = '';
+                    }
+                }
+            }
+            return out;
+        },
+
+        extend: function (o) {
+            var a, i, _i, args;
+            if (arguments.length > 1) {
+                args = Array.prototype.slice.call(arguments).slice(1);
+                for (i = 0, _i = args.length; i < _i; i++) {
+                    for (a in args[i]) {
+                        if (args[i].hasOwnProperty(a)) {
+                            o[a] = args[i][a];
+                        }
+                    }
+                }
+            }
+            return o;
+        },
+
+        cssDefs: function () {
+            var o, a, d;
+            a = Array.prototype.slice.call(arguments, 0);
+            a.push(this.cssBoxSize());
+            o = $.extend.apply(true, a);
+            return o;
+        },
+        cssBoxSize: function () {
+            return {
+                boxSizing: 'border-box',
+                MozBoxSizing: 'border-box',
+                MsBoxSizing: 'border-box',
+                WebkitBoxSizing: 'border-box'
+            };
+        },
+
+        cssBoxShadow: function (val) {
+            return {
+                boxShadow: val,
+                MozBoxShadow: val,
+                WebkitBoxShadow: val,
+                MsBoxShadow: val
+            };
+        },
+
+        buildURLParams: function (url, params, pString) {
+            if (bizrate.getObjectSize(params) > 0) {
+                url += (url.indexOf('?') === -1) ? '?' : '&';
+                url += bizrate.mapHash(params, function (value, key) {
+                    return [key, value].join('=');
+                }).join('&');
+            }
+            return url;
+        },
+
+        extendedURLParams: function (extras) {
+            var o, s;
+            o = {};
+            if (extras !== undefined) {
+                bizrate.extend(o, extras);
+            }
+            return o;
+        },
+
+        coordsCenterException: function () {
+            return (bizrate.params.modalX === 500 &&
+                    bizrate.params.modalY === 500);
+        },
+
+        getModalCoords: function (w, h, isPopup) {
+            var o, win;
+            o = {};
+
+            if (bizrate.params.modalX !== null &&
+                    !bizrate.coordsCenterException()) {
+                o.x = bizrate.params.modalX;
+            }
+            else {
+                o.x = (Math.floor(bizrate.f_clientWidth() / 2) - Math.floor(w / 2));
+            }
+            if (bizrate.params.modalY !== null &&
+                    !bizrate.coordsCenterException()) {
+                o.y = bizrate.params.modalY;
+            }
+            else {
+                o.y = (Math.floor(bizrate.f_clientHeight() / 2) - Math.floor(h / 2));
+            }
+            return o;
+        },
+
+        f_clientWidth: function () {
+            return bizrate.f_filterResults (
+                window.innerWidth ? window.innerWidth : 0,
+                document.documentElement ? document.documentElement.clientWidth : 0,
+                document.body ? document.body.clientWidth : 0
+            );
+        },
+
+        f_clientHeight: function() {
+            return bizrate.f_filterResults (
+                window.innerHeight ? window.innerHeight : 0,
+                document.documentElement ? document.documentElement.clientHeight : 0,
+                document.body ? document.body.clientHeight : 0
+            );
+        },
+
+        f_filterResults: function (n_win, n_docel, n_body) {
+	        var n_result = n_win ? n_win : 0;
+	        var n_result2 = n_docel ? n_docel : 0;
+	        if(n_result2 > n_result && n_result <= 0) {
+	            n_result = n_result2;
+	        }
+
+	        n_result2 = n_body ? n_body : 0;
+	        if(n_result2 > n_result && n_result <= 0) {
+	            n_result = n_result2;
+	        }
+
+	        return n_result;
+        },
+
+        logInvite: function (sendPitchType) {
+            var confirmUrl;
+            confirmUrl = bizrate.buildURLParams(bizrate.tplVars.touchpointURL, {
+                pitchType: sendPitchType
+            });
+            bizrate.loadScript(confirmUrl);
+            return true;
+        },
+
+        logInvite: function (sendPitchType, sendTouchpoint) {
+            var confirmUrl;
+            confirmUrl = bizrate.buildURLParams(bizrate.tplVars.touchpointURL, {
+                pitchType: sendPitchType,
+                touchpoint: sendTouchpoint
+            });
+            bizrate.loadScript(confirmUrl);
+            return true;
+        },
+
+        openSurvey:function(sURL) {
+
+            var width = 760;
+            var height = 275;
+            var xPos, yPos;
+            var WinFeature;
+
+            if (typeof(sURL) != "undefined") {
+                yPos = screen.height - height;
+                xPos = screen.width - width;
+                if (yPos < 0) {
+                    yPos = 0;
+                }
+                if (xPos < 0) {
+                    xPos = 0;
+                }
+                WinFeature = 'width='  + width + ',height='  + height + ',top=' + yPos + ',left=' + xPos + ',screenY=' + yPos + ',screenX=' + xPos + ',status=1,toolbar=1,location=1,menubar=1,resizable=0,scrollbars=1';
+                if(sURL.indexOf('deviceType=ANDROID') > -1) {
+                    // do nothing
+                }
+
+                else {
+                    var surveyWindow = window.open(sURL, this.windowName, WinFeature);
+                    surveyWindow.blur();
+                    self.focus();
+                }
+            }
+        },
+
+        displayInviteModal: function () {
+            this.pitchType = bizrate.getPitchType();
+            this.URLParameters += '&pitch_type=' + this.pitchType;
+            var im, d, imur, anc, o, u,
+            posi, imt, coordWidth, coordHeight, imgWidth, imgHeight;
+            o = bizrate.extendedURLParams({
+            });
+            u = this.surveyURL + this.URLParameters;
+
+            coordWidth = parseInt(bizrate.tplVars.inviteWidth) + parseInt(bizrate.config.modalWidth);
+            coordHeight = parseInt(bizrate.tplVars.inviteHeight) + parseInt(bizrate.config.modalHeight);
+            imgWidth = parseInt(bizrate.tplVars.inviteWidth) + 26;
+            imgHeight = parseInt(bizrate.tplVars.inviteHeight) + 20;
+            imgWidthNoPx = imgWidth;
+            imgHeightNoPx = imgHeight;
+            imgWidth += 'px';
+            imgHeight += 'px';
+            //closeCoord = this.height - this.closeY;
+            posi = bizrate.getModalCoords(coordWidth, coordHeight);
+
+            if(document.getElementById('dynamicBzSurveyContents')
+                    && bizrate.tplVars.inviteImageUrlNoLogo != '') {
+                this.inviteImageUrl = bizrate.tplVars.inviteImageUrlNoLogo;
+            } else {
+                this.inviteImageUrl = bizrate.tplVars.inviteImageUrl;
+            }
+
+            d = document.createElement('div');
+            d.setAttribute('id','brDialog');
+            d.style.width = imgWidth;
+            d.style.backgroundColor = '#FFF';
+            d.style.cursor = 'pointer';
+            d.style.position = 'relative';
+            d.style.textAlign = 'left';
+            d.style.whiteSpace = 'normal';
+            d.style.boxSizing = 'border-box';
+            d.style.MozBoxSizing = 'border-box';
+            d.style.MsBoxSizing = 'border-box';
+            d.style.WebkitBoxSizing = 'border-box';
+
+            anc = document.createElement('a');
+            anc.setAttribute('target', '_blank');
+            anc.style.display = 'block';
+            anc.style.width = imgWidth,
+            anc.style.height = imgHeight;
+            anc.style.textDecoration = 'none';
+            anc.style.boxSizing = 'border-box';
+            anc.style.MozBoxSizing = 'border-box';
+            anc.style.MsBoxSizing = 'border-box';
+            anc.style.WebkitBoxSizing = 'border-box';
+
+            imt = document.createElement('img');
+            imt.setAttribute("src", bizrate.tplVars.transparentImageUrl);
+            imt.style.position = 'absolute';
+            imt.style.top = '0px';
+            imt.style.left = '0px';
+            imt.style.cursor = 'pointer';
+            imt.style.border = '0px';
+            imt.style.display = 'block';
+            imt.style.width = imgWidth;
+            imt.style.height = imgHeight;
+            imt.style.boxSizing = 'border-box';
+            imt.style.MozBoxSizing = 'border-box';
+            imt.style.MsBoxSizing = 'border-box';
+            imt.style.WebkitBoxSizing = 'border-box';
+
+            dimg = document.createElement('div');
+            dimg.style.cursor = 'pointer';
+            dimg.style.position = 'absolute';
+            dimg.style.top = '10px';
+            dimg.style.left = '13px';
+            dimg.style.boxSizing = 'border-box';
+            dimg.style.MozBoxSizing = 'border-box';
+            dimg.style.MsBoxSizing = 'border-box';
+            dimg.style.WebkitBoxSizing = 'border-box';
+
+            im = document.createElement('img');
+            im.setAttribute("src", this.inviteImageUrl);
+            im.setAttribute("alt", bizrate.tplVars.altImageText);
+            im.style.boxSizing = 'border-box';
+            im.style.MozBoxSizing = 'border-box';
+            im.style.MsBoxSizing = 'border-box';
+            im.style.WebkitBoxSizing = 'border-box';
+            im.style.cursor = 'pointer';
+            im.style.top = '10px';
+            im.style.left = '13px';
+            im.style.border = '0px none';
+            im.style.display = 'block';
+            im.style.position = 'absolute';
+            im.style.width = bizrate.tplVars.inviteWidth + 'px';
+            im.style.height = bizrate.tplVars.inviteHeight + 'px';
+
+
+            imap = document.createElement('img');
+            imap.setAttribute("usemap", "#br_invite_map");
+            imap.setAttribute("src", bizrate.tplVars.transparentImageUrl);
+            imap.style.position = 'absolute';
+            imap.style.top = '0px';
+            imap.style.left = '0px';
+            imap.style.cursor = 'pointer';
+            imap.style.border = '0px';
+            imap.style.display = 'block';
+            imap.style.width = imgWidth;
+            imap.style.height = imgHeight;
+            imap.style.boxSizing = 'border-box';
+            imap.style.MozBoxSizing = 'border-box';
+            imap.style.MsBoxSizing = 'border-box';
+            imap.style.WebkitBoxSizing = 'border-box';
+
+            inviteMap = document.createElement('map');
+            inviteMap.setAttribute("name", "br_invite_map");
+
+            if (logoPath) {
+                merchantLogo = document.createElement("img");
+                merchantLogo.setAttribute("src", bizrate.tplVars.merchantLogoUrl);
+                bizrate.setStyle(merchantLogo, {});
+                merchantLogo.onerror = function() {
+                    merchantLogo.style.display = "none";
+                };
+            }
+
+            buttonImage = document.createElement("img");
+            buttonImage.setAttribute("src", bizrate.tplVars.buttonImageUrl);
+            bizrate.setStyle(buttonImage, {});
+
+            merchantWords = document.createElement("div");
+            merchantWords.setAttribute("class", "brshrink_fit");
+            merchantWords.setAttribute("id", "brshrink_fit");
+            bizrate.setStyle(merchantWords, {});
+            merchantWords.style.whiteSpace = "nowrap";
+
+            merchantWords2 = document.createElement("div");
+            bizrate.setStyle(merchantWords2, {});
+
+            merchantWords.innerHTML = '';
+            merchantWords2.innerHTML = '';
+
+            anc.appendChild(imt);
+            anc.appendChild(im);
+            dimg.appendChild(merchantWords);
+            dimg.appendChild(merchantWords2);
+            if (logoPath) {
+                dimg.appendChild(merchantLogo);
+            }
+
+            if (bizrate.tplVars.buttonImageUrl) {
+                dimg.append(buttonImage);
+            }
+            anc.appendChild(dimg);
+            anc.appendChild(imap);
+
+            if(u.indexOf('deviceType=ANDROID') > -1) {
+                area1 = document.createElement("area");
+                area1.setAttribute('coords', '0,0,' + '' + imgWidthNoPx + '' + ',' + '' + this.closeY + '');
+                area1.setAttribute('shape', 'rect');
+                area1.setAttribute('href', u);
+                area1.setAttribute('target', '_blank');
+            }
+
+            else {
+                area1 = document.createElement("area");
+                area1.setAttribute('coords', '0,0,' + '' + imgWidthNoPx + '' + ',' + '' + this.closeY + '');
+                area1.setAttribute('shape', 'rect');
+            }
+
+            area2 = document.createElement("area");
+            area2.setAttribute('coords', '0,' + '' + this.closeY + '' + ',' + '' + imgWidthNoPx + '' + ',' + '' + imgHeightNoPx + '');
+            area2.setAttribute('shape', 'rect');
+
+            area1.onclick = function () {
+                bizrate.logInvite(bizrate.getPitchType(), 1500000);
+                bizrate.openSurvey(u);
+                bizrate.destroyDialog(document.getElementById('brdialog-win'));
+                return true;
+            };
+
+            area2.onclick = function () {
+                bizrate.logInvite(bizrate.getPitchType(), 1000200);
+                bizrate.destroyDialog(document.getElementById('brdialog-win'));
+                return true;
+            };
+
+            inviteMap.appendChild(area1);
+            inviteMap.appendChild(area2);
+            anc.appendChild(inviteMap);
+            d.appendChild(anc);
+
+            bizrate.createBrDialog(d, {
+                titleText: bizrate.tplVars.altImageText,
+                closeText: bizrate.tplVars.closeWindowText,
+                inviteImageUrl: this.inviteImageUrl,
+                x: bizrate.posX,
+                y: bizrate.posY,
+                z: bizrate.params.modalZIndex,
+                width: parseInt(bizrate.tplVars.inviteWidth) + parseInt(bizrate.config.modalWidth),
+                pitchType: this.pitchType
+            });
+
+            bizrate.fill_with_text(document.getElementById('brdialog-title'));
+            if(typeof merchantWords != 'undefined') {
+                bizrate.fill_with_text(merchantWords);
+            }
+
+            bizrate.setCookie('invited_' + this.inviteTypes[bizrate.tplVars.type], 1, this.frequency);
+            bizrate.logInvite(this.pitchType, 1000001);
+            return true;
+        },
+
+        setStyle: function ( objId, propertyObject ) {
+            for (var property in propertyObject) {
+                if(property == 'float') {
+                    objId.style['cssFloat'] = propertyObject[property];
+                    objId.style['styleFloat'] = propertyObject[property];
+                    objId.style[property] = propertyObject[property];
+                } else {
+                    objId.style[property] = propertyObject[property];
+                }
+
+            }
+        },
+
+        createBrDialog: function (dialog, options) {
+            var settings = {
+                titleText: '',
+                closeText: '[Close]',
+                inviteImageUrl: 'https://images.bizrate.com/eval/survey/invite_template/non-buyer/223626.jpg',
+                x: 0,
+                y: 0,
+                z: 99999,
+                width: 300,
+                pitchType: 0
+            };
+            if (options) {
+                settings = options;
+            }
+
+            var anchor, brdWin, brdHead, brdTitle, brdBody, brdClose;
+            brdWin = (document.getElementById('dynamicBzSurveyContents')
+                      && bizrate.tplVars.addBizrateLogoLinkFlag === 1
+                      && bizrate.tplVars.inviteImageUrlNoLogo != '')
+                      ? document.getElementById('dynamicBzSurveyContents')
+                      : document.createElement("div");
+            var bObj = document.getElementsByTagName('body').item(0);
+            brdWin.setAttribute("class", "brdialog-win");
+            bizrate.setStyle(brdWin, {zIndex: settings.z.toString(10),width: settings.width.toString(10) + 'px',position: 'absolute',left: settings.x.toString(10) + 'px',top: settings.y.toString(10) + 'px',border: '1px solid #ccc'});
+            brdWin.style.boxSizing = "border-box";
+            brdWin.style.MozBoxSizing = "border-box";
+            brdWin.style.MsBoxSizing = "border-box";
+            brdWin.style.WebkitBoxSizing = "border-box";
+
+            brdHead = document.createElement("div");
+            brdHead.setAttribute("class", "brdialog-head");
+            bizrate.setStyle(brdHead, {backgroundColor: '#000080',height: '26px',cursor: 'default',lineHeight: '26px',color: '#FFF',fontSize: '12px',paddingLeft: '10px',paddingRight: '10px',fontFamily: 'Arial, Helvetica, sans-serif'});
+            brdHead.style.boxSizing = "border-box";
+            brdHead.style.MozBoxSizing = "border-box";
+            brdHead.style.MsBoxSizing = "border-box";
+            brdHead.style.WebkitBoxSizing = "border-box";
+
+            brdHead.onmousedown = function(event) {
+                if (!event) event = window.event;
+                (event.preventDefault) ? event.preventDefault() : event.returnValue = false;
+                bizrate.startMoving(event);
+
+            }
+
+            brdHead.onmouseup = function() {
+                bizrate.stopMoving();
+            }
+
+            brdTitle = document.createElement("div");
+            brdTitle.setAttribute("class", "brdialog-title");
+            brdTitle.setAttribute("id", "brdialog-title");
+            brdTitle.innerHTML = settings.titleText;
+            bizrate.setStyle(brdTitle, {whiteSpace:'nowrap', width: '180px', float: 'left',height: '100%',fontWeight: 'bold',fontFamily: 'Arial, Helvetica, sans-serif',fontSize: '12px',color: '#FFF',lineHeight: '26px',textAlign:'left'});
+            brdTitle.style.boxSizing = "border-box";
+            brdTitle.style.MozBoxSizing = "border-box";
+            brdTitle.style.MsBoxSizing = "border-box";
+            brdTitle.style.WebkitBoxSizing = "border-box";
+
+            brdClose = document.createElement("div");
+            brdClose.setAttribute("class", "brdialog-close");
+            brdClose.innerHTML = settings.closeText;
+            bizrate.setStyle(brdClose, {cursor: 'pointer',float: 'right',height: '100%',fontSize: '9px',color: '#FFF',fontFamily: 'Arial, Helvetica, sans-serif',textDecoration: 'underline',lineHeight: '26px'});
+            brdClose.style.boxSizing = "border-box";
+            brdClose.style.MozBoxSizing = "border-box";
+            brdClose.style.MsBoxSizing = "border-box";
+            brdClose.style.WebkitBoxSizing = "border-box";
+
+            brdClose.onclick = function () {
+                bizrate.logInvite(settings.pitchType, 1000100);
+                bizrate.destroyDialog(document.getElementById('brdialog-win'));
+                return false;
+            };
+
+            brdBody = document.createElement("div");
+            brdBody.setAttribute("class", "brdialog-body");
+            bizrate.setStyle(brdBody, {backgroundColor: '#FFF',cursor: 'pointer, height:245px'});
+            brdBody.style.boxSizing = "border-box";
+            brdBody.style.MozBoxSizing = "border-box";
+            brdBody.style.MsBoxSizing = "border-box";
+            brdBody.style.WebkitBoxSizing = "border-box";
+
+            brdHead.appendChild(brdClose);
+            brdHead.appendChild(brdTitle);
+            brdBody.appendChild(dialog);
+            brdWin.appendChild(brdHead);
+            brdWin.appendChild(brdBody);
+
+            if (brdWin.getAttribute('id') && bizrate.tplVars.addBizrateLogoLinkFlag === 1) {
+                brdWin.setAttribute("id", "brdialog-win");
+                brdWin.style.display = 'block';
+            } else if (bizrate.tplVars.addBizrateLogoLinkFlag === 1) {
+                brdWin.setAttribute("id", "brdialog-win");
+                anchor = document.createElement('a');
+                anchor.style.color = '#fff';
+                anchor.style.height = '23px';
+                anchor.style.width = '111px';
+                anchor.style.display = 'block';
+                anchor.style.right = '10px';
+                anchor.style.top = '35px';
+                anchor.style.position = 'absolute';
+                anchor.style.zIndex = '1000000';
+                anchor.style.textIndent = '-9999px';
+                anchor.setAttribute('href','//www.bizrate.com/?rf=sur');
+                anchor.setAttribute('target','_blank');
+                anchor.setAttribute('id','clickOut');
+                anchor.innerHTML = 'Bizrate';
+
+                brdWin.appendChild(anchor);
+                bObj.appendChild(brdWin);
+            }  else {
+                brdWin.setAttribute("id", "brdialog-win");
+                bObj.appendChild(brdWin);
+            }
+
+            return true;
+        },
+
+        destroyDialog: function (dialog) {
+            dialog.parentNode.removeChild(dialog);
+            return true;
+        },
+
+        startMoving: function(evt){
+           evt = evt || window.event;
+           var posX = evt.clientX;
+           posY = evt.clientY;
+
+           var a = document.getElementById('brdialog-win');
+
+           divTop = a.style.top;
+           divLeft = a.style.left;
+           divTop = divTop.replace('px','');
+           divLeft = divLeft.replace('px','');
+           var diffX = posX - divLeft;
+           diffY = posY - divTop;
+           document.onmousemove = function(evt){
+               evt = evt || window.event;
+               var posX = evt.clientX;
+               posY = evt.clientY;
+               aX = posX - diffX;
+               aY = posY - diffY;
+               if (aY > 0 && aX > 0 && aX < 1200 && aY < 900) {
+                   bizrate.move(aX,aY);
+               } else {
+                   bizrate.stopMoving();
+               }
+           }
+
+       },
+
+        stopMoving: function(){
+            document.onmousemove = function(){};
+        },
+
+        move: function(xpos,ypos){
+
+           var a = document.getElementById('brdialog-win');
+           a.style.left = xpos + 'px';
+           a.style.top = ypos + 'px';
+
+       },
+
+       fill_with_text: function (container) {
+            var fontSize = parseFloat(container.style.fontSize);
+            container.style.overflow = "auto";
+            var changes = 0;
+            var blnSuccess = true;
+
+            while (container.scrollWidth > container.clientWidth) {
+                fontSize--;
+                container.style.fontSize = fontSize + "px";
+                changes++;
+                if (changes > 500) {
+                    //failsafe..
+                    blnSuccess = false;
+                    break;
+                }
+            }
+            container.style.overflow = "visible";
+       }
+
+    };
+
+
+
+    /**
+    *
+    *  Base64 encode / decode
+    *  http://www.webtoolkit.info/
+    *
+    **/
+    var Base64 = {
+        // private property
+        _keyStr :
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
+        // public method for encoding
+        encode : function (input) {
+            var output = "";
+            var chr1, chr2, chr3, enc1, enc2, enc3, enc4;
+            var i = 0;
+            input = Base64._utf8_encode(input);
+            while (i < input.length) {
+                chr1 = input.charCodeAt(i++);
+                chr2 = input.charCodeAt(i++);
+                chr3 = input.charCodeAt(i++);
+                enc1 = chr1 >> 2;
+                enc2 = ((chr1 & 3) << 4) | (chr2 >> 4);
+                enc3 = ((chr2 & 15) << 2) | (chr3 >> 6);
+                enc4 = chr3 & 63;
+                if (isNaN(chr2)) {
+                    enc3 = enc4 = 64;
+                } else if (isNaN(chr3)) {
+                    enc4 = 64;
+                }
+                output = output +
+                this._keyStr.charAt(enc1) + this._keyStr.charAt(enc2) +
+                this._keyStr.charAt(enc3) + this._keyStr.charAt(enc4);
+            }
+            return output;
+        },
+
+        // public method for decoding
+        decode : function (input) {
+            var output = "";
+            var chr1, chr2, chr3;
+            var enc1, enc2, enc3, enc4;
+            var i = 0;
+            input = input.replace(/[^A-Za-z0-9\+\/\=]/g, "");
+            while (i < input.length) {
+                enc1 = this._keyStr.indexOf(input.charAt(i++));
+                enc2 = this._keyStr.indexOf(input.charAt(i++));
+                enc3 = this._keyStr.indexOf(input.charAt(i++));
+                enc4 = this._keyStr.indexOf(input.charAt(i++));
+                chr1 = (enc1 << 2) | (enc2 >> 4);
+                chr2 = ((enc2 & 15) << 4) | (enc3 >> 2);
+                chr3 = ((enc3 & 3) << 6) | enc4;
+                output = output + String.fromCharCode(chr1);
+                if (enc3 != 64) {
+                    output = output + String.fromCharCode(chr2);
+                }
+                if (enc4 != 64) {
+                    output = output + String.fromCharCode(chr3);
+                }
+            }
+            output = Base64._utf8_decode(output);
+            return output;
+        },
+
+        // private method for UTF-8 encoding
+        _utf8_encode : function (string) {
+            string = string.replace(/\r\n/g,"\n");
+            var utftext = "";
+            for (var n = 0; n < string.length; n++) {
+                var c = string.charCodeAt(n);
+                if (c < 128) {
+                    utftext += String.fromCharCode(c);
+                }
+                else if((c > 127) && (c < 2048)) {
+                    utftext += String.fromCharCode((c >> 6) | 192);
+                    utftext += String.fromCharCode((c & 63) | 128);
+                }
+                else {
+                    utftext += String.fromCharCode((c >> 12) | 224);
+                    utftext += String.fromCharCode(((c >> 6) & 63) | 128);
+                    utftext += String.fromCharCode((c & 63) | 128);
+                }
+            }
+            return utftext;
+        },
+
+        // private method for UTF-8 decoding
+        _utf8_decode : function (utftext) {
+            var string = "";
+            var i = 0;
+            var c = c1 = c2 = 0;
+            while ( i < utftext.length ) {
+                c = utftext.charCodeAt(i);
+                if (c < 128) {
+                    string += String.fromCharCode(c);
+                    i++;
+                }
+                else if((c > 191) && (c < 224)) {
+                    c2 = utftext.charCodeAt(i+1);
+                    string += String.fromCharCode(((c & 31) << 6) | (c2 & 63));
+                    i += 2;
+                }
+                else {
+                    c2 = utftext.charCodeAt(i+1);
+                    c3 = utftext.charCodeAt(i+2);
+                    string += String.fromCharCode(
+                        ((c & 15) << 12) | ((c2 & 63) << 6) | (c3 & 63));
+                    i += 3;
+                }
+            }
+            return string;
+        }
+    };
+
+    bizrate.init();
+    return true;
+})();
+//-->

@@ -1,0 +1,27 @@
+
+var zoneHtmls={
+
+};
+
+mybuys.setCookie('mbcc','B0659B1D-3F5F-5E44-0E17-211754186D62','1440000','/');
+mybuys.processResponseHTML(zoneHtmls);
+if(typeof mybuys.appendIFrame=="undefined") {
+	mybuys.appendIFrame = function(mburl)
+	{	var mbframe=document.getElementById("mbframe");
+		if (mbframe)
+		{	mbframe.setAttribute("src",mburl);
+		}
+		else
+		{	var mbframe=document.createElement("iframe")
+			mbframe.setAttribute("id","mbframe");
+			mbframe.style.display="none";
+			mbframe.setAttribute("height","0");
+			mbframe.setAttribute("width","0");
+			mbframe.setAttribute("src",mburl);
+			if (this.mybuysContainer) this.mybuysContainer.appendChild(mbframe);
+		}
+	}
+}
+if(mybuys.mybuysContainer) {
+    mybuys.appendIFrame("http://ads.p.veruta.com/adserver/track?merchantid=4449866098&category=&cmid=B0659B1D-3F5F-5E44-0E17-211754186D62&did=2ddff800.11d1.1c3875.af27.af727ff1f3b1&itemid=20802084817&eventid=0&ifmode=1&pvts=1417587061093");
+}

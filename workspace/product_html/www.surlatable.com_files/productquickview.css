@@ -1,0 +1,347 @@
+/*
+	name:		Product Quick View
+	file:		productquickview.css
+	desc:		Sytles for the product quick view pop up.
+*/
+div#productquickview
+{
+	background: url(/styles/images/quick_view_popup_top.gif) no-repeat left top;
+	margin: 0;
+	padding: 4px 0 0 0;
+	width: 905px;
+}
+div#productquickview .outsideBox
+{
+	background: url(/styles/images/quick_view_popup_btm.gif) no-repeat left bottom;
+	margin: 12px 0 0 0;
+	padding: 0 16px 16px 16px;
+	width: 873px;
+	overflow: auto;
+}
+ div#productquickview div#productdetail
+{
+	width: 873px;
+}
+div#productquickview .secondary
+{
+	float: left;
+	width: 310px;
+	margin-right: 24px;
+	display: inline;
+}
+div#content dl.item dt a:hover.itemlink
+{
+    cursor: pointer;
+}
+div#content dl.item dt a:hover.itemlink .qvtext
+{
+	display: inline;
+	font-size: 1.2em;
+	background: #111;
+	filter:alpha(opacity=75);
+	opacity:.75;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=75)"; /*--IE 8 Transparency--*/
+	color: #fff;
+	position: relative;
+	top: 25px;
+	margin: 0;
+	padding: 0px;
+	width: 120px;
+	border-top: 1px solid #999;
+}
+div#content dl.item dt a:hover.itemlink .qvtext strong
+{
+	display: inline;
+}
+div#content dl.item dt a .qvtext
+{
+	display: none;
+}
+div#productquickview .primary
+{
+	float: left;
+	width: 539px;
+	display: inline;
+	/*left: 38.5%;*/
+}
+div#productquickview .mainimage
+{
+    margin-bottom: 4px;
+}
+div#productquickview .mainimage img
+{
+	height: 306px;
+	width: 306px;
+}
+#productquickview #briefdescription .scroller,
+#productquickview #reviewsummary .scroller,
+#productquickview #qvspecialoffer .scroller
+{
+	overflow: auto;
+	display: block;
+	height: 100px;
+	margin: 5px 10px 10px 10px;
+	overflow-x:hidden;
+}
+
+#productquickview span.close
+{
+	background: url(/styles/images/quick_view_popup_x.gif) no-repeat right center;
+	padding: 0;
+	margin: 0;
+	float: right;
+	width: 60px;
+}
+#productquickview span.close a
+{
+	font-size: 12px;
+	line-height: 18px;
+}
+#productquickview .primary .purchasing
+{
+	float: left;
+	width: 539px;
+	margin: 0 0 12px -35px;
+	display: inline;
+}
+/* Fix IE6 */
+body #productquickview .primary .purchasing
+{
+	_margin-left: -25px;
+}
+#productquickview .primary .purchasing ul li
+{
+	float: right;
+	margin:0 12px 0 0;
+	display: inline;
+}
+#productquickview .primary .purchasing ul li.quantity,
+#productquickview .primary .purchasing ul li.cart,
+#productquickview .primary .purchasing ul li.registry,
+#productquickview .primary .purchasing ul li.wishlist
+{
+	float: left;
+	margin: 0 0 0 12px;
+}
+#productquickview .primary .purchasing ul li.mycollections
+{
+	display: none;
+}
+#detailInfo ul.pricing
+{
+	margin: 16px 0 16px 0;
+}
+#productdetail .views .row
+{
+	overflow: auto;
+	margin: 0 auto 6px auto;
+}
+#productquickview .primary .purchasing ul li a
+{
+	color:#ffffff;
+	border-bottom:none;
+}
+#productquickview .primary .purchasing ul li a:hover
+{
+	color:#ffffff;  
+}
+/* ******************************************
+		Description Tabs for Quick View
+   ****************************************** */
+#productquickview .tabdescription
+{
+	float: left;
+	width: 528px;
+	overflow: auto;
+	margin: 12px 0 12px 0;
+	display: inline;
+}
+#productdetail .qvtabshopping
+{
+	width: 528px;
+}
+#productdetail .qvtabshopping .tabs ul.menu
+{
+	width: 502px;
+	padding: 0;
+	margin: 0 0 -1px 13px;	/* pull the menu down 1px, and indent it left */
+	background: url(/styles/images/small_tab_box_back_nav.gif) no-repeat bottom left !important; /* tab row background */
+}
+#productdetail .qvtabshopping .tabs ul.menu li.first
+{
+	margin-left: 6px 	/* expose tab corner bkgnd */;
+}
+#productdetail .qvtabshopping .tabs ul.menu li a span  
+{
+	padding-left: 35px   /* space on left side of tab name */;
+	padding-right: 37px	/* space on right side of tab name */;
+	font-size: 11px		/* font size of tab name */;
+	background: url(/styles/images/carsl5_back_nav_top_spacer.gif) no-repeat bottom right; /* divider */
+}
+#productdetail .qvtabshopping .tabs ul.menu li a span.last
+{
+    padding-right: 38px;
+}
+#productdetail .qvtabshopping .tabs ul.menu li.last a span
+{
+	background: none;
+}
+#productdetail .qvtabshopping .tabs ul.menu li.last a
+{
+	padding: 0 0 0 4px	/* pull right tab to the right */;
+}
+#productdetail .qvtabshopping .tabs div.tab
+{
+	clear: both;
+	padding-top: 4px;
+	overflow: auto;
+	background: url(/styles/images/small_tab_box_top.gif) no-repeat left top;
+}
+#productdetail .qvtabshopping .tabs div.tab .box
+{
+	background: url(/styles/images/small_tab_box_btm.gif) no-repeat bottom right; /* box btm */
+}
+#productdetail .qvtabshopping .tabs ul.menu li.active a
+{
+	margin-left: -1px;
+	color: #5C2946 /*  eggplant */;
+	background: url(/styles/images/carsl5_top_nav_ovr_left.gif) no-repeat bottom left; /* left section */
+}
+/* Fix IE6 */
+body #productdetail .qvtabshopping .tabs ul.menu li.active a
+{
+	_margin-left: 0px;
+}
+#productdetail .qvtabshopping .tabs ul.menu li.last.active a span, 
+#productdetail .qvtabshopping .tabs ul.menu li.active a span
+{
+	background: url(/styles/images/carsl5_top_nav_ovr_right.gif) no-repeat bottom right; /* right section */
+}
+/* ******************************
+	Custom Tab Shopping
+   ****************************** */
+div.qvtabshopping
+{
+	clear: both;
+	overflow: auto;
+	width: 792px;
+}
+div.qvtabshopping div.tabs ul.menu
+{
+	float: left;
+	display: inline;
+	padding-top: 4px;
+	height: 31px;
+	background: url(/styles/images/carsl5_back_nav_top.gif) no-repeat bottom left; /* tab row background */
+}
+div.qvtabshopping div.tabs ul.menu li.first
+{
+	margin-left: 8px;
+}
+div.qvtabshopping div.tabs ul.menu li
+{
+	float: left;
+}
+* html div.qvtabshopping div.tabs ul.menu li
+{
+	display: inline; /* ie6 double float margin bug */
+}
+div.qvtabshopping div.tabs ul.menu li a
+{
+	text-decoration: none;
+}
+div.qvtabshopping div.tabs div.tab
+{
+	clear: both;
+	padding: 0;
+	overflow: auto;
+}
+div.qvtabshopping div.tabs div.tab .box
+{
+	overflow: auto;
+	display: block;
+	margin-top: 4px;
+	margin-bottom: 16px;
+}
+/*
+	tab styles with shadows
+*/
+div.qvtabshopping div.tabs
+{
+	float: left;
+	width: 100%;
+}
+div.qvtabshopping div.tabs ul.menu
+{
+	margin: 0 0 -1px 14px;
+	padding: 0 10px 0 0;
+	list-style: none;
+	width: 766px;
+}
+div.qvtabshopping div.tabs ul.menu li
+{
+	display: inline;
+	padding: 0;
+}
+div.qvtabshopping div.tabs ul.menu li a
+{
+	float: left;
+	display: block;
+	height: 31px;
+	margin: 0;
+	padding: 0 0 0 4px;
+	text-decoration: none;
+	border: none;
+	color: White;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+div.qvtabshopping div.tabs ul.menu li a:hover span
+{
+	color: #AAAAAA /* border gray */;
+}
+div.qvtabshopping div.tabs ul.menu li a span
+{
+	height: 28px;
+	line-height: 31px;
+	float: left;
+	display: block;
+	padding-top: 3px;
+	padding-bottom: 0;	
+	padding-left: 12px;
+	padding-right: 14px;
+}
+div.qvtabshopping div.tabs ul.menu li.last a span
+{
+	background: none;
+}
+div.qvtabshopping div.tabs ul.menu li a:hover
+{
+	 color: #CE7019 /* copper */;
+}
+div.qvtabshopping div.tabs ul.menu li.active a
+{
+	margin-left: -1px;
+	color: #5C2946 /*  eggplant */;
+}
+/* Fix IE6 */
+body div.qvtabshopping div.tabs ul.menu li.active a
+{
+	_margin-left: 0px;
+}
+div.qvtabshopping div.tabs ul.menu li.last.active a span, 
+div.tabshopping div.tabs ul.menu li.active a span
+{
+	color: #5C2946 /*  eggplant */;
+}
+/* *************************************************************
+		Tab Contents Stylings
+   ************************************************************* */
+div.qvtabshopping div.tabs .box
+{
+	padding: 4px 8px 8px 8px; /* padding inside the box.  The top margin is 8px = 4px (margin-top) + 4px; */
+}
+#productdetail .qvtabshopping .tabs ul.menu li a
+{
+     border-bottom:none;
+}

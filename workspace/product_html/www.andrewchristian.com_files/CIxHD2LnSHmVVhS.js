@@ -1,0 +1,1 @@
+try{_ffLoyalty.addPurchaseRule([{"time_based":false,"value":"1.0","rule_type":"times"}]);}catch(e){}

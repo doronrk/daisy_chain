@@ -1,0 +1,577 @@
+if (!Array.prototype.filter)
+{
+    Array.prototype.filter = function(fun /*, thisp*/)
+    {
+        var len = this.length;
+        if (typeof fun != "function")
+            throw new TypeError();
+
+        var res = [];
+        var thisp = arguments[1];
+        for (var i = 0; i < len; i++)
+        {
+            if (i in this)
+            {
+                var val = this[i]; // in case fun mutates this
+                if (fun.call(thisp, val, i, this))
+                    res.push(val);
+            }
+        }
+
+        return res;
+    };
+}
+
+if (!Array.prototype.indexOf) {
+    Array.prototype.indexOf = function (obj, start) {
+        for (var i = (start || 0); i < this.length; i++) {
+            if (this[i] == obj) {
+                return i;
+            }
+        }
+        return -1;
+    }
+}
+
+function AdextentAutotag(){
+    this.MAX_PRODUCTS = 3;
+    this.urlMode = "window"; // /window/iframe/auto
+    this.skipCanonical = false;
+    this.fireHeliumPixel = true;
+    this.domain = "buildabear.com";
+    this.dev = false; //for testing
+
+    this.getScriptParent = function() {
+        var scripts = document.getElementsByTagName('script');
+        for (var i = 0; i < scripts.length; ++i) {
+            if(scripts[i].src.indexOf("/dynads/ServeS3.ashx/autotag") != -1 ||
+                scripts[i].src.indexOf("/dynads/ServeS3.ashx/a/autotag") != -1 ||
+                scripts[i].src.indexOf("dyau9xqp8gzji.cloudfront.net/autotag.js") != -1){
+                return scripts[i].parentElement;
+            }
+        }
+        return document.getElementsByTagName('body');
+    }
+
+    this.setCookie = function( name, value, secure )
+    {
+        var today = new Date();
+        today.setTime( today.getTime() );
+        var expires = 1000 * 60 * 60 * 24 * 30 * 12; // year
+        var expires_date = new Date( today.getTime() + (expires) );
+        document.cookie = name + "=" + encodeURIComponent(value) +
+            ( ";expires=" + expires_date.toGMTString() ) +
+            ";path=/" +
+            (location.host.indexOf("adextent.com") > -1 ? (";domain=.adextent.com") : "") +
+            ( ( secure == true) ? ";secure" : "" );
+    };
+    this.getCookie = function( check_name ) {
+        var a_all_cookies = document.cookie.split( ';' );
+        var a_temp_cookie = '';
+        var cookie_name = '';
+        var cookie_value = '';
+        var b_cookie_found = false;
+        for ( i = 0; i < a_all_cookies.length; i++ ){
+            a_temp_cookie = a_all_cookies[i].split( '=' );
+            cookie_name = a_temp_cookie[0].replace(/^\s+|\s+$/g, '');
+            if ( cookie_name == check_name ){
+                b_cookie_found = true;
+                if ( a_temp_cookie.length > 1 ){
+                    cookie_value = unescape(a_temp_cookie.slice(1).join("=").replace(/^\s+|\s+$/g, '') );
+                }
+                return cookie_value;
+                break;
+            }
+            a_temp_cookie = null;
+            cookie_name = '';
+        }
+        if ( !b_cookie_found ){
+            return null;
+        }
+    };
+
+    this.deserializeAdextentCookie = function(cookie){
+        if(!cookie){
+            return [];
+        }
+
+        var res = [];
+        var audienceParts = cookie.split('~');
+        for(var i=0; i<audienceParts.length; ++i){
+            var audienceObj = {};
+            audienceObj.keys = [];
+            var parts = audienceParts[i].split(':');
+            audienceObj.audience = parts[0];
+            var allKeys = parts[1].split(';');
+            audienceObj.firstKey = allKeys[0];
+            if(allKeys.length == 1){
+                audienceObj.keys = [allKeys[0]];
+            }
+            else{
+                allKeys.splice(0, 1);
+                audienceObj.keys = allKeys;
+            }
+            res.push(audienceObj);
+        }
+        return res;
+    };
+
+    this.serializeAdextentCookie = function(obj){
+        var strings = [];
+        for(var i=0; i< obj.length; ++i){
+            var audienceString = obj[i].audience + ":" + obj[i].firstKey;
+            if(obj[i].keys.length > 0)
+                audienceString += (";" + obj[i].keys.join(";"));
+            strings.push(audienceString);
+        }
+        return strings.join("~");
+    };
+
+    this.newAudience = function(name){
+        return {audience:name, firstKey:'', keys:[]};
+    };
+
+    this.getAdextentCookie = function(domain){
+        var cookie = this.getCookie("v2_" + domain);
+        return this.deserializeAdextentCookie(cookie);
+    };
+
+
+
+    this.setAdextentCookie = function(domain, audience, key){
+        var currentObj = this.getAdextentCookie(domain);
+        var match = currentObj.filter(function(o) {return o.audience == audience});
+        var aud;
+        if(match.length == 0){
+            aud = this.newAudience(audience);
+            currentObj.push(aud);
+        }else{
+            aud = match[0];
+        }
+
+
+        if(!aud.firstKey){
+            aud.firstKey = key;
+            aud.keys.push(key);
+        }
+        else{
+            if(aud.keys.indexOf(key) > -1)
+                aud.keys.splice(aud.keys.indexOf(key), 1);
+            while(aud.keys.length > this.MAX_PRODUCTS-1)
+                aud.keys.shift();
+            aud.keys.push(key);
+        }
+        this.setCookie("v2_" + domain, this.serializeAdextentCookie(currentObj));
+    };
+
+    this.getParams = function(url)
+    {
+        var loc;
+        var prms = {};
+        if(url){
+            loc = url.split("?")[1];
+        }
+        else{
+            loc=location.search;
+            if (loc){
+                loc=loc.substring(1);
+            }
+        }
+        if (loc){
+            var parms = loc.split('&');
+            for(var i=0;i<parms.length;i++){
+                kv=parms[i].split('=');
+                prms[kv[0]]= unescape(kv.slice(1).join("="));
+            }
+        }
+        return prms;
+    };
+    this.toQueryString = function(obj) {
+        var parts = [];
+        for (var i in obj) {
+            if (obj.hasOwnProperty(i)) {
+                parts.push(encodeURIComponent(i) + "=" + encodeURIComponent(obj[i]));
+            }
+        }
+        return parts.join("&");
+    };
+    this.addScript = function(scriptPath){
+        var th = this.getScriptParent();
+        if(!th)
+            return;
+        var s = document.createElement('script');
+        s.setAttribute('type','text/javascript');
+        s.setAttribute('src',scriptPath);
+        s.onError = s.onerror = function()
+        {
+            return false;
+        }
+        th.appendChild(s);
+    };
+    this.cleanUrl = function(url)
+    {
+        //${CLEAN_URL_CODE}
+        //url = encodeURIComponent(url.replace("://www.","://").replace(/\/$/,"")).toLowerCase().replace(/%/g,"");
+        return url.replace(/\/$/,"").replace(/\+/g,"2b").replace(/,/g,"2c") + ".js";
+    };
+    this.getCanonical = function(){
+        var links = document.getElementsByTagName("link");
+        for (var i = 0; i < links.length; i ++) {
+            if (links[i].getAttribute("rel") === "canonical") {
+                canonical = links[i].getAttribute("href")
+                return canonical.trim();
+            }
+        }
+    };
+    this.setSeg = function(url, type) {
+        type = type || 'img';
+        var th = this.getScriptParent();
+        if(!th)
+            return;
+        var s = document.createElement(type);
+        if(type == 'script'){
+            s.async = true;
+        }
+        s.setAttribute('width', '1');
+        s.setAttribute('height', '1');
+        s.setAttribute('style', 'display:none;position:absolute;z-index:-50;');
+        s.setAttribute('src', url);
+        th.appendChild(s);
+    };
+    this.getUtmzReferrer = function(){
+        var utmz = this.getCookie("__utmz");
+
+        if(!utmz)
+            return "";
+
+        var utmparts = utmz.split('|');
+
+        for(var i=0; i < utmparts.length; i++)
+        {
+            var name = utmparts[i].split('=') ? utmparts[i].split('=')[0] : "";
+            if(!name)
+                continue;
+            if(name.indexOf(".utmcsr") > -1)
+                return utmparts[i].split('=')[1];
+        }
+    };
+
+    var adextent_use_exp = false;
+    var adextent_exp = "";
+    var global_ansn_urlparams = "";
+    this.adextent_secured = ('https:' == document.location.protocol);
+
+    //callbacks
+    this.setProductSegment = function(network, segment, domain, audience, key, exp){
+        this.addSetSegmentIFrame(network, segment, domain, audience, key, exp);
+    }
+
+    this.setParameterSegment = function(network, segment, domain, audience, key, conditions){
+        if(!conditions || conditions.length == 0)
+            return;
+
+        var prms = this.getParams();
+        for(var i=0; i< conditions.length; ++i){
+            var name = conditions[i].name;
+            var value = conditions[i].value;
+
+            if(prms[name] && prms[name] == value){
+                this.addSetSegmentIFrame(network, segment, domain, audience, key);
+                return;
+            }
+        }
+    }
+
+    this.setReferrerSegment = function(network, segment, domain, audience, key, referrers){
+        if(!referrers || referrers.length == 0)
+            return;
+        var referrer = this.getUtmzReferrer();
+        if(!referrer)
+            return;
+        var any = referrers.filter(function (ref) {return referrer.indexOf(ref) > -1;}).length;
+        if(any)
+            this.addSetSegmentIFrame(network, segment, domain, audience, key);
+
+    }
+
+    this.addSetSegmentIFrame = function(network,segment, domain, audience, key, aexp){
+        var th = this.getScriptParent();
+        if(!th)
+            return;
+        var s = document.createElement('iframe');
+        aexp = aexp || "never";
+        if(adextent_use_exp)
+            aexp = adextent_exp;
+        var p = network ? network.toLocaleLowerCase() + 'segment' : 'ansegment';
+        var urldomain = this.dev ? "http://ads.adextent.com"  : (this.adextent_secured ? "https://ssl.adextent.com" : "http://dynads.adextent.com");
+        var par = {};
+        par['domain'] = domain;
+        par['audience'] = audience;
+        par['key'] = key;
+        par[p] = segment;
+        par['exp'] = aexp;
+        par['moreparams'] = global_ansn_urlparams;
+        par['numproducts'] = this.MAX_PRODUCTS;
+        var iframeurl = urldomain + "/ansn-creative/dynads/ServeS3.ashx/SetSegmentV2.html?" + this.toQueryString(par);
+        s.setAttribute('width','1px;');
+        s.setAttribute('height','1px;');
+        s.setAttribute('style','display:none;position:absolute;z-index:-50;');
+        s.setAttribute('src',iframeurl);
+        th.appendChild(s);
+    }
+
+    var excludeDomains = ['babylon.com','orbitz.com','cheaptickets.com','file-extractor.com'];
+    this.fireNetworkSegment = function()
+    {
+        for(var i=0; i<excludeDomains.length; ++i)
+            if(location.href.indexOf(excludeDomains[i]) != -1)
+                return;
+        var th = this.getScriptParent();
+        if(!th)
+            return;
+        var s = document.createElement('img');
+        var domain = typeof(this.adextent_secured) == "undefined" || !this.adextent_secured ?
+            "http://ib.adnxs.com/" : "https://secure.adnxs.com/";
+
+        var imgurl = domain + "seg?add=705716&t=2";
+        s.setAttribute('width','1;');
+        s.setAttribute('height','1;');
+        s.setAttribute('style','display:none;position:absolute;z-index:-50;');
+        s.setAttribute('src',imgurl);
+        th.appendChild(s);
+    }
+
+    this.isEmptyObject = function(obj){
+        for(var prop in obj) {
+            if (obj.hasOwnProperty(prop)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+
+    this.addHeliumPixel = function(refererUrl, secured, conversion, action, audience, products, cookies) {
+        var params = [];
+        var url = "";
+        if (!secured)
+            url = "http://helium.adextent.com/vj";
+        else
+            url = "https://helium.adextent.com/vj";
+        if(conversion)
+            params.push("conv=true");
+        if(action)
+            params.push("action=" + action);
+        if(audience)
+            params.push("audience=" + audience);
+        if(products)
+            params.push("products=" + products)
+        if(cookies && !this.isEmptyObject(cookies) && JSON && JSON.stringify)
+            params.push("cookies=" + encodeURIComponent(JSON.stringify(cookies)));
+
+        if(this.domain && this.domain.indexOf("${") != 0)
+            refererUrl = "http://" + this.domain + "/" + refererUrl.split("/").slice(3).join("/");
+
+        params.push("url=" + encodeURIComponent(refererUrl));
+
+        url = (url + "?" + params.join("&"));
+        this.setSeg(url, "iframe");
+    }
+
+    this.isUrl = function (urlsOrSKUs){
+        urlsOrSKUs = urlsOrSKUs instanceof Array ? urlsOrSKUs : [urlsOrSKUs];
+        return urlsOrSKUs[0].indexOf('http://') == 0 || urlsOrSKUs[0].indexOf('https://') == 0;
+    }
+
+    this.callHelium = function (urlsOrSKUs,audienceCode,action,parameters,isConversion){
+        var cookies = {};
+        if(!this.isUrl(urlsOrSKUs) && urlsOrSKUs.indexOf(',') > -1)
+            urlsOrSKUs = urlsOrSKUs.split(',');
+        urlsOrSKUs = urlsOrSKUs instanceof Array ? urlsOrSKUs : [urlsOrSKUs]
+        var utmz = this.getUtmzReferrer();
+        if(utmz)
+            cookies["utmz"] = utmz;
+        if(parameters){
+            for(var par in parameters) {
+                if (parameters.hasOwnProperty(par)) {
+                    cookies[par] = parameters[par];
+                }
+            }
+        }
+
+        var url;
+        var products = "";
+        if(urlsOrSKUs && urlsOrSKUs[0]){
+            if(!this.isUrl(urlsOrSKUs)){
+                url = "http://" + this.adextent_tag_domain + "/";
+                products = urlsOrSKUs.join(",");
+            }
+            else{
+                url = urlsOrSKUs[0];
+            }
+        }
+        else{
+            url = "http://" + this.adextent_tag_domain + "/";
+        }
+
+        this.addHeliumPixel(url, this.adextent_secured, isConversion ,action, audienceCode, products, cookies);
+    }
+
+    this.addToCart = function(url,parameters){
+        var cartAudience = "cart"; // read from macro.
+        this.callHelium(url, cartAudience,"add",parameters);
+    }
+
+    this.syncCart = function(urls,parameters){
+        var cartAudience = "cart"; // read from macro.
+        this.callHelium(urls, cartAudience,"sync",parameters);
+    }
+
+    this.removeFromCart = function(url,parameters){
+        var cartAudience = "cart"; // read from macro.
+        this.callHelium(url ,cartAudience,"remove",parameters);
+    }
+    this.visit = function(url, parameters){
+        this.callHelium(url ,undefined, undefined, parameters);
+    }
+
+    this.conversion = function(code, urls, cartvalue,parameters){
+        var cookies = parameters || {};
+        if(cartvalue){
+            cookies["cartValue"] = cartvalue
+            for(var par in parameters) {
+                if (parameters.hasOwnProperty(par)) {
+                    cookies[par] = parameters[par];
+                }
+            }
+        }
+        this.callHelium(urls ,code || "conversion", undefined, cookies, true);
+    }
+
+    this.addToSegment = function(code, url, parameters){
+        if(!code)
+            return;
+        this.callHelium(url ,code,"add",parameters)
+    }
+
+    this.fireAdextentPixel = function(overrideUrl){
+        var usedparam = false;
+        var params = this.getParams();
+        var adextent_usekw = false;
+
+        var reurl
+        if(overrideUrl){
+            reurl = overrideUrl;
+        }
+        else{
+            if(this.urlMode == "window")
+                reurl = location.href;
+            else if(this.urlMode == "iframe")
+                reurl = document.referrer;
+            else
+                reurl = (window.self === window.top ? location.href : document.referrer);
+        }
+
+        var scripts = document.getElementsByTagName('script');
+        for (var i = 0; i < scripts.length; ++i) {
+            if(scripts[i].src.indexOf("/dynads/ServeS3.ashx/autotag") != -1 || scripts[i].src.indexOf("/dynads/ServeS3.ashx/a/") != -1){
+                if(scripts[i].src.indexOf("?") != -1){
+                    var scriptParams = this.getParams(scripts[i].src);
+                    if(scriptParams["url"] && !overrideUrl){
+                        reurl = prms1["url"];
+                        usedparam = true;
+                    }
+                    if(scriptParams["i"]){
+                        var imode = prms1["i"];
+                        if(imode == "kw")
+                            adextent_usekw = true;
+                    }
+                    if(scriptParams["expire"])
+                    {
+                        adextent_use_exp = true;
+                        adextent_exp = prms1["expire"];
+                    }
+                    if(scriptParams["dev"])
+                        this.dev = (scriptParams["dev"] == "true");
+                    global_ansn_urlparams = escape(scripts[i].src.split("?")[1]);
+                }
+                break;
+            }
+
+        }
+
+
+        this.adextent_tag_domain = reurl.split("/")[2];
+        var adextent_tag_url = reurl;
+        if(params["domain"] && !overrideUrl)
+            this.adextent_tag_domain = params["domain"];
+        if(params["url"] && !overrideUrl)
+            adextent_tag_url = params["url"];
+
+        var canonical = this.getCanonical();
+        if(canonical && !usedparam && !this.skipCanonical && !overrideUrl)
+            adextent_tag_url = canonical;
+
+        if((typeof(adextent_dynads_url) != "undefined")  && !overrideUrl)
+            adextent_tag_url = adextent_dynads_url;
+
+        if(adextent_tag_url.match(/^\//gi)){
+            adextent_tag_url = "http://" + this.adextent_tag_domain + adextent_tag_url;
+            if(this.adextent_secured){
+                adextent_tag_url = "https://" + this.adextent_tag_domain + adextent_tag_url;
+            }
+        }
+        adextent_tag_url = this.cleanUrl(adextent_tag_url);
+        this.adextent_tag_domain = this.adextent_tag_domain.toLowerCase().replace("www.","");
+        if(adextent_tag_url.indexOf('http://') != 0 && adextent_tag_url.indexOf('https://') != 0){
+            adextent_tag_url = document.location.protocol + '//' + this.adextent_tag_domain + '/' + adextent_tag_url
+        }
+
+        var scriptForPagePath = "http://dynads.adextent.com/ansn-creative/dynads/ServeS3.ashx/";
+        if(this.adextent_secured){
+            scriptForPagePath = "https://ssl.adextent.com/ansn-creative/dynads/ServeS3.ashx/";
+        }
+        if(adextent_usekw){
+            var adextent_utmz = this.getCookie("__utmz");
+            if(adextent_utmz){
+                var utmparts = adextent_utmz.split('|')
+                for(var ii=0; ii < utmparts.length;ii++)
+                {
+                    var utmkwpart =  utmparts[ii];
+                    var kwspl = utmkwpart.split('=');
+                    var kwprm = kwspl[0];
+                    if(kwprm == 'utmctr')
+                    {
+                        if(kwspl.length < 2)
+                            continue;
+
+                        var kwstr = kwspl[1].toLowerCase();
+                        scriptForPagePath = scriptForPagePath + "k/" +this.adextent_tag_domain+"/"+ encodeURIComponent(kwstr.replace(/ /g,"2b")) +".js";
+                        this.addScript(scriptForPagePath);
+                        break;
+                    }
+                }
+            }
+        }
+        else{
+            if(usedparam)
+                scriptForPagePath = scriptForPagePath + "r";
+            else
+                scriptForPagePath = scriptForPagePath + "u";
+            scriptForPagePath = scriptForPagePath + "/" + this.adextent_tag_domain + "/" + encodeURIComponent(adextent_tag_url);
+
+            if (this.fireHeliumPixel)
+                this.addHeliumPixel(adextent_tag_url, this.adextent_secured);
+            else
+                this.addScript(scriptForPagePath);
+        }
+    }
+}
+
+var adextent_autotag = new AdextentAutotag();
+adextent_autotag.fireAdextentPixel();
+if((typeof(OnAdextentInit) != "undefined") && OnAdextentInit)
+    OnAdextentInit();
+if((typeof(onAdextentInit) != "undefined") && onAdextentInit)
+    onAdextentInit();
+//adextent_autotag.fireNetworkSegment();

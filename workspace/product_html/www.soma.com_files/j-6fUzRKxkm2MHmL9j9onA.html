@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html webdriver="true"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta charset="utf-8"></head><body onload="if(window.run) run();">
+<script type="text/javascript">
+var sb='http://app.struq.com/t/i/j-6fUzRKxkm2MHmL9j9onA/?v=1&ipid=R-NdNN5vpESRyRiNqUWXxw&rnd=448241121&gd=1417586551&t=2';
+var eb='http://app.struq.com/t/i/j-6fUzRKxkm2MHmL9j9onA/?v=1&ipid=R-NdNN5vpESRyRiNqUWXxw&rnd=448241121&gd=1417586551&t=3';
+var a=['http://ads.yahoo.com/cms/v1?esig=1~90e9d390ee2a2e93eb07261ed2750387b9a9e629&nwid=10000733417&sigv=1','http://cm.g.doubleclick.net/pixel?google_nid=struq&google_cm&google_sc&google_hm=kqaXnDObKEmVf7ntoXrR6w&uc=kqaXnDObKEmVf7ntoXrR6w','http://pixel.rubiconproject.com/tap.php?v=6866&nid=2188&put=kqaXnDObKEmVf7ntoXrR6w&expires=30','http://ads.yahoo.com/pixel?id=2127973&t=2','http://ums.adtech.de/mapuser?providerid=1012;userid=kqaXnDObKEmVf7ntoXrR6w','http://ib.adnxs.com/pxj?bidder=92&seg=203181&action=setuid(%22kqaXnDObKEmVf7ntoXrR6w%22)','http://tapestry.tapad.com/tapestry/1?ta_partner_id=932&ta_partner_did=kqaXnDObKEmVf7ntoXrR6w&ta_add_audiences=%5B%22Struq-Rtg%22%5D&ta_redirect=http%3A%2F%2Fapp.struq.com%2Fud%2F17%3Fv%3D1%26xid%3D%24%7BIDS%3Akey%7D','http://x.bidswitch.net/sync?dsp_id=24&user_id=kqaXnDObKEmVf7ntoXrR6w&expires=30','http://r.openx.net/set?pid=dc3d8551-6227-330a-ee42-9c7aae93876c&rtb=kqaXnDObKEmVf7ntoXrR6w','http://dsum.casalemedia.com/rum?cm_dsp_id=68&external_user_id=kqaXnDObKEmVf7ntoXrR6w','http://pixel.quantserve.com/pixel/p-CW2WBUEEdzqgF.gif?idmatch=0&id=kqaXnDObKEmVf7ntoXrR6w'];
+</script>
+
+<script type="text/javascript">
+    function inj(array) {
+        if (array.length < 1) {
+            return;
+        }
+
+        for(var i=0;i<array.length;i++){
+			if (document.createElement) {
+				var im = document.createElement('IMG');
+				var d = document.getElementById('cont');
+				if (d !== null && d.appendChild) {
+					d.appendChild(im);
+				}
+				im.onload = finish;
+				im.onerror = finish;
+				im.onabort = finish;
+				im.width = '1'; im.height = '1';
+				im.src = array[i];
+			}
+       }
+    }
+
+    function finish() {
+        count++;
+		var item = a.shift();
+		if(item) {
+			inj([item]);
+		}
+        if (count == total && typeof(eb) != "undefined") {
+            inj([eb]);
+        }
+    }
+    function run() {
+    	  if(typeof(sb) != "undefined"){
+              inj([sb]);
+              total = 1;
+          }else{
+              total = 0;
+          }
+          total += a.length;
+    	  var toInj = [];
+          for (var i = 0; i < max; i++) {
+          	var item = a.shift();
+          	if(item){
+          		toInj.push(item);
+          	}
+          }
+          inj(toInj)
+    }
+    var max = 10;
+    var total = 0;
+    var count = 0;
+    window.setTimeout("if(count<total){location.replace(('https:' == document.location.protocol ? 'https://' : 'http://') + 'media.struq.com/sl/timeout.gif')}", 5000);
+</script>
+
+
+</body></html>

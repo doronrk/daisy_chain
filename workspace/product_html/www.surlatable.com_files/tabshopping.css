@@ -1,0 +1,1192 @@
+﻿/*
+	name:		Tab Shopping 
+	file:		tabshopping.css
+	purpose:	Display a set of tabs that contain different shopping/information options.
+				Best sellers, shopping by category, shopping by brand name, features, and shopping 
+				by collection are examples of shopping/information options.
+*/
+div.tabshopping
+{
+	clear: both;
+	width: 792px;
+}
+div.tabshopping div.tabs ul.menu
+{
+	float: left;
+	display: inline;
+	padding-top: 4px;
+	height: 31px;
+	background: url(/styles/images/carsl5_back_nav_top.gif) no-repeat bottom left; /* tab row background */
+}
+div.tabshopping div.tabs ul.menu li.first
+{
+	margin-left: 0;
+}
+div.tabshopping div.tabs ul.menu li
+{
+	float: left;
+}
+* html div.tabshopping div.tabs ul.menu li
+{
+	display: inline; /* ie6 double float margin bug */
+}
+div.tabshopping div.tabs ul.menu li a
+{
+	text-decoration: none;
+}
+div.tabshopping div.tabs div.tab
+{
+	clear:both;
+	display: inline;
+	float: left;
+	padding: 4px 0 0 0;
+	background: url(/styles/images/carsl5_box_top.gif) no-repeat top left /* box top */;
+}
+/* fix for content that must be rendered before being hidden. i.e. jCarouselLite */
+div.tabshopping div.tabs div.tab.hidden
+{
+	position: relative;
+	visibility: hidden;
+	left: -5000px;
+}
+div.tabshopping div.tabs div.tab .box
+{
+	float: left;
+	padding: 12px 16px 16px 16px;
+	width: 760px;
+	background: url(/styles/images/carsl5_box_btm.gif) no-repeat bottom right /* box btm */;
+	display: inline;
+}
+div.tabshopping div.tabs div.tab .boxbottom
+{
+	float: left;
+	width: 792px;
+	height: 16px;
+	background: url(/styles/images/carsl5_box_btm.gif) no-repeat left bottom /* box btm */;
+	display: inline;
+}
+div.tabshopping div.tabs div.tab .boxsides
+{
+	float: left;
+	padding: 12px 16px 0 16px; /* padding inside the box.  The top is 16px = 4px (margin-top) + 12px; */
+	width: 760px;
+	background: url(/styles/images/carsl5_box_sides.gif) repeat-y top left /* box sides */;
+	display: block;
+}
+/*
+	tab styles with shadows
+*/
+div.tabshopping div.tabs
+{
+	float: left;
+	width: 100%;
+}
+div.tabshopping div.tabs ul.menu
+{
+	margin: 0 0 -1px 14px;
+	padding: 0 10px 0 0;
+	list-style: none;
+	width: 766px;
+}
+div.tabshopping div.tabs ul.menu li
+{
+	display: inline;
+	padding: 0;
+}
+div.tabshopping div.tabs ul.menu li a
+{
+	float: left;
+	display: block;
+	height: 31px;
+	margin: 0;
+	padding: 0 0 0 4px;
+	text-decoration: none;
+	border: none;
+	color: White;
+	font-size: 11px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+div.tabshopping div.tabs ul.menu li a:hover span
+{
+	color: #AAAAAA /* border gray */;
+}
+div.tabshopping div.tabs ul.menu li a span
+{
+	height: 28px;
+	line-height: 31px;
+	float: left;
+	display: block;
+	padding: 3px 15px 0 15px;
+	background: url(/styles/images/carsl5_back_nav_top_spacer.gif) no-repeat bottom right; /* divider */
+}
+div.tabshopping div.tabs ul.menu li a span.last
+{
+	padding-right: 22px;
+}
+div.tabshopping div.tabs ul.menu li.last a span
+{
+	background: none;
+}
+div.tabshopping div.tabs ul.menu li a:hover
+{
+	color: #CE7019 /* copper */;
+}
+div.tabshopping div.tabs ul.menu li.active a
+{
+	margin-left: -1px;
+	color: #5C2946 /*  eggplant */;
+	background: url(/styles/images/carsl5_top_nav_ovr_left.gif) no-repeat bottom left; /* left section */
+}
+*html div.tabshopping div.tabs ul.menu li.active a
+{
+	/* fixed IE6 */
+	margin-left: 0;
+}
+div.tabshopping div.tabs ul.menu li.last.active a span, 
+div.tabshopping div.tabs ul.menu li.active a span
+{
+	color: #5C2946 /*  eggplant */;
+	background: url(/styles/images/carsl5_top_nav_ovr_right.gif) no-repeat bottom right; /* right section */
+}
+/* */
+/*			Best Sellers Tab		*/
+/* */
+div.bestsellers .box
+{
+	display: block;
+}
+.catgcarouselby4,
+div.tabshopping div.tabs .tab .carousel,
+div.tabshopping div.tabs div.tab .carousel
+{
+	display: block;
+	position: relative;
+	width: 760px;
+	margin: 0px;
+	overflow: hidden;
+	display: block;
+	background: none;
+	padding: 0;
+}
+div.tabshopping div.tabs div.tab .box .catgcarouselby4 .box,
+div.tabshopping div.tabs div.tab .box .carousel .box
+{
+	background: none;
+	padding: 0;
+	width: auto; /*??? */
+}
+.catgcarouselby4 .infiniteCarousel1,
+div.tabshopping div.tabs div.tab .carousel .infiniteCarousel
+{
+	position: relative;
+	margin-left: 38px;
+	display: block;
+	overflow: hidden;
+}
+.catgcarouselby4 ul li,
+div.tabshopping div.tabs div.tab .carousel ul li
+{
+	position: relative;
+	display: block;
+	float: right;
+	overflow: hidden;
+	padding: 0;
+	margin: 4px 16px 0 0;
+	width: 159px;
+}
+.arrowforwardby41,
+.carousel .arrowforward
+{
+	position: absolute;
+	height: 27px;
+	width: 27px;
+	top: 123px;
+	right: 0;
+	text-indent: -999px;
+	border: none;
+	margin: 0;
+	z-index: 500;
+	padding: 0;
+	cursor: pointer;
+	background: url(/styles/images/content_box_slide_right_off.gif) no-repeat top left;
+}
+.arrowbackby41,
+.carousel .arrowback
+{
+	position: absolute;
+	height: 27px;
+	width: 27px;
+	border: none;
+	top: 123px;
+	left: 0;
+	margin: 0;
+	padding: 0;
+	text-indent: -999px;
+	text-decoration: none;
+	cursor: pointer;
+	z-index: 500;
+	background: url(/styles/images/content_box_slide_left_off.gif) no-repeat top left;
+}
+.catgcarouselby4 .arrowforwardby41:hover, 
+.catgcarouselby4 .arrowforwardby42:hover, 
+.catgcarouselby4 .arrowforwardby43:hover,
+.catgcarouselby4 .arrowforward:hover,
+.carousel .arrowforward:hover
+{
+	background: url(/styles/images/content_box_slide_right_on.gif) no-repeat top left;
+	border: none;
+}
+.catgcarouselby4 .arrowbackby41:hover, 
+.catgcarouselby4 .arrowbackby42:hover, 
+.catgcarouselby4 .arrowbackby43:hover,
+.catgcarouselby4 .arrowback:hover,
+.carousel .arrowback:hover
+{
+	background: url(/styles/images/content_box_slide_left_on.gif) no-repeat top left;
+	border: none;
+}
+.catgcarouselby4 .shoplink
+{
+	display: inline;
+	font-size: 12px;
+	line-height: 12px;
+	font-weight: bold;
+}
+.catgcarouselby4 .story .text
+{
+	font-size: 14px;
+	line-height: 14px;
+	padding: 0px;
+	margin: 0px 10px 13px 0px;
+}
+/* ************************************
+	Item Styles
+************************************ */
+span.catgcarouselby4 dl.item1,
+div.tabshopping div.tabs div.tab .carousel dl.item,
+div#main div.tabshopping div.tabs div.tab div.carousel dl.item,
+div#main div.tabshopping div.tabs div.tab div.by4.carousel dl.item
+{
+	width: 157px;
+	width: 159px;
+	float: left;
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+span.catgcarouselby4 dl.item1 a,
+div.tabshopping div.tabs div.tab .carousel dl.item a
+{
+	border: none;
+	text-decoration: none;
+	margin: 0px;
+	padding: 0px;
+}
+span.catgcarouselby4 dl.item1 dt,
+div.tabshopping div.tabs div.tab .carousel dl.item dt,
+div#main div.tabshopping div.tabs div.tab div.carousel dl.item dt,
+div#main div.tabshopping div.tabs div.tab div.by4.carousel dl.item dt
+{
+	overflow: hidden;
+	position: relative;
+	height: 159px;
+}
+span.catgcarouselby4 dl.item1 dt a,
+div.tabshopping div.tabs div.tab .carousel dl.item dt a
+{
+	display: block;
+	border: 0;
+}
+span.catgcarouselby4 dl.item1 p,
+div.tabshopping div.tabs div.tab .carousel dl.item p
+{
+	margin: 0px;
+}
+span.catgcarouselby4 dl.item1 dt img,
+div.tabshopping div.tabs div.tab .carousel dl.item dt img,
+div#main div.tabshopping div.tabs div.tab div.carousel dl.item dt a img
+{
+	/* border: solid 1px #AAAAAA /* pale gray or border gray */
+	padding: 0px;
+	height: 155px;
+	width: 155px;
+	margin: 0px;
+}
+span.catgcarouselby4.knockouts dl.item1 dt img,
+div.tabshopping div.tabs div.tab .carousel.knockouts dl.item dt img,
+div.tabshopping div.tabs div.tab .carousel.knockouts dl.item dt a img
+{
+	border: solid 1px white /* suppress imag border for knockout images */
+}
+span.catgcarouselby4 dl.item1 dd,
+div.tabshopping div.tabs div.tab .carousel dl.item dd,
+div#main div.tabshopping div.tabs div.tab div.carousel dl.item dd
+{
+	margin: 0;
+	padding: 0;
+}
+span.catgcarouselby4 dl.item1 a.name,
+div.tabshopping div.tabs div.tab .carousel dl.item a.name
+{
+	font-size: 11px;
+	font-weight: normal;
+	padding: 0px;
+	margin: 0px 0px 5px 0px;
+}
+span.catgcarouselby4 dl.item1 p.price,
+div.tabshopping div.tabs div.tab .carousel dl.item p.price
+{
+	font-size: 11px;
+	line-height: 1.5em;
+	font-weight: bold;
+	display: inline;
+}
+span.catgcarouselby4 dl.item1 p.sale,
+div.tabshopping div.tabs div.tab .carousel dl.item p.sale
+{
+	font-size: 11px;
+	line-height: 1.5em;
+	color: #921E1E /* bordeux heavy */;
+	font-weight: bold;
+}
+span.catgcarouselby4 dl.item1 p.regular,
+div.tabshopping div.tabs div.tab .carousel dl.item p.regular
+{
+	font-size: 11px;
+	line-height: 1.5em;
+	color: #999999 /* shadow gray */;
+}
+span.catgcarouselby4 dl.item1 p.offer,
+div.tabshopping div.tabs div.tab .carousel dl.item p.offer
+{
+	font-size: 11px;
+	line-height: 1.5em;
+	color: #921E1E /* bordeux heavy */;
+}
+/* */
+/*			Categories Tab			*/
+/* */
+div.tabshopping #categories a
+{
+	border: none;
+	display: block;
+}
+div.tabshopping #categories dl
+{
+	width: 150px;
+	height: 190px;
+	float: left;
+	display: inline;
+	margin: 12px 37px 0 8px;
+	padding: 0;
+}
+*html div.tabshopping #categories dl
+{
+	/* fixed IE6 */
+	height: 200px;
+}
+div.tabshopping #categories dl.last
+{
+	margin: 12px 0 0 8px;
+}
+div.tabshopping #categories dt img
+{
+	height: 150px;
+	width: 150px;
+}
+div.tabshopping #categories dd
+{
+	margin-left: 0;
+	margin-top: 6px;
+	font-weight: bold;
+	text-align: center;
+	width: 100%;
+}
+/* */
+/*			Brands Tab			*/
+/* */
+div.tabshopping #brands dl, 
+div.tabshopping #brands p
+{
+	margin: 0;
+	padding: 0;
+}
+div.tabshopping #brands dl
+{
+	clear: both;
+	padding-top: 8px;
+}
+div.tabshopping #brands h3
+{
+	font-size: 21px;
+	line-height: 21px;
+	font-weight: normal;
+	padding: 0;
+	margin: 0 0 8px 0;
+}
+div.tabshopping #brands h4
+{
+	font-size: 14px;
+	line-height: 14px;
+	font-weight: normal;
+	text-transform: uppercase;
+	padding: 0;
+	margin: 0 0 8px 0;
+}
+div.tabshopping #brands p
+{
+	font-size: 14px;
+	padding-right: 12px;
+	padding-top: 12px;
+}
+div.tabshopping #brands hr
+{
+	clear: both;
+	margin: 0 36px 24px 36px;
+}
+div.tabshopping #brands dt
+{
+	float: left;
+}
+div.tabshopping #brands dt img
+{
+	height: 112px;
+	width: 112px;
+	padding: 12px;
+}
+div.tabshopping #brands dd
+{
+	margin-left: 152px;
+}
+div.tabshopping #brands div.itemLine
+{
+	border-bottom: 1px solid #aaa; 
+	margin:10px 37px 24px 37px;
+	position: relative;
+}
+/* */
+/*			Collections Tab			*/
+/* */
+div.tabshopping #collections dl
+{
+	float: left;
+	display: inline;
+	width: 352px;
+	height: 140px;
+	padding: 0;
+	margin: 12px 13px 16px 12px;
+}
+div.tabshopping #collections dl.last
+{
+	margin: 12px 13px 12px 12px;
+}
+div.tabshopping #collections dt img
+{
+	float: left;
+	display: inline;
+	height: 120px;
+	width: 120px;
+	margin: 0 20px 0 0;
+}
+div.tabshopping #collections h3
+{
+	font-size: 18px;
+	line-height: 18px;
+	font-weight: normal;
+	padding: 0;
+	margin: 0 0 9px 0;
+}
+div.tabshopping #collections h4
+{
+	font-size: 13px;
+	line-height: 13px;
+	font-weight: normal;
+	text-transform: uppercase;
+	padding: 0;
+	margin: 0 0 12px 0;
+}
+div.tabshopping #collections p
+{
+	margin: 0;
+	padding: 0;
+}
+/* */
+/*			Staff Advice			*/
+/* */
+div.tabshopping #advice #articles
+{
+	float: left;
+	width: 380px;
+	overflow: hidden;
+}
+div.tabshopping #advice #videos
+{
+	float: right;
+	width: 340px;
+	overflow: hidden;
+}
+div.tabshopping #advice h3
+{
+	font-size: 23px;
+	line-height: 23px;
+	margin: 0 0 21px 0;
+}
+div.tabshopping #advice h4
+{
+	font-size: 15px;
+	line-height: 15px;
+	font-weight: bold;
+	margin: 0 0 14px 0;
+}
+div.tabshopping #advice .article
+{
+	margin-bottom: 18px;
+	clear: left;
+}
+div.tabshopping #advice .article.last
+{
+	margin-bottom: 0;
+}
+div.tabshopping #advice .article p
+{
+	font-size: 12px;
+	margin-bottom: 12px;
+	float: left;
+	width: 336px;
+}
+div.tabshopping #advice #articles.novideos, 
+div.tabshopping #advice .novideos
+{
+	width: 760px;
+}
+div.tabshopping #advice .novideos .article p
+{
+	padding-left: 40px;
+	width: 720px;
+}
+div.tabshopping #advice #videos .frame
+{
+	padding: 8px;
+	border: solid 1px #AAAAAA /* border gray */;
+	background-color: #f0f0d5;
+	margin: 0 0 18px 0;
+	height: 291px;
+	width: 322px;
+	position: relative;
+}
+div.tabshopping #advice #videos .viewer
+{
+	height: 291px;
+	width: 322px;
+	position: absolute;
+	top: 53px;
+	left: 9px;
+	top: 8px;
+	left: 8px;
+}
+div.tabshopping #advice #videos h4
+{
+	font-size: 15px;
+	line-height: 15px;
+	font-weight: normal;
+	margin: 0 0 8px 0;
+}
+div.tabshopping #advice #videos ul.selection
+{
+	margin-left: 0px;
+	list-style-type: none;
+	float: left;
+}
+div.tabshopping #advice #videos ul.selection li
+{
+	line-height: 1.30;
+	margin-bottom: 12px;
+	padding-left: 24px;
+	background: url(/styles/images/movie_button_off.gif) left top no-repeat;
+}
+div.tabshopping #advice #videos ul.selection li.playing
+{
+	background: url(/styles/images/movie_button_on.gif) left top no-repeat;
+}
+div.tabshopping #advice #videos #video,
+div.tabshopping #advice #videos #video object
+{
+	height: 266px;
+	width: 322px;
+}
+div.tabshopping #advice #videos .noflash #video img
+{
+	height: 264px;
+	width: 320px;
+	border: solid 1px #AAAAAA /* border gray */;
+}
+div.tabshopping #advice #videos .noflash #video .story
+{
+	width: 300px; 
+	height: 244px;
+}
+div.tabshopping #advice #videos .noflash #video .story .article,
+div.tabshopping #advice #videos .noflash #video .story .article p
+{
+	width: 300px;
+}
+div.tabshopping #advice #videos .noflash #video .story .article .getFlash
+{
+	width: 265px;
+	padding-left: 35px;
+}
+/* ************************************
+		Staff Advice Expanding Content
+   ************************************ */
+div.tabshopping #advice .openned .article span.contents, 
+div.tabshopping #advice .openned .article .contents .moreinfo 
+{
+	display: inline;
+}
+div.tabshopping #advice .article .contents, 
+div.tabshopping #advice .article .contents .moreinfo, 
+div.tabshopping #advice .openned .article .moreinfo
+{
+	display: none;
+}
+/* ************************************
+		Quick View Float
+   ************************************ */
+.item1 span.boxcaption
+{
+	float: left;
+	position: absolute;
+	top: 90px;
+	left: 0;
+	background: transparent;
+	padding-left: 33px;
+	opacity: .90;
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90) /* For IE 5-7 */;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)" /* For IE 8 */;
+}
+.item1 span.cover
+{
+	top: 205px;
+}
+/* **************************************
+	Tabshopping Search
+   ************************************** */
+div#results div.tabshopping div.tabs ul.menu li a span
+{
+	padding-left: 56px;
+	padding-right: 64px;
+}
+div#results div.tabshopping div.tabs ul.menu li a span.last
+{
+	padding-right: 66px;
+}
+html > body div#results div.tabshopping div.tabs ul.menu li a span
+{
+	*padding-left: 55px;
+	*padding-right: 55px;
+}
+div#results div.tabshopping div.tabs ul.menu li.first
+{
+	margin-left: 0;
+}
+div.tabshopping.search
+{
+	margin-bottom: 16px;
+}
+/* **************************************
+	Tabshopping Category
+   ************************************** */
+div.tabshoppingCategory,
+div.tabshopping.category
+{
+	clear: both;
+	margin-bottom: 16px;
+	overflow: hidden;
+}
+/* **************************************
+	Tabshopping Catagory Gifting
+   ************************************** */
+#giftitems div.tabshopping div.tabs ul.menu li a span
+{
+	padding-left: 43px;
+	padding-right: 45px;
+}
+div#giftitems div.tabshopping div.tabs ul.menu li.first
+{
+	margin-left: 0;
+}
+div.tabshopping.catgift
+{
+	margin-bottom: 16px;
+}
+/* **************************************
+	Tabshopping About Us slt page
+   ************************************** */
+div#aboutus div.tabshopping div.tabs ul.menu li a span
+{
+	padding-left: 48px;
+	padding-right: 48px;
+}
+div#aboutus div.tabshopping div.tabs ul.menu li.first
+{
+	margin-left: 0;
+}
+div#aboutus div.tabshopping div.tabs ul.menu li a span.last
+{
+	padding-left: 49px;
+	padding-right: 49px;
+}
+div#aboutus div.tabshopping
+{
+	margin-bottom: 16px;
+}
+#aboutsurlatablepage h2
+{
+	font-size: 23px;
+	line-height: 23px;
+	margin-bottom: 16px;
+	font-weight: normal;
+}
+div#aboutus div.tabshopping div.tabs div.tab div.box h2
+{
+	margin-bottom: 8px;
+}
+div#aboutus div.tabshopping div.tabs div.tab div.box h3
+{
+	font-size: 15px;
+	font-weight: normal;
+	text-transform: uppercase;
+	margin-bottom: 8px;
+}
+div#aboutus div.tabshopping div.tabs div#aboutustab p,
+div#aboutus div.tabshopping div.tabs div#ourhistory p,
+div#aboutus div.tabshopping div.tabs div#ourproducts p,
+div#aboutus div.tabshopping div.tabs div#cookingclasses p
+{
+	font-size: 14px;
+	line-height: 21px;
+}
+div#aboutus div.tabshopping div.tabs div#ourhistory div.content
+{
+	float: left;
+	padding-left: 16px;
+	width: 178px;
+}
+div#aboutus div.tabshopping div.tabs div#ourhistory div.content p
+{
+	margin-bottom: 0px;
+}
+div#aboutus div.tabshopping div.tabs div#ourhistory div.imagery
+{
+	float: right;
+}
+div#aboutus div.tabshopping div.tabs div#ourhistory div.imagery img
+{
+	width: 531px;
+	height: 636px;
+	border: solid 1px #aaaaaa /* border gray */;
+}
+div#aboutus div.tabshopping div.tabs div#ourproducts div.content,
+div#aboutus div.tabshopping div.tabs div#cookingclasses div.content
+{
+	float: right;
+	width: 582px;
+}
+div#aboutus div.tabshopping div.tabs div#ourproducts div.imagery,
+div#aboutus div.tabshopping div.tabs div#cookingclasses div.imagery
+{
+	float: left;
+}
+div#aboutus div.tabshopping div.tabs div#ourproducts div.imagery div,
+div#aboutus div.tabshopping div.tabs div#cookingclasses div.imagery div
+{
+	margin-bottom: 28px;
+}
+div#aboutus div.tabshopping div.tabs div#ourproducts div.imagery div.last,
+div#aboutus div.tabshopping div.tabs div#cookingclasses div.imagery div.last
+{
+	margin-bottom: 0px;
+}
+div#aboutus div.tabshopping div.tabs div#ourproducts div.content p,
+div#aboutus div.tabshopping div.tabs div#cookingclasses div.content p
+{
+	margin-bottom: 20px;
+}
+div#aboutus div.tabshopping div.tabs div#ourproducts div.content p.last,
+div#aboutus div.tabshopping div.tabs div#cookingclasses div.content p.last
+{
+	margin-bottom: 0px;
+}
+div#aboutus div.tabshopping div.tabs div#ourproducts div.imagery img,
+div#aboutus div.tabshopping div.tabs div#cookingclasses div.imagery img
+{
+	width: 160px;
+	height: 160px;
+	border: solid 1px #aaaaaa /* border gray */;
+}
+/* **************************************
+	Tabshopping Media Relations page
+   ************************************** */
+div#relations div.tabshopping div.tabs ul.menu li a span
+{
+	padding-left: 144px;
+	padding-right: 146px;
+}
+div#relations div.tabshopping div.tabs ul.menu li a span.last
+{
+	padding-right: 147px;
+}
+div#relations div.tabshopping div.tabs ul.menu li.first
+{
+	margin-left: 0;
+}
+div#relations div.tabshopping
+{
+	margin-bottom: 16px;
+}
+/* */
+/*			Culinary Custom 			*/
+/* */
+div.culinarycustom
+{
+	margin-bottom: 16px;
+	overflow: hidden;
+	clear: both;
+}
+div.culinarycustom div.tabshopping div.tabs ul.menu li a span
+{
+	padding-left: 47px;
+	padding-right: 49px;
+}
+/* **************************************
+	Culinary Custom tab page
+   ************************************** */
+div.tabshopping .culcustomevent
+{
+	width: 760px;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+div.tabshopping .culcustomevent .imagebar
+{
+	float: left;
+	width: 140px;
+}
+div.tabshopping .culcustomevent .imagebar img
+{
+	display: block;
+	width: 138px;
+	height: 138px;
+	border: solid 1px #aaaaaa;
+	margin-bottom: 16px;
+}
+div.tabshopping .culcustomevent .imagebar img.last
+{
+	margin-bottom: 0px;
+}
+div.tabshopping .culcustomevent .story
+{
+	float: left;
+	width: 604px;
+	margin-left: 16px;
+}
+div.tabshopping .culcustomevent .story h2.header
+{
+	font-size: 23px;
+	line-height: 23px;
+	margin-bottom: 20px;
+	text-transform: none;
+}
+.culcustomevent .story h2
+{
+	text-transform: uppercase;
+	font-size: 15px;
+	line-height: 17px;
+	margin-bottom: 13px;
+}
+div.tabshopping .culcustomevent .story ul
+{
+	list-style-position: inside;
+	list-style-type: square;
+}
+/* **************************************
+	Class FAQ tab page
+   ************************************** */
+.tabclassfaq 
+{
+	width: 760px;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+.tabclassfaq h2
+{
+	font-size: 23px;
+	line-height: 23px;
+	margin-bottom: 20px;
+}
+.tabclassfaq h3
+{
+	text-transform: uppercase;
+	font-size: 15px;
+	line-height: 17px;
+	margin-bottom: 13px;
+}
+.tabclassfaq ul
+{
+	list-style-position: inside;
+	list-style-type: square;
+}
+/* */
+/*			Culinary Store 			*/
+/* */
+/* **************************************
+	Store Detail tab page
+   ************************************** */
+.tabstoredetails
+{
+	width: 760px;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+.tabstoredetails .storeinformation
+{
+	float: left;
+	width: 436px;
+	margin-right: 24px;
+	overflow: hidden;
+	display: inline;
+}
+.tabstoredetails .mapwrap
+{
+	float: right;
+	width: 300px;
+	height: 300px;
+	padding: 0;
+	display: inline;
+}
+.tabstoredetails #storemap
+{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	margin: 0;
+}
+.tabstoredetails .storedetails
+{
+	font-size: 12px;
+	line-height: 1.4em;
+	margin: 0;
+	padding: 0;
+	display: block;
+	width: 416px;
+}
+.tabstoredetails .storehours, 
+.tabstoredetails .storecontact
+{
+	font-size: 12px;
+	line-height: 1.4em;
+	margin: 0;
+	padding: 0;
+	width: 316px;
+}
+.tabstoredetails h1.name
+{
+	font-size: 15px;
+	line-height: 15px;
+	margin-bottom: 14px;
+	font-weight: bold;
+}
+.tabstoredetails p.story
+{
+	font-size: 14px;
+	margin-bottom: 10px;
+}
+.tabstoredetails .storedetails dt
+{
+	width: 70px;
+}
+.tabstoredetails .storedetails label, 
+.tabstoredetails .storecontact label, 
+.tabstoredetails .storehours label
+{
+	font-weight: bold;
+}
+.tabstoredetails .storedetails dd a, 
+.tabstoredetails .storecontact dd a, 
+.tabstoredetails .storehours dd a
+{
+	color: #444444;
+}
+.tabstoredetails .storedetails dl
+{
+	width: 416px;
+	margin: 0px;
+	padding: 0px;
+}
+.tabstoredetails .storecontact dl, 
+.tabstoredetails .storehours dl
+{
+	width: 316px;
+	margin: 0px;
+	padding: 0px;
+}
+.tabstoredetails .storedetails dl fieldset.storehours  dl
+{
+	width: 316px;
+	margin: 0;
+	padding: 0;
+}
+.tabstoredetails .storedetails .hours
+{
+	margin-top: 5px;
+}
+.tabstoredetails .storedetails dd.last, 
+.tabstoredetails .storecontact dd.last, 
+.tabstoredetails .storehours dd.last
+{
+	margin: 0;
+	padding: 0;
+	width: 316px;
+}
+.tabstoredetails .message h2
+{
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 12px;
+	margin: 6px 0 6px 6px;
+}
+.tabstoredetails .message h2 a
+{
+	color: #444444 /* charcoal */;
+	border-bottom: solid 1px white;
+}
+.tabstoredetails .message h2 a:hover
+{
+	color: #444444 /* charcoal */;
+	border-bottom: solid 1px #444444 /* charcoal */;
+}
+.tabstoredetails .message p
+{
+	font-size: 11px;
+	line-height: 11px;
+	margin: 0 0 0 6px;
+}
+/* **************************************
+	Have an Event tab page
+   ************************************** */
+.tabhaveanevent
+{
+	width: 760px;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+.tabhaveanevent .imagebar
+{
+	float: left;
+	width: 140px;
+	padding: 0 16px 0 0;
+}
+.tabhaveanevent .imagebar img
+{
+	width: 138px;
+	height: 138px;
+	border: solid 1px #aaaaaa;
+	margin-bottom: 16px;
+}
+.tabhaveanevent .imagebar img.last
+{
+	margin-bottom: 0px;
+}
+.tabhaveanevent .story
+{
+	float: left;
+	width: 604px;
+	display: inline;
+}
+.tabhaveanevent .story h2.header
+{
+	font-size: 23px;
+	line-height: 23px;
+	margin-bottom: 20px;
+	text-transform: none;
+}
+.tabhaveanevent .story h2
+{
+	text-transform: uppercase;
+	font-size: 15px;
+	line-height: 17px;
+	margin-bottom: 13px;
+}
+.tabhaveanevent .story ul
+{
+	list-style-position: inside;
+	list-style-type: square;
+}
+/* **************************************
+	Create Aclass tab page
+   ************************************** */
+.tabcreateaclass
+{
+	float: left;
+	width: 760px;
+	margin: 0;
+	padding: 0;
+	display: inline;
+}
+.tabcreateaclass .imagebar
+{
+	float: left;
+	width: 140px;
+	padding: 0 16px 0 0;
+	display: inline;
+}
+.tabcreateaclass .imagebar img
+{
+	width: 138px;
+	height: 138px;
+	border: solid 1px #aaaaaa;
+	margin-bottom: 16px;
+}
+.tabcreateaclass .imagebar img.last
+{
+	margin-bottom: 0px;
+}
+.tabcreateaclass .story
+{
+	float: left;
+	width: 604px;
+	display: inline;
+}
+.tabcreateaclass .story h1
+{
+	font-size: 23px;
+	line-height: 23px;
+	margin-bottom: 20px;
+}
+.tabcreateaclass .story h2
+{
+	text-transform: uppercase;
+	font-size: 15px;
+	line-height: 17px;
+	margin-bottom: 13px;
+}
+.tabcreateaclass .story ul
+{
+	list-style-position: inside;
+	list-style-type: square;
+}
+/* */
+/*			Culinary Locations Table Page		*/
+/* */
+div.tabculinarylocations
+{
+	clear: both;
+	overflow: hidden;
+	width: 792px;
+	margin-bottom: 16px;
+}
