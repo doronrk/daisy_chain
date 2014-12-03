@@ -1,0 +1,1 @@
+(function(){var domain=(function(a){var b=a.match('[^.]+.(([^.]{2,3}.)?[^.]{2}|[^.]{3,})$');return b==null?a:b[0]})(location.host);document.cookie='MP_LANG=en;domain='+domain+';path=/;expires=Wed, 02 Dec 2015 22:02:19 CST';})();

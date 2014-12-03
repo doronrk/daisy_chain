@@ -1,0 +1,92 @@
+/* gather primary UI */
+@import url('normalize.css');
+@import url('style.css');
+
+/* adjust for better print view */
+#footer, #navigation, #header header *, .breadcrumb, #browser-check, .addthis_toolbox * {
+	display: none;
+}
+
+header #header-nav-container .top_bar, header #header-nav-container .bottom_bar, 
+header #header-nav-container .mid_content .promo_holder, header #header-nav-container .mid_content .middle_right,
+header #header-nav-container .mid_content .middle_right .header-search{
+	display: none;
+}
+
+header #header-nav-container .mid_content .logo_div{
+	margin-left: 240px !important;
+}
+
+
+header #header-nav-container{
+	height:auto !important;
+}
+
+div.sticky-header {
+	position: inherit;
+}
+	
+div#main {
+	margin-top: 10px;
+}
+
+body div#wrapper {
+	box-shadow: none;
+}
+
+#header .primary-logo img {
+	margin-left: 15px;
+}
+
+.pdp-main {
+	margin-bottom: 20px;
+}
+
+div.urlForPrintPage {
+	display: block;
+	color: #414141;
+	font-size: 1em;
+	width: 960px;
+	margin: 0 auto;
+	position: absolute;
+	bottom: 0px;
+}
+
+div.urlForPrintPage span {
+	margin-left: 40px;
+}
+
+.addthis_toolbox div.printSocialButtons, .addthis_toolbox div.printSocialButtons img {
+	display: block;
+	margin-bottom: 1px;
+}
+
+.addthis_toolbox div.printSocialButtons img {
+	margin-left: 2px;
+}
+
+/** order receipt printing **/
+#header .primary-logo {left:0;}
+#wrapper.pt_order-confirmation {width:auto;}
+#main.checkout-one-col .primary-content {margin:10px 0;}
+#wrapper.pt_order-confirmation .sticky-header {width:auto;}
+
+.order-confirmation-details .email-prefs,
+.pt_order-confirmation a.print-page,
+.pt_order-confirmation h1.createaccount, 
+.pt_order-confirmation .login-account {display:none;}
+
+.pt_order-confirmation #header {height: 70px;}
+.pt_order-confirmation div#main {margin-top:0}
+.pt_order-confirmation .primary-content h1,
+.pt_order-confirmation #secondary h1 {margin-bottom:0;margin-top:0;padding-bottom:0;text-align:center;}
+
+.pt_order-confirmation #confirmation-right th.section-header {padding-top:10px;}
+.pt_order-confirmation .confirmation-message {margin-bottom:10px;}
+.pt_order-confirmation #confirmation-header,
+.pt_order-confirmation #confirmation-left, 
+.pt_order-confirmation #confirmation-right {border:1px solid #656565;background:#fff;}
+.pt_order-confirmation #confirmation-left {width:36%;margin-right:0;padding-left: 10px;padding-right: 10px;}
+.pt_order-confirmation #confirmation-right {width:54%;padding-left: 10px;padding-right: 10px;}
+.order-confirmation-details {clear:both;overflow:hidden;}
+

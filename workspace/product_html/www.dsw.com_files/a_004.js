@@ -1,0 +1,1 @@
+lpConnLib.Process({"ResultSet": {"lpCallId":"973739944616-129243816737","lpCallConfirm":"","lpData":[{"result":70}]}});

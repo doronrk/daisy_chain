@@ -1,0 +1,16 @@
+//tealium universal tag - utag.7 ut4.0.201406061454, Copyright 2014 Tealium.com Inc. All Rights Reserved.
+if(!utag.libloader_bv){utag.libloader_bv=function(src,handler,id,a,b){a=document;b=a.createElement('script');b.id=id;b.language='javascript';b.type='text/javascript';b.src=src;if(typeof handler=='function'){b.handlerFlag=0;b.onreadystatechange=function(){if((this.readyState=='complete'||this.readyState=='loaded')&&!b.handlerFlag){b.handlerFlag=1;handler()}};b.onload=function(){if(!b.handlerFlag){b.handlerFlag=1;handler()}};a.getElementsByTagName('head')[0].appendChild(b)}}};var tealium_bv_configure=tealium_bv_configure||false;try{(function(id,loader,u){try{u=utag.o[loader].sender[id]={}}catch(e){u=utag.sender[id]};u.ev={'view':1,'link':1};u.o={};u.url="http://www.boscovs.com/shop/BazaarVoiceSubmission.bos";u.method="rr.show_reviews";u.type="product";u.account="boscovs";u.path="6514-en_us";u.domains=",wwwp.boscovs.com,";u.beacon="NA";u.path="static/"+u.path;if(u.domains.indexOf(","+location.hostname+",")>-1){u.path="bvstaging/"+u.path};u.base_url="//"+u.account+".ugc.bazaarvoice.com/"+u.path+"/bvapi.js";u.map={};u.extend=[];u.send=function(a,b,c,d,e,f,g){if(u.ev[a]||typeof u.ev.all!="undefined"){g={};for(d in utag.loader.GV(u.map)){if(typeof b[d]!="undefined"&&b[d]!=""){e=u.map[d].split(",");for(f=0;f<e.length;f++){if(e[f]=="type"){u.type=b[d];}else if(e[f]=="beacon"||e[f]=="orderId"||e[f]=="total"||e[f]=="items"||e[f]=="sku"||e[f]=="name"||e[f]=="category"||e[f]=="price"||e[f]=="quantity"||e[f]=="ctype"||e[f]=="label"||e[f]=="value"){u[e[f]]=b[d];}else{u.o[e[f]]=b[d];}}}}
+u.param1=u.method.split('.')[0];u.param2=u.method.split('.')[1];if((u.type=="product"||u.type=="category")&&(u.param2!="show_reviews"&&u.param2!="show_summary")){u.o.subjectType=u.type;}
+if(b._corder){u.beacon="transaction";}
+if(u.type=="category"&&typeof u.o.categoryId=="undefined"){u.o.categoryId=b._ccat+''};if(u.type=="product"){u.o.productId=b._cprod+'';}
+u.bv_callback=function(){if(u.beacon=="transaction"){u.orderId=u.orderId||b._corder;u.total=u.total||b._csubtotal;if(!u.items){u.items=[];u.sku=u.sku||b._csku.slice(0);u.name=u.name||b._cprodname.slice(0);u.category=u.category||b._ccat.slice(0);u.price=u.price||b._cprice.slice(0);u.quantity=u.quantity||b._cquan.slice(0);for(var i=0;i<u.sku.length;i++){g.sku=u.sku[i];if(u.name.length>0){g.name=u.name[i];}
+if(u.category.length>0){g.category=u.category[i];}
+if(u.price.length>0){g.price=u.price[i];}
+if(u.quantity.length>0){g.quantity=u.quantity[i];}
+if(u.imageUrl&&u.imageUrl.length>0){g.imageUrl=u.imageUrl[i];}
+u.items[i]=g;g={};}}
+$BV.SI.trackTransactionPageView({"orderId":u.orderId,"total":u.total,"items":u.items});}else if(u.beacon=="conversion"){g.type=u.ctype;if(u.label){g.label=u.label}
+g.value=u.value;$BV.SI.trackConversion(g);}else{if(!tealium_bv_configure){$BV.configure("global",{submissionContainerUrl:u.url});};tealium_bv_configure=true;if(u.param1=="NA"){$BV.ui(u.param2)}else{$BV.ui(u.param1,u.param2,u.o)};}}
+if(document.getElementById("tealium_bazaarvoice")&&tealium_bv_configure){if(u.param1=="NA"){$BV.ui(u.param2)}else{$BV.ui(u.param1,u.param2,u.o)};}
+else{utag.libloader_bv(u.base_url,u.bv_callback,"tealium_bazaarvoice");}}}
+try{utag.o[loader].loader.LOAD(id)}catch(e){utag.loader.LOAD(id)}})('7','boscovs.main');}catch(e){}

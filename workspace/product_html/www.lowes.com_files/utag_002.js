@@ -1,0 +1,5 @@
+//tealium universal tag - utag.88036 ut4.0.201411211730, Copyright 2014 Tealium.com Inc. All Rights Reserved.
+try{(function(id,loader,u){u=utag.o[loader].sender[id]={};u.ev={'view':1};u.qsp_delim="&";u.kvp_delim="=";u.data={};u.data.domain=encodeURIComponent("lowes.com");u.data.cat=encodeURIComponent("");u.base_url="//match.xg4ken.com/fbpixel?";u.map={"site_section_four":"cat","endeca_product_id":"prod"};u.extend=[];u.send=function(a,b){if(u.ev[a]||typeof u.ev.all!="undefined"){var c,d,e,f,g;c=[];g=[];for(d in utag.loader.GV(u.map)){if(typeof b[d]!="undefined"&&b[d]!=""){e=u.map[d].split(",");for(f=0;f<e.length;f++){if(e[f]=="domain"||e[f]=="cat"){u.data[e[f]]=encodeURIComponent(b[d]);}else{g.push(e[f]+u.kvp_delim+encodeURIComponent(b[d]));u.data[e[f]]=encodeURIComponent(b[d]);}}}}
+c.push("domain="+u.data.domain);u.data.cat=u.data.cat||(b._ccat?b._ccat.slice(0,1):"");if(u.data.cat){c.push("cat="+u.data.cat);}
+c=c.concat(g);u.img=new Image();u.img.src=u.base_url+c.join(u.qsp_delim);}}
+utag.o[loader].loader.LOAD(id);})('88036','lowes.main');}catch(e){}

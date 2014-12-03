@@ -1,0 +1,1028 @@
+﻿@font-face
+{
+	font-family: 'HPSimplified';
+	src: url(https://ssl.www8.hp.com/h10180/hp-fonts/v1-1/hps-euro-regular-eot.eot);
+	src: url(https://ssl.www8.hp.com/h10180/hp-fonts/v1-1/hps-euro-regular-eot.eot?#iefix) format('embedded-opentype'), 
+	url('https://ssl.www8.hp.com/h10180/hp-fonts/v1-1/hps-euro-regular-woff.woff') format('woff'), 
+	url('https://ssl.www8.hp.com/h10180/hp-fonts/v1-1/hps-euro-regular-ttf.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face
+{
+	font-family: 'HPSimplified';
+	src: url(https://ssl.www8.hp.com/h10180/hp-fonts/v1-1/hps-euro-bold-eot.eot);
+	src: url(https://ssl.www8.hp.com/h10180/hp-fonts/v1-1/hps-euro-bold-eot.eot?#iefix) format('embedded-opentype'), 
+	url('https://ssl.www8.hp.com/h10180/hp-fonts/v1-1/hps-euro-bold-woff.woff') format('woff'), 
+	url('https://ssl.www8.hp.com/h10180/hp-fonts/v1-1/hps-euro-bold-ttf.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+html, body
+{
+    height: 100%;
+    overflow: hidden;
+    font-family: "HPSimplified",Arial;
+}
+
+.rfgBody, .rfgForm
+{
+    height: 100%;
+    font-family: "HPSimplified",Arial;
+    font-size: 13px;
+    font-variant: normal;
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Form Container */
+#rfgFormContainer{
+    position: relative; /* IE6 scroll absolute contents fix */
+}
+.rfgFormContainer2col, .rfgFormContainer3col
+{
+    background: rgb(255, 255, 255);
+    height: 100%;
+    color: #a9a9a9;
+    border-color: #cccccc;
+    border-width: thin;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.rfgFormContainer2col
+{
+    width: 600px;
+}
+.rfgFormContainer3col
+{
+    width: 840px;
+}
+
+/* Header */
+.rfgFormContainer2col .rfgFormHeader
+{
+    width: 595px;
+}
+.rfgFormHeader
+{
+    position: relative;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: rgb(0, 150, 214);
+    line-height: 22px;
+    color: #fff;
+}
+.rfgFormHeader div.rfgFormHeaderTitle
+{
+    color: #fff;
+    margin: 0px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.rfgFormHeader div.rfgFormHeaderPageTagline
+{
+    color: #fff;
+    margin: 0px;
+    padding: 0px;
+    font-size: 18px;
+}
+
+/*.rfgFormHeader .rfgFormHeaderTitle { float:left; }
+.rfgFormHeader .rfgFormHeaderTagline { float:left; }
+.rfgFormHeader .rfgFormHeaderClose { float:right; margin-right:5px; }
+*/
+/* Content */
+.rfgFormContent
+{
+    /*padding-top:15px; 	padding-right:38px; 	padding-left:38px; 	padding-bottom:40px; 	position:relative;*/
+    padding-left:40px;
+    width:780px;
+}
+
+* html #rfgFormContainer .rfgFormContent
+{
+    /* IE 6 requires height to be calculated*/
+    height: expression( (new Function('elem', 'elem.style.height = parseInt(document.getElementById("rfgFormContainer").clientHeight) - 66 + "px";'))(this) );
+}
+
+.rfgFormContainer2col .rfgFormContent
+{
+    width: 580px;
+}
+
+/* Footer */
+.rfgFormFooter
+{
+    position: absolute;
+    bottom: 0px;
+    height: 33px;
+}
+.rfgFormContainer2col .rfgFormFooter
+{
+    background: #1e1e1e url(../images/footer2col.jpg) repeat-x;
+    width: 600px;
+}
+.rfgFormContainer3col .rfgFormFooter
+{
+    background: #1e1e1e url(../images/footer3col.jpg) no-repeat;
+    width: 725px;
+}
+.rfgFormFooter a
+{
+    display: block;
+    height: 33px;
+}
+
+
+/* Content Items: */
+
+/* Item Header*/
+.rfgFormItemHeadline, h2.rfgFormItemHeadline
+{
+    clear:both;
+    font-weight: bold;
+    color: #000;
+    margin-right:20px;
+}
+
+/*Required*/
+.rfgFormRequired
+{
+    padding-top: 6px;
+    padding-left: 40px;    
+    padding-bottom: 0px;
+    width:760px;
+}
+.rfgFormRequired .rfgFormRequiredLabel
+{
+    font-size: 14px;
+    color: #5A5A5A;
+    line-height: 18px;
+    margin: 0px;
+}
+.rfgFormRequiredNoError
+{
+    background-color: #FFF;
+}
+.rfgFormRequiredError
+{
+    background-color: #F7D7D7;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 9px;
+    margin-top: 20px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+}
+.rfgFormErrorMessage
+{
+    font-size: 14px;
+    line-height: 18px;
+    color: #FF0000;
+}
+
+/* Item introduction */
+.rfgFormIntroduction
+{
+    padding-top: 16px;
+    padding-left: 40px;    
+    padding-bottom: 0px;
+    width:760px;
+}
+.rfgFormIntroduction
+{
+    color: #000000;
+    font-size: 16px !important;
+    line-height: 22px !important;
+}
+
+/*MArgins*/
+.rfgMargin-15
+{
+    margin-top: 11px;
+    margin-bottom: 11px;
+}
+
+.rfgPaddingR-40
+{
+    padding-right: 40px;        
+}
+
+
+/* Item Content*/
+.rfgFormItemContent
+{        
+    /*margin-top:16px;
+    margin-bottom:6px;*/
+    font-style: normal; /*margin-top:10px;*/
+    clear: both;
+    color: #000000;
+    font-size: 14px;        
+    line-height:18px;    
+    width:100%;
+}
+
+/* Items*/
+.rfgItem
+{        
+    width: 260px;
+    float: left;
+    padding-right: 0px;    
+}
+.rfgItemLong
+{    
+    float: left;
+    margin:0px;    
+    width: 520px;
+    padding-right:0px;     
+    vertical-align:text-top;
+}
+
+.rfgItemLong a
+{
+    position:relative;       
+}
+
+.rfgItemVeryLong
+{
+    float: left;
+    margin-right: 0px;
+    margin-bottom: 10px;
+    width: 705px;
+}
+.rfgQuestion
+{
+    clear: both;
+}
+.rfgChoice .rfgCheckRadio
+{
+    width: 82px;
+    float: left;
+    text-align: right;
+    color: #000;
+    padding: 0;    
+}
+
+.rfgFormItemDescription
+{
+    margin-top:16px;
+    margin-bottom:16px;        
+    width:760px !important;
+}
+
+/* Questions/Labels */
+.rfgLabelNoError, .rfgLabelError, .rfgLabelLongNoError, .rfgLabelLongError, .rfgLabelVeryLongNoError, .rfgLabelVeryLongError
+{
+    margin-top:16px;
+    margin-bottom:10px;
+    color: #000000;
+    overflow: hidden;        
+}
+.rfgQuestion .rfgLabelNoError, .rfgQuestion .rfgLabelError
+{
+    margin-top:16px;
+    margin-bottom:10px;
+    /*margin-bottom: 7px;*/
+    width: 228px;
+    float: left;
+}
+.rfgLabelLongNoError, .rfgLabelLongError
+{
+    margin-top:16px;
+    margin-bottom:10px;
+    margin-right: 7px;
+    width: 381px;
+    float: left;
+    /*margin-top: 2px;
+    margin-bottom: 7px;*/
+}
+.rfgLabelVeryLongNoError, .rfgLabelVeryLongError
+{
+    margin-right: 7px;
+    width: 616px;
+    float: left;
+    /*margin-top: 2px;
+    margin-bottom: 7px;*/
+}
+.rfgChoice .rfgLabelNoError, .rfgChoice .rfgLabelError
+{
+    width: 218px;
+    margin-right: 20px;    
+    float: left;    
+    margin-top: 8px;
+    /*margin-bottom: 6px;*/
+    margin-bottom:0px;
+    color:#000000;
+    
+}
+.rfgChoice .rfgLabelVeryLongNoError
+{        
+    margin-top: 8px;
+    /*margin-bottom: 6px;*/
+    margin-bottom:0px;
+}
+
+
+.rfgLabelInput .rfgLabelNoError, .rfgLabelInput .rfgLabelError
+{
+    /*margin-bottom: 7px;*/
+    font-size: 14px;
+    line-height: 18px;
+}
+.rfgLabelError, .rfgLabelLongError
+{
+    color: #FF0000;
+}
+
+.rfgLabelError .rfgAsterisk, .rfgLabelLongError .rfgAsterisk, .rfgFormRequiredLabel .rfgAsterisk
+{
+    color: #F05332;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 14px;
+    /*position: relative;*/
+    top: 2px;
+}
+.rfgLabelNoError .rfgAsterisk, rfgLabelLongNoError .rfgAsterisk, .rfgFormRequiredLabel .rfgAsterisk
+{
+    color: #F05332;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 14px;
+    /*position: relative;*/
+    top: 2px;
+}
+.rfgError
+{
+    margin-right: 7px;
+    float: left;
+    color: #df6a09;
+}
+
+/* Line */
+.rfgFormItemDivider
+{
+    margin-top: 40px;
+    /*margin-bottom: 16px;*/
+}
+hr
+{
+    clear: both;
+    border: none;
+    border-top: solid 1px #CCCCCC;        
+    height: 0px;
+    margin-right:33px;
+    margin-bottom:0px;
+    margin-top:0px;
+}
+.rfgClear
+{
+    clear: both;
+    height: 0px;
+    margin: 0px;
+}
+
+/* Inputs */
+
+.rfgInputGroup
+{
+    float: left;
+    width: 240px;
+    padding: 0 8px;
+    padding: 0px;
+    margin: 0px;
+    margin-right: 0px;
+    display:inline-block;
+}
+
+.rfgInputGroupWithoutLabel
+{
+    color: #767676;
+    font-size: 11px;
+    line-height: 16px;
+    width: 220px;
+    margin-bottom:16px;    
+    clear:both;    
+}
+.rfgInputGroupWithoutLabel label
+{
+    margin-right:5px;    
+}
+
+.rfgInputGroup .rfgInputfield
+{
+    margin-bottom: 0px !important;
+}
+
+.rfgInputfield
+{
+    background: none reapeat scroll 0 0 #FFFFFF;
+    border: 2px solid /*#5A5A5A;*/ #CCCCCC;
+    color: /*#000000*/ #767676;
+    display: inline-block;
+    font-size: 16px;
+    height: 32px;
+    line-height: 22px;
+    padding: 0 8px;
+    vertical-align: middle;
+    width: 220px;
+    margin-bottom: 16px;
+    margin-right: 15px;
+    margin-top: 10px;
+}
+
+.dropTriggerContainer:hover, .rfgInputfield:hover, .hoverInputField, .enteredInputField
+{
+    border-color: #5A5A5A;
+    color: #000000;
+}
+
+.errorInputField
+{
+    border-color: #FF0000;
+    color: #FF0000;
+}
+.errorInputField:hover {
+    border-color: #FF0000 !important;
+    color: #FF0000;
+}
+
+select.rfgInputfield
+{
+    padding: 0px;
+    width: 146px;
+}
+
+.rfgChoice .rfgInputfield
+{
+    width: 220px;
+    margin:0px;    
+    /*margin-bottom:10px;*/
+    margin-top:10px;
+}
+
+.rfgInputPhoneCtr
+{
+    width: 29px;
+    float: none;
+    margin-right: 5px;
+}
+.rfgInputPhoneArea
+{
+    width: 29px;
+    float: none;
+    margin-right: 5px;
+}
+.rfgInputPhoneExt
+{
+    width: 29px;
+    float: none;
+    margin-right: 0px;
+}
+
+.rfgInputPhoneNumber
+{
+    width: 58px;
+    float: none;
+    margin-right: 5px;
+}
+
+.rfgInputMobileNumber
+{
+    width: 166px;
+    float: none;
+    margin-right: 0px;
+}
+
+input[type="file"]
+{
+    margin-bottom:16px;
+    width: 240px;       
+    font-size: 16px;
+    height: 36px !important;
+    line-height: 22px;
+    margin-top:10px;    
+    padding-bottom:10px;
+}
+
+/*
+.rfgInputfield  {
+	border: 0 none;
+	background-color: #E7E7E7;
+	width: 140px;
+	margin-top: 0px;
+	margin-right: 7px;
+	padding: 3px;
+	float:left;
+}
+select.rfgInputfield  {
+	padding:0px;
+	width:146px;
+}
+*/
+
+/*
+.rfgInputfieldError  {
+	border:2px solid #df6a09; 
+	background-color:#E7E7E7;
+	width:140px;
+	margin-top:1px;
+	margin-right: 7px;
+	padding: 1px;
+	float:left;
+}
+.select.rfgInputfieldError  {
+	padding: 0px;
+	width:146px;
+}
+*/
+
+.rfgInputfield.rfgTextbox
+{
+    margin-top: 10px;
+    float: none;
+    height: 50px;
+    font-size:16px;
+    color:#000000;
+    height:101px;
+    line-height:20px;
+    padding-right:0px;
+}
+.rfgFormContainer2col .rfgInputfield.rfgTextbox
+{
+    width: 505px;
+}
+.rfgFormContainer3col .rfgInputfield.rfgTextbox
+{
+    width: 748px;
+}
+
+input.rfgFormSubmit
+{
+    font-family: "HPSimplified", Arial;
+    padding: 0px 33px;
+    border-radius: 0px 4px 0px 4px;
+    background-color: #F05332;	 
+    background-size: 100% 100%;
+    border:none;    
+    color: white; 
+    height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 40px;
+    display: inline-block;     
+    margin-left:10px;    
+    float: right;
+}
+
+input.rfgFormSubmit:hover
+{
+    background-color:#C1401A !important;    
+}
+
+.rfgSubmitBlock
+{
+    margin-top: 40px;
+    border-top: 1px solid #CCCCCC;
+    padding-top: 20px;
+    margin-right: 33px;
+    min-height: 40px;
+    padding-bottom: 20px;
+    display:inline-block;
+}
+
+/* styles for dropdown lists */
+
+.dropTriggerContainer
+{
+    background: none reapeat scroll 0 0 #FFFFFF;
+    border: 2px solid /*#5A5A5A;*/ #CCCCCC;
+    color: /*#000000*/ #767676;
+    display: inline-block;
+    font-size: 16px;
+    height: 32px;
+    line-height: 22px;
+    padding-left: 10px;
+    vertical-align: middle;
+    width: 226px;
+    margin-bottom: 16px;
+    margin-right: 20px;
+    margin-top: 10px;
+    overflow-y:hidden;
+}
+
+.hoverDropTriggerContainer, .selectedDropTriggerContainer
+{    
+    border-top: 2px solid #5A5A5A;
+    border-right: 2px solid #5A5A5A;
+    border-left: 2px solid #5A5A5A;
+}
+
+.selectedDropTriggerContainerBorderBottom
+{
+    border-bottom: 2px solid #5A5A5A;
+}
+
+.errorDropTriggerContainer
+{    
+    border-top: 2px solid #FF0000;
+    border-right: 2px solid #FF0000;
+    border-left: 2px solid #FF0000;
+}
+.errorDropTriggerContainer:hover {
+    border: 2px solid #f00;
+}
+
+.errorDropTriggerContainerBottom
+{
+    border-bottom: 2px solid #FF0000;
+}
+
+
+.dropTrigger
+{
+    color: #007DBA;
+    line-height: 32px;
+    font-size: 16px;
+    width: 188px;    
+}
+
+.dropTriggerArrow
+{
+    background: url("../images/s-drop-hpe.png") no-repeat scroll 0 0 #FFFFFF;
+    height: 32px;
+    margin-left: 8px;
+    padding: 0;
+    width: 38px;
+    float: right;
+}
+
+.hoverDropTriggerArrow, .selectedDropTriggerArrow
+{
+    background: url("../images/s-drop-hpe.png") no-repeat scroll 0 -32px #FFFFFF;
+}
+
+.errorDropTriggerArrow
+{
+    background: url("../images/s-drop-hpe.png") no-repeat scroll 0 -96px #FFFFFF;
+}
+
+/*.dropTrigger{
+	border:1px solid #6B6B6B;
+	color: #ffffff;
+	width:142px;
+	padding:1px;
+	background:url(../images/select_arrow_down.gif) top right no-repeat #343434;
+	display:block;
+	margin-top: 0px;
+	margin-right: 7px;
+	height:16px;
+	white-space:nowrap;
+	overflow:hidden;
+}*/
+
+a.dropTrigger:link, a.dropTrigger:active, a.dropTrigger:visited, a.dropTrigger:hover
+{
+    color: #007DBA;
+    line-height: 32px;
+    text-decoration:none !important;
+}
+
+a.dropTrigger:focus
+{
+    color: #0098c7;
+    line-height: 32px;
+    text-decoration:none !important;
+}
+
+a.errorDropTrigger:link, a.errorDropTrigger:active, a.errorDropTrigger:visited, a.errorDropTrigger:hover
+{
+    color: #FF0000;
+    text-decoration:none !important;
+}
+
+.dropContainer
+{
+    position: relative;
+    height: 1%;
+}
+
+.dropListContainer
+{
+    position: absolute;
+    top: -16px;
+    left: 0px;
+    max-height: 142px;
+    overflow: hidden;
+    z-index: 6000;
+    overflow: auto; /*line-height:26px;*/
+    font-size: 16px;
+    width: 236px;
+    min-width: 236px;
+    border-bottom: solid 2px #cccccc;
+    border-right: solid 2px #cccccc;
+    border-left: solid 2px #cccccc;
+    border-top: none;
+}
+
+.hoverDropListContainer, .selectedDropListContainer
+{
+    border-bottom: solid 2px #5A5A5A;
+    border-right: solid 2px #5A5A5A;
+    border-left: solid 2px #5A5A5A;
+}
+
+.errorDropListContainer
+{
+    border-bottom: solid 2px #FF0000;
+    border-right: solid 2px #FF0000;
+    border-left: solid 2px #FF0000;
+}
+
+ul.dropList
+{
+    border-bottom: 1px solid #CCCCCC;
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    width: auto !important;
+    background-color: #FFFFFF;
+}
+
+ul.dropList a
+{
+    padding-top: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    vertical-align: middle;
+    display: block;
+    text-decoration: none;
+    border-bottom: 1px solid #CCCCCC;
+    color: #000000;
+    padding-bottom: 8px;
+}
+
+ul.dropList a:link, ul.dropList a:visited
+{
+    color: #000000;
+    text-decoration:none !important;
+}
+
+ul.dropList a:hover /*ul.dropList a:active, ul.dropList a:focus*/
+{
+    background: #007CBA;
+    color: #FFFFFF;
+    text-decoration:none !important;
+}
+
+ul.errorDropList a:hover /*ul.dropList a:active, ul.dropList a:focus*/
+{
+    background: #FF0000 !important;
+    color: #FFFFFF;
+}
+
+
+.rfgHidden
+{
+    /*left: -999px;*/
+    visibility: hidden;
+}
+
+.rfgCSOverlayInvisible
+{
+    display: none;
+}
+
+
+/* Replacing inline style from CrmMoreInfo */
+.rfgCrmClass1percent
+{
+    float: left;
+    width: 1%;
+}
+
+.rfgClearFloat
+{
+    clear: both;
+    width: 0;
+    height: 0;    
+}
+
+.rfgCrmInterrestedChoice
+{
+    margin-bottom:10px;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.rfgCrmInterrestedChoice label
+{
+    width: 144px !important;
+}
+
+.styledRadioButton
+{       
+    margin-top:10px;
+    background-image: url("../images/s-21px-hpe.png");
+    color: #000000;
+    background-position: 0 -224px;
+    background-repeat: no-repeat;
+    padding-left: 22px;
+    cursor: pointer;    
+    white-space: nowrap;    
+    width:0px;      
+}
+.styledRadioButton:hover, .styledRadioLabelHover {
+    background-position: 0 -270px;
+}
+
+.styledCheckbox
+{   
+    margin-top:10px; 
+    background-image: url("../images/s-21px-hpe.png");
+    color: #000000;
+    background-position: 0 0px;
+    background-repeat: no-repeat;    
+    padding-left: 22px;
+    cursor: pointer;    
+    white-space: nowrap;   
+    width:0px;
+}
+.styledCheckbox:hover, .styledCheckboxLabelHover {
+    background-position: 0 -45px;
+}
+
+.checkedStyledRadioButton
+{
+    background-image: url("../images/s-21px-hpe.png");
+    background-position: 0 -317px !important;
+}
+
+.checkedStyledCheckbox
+{
+    background-image: url("../images/s-21px-hpe.png");
+    background-position: 0 -90px !important;
+}
+
+.errorStyledRadioButton
+{
+    background-image: url("../images/s-21px-hpe.png");
+    background-position: 0 -408px !important;
+}
+
+.errorCheckedStyledRadioButton
+{
+    background-image: url("../images/s-21px-hpe.png");
+    background-position: 0 -317px !important;
+}
+
+.radioButtons a, .radioButtons a:link, .radioButtons a:visited, 
+.rfgChoice a, .rfgChoice a:link, .rfgChoice a:visited,
+.choices a, .choices a:link, .choices a:visited
+{
+    outline: 0 none !important;
+    text-decoration: none !important;
+    color: #000000 !important;
+    line-height: 18px !important;          
+    display:inline-block;       
+    float:left;
+    white-space: pre;           /* CSS 2.0 */
+	white-space: pre-wrap;      /* CSS 2.1 */
+	white-space: pre-line;      /* CSS 3.0 */
+	white-space: -pre-wrap;     /* Opera 4-6 */
+	white-space: -o-pre-wrap;   /* Opera 7 */
+	white-space: -moz-pre-wrap; /* Mozilla */
+	white-space: -hp-pre-wrap;  /* HP Printers */
+	word-wrap: break-word;      /* IE 5+ */	
+}
+
+.rfgChoice .rfgLabelNoError, .rfgChoice .rfgLabelError
+{
+    width:158px !important;    
+    margin-right:20px;       
+    /*margin-top:0px !important;*/
+}
+
+.rfgChoice a
+{
+    margin-left:60px;
+    width:0px !important;    
+    margin-right:0px;   
+}
+
+
+.rfgWithoutMargin label
+{
+    margin-left:0px !important; 
+    width:218px !important;    
+}
+
+.rfgWithoutMargin a
+{
+    margin-left:0px !important;     
+}
+
+.errorRadioButtons a, .errorRadioButtons a:link, .errorRadioButtons a:visited
+{
+    color: #FF0000 !important;
+}
+
+.radioNotDisplayed
+{
+    display: none;
+    visibility: hidden;
+}
+
+.radioButtons
+{
+    padding: 0;
+    margin: 10px 10px 10px 0;
+}
+
+.rfgOptOut
+{
+    padding-top:11px;    
+}
+
+.rfgChoiceQuestion
+{
+    margin-top:16px;    
+}
+
+.choiceEnd
+{
+    margin-bottom:16px;        
+}
+
+.rfgPrivacyBlock .rfgItem .rfgLabelNoError, .rfgPrivacyBlock .rfgItem .rfgLabelError
+{
+    margin-top:10px !important;   
+    margin-bottom:0px !important;    
+}
+
+.rfgPrivacyBlock .rfgItem .styledRadioButton
+{
+   margin-top:10px !important;   
+}
+
+.rfgInputGroup .styledRadioButton, .rfgOptOut .styledCheckbox
+{
+       margin-top:0px !important;   
+}
+.rfgSiebel .styledRadioButton, .rfgSiebel .rfgChoice .rfgLabelNoError, .rfgSiebel .rfgChoice .rfgLabelError, .rfgSiebel .styledCheckbox 
+{
+    margin-top:0px;
+}
+.rfgSiebel
+{
+    margin-top:16px;
+}
+.rfgSiebel .rfgQuestion .rfgLabelNoError, .rfgSiebel .rfgQuestion .rfgLabelError
+{
+    margin-top:0px !important;
+    margin-bottom:0px !important;
+}
+
+.rfgSiebel .rfgItemLong .rfgInputfield
+{
+    margin-top:0px;
+    margin-bottom:10px;    
+}
+
+.rfgSiebel .dropTriggerContainer, .rfgSiebel .rfgInputfield
+{
+    margin-bottom:0px !important;    
+}
+
+
+.rfgSiebel .rfgSpace
+{
+   margin-bottom:10px;     
+}
+
+.rfgSiebel
+{        
+    margin-bottom:16px !important;
+    margin-top:16px !important;    
+}
+
+.rfgSiebel .dropListContainer
+{
+    position:absolute;
+    top:0px;    
+}
+
+.rfgInputGroupWithoutLabel .rfgAsterisk {
+    color: #F05332;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 11px;
+    position: relative;
+    top: 0px;
+}

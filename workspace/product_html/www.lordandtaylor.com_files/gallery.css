@@ -1,0 +1,112 @@
+@charset "utf-8";
+/* CSS Document */
+/*--Main Image Preview--*/
+.main_image {
+	width: 390px;
+	height: auto;
+	float: right;
+	position: relative;
+	overflow: visible;
+}
+.main_image img {
+	border:solid 1px #ccc
+}
+.block small {
+	padding: 0 0 0 20px;
+	background: url(icon_calendar.gif) no-repeat 0 center;
+	font-size: 1em;
+}
+.main_image .block small {
+	margin-left: 10px;
+}
+.main_image .desc {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	display: none;
+}
+.main_image .block {
+	width: 100%;
+	background: #111;
+	border-top: 1px solid #000;
+}
+.image_thumb {
+	float: left;
+	width: 60px;
+}
+.image_thumb img {
+	border: 1px solid #ccc;
+	float: left;
+	margin-bottom:10px
+}
+.image_thumb ul {
+	width:60px;
+	float:left;
+}
+.image_thumb ul li {
+	display:block;
+	clear:both
+}
+.image_thumb ul li.hover {
+	cursor: pointer;
+}
+.image_thumb ul li.active {
+	cursor: default;
+}
+.image_thumb ul li.block {
+	float: left;
+	margin-left: 10px;
+	padding: 0;
+	width: 170px;
+}
+.image_thumb .pic-container {
+	clear:both;
+	overflow: hidden;
+	width: 60px;
+	height: 500px
+}
+.image_thumb a.gallery_prev {
+	display: block;
+	float:left;
+	background: url(../images/slide.png) no-repeat;
+	margin: 0px;
+	overflow: hidden;
+	width: 60px;
+	text-indent: -9999em;
+	height: 14px;
+	margin-bottom:5px;
+	outline: none
+}
+.image_thumb a.gallery_next {
+	display: block;
+	float:left;
+	background: url(../images/slide.png) no-repeat;
+	margin: 0px;
+	overflow: hidden;
+	width: 60px;
+	text-indent: -9999em;
+	height: 14px;
+	margin-top:5px;
+	outline: none
+}
+.image_thumb a.gallery_prev {
+	background-position: center 0px
+}
+.image_thumb a.gallery_next {
+	background-position: center -20px
+}
+.image_thumb a.gallery_prev:hover {
+	background-position: center -40px
+}
+.image_thumb a.gallery_next:hover {
+	background-position: center -60px
+}
+.image_thumb a.gray.gallery_prev {
+	background-position: center -80px
+}
+.image_thumb a.gray.gallery_next {
+	background-position: center -100px
+}
+.tum{
+	display:none;}

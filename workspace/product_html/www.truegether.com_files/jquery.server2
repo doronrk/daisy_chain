@@ -1,0 +1,21 @@
+//Ref: http://stackoverflow.com/questions/2457032/jquery-validation-change-default-error-message
+$(function(){
+	jQuery.extend(jQuery.validator.messages, {
+		required: jquery.validate.required,
+		remote: jquery.validate.remote,
+		email: jquery.validate.email,
+		url: jquery.validate.url,
+		date: jquery.validate.date,
+		dateISO: jquery.validate.dateISO,
+		number: jquery.validate.number,
+		digits: jquery.validate.digits,
+		creditcard: jquery.validate.creditcard,
+		equalTo: jquery.validate.equalTo,
+		maxlength: $.validator.format(jquery.validate.maxlength),
+		minlength: $.validator.format(jquery.validate.minlength),
+		rangelength: $.validator.format(jquery.validate.rangelength),
+		range: $.validator.format(jquery.validate.range),
+		max: $.validator.format(jquery.validate.max),
+		min: $.validator.format(jquery.validate.min)
+	});
+});

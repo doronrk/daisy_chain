@@ -1,0 +1,1 @@
+define(["backbone"],function(n){var e=n.Model.extend({url:function(){return this.urlPath},urlPath:""});return e});

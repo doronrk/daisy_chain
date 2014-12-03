@@ -1,0 +1,914 @@
+define([], function() {
+	
+	function AssetState(height, width, dispatcher) { // constructor
+		// private variables
+		
+		console.log('Loading AssetState');
+
+		// initial sizes
+		this._height = height;
+		this._width = width;
+		
+		// current sizes
+		this._assetHeight = height;
+		this._assetWidth = width;
+		
+		// full zoom sizes
+		this._zoomHeight = height;
+		this._zoomWidth = width;
+		
+		// current positioning
+		this._pagePosX = 0;
+		this._pagePosY = 0;
+		this._positionX = 0;
+		this._positionY = 0;
+		
+		this._minLeft = 0;
+		this._maxLeft = 0;
+		this._minTop = 0;
+		this._maxTop = 0;
+
+		this._moveLeft = 0;
+		this._moveTop = 0;
+		
+		// mouse positioning
+		this._mouseX = 0;
+		this._mouseY = 0;
+		
+		this._zoomLevel = 0;
+		this._maxZoom = 4;
+		this._stepSizeTop = 0;
+		this._stepSizeLeft = 0;
+		this._dispatcher = dispatcher;
+
+		this._zoomOnly = true;
+
+		// pinch data
+		this._pinchStartWidth = 0;
+		this._pinchStartHeight = 0;
+		this._pinchStartX = 0;
+		this._pinchStartY = 0;
+		this._pinchChange = 0;
+		this._pinchScale = 0;
+
+		// rotation data
+		this._rotationData = {};
+
+		// rotate position
+		this._rotateX = 0;
+		this._rotateY = 0;
+
+		// rotation control
+		this._allow360X = false;
+		this._allow360Y = false;
+		this._rotateClockwise = false;
+		this._rotateIntervalID;
+		this._autoRotating = false;
+		this._autoRotateInfinite = false;
+
+		// video states
+		this._playing = false;
+		this._videoVolume = 1;
+		this._videoSeeking = false;
+		this._videoTime = 0;
+		this._videoMuted = false;
+		
+		// privileged functions
+		this.reset = function() {
+			this._assetHeight = _height;
+			this._assetWidth = _width;
+			this._positionX = 0;
+			this._positionY = 0;
+			this._zoomLevel = 0;
+		};
+		
+		this.getHeight = function(){
+			return this._height;
+		};
+		
+		this.getWidth = function(){
+			return this._width;
+		};
+		
+		this.setAssetHeight = function(assetHeight){
+
+			if ( assetHeight >= this._height && assetHeight <= this._zoomHeight)
+			{
+				this._assetHeight = assetHeight;
+				this.calculateBoundryValues();
+			}
+		};
+		
+		this.getAssetHeight = function(){
+			return this._assetHeight;
+		};
+		
+		this.setAssetWidth = function(assetWidth){
+
+			if ( assetWidth >= this._width && assetWidth <= this._zoomWidth)
+			{
+				this._assetWidth = assetWidth;
+				this.calculateBoundryValues();
+			}
+		};
+		
+		this.getAssetWidth = function(){
+			return this._assetWidth;
+		};
+		
+		this.setZoomHeight = function(zoomHeight){
+			this._zoomHeight = zoomHeight;
+		};
+		
+		this.getZoomHeight = function(){
+			return this._zoomHeight;
+		};
+		
+		this.setZoomWidth = function(zoomWidth){
+			this._zoomWidth = zoomWidth;
+		};
+		
+		this.getZoomWidth = function(){
+			return this._zoomWidth;
+		};
+
+		this.getCurrentScaleY = function(){
+			return (this._assetHeight/this._height);
+		};
+
+		this.getCurrentScaleX = function(){
+			return (this._assetWidth/this._width);
+		};
+		
+		this.setX = function(x){
+		
+			if ( x < this._minLeft ) {
+				x = this._minLeft;
+			}
+			if ( x > this._maxLeft ) {
+				x = this._maxLeft;
+			}
+		
+			this._positionX = x;
+		};
+		
+		this.getX = function(){
+			return this._positionX;
+		};
+		
+		this.setY = function(y){
+		
+			if ( y < this._minTop ) {
+				y = this._minTop;
+			}
+			if ( y > this._maxTop ) {
+				y = this._maxTop;
+			}
+			
+			this._positionY = y;
+		};
+		
+		this.getY = function(){
+			return this._positionY;
+		};
+		
+		this.getMinLeft = function(){
+			return this._minLeft;
+		};
+		
+		this.getMinTop = function(){
+			return this._minTop;
+		};
+
+		this.updateX = function() {
+			this.setX(this.getX() + this._moveLeft);
+		}
+
+		this.updateY = function() {
+			this.setY(this.getY() + this._moveTop);
+		}
+		
+		this.setPosition = function(x, y) {
+			this.setX(x);
+			this.setY(y);
+			
+			RICHFX.jQuery(this._dispatcher).trigger('assetstate.position.changed');
+			RICHFX.jQuery(this._dispatcher).trigger('assetstate.positionvf.changed');
+		};
+		
+		this.setMouseX = function(x){
+			this._mouseX = x;
+		};
+		
+		this.getMouseX = function(){
+			return this._mouseX;
+		};
+		
+		this.setMouseY = function(y){
+			this._mouseY = y;
+		};
+		
+		this.getMouseY = function(){
+			return this._mouseY;
+		};
+		
+		this.setPagePosX = function(x){
+			this._pagePosX = x;
+		};
+		
+		this.getPagePosX = function(){
+			return this._pagePosX;
+		};
+		
+		this.setPagePosY = function(y){
+			this._pagePosY = y;
+		};
+		
+		this.getPagePosY = function(){
+			return this._pagePosY;
+		};
+		
+		this.setMoveLeft = function(x){
+			this._moveLeft = x;
+		};
+		
+		this.getMoveLeft = function(){
+			return this._moveLeft;
+		};
+		
+		this.setMoveTop = function(y){
+			this._moveTop = y;
+		};
+		
+		this.getMoveTop = function(){
+			return this._moveTop;
+		};
+		
+		this.setZoomLevel = function(zoom){
+
+			if ( this._zoomLevel != zoom )
+			{
+				this._zoomLevel = zoom;
+
+				console.log("Set _zoomLevel: " + this._zoomLevel);
+				
+				RICHFX.jQuery(this._dispatcher).trigger('assetstate.zoom.changed');
+				RICHFX.jQuery(this._dispatcher).trigger('assetstate.zoomproxy.changed');
+				RICHFX.jQuery(this._dispatcher).trigger('assetstate.positionvf.changed');
+			}
+		};
+		
+		this.setPinchZoomLevel = function(zoom){
+
+			// If in pinch mode a zoomlevel change should not have a knock on effect
+			if ( this._zoomLevel != zoom && this._zoomLevel >= 0 && this._zoomLevel <= this._maxZoom)
+			{
+				this._zoomLevel = zoom;
+
+				console.log("Set _zoomLevel (pinch): " + this._zoomLevel);
+
+				RICHFX.jQuery(this._dispatcher).trigger('assetstate.pinchzoom.changed');
+
+				if ( this._zoomLevel == 0 ) {
+					this.handlePinchReset();	
+				}
+			}
+		};
+		
+		this.getZoomLevel = function(){
+			return this._zoomLevel;
+		};
+		
+		this.workoutStepSize = function(){
+			this._stepSizeTop = (this._zoomHeight - this._height)/this._maxZoom;
+			this._stepSizeLeft = (this._zoomWidth - this._width)/this._maxZoom;
+		};
+		
+		this.getStepSizeTop = function() {
+			return (this._zoomHeight - this._height)/this._maxZoom;
+		};
+		
+		this.getStepSizeLeft = function() {
+			return (this._zoomWidth - this._width)/this._maxZoom;
+		};
+
+		// Pinch Data
+		this.setPinchStartData = function(x, y, width, height) {
+			this._pinchStartX = x;
+			this._pinchStartY = y;
+			this._pinchStartWidth = width;
+			this._pinchStartHeight = height;
+		};
+
+		this.setPinchStartWidth = function(width) {
+			this._pinchStartWidth = width;
+		};
+
+		this.getPinchStartWidth = function() {
+			return this._pinchStartWidth;
+		};
+
+		this.setPinchStartHeight = function(height) {
+			this._pinchStartHeight = height;
+		};
+
+		this.getPinchStartHeight = function() {
+			return this._pinchStartHeight;
+		};
+
+		this.setPinchStartX = function(x) {
+			this._pinchStartX = x;
+		};
+
+		this.getPinchStartX = function() {
+			return this._pinchStartX;
+		};
+
+		this.setPinchStartY = function(y) {
+			this._pinchStartY = y;
+		};
+
+		this.getPinchStartY = function() {
+			return this._pinchStartY;
+		};
+
+		this.setPinchChange = function(change) {
+			this._pinchChange = change;
+
+			if ( this._zoomLevel == 0 )
+			{
+				this._zoomLevel = 0.5; // ensure a reset does not happen	
+			}
+			
+			RICHFX.jQuery(this._dispatcher).trigger('assetstate.pinch.changed');
+		};
+
+		this.getPinchChange = function() {
+			return this._pinchChange;
+		};
+
+		this.setPinchScale = function(scale) {
+			this._pinchScale = scale;
+
+			if ( this._zoomLevel == 0 )
+			{
+				this._zoomLevel = 0.5; // ensure a reset does not happen	
+			}
+
+			RICHFX.jQuery(this._dispatcher).trigger('assetstate.pinch.scalechanged');
+		};
+
+		this.getPinchScale = function() {
+			return this._pinchScale;
+		};
+
+		// Rotation Data
+
+		this.getRotationData = function () {
+			return this._rotationData;
+		};
+
+		this.setRotationData = function (data) {
+			this._rotationData = data;
+		};
+
+		this.getRotateX = function () {
+			return this._rotateX;
+		};
+
+		this.getRotateY = function () {
+			return this._rotateY;
+		};
+
+		this.setRotateX = function (x) {
+			this._rotateX = x;
+		};
+
+		this.setRotateY = function (y) {
+			this._rotateY = y;
+		};
+
+		this.getRotateXMax = function () {
+			return this._rotateXMax;
+		};
+
+		this.getRotateYMax = function () {
+			return this._rotateYMax;
+		};
+
+		this.setRotateXMax = function (x) {
+			this._rotateXMax = x;
+		};
+
+		this.setRotateYMax = function (y) {
+			this._rotateYMax = y;
+		};
+
+		this.getRotateXMin = function () {
+			return this._rotateXMin;
+		};
+
+		this.getRotateYMin = function () {
+			return this._rotateYMin;
+		};
+
+		this.setRotateXMin = function (x) {
+			this._rotateXMin = x;
+		};
+
+		this.setRotateYMin = function (y) {
+			this._rotateYMin = y;
+		};
+
+		this.getRotateXCount = function () {
+			return this._rotateXCount;
+		};
+
+		this.getRotateYCount = function () {
+			return this._rotateYCount;
+		};
+
+		this.setRotateXCount = function (x) {
+			this._rotateXCount = x;
+		};
+
+		this.setRotateYCount = function (y) {
+			this._rotateYCount = y;
+		};
+
+		this.getAllow360X = function () {
+			return this._allow360X;
+		};
+
+		this.getAllow360Y = function () {
+			return this._allow360Y;
+		};
+
+		this.setAllow360X = function (x) {
+			this._allow360X = x;
+		};
+
+		this.setAllow360Y = function (y) {
+			this._allow360Y = y;
+		};
+
+		this.getAutoRotateInfinite = function () {
+			return this._autoRotateInfinite;
+		};
+
+		this.setAutoRotateInfinite = function (auto) {
+			this._autoRotateInfinite = auto;
+		};
+
+		this.getRotateClockwise = function() {
+			return this._rotateClockwise;
+		};
+
+		this.setRotateClockwise = function(clockwise) {
+			this._rotateClockwise = clockwise;
+		};
+
+		this.setZoomOnly = function(zoomOnly) {
+			this._zoomOnly = zoomOnly;
+			RICHFX.jQuery(this._dispatcher).trigger("state.zoomModeChange");
+		};
+
+		this.getZoomOnly = function() {
+			return this._zoomOnly;
+		};
+
+		this.setPlaying = function(playing) {
+			this._playing = playing;
+		};
+
+		this.getPlaying = function() {
+			return this._playing;
+		};
+
+		this.setVolume = function(volume) {
+			this._videoVolume = volume;
+			RICHFX.jQuery(this._dispatcher).trigger("video.volumeChange");
+		};
+
+		this.getVolume = function() {
+			return this._videoVolume;
+		};
+
+		this.setMuted = function(muted) {
+			this._videoMuted = muted;
+		};
+
+		this.getMuted = function() {
+			return this._videoMuted;
+		};
+
+		this.setSeeking = function(seeking) {
+			this._videoSeeking = seeking;
+		};
+
+		this.getSeeking = function() {
+			return this._videoSeeking;
+		};
+
+		this.setVideoTime = function(time) {
+			this._videoTime = time;
+			RICHFX.jQuery(this._dispatcher).trigger('video.timeSet');
+		};
+
+		this.getVideoTime = function() {
+			return this._videoTime;
+		};
+		
+		this.handleClickBehavior = function(eventObj) {
+			
+			this.workoutStepSize();
+
+			var clickX = this.getMouseX() - this._pagePosX;
+			var clickY = this.getMouseY() - this._pagePosY;
+
+			this._moveLeft = ((this.getWidth()/2) - clickX);
+			this._moveTop = ((this.getHeight()/2) - clickY);
+
+			//Adjust by StepSize to counter the increased image size
+			this._moveLeft = this._moveLeft - (this.getStepSizeLeft()/2);
+			this._moveTop = this._moveTop - (this.getStepSizeTop()/2);
+			
+			// Update Zoom level
+			var newZoomLevel = this.getZoomLevel() + 1;
+			if ( newZoomLevel > this._maxZoom ) newZoomLevel = 0;
+			
+			this.setZoomLevel(newZoomLevel);
+				
+			return false;
+		};
+		 
+		this.handleZoomInBehavior = function(eventObj) {
+
+			this._moveLeft = -(this.getStepSizeLeft()/2);
+			this._moveTop = -(this.getStepSizeTop()/2);
+
+			// Update Zoom level
+			var newZoomLevel = this.getZoomLevel() + 1;
+			if ( newZoomLevel > this._maxZoom ) newZoomLevel = 0;
+			
+			this.setZoomLevel(newZoomLevel);
+				
+			return false;
+		};
+		 
+		this.handleZoomOutBehavior = function(eventObj) {
+
+			this._moveLeft = (this.getStepSizeLeft()/2);
+			this._moveTop = (this.getStepSizeTop()/2);
+			
+			var newZoomLevel = this.getZoomLevel() - 1;
+			if ( newZoomLevel < 0 ) newZoomLevel = 0;
+			
+			this.setZoomLevel(newZoomLevel);
+				
+			return false;
+		};
+		 
+		this.handleResetBehavior = function(eventObj) {
+
+			this._moveLeft = -(this.getX());
+			this._moveTop = -(this.getY());
+				
+			this.setZoomLevel(0);
+				
+			return false;
+		};
+
+		this.handlePinchReset = function() {
+			RICHFX.jQuery('#' + this._dispatcher.id + '_initialImage').show();
+			RICHFX.jQuery('#' + this._dispatcher.id + '_zoomImage').hide();
+		};
+		
+		this.handleLeftBehavior = function() {
+		    var X = this.getRotateX();
+		    var Y = this.getRotateY();
+
+		    var newX = X;
+
+		    if ( this._rotateClockwise ) {
+			    newX++;
+
+			    if( this._allow360X && newX > this.getRotateXMax() ) 
+			    {
+			    	newX = this.getRotateXMin();
+			    }
+		    } else {
+			    newX--;
+
+			    if( this._allow360X && newX < this.getRotateXMin() ) 
+			    {
+			    	newX = this.getRotateXMax();
+			    }
+			}
+
+		    this.handleRotationChange(Y, newX);
+			return false;
+		};
+		
+		this.handleRightBehavior = function() {
+
+		    var X = this.getRotateX();
+		    var Y = this.getRotateY();
+
+		    var newX = X;
+		    
+			if ( this._rotateClockwise ) {
+				newX--;
+
+				if( this._allow360X && newX < this.getRotateXMin() ) 
+			    {
+			    	newX = this.getRotateXMax();
+			    }
+			} else {
+				newX++;
+
+			    if( this._allow360X && newX > this.getRotateXMax() ) 
+			    {
+			    	newX = this.getRotateXMin();
+			    }	
+			}
+
+		    this.handleRotationChange(Y, newX);
+			return false;
+		};
+		
+		this.handleAutoBehavior = function() {
+		    
+			if ( this.getRotateX() < this.getRotateXMax() ) {
+
+				this._autoRotating = true;
+
+				this._rotateIntervalID = setInterval(RICHFX.jQuery.proxy(function() {
+					var X = this.getRotateX();
+			    	var Y = this.getRotateY();
+
+		    		var newX = X;
+
+			    	if ( newX == this.getRotateXMax() && this.getAutoRotateInfinite() )
+			    	{
+			    		newX = this.getRotateXMin();
+			    	}
+
+			    	if( this._allow360X && newX < this.getRotateXMax() ) 
+			    	{
+						newX++;
+						this.handleRotationChange(Y, newX);
+			    	}	
+			    	else
+			    	{
+			    		clearInterval(this._rotateIntervalID);
+			    		this._autoRotating = false;
+			    	}
+                },this), 150);
+			    
+			} else {
+				this._autoRotating = true;
+
+				this._rotateIntervalID = setInterval(RICHFX.jQuery.proxy(function() {
+					var X = this.getRotateX();
+			    	var Y = this.getRotateY();
+
+		    		var newX = X;
+
+		    		if ( newX == this.getRotateXMin() && this.getAutoRotateInfinite() )
+			    	{
+			    		newX = this.getRotateXMax();
+			    	}
+
+			    	if( this._allow360X && newX > this.getRotateXMin() ) 
+			    	{
+			    		newX--;
+			    		this.handleRotationChange(Y, newX);
+			    	}	
+			    	else
+			    	{
+			    		clearInterval(this._rotateIntervalID);
+			    		this._autoRotating = false;
+			    	}
+                },this), 150);
+			}
+
+			return false;
+		};
+		
+		this.handleUpBehavior = function() {
+		    var X = this.getRotateX();
+		    var Y = this.getRotateY();
+
+		    var newY = Y;
+
+		    if ( this._rotateClockwise ) {
+		    	newY--;
+
+			    if( this._allow360Y && newY < this.getRotateYMin() ) 
+			    {
+			    	newY = this.getRotateYMax();
+			    }
+		    } else {
+			    newY++;
+
+			    if( this._allow360Y && newY > this.getRotateYMax() ) 
+			    {
+			    	newY = this.getRotateYMin();
+			    }	
+		    }
+		    
+
+			this.handleRotationChange(newY, X);
+			return false;
+		};
+		
+		this.handleDownBehavior = function() {
+		    var X = this.getRotateX();
+		    var Y = this.getRotateY();
+
+		    var newY = Y;
+
+		    if ( this._rotateClockwise ) {
+		    	newY++;
+
+			    if( this._allow360Y && newY > this.getRotateYMax() ) 
+			    {
+			    	newY = this.getRotateYMin();
+			    }
+		    } else {
+		    	newY--;
+
+			    if( this._allow360Y && newY < this.getRotateYMin() ) 
+			    {
+			    	newY = this.getRotateYMax();
+			    }
+		    }
+
+		    this.handleRotationChange(newY, X);
+			return false;
+		};
+
+		this.handleRotationChange = function(Y, X) {
+
+		    var rotateData = this.getRotationData();
+
+		    if ( rotateData[Y] != undefined && rotateData[Y][X] != undefined )
+		    {
+			    var initSrc = rotateData[Y][X]["initial"]["path"];
+			    var zoomSrc = rotateData[Y][X]["zoom"]["path"];
+
+			    this.setRotateY(Y);
+			    this.setRotateX(X);
+
+			    RICHFX.jQuery('#' + this._dispatcher.id + '_initialImage').attr('src', initSrc);
+			    RICHFX.jQuery('#' + this._dispatcher.id + '_zoomImage').attr('src', zoomSrc);	
+
+			    if ( this.getZoomLevel() > 0 ) 
+			    {
+			    	RICHFX.jQuery(this._dispatcher).trigger('viewfinder.change.source');
+			    }
+		    }
+		};
+		
+		this.setMousePosition = function(X, Y) {
+			this._mouseX = X;
+			this._mouseY = Y;
+		};
+		
+		this.calculateBoundryValues = function() {
+
+			this._minLeft = (this.getWidth() - this.getAssetWidth());
+			this._minTop = (this.getHeight() - this.getAssetHeight());
+		};
+
+		this.checkForAutoRotation = function () {
+			if ( this._autoRotating ) {
+				clearInterval(this._rotateIntervalID);
+				this._autoRotating = false;
+			}
+		};
+		
+		// private functions
+	};
+	
+	AssetState.prototype = {
+		// variables
+		
+		//functions
+		AssetStateInit: function() {
+
+			console.log('AssetStateInit Loaded');
+			
+			this._pagePosX = RICHFX.jQuery(this._dispatcher).offset().left;
+			this._pagePosY = RICHFX.jQuery(this._dispatcher).offset().top;
+			
+			RICHFX.jQuery(this._dispatcher).bind("clicked.zoombehavior", RICHFX.jQuery.proxy(function(event) {
+				this.checkForAutoRotation();
+				this.handleClickBehavior(event);
+				return false;
+			}, this));
+			
+			RICHFX.jQuery(this._dispatcher).bind("zoomin.zoombehavior", RICHFX.jQuery.proxy(function(event) {
+				this.checkForAutoRotation();
+				this.handleZoomInBehavior(event);
+				return false;
+			}, this));
+			
+			RICHFX.jQuery(this._dispatcher).bind("zoomout.zoombehavior", RICHFX.jQuery.proxy(function(event) {
+				this.checkForAutoRotation();
+				this.handleZoomOutBehavior(event);
+				return false;
+			}, this));
+			
+			RICHFX.jQuery(this._dispatcher).bind("reset.zoombehavior", RICHFX.jQuery.proxy(function(event) {
+				this.checkForAutoRotation();
+				this.handleResetBehavior(event);
+				return false;
+			}, this));
+
+
+			// Rotate handlers
+			RICHFX.jQuery(this._dispatcher).bind("left.rotatebehavior", RICHFX.jQuery.proxy(function(event) {
+				this.checkForAutoRotation();
+				this.handleLeftBehavior(event);
+				return false;
+			}, this));
+
+			RICHFX.jQuery(this._dispatcher).bind("right.rotatebehavior", RICHFX.jQuery.proxy(function(event) {
+				this.checkForAutoRotation();
+				this.handleRightBehavior(event);
+				return false;
+			}, this));
+
+			RICHFX.jQuery(this._dispatcher).bind("up.rotatebehavior", RICHFX.jQuery.proxy(function(event) {
+				this.checkForAutoRotation();
+				this.handleUpBehavior(event);
+				return false;
+			}, this));
+
+			RICHFX.jQuery(this._dispatcher).bind("down.rotatebehavior", RICHFX.jQuery.proxy(function(event) {
+				this.checkForAutoRotation();
+				this.handleDownBehavior(event);
+				return false;
+			}, this));
+
+			RICHFX.jQuery(this._dispatcher).bind("auto.rotatebehavior", RICHFX.jQuery.proxy(function(event) {
+				
+				if ( this._autoRotating )
+				{
+					this.checkForAutoRotation();
+				}
+				else
+				{
+					this.handleAutoBehavior(event);	
+				}
+				
+				return false;
+			}, this));
+		},
+
+		setMaxZoomLevel: function(maxZoom) {
+			console.log('setting maxZoom: ' + maxZoom);
+
+			this._maxZoom = maxZoom;
+		},
+
+		checkZoomLevels: function(newWidth) {
+
+			console.log('Checking zoom levels: ' + newWidth +'|'+this.getWidth());
+
+			var i = 0;
+
+			// handled zoomed out
+			if ( newWidth == this.getWidth() )
+			{
+				console.log('setting pinchZoom to 0');
+				this.setPinchZoomLevel(0);
+				return;
+			}
+
+			// handle zoomed
+			while ( i < this._maxZoom )
+			{
+				var zoomLevelWidth = this.getWidth() + ( this.getStepSizeLeft() * i );
+
+				if ( zoomLevelWidth > newWidth )
+				{
+					console.log('setting pinchZoom to ' + (i-1));
+					this.setPinchZoomLevel(i-1);
+					return;
+				}
+
+				i++;
+			}
+
+			console.log('setting pinchZoom to Max: ' + this._maxZoom);
+			this.setPinchZoomLevel(this._maxZoom);
+		}
+	};
+
+	console.log('AssetState Loaded');
+	
+	return AssetState;
+});

@@ -1,0 +1,2 @@
+BrightTag.instance.store([{name:'btpdb.aZ48sDR.dGZjLjE0MTM2MjM.LmNyYXRlYW5kYmFycmVsLmNvbQ', value:'VVNFUg', domain:'.crateandbarrel.com', expires:1449114822020},{name:'btpdb.aZ48sDR.dGZjLjk1OTIyOA.LmNyYXRlYW5kYmFycmVsLmNvbQ', value:'U0VTU0lPTg', domain:'.crateandbarrel.com'}]);
+BrightTag.instance.appendContent('\x3cscript type\x3d\x22text/javascript\x22 src\x3d\x22//j.c-b.co/js/baynote_03072013.js\x22\x3e\x3c/script\x3e',{tagId:6330});

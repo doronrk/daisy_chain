@@ -1,0 +1,65 @@
+/* autocomplete with sayt using jQuery UI V12 */
+
+/* these highlight the sections of the suggestion that match the input */
+.ea-sug-text { font-weight: normal; }
+.ea-sug-match { font-weight: bold; }
+
+/* fonts */
+.ui-menu-item, .ea-sug-product-name, .ea-sug-product-price, .ea-sug-nav-value { font-family: Trebuchet MS,Tahoma,Verdana,Arial,sans-serif; font-size:14px; }
+
+/* ea-sug-wrapper surrounds all of the suggestion areas */
+
+.ea-sug-wrapper { background: #e4e2dd; padding: 3px; }
+
+/* suggestions are in columns, when there are 2 columns need a visual separator */
+.ea-sug-multi-column { padding-left:3px; }
+
+/* columns are organized into sections */
+.ea-sug-section { border: 1px solid #b4b4b4;background: #eeeeee; float:left;width:100%;overflow-x:hidden; }
+
+/* sections need vertical space between them, use the same value as wrapper padding */
+.ea-sug-section-vertical-space { margin-top: 3px }
+
+/* section headings stand out using a gradient */
+.ea-sug-sec-heading { 
+    padding: 5px 2px;
+    background:#cfcfcf; /* Missing Image: url('../images/sug-title-gradient.gif') repeat-x */
+    background:-webkit-linear-gradient(top, #fff, #cfcfcf);
+    background:-moz-linear-gradient(top,#fff,#cfcfcf);
+    background:-o-linear-gradient(top,#fff,#cfcfcf);
+    background:linear-gradient(to bottom,#fff,#cfcfcf);
+}
+
+/* section heading parts can be individually styled */
+.ea-sug-sec-head-title { }
+.ea-sug-sec-head-value { font-weight: bold; }
+.ea-sug-sec-head-count { float: right;}
+
+/* highlighting of selections */
+.ea-sug-choices .ui-state-hover, .ea-sug-menu .ui-state-focus, .ea-sug-product-name.ui-state-hover {  border: 1px solid #0073ea; background: #0073ea url('../images/ui-bg_highlight-soft_25_0073ea_1x100.png') 50% 50% repeat-x; font-weight: bold; color: #ffffff; }
+.ea-sug-product-name.ui-state-hover { margin:-1px; }
+
+.ea-sug-menu a, a.ea-sug-nav-link,.ea-sug-product a { cursor:default; text-decoration:none; color: black;}
+
+/* product section */
+.ea-sug-product-name, .ea-sug-product-price { font-weight: bold; }
+.ea-sug-product-name { padding: 2px .4em; }
+.ea-sug-product-desc { font-size: 12px; }
+td.ea-sug-product-picture { float: left; vertical-align: top; }
+img.ea-sug-product-image { width: 40px; border: 0;}
+td.ea-sug-product-info { vertical-align: top; }
+.ea-sug-product-separator { border-bottom: 1px dotted black; }
+
+/* entries in each navigation section are lists that are rendered without decorations */
+ul.ea-sug-choices { list-style:none; padding:2px; margin:0; }
+
+/* navigation sections */
+.ea-sug-nav-value{ zoom:1; list-style:none; padding:2px .4em 2px 20px;margin:0px 2px;}
+.ea-sug-nav-value a { margin-left:-15px; line-height:1.5;font-weight:normal;}
+.ui-state-hover a { color: white; }
+.ea-sug-nav-count { font-weight:normal;}
+.ea-sug-nav-value.ui-state-focus { margin:-1px 1px;}
+
+/* EasyAsk logo position */
+.ea-sug-nav-tm {background-image:url('../images/tm-logo.png');height:30px;width:86px;position:absolute;bottom:1px; right: 10px; }
+

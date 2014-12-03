@@ -1,0 +1,1 @@
+Needle && Needle.invites['navList'] && Needle.invites['navList'].hide();

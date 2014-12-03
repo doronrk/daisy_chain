@@ -1,0 +1,242 @@
+!function(exports, global) {
+    global["true"] = exports, window._pcCallbackCounter = 0;
+    var WidgetLoader = {
+        Utilities: {
+            Extend: function() {
+                var args = Array.prototype.slice.call(arguments), org = args.shift(), type = "";
+                ("string" == typeof org || "boolean" == typeof org) && (type = org === !0 ? "deep" : org, 
+                org = args.shift(), "defaults" == type && (org = WidgetLoader.Utilities.Extend({}, org), 
+                type = "strict"));
+                for (var i = 0, c = args.length; c > i; i++) {
+                    var prop = args[i];
+                    for (var name in prop) "deep" == type && "object" == typeof prop[name] && "undefined" != typeof org[name] ? WidgetLoader.Utilities.Extend(type, org[name], prop[name]) : ("strict" != type || "strict" == type && "undefined" != typeof org[name]) && (org[name] = prop[name]);
+                }
+                return org;
+            }
+        },
+        Ajax: {
+            JSONPTimeout: null,
+            URLs: {
+                Base: {
+                    ChatServer: "",
+                    PureServer: ""
+                }
+            },
+            CreateJSONPRequest: function(url, data, callback, useCdn) {
+                var callbackFunctionName = "_WidgetJPCB" + _pcCallbackCounter;
+                window[callbackFunctionName] = callback;
+                var script = document.createElement("script");
+                script.async = !0, script.type = "text/javascript", _pcCallbackCounter++, script.src = (useCdn ? WidgetLoader.Ajax.URLs.Base.CdnServer : WidgetLoader.Ajax.URLs.Base.PureServer) + url + "?callback=" + callbackFunctionName;
+                var scriptReady = !1;
+                script.onload = script.onreadystatechange = function() {
+                    scriptReady || this.readyState && "loaded" != this.readyState && "complete" != this.readyState || (scriptReady = !0, 
+                    WidgetLoader.Ajax.JSONPTimeout = clearTimeout(WidgetLoader.Ajax["JSONPTimeout" + callbackFunctionName]), 
+                    delete window[callbackFunctionName]);
+                };
+                for (var property in data) script.src += "&" + property + "=" + data[property];
+                window.location.search.indexOf("pcforcemobile") >= 0 && (script.src += "&forcemobile=true"), 
+                document.getElementsByTagName("HEAD")[0].appendChild(script), WidgetLoader.Ajax["JSONPTimeout" + callbackFunctionName] = setTimeout(function() {
+                    throw "Widget Settings failed to download";
+                }, 2e4);
+            },
+            GetWidgetSettings: function(args, callback) {
+                WidgetLoader.Ajax.CreateJSONPRequest("/VisitorWidget/Widget/" + args.widgetId + "/" + args.widgetVersion + ".js", {}, callback, !0);
+            },
+            GetWidgetVersionSettings: function(args, callback) {
+                WidgetLoader.Ajax.CreateJSONPRequest("/VisitorWidget/WidgetVersions", {
+                    id: args.widgetId
+                }, callback);
+            }
+        },
+        Widget: {
+            Availability: null,
+            CurrentInstance: null,
+            GetWidgetVersionSettings: function(args, callback) {
+                WidgetLoader.Ajax.GetWidgetVersionSettings(args, callback);
+            },
+            GetWidgetSettings: function(args, callback) {
+                WidgetLoader.Ajax.GetWidgetSettings(args, callback);
+            }
+        },
+        Load: {
+            Widget: function(response) {
+                function jqueryLoaded() {
+                    if (window.jQuery && window.jQuery != oldJqueryObject) {
+                        window.$pureChatJquery = window.jQuery.noConflict(!0);
+                        var script = document.createElement("script");
+                        script.async = !0, script.type = "text/javascript", script.src = WidgetLoader.Ajax.URLs.Base.CdnServer + "/VisitorWidget/CompiledWidget/" + response.Version + ".js", 
+                        document.getElementsByTagName("HEAD").item(0).appendChild(script);
+                        var scriptReady = !1;
+                        script.onload = script.onreadystatechange = function() {
+                            scriptReady || this.readyState && "loaded" != this.readyState && "complete" != this.readyState || (scriptReady = !0, 
+                            response.hasAllSettings = !0, response.pureServerUrl = WidgetLoader.Ajax.URLs.Base.PureServer, 
+                            response.cdnServerUrl = WidgetLoader.Ajax.URLs.Base.CdnServer, new PCWidget(response), 
+                            WidgetLoader.Delete());
+                        };
+                    }
+                    oldJqueryObject = null;
+                }
+                var allowScript = !1;
+                if (!response.ChatQuotaReached && !response.Stop) if (response.AllowedDomains = "undefined" != typeof response.AllowedDomains ? response.AllowedDomains : [], 
+                response.AllowedDomains.length > 0) {
+                    response.AllowedDomains.push("purechat.com");
+                    for (var i = 0; i < response.AllowedDomains.length; i++) if (/^\*$/.test(response.AllowedDomains[i]) || -1 != document.domain.search(response.AllowedDomains[i])) {
+                        allowScript = !0;
+                        break;
+                    }
+                } else allowScript = !0;
+                if (allowScript) {
+                    var oldJqueryObject = window.jQuery, jqscript = document.createElement("script");
+                    jqscript.async = !0, jqscript.type = "text/javascript", jqscript.src = "//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js";
+                    var jqScriptReady = !1;
+                    jqscript.onload = jqscript.onreadystatechange = function() {
+                        jqScriptReady || this.readyState && "loaded" != this.readyState && "complete" != this.readyState || (jqScriptReady = !0, 
+                        jqueryLoaded());
+                    }, jqscript.onerror = function() {
+                        jqScriptReady = !0;
+                        var errorjqscript = document.createElement("script");
+                        errorjqscript.async = !0, errorjqscript.type = "text/javascript", errorjqscript.src = WidgetLoader.Ajax.URLs.Base.CdnServer + "/scripts/jquery-1.7.2.min.js";
+                        var errorjqscriptjqScriptReady = !1;
+                        errorjqscript.onload = errorjqscript.onreadystatechange = function() {
+                            errorjqscriptjqScriptReady || this.readyState && "loaded" != this.readyState && "complete" != this.readyState || (errorjqscriptjqScriptReady = !0, 
+                            jqueryLoaded());
+                        }, document.getElementsByTagName("HEAD").item(0).appendChild(errorjqscript);
+                    }, document.getElementsByTagName("HEAD").item(0).appendChild(jqscript);
+                }
+            }
+        },
+        Delete: function() {
+            !function() {
+                WidgetLoader = null;
+            }();
+        },
+        MapWidgetVersionsResponse: function(response) {
+            var expanded = {};
+            for (var prop in response) {
+                var val = response[prop];
+                switch (prop) {
+                  case "v":
+                    expanded.Valid = 1 == val;
+                    break;
+
+                  case "sv":
+                    expanded.Version = val;
+                    break;
+
+                  case "cv":
+                    expanded.CssVersion = val;
+                    break;
+
+                  case "wv":
+                    expanded.WidgetVersion = val;
+                    break;
+
+                  case "csu":
+                    expanded.ChatServerUrl = val;
+                    break;
+
+                  case "sru":
+                    expanded.SiteRootUrl = val;
+                    break;
+
+                  case "dap":
+                    expanded.DisableAvailabilityPings = 1 == val;
+                    break;
+
+                  case "ip":
+                    expanded.VisitorIPAddress = val;
+                    break;
+
+                  case "rfm":
+                    expanded.RequestFromMobileDevice = 1 == val;
+                    break;
+
+                  case "aom":
+                    expanded.AllowWidgetOnMobile = 1 == val;
+                    break;
+
+                  case "b":
+                    expanded.IPIsBanned = 1 == val;
+                    break;
+
+                  case "bd":
+                    expanded.BrowserDetails = val;
+                    break;
+
+                  case "cru":
+                    expanded.CdnRootUrl = val;
+                    break;
+
+                  case "id":
+                    expanded.Id = val;
+                    break;
+
+                  case "s":
+                    expanded.Stop = 1 == val;
+                    break;
+
+                  case "qe":
+                    expanded.QuotaExceeded = 1 == val;
+                    break;
+
+                  default:
+                    expanded[prop] = val;
+                }
+            }
+            return expanded;
+        },
+        Init: function(args) {
+            delete window.PCWidget, args = WidgetLoader.Utilities.Extend({
+                accountId: "",
+                chatServerUrl: "",
+                checkWidgetAvailableInterval: 2e4,
+                config: {},
+                connectionSettings: {},
+                dataController: null,
+                insertElement: null,
+                isOperator: !1,
+                isWidget: !1,
+                pureServerUrl: "https://app.purechat.com",
+                renderInto: "body",
+                userProperties: {
+                    userId: null,
+                    displayName: null,
+                    authToken: null,
+                    roomId: null,
+                    chatId: null
+                },
+                widgetId: ""
+            }, args), WidgetLoader.Ajax.URLs.Base.ChatServer = args.chatServerUrl, WidgetLoader.Ajax.URLs.Base.PureServer = args.pureServerUrl, 
+            WidgetLoader.Widget.GetWidgetVersionSettings(args, function(versionResponse) {
+                versionResponse = WidgetLoader.MapWidgetVersionsResponse(versionResponse), versionResponse.QuotaExceeded || versionResponse.Stop || (WidgetLoader.Ajax.URLs.Base.PureServer = versionResponse.SiteRootUrl, 
+                WidgetLoader.Ajax.URLs.Base.CdnServer = versionResponse.CdnRootUrl, args.widgetVersion = versionResponse.WidgetVersion, 
+                WidgetLoader.Widget.GetWidgetSettings(args, function(fullResponse) {
+                    var data = WidgetLoader.Utilities.Extend(fullResponse, versionResponse);
+                    data = WidgetLoader.Utilities.Extend(data, args), WidgetLoader.Load.Widget(data);
+                }));
+            });
+        }
+    };
+    window.PCWidget = function(options) {
+        var mappedArgs = {};
+        for (var property in options) switch (property.toLowerCase().trim()) {
+          case "c":
+            mappedArgs.widgetId = options[property];
+            break;
+
+          case "pureserverurl":
+            mappedArgs.pureServerUrl = options[property];
+            break;
+
+          case "chatserverurl":
+            mappedArgs.chatServerUrl = options[property];
+            break;
+
+          case "f":
+            mappedArgs.isWidget = options[property];
+        }
+        WidgetLoader.Init(mappedArgs);
+    };
+}({}, function() {
+    return this;
+}());

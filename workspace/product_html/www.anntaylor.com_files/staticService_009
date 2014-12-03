@@ -1,0 +1,77 @@
+define([], function(){
+	
+	function Asset(proxyImage, state, product, dispatcher) {
+		// private variables
+		this._proxyImage = proxyImage;
+		this._state = state;
+		this._product = product;
+		this._dispatcher = dispatcher;
+	};
+
+	Asset.prototype = {
+		// privileged functions
+		getAsset : function() {
+			return this._proxyImage;
+		},
+		
+		show : function() {
+			RICHFX.jQuery(this._proxyImage).show();
+		},
+		
+		hide : function() {
+			RICHFX.jQuery(this._proxyImage).hide();
+		},
+
+		getScale : function(actualWidth, imgWidth){
+			var scale = actualWidth / imgWidth;
+			//round to two decimal places
+			scale = Math.round( scale * 100 ) / 100;
+		
+			// get the remainder
+			scale = scale - 1;
+			//make this a round number - not a decimal
+			scale = scale * 100;
+		
+			// round to the next multiple of 5 - 12 goes to 15 etc
+			scale = Math.ceil( scale / 5 ) * 5;
+		
+			//make it a decimal again
+			scale = scale / 100;
+			// add back the 1 we took away
+			scale = scale + 1;
+		
+			return scale;
+		},
+		
+		zoomChangeHandler: function() {
+		
+			if ( this._state.getZoomLevel() == 0 ) {
+				// To ensure the correct sequence the 'show' for the initial image is handled by the ProxyImage animation
+				RICHFX.jQuery(this._dispatcher).trigger('image.zoom.initial');
+			} else {
+				RICHFX.jQuery('#'+this._dispatcher.id+'_initialImage').hide();
+				this.hide();
+			}
+		},
+		
+		setState: function(assetState) {
+			this._state = assetState;
+		},
+		
+		assetInit: function() {
+		},
+		
+		assetReady: function() {
+			
+			RICHFX.jQuery(this._dispatcher).bind('assetstate.zoom.changed', RICHFX.jQuery.proxy(function(event){
+				this.zoomChangeHandler();
+			}, this));
+			
+			RICHFX.jQuery(this._dispatcher).bind('assetstate.pinch.scalechanged', RICHFX.jQuery.proxy(function(event){
+				this.zoomChangeHandler();
+			}, this));
+		}
+	};
+
+	return Asset;
+});

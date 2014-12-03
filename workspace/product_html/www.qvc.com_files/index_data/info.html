@@ -1,0 +1,17 @@
+window.qvc = window.qvc || {};
+window.qvc.Session = {
+	data: {"ip":"E-yBLTEn4TDfmWsoLVInYWqEtMrOUAoh","cookie_domain":"","debug":false,"use_BOOMR":false,"logged_in":false,"heart_hint_shown":false,"user":null,"fb_conn_user":false,"mobile":false,"sprite_base":"sprite_base","fb":{"params":{"appId":"128581025231","xfbml":false,"oauth":true,"cookie":true,"status":false,"frictionlessRequests":true,"logging":false},"locale":"en_US","debug":false},"reporting":{"cm_host":"qvc.com","cm_url":"data.qvc.com","cm_managed":false,"cm_client_id":"90040260;90399031"},"qvc_www_host":"www.qvc.com","domain_www":"gather.qvc.com","domain_mobile":"m.gather.qvc.com","asset_base_urls":{"http":["http:\/\/g.qvcimg.com"],"ssl":["https:\/\/img.gather.qvc.com"]},"www_base_url":"http:\/\/gather.qvc.com\/widget\/heart\/info","mobile_base_url":"http:\/\/m.gather.qvc.com\/widget\/heart\/info","customizations":{"post_login_route":"odl_voices_trending_page","post_login_highlighted_nav":"feed","new_grid":1},"tile_setting":{"width":240,"minCols":3,"maxCols":10,"columnGap":15},"search_page":false,"session_domain":"hearting_on_qvc"},
+	get: function (key) {
+		return this.data[key] || (this.data_extras ? this.data_extras[key] : null);
+	},
+	on: function () { // queue up for later
+		this.onQueue = this.onQueue || [];
+		this.onQueue.push(arguments);
+	}
+}
+	window.qvc.Session.data_extra = {"urls":{"heart":"\/widget\/heart\/save\/","event":"\/widget\/heart\/track_structured\/","_security_logout":"\/logout","ajax_proxy":"https:\/\/gather.qvc.com\/bundles\/qvcvoices\/html\/ie_helper.html?v=2","session":"\/api\/session?json=1"},"event_vars":{"page_group":"blank","page_name":"TOGATHER - BLANK","category_id":1000000,"multivariate_test":"NewGrid","user_id":"anon.d3d4c82c7c7e23c58403d88d2add3c1d","build":"qvc-kaz-189901-66","partner":"togather","is_mobile":false,"user_agent":"Mozilla\/5.0 (Macintosh; Intel Mac OS X 10.10; rv:33.0) Gecko\/20100101 Firefox\/33.0","uri":"http:\/\/gather.qvc.com\/widget\/heart\/info","persist_session_id":"b42dcfa165d647cd9c836904967164a4","session_id":"97aff9e1b730aba5c9a55146c8da88bf","page_view_id":"9098a7a40a0dc5f6006697ab2cd69380"},"fb_login":null,"login":{"login_point":"QVC_com","_security_check_fb":"\/\/gather.qvc.com\/login_check\/fb?v=1","_security_check":"https:\/\/gather.qvc.com\/login_check?v=1","forgot_pin_url":"www.qvc.com\/ForgotPasswordForm?resetEmailType=PIN&storeId=10251&catalogId=10151&langId=-1","forgot_password_url":"www.qvc.com\/ForgotPasswordForm?storeId=10251&catalogId=10151&langId=-1","qvc_com_login_url":"www.qvc.com\/LogonForm?langId=-1&storeId=10251&catalogId=10151","remembered_user":false,"facebook_user_differs":false,"authentication_selection":"pin_password","pw_placeholder":"<a href=\"https:\/\/www.qvc.com\/ForgotPasswordForm?resetEmailType=PIN&storeId=10251&catalogId=10151&langId=-1\" class=\"fp link\" target=\"_parent\">PIN<\/a> or <a href=\"https:\/\/www.qvc.com\/ForgotPasswordForm?storeId=10251&catalogId=10151&langId=-1\" class=\"fp link\" target=\"_parent\">Password<\/a>","pw_placeholder_text":"PIN or Password","csrf_token":"QGi97RxMYTdJMPe7jd9FRtcPuPFmIIEntfbbQGWtaiM","hide_full_login":true,"join_togather":true,"show_login_here_link":true,"qvc_com_register_url":"https:\/\/www.qvc.com\/UserRegistrationForm?storeId=10251&catalogId=10151&langId=-1&new=Y&URL=RegistrationConfirmView&fromPage=none","single_page_login":false},"admin_domain":false,"admin_url":"https:\/\/admin.gather.qvc.com","admin_only_domain":false};
+
+qvc.qvc_com_heart = {
+	disable_qmnenc: false,
+	load: 'always'
+}

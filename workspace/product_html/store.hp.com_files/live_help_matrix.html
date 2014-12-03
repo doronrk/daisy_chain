@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html webdriver="true" class="no-js"><!--[endif]----><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <title>Live Chat - closed window</title>
+  
+  <link rel="stylesheet" href="live_help_matrix_data/normalize.css">
+  <link rel="stylesheet" href="live_help_matrix_data/hps-euro-w01-fontface-core.css">
+  <link rel="stylesheet" href="live_help_matrix_data/lp.css">
+ 
+  
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <style type="text/css">
+        .gradient {
+           filter: none;
+        }
+      </style>
+        <link rel="stylesheet" href="/wcsstore/HPStorefrontAssetStore/css/lp-ie8.css">
+    <![endif]-->
+   <!-- base href="http://store.hp.com/webapp/wcs/stores/servlet/HPStorefrontAssetStore/Widgets/Header/live_help_matrix.jsp?pagelevel=Category%20Page" -->
+
+<!-- Added script for LiveChat link -->
+
+ <script type="text/javascript">
+ var pagelevel="Category Page";
+ console.log("****"+pagelevel);
+    // Start by defining the required objects
+    var lpTag = lpTag || {}; lpTag.vars = lpTag.vars  || []; lpTag.dbs = lpTag.dbs || [];
+    lpTag.section = 'hho-sales-english';
+
+
+    // ======================= VARIABLES ===================================
+    // A LivePerson variable can be defined in one of three different scopes:
+    // 'page' - exists on the current page only
+    // 'session' - exists for the current visitor session
+    // 'visitor' - persists between browser sessions
+
+    // ----------------- 1: Sending when the page loads --------------------
+    // Variables are JavaScript objects that are passed in an array
+    // Each object must contain: scope, name, value
+    // Values should be strings
+    var arrLPvars = [
+        // 'unit' is required in most deployments
+        { scope:'page', name:'unit', value:'hho-sales' },
+        // 'language' is required in deployments that do, or may in the future, need multi-lingual support
+        { scope:'session', name:'language', value:'english' },
+        // You can add as many other variables as you need
+        { scope:'session', name:'etrPage', value: pagelevel },
+        { scope:'session', name:'Store', value:'US Store' }
+
+    ];
+    lpTag.vars.push(arrLPvars);
+
+    // -------- 2: Sending on demand (e.g. after a click event) -------------
+    var sendVarsOnClick = function () {
+	alert("hello");
+      // Push to queue
+      lpTag.vars.push([
+        { scope:'page', name:'ForceInvite', value:'true' }
+      ]);
+      // This 'try' block is here because the LP code must be instantiated on the page
+      // before the lpTag.vars.send() method can be called
+      // If the method fails for this reason the variables in the queue will be picked
+      // up when the LP code initiates
+      try{
+        // Send waiting variables immediately
+        lpTag.vars.send();
+      } catch(e) {}
+    };
+
+
+  </script> 
+
+ <!-- script ends  -->
+</head>
+
+<body>
+
+
+
+<div id="content">
+
+<section id="live_help" class="">
+<h2>Live Help</h2>
+
+<p class="closed_win">HP experts are ready to assist you right now; please choose the best way for us to get in touch.
+The sales, service and support options below are available for the United States only.</p>
+
+<section id="matrix">
+
+<div class="title_row">
+    <div class="first_cl _height">    <span class="helper"></span>
+<span class=""></span></div>
+    <div class="second_cl _height">
+    <span class="helper"></span>
+	<span class="">Sales help</span></div>
+    <div class="third_cl _height">
+    <span class="helper"></span>
+    <span class="">Returns &amp; exchanges</span></div>
+    <div class="fourth_cl _height">
+    <span class="helper"></span>    
+    <span class="">Product support</span></div>
+</div>
+<div class="chat_row _table_body">
+    <div class="first_cl _height">
+    <span class="helper"></span>
+    <span class="">Chat</span>
+    </div>
+    <div class="second_cl _height">
+    <span class="helper"></span>
+    <div class="vertical_align">
+    <span class="">Mon - Sun</span><span class="">7 AM - 2 AM (EST)</span><a onclick="window.open('https://suth.ehosts.net/NetAgent/HPChatLogin.aspx?ROUTEIDENT=Chat%20ETR%20Customer%20Service&amp;CLOSEDURL=https%3A%2F%2Fwww.shopping.hp.com%2Fen_US%2Fhome-office%2F-%2Fstatic%2Fdialog-live-assistance-close', 'popupWindow', 'width=1000,height=700,scrollbars=no'); return false" href="#">Live Chat</a></div>
+    </div>
+    <div class="third_cl _height">
+    <span class="helper"></span>
+    <div class="vertical_align">    
+    <span class="">Mon - Sun</span><span class="">7 AM - 2 AM (EST)</span><a onclick="window.open('https://suth.ehosts.net/NetAgent/HPChatLogin.aspx?ROUTEIDENT=Chat%20ETR%20Customer%20Service&amp;CLOSEDURL=https%3A%2F%2Fwww.shopping.hp.com%2Fen_US%2Fhome-office%2F-%2Fstatic%2Fdialog-live-assistance-close', 'popupWindow', 'width=1000,height=700,scrollbars=no'); return false" href="#">Live Chat</a></div>
+    </div>
+    <div class="fourth_cl _height">
+    <span class="helper"></span>
+    <div class="vertical_align">        
+    <span class="">Mon - Sun</span><span class="">7 AM - 2 AM (EST)</span><a class="lp_link" href="http://www8.hp.com/us/en/contact-hp/support.html" style="cursor:pointer">Live Chat</a></div>
+    </div>
+</div>
+<div class="email_row _table_body">
+    <div class="first_cl _height">
+    <span class="helper"></span>
+    <span class="">Email</span>
+    </div>
+    <div class="second_cl _height">
+    <span class="helper"></span>
+    <div class="vertical_align">
+    <span class="">Anytime - Everyday</span><a href="http://store.hp.com/webapp/wcs/stores/servlet/SendEmailView?storeId=10151">Email</a><span class="">Response within 24 hours</span></div>
+    </div>
+    <div class="third_cl _height">
+    <span class="helper"></span>
+    <div class="vertical_align">    
+    <span class="">Anytime - Everyday</span><a href="http://store.hp.com/webapp/wcs/stores/servlet/SendEmailView?storeId=10151">Email</a><span class="">Response within 24 hours</span></div>
+    </div>
+    <div class="fourth_cl _height">
+    <span class="helper"></span>
+    <div class="vertical_align">        
+    <span class="">Not Available</span></div>
+    </div>
+</div>
+<div class="call_row last_row _table_body">
+    <div class="first_cl _height">
+    <span class="helper"></span>
+    <span class="">Call</span>
+    </div>
+    <div class="second_cl _height">
+    <span class="helper"></span>
+    <div class="vertical_align">
+    <span class="">Mon - Fri</span>
+    <span class="">9 AM - Midnight (EST)</span>
+    <span class="">Sat - Sun</span>
+    <span class="">10 AM - Midnight (EST)</span>    
+    <a href="javascript:void(0)">1-888-999-4747</a>
+    <p class="spanish">Español disponible</p> 
+    <span class="">Lunes - Domingo</span>
+    <span class="">10 AM - 7 PM</span>
+    <span class="">hora del Este</span>
+    <a href="javascript:void(0)">1-888-505-8076</a>            
+    </div>
+    </div>
+    <div class="third_cl _height">
+    <span class="helper"></span>
+    <div class="vertical_align">
+    <span class="">Mon - Fri</span>
+    <span class="">9 AM - Midnight (EST)</span>
+    <span class="">Sat - Sun</span>
+    <span class="">10 AM - Midnight (EST)</span>    
+    <a href="javascript:void(0)">1-800-407-4005</a>
+    <p class="spanish">Español disponible</p> 
+    <span class="">Lunes - Domingo</span>
+    <span class="">10 AM - 7 PM</span>
+    <span class="">hora del Este</span>
+    <a href="javascript:void(0)">1-888-505-8076</a>            
+    </div>
+    </div>
+    <div class="fourth_cl _height">
+    <span class="helper"></span>
+    <div class="vertical_align">
+    <span class="">Mon - Fri</span>
+    <span class="">8 AM - 9 PM (EST)</span>
+    <span class="">Sat - Sun</span>
+    <span class="">8 AM - 9 PM (EST)</span>    
+    <a href="javascript:void(0)">1-800-474-6836</a>
+    <p class="spanish">&nbsp;</p> 
+    <span class="">&nbsp;</span>
+    <span class="">&nbsp;</span>
+    <span class="">&nbsp;</span>
+    <a href="javascript:void(0)">&nbsp;</a>            
+    </div>
+    </div>
+</div>
+
+
+</section>
+
+<p class="closed_win">The sales, customer service and product support options above are for the United States only.<br>
+<a href="http://www8.hp.com/us/en/ww-home-summary.html">Click here for other countries</a></p>
+</section>
+
+
+
+
+
+</div>
+<!-- BEGIN LivePerson Monitor. 
+
+<script type="text/javascript">
+window.lpTag=window.lpTag||{};if(typeof window.lpTag._tagCount==='undefined'){window.lpTag={site:'63671009',section:lpTag.section||'',autoStart:lpTag.autoStart===false?false:true,ovr:lpTag.ovr||{},_v:'1.5.1',_tagCount:1,protocol:location.protocol,events:{bind:function(app,ev,fn){lpTag.defer(function(){lpTag.events.bind(app,ev,fn)},0)},trigger:function(app,ev,json){lpTag.defer(function(){lpTag.events.trigger(app,ev,json)},1)}},defer:function(fn,fnType){if(fnType==0){this._defB=this._defB||[];this._defB.push(fn)}else if(fnType==1){this._defT=this._defT||[];this._defT.push(fn)}else{this._defL=this._defL||[];this._defL.push(fn)}},load:function(src,chr,id){var t=this;setTimeout(function(){t._load(src,chr,id)},0)},_load:function(src,chr,id){var url=src;if(!src){url=this.protocol+'//'+((this.ovr&&this.ovr.domain)?this.ovr.domain:'lptag.liveperson.net')+'/tag/tag.js?site='+this.site}var s=document.createElement('script');s.setAttribute('charset',chr?chr:'UTF-8');if(id){s.setAttribute('id',id)}s.setAttribute('src',url);document.getElementsByTagName('head').item(0).appendChild(s)},init:function(){this._timing=this._timing||{};this._timing.start=(new Date()).getTime();var that=this;if(window.attachEvent){window.attachEvent('onload',function(){that._domReady('domReady')})}else{window.addEventListener('DOMContentLoaded',function(){that._domReady('contReady')},false);window.addEventListener('load',function(){that._domReady('domReady')},false)}if(typeof(window._lptStop)=='undefined'){this.load()}},start:function(){this.autoStart=true},_domReady:function(n){if(!this.isDom){this.isDom=true;this.events.trigger('LPT','DOM_READY',{t:n})}this._timing[n]=(new Date()).getTime()},vars:lpTag.vars||[],dbs:lpTag.dbs||[],ctn:lpTag.ctn||[],sdes:lpTag.sdes||[],ev:lpTag.ev||[]};lpTag.init()}else{window.lpTag._tagCount+=1}
+</script>
+
+END LivePerson Monitor. -->
+
+<script src="live_help_matrix_data/jquery.js"></script> 
+<section id="lp_chat">
+		<!-- this div id for live chat link button -->
+   		
+      		<div id="lpButtonDiv" style="visibility: hidden;">
+			</div>
+		
+	</section>
+
+
+
+</body></html>

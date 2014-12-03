@@ -1,0 +1,1 @@
+sidecar.core.handlePageLoadData({"success":"true","service":"pagehit","detail_page":"true","page":"http%3A%2F%2Fwww.newegg.com%2FProduct%2FProduct.aspx%3FItem%3DN82E16824236112","session_key":"sess-12-547e8c6aef6019.31719312","url_id":"0"});

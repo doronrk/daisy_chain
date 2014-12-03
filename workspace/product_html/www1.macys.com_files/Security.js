@@ -1,0 +1,1 @@
+define(["stringUtil"],function(e){function t(t){if(!e.isEmpty(t)){t=t.replace(/</g,"&#60;");t=t.replace(/>/g,"&#62;");return t}else{return""}}function r(e){var t=false;if(e.toLowerCase().indexOf("script")>0){t=new RegExp("(<|&lt;|&#60;|%3C)\\s*script","gi").test(e)}return t}return{preventXss:t,attemptedScript:r}});

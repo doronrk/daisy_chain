@@ -1,0 +1,49 @@
+@charset "utf-8";
+/* CSS Document */
+
+.zoom {
+			display:inline-block;
+			position: relative;
+		}
+		
+		/* magnifying glass icon */
+		.zoom:after {
+			content:'';
+			display:block; 
+			width:48px; 
+			height:14px; 
+			position:absolute; 
+			top:0;
+			right:0;
+			background:url(//media.dermstore.com/images/product/zoom.png);
+		}
+		
+		.hover:after {
+			background-image:none;
+		}
+		
+		.zoom:hover {
+			cursor:crosshair;
+		}
+	
+		.zoom img {
+			display: block;
+		}
+
+		.zoom img::selection { background-color: transparent; }
+		
+		.zoom2 {
+			display:inline-block;
+			position: relative;
+		}
+		/* magnifying glass icon */
+		.zoom2:after {
+			content:'';
+			display:block; 
+			width:48px; 
+			height:14px; 
+			position:absolute; 
+			top:0;
+			right:0;
+			background:url(//media.dermstore.com/images/product/zoom.png);
+		}

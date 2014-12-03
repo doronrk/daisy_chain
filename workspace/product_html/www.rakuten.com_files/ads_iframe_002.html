@@ -1,0 +1,53 @@
+<html webdriver="true"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script type="text/javascript">
+//<![CDATA[
+    function getCookieVal (offset) {
+    	var endstr = document.cookie.indexOf (";", offset);
+    	if (endstr == -1)
+    		endstr = document.cookie.length;
+    		return unescape(document.cookie.substring(offset, endstr));
+	}
+
+    function GetCookie (name) {
+    	var arg = name + "=";
+    	var alen = arg.length;
+    	var clen = document.cookie.length;
+    	var i = 0;
+    	while (i < clen) {
+    		var j = i + alen;
+    	    if (document.cookie.substring(i, j) == arg)
+    	    	return getCookieVal (j);
+    	    	i = document.cookie.indexOf(" ", i) + 1;
+    		    if (i == 0) break; 
+    		}
+    		if (name == "basket") {
+    	  		return "Basket Empty";
+    		} else {
+    			return "null";
+    		}
+    }
+ //]]>
+</script>
+</head>
+<body>
+<script type="text/javascript" src="ads_iframe_data/swfobject.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+	
+	    document.domain = "rakuten.com";
+	    if(parent.dtmc_product_price > '274') {
+	       var ads_product_price = '275ormore';
+	    } else if(parent.dtmc_product_price < '76') {
+	        var ads_product_price = '75orless';
+	    } else {
+	        var ads_product_price = '';
+	    }
+	    document.write('<SCR' + 'IPT LANGUAGE=JavaScript1.1 type="text/javascript" SRC="http://oascentral.rakuten.com/RealMedia/ads/adstream_jx.ads/rakuten.com\/HomeOutdoor\/Product/' + parent.OAS_rns + '@Top2,Bottom2,Middle,x70!Top2?' + GetCookie("Household") + '&' + ads_product_price +'&amp;qu=boning+fillet+knives&amp;qu=cutlery&amp;qu=tableware&amp;qu=kitchen+cooking&amp;qu=home+outdoor&amp;qu=rakuten+com+shopping"></SCR'+'IPT>');
+	
+ //]]>
+</script><script language="JavaScript1.1" type="text/javascript" src="ads_iframe_data_002/undefinedTop2Bottom2Middlex70Top2.js"></script><a href="http://oascentral.rakuten.com/RealMedia/ads/click_lx.ads/rakuten.com/HomeOutdoor/Product/undefined/L31/1580337091/Top2/Buy/Timex_Q414_300x250_Holiday_REL/300x250_wknd.jpg/6b7151727856522b6a4b5141444c5854?x" target=" "><img src="ads_iframe_data_002/1414703373.jpg" alt="" border="0"></a>
+
+
+
+</body></html>

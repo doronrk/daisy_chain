@@ -1,0 +1,488 @@
+/*************************************************************/
+/*          4-Tell STYLES							         */
+/*************************************************************/
+.FourTellContainer {
+    display: block;
+    margin: 0px;
+    padding: 0px;
+}
+
+    .FourTellContainer:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+.toutWrapper4T {
+    border: 1px solid gray;
+    background: none;
+}
+
+.product4TCaption {
+    border-radius: 8px 8px 0 0;
+    background: #eeeeee;
+    padding: 3px;
+    /* margin: 5px 0 0 5px; */
+    text-align: left;
+    font-weight: bold;
+}
+
+.product4T {
+    background-color: transparent;
+    margin: 5px;
+    padding: 0;
+    width: 120px;
+    border: none;
+    text-align: center;
+    vertical-align: middle;
+}
+
+    .product4T .productImage {
+        padding: 10px 0;
+        width: 100%;
+        height: 130px;
+    }
+
+    .product4T .productImageImg {
+        max-width: 100%;
+        max-height: 100%;
+        border: none;
+        vertical-align: middle;
+        display: inline;
+    }
+
+    .product4T .ratingImage {
+    }
+
+    .product4T .ratingImageImg {
+        border: none;
+        vertical-align: middle;
+        display: inline;
+        padding: 2px;
+    }
+
+    .product4T .productTitle {
+        height: 4em;
+        width: 100%;
+        overflow: hidden;
+        font-weight: bold;
+    }
+
+    .product4T .productPrice {
+        font-family: Arial, Helvetica, sans-serif;
+        height: 1.2em;
+        font-size: 13px;
+        font-weight: normal;
+    }
+
+    .product4T .productSalePrice {
+        font-family: Arial, Helvetica, sans-serif;
+        color: red;
+        height: 1.2em;
+        font-size: 13px;
+        font-weight: bold;
+    }
+
+    .product4T .strikePrice {
+        text-decoration: line-through;
+        color: grey;
+    }
+
+    .product4T .productBuy {
+        margin: 0 0 10px;
+        text-decoration: none;
+        color: #e45400;
+        clear: both;
+    }
+
+        .product4T .productBuy a {
+            color: #e45400;
+            font-weight: bold;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+/* For scrollables. */
+.scrollable {
+    float: left;
+    position: relative;
+    overflow: hidden;
+}
+
+    .scrollable .items {
+        /* this cannot be too large;
+         * must fit ev-ery-thing */
+        width: 20000em;
+        position: absolute;
+        clear: both;
+    }
+
+.items .scrollGroup, .items .product4T {
+    float: left;
+}
+
+/* For the buttons. */
+a.browse {
+    background: url(../images/hori_large.png) no-repeat;
+    display: block;
+    width: 15px;
+    height: 18px;
+    float: left;
+    margin: 100px 0 0;
+    cursor: pointer;
+    font-size: 1px;
+}
+
+a.right {
+    background-position: 0 -30px;
+    clear: right;
+    margin-right: 10px;
+}
+
+a.left {
+    background-position: 0 0;
+    margin-left: 10px;
+}
+
+a.disabled {
+    visibility: hidden !important;
+}
+
+/* Here follows custom classes, so as to permit each page to have its own
+* custom CSS. */
+
+/* Tout1 on PD page. */
+.product4TCaptionPD1 {
+    border-radius: 0;
+}
+
+.PD14T {
+    clear: both;
+    border: 1px solid #DDD;
+}
+
+    .PD14T a.browse {
+        margin-top: 50px;
+    }
+
+.product4TPD1 {
+    width: 200px;
+    font-size: 11px;
+    margin: 0;
+    padding: 3px;
+}
+
+    .product4TPD1 + .product4TPD1 {
+        border-left: 1px dotted #DDD;
+    }
+
+    .product4TPD1 .productImage {
+        height: 110px;
+        width: 50%;
+        float: left;
+    }
+
+    .product4TPD1 .productImageImg {
+    }
+
+    .product4TPD1 .productTitle {
+        height: auto;
+        width: 50%;
+        float: right;
+        font-size: 11px;
+    }
+
+    .product4TPD1 .ratingImage {
+    }
+
+    .product4TPD1 .ratingImageImg {
+    }
+
+    .product4TPD1 .productSalePrice {
+        float: right;
+        width: 50%;
+        height: 2.5em;
+    }
+
+    .product4TPD1 .productPrice {
+        height: 2.5em;
+        float: right;
+        width: 50%;
+        font-size: 12px;
+    }
+
+    .product4TPD1 .productBuy {
+    }
+
+/* Tout2 on PD page */
+.product4TCaptionPD2 {
+}
+
+.product4TPD2 {
+    margin: 4px;
+    padding: 5px;
+}
+
+    .product4TPD2 + .product4TPD2 {
+        border-left: 1px dotted #DDD;
+    }
+
+    .product4TPD2 .productImage {
+    }
+
+    .product4TPD2 .productImageImg {
+    }
+
+    .product4TPD2 .productTitle {
+    }
+
+    .product4TPD2 .ratingImage {
+    }
+
+    .product4TPD2 .ratingImageImg {
+    }
+
+    .product4TPD2 .productSalePrice {
+    }
+
+    .product4TPD2 .productPrice {
+    }
+
+    .product4TPD2 .productBuy {
+    }
+
+/* Tout on the home page. */
+.product4TCaptionHome {
+}
+
+.product4THome {
+}
+
+    .product4THome + .product4THome {
+        border-left: 1px solid #e6e4e4;
+    }
+
+    .product4THome .productImage {
+    }
+
+    .product4THome .productImageImg {
+    }
+
+    .product4THome .productTitle {
+    }
+
+    .product4THome .ratingImage {
+    }
+
+    .product4THome .ratingImageImg {
+    }
+
+    .product4THome .productSalePrice {
+    }
+
+    .product4THome .productPrice {
+    }
+
+
+    .product4THome .productBuy {
+    }
+
+/* Category pages */
+.product4TCaptionCat {
+}
+
+.product4TCat {
+}
+
+    .product4TCat .productImage {
+    }
+
+    .product4TCat .productImageImg {
+    }
+
+    .product4TCat .productTitle {
+    }
+
+    .product4TCat .ratingImage {
+    }
+
+    .product4TCat .ratingImageImg {
+    }
+
+    .product4TCat .productSalePrice {
+    }
+
+    .product4TCat .productPrice {
+    }
+
+
+    .product4TCat .productBuy {
+    }
+
+/* Search */
+.product4TCaptionSearch {
+}
+
+.product4TSearch {
+}
+
+    .product4TSearch + .product4TSearch {
+        border-top: 1px solid #DDD;
+    }
+
+    .product4TSearch .productImage {
+    }
+
+    .product4TSearch .productImageImg {
+    }
+
+    .product4TSearch .productTitle {
+    }
+
+    .product4TSearch .ratingImage {
+    }
+
+    .product4TSearch .ratingImageImg {
+    }
+
+    .product4TSearch .productSalePrice {
+    }
+
+    .product4TSearch .productPrice {
+    }
+
+
+    .product4TSearch .productBuy {
+    }
+
+/* View Cart */
+.product4TCaptionVC {
+}
+
+.product4TVC {
+}
+
+    .product4TVC + .product4TVC {
+        border-left: 1px dotted #DDD;
+    }
+
+    .product4TVC .productImage {
+    }
+
+    .product4TVC .productImageImg {
+    }
+
+    .product4TVC .productTitle {
+    }
+
+    .product4TVC .ratingImage {
+    }
+
+    .product4TVC .ratingImageImg {
+    }
+
+    .product4TVC .productSalePrice {
+    }
+
+    .product4TVC .productPrice {
+    }
+
+    .product4TVC .productBuy {
+    }
+
+/* Checkout */
+.product4TCaptionCheck {
+}
+
+.product4TCheck {
+}
+
+    .product4TCheck .productImage {
+    }
+
+    .product4TCheck .productImageImg {
+    }
+
+    .product4TCheck .productTitle {
+    }
+
+    .product4TCheck .ratingImage {
+    }
+
+    .product4TCheck .ratingImageImg {
+    }
+
+    .product4TCheck .productSalePrice {
+    }
+
+    .product4TCheck .productPrice {
+    }
+
+
+    .product4TCheck .productBuy {
+    }
+
+/* Quick Cart */
+.product4TCaptionQC {
+}
+
+.product4TQC {
+}
+
+    .product4TQC .productImage {
+    }
+
+    .product4TQC .productImageImg {
+    }
+
+    .product4TQC .productTitle {
+    }
+
+    .product4TQC .ratingImage {
+    }
+
+    .product4TQC .ratingImageImg {
+    }
+
+    .product4TQC .productSalePrice {
+    }
+
+    .product4TQC .productPrice {
+    }
+
+
+    .product4TQC .productBuy {
+    }
+
+/* Quick view */
+.product4TCaptionQV {
+}
+
+.product4TQV {
+}
+
+    .product4TQV .productImage {
+    }
+
+    .product4TQV .productImageImg {
+    }
+
+    .product4TQV .productTitle {
+    }
+
+    .product4TQV .ratingImage {
+    }
+
+    .product4TQV .ratingImageImg {
+    }
+
+    .product4TQV .productSalePrice {
+    }
+
+    .product4TQV .productPrice {
+    }
+
+    .product4TQV .productBuy {
+    }

@@ -1,0 +1,185 @@
+/* Default Search-as-You-Type (SAYT) styles for the default formatter. */
+
+/**
+ * Container that holds entire SAYT region.
+ */
+.gssb_c .cse-sayt {
+  width: 100%;
+}
+
+.gssb_c_two_column .cse-sayt {
+  width: 100%;
+}
+
+/* The searchbox stuff turns off wrapping, which breaks some of the SAYT layout.
+ * This should turn it back on for all divs that are part of SAYT. */
+.cse-sayt div,
+.cse-sayt tr td {
+  white-space: normal;
+}
+
+/* Container for one row that contains 1 product match.
+ * Inside this is 2 subcontainers, cse-sayt-image and cse-sayt-text.
+ * cse-sayt-text in turn contains cse-sayt-title and then an unstyled
+ * description.
+ */
+.cse-sayt-result {
+}
+
+/**
+ * Container that holds the label for SAYT results.
+ */
+.cse-sayt-label {
+}
+
+/* Container for one row that contains 1 promotion result.
+ * Inside this is 2 subcontainers, cse-sayt-image and cse-sayt-text.
+ * cse-sayt-text in turn contains cse-sayt-title and then an unstyled
+ * description.
+ */
+.cse-sayt-promotion {
+}
+
+.cse-sayt TD {
+  vertical-align: top;
+}
+
+/* Image with link to product page. Set up to be rendered to the left
+ * of the text.
+ */
+.cse-sayt-image {
+}
+
+/* Contains title and description. */
+.cse-sayt-text {
+}
+
+/* Product title. */
+.cse-sayt-title {
+  font-weight: bold;
+}
+
+/* Product description */
+.cse-sayt-descr {
+}
+
+/* Product price */
+.cse-sayt-price {
+  font-weight: bold;
+}
+
+/*
+ * Given that this is sitting in a variable width tabel cell, the idea is
+ * for it to consume the entire cell. The adjacent cell contains the search
+ * button and that is a fixed width cell.
+ */
+input.gsc-input {
+  padding: 1px 6px;
+  border: 1px solid #DDD;
+  width: 99%;
+}
+
+/* style for auto-completion table
+ * .gsc-completion-selected : highlighted completions.
+ * .gsc-completion-container : styling for the table of completions.
+ * .gsc-completion-promotion-selected: highlighted promotions
+ */
+.gsc-completion-selected {
+  background : #EEEEEE;
+  cursor: default;
+}
+
+.gsc-completion-selected .gsc-completion-promotion-table {
+  cursor: pointer;
+}
+
+.gsc-completion-container {
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  background: white;
+  border : 1px solid #DDD;
+  border-top-color: #D9D9D9;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  -webkit-box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  margin: 0;
+}
+
+.gsc-completion-title {
+  color: #0000cc;
+  line-height: normal;
+  white-space: normal;
+}
+
+.gsc-completion-snippet {
+  line-height: normal;
+  white-space: normal;
+}
+
+.gsc-completion-container .gsc-completion-icon-cell {
+  width: 42px;
+  height: 42px;
+  padding-right: 10px;
+}
+
+.gsc-completion-icon {
+  /* place image in the middle */
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  border: 1px solid #dddddd;
+}
+
+.gsc-completion-container .gsc-completion-promotion-table {
+  font-size : inherit;
+  background: inherit;
+  margin: 5px 0;
+  width: 100%;
+}
+
+.sayt-label-content {
+  float: left;
+  padding-right: 5px;
+}
+
+.sayt-query-content {
+  float: left;
+}
+
+/* The container for highlighted autocompletions on the left in two column
+ * mode.*/
+.gsc-completion-selected-two-column {
+  background: #EEEEEE;
+}
+
+/* The background color is the same as that in
+ * gsc-completion-selected-two-column. */
+.sayt_table2 {
+  background: #EEEEEE;
+}
+
+/* Container for the two column mode.*/
+.gssb_c_two_column {
+  border: 1px solid #ccc;
+  border-top-color: #d9d9d9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 2px 4px rgb(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: default;
+  font-family:Arial,sans-serif;
+  background: white;
+}
+
+/* Container for highlighted product suggestions.*/
+.sayt-highlight {
+  background-color: #C0C0C0;
+}
+
+/* Container for the text when there is no product suggestion.*/
+.sayt-no-result {
+}
+
+.cse-sayt-accessibility:focus {
+  outline: none;
+}
+

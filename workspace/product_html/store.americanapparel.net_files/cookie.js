@@ -1,0 +1,2 @@
+AA.namespace('AA.Utils.Cookie');AA.Utils.Cookie=(function($,AA){'use strict';if(typeof $.cookie==='undefined'){throw new Error("AA.Utils.Cookie: $.cookie plugin required");}
+return{create:function(name,value,days,session){if(typeof session==='undefined'||session===true||session==="true"){$.cookie(name,value,{path:'/'});}else{$.cookie(name,value,{expires:days,path:'/'});}},read:function(c){return $.cookie(c);},remove:function(c){return $.removeCookie(c,{path:'/'});},exist:function(c){return $.cookie(c)!==null;}};}(jQuery,AA));

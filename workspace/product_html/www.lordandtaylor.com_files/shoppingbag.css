@@ -1,0 +1,1531 @@
+@charset "utf-8";
+/* CSS Document */
+input{ margin-right:3px; float:left; height:20px; line-height:20px; border:solid 1px #ccc; padding:1px 5px }
+input.checkboxes{ height:auto; line-height:normal; border:none; padding:0 }
+input.search, input.search_bt, input.inputemail{ margin-right:0px; height:auto; line-height:normal; padding:0; border:none }
+label{ float:left; line-height:20px }
+label.fontB{ font-weight:bold }
+div.stylehr{ 
+	height:1px; 
+	background:#000; 
+	line-height:1px;   
+	overflow:hidden; 
+	/*Part of defect 2106 fix*/
+	/*margin:10px 0 7px 0*/
+	margin:10px 10px 7px 10px;
+	/*Part of defect 2106 fix*/ 
+}
+div.stylehr2{ height:2px; background:#000; line-height:2px; overflow:hidden; margin-bottom:7px }
+div.stylehr4{ height:1px; background:#818181; line-height:1px; overflow:hidden; clear:both }
+a.allnormal, a.allnormal:hover, a.allnormal:visited{ height:auto; padding:2px 15px; font-size:11px }
+div#shipping, div#options, div#payment, div#thanks-for-order{ overflow:hidden; width:940px; margin:0 auto }
+h3.gift_tit, h3.thankyou{ display:block; height:26px; line-height:27px; overflow:hidden; background:#f4f4f4; border-bottom:2px solid #666; padding-left:10px; text-transform:uppercase; font-size:12px; margin-top:5px; letter-spacing:1px }
+h3.gift_tit span{ display:block; float:left; padding-right:18px; background:url(../images/gift_option_arr01.gif) right 9px no-repeat; cursor:pointer }
+h3.gift_tit span.open{ background:url(../images/gift_option_arr02.gif) right 11px no-repeat }
+h3.gift_tit a{ float:right; font-size:10px; font-weight:bold; margin-right:10px; letter-spacing:normal }
+span.shipto{ display:block; font-weight:bold; float:left; overflow:hidden; margin-top:2px; height:20px; width:110px }
+div.address_info{ float:left; margin-left:15px; overflow:hidden; }
+div.address_info p{ float:left }
+div.create{ margin-left:0px; float:left; overflow:hidden; margin-right:20px }
+select.shipto{ width:120px }
+select.shipping-method{ width:160px }
+a.create, a.create:hover, a.create:visited{ font-size:10px; text-transform:uppercase; color:#000; margin-top:3px; font-weight:bold; display:block }
+a.edit, a.edit:hover, a.edit:visited
+{ background:url(../images/gift_edit.gif) no-repeat left center; padding-left:13px; font-size:10px; text-transform:uppercase; font-weight:bold; display:block; float:left; color:#000 }
+a.showmap, a.showmap:hover, a.showmap:visited{ background:url(../images/showmap.gif) no-repeat; height:14px; line-height:14px }
+span.price{ 
+	font-weight:bold; 
+	display:block; 
+	overflow:hidden; 
+	color:#666666;
+}
+/*Fix for bug 2106*/	
+div.order-total div.right span.price, span#estimateTotalCharges.price,span#intlPreshippingOrderTotal.price{ 
+ color:#000000;
+}
+/*END - Fix for bug 2106*/
+span.price.sale{ color:#F27100 }
+.offer-price-container, .offer-type-container {float: left; width: 100%;}
+div.shipping_titles{ overflow:hidden; border-bottom:1px solid #B0B0AF; padding-bottom:4px; margin-top:17px; color:#666666; }
+div.shipping_titles.pickup{ border-bottom-width:1px }
+div.shipping_titles h4{ float:left; font-size:11px; text-transform:uppercase }
+
+
+div.shipping_titles h4.items{ width:338px }
+div.shipping_titles h4.items-options{ margin-left:0px }
+div.shipping_titles h4.items-price{ margin-left:220px }
+div.shipping_titles h4.items-discount{ margin-left:58px }
+div.shipping_titles h4.items-total{ float:right }
+ul.items_for_shipping{ overflow:hidden; margin-top: 0px; padding: 0px; border-bottom: 1px solid #B0B0AF}
+ul.items_for_shipping li{ overflow:hidden; padding:11px 0; }
+
+
+#ShopCartPagingDisplay > div.shipping_titles h4.items{ width:544px }
+#ShopCartPagingDisplay > div.shipping_titles h4.items-options{ margin-left:40px }
+#ShopCartPagingDisplay > div.shipping_titles h4.items-price{ margin-left:330px }
+#ShopCartPagingDisplay > div.shipping_titles h4.items-discount{ margin-left:58px }
+#ShopCartPagingDisplay > div.shipping_titles h4.items-total{ float:right }
+#ShopCartPagingDisplay > ul.items_for_shipping{ overflow:hidden; margin-top: 0px; padding: 0px; border-bottom: none}
+#ShopCartPagingDisplay > ul.items_for_shipping li{ overflow:hidden; padding:11px 0; border-top:1px solid #B0B0AF }
+
+ul.items_for_shipping li.first{ border:none }
+ul.items_for_shipping li ul{ border-top:1px solid #eee; margin-top:10px; overflow:hidden; margin-bottom:-10px }
+ul.items_for_shipping li ul li{ 
+	border-top:none; 
+	/*Defect 2029 fix*/
+	/*border-bottom:1px solid #eee*/ 
+	/*END - Defect 2029 fix*/
+}
+
+ul.items_for_shipping li ul li.last{ border:none }
+ul.items_for_shipping li ul li.bagwarn{ height:10px; background:url(../images/bag_icon.gif) no-repeat 0 bottom; font-size:11px; line-height:25px; padding-left:24px; overflow:hidden; clear:both; border-bottom:none }
+*+html ul.items_for_shipping li ul li.bagwarn{ background-position:0 8px; margin-bottom:0; line-height:22px }
+ul.items_for_shipping li ul li.item-gifts div.warnning{ height:17px; line-height:17px; font-size:11px; color:#333; padding-left:20px; background:url(../images/warning.gif) no-repeat; margin-bottom:11px }
+ul.items_for_shipping li ul li.item-gifts div.confirm{ height:17px; line-height:17px; font-size:11px; color:#333; padding-left:20px; background:url(../images/con_icon.gif) no-repeat; margin-bottom:11px }
+ul.items_for_shipping li ul li.item-gifts div.confirm div{ margin:0 20px 0 5px; float:left}
+li.bagwarn a, li.bagwarn a:hover, li.bagwarn a:visited{ text-transform:uppercase; font-size:10px; font-weight:bold; color:#000; margin-left:24px }
+ul.items_for_shipping li .item-info{ float:left; width:340px; overflow:hidden }
+ul.items_for_shipping li .item-info a.pro-pic{ display:block; float:left; border:1px solid #d6d6d6 }
+ul.items_for_shipping li .item-info a.pro-pic img{ width:58px; height:75px }
+ul.items_for_shipping li .item-info div{ float:left; margin-left:20px; margin-top: -3px; width:250px; overflow:hidden; padding-bottom:1px }
+ul.items_for_shipping li .item-info div p{ font-size:11px; margin-top:3px; width:250px; line-height:120% }
+ul.items_for_shipping li .item-info div a, ul.items_for_shipping li .item-info div a:hover, ul.items_for_shipping li .item-info div a:visited
+{ display:block; font-size:10px; font-weight:bold; color:#000000; text-transform:uppercase; margin-top:5px }
+ul.items_for_shipping li .item-info div a.pro-name{ margin:0; padding:0; font-size:12px; text-transform:none; color:#000; min-width: 200px; }
+ul.items_for_shipping li .item-info div a.change-store{ margin-top:10px }
+ul.items_for_shipping li .item-info div a.remove{ background:url(../images/icon-remove.png) left 3px no-repeat; padding-left:11px; }
+ul.items_for_shipping li .item-info div a.add{ background:url(../images/bag_addremove.gif) left -13px no-repeat; padding-left:11px }
+ul.items_for_shipping li .item-info div div{ overflow:hidden; float:none; margin:0; width:auto; margin-top:7px }
+ul.items_for_shipping li .item-info div div span.left{ display:block; float:left; overflow:hidden }
+ul.items_for_shipping li .item-info div div span.right{ display:block; float:right; overflow:hidden }
+ul.items_for_shipping li .item-info div div span.right a{ margin-top:3px }
+ul.items_for_shipping li .item-info div div span p{ color:#666; margin-right:5px; width:auto }
+ul.items_for_shipping li .item-info div div span.left p{ text-align:right; font-weight:bold }
+ul.items_for_shipping li .item-quantity{ width:240px; float:left; overflow:hidden }
+.edit-options-container {float: left; padding-top: 5px; font-weight: bold; padding-bottom: 15px; font-size: 10px; color: #000000; text-transform:uppercase;}
+.edit-options-link {background:url(../images/icon-edit.png) left 2px no-repeat; padding-left: 11px;}
+/* Part of DEFECT 1653 fix */
+/*ul.items_for_shipping li .item-quantity .quantity-info{ float:left; width:142px; padding-top:8px }*/
+ul.items_for_shipping li .item-quantity .quantity-info{ float:left; width:100%; padding-top:8px; margin-top: -10px }
+/* END - Part of DEFECT 1653 fix */
+ul.items_for_shipping li .item-quantity .quantity-info dl{ font-size:11px; color:#666; height:auto !important; min-height:22px; margin-top:2px; width:248px }
+ul.items_for_shipping li .item-quantity .quantity-info dl dt{ font-weight:bold; width:100px; float:left; margin-right:5px; padding:3px 0 1px 0; line-height:100% }
+/* Part of DEFECT 1653 fix */
+/*ul.items_for_shipping li .item-quantity .quantity-info dl dd{ float:left; overflow:hidden; line-height:19px }*/
+ul.items_for_shipping li .item-quantity .quantity-info dl dd{ float:left; overflow:hidden; line-height:19px; width:140px }
+/* END - Part of DEFECT 1653 fix */
+ul.items_for_shipping li .item-quantity .quantity-info dl dd select.short{ width:50px }
+ul.items_for_shipping li .item-quantity .quantity-info dl dd select.long{ width:75px }
+ul.items_for_shipping li .item-quantity .quantity-info dl.moreword dt{ padding-top:0px }
+ul.items_for_shipping li .item-quantity .quantity-info dl.moreword dd{ padding-top:2px }
+ul.items_for_shipping li .item-quantity a.edit{ margin-top:14px }
+.quantity-info{ float:left; width:132px; padding-top:10px }
+.quantity-info dl{ font-size:11px; color:#333; overflow:hidden; height:22px; line-height:21px }
+.quantity-info dl dt{ font-weight:bold; width:57px; float:left; overflow:hidden }
+.quantity-info dl dd{ float:left; overflow:hidden }
+.quantity-info dl dd select.short{ width:50px }
+.quantity-info dl dd select.long{ width:75px }
+ul.items_for_shipping li .item-quantity a.edit{ margin-top:14px }
+*+html ul.items_for_shipping li .item-quantity a.edit{ margin-top:10px }
+ul.items_for_shipping li div.item-price{ float:left; width:85px; overflow:hidden; text-align: right}
+ul.items_for_shipping li div.item-discount{ float:left; width:98px; overflow:hidden; text-align: right; margin-left: 50px }
+ul.items_for_shipping li div.item-discount-summary{ float:left; width:120px; overflow:hidden; text-align: right; margin-left: 50px }
+ul.items_for_shipping li div.item-total{ float:right; overflow:hidden }
+ul.items_for_shipping li div.multiple-address{ overflow:hidden; clear:both; margin-top:8px }
+ul.items_for_shipping li div.multiple-address div.address{ margin:0; overflow:hidden }
+ul.items_for_shipping li div.multiple-address div.address span.shipto{ width:100px; height:auto; color:#333; font-size:11px; margin-top:4px; overflow:hidden }
+ul.items_for_shipping li div.multiple-address div.address div.address_info{ margin-left:0; color:#333 }
+ul.items_for_shipping li div.multiple-address div.address div.address_info p{ margin-top:2px }
+ul.items_for_shipping li div.multiple-address div.address a.edit{ margin-top:4px }
+/*-------------------------------------------------------SHIPPING PART----------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------*/
+div.address{ overflow:hidden; margin-top:12px }
+div.address a.edit{ margin:2px 0 0 23px }
+div.multiple-shipments{ border-bottom:solid 1px #666; background:url(../images/warning.gif) no-repeat left 10px; padding-left:25px; height:38px; overflow:hidden }
+div.multiple-shipments.pickup{ border-bottom-width:2px }
+div.multiple-shipments span, div.multiple-shipments a{ display:block; float:left }
+div.multiple-shipments span{ line-height:37px }
+div.multiple-shipments a{ margin:9px 0 0 19px; text-transform:uppercase }
+div.single-shipments{ border:none; height:30px }
+/*-------------------------------------------------------OPTIONS PART----------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------*/
+div#options-frame{ width:920px; margin:9px auto 0 auto; overflow:hidden; display:none }
+div#options-frame div.address{ padding-bottom:8px; margin-bottom:10px; border-bottom:solid 1px #666; font-weight:bold; margin-top:25px }
+div#options-frame div.address.first{ margin-top:0 }
+div#options-frame div.address div.left{ width:83px; float:left }
+div#options-frame .left{ float:left; width:64px; overflow:hidden }
+div#options-frame .left a.enlarge, div#options-frame .left a.enlarge:hover, div#options-frame .left a.enlarge:visited
+{ padding-left:14px; background:url(../images/gift_icon2.gif) left top no-repeat; color:#000; text-transform:uppercase; font-size:10px; font-weight:bold; margin-top:5px; height:15px; display:block }
+div#options-frame .right{ float:left; margin-left:15px; overflow:hidden }
+div#options-frame .right input{ height:auto; border:none }
+div#options-frame .right p{ width:820px; margin-bottom:7px }
+.gift-box-items{ float:left; width:542px; overflow:hidden}
+.gift-box-items label{ line-height:15px }
+.gift-box-items input.gbi-radio{ margin-left:12px; border:none; padding:0; margin-top:1px }
+*+html .gift-box-items input.gbi-radio{ margin-top:-2px }
+.gift-box-items div{ overflow:hidden; margin-top:6px }
+div.select-items-to-box{ width:520px; margin-left:16px; margin-top:15px; overflow:hidden }
+div.select-items-to-box span.tit{ color:#808080; font-size:11px; font-weight:bold; float:left; padding-bottom:2px }
+div.select-items-to-box span.tit.right{ float:right !important }
+div.select-items-to-box ul{ margin:3px 0 7px 0; overflow:hidden; border-bottom:1px solid #818181; border-top:1px solid #818181; padding:5px 0 4px 0 }
+*+html div.select-items-to-box ul{ margin-top:-5px; padding-bottom:1px }
+div.select-items-to-box ul li{ margin-top:2px; overflow:hidden }
+*+html div.select-items-to-box ul li{ margin-top:0px }
+div.select-items-to-box ul li label{ float:left }
+div.select-items-to-box ul li span{ float:right; color:#333; font-weight:bold; line-height:20px }
+div.select-items-to-box .total{ float:right; font-weight:bold; margin-top:0px }
+div.select-items-to-box .total span{ margin-left:24px }
+div.not-be-boxed{ font-weight:bold; line-height:150%; margin-top:8px; overflow:hidden }
+div.not-be-boxed textarea.giftmessage{ width:535px; height:70px; border:solid 1px #818181; margin-top:2px }
+div.not-be-boxed span{ font-weight:normal}
+div.warning{ background:url(../images/warning.gif) left 5px no-repeat; padding-left:23px; font-size:11px; color:#484848; margin-top:14px; line-height:120% }
+div.warning a, div.warning a:hover, div.warning a:visited{ font-weight:bold; color:#000; font-size:10px; margin-left:18px }
+div.message{ float:left; margin-left:50px; overflow:hidden; width:200px }
+div.message span{ font-weight:bold; display:block; margin-bottom:7px }
+div.message div.name{ font-size:13px }
+div.message textarea{ margin-top:5px; padding:5px; width:267px; height:85px; color:#666 }
+/*-------------------------------------------------------PAYMENT PART----------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------*/
+div#payment{ margin-top:3px }
+h3.information_tit{ margin-top:10px }
+div.payment-pannel{ 
+/*Part of defect 2106 fix*/
+	/*margin-left:10px;*/ 
+	margin-left:0px;
+/*END-Part of defect 2106 fix*/
+	overflow:hidden 
+}
+#PaymentForm1 div.payment-pannel, div.payment-pannel.confPage{
+	margin-left:10px;
+	overflow:hidden 
+}
+div.payment{ width:550px; overflow:hidden; float:left }
+div.payment span.tit{ 
+	font-weight:bold; 
+	display:block; 
+	/*Part of defect 2106 fix*/
+	/*margin:6px 0 13px 0*/
+	margin:6px 10px 13px 10px;
+	/*END - Part of defect 2106 fix*/ 
+}
+div.payment div.pay_pannel{ margin-top:6px; background:#f4f4f4; padding:9px; overflow:hidden }
+div.payment div.pay_pannel label.fontB{ margin-top:-3px }
+div.pay-by-credit-card{ margin:10px 0 0 15px; overflow:hidden }
+div.pay-by-credit-card div{ float:left; overflow:hidden }
+div.pay-by-credit-card div span{ display:block; margin-bottom:4px }
+div.pay-by-credit-card div.type{ 
+	/*Part of defect 2146 fix*/
+	/*width:128px */
+	/* changed width:195px to width:189 for payment section alignemnt issue */
+	width:189px;
+	/*END - Part of defect 2146 fix*/
+}
+div.pay-by-credit-card div.type select{ margin-top:2px; width:120px }
+div.pay-by-credit-card div.number{ 
+	/*Part of defect 2146 fix*/
+	/*width:171px*/
+	width:140px; 
+	/*END - Part of defect 2146 fix*/
+}
+div.pay-by-credit-card div.number input{ width:150px }
+div.pay-by-credit-card div.code{ 
+	/*Part of defect 2146 fix*/
+	/*width:118px*/
+	width:100px 
+	/*END - Part of defect 2146 fix*/
+}
+div.pay-by-credit-card div.code input{ width:30px }
+div.pay-by-credit-card div.expiry{ width:auto; overflow:visible }
+div.pay-by-credit-card div.expiry input{ width:17px; float:left }
+div.pay-by-credit-card div.expiry input.yyyy{ width:45px; float:left; margin-left:2px }
+div.pay-by-credit-card div.expiry p{ display:block; clear:both; font-size:11px; color:#666; padding-left:5px; padding-top:2px }
+div.pay-by-credit-card div.type,
+div.pay-by-credit-card div.number,
+div.pay-by-credit-card div.code,
+div.pay-by-credit-card div.expiry {
+	height: 40px;
+}	
+div.pay-by-credit-card ul.cards{ display:block; margin-bottom:7px; overflow:hidden; width:278px; float:left }
+div.pay-by-credit-card ul.cards li{ float:left; margin-right:2px; margin-top:2px }
+div.pay-by-credit-card ul.cards li img{ width:44px; height:27px }
+div.pay-by-credit-card div.pay{ float:right; height: 15px; width: 232px;}
+*+html div.pay-by-credit-card div.pay{ margin-top:18px }
+div.pay-by-credit-card div.pay span{ float:left; margin-left:5px }
+div.giftcards{ float:left; margin:10px 0 0 10px }
+div.pay-by-gift-card{ margin:10px 0 0 15px; overflow:hidden }
+div.pay-by-gift-card div.cardinfo{ overflow:hidden; margin-bottom:4px; margin-top:20px }
+div.pay-by-gift-card div.cardinfo.first{ margin-top:0 }
+div.pay-by-gift-card div.cardinfo div{ float:left; overflow:hidden; margin-right:5px }
+div.pay-by-gift-card div.cardinfo div span{ display:block; margin-bottom:4px }
+div.pay-by-gift-card div.cardinfo div input{ height:20px; line-height:20px; border:solid 1px #ccc; padding:1px 5px }
+div.pay-by-gift-card div.cardinfo div.number input{ width:150px }
+div.pay-by-gift-card div.cardinfo div.pin input{ width:32px }
+div.pay-by-gift-card div.cardinfo a.allbutton, div.pay-by-gift-card div.cardinfo a.allbutton:hover, div.pay-by-gift-card div.cardinfo a.allbutton:visited
+{ margin:16px 0 0 10px; width:30px; height:14px; line-height:14px; text-align:center; float:left }
+div.pay-by-gift-card div.cardinfo div.add-another-card{ float:none; overflow:hidden; clear:both; text-align:right; padding-top:7px; width:283px }
+*+html div.pay-by-gift-card div.cardinfo div.add-another-card{ padding-top:4px }
+div.pay-by-gift-card div.cardinfo div.add-another-card a, div.pay-by-gift-card div.cardinfo div.add-another-card a:hover, div.pay-by-gift-card div.cardinfo div.add-another-card a:visited{ font-size:10px; font-weight:bold; color:#000 }
+div.pay-by-gift-card div.cardinfo div.add-another-card a.childOpend{display:none }
+div.pay-by-gift-card div.cardinfo div.pay{ float:right; overflow:hidden; margin-top:22px; display:none }
+div.pay-by-gift-card div.cardinfo div.pay span{ float:left; margin-left:5px }
+div.order-sub-total{ float:right; width:390px; overflow:hidden }
+div.order-sub-total div{ overflow:hidden }
+div.order-sub-total div#sr_nonmemberThanks_basic {margin: 0 0 6px;}
+div.order-sub-total div#sr_nonmemberThanks_basic div#sr_message {line-height: 14px;}
+div.order-sub-total div#sr_nonmemberThanks_basic div#sr_message a {line-height: 16px; text-decoration: none;}
+div.order-sub-total div#sr_nonmemberThanks_basic div#sr_message a:hover {text-decoration: underline;}
+div.order-sub-total .left{ float:left }
+div.order-sub-total .left span.tit{ font-size:14px; font-weight:bold; display:block; margin-bottom:15px }
+div.order-sub-total .right{ float:right }
+div.order-sub-total .right span{ font-weight:bold; text-align:right !important; float:right }
+div.order-sub-total .right span.price{ width:70px }
+div.order-sub-total .right a.what, div.order-sub-total .right a.what:hover, div.order-sub-total .right a.what:visited{ font-weight:bold; float:right; margin:3px 3px 0 0 }
+div.order-sub-total div.details{ width:400px }
+div.order-sub-total div.details div.sub-total{ float: left; padding:6px 0; width: 380px; margin-top: -20px;}
+div.order-sub-total div.details div.promo-applied{ border-bottom:solid 1px #818181; padding:7px 0 5px 10px }
+div.order-sub-total div.details div.promo-applied div.right span{ margin-bottom:5px }
+div.order-sub-total div.details div.promo-applied div.right span.small{ font-size:10px }
+div.order-sub-total div.details div.shipiing-taxes{ padding:5px 0 5px 10px }
+div.order-sub-total div.details div.shipiing-taxes div.right{ margin-top:30px}
+div.order-sub-total div.details div.shipiing-taxes select{ margin-top:5px; width:160px }
+div.order-sub-total div.details div.shipiing-taxes span{ margin-top:3px }
+div.order-sub-total div.details div.shipiing-taxes span.normal{ font-weight:normal }
+div.order-sub-total div.details div.confirm-tax-container{ margin-right: 10px; min-width: 200px;}
+div.order-sub-total div.order-total{ background:#f4f4f4; border-bottom:solid 2px #999; border-top:solid 2px #999; height:33px; line-height:33px; padding:0 0 0 11px; margin-top:4px}
+div.order-sub-total div.order-total div.left{ font-size:11px; color:#494949 }
+div.order-sub-total div.order-total div.right{ font-size:13px; line-height:32px }
+*+html div.order-sub-total div.order-total{ margin-top:10px}
+.pay_pannel ul.CreditCardList, div.pay-by-credit-card div.pay {margin-top: 10px;}
+.pay_pannel ul.CreditCardList { display:block; margin-bottom:7px; overflow:hidden; float:left; width:278px}
+.pay_pannel ul.CreditCardList li { float:left; overflow:hidden; margin-left:2px;}
+.pay_pannel ul.CreditCardList li div { float:left; display:block; overflow:hidden; width:42px; height:26px; text-indent:-99999px; border:1px solid #E4E3E1;}
+.pay_pannel ul.CreditCardList li div.cc-icon-color-card { background:url(../images/Premier.jpg);  background-size:42px 26px; background-repeat:no-repeat; background-position:top center;}
+.pay_pannel ul.CreditCardList li div.cc-icon-color-card1 { background:url(../images/LTCard.jpg);  background-size:42px 26px; background-repeat:no-repeat; background-position:top;}
+.pay_pannel ul.CreditCardList li div.cc-icon-color-visa { background:url(../images/gift_cards3.gif);}
+.pay_pannel ul.CreditCardList li div.cc-icon-color-mastercard { background:url(../images/gift_cards4.gif);}
+.pay_pannel ul.CreditCardList li div.cc-icon-color-amex { background:url(../images/gift_cards5_old.gif);}
+.pay_pannel ul.CreditCardList li div.cc-icon-color-discover { background:url(../images/gift_cards6_old.gif);}
+a.help, a.help:hover, a.help:visited { text-decoration:none; font-weight:bold; color:#000 }
+/*-------------------------------------------------------THANK YOU FOR YOUR ORDER PART----------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------*/
+div#thanks-for-order{ margin:25px auto 17px auto }
+h3.thankyou{ border-bottom:solid 1px #666; padding-bottom:6px; height:auto; line-height:normal; background:none; margin:0; letter-spacing:1.2px; font-size:13px; padding-left:0 }
+div#thanks-for-order p{ line-height:150%; margin:10px 26px 0 0 }
+ul.payment-list{ margin:23px auto 0 auto; width:400px; }
+ul.payment-list li{ height:20px; line-height:20px; float:left }
+ul.payment-list li.tit{ font-weight:bold }
+ul.payment-list li.left{ width:270px }
+/*-------------------------------------------------------ADDRESSES PART----------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------*/
+h3.orderbg_title{ border-top:solid 2px #666;  border-bottom:none; background-color:#dcdcdb; padding:5px 8px;}
+h3.addresses{ padding-bottom:4px; border-bottom:solid 2px #666; text-transform:uppercase; font-size:11px; padding-top:10px; overflow:hidden; letter-spacing:1px }
+h3.addresses span.b-address{ float:left; width:500px }
+div.address-pannel{ height:auto !important; height:452px; min-height:452px; margin:10px 0 0 15px; float:left; display:block; clear:both; width:100% }
+div.address-pannel input{ margin:0 }
+div.address-pannel div.billing-address{ float:left; width:464px; overflow:hidden; border-right:solid 1px #999 }
+div.address-pannel div.shipping-address{ float:left; overflow:hidden; margin-left:20px }
+div.address-pannel p{ margin-bottom:16px }
+ul.address-form{ overflow:hidden }
+ul.address-form li{ margin-bottom:7px; overflow:hidden; line-height:140% }
+ul.address-form li.mark{ font-size:11px; padding-left:125px }
+ul.address-form li div{ float:left; overflow:hidden }
+ul.address-form li div span{ font-size:11px; color:#666; width:320px; display:block; float:left; margin-top:1px }
+ul.address-form li div p{ float:left; color:#666; line-height:22px; overflow:hidden; margin:0 2px }
+ul.address-form li div p.ext{ color:#000; margin-left:10px }
+ul.address-form li div.poboxes{ height:20px; color:#666; padding-top:2px }
+ul.address-form li div.ifreceive{ clear:both; margin-top:12px; width:300px }
+ul.address-form li div.ifreceive input{ width:auto; border:none; height:auto; line-height:normal; margin:0; padding:0 }
+ul.address-form li div.ifreceive label{ width:230px; margin-top:-4px; margin-left:3px; text-align:left !important }
+ul.address-form li input{ width:148px; float:left }
+ul.address-form li input.mulit{ margin-bottom:7px; float:none }
+ul.address-form li input.posalcode{ width:62px }
+ul.address-form li input.phone1{ width:18px }
+ul.address-form li input.phone2{ width:28px }
+ul.address-form li input.rewards{ width:98px; margin-top:2px }
+ul.address-form li select{ width:120px }
+ul.address-form li label{ display:block; float:left; padding-top:3px; width:116px; line-height:120%; overflow:hidden; text-align:left; padding-right:10px } /* updated text-align:right; for defect 165 */ 
+ul.address-form.for-shipping{ margin-top:29px; display:none;}
+ul.address-form.for-shipping li div span{ width:320px }
+div.same-as-billing{ clear:both; overflow:hidden; width:160px }
+div.same-as-billing input{ border:none; height:auto; margin:0; padding:0 }
+div.same-as-billing label{ line-height:13px; margin-left:3px }
+/*-------------------------------------------------------ADDRESSES POPUP PART----------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------*/
+.dijitDialog { background:#fff; width:506px; height:auto; border:solid 1px #000 }
+.dijitDialogUnderlay, .ui-widget-overlay{ background:#AAAAAA !important; 
+	opacity:0.3!important;/*Hassane - Added to make the underlay 100% transparent}*/
+}
+.dijitDialogPaneContent{ clear:both; overflow:hidden }
+.dijitDialogTitleBar{ background:#F6F6F4; overflow:hidden }
+/* DEFECT 1871 FIX*/
+div#quick_bag div.dijitDialogTitleBar{display:none !important}
+/* END DEFECT 1871 FIX*/
+.dijitDialogTitleBar span.dijitDialogTitle{ color:#595346; font-size:15px; margin-left:13px; line-height:26px; float:left }
+.dijitDialogTitleBar span.close{ float:right; width:80px; height:27px; right:0p; top:0px; z-index:9999999; background-image:url(../images/close.gif); cursor:pointer;}
+.dijitDialogPaneContent ul.address-form{ margin:19px 0 0 40px }
+.dijitDialogPaneContent ul.address-form li div span{ width:330px }
+.dijitDialogPaneContent div.action-button{ padding:18px 0; border:none; margin-top:5px }
+/*-------------------------------------------------------BUTTON PART----------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------*/
+div.action-button{ 
+ border-top:solid 1px #B0B0AF; 
+ background:#f4f4f4; 
+ padding:13px 0; 
+ text-align:center; 
+ /*Part of defect 2293 fix*/
+/* margin-top:20px; */
+ margin-top:0px;
+ /*END - Part of defect 2293 fix*/
+ overflow:hidden; 
+ clear:both; 
+ text-transform:uppercase; 
+}
+
+	
+/*Added for defect 2289*/
+div.action-button.wdtAuto{ 
+	padding-left:190px; 
+}
+/*END - Added for defect 2289*/
+
+div.action-button.havetip{ /*text-align:left;*/ text-align:center; width:100%; float:left; }
+div.action-button span{ margin-left:15px; text-transform:none; font-size:11px; cursor: pointer; }
+div.action-button a.allbutton, div.action-button a.allbutton:hover, div.action-button a.allbutton:visited{ width:70px; height:20px; line-height:20px; font-size:12px; text-align:center}
+div.action-button a.submit-order, div.action-button a.submit-order:hover, div.action-button a.submit-order:visited{ width:125px; margin-left:45px }
+div.action-button a.pop-cancel, div.action-button a.pop-cancel:hover, div.action-button a.pop-cancel:visited{ width:57px; height:13px; line-height:13px }
+div.action-button a.pop-ok, div.action-button a.pop-ok:hover, div.action-button a.pop-ok:visited{ width:30px; height:13px; line-height:13px; margin-left:40px }
+div.action-button a.print{ /*margin-left:425px*/ margin-left:0px}
+div.action-button a.back{ margin-left:365px }
+div.action-button a.grey, div.action-button a.grey:visited{
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #FFA333), color-stop(1, #F47C22) );
+	background:-moz-linear-gradient( center top, #FFA333 5%, #F47C22 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFA333', endColorstr='#F47C22');
+}
+form#register-account div.action-button span.dijitButtonNode{ margin-left:120px !important }
+div.action-button a.next{ margin-left:40px }
+div.action-button a.nothanks{ margin-left:20px }
+/*___________________________________________________________________________________________________________________*/
+div.promopup{ position:relative;}
+div.promopup div.abs_up{ z-index:1000; display:none; line-height:120%; background-color:#FFF; width: 275px; position:absolute;border:solid 1px #000;}
+div.pro_con_pop{ padding: 14px;}
+.chpic_pop{overflow:hidden;background-color:#F6F6F4;height:25px;}
+.chpic_pop span{ padding:5px 0 0 10px; color:#535346; font-size:14px; float:left; font-weight:500;}
+.chpic_pop img{ float:right;}
+div#promo1{ right:5px; top:-130px }
+div#promo2{ left:180px; top:-50px;}
+div#promo3{ right:150px; top:130px}
+.pro_con_pop div.discount{ position:relative; margin-top:10px; overflow:hidden}
+.pro_con_pop div.discount div.discount_title{ border-bottom:solid 1px #CCC; padding-bottom:3px}
+.pro_con_pop div.discount div.discount_title2{ position:absolute; right:0px; top:0px;}
+span.list_left{ width:170px; float:left;}
+span.list_right{font-weight:900;float:right;color:#F27100;}
+.discount div{ margin-bottom:5px; overflow:hidden;}
+/*___________________________________________________________________________________________________________________*/
+.iterm_inbag{ display:none;}
+ul.items_for_shipping.gift-card li .item-info a.pro-pic{ border:none }
+ul.items_for_shipping.gift-card li .item-info a.pro-pic img{ width:60px; height:auto }
+div#payment div.address span.shipto{ width:100px }
+/*form#shipping_payment div.billing-address ul.address-form li label{ text-align:right }*/
+form#register-account span.allbutton{ margin-left:320px !important }
+form#shipping_payment input.dijitInputInner{ width:148px !important }
+form#shipping_payment #province ,form#shipping_payment #country{ width:120px !important }
+form#shipping_payment input.posalcode{ width:62px !important }
+form#shipping_payment span.allbutton span.dijitButtonNode{ margin-left:40px !important; width:auto !important; height:20px !important; line-height:20px; font-size:20px; text-align:center   !important }
+form#shipping_payment div.allerrors{ margin-left:130px }
+
+form#PaymentForm1 input.dijitInputInner{ 
+	/*Part of defect 2146 fix*/
+	/*width:148px !important*/
+	width:130px !important 
+	/*END - Part of defect 2146 fix*/
+}
+form#PaymentForm1 #province ,form#shipping_payment #country{ width:120px !important }
+form#PaymentForm1 input.posalcode{ width:62px !important }
+form#PaymentForm1 span.allbutton span.dijitButtonNode{ margin-left:40px !important; width:auto !important; height:20px !important; line-height:20px; font-size:20px; text-align:center   !important }
+form#PaymentForm1 div.allerrors{ margin-left:130px }
+form#PaymentForm1 div#label-billingdropdown_1{ margin-left:0px }
+form#PaymentForm2 input.dijitInputInner{ width:148px !important }
+form#PaymentForm2 #province ,form#shipping_payment #country{ width:120px !important }
+form#PaymentForm2 input.posalcode{ width:62px !important }
+form#PaymentForm2 span.allbutton span.dijitButtonNode{ margin-left:40px !important; width:auto !important; height:20px !important; line-height:20px; font-size:20px; text-align:center   !important }
+form#PaymentForm2 div.allerrors{ margin-left:130px }
+form#PaymentForm2 div#label-billingdropdown_2{ margin-left:0px }
+form#PaymentForm3 input.dijitInputInner{ width:148px !important }
+form#PaymentForm3 #province ,form#shipping_payment #country{ width:120px !important }
+form#PaymentForm3 input.posalcode{ width:62px !important }
+form#PaymentForm1 span.allbutton span.dijitButtonNode{ margin-left:40px !important; width:auto !important; height:20px !important; line-height:20px; font-size:20px; text-align:center   !important }
+form#PaymentForm3 div.allerrors{ margin-left:130px }
+form#PaymentForm3 div#label-billingdropdown_3{ margin-left:0px }
+
+
+form#shippingPayment div.allerrors{ margin-left:15px; padding-top:3px; margin-top:5px }
+form#shippingPayment div.cardinfo div.allerrors{ margin-left:0 }
+form#shippingPayment input.dijitInputInner{ background:#fff !important }
+form#shippingPayment div.dijitInputContainer{ margin-right:0 }
+form#shippingPayment input#cardType{ width:105px !important;  width:90px\9 !important }
+form#shippingPayment input#cardNumber{ width:150px !important }
+form#shippingPayment input#securityCode{ width:30px !important }
+form#shippingPayment input#expiry1{ width:17px !important }
+form#shippingPayment input#expiry2{ width:45px !important }
+form#shippingPayment div#widget_expiry2{ margin-left:4px }
+form#shippingPayment input#GCcardNumber, form#shippingPayment input#GCcardNumber2{ width:145px !important }
+form#shippingPayment input#pin, form#shippingPayment input#pin2{ width:30px !important }
+form#shippingPayment span.allbutton span.dijitButtonNode{ width:125px !important; margin-left:45px; padding:7px 0 }
+form#shippingSignIn div.allerrors{ margin-left:1px; padding-top:3px }
+form#shippingSignIn div.dijitTextBox{ margin-left:-3px !important }
+form#shippingSignIn input.dijitInputInner{ background:#fff !important; width:220px !important }
+form#shippingSignIn span.allbutton span.dijitButtonNode{ padding:10px 17px !important; margin-top:10px }
+form#shippingSignIn span.allbutton span.dijitButtonNode span.dijitButtonText{ font-size:11px !important }
+form#applyPromoCode div.dijitTextBox{ float:left }
+form#applyPromoCode input.dijitInputInner{ width:170px !important; height:18px }
+form#applyPromoCode div.allerrors{ margin-left: 115px; width: 92px;}
+form#applyPostalCode div.dijitTextBox{ float:left }
+form#applyPostalCode input.dijitInputInner{ z-index:-1; position:relative; width:70px !important; height:18px }
+form#applyPostalCode div.allerrors{ margin-left:130px }
+form#addressFormUpdate div.allerrors{ margin-left:126px }
+form#addressFormUpdate input.dijitInputInner{ width:160px !important }
+form#addressFormUpdate input#province{ width:120px !important }
+form#addressFormUpdate input#po{ width:53px !important }
+form#billingAddressFormUpdate div.allerrors{ margin-left:126px }
+form#billingAddressFormUpdate input.dijitInputInner{ width:160px !important }
+form#billingAddressFormUpdate input#province, form#billingAddressFormUpdate input#country{ width:120px !important }
+form#billingAddressFormUpdate input#po{ width:53px !important }
+form#billingAddressFormUpdate input#rewards{ width:108px !important }
+
+/* payemtn section changes */
+
+div.pay-by-credit-card div.number input{ width:150px; background:#fff !important;}
+
+span.price input { width:50px; }
+
+/* payment section */
+#shipping_payment div.cardinfo div.allerrors{ margin-left:0 }
+#shipping_payment input.dijitInputInner{ background:#fff !important }
+#shipping_payment div.dijitInputContainer{ margin-right:0 }
+#shipping_payment input#cardType{ width:105px !important;  width:90px\9 !important }
+#shipping_payment input#cardNumber{ width:150px !important }
+#shipping_payment input#securityCode{ width:30px !important }
+#shipping_payment input#expiry1{ width:17px !important }
+#shipping_payment input#expiry2{ width:45px !important }
+#shipping_payment div#widget_expiry2{ margin-left:4px }
+#shipping_payment input#GCcardNumber, #shipping_payment input#GCcardNumber2{ width:145px !important }
+#shipping_payment input#pin, #shipping_payment input#pin2{ width:30px !important }
+
+#PaymentForm1 div.cardinfo div.allerrors{ margin-left:0 }
+#PaymentForm1 input.dijitInputInner{ background:#fff !important }
+#PaymentForm1 div.dijitInputContainer{ margin-right:0 }
+#PaymentForm1 input#cardType{ width:105px !important;  width:90px\9 !important }
+#PaymentForm1 input#cardNumber{ width:150px !important }
+#PaymentForm1 input#securityCode{ width:30px !important }
+#PaymentForm1 input#expiry1{ width:17px !important }
+#PaymentForm1 input#expiry2{ width:45px !important }
+#PaymentForm1 div#widget_expiry2{ margin-left:4px }
+#PaymentForm1 input#GCcardNumber, input#GCcardNumber2, #shipping_payment input#GCcardNumber2{ width:145px !important }
+#PaymentForm1 input#pin, input#pin2, #shipping_payment input#pin2{ width:30px !important }
+#PaymentForm2 div.cardinfo div.allerrors{ margin-left:0 }
+#PaymentForm2 input.dijitInputInner{ background:#fff !important }
+#PaymentForm2 div.dijitInputContainer{ margin-right:0 }
+#PaymentForm2 input#cardType{ width:105px !important;  width:90px\9 !important }
+#PaymentForm2 input#cardNumber{ width:150px !important }
+#PaymentForm2 input#securityCode{ width:30px !important }
+#PaymentForm2 input#expiry1{ width:17px !important }
+#PaymentForm2 input#expiry2{ width:45px !important }
+#PaymentForm2 div#widget_expiry2{ margin-left:4px }
+#PaymentForm2 input#GCcardNumber, #shipping_payment input#GCcardNumber2{ width:145px !important }
+#PaymentForm2 input#pin, #shipping_payment input#pin2{ width:30px !important }
+#PaymentForm3 div.cardinfo div.allerrors{ margin-left:0 }
+#PaymentForm3 input.dijitInputInner{ background:#fff !important }
+#PaymentForm3 div.dijitInputContainer{ margin-right:0 }
+#PaymentForm3 input#cardType{ width:105px !important;  width:90px\9 !important }
+#PaymentForm3 input#cardNumber{ width:150px !important }
+#PaymentForm3 input#securityCode{ width:30px !important }
+#PaymentForm3 input#expiry1{ width:17px !important }
+#PaymentForm3 input#expiry2{ width:45px !important }
+#PaymentForm3 div#widget_expiry2{ margin-left:4px }
+#PaymentForm3 input#GCcardNumber, #shipping_payment input#GCcardNumber2{ width:145px !important }
+#PaymentForm3 input#pin, #shipping_payment input#pin2{ width:30px !important }
+
+form#register-account div.action-button span.dijitButtonNode {
+    margin-left: auto !important; }
+form#register-account span.allbutton {
+    margin-left: auto !important; }
+    
+div.action-button a.allbutton, div.action-button a.allbutton:hover, div.action-button a.allbutton:visited, div.wdtAuto a.allbutton{ width:auto !important;}
+    
+/*#shipping_payment span.allbutton span.dijitButtonNode{ width:125px !important; margin-left:45px; padding:7px 0 }*/
+
+.virtualGiftCardSection{ width:225px;} 
+.virtualGiftCardSection dt{ width:100px !important; }
+.virtualGiftCardSection br{ clear:both;}
+.editPlaceHolder{ float:right;position:relative;left:70px;top:5px;}
+.checkoutPromo{ width:870px !important;}
+#PromotionFreeGiftsDisplay{ /*width:870px;*/ width:830px !important;}
+.dijitDialog { z-index: 10005 !important;}
+.editPlaceHolder a{ margin-top: 0px !important;}
+
+/* shoprunner alert dialog */
+
+
+
+.shoppingAlertContainer{
+	margin:10px 0px;
+}
+div.shoppingAlert{ background: url("../images/warning.gif") no-repeat scroll 10px 11px #fff; border:1px solid #eee; padding:12px 10px 12px 35px; overflow:hidden; }
+
+.shoppingAdRun {
+	display:block;
+	overflow:hidden;
+	height:28px;
+	background:#eee url(../images/ad_run.gif) no-repeat 4px 5px;
+	padding:5px 0 5px 35px;
+}
+.shoppingAdRun p {
+	padding:7px 0 0 10px;
+	color:#666;
+	font-size:12px
+}
+.shoppingAdRun .signIn,
+.shoppingAdRun .learnMore {
+	display:inline-block;
+	padding:0 5px;
+}
+.shoppingAdRun .signIn {
+	border-left:1px solid #55554B;
+}
+.shoppingAdRun a {
+	color:#000;
+	font-weight:bold;
+}
+
+a.shoppingAlertBtn {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #939393), color-stop(1, #6c6c6c) );
+	background:-moz-linear-gradient( center top, #939393 5%, #6c6c6c 100% );
+ 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#939393', endColorstr='#6c6c6c');
+	background-color:#FF8C00;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+	display:inline-block;
+	color:#ffffff;
+	font-family:arial;
+	font-size:10px;
+	font-weight:bold;
+	padding:5px 12px;
+	text-decoration:none;
+	text-transform:uppercase
+}
+a.shoppingAlertBtn:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #6c6c6c), color-stop(1, #939393) );
+	background:-moz-linear-gradient( center top, #6c6c6c 5%, #939393 100% );
+ 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#6c6c6c', endColorstr='#939393');
+	background-color:#FF8C00;
+	text-decoration:none;
+	color:#fff
+}
+a.shoppingAlertBtn:active {
+	position:relative;
+	top:1px;
+	color:#fff
+}
+
+#shipping_payment input#expMonth{ width:17px !important; margin-right:5px; }
+#shipping_payment input#expYear{width:45px !important}
+#shipping_payment div#widget_expYear{ margin-left:4px;}
+#PaymentForm1 input#expMonth{ width:20px !important; margin-right:5px; }
+#PaymentForm1 input#expYear{ 
+	/*Part of defect 2146 fix*/
+	/*width:45px !important*/
+	width:30px !important
+	/*END - Part of defect 2146 fix*/
+}
+#PaymentForm1 div#widget_expYear{ margin-left:4px;}
+#PaymentForm2 input#expMonth{ width:17px !important; margin-right:5px; }
+#PaymentForm2 input#expYear{ width:45px !important }
+#PaymentForm2 div#widget_expYear{ margin-left:4px;}
+#PaymentForm3 input#expMonth{ width:17px !important; margin-right:5px; }
+#PaymentForm3 input#expYear{ width:45px !important }
+#PaymentForm3 div#widget_expYear{ margin-left:4px;}
+
+
+/* Shippment Note */
+div.shipmentsNote{ border-bottom:solid 1px #666; background:url(../images/warning.gif) no-repeat; padding-left:25px; padding-bottom: 10px; overflow:hidden; }
+div.shipmentsNote a{ text-decoration:underline; }
+div.shipmentsNote a:hover{ text-decoration:none; }
+/* END */
+/* Hassane - added to display error messages on bold + red*/
+#ErrorMessage_TaxSystem, #ErrorMessage_ShipSystem, #ErrorMessage_TaxAddrInvalid, #ErrorMessage_CartUpdated, #ErrorMessage_General, #ErrorMessage_StockUpdated, .shopErrMsg{ 
+  color: #AB1F21 !important;
+  font-size: 12px !important;
+  font-weight: bold !important;
+}
+.shipping-error-message
+{
+	  float: right;
+}
+/* International Shipping message on Shop cart for user*/
+.intlFlowMsg {
+    color: #000000;
+    font-size: 12px !important;
+    font-weight: bold !important;
+}
+/*Hassane - added to display error messages on bold + red*/
+
+
+div.address_info{ line-height: 15px; }
+div#payment div.address span.shipto{ width:auto; }
+span.shipto{
+	width:auto;
+	margin-right:5px;
+	/*Part of defect 2106 fix*/
+	margin-left:10px;
+	/*END - Part of defect 2106 fix*/
+}
+div#thanks-for-order p{ margin:10px 0px 0 60px; }
+
+#giftdesc { top:135px; left:425px;}
+div.giftPopup{ width: 325px !important;}
+
+/* FORM button for SPAN */
+#formButtons, .action-button span.allbutton span.dijitButtonNode{ margin-left:40px !important; width:auto !important; line-height:20px; font-size:20px; text-align:center   !important }
+.thx-feed-sub #formButtons { margin-left:0px !important; width:auto !important; line-height:20px; font-size:20px; text-align:left   !important } 
+
+div#options {width:auto;}
+div.shipiing-taxes span.normal { display:block; padding-bottom:10px;}
+
+/* Opera CSS */
+x:-o-prefocus, .quantity-info dl dd select.long{ width:75px !important; }
+
+/* PWP GWP Confirm Tag Line CSS */
+
+ul.items_for_shipping li ul li.confirm div{ height:17px; line-height:17px; font-size:11px; color:#333; padding-left:20px; background:url(../images/con_icon.gif) no-repeat 0 bottom !important; overflow:hidden; clear:both; border-bottom:none !important}
+ul.items_for_shipping li ul li.confirm div{ margin:0 20px 0 5px; float:left }
+ul.items_for_shipping li ul li.confirm{border-bottom:none !important }
+
+ul.items_for_shipping li ul.giftlineitem {
+	border-top: medium none;
+    margin-top: -10px;
+    overflow: hidden;
+}
+
+/* END */
+
+form#PaymentForm1 input#GCcardNumber2{ width:145px !important }
+form#PaymentForm1 input#pin2 { width:30px !important }
+div.action-button a.shippingBack { margin-left:175px;}
+div.payment{ 
+	/*Part of defect 2106 fix*/
+	/*width:550px !important;*/
+	width:540px !important;
+	/*END - Part of defect 2106 fix*/ 
+}
+ul.payment-list{ margin:23px 0 0 100px; }
+
+span.tooltipHelp span {background: none; background-color: #FFFFFF !important;}
+span.tooltipHelp span span {background: none; background-color: #FFFFFF; color: #000000 !important; padding: 0px;}
+span.tooltipHelp span span span span.dijitArrowButtonInner {display:none;}
+div.order-sub-total div.details div.shipiing-taxes span.tooltipHelp{ vertical-align: middle; }
+div.order-sub-total div.details div.shipiing-taxes span.tooltipHelp span{ font-weight:inherit; text-align:left !important; float:left; margin-top: 0px; margin-right: 1px; line-height: 1;}
+div.order-sub-total-account div.details div.shipiing-taxes div.right span.tooltipHelp span {margin:0px 1px 0px 0px;}
+/*Hassane - Added for defect 3810*/
+div.securityCode span.tooltipHelp span, div.pin span.tooltipHelp span{
+  font-weight: bold;
+  line-height: 1;
+  margin:0px !important;
+  background:none repeat scroll 0 0 #F4F4F4 !important;
+  display:inline-block !important;
+}
+div.securityCode span.tooltipHelp span.dijitArrowButtonChar, 
+div.pin span.tooltipHelp span.dijitArrowButtonChar{
+  display:none !important;
+}
+/*END - Hassane - Added for defect 3810*/
+table.dijitSelect .dijitButtonNode .dijitArrowButtonInner {height: 22px;}
+table.dijitSelect .dijitButtonContents {padding: 0 5px;}
+table.dijitMenuTable .dijitMenuItemLabel {padding: 2px;}
+div.pay-by-gift-card div.cardinfo a.allbutton, div.pay-by-gift-card div.cardinfo a.allbutton:hover, div.pay-by-gift-card div.cardinfo a.allbutton:visited{width:auto;}
+ul.items_for_shipping li .item-info div{ overflow:visible;}
+ul.items_for_shipping li .item-info{ overflow:visible; }
+body div#free_gifts_popup div.pwpgwplist ul.items_for_shipping li div.item-info ul{border:none;}
+
+/*Add - El Hassane defect 2974*/
+div#promotions div.promo-applied div.right span.price.sale{clear: right;}
+
+/* Added for Defect 2566 */
+div#options div#options-frame div.left a img
+{
+    height: 75px;
+    width: 58px;
+}
+
+.dijitDialogTitleBar span.closeText {
+  /*background: none repeat scroll 0 0 url("../images/close.gif");*/
+  display: block;
+  font-weight: bold;
+  right: 0;
+  text-transform: uppercase;
+  padding:0px !important;
+}
+
+#popupHeader div.close {
+ padding:0px !important;
+}
+
+.dijitDialogTitleBar span.dijitDialogTitle h3 {
+  padding-top: 10px;
+}
+
+ul.items_for_shipping li .item-quantity .quantity-info .virtualGiftCardSection dd{
+ min-height:30px;
+}
+/************ Added for shopping Cart*******/
+/************ Added for defect  start*******/
+.lt-cancel{ margin-left:5px;line-height: 35px;}
+/************ Added for defect end*******/
+.lt-heading-popup{padding:0px 0 10px 5px;}
+
+/************ Added for defect  start*******/
+.lt-title{color:#fff; padding-left:2px;line-height: 35px;}
+/************ Added for defect end*******/
+
+.lt_pk_btn{float:right;}
+
+
+.lt_pickup_ship_wrap{background: none repeat scroll 0 0 #F4F4F4;    border-bottom: 2px solid #999999;border-top: 2px solid #999999; padding:10px 5px}
+.lt_pickup_ship_wrap{margin-top:10px;}
+.lt_pickup_ship_wrap p{margin:0 0 10px 0}
+
+.lt_pick_in_store {padding-top: 150px;}
+.lt_pick_in_store p{float:left}
+.lt_pick_in_store a{float:right}
+
+
+#lt-in-store-popup {border:1px solid #ccc; overflow:hidden; top:400px; right:194px; position:absolute; background:#fff;}/*c*/
+#lt-in-store-popup .tit_close{ margin-bottom:20px;} 
+#lt-in-store-popup a.allbutton{float:left; margin-bottom:5px;margin-left:5px; }
+#lt-in-store-popup dl{clear:both}	
+#lt-in-store-popup, #lt-no-store-popup P,#lt-in-store-popup.allbutton,.lt-alert-message,#lt-in-store-popup dl dt{margin-left:10px; line-height:18px} /*add news class*/
+#lt-in-store-popup dl dt{font-weight: bold; margin:5px 5px 5px 10px; float:left; width:100px }
+#lt-in-store-popup dl dd { margin-bottom:5px; float:left;;margin-right: 8px;}	
+#lt-in-store-popup dl dd select {border:1px solid #ccc;}
+#lt-in-store-popup  .bay_short{float:left; width:62px}
+
+#lt-pick-store-popup-w{position:absolute; background:#fff; top:407px; right:194px}/*c*/
+#lt-pick-store-popup .tit_close{ margin-bottom:20px; }
+#lt-pick-store-popup a.allbutton{ margin-left:5px ; float:left;}
+#lt-pick-store-popup{border:1px solid #ccc; width:440px; overflow:hidden; }
+#lt-pick-store-popup input, label{float:left; margin-right:8px; }
+#lt-pick-store-popup  .lt-name{background:#F4F4F4; float:left; padding:5px 0 5px 5px; width:365px; } /*c*/
+#lt-pick-store-popup  .lt-distance{background:#F4F4F4; float:left; padding:5px 0; width:70px;} /*c*/
+#lt-pick-store-popup  .lt-name-detail{background:#FFFFFF; float:left; padding:5px 0 5px 5px; width:365px; font-size: 12px;} /*c*/
+#lt-pick-store-popup  .lt-distance-detail{background:#FFFFFF; float:left; padding:5px 0; width:70px; font-size: 12px;} /*c*/
+#lt-pick-store-popup .lt-title, .lt-store-row {padding-left:5px; margin-bottom:5px; float:left; }
+
+#lt-pick-store-popupError-w{position:absolute; background:#fff; top:407px; right:194px}/*c*/
+#lt-pick-store-popupError .tit_close{ margin-bottom:20px; }
+#lt-pick-store-popupError a.allbutton{ margin-left:5px ; float:left;}
+#lt-pick-store-popupError{border:1px solid #ccc; width:440px; overflow:hidden; }
+#lt-pick-store-popupError input, label{float:left; margin-right:8px; }
+#lt-pick-store-popupError  .lt-name{background:#F4F4F4; float:left; padding:5px 0 5px 5px; width:365px; } /*c*/
+#lt-pick-store-popupError  .lt-distance{background:#F4F4F4; float:left; padding:5px 0; width:70px;} /*c*/
+#lt-pick-store-popupError .lt-title, .lt-store-row {padding-left:5px; margin-bottom:5px; float:left; }
+#lt_pickup_ship_wrap{background:#F4F4F4;}
+#lt_pickup_ship_wrap dl dt{margin:5px 5px 5px 10px; float:left;}
+#lt_pickup_ship_wrap dl dd {margin-top:5px; margin-bottom:5px; float:right;}	
+
+.lt_smone_detail{margin:5px 0 0 0}
+.lt_smone_detail label{float: left;margin-right: 5px; text-align: right; width: 104px;}
+.lt_smone_detail input{float:left; width:230px; margin-bottom:5px}
+
+.lt_pickup_opt .form-check{  float:left}
+.lt_form_check span{margin:4px 0 0 8px; float:left;}
+/* added to display error messages */
+#GuestAddrInvaliderrorMessage{ 
+  color: #AB1F21 !important;
+  font-size: 12px !important;
+  font-weight: bold !important;
+}
+#storeError{
+  color: #AB1F21 !important;
+  font-size: 12px !important;
+  font-weight: bold !important;
+}
+/*added to display error messages */
+
+
+
+.attribute-container
+{
+	padding-top: 5px;
+}
+
+.cart-promo-spot-container
+{
+	width: 960px;
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+	
+
+
+.promo-codes-container
+{
+	float: left;
+	border: 1px solid #FBAD17;
+	width: 470px;
+}
+
+	.promo-codes-container-inner
+	{
+		float: left;
+		width: 458px;
+		min-height: 127px;
+		margin: 6px;
+		background-color: #F6F6F5;
+	}	
+	
+		.promo-code-header
+		{
+			margin-top: 10px;
+			margin-left: 20px;
+		}
+	
+		.promo-codes-content
+		{
+			float: left;
+			width: 458px;
+			margin-top: 10px;
+		}
+		
+			
+			.promo-codes-content-left
+			{
+				float: left;
+				width: 218px;
+				margin-left: 20px;
+				margin-bottom: 15px;
+			}
+			
+			
+				.apply-promo-text
+				{
+					float: left;
+					width: 458px;
+					margin-bottom: 12px;
+					
+				}
+				
+				.shipping-apply-promo-text
+				{
+					margin-top: 10px;
+				}
+			
+				.promo-input-field
+				{
+					float: left;
+					width: 170px !important;
+					background-color: white;
+					border: 1px solid #FBAD17 !important;
+				}
+				
+				.promo-apply-link
+				{
+					float: left;
+					padding-top: 3px;
+					margin-left: 10px;
+					height: 15px;
+					font-family: "Arial";
+					font-size: 12px;
+				}
+				
+				.promo-apply-link a
+				{
+					text-decoration: underline;
+					color: #666;
+					cursor: pointer;
+				}
+			
+			.promo-codes-content-right
+			{
+				float: right;
+				width: 160px;
+				margin-right: 20px;
+				margin-bottom: 10px;
+			}	
+			
+				.promo-code-apply-title
+				{
+					float: left;
+					width: 145px;
+					margin-bottom: 10px;
+				}
+				
+				.promo-code-table
+				{
+					float: left;
+					display: table;
+					width: 160px;
+				}
+				
+					.promo-code-row
+					{
+						float: left;
+						display: table-row;
+						width: 170px;
+					}
+					
+						.promo-code-remove
+						{
+							float: left;
+							display: table-cell;
+							width: 10px;
+						}
+						
+						.promo-code-remove a.remove
+						{
+							background:url(../images/icon-remove.png) left 3px no-repeat;
+							padding-left:11px;
+						}
+						
+							.promo-code-remove a.remove:hover
+							{
+								text-decoration: none;
+							}
+						
+						
+						.promo-code-name
+						{
+							float: left;
+							font-size: 12px;
+							display: table-cell;
+							width: 95px;
+							text-align: right;
+							line-height: 12pt;
+							color: #FBAD17;
+							font-weight: bold;
+							overflow: hidden;
+							padding-left: 5px;
+						}
+						
+						.promo-code-value
+						{
+							float: left;
+							font-size: 12px;
+							display: table-cell;
+							width: 60px;
+							text-align: right;
+							line-height: 12pt;
+							font-weight: bold;
+						}
+						
+				.promo-code-totals
+				{
+					float: left;
+					width: 180px;
+					font-size: 12px;
+					margin-top: 10px;
+					margin-bottom: 12px;
+				}
+				
+					.promo-code-total-title
+					{
+						float: left;
+						width: 90px;
+					}
+					
+					.promo-code-total-content
+					{
+						float: left;
+						width: 80px;
+						text-align: right;
+						font-weight: bold;
+					}
+
+.shipping-taxes-container
+{
+	float: right;
+	border: 1px solid #BFBAB4;
+	width: 470px;
+	height: 139px;
+}
+
+	.shipping-taxes-container-inner
+	{
+		float: left;
+		width: 458px;
+		min-height: 127px;
+		margin: 6px;
+		background-color: #F6F6F5;
+	}	
+	
+		.shipping-taxes-header
+		{
+			margin-top: 10px;
+			margin-left: 20px;
+		}
+		
+		.shipping-taxes-content
+		{
+			float: left;
+			width: 418px;
+			margin: 10px 20px 0px 20px;
+		}
+		
+			.shipping-taxes-zip-code-container
+			{
+				float: left;
+				height: 60px;
+				width: 90px;
+			}
+			
+				.shipping-taxes-zip-code-title
+				{
+					float: left;
+					margin-bottom: 10px;
+				}
+				
+				.shipping-taxes-zip-code-value
+				{
+					float: left;
+					background-color: white;
+					margin-bottom: 5px;
+				}
+				
+				.shipping-taxes-zip-code-errors
+				{
+					width: 200px !important;
+				}
+				
+				input#postalCode
+				{
+					width: 55px !important;
+				}
+				
+			.shipping-taxes-method-container
+			{
+				float: left;
+				height: 60px;
+				width: 280px;
+			}
+				.shipping-taxes-method-title
+				{
+					float: left;
+					margin-bottom: 10px;
+					width: 200px;
+				}
+				
+				.shipping-taxes-method-details
+				{
+					float: left;
+					text-align: right;
+					margin-bottom: 10px;
+					width: 80px;
+					display: none;
+				}
+				
+				.shipping-taxes-method-value
+				{
+					float: left;
+					width: 280px;
+					text-align: left;
+				}
+				
+			.shipping-taxes-apply-container
+			{
+				float: left;
+				height: 60px;
+				width: 30px;
+				padding-top: 28px;
+				padding-left: 10px;
+			}
+
+			.shipping-taxes-apply-container a
+			{
+				text-decoration: underline;
+			}
+
+
+	
+	
+a.gray-button, span.gray-button span, gray-button .dijitButtonNode
+{
+	display: block;
+	font-family: 'Trivia Grotesk R3', 'Arial';
+	font-size: 15px;
+	font-weight: normal;
+	text-transform:uppercase;
+	padding: 14px;
+	color: #FFF;
+	background-color: #54534A !important;
+	border-radius: 3px;
+	cursor: pointer;
+	letter-spacing: 3px;
+	line-height: 15px;
+	text-decoration:none;	
+}
+
+span.gray-button
+{
+	background-color: #54534A !important;
+	background: #54534A !important;
+}
+
+div#checkoutFormButtons
+{
+	border-top: 1px solid #B0B0AF;
+	margin-top: 10px;
+	padding-top: 20px;
+}
+	
+div#checkoutFormButtons span.dijitButton
+{
+	float: right;
+}
+
+div#checkoutFormButtons span.dijitButtonNode
+{
+	display: block;
+	font-family: 'Trivia Grotesk R3', 'Arial';
+	font-size: 15px !important;
+	font-weight: normal;
+	text-transform:uppercase;
+	color: #FFF;
+	background-color: #54534A !important;
+	border-radius: 3px;
+	cursor: pointer;
+	letter-spacing: 3px;
+	text-decoration:none;	
+	padding: 0px !important;
+}
+
+div#checkoutFormButtons span.dijitButtonText
+{
+	font-family: 'Trivia Grotesk R3', 'Arial';
+	font-size: 15px !important;
+}
+
+
+.review-button
+{
+	float: right;	
+}
+
+.order-total-container
+{
+	float: right;
+	text-align: right;
+	width: 960px;
+	font-weight: bold;
+	font-size: 15px;
+	margin-bottom: 30px;
+}
+
+.order-total-title
+{
+	margin-right: 20px;
+}
+
+
+a.gray-button:hover
+{
+	color: #FFF;	
+}
+
+div#action-buttons
+{
+	border: none;
+	background-color: #000 !important;
+}
+
+}
+
+
+
+
+
+.shopping-bag-header-text
+{
+	color: #FBAD17 !important;
+}	
+
+
+.shoppingbag-discount-container
+{
+	float: right;
+	margin-top: -10px;
+}
+
+	.shoppingbag-discount-title
+	{
+		display: inline-block;
+	}
+
+
+	.shoppingbag-discount-value
+	{
+		display: inline-block;
+		min-width: 45px;
+		font-weight: bold;
+		text-align: right;
+	}
+	
+	a.checkout-tooltip-popup div
+	{
+		display: none;
+		text-align: left;
+		text-transform: none;
+	}
+	
+	
+	a.checkout-tooltip-popup:hover div
+	{
+		display: inline; 
+		position: absolute; 
+		margin-top: 15px; 
+		z-index: 1002; 
+		width: 250px; 
+		border: 1px solid #FBAD17; 
+		background-color: white; 
+		padding: 10px;
+	}
+	
+	a.checkout-tooltip-popup img
+	{
+		position: relative !important;
+		top: 3px;
+		
+	}
+	
+	a.checkout-tooltip-popup img:hover
+	{
+		background:url(../images/moreinfo_hover.png) left 3px no-repeat;
+		
+		
+	}
+	
+.checkout-address-phone-container
+{
+	width: 240px;
+}
+
+.checkout-address-phone-message
+{
+	width: 220px;
+}
+
+.checkout-address-email-container
+{
+	width: 220px;
+}
+
+.checkout-address-email-message
+{
+	width: 220px !important;
+}
+	
+.checkout-address-buttons
+{
+	background-color: white !important;	
+}
+
+#guestaddresshoprunnerbanner
+{
+	margin-bottom: 20px;
+}
+
+
+
+.checkout-promo-code-container
+{
+	float: left;
+	border: 1px solid #FBAD17;
+	width: 388px;
+	margin-top: 20px;
+	padding-bottom: 6px;
+}
+
+	.checkout-promo-code-top
+	{
+		margin: 6px;
+		margin-bottom: 0px;
+		background-color: #F6F6F5;
+		width: 376px;
+
+	}
+	
+		.checkout-promo-title
+		{
+			float: left;
+			width: 100px;
+			margin-left: 15px;
+			margin-top: 18px;		
+		}
+		
+		.checkout-promo-codebox
+		{
+			float: left;
+			width: 190px;
+			margin-top: 15px;
+			
+		}
+		
+			
+			
+			
+			.checkout-promo-applybutton .promo-apply-link
+			{
+				padding-top: 20px;
+			}
+	
+	.checkout-promo-code-bottom
+	{
+		margin: 6px;
+		margin-top: 3px;
+		margin-bottom: 0px;
+		padding-top: 15px;
+		background-color: #F6F6F5;
+		width: 376px;
+	}
+	
+		.checkout-promo-code-applied-title
+		{
+			
+			margin-left: 10px;
+			width: 180px;
+			float: left;
+		}
+	
+div#promotions
+{
+	width: 390px;	
+}
+
+
+
+#shippingBillingPageNext
+{
+
+	display: block;
+	font-family: 'Arial';
+	font-size: 12pt;
+	font-weight: normal;
+	text-transform:uppercase;
+	padding: 14px;
+	color: #FFF;
+	background-color: #54534A !important;
+	border-radius: 3px;
+	cursor: pointer;
+	letter-spacing: 3px;
+	line-height: 15px;
+	text-decoration:none;
+	
+}
+
+
+	
+.totals-shipping-taxes-container
+{
+	width: 380px;
+	border-bottom: 1px solid #B0B0AF;
+	margin-top: 10px;
+	padding-bottom: 10px;
+}
+
+.shipping-taxes-totals-container
+{
+	float: right;
+	margin-right: 10px;
+	margin-top: -30px;
+	min-width: 300px;
+}
+
+
+.shipping-taxes-method-title
+{
+	float: left;
+	width: 120px;	
+}
+
+.checkout-continue-button
+{
+	float: right !important;
+	margin-top: 10px;
+	font-size: 15px !important;
+}
+
+.checkout-continue-button span.dijitButtonText
+{
+	font-size: 15px !important;	
+}
+
+
+table#hbcshppingmethod td.dijitStretch
+{
+	width: 280px;
+	padding-left: 5px;
+}
+
+div#hbcshppingmethod_menu td.dijitMenuItemLabel
+{
+	padding-left: 5px;
+}
+
+div.checkout-promo-code-top div#promoCodeErrMsg
+{
+	float:left;
+}
+
+div.discount-totals-container
+{
+	float:right;
+}
+
+	div.discount-totals-title
+	{
+		float:right;
+		margin-right: 10px;
+	}
+	
+	div.discount-totals-value
+	{
+		float:right;
+		min-width: 60px;
+		text-align: right;
+		font-weight: bold;
+	}
+	
+div#estChargeDisplayArea ul.calculate li span.price
+{
+	min-width: 60px;  
+}
+
+div.estimated span#estimateTotalCharges
+{
+	min-width: 60px;
+	text-align: right;
+}  
+
+div.shipiing-taxes div.discount-totals-container
+{
+	margin-right: 10px;
+}
+
+span.dijitButtonNode{
+	filter:none !important;
+}
+
+
+#promoCode_errorlabel
+{
+	margin-top: 5px;	
+}
+
+#WC_SingleShipmentShippingMethodDetails_div_1
+{
+	width: 200px !important;	
+}
+
+#hbcshppingmethod1
+{
+	width: 200px !important;
+}

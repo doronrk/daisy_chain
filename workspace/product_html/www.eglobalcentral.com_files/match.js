@@ -1,0 +1,1 @@
+_tfw.match({score:9.8,popup_url:"http://b2b.testfreaks.com/badge/eglobalcentral.com/popup.html?pid=628157",tooltip:"Based on:<br/>140 expert reviews<br/>1035 user reviews",pro_review_count:140,user_review_count:1035,review_count:1175,num_sources:424,num_countries:27});

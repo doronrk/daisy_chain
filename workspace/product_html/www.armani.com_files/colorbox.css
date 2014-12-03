@@ -1,0 +1,528 @@
+@charset "UTF-8";
+/* =================================================================================================
+	SPACES
+================================================================================================= */
+/* =================================================================================================
+	COLORS
+================================================================================================= */
+/* =================================================================================================
+	FONTS
+================================================================================================= */
+/* =================================================================================================
+	BUTTONS
+================================================================================================= */
+/* =================================================================================================
+	FORMS
+================================================================================================= */
+/* =================================================================================================
+	OTHER STUFF
+================================================================================================= */
+/* =================================================================================================
+	MIXINS
+================================================================================================= */
+/* 
+	CHIAMATA (CUT AND PASTE):
+    @include typographyRules($fontFamily,$fontSize,$color,$textDecoration,$textTransform,$textAlign,$lineHeight);
+*/
+/*
+    BUTTON CUSTOMIZZABLE
+    Prende in input argomenti opzionali per stilizzare il bottone on the go:
+
+    CHIAMATA (CUT AND PASTE):
+    @include buttonCustom($color,$colorHover,$bg,$bgHover,$radius,$float,$padding,$lineHeight);
+
+    $color: 		colore della scritta (di default ├¿ bianco)
+    $colorHover: 	colore della scritta all'hover (di default ├¿ bianco)
+    $bg:            colore di background (di default ├¿ nero)
+    $bgHover: 		colore di background all'hover (di default ├¿ grigio)
+    $radius:        bordi arrotondati css3 (di default il radius ├¿ 0)
+    $float:         float del bottone, di default non ├¿ presente
+    $padding:       padding del botton
+    $lineHeight:    line-height per la centratura del testo, di solito ├¿ la somma del padding top e bottom
+ 
+*/
+/* =================================================================================================
+	TITLES MIXIN
+================================================================================================= */
+/* =================================================================================================
+	FORMS MIXIN
+================================================================================================= */
+#colorbox,
+#cboxOverlay,
+#cboxWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999999;
+  overflow: hidden;
+  color: #FFFFFF;
+  background-color: #000309;
+}
+
+#cboxOverlay {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  position: fixed !important;
+}
+
+.cboxIframe {
+  width: 100%;
+  height: 100%;
+}
+
+#cboxTitle {
+  margin: 0;
+}
+
+#cboxClose {
+  /*	@include button;   WTF !?*/
+  background: transparent url('http://cdn2.yoox.biz/Os/armanigroup/generated_images/siteSprite-sb549c5c9ce.png') no-repeat 0 -510px;
+  height: 13px;
+  width: 13px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 0.3em 0.7em;
+  cursor: pointer;
+  border: 0;
+}
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+  #cboxClose {
+    background: transparent url('http://cdn2.yoox.biz/Os/armanigroup/generated_images/siteSprite2x-s6f428274e5.png') no-repeat 0 -510px;
+    background-size: 264px 2601.5px;
+    height: 13px;
+    width: 13px;
+  }
+}
+
+#cboxLoadedContent {
+  overflow: hidden !important;
+  padding: 60px 30px;
+  font-size: 12px;
+  color: #FFFFFF;
+}
+
+#cboxLoadedContent, #layer {
+  line-height: 17px;
+  font-family: "montserratregular", Helvetica, Arial, sans-serif;
+  font-size: 11px;
+  /* nei colorbox checkbox sempre bianchi */
+}
+#cboxLoadedContent div,
+#cboxLoadedContent p,
+#cboxLoadedContent label, #layer div,
+#layer p,
+#layer label {
+  color: #FFFFFF;
+}
+#cboxLoadedContent input, #layer input {
+  background-color: #FFFFFF;
+}
+#cboxLoadedContent form button,
+#cboxLoadedContent form input[type="submit"], #layer form button,
+#layer form input[type="submit"] {
+  /* General rules */
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  cursor: pointer;
+  -webkit-border-radius: 0px 0px 0 0;
+  -moz-border-radius: 0px 0px 0 0;
+  -ms-border-radius: 0px 0px 0 0;
+  border-radius: 0px 0px 0 0;
+  /* Text alignments */
+  padding: 10px 48px 10px 48px;
+  line-height: 20px;
+  vertical-align: middle;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  /* Transitions */
+  -webkit-transition: color 0.5s, background-color 0.5s;
+  -moz-transition: color 0.5s, background-color 0.5s;
+  -ms-transition: color 0.5s, background-color 0.5s;
+  -o-transition: color 0.5s, background-color 0.5s;
+  transition: color 0.5s, background-color 0.5s;
+  /* Default behaviour */
+  color: #000000;
+  background-color: #FFFFFF;
+  float: none;
+  border: transparent;
+  font-size: 10px;
+  /* On hover behaviour */
+}
+.desktop #cboxLoadedContent form button:hover, .desktop
+#cboxLoadedContent form input[type="submit"]:hover, .desktop #layer form button:hover, .desktop
+#layer form input[type="submit"]:hover {
+  color: #FFFFFF;
+  background-color: #909090;
+}
+#cboxLoadedContent .fieldRow span.error, #layer .fieldRow span.error {
+  position: absolute;
+  top: 40px;
+  width: 280px;
+  line-height: 12px;
+  left: 0;
+  font-family: "montserratregular", Helvetica, Arial, sans-serif;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+#cboxLoadedContent h2, #layer h2 {
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  color: #FFFFFF;
+}
+#cboxLoadedContent #buttonBackLogin, #layer #buttonBackLogin {
+  display: none;
+}
+#cboxLoadedContent #buttonSubmit, #layer #buttonSubmit {
+  /* General rules */
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  cursor: pointer;
+  -webkit-border-radius: 0px 0px 0 0;
+  -moz-border-radius: 0px 0px 0 0;
+  -ms-border-radius: 0px 0px 0 0;
+  border-radius: 0px 0px 0 0;
+  /* Text alignments */
+  padding: 10px 48px 10px 48px;
+  line-height: 20px;
+  vertical-align: middle;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  /* Transitions */
+  -webkit-transition: color 0.5s, background-color 0.5s;
+  -moz-transition: color 0.5s, background-color 0.5s;
+  -ms-transition: color 0.5s, background-color 0.5s;
+  -o-transition: color 0.5s, background-color 0.5s;
+  transition: color 0.5s, background-color 0.5s;
+  /* Default behaviour */
+  color: #FFFFFF;
+  background-color: #909090;
+  float: none;
+  border: transparent;
+  font-size: 10px;
+  /* On hover behaviour */
+}
+.desktop #cboxLoadedContent #buttonSubmit:hover, .desktop #layer #buttonSubmit:hover {
+  color: #000000;
+  background-color: #FFFFFF;
+}
+#cboxLoadedContent .LB_closeAjaxWindow, #layer .LB_closeAjaxWindow {
+  display: none;
+  /* nascondiamo il chiudi tradizionale */
+}
+#cboxLoadedContent .i-checkbox, #layer .i-checkbox {
+  margin-right: 20px;
+}
+#cboxLoadedContent .i-checkbox-inside, #layer .i-checkbox-inside {
+  /*	@include button;   WTF !?*/
+  background: transparent url('http://cdn2.yoox.biz/Os/armanigroup/generated_images/siteSprite-sb549c5c9ce.png') no-repeat 0 -327px;
+  height: 21px;
+  width: 21px;
+}
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+  #cboxLoadedContent .i-checkbox-inside, #layer .i-checkbox-inside {
+    background: transparent url('http://cdn2.yoox.biz/Os/armanigroup/generated_images/siteSprite2x-s6f428274e5.png') no-repeat 0 -327px;
+    background-size: 264px 2601.5px;
+    height: 21px;
+    width: 21px;
+  }
+}
+#cboxLoadedContent input[type='checkbox']:checked + .i-checkbox-inside, #layer input[type='checkbox']:checked + .i-checkbox-inside {
+  /*	@include button;   WTF !?*/
+  background: transparent url('http://cdn2.yoox.biz/Os/armanigroup/generated_images/siteSprite-sb549c5c9ce.png') no-repeat 0 -389px;
+  height: 21px;
+  width: 21px;
+}
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+  #cboxLoadedContent input[type='checkbox']:checked + .i-checkbox-inside, #layer input[type='checkbox']:checked + .i-checkbox-inside {
+    background: transparent url('http://cdn2.yoox.biz/Os/armanigroup/generated_images/siteSprite2x-s6f428274e5.png') no-repeat 0 -389px;
+    background-size: 264px 2601.5px;
+    height: 21px;
+    width: 21px;
+  }
+}
+#cboxLoadedContent #forget-layer-cnt, #layer #forget-layer-cnt {
+  padding: 29px 29px 0 29px;
+}
+
+#messageError {
+  text-align: center;
+  color: #FFFFFF;
+}
+
+#loginLayer-toolbar-cnt .emailLabel,
+#loginLayer-toolbar-cnt .passwordLabel {
+  margin-bottom: 10px;
+}
+#loginLayer-toolbar-cnt .sectionTitle {
+  background-color: #000000;
+  padding: 0;
+}
+
+body#layer table {
+  color: #FFFFFF;
+}
+body#layer table tr {
+  line-height: 13px;
+}
+body#layer table td + td {
+  text-align: right;
+}
+
+#colorbox.itemCbox #cboxClose {
+  /*	@include button;   WTF !?*/
+  background: transparent url('http://cdn2.yoox.biz/Os/armanigroup/generated_images/siteSprite-sb549c5c9ce.png') no-repeat 0 -533px;
+  height: 13px;
+  width: 13px;
+}
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+  #colorbox.itemCbox #cboxClose {
+    background: transparent url('http://cdn2.yoox.biz/Os/armanigroup/generated_images/siteSprite2x-s6f428274e5.png') no-repeat 0 -533px;
+    background-size: 264px 2601.5px;
+    height: 13px;
+    width: 13px;
+  }
+}
+#colorbox.itemCbox #cboxWrapper {
+  background-color: #FFFFFF;
+}
+#colorbox.itemCbox #cboxLoadedContent div {
+  color: #000000;
+}
+#colorbox.itemCbox #cboxLoadedContent h1 {
+  color: #000000;
+  font-size: 16px;
+}
+#colorbox.itemCbox #cboxLoadedContent h1 span {
+  color: #9C9C9C;
+}
+#colorbox.itemCbox #cboxLoadedContent h2 {
+  line-height: 34px;
+  cursor: pointer;
+}
+.ie7 #colorbox.itemCbox #cboxLoadedContent h2 span {
+  float: left;
+}
+#colorbox.itemCbox #cboxLoadedContent b, #colorbox.itemCbox #cboxLoadedContent h2 {
+  color: #000000;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+#colorbox.itemCbox #cboxLoadedContent ul {
+  margin-left: 15px;
+}
+#colorbox.itemCbox #cboxLoadedContent #measuringGuide {
+  border-top: 1px solid #EAEAEA;
+}
+#colorbox.itemCbox #cboxLoadedContent #measuringGuide .description span {
+  color: #000000;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+#colorbox.itemCbox #cboxLoadedContent .panel {
+  margin-top: 40px;
+}
+#colorbox.itemCbox #cboxLoadedContent .panel .slidePanel {
+  display: none;
+}
+#colorbox.itemCbox #cboxLoadedContent .panel .icon {
+  /*	@include button;   WTF !?*/
+  background: transparent url('http://cdn2.yoox.biz/Os/armanigroup/generated_images/siteSprite-sb549c5c9ce.png') no-repeat 0 -1855px;
+  height: 7px;
+  width: 7px;
+  float: right;
+  margin: 13px 20px 14px 0;
+}
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+  #colorbox.itemCbox #cboxLoadedContent .panel .icon {
+    background: transparent url('http://cdn2.yoox.biz/Os/armanigroup/generated_images/siteSprite2x-s6f428274e5.png') no-repeat 0 -1854.5px;
+    background-size: 264px 2601.5px;
+    height: 7px;
+    width: 7px;
+  }
+}
+#colorbox.itemCbox #cboxLoadedContent .panel.open h2 {
+  text-decoration: underline;
+}
+#colorbox.itemCbox #cboxLoadedContent .panel.open .icon {
+  /*	@include button;   WTF !?*/
+  background: transparent url('http://cdn2.yoox.biz/Os/armanigroup/generated_images/siteSprite-sb549c5c9ce.png') no-repeat 0 -1612px;
+  height: 7px;
+  width: 7px;
+}
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+  #colorbox.itemCbox #cboxLoadedContent .panel.open .icon {
+    background: transparent url('http://cdn2.yoox.biz/Os/armanigroup/generated_images/siteSprite2x-s6f428274e5.png') no-repeat 0 -1611.5px;
+    background-size: 264px 2601.5px;
+    height: 7px;
+    width: 7px;
+  }
+}
+#colorbox.itemCbox #cboxLoadedContent .panel.firstOpen .slidePanel {
+  display: block;
+}
+#colorbox.itemCbox #cboxLoadedContent .description {
+  width: 500px;
+  margin-bottom: 20px;
+  float: left;
+  color: #8c8c8c;
+}
+#colorbox.itemCbox #cboxLoadedContent #sizeConv .description {
+  float: none;
+  width: 100%;
+}
+#colorbox.itemCbox #cboxLoadedContent .tableContainer {
+  position: relative;
+  overflow: hidden;
+  width: 700px;
+  max-height: 400px;
+}
+#colorbox.itemCbox #cboxLoadedContent .image {
+  margin-left: 100px;
+  float: left;
+}
+#colorbox.itemCbox #cboxLoadedContent .slidePanel td, #colorbox.itemCbox #cboxLoadedContent .slidePanel th {
+  padding: 0 10px;
+  text-align: center;
+}
+#colorbox.itemCbox #cboxLoadedContent .slidePanel td {
+  height: 32px;
+  line-height: 32px;
+}
+#colorbox.itemCbox #cboxLoadedContent .slidePanel tr.even {
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+.forget-subtitle {
+  color: #FFFFFF;
+}
+
+.ielt9 #partialsInner .i-checkbox-inside {
+  display: none;
+}
+.ielt9 #partialsInner .yletter,
+.ielt9 #partialsInner .yecomm {
+  width: 80%;
+  margin-left: 30px;
+}
+.ielt9 #partialsInner #yletterCB,
+.ielt9 #partialsInner #yecommCB {
+  display: block;
+  background: #fff;
+  z-index: 1000;
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+}
+
+/*Variante bianca*/
+#colorbox.white #cboxOverlay,
+#colorbox.white #cboxWrapper {
+  color: #000000;
+  background-color: #FFFFFF;
+}
+#colorbox.white #cboxLoadedContent div,
+#colorbox.white #cboxLoadedContent p,
+#colorbox.white #cboxLoadedContent label, #colorbox.white #layer div,
+#colorbox.white #layer p,
+#colorbox.white #layer label {
+  color: #000000;
+}
+#colorbox.white #cboxLoadedContent form button,
+#colorbox.white #cboxLoadedContent form input[type="submit"], #colorbox.white #layer form button,
+#colorbox.white #layer form input[type="submit"] {
+  /* General rules */
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  cursor: pointer;
+  -webkit-border-radius: 0px 0px 0 0;
+  -moz-border-radius: 0px 0px 0 0;
+  -ms-border-radius: 0px 0px 0 0;
+  border-radius: 0px 0px 0 0;
+  /* Text alignments */
+  padding: 10px 48px 10px 48px;
+  line-height: 20px;
+  vertical-align: middle;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  /* Transitions */
+  -webkit-transition: color 0.5s, background-color 0.5s;
+  -moz-transition: color 0.5s, background-color 0.5s;
+  -ms-transition: color 0.5s, background-color 0.5s;
+  -o-transition: color 0.5s, background-color 0.5s;
+  transition: color 0.5s, background-color 0.5s;
+  /* Default behaviour */
+  color: #FFFFFF;
+  background-color: #000000;
+  float: none;
+  border: transparent;
+  font-size: 10px;
+  /* On hover behaviour */
+}
+.desktop #colorbox.white #cboxLoadedContent form button:hover, .desktop
+#colorbox.white #cboxLoadedContent form input[type="submit"]:hover, .desktop #colorbox.white #layer form button:hover, .desktop
+#colorbox.white #layer form input[type="submit"]:hover {
+  color: #000000;
+  background-color: #909090;
+}
+#colorbox.white #cboxLoadedContent h2, #colorbox.white #layer h2 {
+  color: #000000;
+}
+#colorbox.white #cboxLoadedContent #buttonSubmit, #colorbox.white #layer #buttonSubmit {
+  /* General rules */
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  cursor: pointer;
+  -webkit-border-radius: 0px 0px 0 0;
+  -moz-border-radius: 0px 0px 0 0;
+  -ms-border-radius: 0px 0px 0 0;
+  border-radius: 0px 0px 0 0;
+  /* Text alignments */
+  padding: 10px 48px 10px 48px;
+  line-height: 20px;
+  vertical-align: middle;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  /* Transitions */
+  -webkit-transition: color 0.5s, background-color 0.5s;
+  -moz-transition: color 0.5s, background-color 0.5s;
+  -ms-transition: color 0.5s, background-color 0.5s;
+  -o-transition: color 0.5s, background-color 0.5s;
+  transition: color 0.5s, background-color 0.5s;
+  /* Default behaviour */
+  color: #FFFFFF;
+  background-color: #000000;
+  float: none;
+  border: transparent;
+  font-size: 10px;
+  /* On hover behaviour */
+}
+.desktop #colorbox.white #cboxLoadedContent #buttonSubmit:hover, .desktop #colorbox.white #layer #buttonSubmit:hover {
+  color: #000000;
+  background-color: #909090;
+}
+#colorbox.white #cboxClose {
+  /*	@include button;   WTF !?*/
+  background: transparent url('http://cdn2.yoox.biz/Os/armanigroup/generated_images/siteSprite-sb549c5c9ce.png') no-repeat 0 -533px;
+  height: 13px;
+  width: 13px;
+}
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+  #colorbox.white #cboxClose {
+    background: transparent url('http://cdn2.yoox.biz/Os/armanigroup/generated_images/siteSprite2x-s6f428274e5.png') no-repeat 0 -533px;
+    background-size: 264px 2601.5px;
+    height: 13px;
+    width: 13px;
+  }
+}

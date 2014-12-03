@@ -1,0 +1,4 @@
+var mboxCurrent = mboxFactories.get('default').get('rec_detail_page_before_cav',0);mboxCurrent.setOffer(new mboxOfferAjax('<!-- Offer Id: 43894  -->'));mboxCurrent.getOffer().setOnLoad(function() {
+/*mboxHighlight+ (1of2) v1 ==> Response Plugin*/
+window.ttMETA=(typeof(window.ttMETA)!='undefined')?window.ttMETA:[];window.ttMETA.push({'mbox':'rec_detail_page_before_cav','campaign':'','experience':'','offer':''});window.ttMBX=function(x){var mbxList=[];for(i=0;i<ttMETA.length;i++){if(ttMETA[i].mbox==x.getName()){mbxList.push(ttMETA[i])}}return mbxList[x.getId()]}
+});mboxCurrent.loaded();mboxFactories.get('default').get('rec_detail_page_before_cav',0).cancelTimeout();mboxFactories.get('default').get('rec_detail_page_before_cav',0).setOffer(new mboxOfferDefault()).show();mboxFactories.get('default').getPCId().forceId("1417579054071-740144.25_68");

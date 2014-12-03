@@ -1,0 +1,713 @@
+@charset "UTF-8";
+/* =================================================================================================
+	SPACES
+================================================================================================= */
+/* =================================================================================================
+	COLORS
+================================================================================================= */
+/* =================================================================================================
+	FONTS
+================================================================================================= */
+/* =================================================================================================
+	BUTTONS
+================================================================================================= */
+/* =================================================================================================
+	FORMS
+================================================================================================= */
+/* =================================================================================================
+	OTHER STUFF
+================================================================================================= */
+/* =================================================================================================
+	MIXINS
+================================================================================================= */
+/* 
+	CHIAMATA (CUT AND PASTE):
+    @include typographyRules($fontFamily,$fontSize,$color,$textDecoration,$textTransform,$textAlign,$lineHeight);
+*/
+/*
+    BUTTON CUSTOMIZZABLE
+    Prende in input argomenti opzionali per stilizzare il bottone on the go:
+
+    CHIAMATA (CUT AND PASTE):
+    @include buttonCustom($color,$colorHover,$bg,$bgHover,$radius,$float,$padding,$lineHeight);
+
+    $color: 		colore della scritta (di default ├¿ bianco)
+    $colorHover: 	colore della scritta all'hover (di default ├¿ bianco)
+    $bg:            colore di background (di default ├¿ nero)
+    $bgHover: 		colore di background all'hover (di default ├¿ grigio)
+    $radius:        bordi arrotondati css3 (di default il radius ├¿ 0)
+    $float:         float del bottone, di default non ├¿ presente
+    $padding:       padding del botton
+    $lineHeight:    line-height per la centratura del testo, di solito ├¿ la somma del padding top e bottom
+ 
+*/
+/* =================================================================================================
+	TITLES MIXIN
+================================================================================================= */
+/* =================================================================================================
+	FORMS MIXIN
+================================================================================================= */
+/* 	==========================================================================
+	RIGHT DESCRIPTION
+	==========================================================================*/
+.item {
+  position: relative;
+}
+
+.descriptionContainer {
+  position: relative;
+  float: right;
+  top: 0;
+  right: 0;
+  z-index: 0;
+  width: 408px;
+  background-color: #FFFFFF;
+}
+.descriptionContainer .soldOutButton {
+  padding: 50px;
+  text-align: center;
+  background-color: #F2F2F2;
+  margin: 35px 38px 0 38px;
+  text-transform: uppercase;
+  border: 1px solid #CCCCCC;
+}
+.descriptionContainer .buttonBox {
+  margin-top: 15px;
+}
+.descriptionContainer .buttonBox button {
+  border: none;
+  width: 286px;
+  margin: 5px 38px 0 38px;
+  font-family: "montserratregular", Helvetica, Arial, sans-serif;
+  letter-spacing: 1px;
+  font-size: 11px !important;
+}
+.cn .descriptionContainer .buttonBox button {
+  font-size: 13px !important;
+}
+.descriptionContainer .buttonBox button.addToCart {
+  /* General rules */
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  cursor: pointer;
+  -webkit-border-radius: 0px 0px 0 0;
+  -moz-border-radius: 0px 0px 0 0;
+  -ms-border-radius: 0px 0px 0 0;
+  border-radius: 0px 0px 0 0;
+  /* Text alignments */
+  padding: 10px 48px 10px 48px;
+  line-height: 20px;
+  vertical-align: middle;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  /* Transitions */
+  -webkit-transition: color 0.5s, background-color 0.5s;
+  -moz-transition: color 0.5s, background-color 0.5s;
+  -ms-transition: color 0.5s, background-color 0.5s;
+  -o-transition: color 0.5s, background-color 0.5s;
+  transition: color 0.5s, background-color 0.5s;
+  /* Default behaviour */
+  color: #FFFFFF;
+  background-color: #000000;
+  float: none;
+  border: transparent;
+  font-size: 10px;
+  /* On hover behaviour */
+  padding: 0;
+  height: 50px;
+}
+.desktop .descriptionContainer .buttonBox button.addToCart:hover {
+  color: #FFFFFF;
+  background-color: #9C9C9C;
+}
+.descriptionContainer .buttonBox button.addToWishlist {
+  /* General rules */
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  cursor: pointer;
+  -webkit-border-radius: 0px 0px 0 0;
+  -moz-border-radius: 0px 0px 0 0;
+  -ms-border-radius: 0px 0px 0 0;
+  border-radius: 0px 0px 0 0;
+  /* Text alignments */
+  padding: 10px 48px 10px 48px;
+  line-height: 20px;
+  vertical-align: middle;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  /* Transitions */
+  -webkit-transition: color 0.5s, background-color 0.5s;
+  -moz-transition: color 0.5s, background-color 0.5s;
+  -ms-transition: color 0.5s, background-color 0.5s;
+  -o-transition: color 0.5s, background-color 0.5s;
+  transition: color 0.5s, background-color 0.5s;
+  /* Default behaviour */
+  color: #FFFFFF;
+  background-color: #BABABA;
+  float: none;
+  border: transparent;
+  font-size: 10px;
+  /* On hover behaviour */
+  padding: 0;
+  height: 40px;
+}
+.desktop .descriptionContainer .buttonBox button.addToWishlist:hover {
+  color: #FFFFFF;
+  background-color: #9C9C9C;
+}
+.descriptionContainer .buttonBox button.addToWishlist .lydK {
+  /*	@include button;   WTF !?*/
+  background: transparent url('http://cdn2.yoox.biz/Os/armanigroup/generated_images/siteSprite-sb549c5c9ce.png') no-repeat 0 -2462px;
+  height: 12px;
+  width: 12px;
+  font-size: 18px;
+  vertical-align: text-top;
+  display: inline-block;
+  margin-right: 8px;
+}
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+  .descriptionContainer .buttonBox button.addToWishlist .lydK {
+    background: transparent url('http://cdn2.yoox.biz/Os/armanigroup/generated_images/siteSprite2x-s6f428274e5.png') no-repeat 0 -2461.5px;
+    background-size: 264px 2601.5px;
+    height: 12px;
+    width: 12px;
+  }
+}
+.ielt8 .descriptionContainer .buttonBox button.addToWishlist .lydK {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+.descriptionContainer .buttonBox button.error {
+  min-width: 286px;
+  font-weight: bold;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+.descriptionContainer .buttonBox .outStock {
+  display: block;
+  margin: 0 38px;
+  text-transform: uppercase;
+  color: #F45C19;
+}
+.descriptionContainer .buttonBox a.storeLocator {
+  margin: 0 38px 15px 38px;
+  border: none;
+  width: 286px;
+  font-family: "montserratregular", Helvetica, Arial, sans-serif;
+  letter-spacing: 1px;
+  font-size: 11px;
+  /* General rules */
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  cursor: pointer;
+  -webkit-border-radius: 0px 0px 0 0;
+  -moz-border-radius: 0px 0px 0 0;
+  -ms-border-radius: 0px 0px 0 0;
+  border-radius: 0px 0px 0 0;
+  /* Text alignments */
+  padding: 10px 48px 10px 48px;
+  line-height: 20px;
+  vertical-align: middle;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  /* Transitions */
+  -webkit-transition: color 0.5s, background-color 0.5s;
+  -moz-transition: color 0.5s, background-color 0.5s;
+  -ms-transition: color 0.5s, background-color 0.5s;
+  -o-transition: color 0.5s, background-color 0.5s;
+  transition: color 0.5s, background-color 0.5s;
+  /* Default behaviour */
+  color: #FFFFFF;
+  background-color: #000000;
+  float: none;
+  border: transparent;
+  font-size: 10px;
+  /* On hover behaviour */
+  padding: 15px 0;
+}
+.desktop .descriptionContainer .buttonBox a.storeLocator:hover {
+  color: #000000;
+  background-color: #BABABA;
+}
+.descriptionContainer .productName {
+  margin: 20px 38px 0 38px;
+  font-family: "montserratregular", Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.descriptionContainer .articleName {
+  margin: 15px 38px 0 38px;
+  color: #9C9C9C;
+  font-size: 11px;
+}
+.descriptionContainer .promoItem {
+  display: block;
+  margin: 15px 38px 0px 38px;
+  padding: 7px 0;
+  overflow: hidden;
+  border-top: 1px solid #AFAFAF;
+  border-bottom: 1px solid #AFAFAF;
+}
+.descriptionContainer .promoItem span {
+  text-transform: uppercase;
+  font-size: 11px;
+}
+.cn .descriptionContainer .promoItem span {
+  font-size: 12px;
+}
+.descriptionContainer .promoItem span .promocont {
+  text-transform: none;
+}
+.descriptionContainer .itemAvailability {
+  text-transform: uppercase;
+  margin-left: 38px;
+  font-size: 11px;
+  color: #F45C19;
+}
+.descriptionContainer .itemBoxSizeConversion, .descriptionContainer .bTDashed {
+  font-size: 10px;
+  color: #9C9C9C;
+  margin: 20px 38px 0 38px;
+  line-height: 15px;
+}
+.descriptionContainer .itemBoxPrice {
+  font-family: "droid_serifregular", serif;
+  margin: 18px 38px 10px 38px;
+}
+.descriptionContainer .itemBoxPrice div {
+  padding: 2px 0;
+}
+.descriptionContainer .itemBoxPrice .newprice, .descriptionContainer .itemBoxPrice .oldprice {
+  float: left;
+  font-size: 17px;
+}
+.descriptionContainer .itemBoxPrice .newprice {
+  margin-right: 10px;
+}
+.descriptionContainer .itemBoxPrice .oldprice {
+  color: #BABABA;
+  text-decoration: line-through;
+}
+.descriptionContainer .itemBoxPrice .discountPct {
+  display: none;
+}
+.descriptionContainer .itemBoxPrice .taxjp {
+  font-size: 12px;
+  font-family: Arial, "Hiragino Kaku Gothic ProN", Meiryo, "MS PGothic", Sans-serif;
+}
+.descriptionContainer .permanent {
+  background-color: #CCCCCC;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  font-size: 9px;
+  padding: 6px;
+  line-height: 8px;
+  margin: 10px 38px 0 38px;
+}
+
+#itemNavigation {
+  margin: 25px 38px 10px 38px;
+  min-height: 30px;
+  letter-spacing: 1px;
+}
+#itemNavigation .backTo {
+  float: left;
+  line-height: 16px;
+}
+#itemNavigation .backTo a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #858585;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+.cn #itemNavigation .backTo a {
+  font-size: 12px;
+}
+#itemNavigation .backTo a:hover {
+  text-decoration: underline;
+}
+#itemNavigation .navButtons {
+  float: right;
+}
+#itemNavigation .navButtons #navPrev {
+  float: left;
+  display: none;
+  margin-right: 38px;
+}
+#itemNavigation .navButtons #navPrev .nav {
+  /*	@include button;   WTF !?*/
+  background: transparent url('http://cdn2.yoox.biz/Os/armanigroup/generated_images/siteSprite-sb549c5c9ce.png') no-repeat 0 -1681px;
+  height: 16px;
+  width: 9px;
+}
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+  #itemNavigation .navButtons #navPrev .nav {
+    background: transparent url('http://cdn2.yoox.biz/Os/armanigroup/generated_images/siteSprite2x-s6f428274e5.png') no-repeat 0 -1680.5px;
+    background-size: 264px 2601.5px;
+    height: 16px;
+    width: 9px;
+  }
+}
+#itemNavigation .navButtons #navPrev:hover .nav {
+  /*	@include button;   WTF !?*/
+  background: transparent url('http://cdn2.yoox.biz/Os/armanigroup/generated_images/siteSprite-sb549c5c9ce.png') no-repeat 0 -1707px;
+  height: 16px;
+  width: 9px;
+}
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+  #itemNavigation .navButtons #navPrev:hover .nav {
+    background: transparent url('http://cdn2.yoox.biz/Os/armanigroup/generated_images/siteSprite2x-s6f428274e5.png') no-repeat 0 -1706.5px;
+    background-size: 264px 2601.5px;
+    height: 16px;
+    width: 9px;
+  }
+}
+#itemNavigation .navButtons #navNext {
+  float: right;
+  display: none;
+}
+#itemNavigation .navButtons #navNext .nav {
+  float: right;
+  /*	@include button;   WTF !?*/
+  background: transparent url('http://cdn2.yoox.biz/Os/armanigroup/generated_images/siteSprite-sb549c5c9ce.png') no-repeat 0 -1629px;
+  height: 16px;
+  width: 9px;
+}
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+  #itemNavigation .navButtons #navNext .nav {
+    background: transparent url('http://cdn2.yoox.biz/Os/armanigroup/generated_images/siteSprite2x-s6f428274e5.png') no-repeat 0 -1628.5px;
+    background-size: 264px 2601.5px;
+    height: 16px;
+    width: 9px;
+  }
+}
+#itemNavigation .navButtons #navNext:hover .nav {
+  /*	@include button;   WTF !?*/
+  background: transparent url('http://cdn2.yoox.biz/Os/armanigroup/generated_images/siteSprite-sb549c5c9ce.png') no-repeat 0 -1655px;
+  height: 16px;
+  width: 9px;
+}
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+  #itemNavigation .navButtons #navNext:hover .nav {
+    background: transparent url('http://cdn2.yoox.biz/Os/armanigroup/generated_images/siteSprite2x-s6f428274e5.png') no-repeat 0 -1654.5px;
+    background-size: 264px 2601.5px;
+    height: 16px;
+    width: 9px;
+  }
+}
+
+.colorSizeContainer {
+  margin: 25px 38px 15px 38px;
+}
+.colorSizeContainer .hmenu {
+  font-size: 11px;
+  float: left;
+  width: 110px;
+  margin-right: 5px;
+}
+.colorSizeContainer .hmenu ul {
+  position: absolute;
+  margin-left: -1px;
+  width: 110px;
+  border-right: 1px solid #AFAFAF;
+  border-bottom: 1px solid #AFAFAF;
+  border-left: 1px solid #AFAFAF;
+  display: none;
+}
+.colorSizeContainer .hmenu .selectyzeValue {
+  width: 85px;
+  overflow: hidden;
+}
+
+.linkSizeConv {
+  cursor: pointer;
+  display: block;
+  float: left;
+  font-family: "droid_serifregular", serif;
+  text-decoration: underline;
+  width: 98px;
+  line-height: 33px;
+}
+
+.related {
+  display: none;
+  margin-left: 38px;
+}
+.related .relatedTitle {
+  text-transform: uppercase;
+  margin: 37px 0 20px;
+}
+.related .relatedItem {
+  float: left;
+  margin: 1px;
+}
+.related .relatedItem img {
+  width: 162px;
+}
+.related.pos1 {
+  display: block;
+}
+
+.info, .proposition65, .madeIn {
+  font-size: 11px;
+  line-height: 15px;
+  color: #9C9C9C;
+  margin: 3px 38px 0 38px;
+  display: block;
+}
+.info.madeIn, .proposition65.madeIn, .madeIn.madeIn {
+  color: #000000;
+  text-transform: capitalize;
+}
+
+.attributes {
+  margin: 10px 38px 5px;
+  font-size: 11px;
+  line-height: 15px;
+  color: #9C9C9C;
+}
+
+.tabs {
+  margin: 15px 38px 0 32px;
+}
+.tabs .descriptionHeader {
+  cursor: pointer;
+  line-height: 40px;
+}
+.tabs .descriptionHeader h3 {
+  float: left;
+  width: 85%;
+  text-transform: uppercase;
+  font-size: 10px;
+  border-left: 2px #FFFFFF solid;
+  padding-left: 4px;
+}
+.cn .tabs .descriptionHeader h3 {
+  font-size: 12px;
+}
+.tabs .descriptionHeader h3:hover {
+  border-left: 2px #000000 solid;
+}
+.tabs .descriptionContent {
+  display: none;
+  line-height: 15px;
+  margin-bottom: 20px;
+  padding-left: 5px;
+  color: #9C9C9C;
+  font-size: 10px;
+}
+.cn .tabs .descriptionContent {
+  font-size: 12px;
+}
+.tabs .descriptionContent .modelTitle {
+  margin-right: 5px;
+}
+.tabs .descriptionContent .descriptionList {
+  color: #9C9C9C;
+  font-size: 10px;
+  list-style: disc;
+  list-style-position: inside;
+}
+.cn .tabs .descriptionContent .descriptionList {
+  font-size: 12px;
+}
+.tabs .descriptionContent .descriptionList li {
+  text-indent: -4px;
+  line-height: 20px;
+}
+.tabs .arrow {
+  /*	@include button;   WTF !?*/
+  background: transparent url('http://cdn2.yoox.biz/Os/armanigroup/generated_images/siteSprite-sb549c5c9ce.png') no-repeat 0 -1855px;
+  height: 7px;
+  width: 7px;
+  float: right;
+  margin: 13px 20px 14px 0;
+}
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+  .tabs .arrow {
+    background: transparent url('http://cdn2.yoox.biz/Os/armanigroup/generated_images/siteSprite2x-s6f428274e5.png') no-repeat 0 -1854.5px;
+    background-size: 264px 2601.5px;
+    height: 7px;
+    width: 7px;
+  }
+}
+.tabs .open h3 {
+  text-decoration: underline;
+  font-weight: bold;
+}
+.tabs .open .arrow {
+  /*	@include button;   WTF !?*/
+  background: transparent url('http://cdn2.yoox.biz/Os/armanigroup/generated_images/siteSprite-sb549c5c9ce.png') no-repeat 0 -1612px;
+  height: 7px;
+  width: 7px;
+}
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+  .tabs .open .arrow {
+    background: transparent url('http://cdn2.yoox.biz/Os/armanigroup/generated_images/siteSprite2x-s6f428274e5.png') no-repeat 0 -1611.5px;
+    background-size: 264px 2601.5px;
+    height: 7px;
+    width: 7px;
+  }
+}
+.tabs .openLast {
+  margin-bottom: 12px;
+}
+.ie7 .tabs {
+  overflow: hidden;
+}
+
+/* 	==========================================================================
+	CENTER IMAGES
+	==========================================================================*/
+#thumbsWrapper {
+  margin-right: 408px;
+  position: relative;
+}
+#thumbsWrapper .thumbElement {
+  cursor: pointer;
+  float: left;
+  max-width: 480px;
+  width: 100%;
+  -moz-transition: all 1s;
+  -o-transition: all 1s;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  -moz-transition-duration: 0.25s;
+  -o-transition-duration: 0.25s;
+  -webkit-transition-duration: 0.25s;
+  transition-duration: 0.25s;
+}
+#thumbsWrapper .gift_guide_strip {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  /*	@include button;   WTF !?*/
+  background: transparent url('http://cdn2.yoox.biz/Os/armanigroup/generated_images/siteSprite-sb549c5c9ce.png') no-repeat 0 -687px;
+  height: 163px;
+  width: 264px;
+}
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+  #thumbsWrapper .gift_guide_strip {
+    background: transparent url('http://cdn2.yoox.biz/Os/armanigroup/generated_images/siteSprite2x-s6f428274e5.png') no-repeat 0 -687px;
+    background-size: 264px 2601.5px;
+    height: 163px;
+    width: 264px;
+  }
+}
+@media screen and (min-width: 1049px) {
+  #thumbsWrapper .thumbs.count_2 .thumbElement {
+    width: 49.95%;
+  }
+}
+@media screen and (min-width: 1049px) {
+  #thumbsWrapper .thumbs.count_3 .thumbElement {
+    width: 49.95%;
+  }
+}
+@media screen and (min-width: 1485px) {
+  #thumbsWrapper .thumbs.count_3 .thumbElement {
+    width: 33.30%;
+  }
+}
+@media screen and (min-width: 1049px) {
+  #thumbsWrapper .thumbs.count_4 .thumbElement, #thumbsWrapper .thumbs.count_5 .thumbElement {
+    width: 49.95%;
+  }
+}
+@media screen and (min-width: 1485px) {
+  #thumbsWrapper .thumbs.count_4 .thumbElement, #thumbsWrapper .thumbs.count_5 .thumbElement {
+    width: 33.30%;
+  }
+}
+@media screen and (min-width: 1921px) {
+  #thumbsWrapper .thumbs.count_4 .thumbElement, #thumbsWrapper .thumbs.count_5 .thumbElement {
+    width: 24.95%;
+  }
+}
+
+/* 	==========================================================================
+	ZOOM
+	==========================================================================*/
+#zoomLayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #FFFFFF;
+  z-index: 9999;
+  overflow: hidden;
+}
+#zoomLayer .loadingAnimation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+#zoomImage {
+  position: absolute;
+  cursor: move;
+}
+
+#zoomNext, #zoomPrev {
+  position: absolute;
+  top: 50%;
+  margin-top: -15px;
+  z-index: 8;
+  cursor: pointer;
+  padding: 20px 10px;
+  background-color: rgba(128, 128, 128, 0.1);
+}
+#zoomNext:hover, #zoomPrev:hover {
+  background-color: rgba(128, 128, 128, 0.5);
+}
+
+#zoomNext {
+  right: 20px;
+}
+#zoomNext .ico {
+  /*	@include button;   WTF !?*/
+  background: transparent url('http://cdn2.yoox.biz/Os/armanigroup/generated_images/siteSprite-sb549c5c9ce.png') no-repeat 0 -1629px;
+  height: 16px;
+  width: 9px;
+}
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+  #zoomNext .ico {
+    background: transparent url('http://cdn2.yoox.biz/Os/armanigroup/generated_images/siteSprite2x-s6f428274e5.png') no-repeat 0 -1628.5px;
+    background-size: 264px 2601.5px;
+    height: 16px;
+    width: 9px;
+  }
+}
+
+#zoomPrev {
+  left: 20px;
+}
+#zoomPrev .ico {
+  /*	@include button;   WTF !?*/
+  background: transparent url('http://cdn2.yoox.biz/Os/armanigroup/generated_images/siteSprite-sb549c5c9ce.png') no-repeat 0 -1681px;
+  height: 16px;
+  width: 9px;
+}
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+  #zoomPrev .ico {
+    background: transparent url('http://cdn2.yoox.biz/Os/armanigroup/generated_images/siteSprite2x-s6f428274e5.png') no-repeat 0 -1680.5px;
+    background-size: 264px 2601.5px;
+    height: 16px;
+    width: 9px;
+  }
+}
+
+/* Override ie7 */
+.ie7 #itemNavigation .navButtons, .ie8 #itemNavigation .navButtons {
+  width: 60px;
+}

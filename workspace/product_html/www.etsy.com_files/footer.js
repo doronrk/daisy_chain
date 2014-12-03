@@ -1,0 +1,1 @@
+require(["jquery"],function(a){var b=function(){var b=a("#gnav-footer");b.on("click",".footer-link-trigger",function(){a(this).closest("ul").toggleClass("show")})};a(document).ready(function(){b()})});

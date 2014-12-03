@@ -1,0 +1,1 @@
+"use strict";require(["main"],function(){require(["jquery","domReady"],function($,domReady){domReady(function(){$(".js_scroll-to-trigger").on("click",function(e){return e.preventDefault,$("html, body").animate({scrollTop:$($.attr(this,"href")).offset().top},1e3),!1})})})});

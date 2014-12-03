@@ -1,0 +1,100 @@
+/* gross layout */
+.videoPlaylistContainer {
+	font-size: 11px;
+}
+.videoPlaylistContainer .loadingMessage {
+	text-align: center;
+	font-size: 200%;
+	padding: 1em;
+	font-weight: bold;
+}
+.videoPlaylistContainer .playerContainer {
+	position: relative;
+	padding-bottom: 132px; /* player height - playlist height - 9px */
+}
+.videoPlaylistContainer .playlistSelector {
+	text-align: right;
+	border-bottom: 1px solid #dddddd;
+}
+.videoPlaylistContainer .player {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+.videoPlaylistContainer .playlist {
+	margin-left: 486px; /* player width */
+	height: 414px;
+	overflow: scroll;
+}
+
+/* within playlist selector */
+.videoPlaylistContainer .playlistSelector .playlistTab {
+	display: inline-block;
+	cursor: pointer;
+	margin: 0 0 0 -1px;
+
+	border-color: #dddddd;
+	border-style: solid;
+	border-width: 1px 1px 0 1px;
+
+	-webkit-border-top-left-radius: 8px;
+	-webkit-border-top-right-radius: 8px;
+	-moz-border-radius-topleft: 8px;
+	-moz-border-radius-topright: 8px;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+
+	padding: 3px 8px;
+	background: #f9f9f9 url('/images/video_playlists/background_inactive_tab.png') left bottom repeat-x;
+}
+.videoPlaylistContainer .playlistSelector .playlistTab.selected {
+	color: #000000;
+	background: #ffffff url('/images/video_playlists/background_active_tab.png') left top repeat-x;
+}
+
+/* note, in IE9, background gradients bleed over rounded corners */
+
+.videoPlaylistContainer .playlist .playlistItem {
+	margin: 9px;
+	padding: 5px;
+	border: 1px solid #dddddd;
+
+	-webkit-border-bottom-left-radius: 8px;
+	-webkit-border-bottom-right-radius: 8px;
+	-moz-border-radius-bottomleft: 8px;
+	-moz-border-radius-bottomright: 8px;
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+
+	background: #f3f3f3 url('/images/video_playlists/background_active_item.png') left bottom repeat-x;
+}
+.videoPlaylistContainer .playlist .playlistItem.selected {
+	background: #fafafa url('/images/video_playlists/background_inactive_item.png') left bottom repeat-x;
+}
+.videoPlaylistContainer .playlist .playlistItem.selected a {
+	color: #000000;
+}
+
+.videoPlaylistContainer .playlist .playlistItem a * {
+	cursor: pointer;
+}
+.videoPlaylistContainer .playlist .playlistItem p.title {
+	margin: 0 0 0.5em 0;
+	font-weight: bold;
+	color: inherit;
+	font-family: inherit;
+}
+.videoPlaylistContainer .playlist .playlistItem p {
+	margin: 0;
+}
+.videoPlaylistContainer .playlist .playlistItem div.thumbnail {
+	float: left;
+	width: 20%;
+}
+.videoPlaylistContainer .playlist .playlistItem div.description {
+	float: right;
+	width: 79%;
+}
+.videoPlaylistContainer .playlist .playlistItem div.description:after {
+	clear: both;
+}

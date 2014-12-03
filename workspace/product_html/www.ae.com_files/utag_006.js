@@ -1,0 +1,8 @@
+//tealium universal tag - utag.45 ut4.0.201407212004, Copyright 2014 Tealium.com Inc. All Rights Reserved.
+try{(function(id,loader,u){try{u=utag.o[loader].sender[id]={}}catch(e){u=utag.sender[id]};u.ev={'view':1};u.qsp_delim="&";u.kvp_delim="=";u.lb_rn=new String(Math.random());u.lb_rns=u.lb_rn.substring(2,12);u.base_url="//b3.mookie1.com/2/LB/"+u.lb_rns+"@x96?";u.map={"lb_data":"lbData"};u.extend=[function(a,b){if(typeof b['cp.s_vi']!='undefined'){var start=b['cp.s_vi'].indexOf('|')+1;var end=b['cp.s_vi'].indexOf('[CE]');b.lb_data=[];b.lb_data.push("s_vi="+b['cp.s_vi'].substring(start,end));}
+if(typeof b.logged_in!='undefined'){b.lb_data=b.lb_data||[];b.lb_data.push("logged_in="+b.logged_in);}
+b.lb_data=b.lb_data||[];b.lb_data=b.lb_data.join("&");}];u.send=function(a,b){if(u.ev[a]||typeof u.ev.all!="undefined"){for(c=0;c<u.extend.length;c++){try{d=u.extend[c](a,b);if(d==false)return}catch(e){}};var c,d,e,f;for(d in utag.loader.GV(u.map)){if(typeof b[d]!="undefined"&&b[d]!=""){e=u.map[d].split(",");for(f=0;f<e.length;f++){window[e[f]]=b[d];}}}
+if(b._corder){window.lbTrans=window.lbTrans||b._corder;window.lbValue=window.lbValue||b._csubtotal;if(b._cprod.length>-1){y=[];for(i=0;i<b._cprod.length;i++){y.push(b._cbrand[i]+','+b._ccat[i]+','+b._cprod[i]+','+b._cprice[i]);}
+window.lbData=y.join('&');}}
+u.s=document.getElementsByTagName("script")[0];u.scr=document.createElement("script");u.scr.type="text/javascript";u.scr.src=u.base_url;u.s.parentNode.insertBefore(u.scr,u.s);}}
+try{utag.o[loader].loader.LOAD(id)}catch(e){utag.loader.LOAD(id)}})('45','americaneagle.main');}catch(e){}

@@ -1,0 +1,1 @@
+RICHFX.prototype['xml_764394-847__1_z'] = '<info MediaVersion="02.10" ImageWidth="2000" ImageHeight="2000" TileSize="2048" FirstFrameWidth="500" FirstFrameHeight="500" DispWidth="500" DispHeight="500" BkgdColor="0xffffff" NumLevels="3" ViewSetting="anyspot_onelevel" ImageName="764394-847__1" ImageItemId="764394-847" ImagePrefix="" ImageSuffix="_z"></info>';

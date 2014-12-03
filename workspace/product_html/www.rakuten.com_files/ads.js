@@ -1,0 +1,1 @@
+if(!window['googleNDT_']){window['googleNDT_']=(new Date()).getTime();}window['_googCsaX']=3;window.googleAltLoader=1;document.write('<script src="//www.google.com/ads/search/module/ads/3.0/198ed99b92a3f0fc170e8bb7e0b21317da5f70ad/n/search.js" type="text/javascript"></script>');

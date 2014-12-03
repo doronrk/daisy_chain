@@ -1,0 +1,22 @@
+
+/* toGather Hearting Widget related styles */
+
+#TB_window { padding-bottom:25px; }
+
+#divProductDetailViewArea { position:relative; }
+a.tgHeart { position:absolute; top:6px; left:334px; display:block; width:43px; height:38px; border-right:1px solid #e5e0dd; background:#fffaf6 url(http://g.qvcimg.com/bundles/qvcvoices/img/sprites/base/BTN_heart_off_1.png?v=20141114) no-repeat 50% 5px; overflow: hidden; text-indent:-2000px; box-shadow:0 1px 0 0 #999; -webkit-box-shadow:0 1px 0 0 #999; -moz-box-shadow:0 1px 0 0 #999; }
+a.tgHasCnt { height:49px; }
+a.tgHeart:hover, a.tgHeart.on { background-image:url(http://g.qvcimg.com/bundles/qvcvoices/img/sprites/base/BTN_heart_on_1.png?v=20141114); }
+span.tgHeartCnt { display:block; font-size: 11px; position:absolute; top:40px; left:335px; width:44px; text-align:center; color:#e46764; font-family:"Quattrocento Sans", "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif; }
+span.tgTooltip { display:block; position:absolute; top:-2px; right:-218px; width:232px; height:61px; text-indent:-1000px; overflow:hidden; background:url(http://g.qvcimg.com/bundles/qvcvoices/img/hearting_qvc_com/tooltip-add.png?v=20141114); }
+span.tgTooltipAdded { right:-271px; background-image:url(http://g.qvcimg.com/bundles/qvcvoices/img/hearting_qvc_com/tooltip-edit.png?v=20141114); width:285px; }
+
+#heart-anim-canvas { position:absolute; top:0; left:0; display:none; width:54px; height:46px; z-index:10000; }
+#heart-anim-canvas img { position:absolute; top:0; left:0; -webkit-backface-visibility:hidden; -moz-backface-visibility:hidden; -ms-backface-visibility:hidden; backface-visibility:hidden; -webkit-perspective:1000; -moz-perspective:1000; -ms-perspective:1000; perspective:1000; }
+
+@media (max-width: 641px) {
+	a.tgHeart {
+		top: 28px;
+		left: 229px;
+	}
+}
