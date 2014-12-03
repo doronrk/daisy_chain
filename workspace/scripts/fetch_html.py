@@ -7,6 +7,7 @@ import time
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.common.exceptions import WebDriverException
 from selenium.common.exceptions import TimeoutException
+from save_complete_page import *
 
 def ajax_complete(driver):
     try:
@@ -38,16 +39,14 @@ for url_string in urls:
     if (domain in already_pinged_domains):
         print '\t','WARNING! multiple URLS from the same host in url file'
         continue
+    already_pinged_domains.add(domain)
     try:
         driver.get(url_string)
         WebDriverWait(driver, 10).until(ajax_complete, "Timeout waiting for page to load")
-        html_file = open(url_dir + '/' + domain + '.html',"w")
-        html = driver.page_source
-        html = html.encode('utf-8')
-        html_file.write(html)
-        html_file.close()
+        save_page_command(driver)
+        enter_filename_and_hit_enter(domain)
         num_succesful_fetches = num_succesful_fetches + 1
-        driver.save_screenshot(url_dir + '/' + domain + '.jpg')
+        time.sleep(2.0)
         print '\t', 'successful fetch'
     except urllib2.HTTPError as e:
         if e.code in errors:
