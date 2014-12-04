@@ -1,1 +1,0 @@
-mboxFactories.get('default').get('Bosecom_soundbar_product_pages',0).setOffer(new mboxOfferDefault()).loaded();mboxFactories.get('default').getPCId().forceId("1417585783579-751153.25_23");
