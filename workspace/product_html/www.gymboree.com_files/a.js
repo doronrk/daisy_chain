@@ -1,1 +1,0 @@
-sidecar.app.handleTracking({"success":"true","messages":["Added user key and session.","Queued view.","New user added"],"user_key":"mb7-547ea366de7cc4.41528276","session_key":"sess-7-547ea366de8ee0.00680413","callback":"sidecar.app.handleTracking","service":"view"});
