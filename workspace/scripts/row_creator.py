@@ -33,7 +33,7 @@ def relative_size_helper(element, objects):
 
 	denom = len(objects)
 	if denom == 0: denom = 1
-	return (element.rect.get['height'] * element.rect.get['width']) - (sum_areas/float(denom))
+	return (element.rect['height'] * element.rect['width']) - (sum_areas/float(denom))
 
 def create(element, relevant_ids, page_info):
 	'''
@@ -52,7 +52,7 @@ def create(element, relevant_ids, page_info):
 	HTML_tags = ['s', 'del', 'strike', 'span', 'h1', 'h2', 'h3', 'img', 'a', 'div', 'head', 'script', 'header', 'html', 'title', 'meta']
 	
 	#text features here
-	text = (str(element.text)).lower()
+	text = ((element.text)).lower() #string?
 
 	for item in HTML_plain_text:
 		if item in text: returned_row.append('1')
@@ -67,7 +67,7 @@ def create(element, relevant_ids, page_info):
 		else: returned_row.append('1')
 
 	#tag features here
-	tag = str(element.tag_name).lower()
+	tag = str(element.tag_name).lower() #string?
 	for item in HTML_tags:
 		if item == tag: returned_row.append('1')
 		else: returned_row.append('0')
@@ -88,22 +88,22 @@ def create(element, relevant_ids, page_info):
 	returned_row.append(element.rect['x'] + (0.5 * element.rect['width']))
 	returned_row.append(element.rect['y'] + (0.5 * element.rect['height'])) 
 
-
-	returned_row.append(float(element.rect.get('height'))/element.rect.get('width')) #squareness
+	if (element.rect['height'] == 0 or element.rect['width'] == 0): returned_row.append(0)
+	else: returned_row.append(float(element.rect.get('height'))/element.rect.get('width')) #squareness
 	
-	distances = self.distance_helper(element, page_info['dollar_objects'])
+	distances = distance_helper(element, page_info['dollar_objects'])
 	for d in distances:
 		returned_row.append(d) #cast to string? probably  doesn't matter
 	for i in xrange(3 - len(distances)):
 		returned_row.append(500) # <- don't know how I feel about hard-coding this. A more elegant solution?
-	distances = self.distance_helper(element, page_info['img_objects'])
+	distances = distance_helper(element, page_info['img_objects'])
 	for d in distances:
 		returned_row.append(d) #same string cast question here
 	for i in xrange(3 - len(distances)):
 		returned_row.append(500) #same thing
 
-	returned_row.append(self.relative_size_helper(element, page_info['dollar_objects']))
-	returned_row.append(self.relative_size_helper(element, page_info['img_objects']))
+	returned_row.append(relative_size_helper(element, page_info['dollar_objects']))
+	returned_row.append(relative_size_helper(element, page_info['img_objects']))
 
 
 	#add in code to loop through ids and determine what the label for this node is
@@ -114,7 +114,9 @@ def create(element, relevant_ids, page_info):
 	returned_row.append(label)
 
 	#finally return the row
-	return np.array(returned_row).reshape(1, len(returned_row))
+	#print returned_row
+	returned_row = np.array(returned_row)
+	return returned_row.reshape(1, len(returned_row))
 
 
 

@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 import os
 import re
 import time
+import random
 from selenium.common.exceptions import InvalidSelectorException
 from selenium.common.exceptions import WebDriverException
 from row_creator import create
@@ -34,6 +35,11 @@ def get_search_info(element_str):
         attr_dict[attr] = value
     return tag_name, escaped_stripped_text, attr_dict
 
+def write_row(output_file, filename, labeled_instance):
+    csv = ", ".join(labeled_instance.flatten())
+    row = filename + ', ' + csv
+    output_file.write(row + '\n')
+    print 'wrote row'
 
 html_path = "../all_of_the_product_html/"
 html_filenames = set(os.listdir(html_path))
@@ -47,6 +53,7 @@ file_found_only_price = set()
 file_found_only_image = set()
 file_found_neither = set()
 
+output_file = open('../data/data_matrix.txt', 'w')
 
 for num, feature_element in enumerate(feature_elements):
     print num
@@ -108,34 +115,26 @@ for num, feature_element in enumerate(feature_elements):
         page_info['dollar_objects'] = dollar_sign_elements
         page_info['img_objects'] = img_tag_elements
 
-        for element in all_elements:
+        for element in dollar_sign_elements:
             labeled_instance = create(element, [price_matches, img_matches], page_info)
-            print 'len(labeled_instance)', len(labeled_instance)
-
+            write_row(output_file, filename, labeled_instance)
+        for element in img_tag_elements:
+            labeled_instance = create(element, [price_matches, img_matches], page_info)
+            write_row(output_file, filename, labeled_instance)
+        for element in price_matches:
+            labeled_instance = create(element, [price_matches, img_matches], page_info)
+            write_row(output_file, filename, labeled_instance)
+        for element in img_matches:
+            labeled_instance = create(element, [price_matches, img_matches], page_info)
+            write_row(output_file, filename, labeled_instance)
+        for element in all_elements:
+            if (element in dollar_sign_elements or element in img_tag_elements or element in price_matches or element in img_matches):
+                continue
+            if (random.random() < .8):
+                continue
+            labeled_instance = create(element, [price_matches, img_matches], page_info)
+            write_row(output_file, filename, labeled_instance)
 
     except WebDriverException as e:
         print 'WebDriverException'
 
-#     if (price_matches != None and len(price_matches) > 0):
-#         if (img_matches != None and len(img_matches) > 0):
-#             file_found_both_elements.add(filename)
-#         else:
-#             file_found_only_price.add(filename)
-#     else:
-#         if (img_matches != None and len(img_matches) > 0):
-#             file_found_only_image.add(filename)
-#         else:
-#             file_found_neither.add(filename)
-
-# print 'file_found_both_elements', len(file_found_both_elements)
-# for f in file_found_both_elements:
-#     print '\t', f
-# print 'file_found_only_price', len(file_found_only_price)
-# for f in file_found_only_price:
-#     print '\t', f
-# print 'file_found_only_image', len(file_found_only_image)
-# for f in file_found_only_image:
-#     print '\t', f
-# print 'file_found_neither', len(file_found_neither)
-# for f in file_found_neither:
-#     print '\t', f
