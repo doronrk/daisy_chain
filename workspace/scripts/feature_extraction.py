@@ -5,6 +5,7 @@ import re
 import time
 from selenium.common.exceptions import InvalidSelectorException
 from selenium.common.exceptions import WebDriverException
+from row_creator import create
 
 def driver_get(driver, filepath):
     absfilepath = os.path.abspath(filepath)
@@ -54,6 +55,9 @@ for num, feature_element in enumerate(feature_elements):
     try:
         filename, price_element_str, image_element_str = feature_element.split('\t')
         print 'filename', filename
+        if not (filename in html_filenames):
+            print 'filename not found'
+            continue
         filepath = html_path + filename
         driver_get(driver, filepath)
 
@@ -93,35 +97,45 @@ for num, feature_element in enumerate(feature_elements):
                             print 'InvalidSelectorException'
 
         if (price_matches == [] or img_matches == []):
+            print 'couldnt find both elements'
             continue
 
         all_elements = driver.find_elements_by_xpath('//*')
         dollar_sign_elements = driver.find_elements_by_xpath('//*[contains(text(), \'$\')]')
-        img_tag_elements = driver.find_elements_by_xpath('//*')
+        img_tag_elements = driver.find_elements_by_tag_name('img')
+
+        page_info = dict()
+        page_info['dollar_objects'] = dollar_sign_elements
+        page_info['img_objects'] = img_tag_elements
+
+        for element in all_elements:
+            labeled_instance = create(element, [price_matches, img_matches], page_info)
+            print 'len(labeled_instance)', len(labeled_instance)
+
 
     except WebDriverException as e:
         print 'WebDriverException'
 
-    if (price_matches != None and len(price_matches) > 0):
-        if (img_matches != None and len(img_matches) > 0):
-            file_found_both_elements.add(filename)
-        else:
-            file_found_only_price.add(filename)
-    else:
-        if (img_matches != None and len(img_matches) > 0):
-            file_found_only_image.add(filename)
-        else:
-            file_found_neither.add(filename)
+#     if (price_matches != None and len(price_matches) > 0):
+#         if (img_matches != None and len(img_matches) > 0):
+#             file_found_both_elements.add(filename)
+#         else:
+#             file_found_only_price.add(filename)
+#     else:
+#         if (img_matches != None and len(img_matches) > 0):
+#             file_found_only_image.add(filename)
+#         else:
+#             file_found_neither.add(filename)
 
-print 'file_found_both_elements', len(file_found_both_elements)
-for f in file_found_both_elements:
-    print '\t', f
-print 'file_found_only_price', len(file_found_only_price)
-for f in file_found_only_price:
-    print '\t', f
-print 'file_found_only_image', len(file_found_only_image)
-for f in file_found_only_image:
-    print '\t', f
-print 'file_found_neither', len(file_found_neither)
-for f in file_found_neither:
-    print '\t', f
+# print 'file_found_both_elements', len(file_found_both_elements)
+# for f in file_found_both_elements:
+#     print '\t', f
+# print 'file_found_only_price', len(file_found_only_price)
+# for f in file_found_only_price:
+#     print '\t', f
+# print 'file_found_only_image', len(file_found_only_image)
+# for f in file_found_only_image:
+#     print '\t', f
+# print 'file_found_neither', len(file_found_neither)
+# for f in file_found_neither:
+#     print '\t', f

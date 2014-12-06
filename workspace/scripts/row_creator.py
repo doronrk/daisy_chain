@@ -49,7 +49,7 @@ def create(element, relevant_ids, page_info):
 	#for loop through each of these for the element
 	HTML_attribute_values = ['price', 'orig', 'sale', 'retail', 'reg', 'img','image', 'main', 'prim', 'prod', '.jpg', '.jpeg', '.png', '.gif']
 	HTML_plain_text = ['price', 'your', 'orig', 'discount', 'off', 'reg', 'sale', '$', 'USD', 'retail', 'U.S.D.']
-	HTML_tags['s', 'del', 'strike', 'span', 'h1', 'h2', 'h3', 'img', 'a', 'div', 'head', 'script', 'header', 'html', 'title', 'meta']
+	HTML_tags = ['s', 'del', 'strike', 'span', 'h1', 'h2', 'h3', 'img', 'a', 'div', 'head', 'script', 'header', 'html', 'title', 'meta']
 	
 	#text features here
 	text = (str(element.text)).lower()
@@ -91,26 +91,26 @@ def create(element, relevant_ids, page_info):
 
 	returned_row.append(float(element.rect.get('height'))/element.rect.get('width')) #squareness
 	
-	distances = self.distance_helper(element, page_info.get('dollar_objects'))
+	distances = self.distance_helper(element, page_info['dollar_objects'])
 	for d in distances:
 		returned_row.append(d) #cast to string? probably  doesn't matter
 	for i in xrange(3 - len(distances)):
 		returned_row.append(500) # <- don't know how I feel about hard-coding this. A more elegant solution?
-	distances = self.distance_helper(element, page_info.get('img_objects'))
+	distances = self.distance_helper(element, page_info['img_objects'])
 	for d in distances:
 		returned_row.append(d) #same string cast question here
 	for i in xrange(3 - len(distances)):
 		returned_row.append(500) #same thing
 
-	returned_row.append(self.relative_size_helper(element, page_info.get('dollar_objects')))
-	returned_row.append(self.relative_size_helper(element, page_info.get('img_objects')))
+	returned_row.append(self.relative_size_helper(element, page_info['dollar_objects']))
+	returned_row.append(self.relative_size_helper(element, page_info['img_objects']))
 
 
 	#add in code to loop through ids and determine what the label for this node is
 	label = 0 #0 is irrelevant, 1 is price, 2 is image
 	for i, l in enumerate(relevant_ids):
 		for rel in l:
-			if rel == element.id: label = i + 1
+			if rel == element: label = i + 1
 	returned_row.append(label)
 
 	#finally return the row
