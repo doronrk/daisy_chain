@@ -35,11 +35,11 @@ def get_search_info(element_str):
         attr_dict[attr] = value
     return tag_name, escaped_stripped_text, attr_dict
 
-def write_row(output_file, filename, labeled_instance):
+def write_row(output_file, filename, labeled_instance, node_num, total_nodes):
     csv = ", ".join(labeled_instance.flatten())
     row = filename + ', ' + csv
     output_file.write(row + '\n')
-    print 'wrote row'
+    print 'wrote node num', node_num, '/', total_nodes
 
 html_path = "../all_of_the_product_html/"
 html_filenames = set(os.listdir(html_path))
@@ -109,7 +109,6 @@ for num, feature_element in enumerate(feature_elements):
             print 'couldnt find both elements'
             continue
 
-        all_elements = driver.find_elements_by_xpath('//*')
         dollar_sign_elements = driver.find_elements_by_xpath('//*[contains(text(), \'$\')]')
         img_tag_elements = driver.find_elements_by_tag_name('img')
 
@@ -117,25 +116,25 @@ for num, feature_element in enumerate(feature_elements):
         page_info['dollar_objects'] = dollar_sign_elements
         page_info['img_objects'] = img_tag_elements
 
+        total_nodes = len(dollar_sign_elements) + len(img_tag_elements) + len(price_matches) + len(img_matches)
+
+        node_num = 0
         for element in dollar_sign_elements:
             labeled_instance = create(element, [price_matches, img_matches], page_info)
-            write_row(output_file, filename, labeled_instance)
+            write_row(output_file, filename, labeled_instance, node_num, total_nodes)
+            node_num = node_num + 1
         for element in img_tag_elements:
             labeled_instance = create(element, [price_matches, img_matches], page_info)
-            write_row(output_file, filename, labeled_instance)
+            write_row(output_file, filename, labeled_instance, node_num, total_nodes)
+            node_num = node_num + 1
         for element in price_matches:
             labeled_instance = create(element, [price_matches, img_matches], page_info)
-            write_row(output_file, filename, labeled_instance)
+            write_row(output_file, filename, labeled_instance, node_num, total_nodes)
+            node_num = node_num + 1
         for element in img_matches:
             labeled_instance = create(element, [price_matches, img_matches], page_info)
-            write_row(output_file, filename, labeled_instance)
-        for element in all_elements:
-            if (element in dollar_sign_elements or element in img_tag_elements or element in price_matches or element in img_matches):
-                continue
-            if (random.random() < .8):
-                continue
-            labeled_instance = create(element, [price_matches, img_matches], page_info)
-            write_row(output_file, filename, labeled_instance)
+            write_row(output_file, filename, labeled_instance, node_num, total_nodes)
+            node_num = node_num + 1
 
     except WebDriverException as e:
         print 'WebDriverException'
