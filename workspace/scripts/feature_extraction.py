@@ -66,6 +66,8 @@ for num, feature_element in enumerate(feature_elements):
             print 'filename not found'
             continue
         filepath = html_path + filename
+        driver.close()
+        driver = webdriver.Firefox()
         driver_get(driver, filepath)
 
         # price element stuff
