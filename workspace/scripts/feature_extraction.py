@@ -17,7 +17,13 @@ def get_search_info(element_str):
     element_soup = BeautifulSoup(element_str)
     if element_soup == None:
         return None, None, None
-    element = element_soup.html.body.find()
+    element = None
+    if element_soup.html == None:
+        element = element_soup.find()
+    elif element.html.body== None:
+        element = element_soup.body.find()
+    else: 
+        element = element_soup.html.body.find()
     tag_name = element.name
     text = element.string
     stripped_text = ''

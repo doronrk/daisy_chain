@@ -33,7 +33,7 @@ def relative_size_helper(element, objects):
 
 	denom = len(objects)
 	if denom == 0: denom = 1
-	return (element.rect['height'] * element.rect['width']) - (sum_areas/float(denom))
+	return ((element.rect['height'] * element.rect['width']) - (sum_areas/float(denom)))
 
 def create(element, relevant_ids, page_info):
 	'''
