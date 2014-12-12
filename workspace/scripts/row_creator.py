@@ -82,7 +82,8 @@ def create(element, relevant_ids, page_info):
 		if item in id_attr or item in class_attr or item in src_attr: returned_row.append('1')
 		else: returned_row.append('0')
 
-	returned_row.append(element.is_displayed()) #whether the element is visible on the page
+	if (element.is_displayed()): returned_row.append('1') #whether the element is visible on the page
+	else: returned_row.append('0')
 
 	#finding the absolute location on the page
 	returned_row.append(element.rect['x'] + (0.5 * element.rect['width']))
