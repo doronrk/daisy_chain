@@ -1,17 +1,5 @@
-this is a readme
+This was a final project for CIS 419, Intro to Machine Learning, at the University of Pennsylvania. All work was done by Doron Roberts-Kedes, Corey Loman, and Maya Ebsworth.
 
-selenium:
-    - get_screenshot_as_file(filename)
-    - get_window_position(windowHandle='current')
-    - get_window_size(windowHandle='current')
-    - save_screenshot(filename)
-    - is_displayed()
-    - is_enabled()
-    - is_enabled()
-    - value_of_css_property(property_name)
-    - location
-        Returns the location of the element in the renderable canvas
-    - rect
-        Returns a dictionary with the size and location of the element
-    - size
-        Returns the size of the element
+The objective of our project is to classify HTML elements of an e-commerce web page. Specifically, we built a model to identify the DOM (Document Object Model) nodes which contain the current price and the main image of a product. More broadly, our project begins to explore the challenges of identifying any kind of element on a web page. We chose to use a Naive Bayes classifier primarily because of its ability to perform with a small training data set. This project is motivated by the need to create consistently structured data from inconsistently structured product web pages.
+
+We used Selenium as our web driver for this project. All code is written in Python. If you have more questions about this or would like to read our final paper associated with this repo, please contact coreyloman(at)gmail(dot)com.
